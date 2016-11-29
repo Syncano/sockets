@@ -1,0 +1,35 @@
+name: FA
+description: Two Factor Authentication
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - generate-key:
+      GET:
+        script: generate-key
+  - generate-code:
+      GET:
+        script: generate-code
+  - generate-qr:
+      GET:
+        script: generate-qr
+  - validate:
+      GET:
+        script: validate
+dependencies:
+  - generate-key:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/generate-key.js
+      description: Generates a crypto secure hex key with 32 characters.
+  - generate-code:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/generate-code.js
+      description: Generates a Code using the users secret key which can then be verified
+  - generate-qr:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/generate-qr.js
+      description: Generates a QR code to store it by scanning the QR code.
+  - validate:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/validate.js
+      description: Validates the given code compared to user's key.

@@ -1,0 +1,14 @@
+name: Uber
+description: 'Communicate with the Uber API to get price estimates, time estimates, etc.'
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - get-price-estimate:
+      GET:
+        script: get-price-estimate
+dependencies:
+  - get-price-estimate:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-price-estimate.js
+      description: A price estimate for each product offered.

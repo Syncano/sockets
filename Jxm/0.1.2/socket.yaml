@@ -1,0 +1,21 @@
+name: Jxm
+description: Work with jxm
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - start-server:
+      GET:
+        script: start-server
+  - start-client:
+      GET:
+        script: start-client
+dependencies:
+  - start-server:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/start-server.js
+      description: Machine used to start an instance of a jxm server
+  - start-client:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/start-client.js
+      description: Machine used to start an instance of a jxm client

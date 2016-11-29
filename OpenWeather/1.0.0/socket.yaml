@@ -1,0 +1,14 @@
+name: OpenWeather
+description: Communicate with the OpenWeather API to get current weather for a city.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - get-current-conditions:
+      GET:
+        script: get-current-conditions
+dependencies:
+  - get-current-conditions:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-current-conditions.js
+      description: List the current weather conditions for a particular city.

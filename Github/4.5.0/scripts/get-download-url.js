@@ -1,0 +1,1 @@
+return exits.success('https://github.com/' + inputs.owner + '/' + inputs.repo + '/archive/' + inputs.branch + '.zip');

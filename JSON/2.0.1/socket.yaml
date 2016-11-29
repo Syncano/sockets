@@ -1,0 +1,30 @@
+name: JSON
+description: Encode and decode data to and from JSON.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - parse:
+      GET:
+        script: parse
+  - stringify:
+      GET:
+        script: stringify
+  - stringify-safe:
+      GET:
+        script: stringify-safe
+dependencies:
+  - parse:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/parse.js
+      description: Parse data from a JSON-encoded string.
+  - stringify:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/stringify.js
+      description: Encode the specified value into a JSON string.
+  - stringify-safe:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/stringify-safe.js
+      description: >-
+        Encode the specified value into a JSON string, but tolerate recursive
+        objects and preserve functions, errors, and regexps.

@@ -1,0 +1,35 @@
+name: Cloudflare
+description: Works with the Cloudflare API.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - delete-dns-record:
+      GET:
+        script: delete-dns-record
+  - add-dns-record:
+      GET:
+        script: add-dns-record
+  - edit-dns-record:
+      GET:
+        script: edit-dns-record
+  - stats:
+      GET:
+        script: stats
+dependencies:
+  - delete-dns-record:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/delete-dns-record.js
+      description: Delete a record for a domain
+  - add-dns-record:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/add-dns-record.js
+      description: Create a DNS record for a zone
+  - edit-dns-record:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/edit-dns-record.js
+      description: Edit a DNS record for a zone
+  - stats:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/stats.js
+      description: Retrieve domain statistics for a given time frame

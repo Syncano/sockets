@@ -1,0 +1,14 @@
+name: GoogleAPICustomSearch
+description: Communicate with Google Customsearch API.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - search:
+      GET:
+        script: search
+dependencies:
+  - search:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/search.js
+      description: Executes the search using Customsearch API call

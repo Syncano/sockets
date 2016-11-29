@@ -1,0 +1,1 @@
+require('../lib/helper.js').fn(inputs, exits, 'post');

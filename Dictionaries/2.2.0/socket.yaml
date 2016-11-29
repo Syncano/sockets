@@ -1,0 +1,63 @@
+name: Dictionaries
+description: Work with dictionaries.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - merge:
+      GET:
+        script: merge
+  - construct:
+      GET:
+        script: construct
+  - dot:
+      GET:
+        script: dot
+  - delete-key:
+      GET:
+        script: delete-key
+  - rename-key:
+      GET:
+        script: rename-key
+  - copy-key:
+      GET:
+        script: copy-key
+  - add-key:
+      GET:
+        script: add-key
+  - keys:
+      GET:
+        script: keys
+dependencies:
+  - merge:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/merge.js
+      description: Merge two dictionaries together and return the result (a new dictionary)
+  - construct:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/construct.js
+      description: Construct a dictionary using the specified keys and values.
+  - dot:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/dot.js
+      description: Get the value associated with a particular key in a dictionary.
+  - delete-key:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/delete-key.js
+      description: Delete a key from a dictionary and return the result (a new dictionary).
+  - rename-key:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/rename-key.js
+      description: Rename a key in a dictionary and return the result (a new dictionary).
+  - copy-key:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/copy-key.js
+      description: Copy a key in a dictionary and return the result (a new dictionary).
+  - add-key:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/add-key.js
+      description: Add a new key to a dictionary.
+  - keys:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/keys.js
+      description: List all the keys in the provided dictionary.

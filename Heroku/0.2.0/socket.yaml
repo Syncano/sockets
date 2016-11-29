@@ -1,0 +1,28 @@
+name: Heroku
+description: Work with the Heroku API.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - add-app-setup:
+      GET:
+        script: add-app-setup
+  - list-apps:
+      GET:
+        script: list-apps
+  - add-dyno:
+      GET:
+        script: add-dyno
+dependencies:
+  - add-app-setup:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/add-app-setup.js
+      description: Add an app setup for an account.
+  - list-apps:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/list-apps.js
+      description: List all apps for an account.
+  - add-dyno:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/add-dyno.js
+      description: Add a dyno to an existing app.

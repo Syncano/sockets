@@ -1,0 +1,91 @@
+name: Math
+description: Harness the power of math.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - add:
+      GET:
+        script: add
+  - divide:
+      GET:
+        script: divide
+  - subtract:
+      GET:
+        script: subtract
+  - multiply:
+      GET:
+        script: multiply
+  - parse:
+      GET:
+        script: parse
+  - random:
+      GET:
+        script: random
+  - e:
+      GET:
+        script: e
+  - sqrt:
+      GET:
+        script: sqrt
+  - pi:
+      GET:
+        script: pi
+  - pow:
+      GET:
+        script: pow
+  - ln:
+      GET:
+        script: ln
+  - log:
+      GET:
+        script: log
+dependencies:
+  - add:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/add.js
+      description: Add two numbers together and return the sum.
+  - divide:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/divide.js
+      description: Divide one number by another and return the quotient.
+  - subtract:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/subtract.js
+      description: Subtract one number from another and return the difference.
+  - multiply:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/multiply.js
+      description: Multiply two numbers and return the product.
+  - parse:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/parse.js
+      description: Convert the specified string to its numeric equivalent.
+  - random:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/random.js
+      description: Generate a random number within the specified range.
+  - e:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/e.js
+      description: Get the value of E (the mathematical constant)
+  - sqrt:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/sqrt.js
+      description: Calculate the square root of a number.
+  - pi:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/pi.js
+      description: Get the value of π (the mathematical constant)
+  - pow:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/pow.js
+      description: Raise a number to a power.
+  - ln:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/ln.js
+      description: Calculate the natural logarithm of a number.
+  - log:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/log.js
+      description: Calculate the logarithm of a number at a particular base.

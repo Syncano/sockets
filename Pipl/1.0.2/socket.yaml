@@ -1,0 +1,30 @@
+name: Pipl
+description: Interface with the Pipl people search API
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - search-by-raw-name:
+      GET:
+        script: search-by-raw-name
+  - get-person-from-search-pointer:
+      GET:
+        script: get-person-from-search-pointer
+  - search-by-email-address:
+      GET:
+        script: search-by-email-address
+dependencies:
+  - search-by-raw-name:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/search-by-raw-name.js
+      description: >-
+        Search for a person by their raw name (John Doe) without having to
+        separate first and last name
+  - get-person-from-search-pointer:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-person-from-search-pointer.js
+      description: Retrieve more information about a Person object from its search_pointer
+  - search-by-email-address:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/search-by-email-address.js
+      description: Search for a Person by Email address

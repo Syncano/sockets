@@ -1,0 +1,14 @@
+name: SendGrid
+description: Communicate with the SendGrid API to send emails
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - send-email:
+      GET:
+        script: send-email
+dependencies:
+  - send-email:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/send-email.js
+      description: Send an email

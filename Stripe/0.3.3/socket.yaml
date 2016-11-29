@@ -1,0 +1,56 @@
+name: Stripe
+description: Communicate with the Stripe API to start and stop stripe subscriptions.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - capture-charge:
+      GET:
+        script: capture-charge
+  - create-card:
+      GET:
+        script: create-card
+  - create-charge:
+      GET:
+        script: create-charge
+  - create-customer:
+      GET:
+        script: create-customer
+  - delete-card:
+      GET:
+        script: delete-card
+  - list-cards:
+      GET:
+        script: list-cards
+  - subscribe-customer:
+      GET:
+        script: subscribe-customer
+dependencies:
+  - capture-charge:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/capture-charge.js
+      description: Capture the payment of a previously-created charge in Stripe.
+  - create-card:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/create-card.js
+      description: Create a new card for a customer
+  - create-charge:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/create-charge.js
+      description: Create a new charge for a customer
+  - create-customer:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/create-customer.js
+      description: Create a new customer in Stripe
+  - delete-card:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/delete-card.js
+      description: Delete a card in Stripe for a customer
+  - list-cards:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/list-cards.js
+      description: List all cards in Stripe for a customer.
+  - subscribe-customer:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/subscribe-customer.js
+      description: Subscribe a customer to a pre-existing plan.

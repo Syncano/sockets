@@ -1,0 +1,1 @@
+return exits.success(env.req.get(inputs.header));

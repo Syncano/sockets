@@ -1,0 +1,14 @@
+name: Cli
+description: Simple Maker command line interface
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - prompt:
+      GET:
+        script: prompt
+dependencies:
+  - prompt:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/prompt.js
+      description: Simple prompt

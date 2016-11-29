@@ -1,0 +1,1 @@
+return exitWithToken(inputs, exits);

@@ -1,0 +1,21 @@
+name: Coinbase
+description: Communicate with the Coinbase API to get bitcoin index prices.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - get-buy-price:
+      GET:
+        script: get-buy-price
+  - get-sell-price:
+      GET:
+        script: get-sell-price
+dependencies:
+  - get-buy-price:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-buy-price.js
+      description: Total price to buy some amount of bitcoin.
+  - get-sell-price:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-sell-price.js
+      description: Total price to sell some amount of bitcoin.

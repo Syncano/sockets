@@ -1,0 +1,1 @@
+return exits.success(require('../lib/getOAuth2Client')(inputs));

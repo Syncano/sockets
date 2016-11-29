@@ -1,0 +1,21 @@
+name: SmartyStreets
+description: Interact with the SmartyStreets.com address API
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - verify-address:
+      GET:
+        script: verify-address
+  - verify-city-state-zip:
+      GET:
+        script: verify-city-state-zip
+dependencies:
+  - verify-address:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/verify-address.js
+      description: Verify one or more addresses using the SmartyStreets API
+  - verify-city-state-zip:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/verify-city-state-zip.js
+      description: 'Look up and verify city, state, and ZIP Code combinations'

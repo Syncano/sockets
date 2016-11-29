@@ -1,0 +1,100 @@
+name: Booleans
+description: >-
+  Work with true/false values and boolean operators like AND (&&), OR (||), NOT
+  (!), and the ternary qualifier (?/:).
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - to-boolean:
+      GET:
+        script: to-boolean
+  - is-between:
+      GET:
+        script: is-between
+  - is-defined:
+      GET:
+        script: is-defined
+  - is-undefined:
+      GET:
+        script: is-undefined
+  - is-equal:
+      GET:
+        script: is-equal
+  - is-not-equal:
+      GET:
+        script: is-not-equal
+  - is-greater-than:
+      GET:
+        script: is-greater-than
+  - is-less-than:
+      GET:
+        script: is-less-than
+  - is-truthy:
+      GET:
+        script: is-truthy
+  - is-falsy:
+      GET:
+        script: is-falsy
+  - and:
+      GET:
+        script: and
+  - or:
+      GET:
+        script: or
+  - not:
+      GET:
+        script: not
+dependencies:
+  - to-boolean:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/to-boolean.js
+      description: Convert the given string value to a boolean.
+  - is-between:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/is-between.js
+      description: Check that a number is within the specified range (inclusive).
+  - is-defined:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/is-defined.js
+      description: Determine whether the value is defined.
+  - is-undefined:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/is-undefined.js
+      description: Determine whether the value is undefined.
+  - is-equal:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/is-equal.js
+      description: Determine whether the first value is equivalent to the second.
+  - is-not-equal:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/is-not-equal.js
+      description: Determine whether the first value is not equivalent to the second.
+  - is-greater-than:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/is-greater-than.js
+      description: Determine whether the first value is greater than the second.
+  - is-less-than:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/is-less-than.js
+      description: Determine whether the first value is less than the second.
+  - is-truthy:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/is-truthy.js
+      description: Determine whether the value is "truthy".
+  - is-falsy:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/is-falsy.js
+      description: Determine whether the value is "falsy".
+  - and:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/and.js
+      description: Get the result of performing a boolean AND operation on two values.
+  - or:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/or.js
+      description: Get the result of performing a boolean OR operation on two values.
+  - not:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/not.js
+      description: Get the result of performing a boolean NOT operation on a value.

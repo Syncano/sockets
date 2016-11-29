@@ -1,0 +1,1 @@
+return exits.success(typeof inputs.a !== 'undefined' ? inputs.a : inputs.b);

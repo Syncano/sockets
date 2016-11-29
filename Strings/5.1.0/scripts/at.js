@@ -1,0 +1,1 @@
+return exits.success(inputs.string.slice(inputs.at, inputs.at+1));

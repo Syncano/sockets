@@ -1,0 +1,184 @@
+name: LocalMachinepacks
+description: Work with local machinepacks.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - prompt-about-new-machinepack:
+      GET:
+        script: prompt-about-new-machinepack
+  - prompt-about-new-machine:
+      GET:
+        script: prompt-about-new-machine
+  - get-machines-dir:
+      GET:
+        script: get-machines-dir
+  - remove-machine:
+      GET:
+        script: remove-machine
+  - rename-machine:
+      GET:
+        script: rename-machine
+  - copy-machine:
+      GET:
+        script: copy-machine
+  - list-machines:
+      GET:
+        script: list-machines
+  - run-machine:
+      GET:
+        script: run-machine
+  - read-machine-file:
+      GET:
+        script: read-machine-file
+  - write-machine-file:
+      GET:
+        script: write-machine-file
+  - build-machine-code:
+      GET:
+        script: build-machine-code
+  - prompt-for-input-vals:
+      GET:
+        script: prompt-for-input-vals
+  - add-machine:
+      GET:
+        script: add-machine
+  - run-machine-interactive:
+      GET:
+        script: run-machine-interactive
+  - parse-machinepack-metadata:
+      GET:
+        script: parse-machinepack-metadata
+  - initialize-machinepack:
+      GET:
+        script: initialize-machinepack
+  - read-package-json:
+      GET:
+        script: read-package-json
+  - interpret-machine-module:
+      GET:
+        script: interpret-machine-module
+  - scaffold-tests:
+      GET:
+        script: scaffold-tests
+  - add-test:
+      GET:
+        script: add-test
+  - browse-to-pack-url:
+      GET:
+        script: browse-to-pack-url
+  - get-signature:
+      GET:
+        script: get-signature
+  - write-pack:
+      GET:
+        script: write-pack
+dependencies:
+  - prompt-about-new-machinepack:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/prompt-about-new-machinepack.js
+      description: Prompt command-line user for new machinepack details.
+  - prompt-about-new-machine:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/prompt-about-new-machine.js
+      description: Prompt command-line user for details about a new machine being created.
+  - get-machines-dir:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-machines-dir.js
+      description: Get the path to this machinepack's `machines/` directory.
+  - remove-machine:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/remove-machine.js
+      description: Remove a machine from a local pack and update the package.json file.
+  - rename-machine:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/rename-machine.js
+      description: Rename a machine in a local pack and update the package.json file.
+  - copy-machine:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/copy-machine.js
+      description: Copy a machine in a local pack and update the package.json file.
+  - list-machines:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/list-machines.js
+      description: List the machines in a local pack.
+  - run-machine:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/run-machine.js
+      description: >-
+        Run a machine in the specified local pack using the provided input
+        values.
+  - read-machine-file:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/read-machine-file.js
+      description: >-
+        Read machine file located at the specified path into a JSON string w/
+        stringified functions.
+  - write-machine-file:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/write-machine-file.js
+      description: Write a new machine file to disk at the specified path.
+  - build-machine-code:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/build-machine-code.js
+      description: >-
+        Build a JavaScript code string which represents the provided machine
+        metadata.
+  - prompt-for-input-vals:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/prompt-for-input-vals.js
+      description: Prompt command-line user for the specified machine input values.
+  - add-machine:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/add-machine.js
+      description: Add a new machine to a machinepack on your local filesystem.
+  - run-machine-interactive:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/run-machine-interactive.js
+      description: >-
+        Run a machine in the specified local pack, prompting for required input
+        values.
+  - parse-machinepack-metadata:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/parse-machinepack-metadata.js
+      description: Parse machinepack data from the provided JSON string.
+  - initialize-machinepack:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/initialize-machinepack.js
+      description: Initilize or rename a local pack by modifying its package.json file.
+  - read-package-json:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/read-package-json.js
+      description: >-
+        Read and parse the package.json file of a local pack in the specified
+        directory.
+  - interpret-machine-module:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/interpret-machine-module.js
+      description: Interpret a machine from a Node.js module string into a JSON string.
+  - scaffold-tests:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/scaffold-tests.js
+      description: >-
+        Generate JSON test files for any machines in this local machinepack
+        which don't already have them.
+  - add-test:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/add-test.js
+      description: Add a test for a machine in a machinepack on the local disk.
+  - browse-to-pack-url:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/browse-to-pack-url.js
+      description: ''
+  - get-signature:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-signature.js
+      description: >-
+        Lookup top-level metadata, dehydrate the machine definitions, and
+        compute a hash for the public API of this machinepack.
+  - write-pack:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/write-pack.js
+      description: >-
+        Write a machinepack to disk at the specified path using the given
+        metadata.

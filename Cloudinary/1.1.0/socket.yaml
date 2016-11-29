@@ -1,0 +1,28 @@
+name: Cloudinary
+description: SDK for working with Cloudinary platform.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - upload-image:
+      GET:
+        script: upload-image
+  - get-image-urls:
+      GET:
+        script: get-image-urls
+  - delete-image:
+      GET:
+        script: delete-image
+dependencies:
+  - upload-image:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/upload-image.js
+      description: Upload image on Cloudinary (using streams).
+  - get-image-urls:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-image-urls.js
+      description: Get Image URLS from Cloudinary based on Image ID.
+  - delete-image:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/delete-image.js
+      description: Delete an image on Cloudinary.

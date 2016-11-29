@@ -1,0 +1,14 @@
+name: NodejsAustin
+description: Cool stuff for Node.js Austin.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - hello:
+      GET:
+        script: hello
+dependencies:
+  - hello:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/hello.js
+      description: Say hello on the console.

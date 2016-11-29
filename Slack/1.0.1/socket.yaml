@@ -1,0 +1,14 @@
+name: Slack
+description: Use the Slack API via Node machines.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - post-to-channel:
+      GET:
+        script: post-to-channel
+dependencies:
+  - post-to-channel:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/post-to-channel.js
+      description: Post a message to the specified channel in Slack.

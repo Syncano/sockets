@@ -1,0 +1,14 @@
+name: Numbers
+description: Work with numbers.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - to-number:
+      GET:
+        script: to-number
+dependencies:
+  - to-number:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/to-number.js
+      description: Convert the given input string to a number.

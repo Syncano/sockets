@@ -1,0 +1,36 @@
+name: RequestResponse
+description: >-
+  Methods for working with the current incoming request and outgoing response. 
+  Includes everything from accessing an incoming file upload stream, to
+  reading/parsing incoming request headers, to customizing the content type for
+  a file download or other outg
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - get-request-header:
+      GET:
+        script: get-request-header
+  - upload-files:
+      GET:
+        script: upload-files
+  - get-credentials:
+      GET:
+        script: get-credentials
+dependencies:
+  - get-request-header:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-request-header.js
+      description: >-
+        Get the value of the specified request header from the current
+        HTTP/vHTTP request.
+  - upload-files:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/upload-files.js
+      description: >-
+        Upload any incoming files from the current request and write them to
+        your desired destination.
+  - get-credentials:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-credentials.js
+      description: "Parse the username\_and password from HTTP Basic Auth credentials encoded in the current request."

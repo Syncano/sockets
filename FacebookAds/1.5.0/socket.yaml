@@ -1,0 +1,79 @@
+name: FacebookAds
+description: interact with the facebook marketing api
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - get-ad-account-id:
+      GET:
+        script: get-ad-account-id
+  - get-ad-campaigns:
+      GET:
+        script: get-ad-campaigns
+  - get-ads-in-ad-set:
+      GET:
+        script: get-ads-in-ad-set
+  - get-ad-sets-in-campaign:
+      GET:
+        script: get-ad-sets-in-campaign
+  - get-top-ad-in-ad-set:
+      GET:
+        script: get-top-ad-in-ad-set
+  - get-campaign-overview:
+      GET:
+        script: get-campaign-overview
+  - get-campaign-details:
+      GET:
+        script: get-campaign-details
+  - create-ad-set:
+      GET:
+        script: create-ad-set
+  - update-ad-set:
+      GET:
+        script: update-ad-set
+  - create-campaign:
+      GET:
+        script: create-campaign
+dependencies:
+  - get-ad-account-id:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-ad-account-id.js
+      description: get ad account ids for a given user with an access token
+  - get-ad-campaigns:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-ad-campaigns.js
+      description: get ad campaigns for a given ad account
+  - get-ads-in-ad-set:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-ads-in-ad-set.js
+      description: get ads in an ad set with standard metadata
+  - get-ad-sets-in-campaign:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-ad-sets-in-campaign.js
+      description: 'get all ad sets in a campaign, and fetch standard metadata'
+  - get-top-ad-in-ad-set:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-top-ad-in-ad-set.js
+      description: return the best performing ad in ad set
+  - get-campaign-overview:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-campaign-overview.js
+      description: >-
+        return the ad set data, ad data, and ad creative, for all ad sets in
+        campaign
+  - get-campaign-details:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-campaign-details.js
+      description: get data about a specific ad set.
+  - create-ad-set:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/create-ad-set.js
+      description: create an ad set and the creative
+  - update-ad-set:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/update-ad-set.js
+      description: update an ad set
+  - create-campaign:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/create-campaign.js
+      description: create a facebook campaign

@@ -1,0 +1,21 @@
+name: GoogleAPIsDiscoveryService
+description: Work with google aPIs discovery service.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - list:
+      GET:
+        script: list
+  - get-rest:
+      GET:
+        script: get-rest
+dependencies:
+  - list:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/list.js
+      description: Retrieve the list of APIs supported at this endpoint.
+  - get-rest:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-rest.js
+      description: Retrieve the description of a particular version of an api.

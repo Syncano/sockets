@@ -1,0 +1,35 @@
+name: Youtube
+description: 'Communicate with the Youtube API to get video views, etc.'
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - get-play-count:
+      GET:
+        script: get-play-count
+  - parse-video-id:
+      GET:
+        script: parse-video-id
+  - get-base-url:
+      GET:
+        script: get-base-url
+  - search-videos:
+      GET:
+        script: search-videos
+dependencies:
+  - get-play-count:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-play-count.js
+      description: Display the number of views of a Youtube Video.
+  - parse-video-id:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/parse-video-id.js
+      description: Parse the video ID from the provided YouTube.com URL.
+  - get-base-url:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-base-url.js
+      description: Return the base URL for the YouTube API.
+  - search-videos:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/search-videos.js
+      description: List Youtube videos which match the specified search query.

@@ -1,0 +1,14 @@
+name: TwilioLookup
+description: Validate number format
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - format-lookup:
+      GET:
+        script: format-lookup
+dependencies:
+  - format-lookup:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/format-lookup.js
+      description: Reformat numbers provided into local format

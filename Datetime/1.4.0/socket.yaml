@@ -1,0 +1,76 @@
+name: Datetime
+description: Work the dates and times.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - timestamp:
+      GET:
+        script: timestamp
+  - parse-date:
+      GET:
+        script: parse-date
+  - parse-time:
+      GET:
+        script: parse-time
+  - stringify:
+      GET:
+        script: stringify
+  - parse:
+      GET:
+        script: parse
+  - format:
+      GET:
+        script: format
+  - time-from:
+      GET:
+        script: time-from
+  - now:
+      GET:
+        script: now
+  - parse-timestamp:
+      GET:
+        script: parse-timestamp
+dependencies:
+  - timestamp:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/timestamp.js
+      description: Construct an absolute timestamp from structured date/time/timezone data.
+  - parse-date:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/parse-date.js
+      description: Parse a string containing a human-readable date.
+  - parse-time:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/parse-time.js
+      description: Parse a string containing a human-readable time.
+  - stringify:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/stringify.js
+      description: >-
+        Convert a JS timestamp into conventional JSON date/time format (ISO
+        8601)
+  - parse:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/parse.js
+      description: >-
+        Parse a JSON-formatted (ISO 8601) date/time string into a JS timestamp
+        (epoch ms).
+  - format:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/format.js
+      description: Convert a JS timestamp and timezone into a human readable date/time.
+  - time-from:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/time-from.js
+      description: >-
+        Format a human-readable a JS timestamp (epoch ms) and timezone into a
+        human-readable "time from" format (e.g. "6 minutes ago")
+  - now:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/now.js
+      description: Construct a new JS timestamp from the current time.
+  - parse-timestamp:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/parse-timestamp.js
+      description: Expand a JS timestamp into a dictionary of date/time information.

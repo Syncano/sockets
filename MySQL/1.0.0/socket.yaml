@@ -1,0 +1,14 @@
+name: MySQL
+description: Structured Node.js bindings for MySQL.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - create-manager:
+      GET:
+        script: create-manager
+dependencies:
+  - create-manager:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/create-manager.js
+      description: Build and initialize a connection manager instance for this database.

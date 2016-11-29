@@ -1,0 +1,14 @@
+name: PushNotifications
+description: Send push message using Apple's APN and Google's GCM services
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - send-push-notification:
+      GET:
+        script: send-push-notification
+dependencies:
+  - send-push-notification:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/send-push-notification.js
+      description: Send a push notification using APN or GCM

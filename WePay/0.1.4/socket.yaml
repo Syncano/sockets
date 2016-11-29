@@ -1,0 +1,134 @@
+name: WePay
+description: >-
+  Communicate with WePay API to register users, create accounts and accept
+  payments.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - app-details:
+      GET:
+        script: app-details
+  - user-details:
+      GET:
+        script: user-details
+  - user-callback:
+      GET:
+        script: user-callback
+  - account-create:
+      GET:
+        script: account-create
+  - account-details:
+      GET:
+        script: account-details
+  - account-find:
+      GET:
+        script: account-find
+  - account-modify:
+      GET:
+        script: account-modify
+  - account-delete:
+      GET:
+        script: account-delete
+  - account-get-uri:
+      GET:
+        script: account-get-uri
+  - checkout-create:
+      GET:
+        script: checkout-create
+  - checkout-capture:
+      GET:
+        script: checkout-capture
+  - user-register:
+      GET:
+        script: user-register
+  - user-confirm:
+      GET:
+        script: user-confirm
+  - checkout-find:
+      GET:
+        script: checkout-find
+  - checkout-refund:
+      GET:
+        script: checkout-refund
+  - checkout-details:
+      GET:
+        script: checkout-details
+  - checkout-cancel:
+      GET:
+        script: checkout-cancel
+dependencies:
+  - app-details:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/app-details.js
+      description: Get details about a WePay application.
+  - user-details:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/user-details.js
+      description: Look up details about a user by access token.
+  - user-callback:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/user-callback.js
+      description: Add callback_uri to user.
+  - account-create:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/account-create.js
+      description: Create a new payment account.
+  - account-details:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/account-details.js
+      description: Look up the details of a payment account on WePay.
+  - account-find:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/account-find.js
+      description: >-
+        Find existing payment accounts. No params for all accounts by access
+        token.
+  - account-modify:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/account-modify.js
+      description: Modify an existing payment account.
+  - account-delete:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/account-delete.js
+      description: Delete an existing payment account.
+  - account-get-uri:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/account-get-uri.js
+      description: Get account URI to update account at WePay.
+  - checkout-create:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/checkout-create.js
+      description: Create a checkout for an account.
+  - checkout-capture:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/checkout-capture.js
+      description: Capture a checkout that was not auto captured.
+  - user-register:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/user-register.js
+      description: Register a new user account that can accept payments.
+  - user-confirm:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/user-confirm.js
+      description: Send confirmation email to users registered with Register User machine.
+  - checkout-find:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/checkout-find.js
+      description: >-
+        Search for checkouts associated with an account. Returns an array of
+        matching checkouts.
+  - checkout-refund:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/checkout-refund.js
+      description: >-
+        Refunds the payment associated with the checkout created by the
+        application. Checkout must be in "captured" state.
+  - checkout-details:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/checkout-details.js
+      description: Get details about a checkout.
+  - checkout-cancel:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/checkout-cancel.js
+      description: Cancel a checkout.

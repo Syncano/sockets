@@ -1,0 +1,21 @@
+name: JWT
+description: Work with JSON Web Tokens.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - encode:
+      GET:
+        script: encode
+  - decode:
+      GET:
+        script: decode
+dependencies:
+  - encode:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/encode.js
+      description: Encode a JWT.
+  - decode:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/decode.js
+      description: Decode a JWT.

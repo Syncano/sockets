@@ -1,0 +1,14 @@
+name: GoogleAPIsDeveloperFonts
+description: Work with google aPIs developer fonts.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - list:
+      GET:
+        script: list
+dependencies:
+  - list:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/list.js
+      description: List Web Fonts

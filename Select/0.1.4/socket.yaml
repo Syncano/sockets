@@ -1,0 +1,49 @@
+name: Select
+description: 'Select first, last or a slice of an array'
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - first:
+      GET:
+        script: first
+  - last:
+      GET:
+        script: last
+  - slice:
+      GET:
+        script: slice
+  - take:
+      GET:
+        script: take
+  - takeRight:
+      GET:
+        script: takeRight
+  - sample:
+      GET:
+        script: sample
+dependencies:
+  - first:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/first.js
+      description: Get the first elementement
+  - last:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/last.js
+      description: Get the last element
+  - slice:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/slice.js
+      description: Get a slice of an array
+  - take:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/take.js
+      description: Slice of array with n elements taken from the start
+  - takeRight:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/takeRight.js
+      description: Slice of array with n elements taken from the end
+  - sample:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/sample.js
+      description: Get a random sample from the list

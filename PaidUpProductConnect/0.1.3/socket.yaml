@@ -1,0 +1,21 @@
+name: PaidUpProductConnect
+description: Connector for payment microservice
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - category-retrieve:
+      GET:
+        script: category-retrieve
+  - product-retrieve:
+      GET:
+        script: product-retrieve
+dependencies:
+  - category-retrieve:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/category-retrieve.js
+      description: Retrieve categories of products
+  - product-retrieve:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/product-retrieve.js
+      description: Retrieve product by Id

@@ -1,0 +1,14 @@
+name: LESS
+description: Work with LESS stylesheets.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - compile-stylesheet:
+      GET:
+        script: compile-stylesheet
+dependencies:
+  - compile-stylesheet:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/compile-stylesheet.js
+      description: Compile a LESS stylesheet to CSS.

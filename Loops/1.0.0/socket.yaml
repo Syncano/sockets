@@ -1,0 +1,21 @@
+name: Loops
+description: Machines that allow the use of other machines in a loop.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - map:
+      GET:
+        script: map
+  - each:
+      GET:
+        script: each
+dependencies:
+  - map:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/map.js
+      description: Iterate over each item of an array to build a new transformed array.
+  - each:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/each.js
+      description: Run a given machine on each item of an array.

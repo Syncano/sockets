@@ -1,0 +1,44 @@
+name: FullContact
+description: Interact with the FullContact.com API
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - get-person-from-email:
+      GET:
+        script: get-person-from-email
+  - get-person-from-twitter:
+      GET:
+        script: get-person-from-twitter
+  - get-person-from-phone:
+      GET:
+        script: get-person-from-phone
+  - get-person-from-email-md5:
+      GET:
+        script: get-person-from-email-md5
+  - get-person-from-facebook:
+      GET:
+        script: get-person-from-facebook
+dependencies:
+  - get-person-from-email:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-person-from-email.js
+      description: Retrieves contact information by e-mail address.
+  - get-person-from-twitter:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-person-from-twitter.js
+      description: Retrieves contact information by Twitter username.
+  - get-person-from-phone:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-person-from-phone.js
+      description: Retrieves contact information by phone number.
+  - get-person-from-email-md5:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-person-from-email-md5.js
+      description: Retrieves contact information by an MD5 of an email address
+  - get-person-from-facebook:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-person-from-facebook.js
+      description: >-
+        Retrieve more information about a specific person by facebook username
+        or facebook ID

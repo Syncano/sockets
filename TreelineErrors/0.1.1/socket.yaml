@@ -1,0 +1,14 @@
+name: TreelineErrors
+description: Tools for handling Treeline errors in userland applications and packages.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - broken-route-page:
+      GET:
+        script: broken-route-page
+dependencies:
+  - broken-route-page:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/broken-route-page.js
+      description: Get the HTML for a page explaining that there was a compile error.

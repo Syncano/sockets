@@ -1,0 +1,14 @@
+name: Glassdoor
+description: Communicate with the Glassdoor API
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - get-company:
+      GET:
+        script: get-company
+dependencies:
+  - get-company:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-company.js
+      description: Get company information

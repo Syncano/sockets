@@ -1,0 +1,30 @@
+name: Authentication
+description: >-
+  Support for login, logout, and authentication via encrypted cookies and a
+  session store.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - login:
+      GET:
+        script: login
+  - logout:
+      GET:
+        script: logout
+  - check-login:
+      GET:
+        script: check-login
+dependencies:
+  - login:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/login.js
+      description: Log in as the specified user.
+  - logout:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/logout.js
+      description: Log the current user session out.
+  - check-login:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/check-login.js
+      description: Check whether the current user is logged in.

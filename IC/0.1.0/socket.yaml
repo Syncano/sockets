@@ -1,0 +1,14 @@
+name: IC
+description: Communicate with Interaction Center® servers via the ICWS API
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - connect:
+      GET:
+        script: connect
+dependencies:
+  - connect:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/connect.js
+      description: Connect to an Interaction Center® server

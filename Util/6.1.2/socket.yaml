@@ -1,0 +1,46 @@
+name: Util
+description: >-
+  Miscellaneous utilities for everyday tasks with arrays, dictionaries, strings,
+  etc.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - log:
+      GET:
+        script: log
+  - hash:
+      GET:
+        script: hash
+  - inspect:
+      GET:
+        script: inspect
+  - coalesce:
+      GET:
+        script: coalesce
+  - require:
+      GET:
+        script: require
+dependencies:
+  - log:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/log.js
+      description: Output a message to the console
+  - hash:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/hash.js
+      description: Generate unique string from the provided value.
+  - inspect:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/inspect.js
+      description: Pretty-print any value into a more-readable string.
+  - coalesce:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/coalesce.js
+      description: 'Return the first value if it is defined, otherwise the second.'
+  - require:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/require.js
+      description: >-
+        Load (`require()`) a Node.js module located at the specified path and
+        return whatever it exports.

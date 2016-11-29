@@ -1,0 +1,21 @@
+name: PaidUpScheduleConnect
+description: Connector from TDSchedule
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - calculate-price:
+      GET:
+        script: calculate-price
+  - calculate-prices:
+      GET:
+        script: calculate-prices
+dependencies:
+  - calculate-price:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/calculate-price.js
+      description: Calculate price for a product
+  - calculate-prices:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/calculate-prices.js
+      description: Calculate prices for a product

@@ -1,0 +1,21 @@
+name: BRREG
+description: Return info about Norwegian company based on company-ID
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - get-number:
+      GET:
+        script: get-number
+  - get-name:
+      GET:
+        script: get-name
+dependencies:
+  - get-number:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-number.js
+      description: Get company by ID
+  - get-name:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-name.js
+      description: Get company by name

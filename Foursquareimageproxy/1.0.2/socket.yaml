@@ -1,0 +1,14 @@
+name: Foursquareimageproxy
+description: proxy images of a foursquare venue based on its foursqaure id
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - best:
+      GET:
+        script: best
+dependencies:
+  - best:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/best.js
+      description: get the best image of a venue based on the foursqaure id

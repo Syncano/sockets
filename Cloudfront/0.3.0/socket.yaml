@@ -1,0 +1,21 @@
+name: Cloudfront
+description: Node.js wrapper for AWS CloudFront.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - sign-cloudfront-url:
+      GET:
+        script: sign-cloudfront-url
+  - invalidate-paths:
+      GET:
+        script: invalidate-paths
+dependencies:
+  - sign-cloudfront-url:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/sign-cloudfront-url.js
+      description: Sign an Amazon CloudFront URL.
+  - invalidate-paths:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/invalidate-paths.js
+      description: Invalidate one or more paths within a CloudFront distribution.

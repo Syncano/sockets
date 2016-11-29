@@ -1,0 +1,28 @@
+name: HTTP
+description: Send an HTTP request.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - fetch-webpage-html:
+      GET:
+        script: fetch-webpage-html
+  - send-http-request:
+      GET:
+        script: send-http-request
+  - negotiate-http-status:
+      GET:
+        script: negotiate-http-status
+dependencies:
+  - fetch-webpage-html:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/fetch-webpage-html.js
+      description: Fetch the HTML from a web page.
+  - send-http-request:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/send-http-request.js
+      description: Send an HTTP request and receive the response.
+  - negotiate-http-status:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/negotiate-http-status.js
+      description: Trigger a specific exit based on the provided HTTP status code.

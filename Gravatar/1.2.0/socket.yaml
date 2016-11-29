@@ -1,0 +1,14 @@
+name: Gravatar
+description: Communicate with the Gravatar api to get a gravatar image.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - get-image-url:
+      GET:
+        script: get-image-url
+dependencies:
+  - get-image-url:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-image-url.js
+      description: Build the URL of a gravatar image for a particular email address.

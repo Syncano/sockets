@@ -1,0 +1,35 @@
+name: Timetask
+description: 'Communicate with the Timetask API to get times, projects, etc.'
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - get:
+      GET:
+        script: get
+  - add:
+      GET:
+        script: add
+  - remove:
+      GET:
+        script: remove
+  - update:
+      GET:
+        script: update
+dependencies:
+  - get:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get.js
+      description: 'List all or one (project, client, person, ...)'
+  - add:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/add.js
+      description: 'Add (project, task, time,...)'
+  - remove:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/remove.js
+      description: 'Remove (project, task, time,...)'
+  - update:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/update.js
+      description: 'Update (project, task, time,...)'

@@ -1,0 +1,37 @@
+name: Git
+description: Machines for working with the `git` command line interface.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - clone:
+      GET:
+        script: clone
+  - status:
+      GET:
+        script: status
+  - pull-or-clone:
+      GET:
+        script: pull-or-clone
+  - pull:
+      GET:
+        script: pull
+dependencies:
+  - clone:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/clone.js
+      description: Clone a remote git repository into a new local directory.
+  - status:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/status.js
+      description: Get the current "working tree status" of a local git repo.
+  - pull-or-clone:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/pull-or-clone.js
+      description: >-
+        Clone a git repo to a folder on disk (or if the folder already exists,
+        just pull)
+  - pull:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/pull.js
+      description: Fetch from and integrate with a git repository or a local branch

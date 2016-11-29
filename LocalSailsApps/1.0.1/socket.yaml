@@ -1,0 +1,52 @@
+name: LocalSailsApps
+description: Work with a local Sails.js app.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - deduce-controllers:
+      GET:
+        script: deduce-controllers
+  - get-signature:
+      GET:
+        script: get-signature
+  - build-routes-config:
+      GET:
+        script: build-routes-config
+  - build-controller:
+      GET:
+        script: build-controller
+  - build-model:
+      GET:
+        script: build-model
+dependencies:
+  - deduce-controllers:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/deduce-controllers.js
+      description: >-
+        Determine the conventional controller+action to use for the given set of
+        routes.
+  - get-signature:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-signature.js
+      description: >-
+        Lookup top-level metadata, dehydrate the machine definitions, and
+        compute a hash for the public API of this app.
+  - build-routes-config:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/build-routes-config.js
+      description: >-
+        Generate a JavaScript code string for the `config/routes.js` file (i.e.
+        in a Sails.js app.)
+  - build-controller:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/build-controller.js
+      description: >-
+        Build a JavaScript code string for a Sails.js controller using the
+        provided metadata.
+  - build-model:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/build-model.js
+      description: >-
+        Build a JavaScript code string for a Sails.js model using the provided
+        metadata.

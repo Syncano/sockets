@@ -1,0 +1,16 @@
+name: Email
+description: >-
+  Simply send an email with nodemailer/email-templates (includes support for
+  HTML email templates).
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - send:
+      GET:
+        script: send
+dependencies:
+  - send:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/send.js
+      description: 'Send an email, either in plaintext or from an HTML template.'

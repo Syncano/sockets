@@ -1,0 +1,161 @@
+name: Strings
+description: Work with strings.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - match:
+      GET:
+        script: match
+  - construct:
+      GET:
+        script: construct
+  - capitalize:
+      GET:
+        script: capitalize
+  - length:
+      GET:
+        script: length
+  - trunc:
+      GET:
+        script: trunc
+  - trim:
+      GET:
+        script: trim
+  - replace:
+      GET:
+        script: replace
+  - split:
+      GET:
+        script: split
+  - deburr:
+      GET:
+        script: deburr
+  - slice:
+      GET:
+        script: slice
+  - at:
+      GET:
+        script: at
+  - join:
+      GET:
+        script: join
+  - template:
+      GET:
+        script: template
+  - ensure-uniq:
+      GET:
+        script: ensure-uniq
+  - to-stream:
+      GET:
+        script: to-stream
+  - random:
+      GET:
+        script: random
+  - to-lower-case:
+      GET:
+        script: to-lower-case
+  - to-upper-case:
+      GET:
+        script: to-upper-case
+  - to-kebab-case:
+      GET:
+        script: to-kebab-case
+  - to-camel-case:
+      GET:
+        script: to-camel-case
+dependencies:
+  - match:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/match.js
+      description: Search a string using a regular expression and return the first match.
+  - construct:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/construct.js
+      description: 'Cast the specified value to a string, if it isn''t one already.'
+  - capitalize:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/capitalize.js
+      description: Capitalize the first (or any) letter in a string.
+  - length:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/length.js
+      description: Determine the length of a string (i.e. count the number of characters)
+  - trunc:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/trunc.js
+      description: >-
+        If the string is longer than the given maximum length, chop off
+        characters from the end.
+  - trim:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/trim.js
+      description: Trim trailing and leading whitespace from a string.
+  - replace:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/replace.js
+      description: >-
+        Replace parts of a string that match a given regular expression with the
+        specified replacement.
+  - split:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/split.js
+      description: Split a string into an array of strings using a regular expression.
+  - deburr:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/deburr.js
+      description: >-
+        Replace special alphabetical characters such as umlauts and accents with
+        their basic, boring equivalents.
+  - slice:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/slice.js
+      description: Get a substring of consecutive characters from the string.
+  - at:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/at.js
+      description: Get a character from a string at a particular position.
+  - join:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/join.js
+      description: Combine an array of strings into one new string.
+  - template:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/template.js
+      description: Render some data into a template string.
+  - ensure-uniq:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/ensure-uniq.js
+      description: >-
+        Make a unique, but still human-readable, version of a string vs. a set
+        of existing strings by adding a number to the end.
+  - to-stream:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/to-stream.js
+      description: Convert a string into a readable stream of data.
+  - random:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/random.js
+      description: >-
+        Generate a random, alphanumeric string which is
+        probabalistically-unique.
+  - to-lower-case:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/to-lower-case.js
+      description: Convert all uppercase letters to lowercase in the specified string.
+  - to-upper-case:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/to-upper-case.js
+      description: Convert all lowercase letters to uppercase in the specified string.
+  - to-kebab-case:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/to-kebab-case.js
+      description: >-
+        Convert a string to kebab-case (dashes instead of
+        spaces/underscores/varying capitalization).
+  - to-camel-case:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/to-camel-case.js
+      description: >-
+        Convert a string to camel-case (varying capitalization instead of
+        spaces/underscores/dashes).

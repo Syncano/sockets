@@ -1,0 +1,42 @@
+name: Infoblox
+description: Make rest calls for the Infoblox WAPI
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  - get-host:
+      GET:
+        script: get-host
+  - get-subnet:
+      GET:
+        script: get-subnet
+  - get-next-available-ip:
+      GET:
+        script: get-next-available-ip
+  - get-network-ref:
+      GET:
+        script: get-network-ref
+  - get-record:
+      GET:
+        script: get-record
+dependencies:
+  - get-host:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-host.js
+      description: Make calls to Infoblox API
+  - get-subnet:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-subnet.js
+      description: Get subnet by extensible attribute.
+  - get-next-available-ip:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-next-available-ip.js
+      description: Get the next available IP-address(es) from a subnet
+  - get-network-ref:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-network-ref.js
+      description: Get the 'ref-ID' for a given subnet
+  - get-record:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/get-record.js
+      description: Make calls to Infoblox API
