@@ -6,34 +6,21 @@ author:
 endpoints:
   get-connection:
     POST:
-      script: get-connection
+      file: scripts/get-connection.js
+      description: Get an active connection to Redis.
   release-connection:
     POST:
-      script: release-connection
+      file: scripts/release-connection.js
+      description: Close an active connection to the Redis server.
   create-manager:
     POST:
-      script: create-manager
+      file: scripts/create-manager.js
+      description: >-
+        Build and initialize a connection manager instance for this Redis
+        database.
   destroy-manager:
     POST:
-      script: destroy-manager
-dependencies:
-  get-connection:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-connection.js
-    description: Get an active connection to Redis.
-  release-connection:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/release-connection.js
-    description: Close an active connection to the Redis server.
-  create-manager:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/create-manager.js
-    description: >-
-      Build and initialize a connection manager instance for this Redis
-      database.
-  destroy-manager:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/destroy-manager.js
-    description: >-
-      Destroy the specified connection manager and destroy all of its active
-      connections.
+      file: scripts/destroy-manager.js
+      description: >-
+        Destroy the specified connection manager and destroy all of its active
+        connections.

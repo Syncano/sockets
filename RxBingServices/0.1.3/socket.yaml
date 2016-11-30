@@ -6,11 +6,7 @@ author:
 endpoints:
   whats-around-me:
     POST:
-      script: whats-around-me
-dependencies:
-  whats-around-me:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/whats-around-me.js
-    description: >-
-      Bing Spatial Data Service: collects all entities around a specified geo
-      location
+      file: scripts/whats-around-me.js
+      description: >-
+        Bing Spatial Data Service: collects all entities around a specified geo
+        location

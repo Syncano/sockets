@@ -6,25 +6,15 @@ author:
 endpoints:
   compile-to-html-file-from-md-file:
     POST:
-      script: compile-to-html-file-from-md-file
+      file: scripts/compile-to-html-file-from-md-file.js
+      description: >-
+        Load a markdown file from disk, compile to HTML, then save it back to
+        disk.
   parse-docmeta-tags:
     POST:
-      script: parse-docmeta-tags
+      file: scripts/parse-docmeta-tags.js
+      description: Parse data encoded via <docmeta> tags in a Markdown string.
   compile-to-html:
     POST:
-      script: compile-to-html
-dependencies:
-  compile-to-html-file-from-md-file:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/compile-to-html-file-from-md-file.js
-    description: >-
-      Load a markdown file from disk, compile to HTML, then save it back to
-      disk.
-  parse-docmeta-tags:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/parse-docmeta-tags.js
-    description: Parse data encoded via <docmeta> tags in a Markdown string.
-  compile-to-html:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/compile-to-html.js
-    description: Compile a Markdown string into an HTML string.
+      file: scripts/compile-to-html.js
+      description: Compile a Markdown string into an HTML string.

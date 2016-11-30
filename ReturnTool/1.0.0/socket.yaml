@@ -8,16 +8,9 @@ author:
 endpoints:
   return-object:
     POST:
-      script: return-object
+      file: scripts/return-object.js
+      description: Return an Object varible generated earlier in the circuit.
   return-string:
     POST:
-      script: return-string
-dependencies:
-  return-object:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/return-object.js
-    description: Return an Object varible generated earlier in the circuit.
-  return-string:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/return-string.js
-    description: Return a string varible generated earlier in the circuit.
+      file: scripts/return-string.js
+      description: Return a string varible generated earlier in the circuit.

@@ -6,32 +6,19 @@ author:
 endpoints:
   clone:
     POST:
-      script: clone
+      file: scripts/clone.js
+      description: Clone a remote git repository into a new local directory.
   status:
     POST:
-      script: status
+      file: scripts/status.js
+      description: Get the current "working tree status" of a local git repo.
   pull-or-clone:
     POST:
-      script: pull-or-clone
+      file: scripts/pull-or-clone.js
+      description: >-
+        Clone a git repo to a folder on disk (or if the folder already exists,
+        just pull)
   pull:
     POST:
-      script: pull
-dependencies:
-  clone:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/clone.js
-    description: Clone a remote git repository into a new local directory.
-  status:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/status.js
-    description: Get the current "working tree status" of a local git repo.
-  pull-or-clone:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/pull-or-clone.js
-    description: >-
-      Clone a git repo to a folder on disk (or if the folder already exists,
-      just pull)
-  pull:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/pull.js
-    description: Fetch from and integrate with a git repository or a local branch
+      file: scripts/pull.js
+      description: Fetch from and integrate with a git repository or a local branch

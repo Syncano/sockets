@@ -6,93 +6,53 @@ author:
 endpoints:
   list-apps:
     POST:
-      script: list-apps
+      file: scripts/list-apps.js
+      description: Lists applications visible to the current user.
   login:
     POST:
-      script: login
+      file: scripts/login.js
+      description: Logs in by authenticating against a controller.
   create-app:
     POST:
-      script: create-app
+      file: scripts/create-app.js
+      description: Creates a new application.
   destroy-app:
     POST:
-      script: destroy-app
+      file: scripts/destroy-app.js
+      description: Destroys an application.
   set-config:
     POST:
-      script: set-config
+      file: scripts/set-config.js
+      description: Set environment variables for an app
   unset-config:
     POST:
-      script: unset-config
+      file: scripts/unset-config.js
+      description: Unsets an environment variable for an application.
   create-build:
     POST:
-      script: create-build
+      file: scripts/create-build.js
+      description: Creates a new build of an application.
   list-processes:
     POST:
-      script: list-processes
+      file: scripts/list-processes.js
+      description: Lists processes servicing an application.
   scale-process:
     POST:
-      script: scale-process
+      file: scripts/scale-process.js
+      description: Scales an application's processes by type.
   set-limit:
     POST:
-      script: set-limit
+      file: scripts/set-limit.js
+      description: Sets resource limits for an application.
   unset-limit:
     POST:
-      script: unset-limit
+      file: scripts/unset-limit.js
+      description: Unsets resource limits for an application.
   list-limits:
     POST:
-      script: list-limits
+      file: scripts/list-limits.js
+      description: Lists resource limits for an application.
   list-config:
     POST:
-      script: list-config
-dependencies:
-  list-apps:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/list-apps.js
-    description: Lists applications visible to the current user.
-  login:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/login.js
-    description: Logs in by authenticating against a controller.
-  create-app:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/create-app.js
-    description: Creates a new application.
-  destroy-app:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/destroy-app.js
-    description: Destroys an application.
-  set-config:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/set-config.js
-    description: Set environment variables for an app
-  unset-config:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/unset-config.js
-    description: Unsets an environment variable for an application.
-  create-build:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/create-build.js
-    description: Creates a new build of an application.
-  list-processes:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/list-processes.js
-    description: Lists processes servicing an application.
-  scale-process:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/scale-process.js
-    description: Scales an application's processes by type.
-  set-limit:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/set-limit.js
-    description: Sets resource limits for an application.
-  unset-limit:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/unset-limit.js
-    description: Unsets resource limits for an application.
-  list-limits:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/list-limits.js
-    description: Lists resource limits for an application.
-  list-config:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/list-config.js
-    description: Lists environment variables for an application.
+      file: scripts/list-config.js
+      description: Lists environment variables for an application.

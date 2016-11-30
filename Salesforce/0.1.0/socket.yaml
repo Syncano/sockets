@@ -6,57 +6,39 @@ author:
 endpoints:
   get-login-url:
     POST:
-      script: get-login-url
+      file: scripts/get-login-url.js
+      description: >-
+        Get the URL on salesforce.com that a user should visit to allow/deny the
+        specified Salesforce Developer app (i.e. your app).
   get-access-token:
     POST:
-      script: get-access-token
+      file: scripts/get-access-token.js
+      description: >-
+        Generate a new access token for acting on behalf of a particular
+        Salesforce user account.
   get-user-by-access-token:
     POST:
-      script: get-user-by-access-token
+      file: scripts/get-user-by-access-token.js
+      description: >-
+        Get information about the Salesforce user with the specified access
+        token.
   get-object-by-id:
     POST:
-      script: get-object-by-id
+      file: scripts/get-object-by-id.js
+      description: Get a salseforce object by Id. Returns the entire object.
   create-object:
     POST:
-      script: create-object
+      file: scripts/create-object.js
+      description: >-
+        Create a salseforce object given object properties. Returns new object
+        Id
   update-object-by-id:
     POST:
-      script: update-object-by-id
+      file: scripts/update-object-by-id.js
+      description: Update a salseforce object given Id and new values.
   describe-object-type:
     POST:
-      script: describe-object-type
-dependencies:
-  get-login-url:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-login-url.js
-    description: >-
-      Get the URL on salesforce.com that a user should visit to allow/deny the
-      specified Salesforce Developer app (i.e. your app).
-  get-access-token:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-access-token.js
-    description: >-
-      Generate a new access token for acting on behalf of a particular
-      Salesforce user account.
-  get-user-by-access-token:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-user-by-access-token.js
-    description: Get information about the Salesforce user with the specified access token.
-  get-object-by-id:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-object-by-id.js
-    description: Get a salseforce object by Id. Returns the entire object.
-  create-object:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/create-object.js
-    description: Create a salseforce object given object properties. Returns new object Id
-  update-object-by-id:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/update-object-by-id.js
-    description: Update a salseforce object given Id and new values.
-  describe-object-type:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/describe-object-type.js
-    description: >-
-      Describe a salseforce object type. Returns all the fields and values for
-      type.
+      file: scripts/describe-object-type.js
+      description: >-
+        Describe a salseforce object type. Returns all the fields and values for
+        type.

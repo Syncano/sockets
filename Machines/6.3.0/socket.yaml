@@ -6,18 +6,11 @@ author:
 endpoints:
   run-instantiated-machine:
     POST:
-      script: run-instantiated-machine
+      file: scripts/run-instantiated-machine.js
+      description: >-
+        Run a machine which is already instantiated using the provided input
+        values.
   validate:
     POST:
-      script: validate
-dependencies:
-  run-instantiated-machine:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/run-instantiated-machine.js
-    description: >-
-      Run a machine which is already instantiated using the provided input
-      values.
-  validate:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/validate.js
-    description: Validate the specified machine definition.
+      file: scripts/validate.js
+      description: Validate the specified machine definition.

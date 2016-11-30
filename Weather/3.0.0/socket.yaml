@@ -6,18 +6,11 @@ author:
 endpoints:
   get-current-forecast:
     POST:
-      script: get-current-forecast
+      file: scripts/get-current-forecast.js
+      description: Get the current weather at a specific latitude and longitude.
   get-forecast:
     POST:
-      script: get-forecast
-dependencies:
-  get-current-forecast:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-current-forecast.js
-    description: Get the current weather at a specific latitude and longitude.
-  get-forecast:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-forecast.js
-    description: >-
-      Retrieves the forecast of a specific latitude and longitude at a specific
-      time
+      file: scripts/get-forecast.js
+      description: >-
+        Retrieves the forecast of a specific latitude and longitude at a
+        specific time

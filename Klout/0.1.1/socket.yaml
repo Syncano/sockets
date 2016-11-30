@@ -6,16 +6,9 @@ author:
 endpoints:
   get-klout-id:
     POST:
-      script: get-klout-id
+      file: scripts/get-klout-id.js
+      description: Get the Klout Id from a Twitter screen name.
   get-klout-score:
     POST:
-      script: get-klout-score
-dependencies:
-  get-klout-id:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-klout-id.js
-    description: Get the Klout Id from a Twitter screen name.
-  get-klout-score:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-klout-score.js
-    description: Get the Klout score of a Klout Id.
+      file: scripts/get-klout-score.js
+      description: Get the Klout score of a Klout Id.

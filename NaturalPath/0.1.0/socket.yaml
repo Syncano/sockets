@@ -6,16 +6,9 @@ author:
 endpoints:
   convert:
     POST:
-      script: convert
+      file: scripts/convert.js
+      description: Convert Natural Language to file system path
   resolve:
     POST:
-      script: resolve
-dependencies:
-  convert:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/convert.js
-    description: Convert Natural Language to file system path
-  resolve:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/resolve.js
-    description: Resolve list of directory names to file system path
+      file: scripts/resolve.js
+      description: Resolve list of directory names to file system path

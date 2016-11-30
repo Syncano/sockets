@@ -8,16 +8,9 @@ author:
 endpoints:
   get-venue:
     POST:
-      script: get-venue
+      file: scripts/get-venue.js
+      description: Get a single venue based on ID
   list-venues:
     POST:
-      script: list-venues
-dependencies:
-  get-venue:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-venue.js
-    description: Get a single venue based on ID
-  list-venues:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/list-venues.js
-    description: List Venues in an specific area
+      file: scripts/list-venues.js
+      description: List Venues in an specific area

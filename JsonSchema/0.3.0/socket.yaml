@@ -6,9 +6,5 @@ author:
 endpoints:
   validate:
     POST:
-      script: validate
-dependencies:
-  validate:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/validate.js
-    description: Validate some json data against a schema.
+      file: scripts/validate.js
+      description: Validate some json data against a schema.

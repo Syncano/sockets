@@ -6,18 +6,11 @@ author:
 endpoints:
   get-configuration:
     POST:
-      script: get-configuration
+      file: scripts/get-configuration.js
+      description: Retrieve the value of the specified Sails configuration setting.
   is-production:
     POST:
-      script: is-production
-dependencies:
-  get-configuration:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-configuration.js
-    description: Retrieve the value of the specified Sails configuration setting.
-  is-production:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/is-production.js
-    description: >-
-      Determine whether a Sails application is running in the production
-      environment.
+      file: scripts/is-production.js
+      description: >-
+        Determine whether a Sails application is running in the production
+        environment.

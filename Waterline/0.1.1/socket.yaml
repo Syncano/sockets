@@ -8,30 +8,20 @@ author:
 endpoints:
   connect:
     POST:
-      script: connect
+      file: scripts/connect.js
+      description: >-
+        Lease a database connection, perform some logic, then release it back
+        from whence it came.
   query:
     POST:
-      script: query
+      file: scripts/query.js
+      description: >-
+        Compile a radar query statement into the native dialect for a database,
+        then send the native query.
   transaction:
     POST:
-      script: transaction
-dependencies:
-  connect:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/connect.js
-    description: >-
-      Lease a database connection, perform some logic, then release it back from
-      whence it came.
-  query:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/query.js
-    description: >-
-      Compile a radar query statement into the native dialect for a database,
-      then send the native query.
-  transaction:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/transaction.js
-    description: >-
-      Begin a transaction, perform some logic, then either commit the
-      transaction if everything worked, or roll it back if there were any
-      errors.
+      file: scripts/transaction.js
+      description: >-
+        Begin a transaction, perform some logic, then either commit the
+        transaction if everything worked, or roll it back if there were any
+        errors.

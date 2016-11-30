@@ -6,9 +6,5 @@ author:
 endpoints:
   select:
     POST:
-      script: select
-dependencies:
-  select:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/select.js
-    description: select item in a list
+      file: scripts/select.js
+      description: select item in a list

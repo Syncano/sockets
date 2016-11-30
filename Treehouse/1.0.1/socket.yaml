@@ -6,9 +6,5 @@ author:
 endpoints:
   get-user-profile:
     POST:
-      script: get-user-profile
-dependencies:
-  get-user-profile:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-user-profile.js
-    description: Get a user's Treehouse profile information.
+      file: scripts/get-user-profile.js
+      description: Get a user's Treehouse profile information.

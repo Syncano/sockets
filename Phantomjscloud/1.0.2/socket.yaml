@@ -6,9 +6,5 @@ author:
 endpoints:
   render-pages:
     POST:
-      script: render-pages
-dependencies:
-  render-pages:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/render-pages.js
-    description: Get the browser-rendered version of the web pages at the specified URLs.
+      file: scripts/render-pages.js
+      description: Get the browser-rendered version of the web pages at the specified URLs.

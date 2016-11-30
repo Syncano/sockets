@@ -6,9 +6,5 @@ author:
 endpoints:
   prompt:
     POST:
-      script: prompt
-dependencies:
-  prompt:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/prompt.js
-    description: Simple prompt
+      file: scripts/prompt.js
+      description: Simple prompt

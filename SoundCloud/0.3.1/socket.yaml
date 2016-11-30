@@ -8,27 +8,17 @@ author:
 endpoints:
   get-access-token:
     POST:
-      script: get-access-token
+      file: scripts/get-access-token.js
+      description: >-
+        Generate a new access token for acting on behalf of a particular
+        SoundCloud user account.
   get-login-url:
     POST:
-      script: get-login-url
+      file: scripts/get-login-url.js
+      description: >-
+        Get the URL on SoundCloud that a user should visit to authorize the
+        specified SoundCloud app (i.e. your app).
   get-current-user:
     POST:
-      script: get-current-user
-dependencies:
-  get-access-token:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-access-token.js
-    description: >-
-      Generate a new access token for acting on behalf of a particular
-      SoundCloud user account.
-  get-login-url:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-login-url.js
-    description: >-
-      Get the URL on SoundCloud that a user should visit to authorize the
-      specified SoundCloud app (i.e. your app).
-  get-current-user:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-current-user.js
-    description: Get the SoundCloud profile data for a user by access token.
+      file: scripts/get-current-user.js
+      description: Get the SoundCloud profile data for a user by access token.

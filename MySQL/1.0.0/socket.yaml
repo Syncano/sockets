@@ -6,9 +6,5 @@ author:
 endpoints:
   create-manager:
     POST:
-      script: create-manager
-dependencies:
-  create-manager:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/create-manager.js
-    description: Build and initialize a connection manager instance for this database.
+      file: scripts/create-manager.js
+      description: Build and initialize a connection manager instance for this database.

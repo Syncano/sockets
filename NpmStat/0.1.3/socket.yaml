@@ -6,9 +6,5 @@ author:
 endpoints:
   get-stats:
     POST:
-      script: get-stats
-dependencies:
-  get-stats:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-stats.js
-    description: Fetch download stats for the specified NPM package and date range.
+      file: scripts/get-stats.js
+      description: Fetch download stats for the specified NPM package and date range.

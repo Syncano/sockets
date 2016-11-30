@@ -8,9 +8,5 @@ author:
 endpoints:
   send:
     POST:
-      script: send
-dependencies:
-  send:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/send.js
-    description: 'Send an email, either in plaintext or from an HTML template.'
+      file: scripts/send.js
+      description: 'Send an email, either in plaintext or from an HTML template.'

@@ -6,55 +6,33 @@ author:
 endpoints:
   if-defined:
     POST:
-      script: if-defined
+      file: scripts/if-defined.js
+      description: Determine whether the value is defined.
   if-less-than:
     POST:
-      script: if-less-than
+      file: scripts/if-less-than.js
+      description: Determine whether the first value is less than the second.
   if-greater-than:
     POST:
-      script: if-greater-than
+      file: scripts/if-greater-than.js
+      description: Determine whether the first value is greater than the second.
   if-equal:
     POST:
-      script: if-equal
+      file: scripts/if-equal.js
+      description: Determine whether the first value is equivalent to the second.
   if-between:
     POST:
-      script: if-between
+      file: scripts/if-between.js
+      description: Check that a value is within the specified range (inclusive).
   if-then-finally:
     POST:
-      script: if-then-finally
+      file: scripts/if-then-finally.js
+      description: >-
+        If the provided value is true, then run the "then" circuit.  Otherwise
+        run the "else" circuit.  Either way, exit "success".
   if-then-finally-sync:
     POST:
-      script: if-then-finally-sync
-dependencies:
-  if-defined:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/if-defined.js
-    description: Determine whether the value is defined.
-  if-less-than:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/if-less-than.js
-    description: Determine whether the first value is less than the second.
-  if-greater-than:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/if-greater-than.js
-    description: Determine whether the first value is greater than the second.
-  if-equal:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/if-equal.js
-    description: Determine whether the first value is equivalent to the second.
-  if-between:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/if-between.js
-    description: Check that a value is within the specified range (inclusive).
-  if-then-finally:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/if-then-finally.js
-    description: >-
-      If the provided value is true, then run the "then" circuit.  Otherwise run
-      the "else" circuit.  Either way, exit "success".
-  if-then-finally-sync:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/if-then-finally-sync.js
-    description: >-
-      If the provided value is true, then run the "then" circuit.  Otherwise run
-      the "else" circuit.  Either way, exit "success".
+      file: scripts/if-then-finally-sync.js
+      description: >-
+        If the provided value is true, then run the "then" circuit.  Otherwise
+        run the "else" circuit.  Either way, exit "success".

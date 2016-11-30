@@ -6,23 +6,13 @@ author:
 endpoints:
   upload-image:
     POST:
-      script: upload-image
+      file: scripts/upload-image.js
+      description: Upload image on Cloudinary (using streams).
   get-image-urls:
     POST:
-      script: get-image-urls
+      file: scripts/get-image-urls.js
+      description: Get Image URLS from Cloudinary based on Image ID.
   delete-image:
     POST:
-      script: delete-image
-dependencies:
-  upload-image:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/upload-image.js
-    description: Upload image on Cloudinary (using streams).
-  get-image-urls:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-image-urls.js
-    description: Get Image URLS from Cloudinary based on Image ID.
-  delete-image:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/delete-image.js
-    description: Delete an image on Cloudinary.
+      file: scripts/delete-image.js
+      description: Delete an image on Cloudinary.

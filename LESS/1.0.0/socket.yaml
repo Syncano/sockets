@@ -6,9 +6,5 @@ author:
 endpoints:
   compile-stylesheet:
     POST:
-      script: compile-stylesheet
-dependencies:
-  compile-stylesheet:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/compile-stylesheet.js
-    description: Compile a LESS stylesheet to CSS.
+      file: scripts/compile-stylesheet.js
+      description: Compile a LESS stylesheet to CSS.

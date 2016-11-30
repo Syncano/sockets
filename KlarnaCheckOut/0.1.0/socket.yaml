@@ -6,30 +6,17 @@ author:
 endpoints:
   place-order:
     POST:
-      script: place-order
+      file: scripts/place-order.js
+      description: null
   fetchorder:
     POST:
-      script: fetchorder
+      file: scripts/fetchorder.js
+      description: null
   confirm-order:
     POST:
-      script: confirm-order
+      file: scripts/confirm-order.js
+      description: null
   update-order:
     POST:
-      script: update-order
-dependencies:
-  place-order:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/place-order.js
-    description: null
-  fetchorder:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/fetchorder.js
-    description: null
-  confirm-order:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/confirm-order.js
-    description: null
-  update-order:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/update-order.js
-    description: Update an order
+      file: scripts/update-order.js
+      description: Update an order

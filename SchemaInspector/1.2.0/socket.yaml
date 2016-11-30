@@ -6,16 +6,9 @@ author:
 endpoints:
   sanitize:
     POST:
-      script: sanitize
+      file: scripts/sanitize.js
+      description: Sanitize some json data against a schema.
   validate:
     POST:
-      script: validate
-dependencies:
-  sanitize:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/sanitize.js
-    description: Sanitize some json data against a schema.
-  validate:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/validate.js
-    description: Validate some json data against a schema.
+      file: scripts/validate.js
+      description: Validate some json data against a schema.

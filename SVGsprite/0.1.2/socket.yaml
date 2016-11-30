@@ -6,9 +6,5 @@ author:
 endpoints:
   create-sprite:
     POST:
-      script: create-sprite
-dependencies:
-  create-sprite:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/create-sprite.js
-    description: Create an SVGs sprite from multiple SVG source files.
+      file: scripts/create-sprite.js
+      description: Create an SVGs sprite from multiple SVG source files.

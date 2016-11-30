@@ -6,37 +6,21 @@ author:
 endpoints:
   get-host:
     POST:
-      script: get-host
+      file: scripts/get-host.js
+      description: Make calls to Infoblox API
   get-subnet:
     POST:
-      script: get-subnet
+      file: scripts/get-subnet.js
+      description: Get subnet by extensible attribute.
   get-next-available-ip:
     POST:
-      script: get-next-available-ip
+      file: scripts/get-next-available-ip.js
+      description: Get the next available IP-address(es) from a subnet
   get-network-ref:
     POST:
-      script: get-network-ref
+      file: scripts/get-network-ref.js
+      description: Get the 'ref-ID' for a given subnet
   get-record:
     POST:
-      script: get-record
-dependencies:
-  get-host:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-host.js
-    description: Make calls to Infoblox API
-  get-subnet:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-subnet.js
-    description: Get subnet by extensible attribute.
-  get-next-available-ip:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-next-available-ip.js
-    description: Get the next available IP-address(es) from a subnet
-  get-network-ref:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-network-ref.js
-    description: Get the 'ref-ID' for a given subnet
-  get-record:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-record.js
-    description: Make calls to Infoblox API
+      file: scripts/get-record.js
+      description: Make calls to Infoblox API

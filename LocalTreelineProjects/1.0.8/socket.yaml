@@ -6,62 +6,39 @@ author:
 endpoints:
   read-keychain:
     POST:
-      script: read-keychain
+      file: scripts/read-keychain.js
+      description: Read data from the Treeline identity/config file.
   write-keychain:
     POST:
-      script: write-keychain
+      file: scripts/write-keychain.js
+      description: Write or overwrite the Treeline keychain/identity/config file.
   read-linkfile:
     POST:
-      script: read-linkfile
+      file: scripts/read-linkfile.js
+      description: Read data from the linkfile in the current directory.
   write-linkfile:
     POST:
-      script: write-linkfile
+      file: scripts/write-linkfile.js
+      description: Write or overwrite the linkfile in the current directory.
   install-treeline-deps:
     POST:
-      script: install-treeline-deps
+      file: scripts/install-treeline-deps.js
+      description: Install Treeline pack dependencies for the specified pack.
   normalize-type:
     POST:
-      script: normalize-type
+      file: scripts/normalize-type.js
+      description: >-
+        Validate+coerce the provided project type, or if unspecified, look in
+        the package.json file and take a guess.
   sync-remote-changes:
     POST:
-      script: sync-remote-changes
+      file: scripts/sync-remote-changes.js
+      description: >-
+        Apply a changelog of remote changes from treeline.io to the local
+        project.
   apply-pack-changelog:
     POST:
-      script: apply-pack-changelog
-dependencies:
-  read-keychain:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/read-keychain.js
-    description: Read data from the Treeline identity/config file.
-  write-keychain:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/write-keychain.js
-    description: Write or overwrite the Treeline keychain/identity/config file.
-  read-linkfile:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/read-linkfile.js
-    description: Read data from the linkfile in the current directory.
-  write-linkfile:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/write-linkfile.js
-    description: Write or overwrite the linkfile in the current directory.
-  install-treeline-deps:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/install-treeline-deps.js
-    description: Install Treeline pack dependencies for the specified pack.
-  normalize-type:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/normalize-type.js
-    description: >-
-      Validate+coerce the provided project type, or if unspecified, look in the
-      package.json file and take a guess.
-  sync-remote-changes:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/sync-remote-changes.js
-    description: Apply a changelog of remote changes from treeline.io to the local project.
-  apply-pack-changelog:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/apply-pack-changelog.js
-    description: >-
-      Apply a changelog of remote changes from treeline.io to the local
-      machinepack.
+      file: scripts/apply-pack-changelog.js
+      description: >-
+        Apply a changelog of remote changes from treeline.io to the local
+        machinepack.

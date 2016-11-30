@@ -6,9 +6,5 @@ author:
 endpoints:
   get-current-conditions:
     POST:
-      script: get-current-conditions
-dependencies:
-  get-current-conditions:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-current-conditions.js
-    description: List the current weather conditions for a particular city.
+      file: scripts/get-current-conditions.js
+      description: List the current weather conditions for a particular city.

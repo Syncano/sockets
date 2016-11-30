@@ -6,35 +6,22 @@ author:
 endpoints:
   validate-varname:
     POST:
-      script: validate-varname
+      file: scripts/validate-varname.js
+      description: >-
+        Determine whether the provided would be valid as the name of a
+        ECMAScript 5.1 variable.
   minify:
     POST:
-      script: minify
+      file: scripts/minify.js
+      description: Minify a string of JavaScript code.
   coerce-varname:
     POST:
-      script: coerce-varname
+      file: scripts/coerce-varname.js
+      description: >-
+        Given a string, return a similar version of the string, but which is
+        camel-cased and otherwise stripped of special characters, whitespace,
+        etc. so that it is usable as an ECMAScript variable.
   beautify:
     POST:
-      script: beautify
-dependencies:
-  validate-varname:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/validate-varname.js
-    description: >-
-      Determine whether the provided would be valid as the name of a ECMAScript
-      5.1 variable.
-  minify:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/minify.js
-    description: Minify a string of JavaScript code.
-  coerce-varname:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/coerce-varname.js
-    description: >-
-      Given a string, return a similar version of the string, but which is
-      camel-cased and otherwise stripped of special characters, whitespace, etc.
-      so that it is usable as an ECMAScript variable.
-  beautify:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/beautify.js
-    description: Beautify a JavaScript code string.
+      file: scripts/beautify.js
+      description: Beautify a JavaScript code string.

@@ -6,9 +6,5 @@ author:
 endpoints:
   connect:
     POST:
-      script: connect
-dependencies:
-  connect:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/connect.js
-    description: Connect to an Interaction Center® server
+      file: scripts/connect.js
+      description: Connect to an Interaction Center® server

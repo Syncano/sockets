@@ -6,11 +6,7 @@ author:
 endpoints:
   bundle:
     POST:
-      script: bundle
-dependencies:
-  bundle:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/bundle.js
-    description: >-
-      Bundle the specified script and its required dependencies into a single
-      JavaScript file.
+      file: scripts/bundle.js
+      description: >-
+        Bundle the specified script and its required dependencies into a single
+        JavaScript file.

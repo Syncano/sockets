@@ -6,9 +6,5 @@ author:
 endpoints:
   get-coindesk-bitcoin-price-index:
     POST:
-      script: get-coindesk-bitcoin-price-index
-dependencies:
-  get-coindesk-bitcoin-price-index:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-coindesk-bitcoin-price-index.js
-    description: Display CoinDesk bitcoin price index.
+      file: scripts/get-coindesk-bitcoin-price-index.js
+      description: Display CoinDesk bitcoin price index.

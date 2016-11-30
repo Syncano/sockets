@@ -6,30 +6,17 @@ author:
 endpoints:
   get-document:
     POST:
-      script: get-document
+      file: scripts/get-document.js
+      description: Get a prismic document by id.
   get-document-by-slug:
     POST:
-      script: get-document-by-slug
+      file: scripts/get-document-by-slug.js
+      description: Get a prismic document by slug.
   get-many-documents:
     POST:
-      script: get-many-documents
+      file: scripts/get-many-documents.js
+      description: Get many documents by Array of ids
   get-bookmark:
     POST:
-      script: get-bookmark
-dependencies:
-  get-document:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-document.js
-    description: Get a prismic document by id.
-  get-document-by-slug:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-document-by-slug.js
-    description: Get a prismic document by slug.
-  get-many-documents:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-many-documents.js
-    description: Get many documents by Array of ids
-  get-bookmark:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-bookmark.js
-    description: Get a prismic document by bookmark.
+      file: scripts/get-bookmark.js
+      description: Get a prismic document by bookmark.

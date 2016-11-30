@@ -6,27 +6,19 @@ author:
 endpoints:
   get-login-url:
     POST:
-      script: get-login-url
+      file: scripts/get-login-url.js
+      description: >-
+        Get the URL on salesforce.com that a user should visit to allow/deny the
+        specified Salesforce Developer app (i.e. your app).
   get-access-token:
     POST:
-      script: get-access-token
+      file: scripts/get-access-token.js
+      description: >-
+        Generate a new access token for acting on behalf of a particular
+        Salesforce user account.
   get-user-by-access-token:
     POST:
-      script: get-user-by-access-token
-dependencies:
-  get-login-url:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-login-url.js
-    description: >-
-      Get the URL on salesforce.com that a user should visit to allow/deny the
-      specified Salesforce Developer app (i.e. your app).
-  get-access-token:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-access-token.js
-    description: >-
-      Generate a new access token for acting on behalf of a particular
-      Salesforce user account.
-  get-user-by-access-token:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-user-by-access-token.js
-    description: Get information about the Salesforce user with the specified access token.
+      file: scripts/get-user-by-access-token.js
+      description: >-
+        Get information about the Salesforce user with the specified access
+        token.

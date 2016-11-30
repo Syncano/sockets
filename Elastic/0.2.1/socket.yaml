@@ -6,44 +6,25 @@ author:
 endpoints:
   search:
     POST:
-      script: search
+      file: scripts/search.js
+      description: search
   bulk:
     POST:
-      script: bulk
+      file: scripts/bulk.js
+      description: Perform many index/delete operations in a single API call.
   searchCustom:
     POST:
-      script: searchCustom
+      file: scripts/searchCustom.js
+      description: Search custom on Elastic Search
   getAlias:
     POST:
-      script: getAlias
+      file: scripts/getAlias.js
+      description: Get elastic alias and see the pointed index
   deleteByQuery:
     POST:
-      script: deleteByQuery
+      file: scripts/deleteByQuery.js
+      description: Delete by query
   updateAliases:
     POST:
-      script: updateAliases
-dependencies:
-  search:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/search.js
-    description: search
-  bulk:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/bulk.js
-    description: Perform many index/delete operations in a single API call.
-  searchCustom:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/searchCustom.js
-    description: Search custom on Elastic Search
-  getAlias:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/getAlias.js
-    description: Get elastic alias and see the pointed index
-  deleteByQuery:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/deleteByQuery.js
-    description: Delete by query
-  updateAliases:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/updateAliases.js
-    description: 'Perform an atomic alias swap, for a rotating index.'
+      file: scripts/updateAliases.js
+      description: 'Perform an atomic alias swap, for a rotating index.'

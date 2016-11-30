@@ -6,16 +6,9 @@ author:
 endpoints:
   send-html-email:
     POST:
-      script: send-html-email
+      file: scripts/send-html-email.js
+      description: Send an html email.
   send-plaintext-email:
     POST:
-      script: send-plaintext-email
-dependencies:
-  send-html-email:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/send-html-email.js
-    description: Send an html email.
-  send-plaintext-email:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/send-plaintext-email.js
-    description: Send a simple plaintext email.
+      file: scripts/send-plaintext-email.js
+      description: Send a simple plaintext email.

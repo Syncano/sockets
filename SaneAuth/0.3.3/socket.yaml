@@ -8,16 +8,9 @@ author:
 endpoints:
   client:
     POST:
-      script: client
+      file: scripts/client.js
+      description: Handle the addon logic for the sane frontend
   server:
     POST:
-      script: server
-dependencies:
-  client:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/client.js
-    description: Handle the addon logic for the sane frontend
-  server:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/server.js
-    description: Handle the addon logic for the sane backend
+      file: scripts/server.js
+      description: Handle the addon logic for the sane backend

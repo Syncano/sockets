@@ -6,9 +6,5 @@ author:
 endpoints:
   validate:
     POST:
-      script: validate
-dependencies:
-  validate:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/validate.js
-    description: Determine whether or not the provided string is an email address.
+      file: scripts/validate.js
+      description: Determine whether or not the provided string is an email address.

@@ -6,18 +6,11 @@ author:
 endpoints:
   get-request-header:
     POST:
-      script: get-request-header
+      file: scripts/get-request-header.js
+      description: Get the value of the specified header from the current incoming request.
   set-response-header:
     POST:
-      script: set-response-header
-dependencies:
-  get-request-header:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-request-header.js
-    description: Get the value of the specified header from the current incoming request.
-  set-response-header:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/set-response-header.js
-    description: >-
-      Set an eventual value for the specified header when the current outgoing
-      response is sent.
+      file: scripts/set-response-header.js
+      description: >-
+        Set an eventual value for the specified header when the current outgoing
+        response is sent.

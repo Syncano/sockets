@@ -6,25 +6,15 @@ author:
 endpoints:
   url-get:
     POST:
-      script: url-get
+      file: scripts/url-get.js
+      description: Expand a short URL
   url-insert:
     POST:
-      script: url-insert
+      file: scripts/url-insert.js
+      description: Create a short URL from given long version
   url-list:
     POST:
-      script: url-list
-dependencies:
-  url-get:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/url-get.js
-    description: Expand a short URL
-  url-insert:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/url-insert.js
-    description: Create a short URL from given long version
-  url-list:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/url-list.js
-    description: >-
-      REQUIRED AUTH ! The url.list method retrieves a list of URLs shortened by
-      the authenticated user.
+      file: scripts/url-list.js
+      description: >-
+        REQUIRED AUTH ! The url.list method retrieves a list of URLs shortened
+        by the authenticated user.

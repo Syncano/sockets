@@ -8,53 +8,31 @@ author:
 endpoints:
   droplet-create:
     POST:
-      script: droplet-create
+      file: scripts/droplet-create.js
+      description: Create a DigitalOcean droplet.
   droplet-list:
     POST:
-      script: droplet-list
+      file: scripts/droplet-list.js
+      description: List information on all droplets in your DigitalOcean account.
   droplet-get-backups:
     POST:
-      script: droplet-get-backups
+      file: scripts/droplet-get-backups.js
+      description: Return a list of Backups for a specific Droplet
   droplet-delete:
     POST:
-      script: droplet-delete
+      file: scripts/droplet-delete.js
+      description: Delete a specific Droplet
   droplet-get-snapshots:
     POST:
-      script: droplet-get-snapshots
+      file: scripts/droplet-get-snapshots.js
+      description: Return a list of Snapshots for a specific Droplet
   droplet-get:
     POST:
-      script: droplet-get
+      file: scripts/droplet-get.js
+      description: Return information for a specific Droplet
   droplet-action:
     POST:
-      script: droplet-action
-dependencies:
-  droplet-create:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/droplet-create.js
-    description: Create a DigitalOcean droplet.
-  droplet-list:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/droplet-list.js
-    description: List information on all droplets in your DigitalOcean account.
-  droplet-get-backups:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/droplet-get-backups.js
-    description: Return a list of Backups for a specific Droplet
-  droplet-delete:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/droplet-delete.js
-    description: Delete a specific Droplet
-  droplet-get-snapshots:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/droplet-get-snapshots.js
-    description: Return a list of Snapshots for a specific Droplet
-  droplet-get:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/droplet-get.js
-    description: Return information for a specific Droplet
-  droplet-action:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/droplet-action.js
-    description: >-
-      Actions include: disable_backups, reboot, shutdown, power_on, restore,
-      password_reset etc
+      file: scripts/droplet-action.js
+      description: >-
+        Actions include: disable_backups, reboot, shutdown, power_on, restore,
+        password_reset etc

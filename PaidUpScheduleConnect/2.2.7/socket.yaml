@@ -6,16 +6,9 @@ author:
 endpoints:
   calculate-price:
     POST:
-      script: calculate-price
+      file: scripts/calculate-price.js
+      description: Calculate price for a product
   calculate-prices:
     POST:
-      script: calculate-prices
-dependencies:
-  calculate-price:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/calculate-price.js
-    description: Calculate price for a product
-  calculate-prices:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/calculate-prices.js
-    description: Calculate prices for a product
+      file: scripts/calculate-prices.js
+      description: Calculate prices for a product

@@ -6,58 +6,35 @@ author:
 endpoints:
   list-torrents:
     POST:
-      script: list-torrents
+      file: scripts/list-torrents.js
+      description: List all Torrents from the uTorrent client.
   get-torrent-details:
     POST:
-      script: get-torrent-details
+      file: scripts/get-torrent-details.js
+      description: Get details of a Torrent from uTorrent client.
   create-client:
     POST:
-      script: create-client
+      file: scripts/create-client.js
+      description: Create a client instance for uTorrent API
   add-torrent-url:
     POST:
-      script: add-torrent-url
+      file: scripts/add-torrent-url.js
+      description: Add a torrent URL to the uTorrent client.
   add-torrent:
     POST:
-      script: add-torrent
+      file: scripts/add-torrent.js
+      description: Add a Torrent file to the uTorrent client.
   start-torrent:
     POST:
-      script: start-torrent
+      file: scripts/start-torrent.js
+      description: Start downloading the torrent specified by the hash parameter.
   stop-torrent:
     POST:
-      script: stop-torrent
+      file: scripts/stop-torrent.js
+      description: Stop downloading the torrent specified by the hash parameter.
   remove-torrent:
     POST:
-      script: remove-torrent
-dependencies:
-  list-torrents:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/list-torrents.js
-    description: List all Torrents from the uTorrent client.
-  get-torrent-details:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-torrent-details.js
-    description: Get details of a Torrent from uTorrent client.
-  create-client:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/create-client.js
-    description: Create a client instance for uTorrent API
-  add-torrent-url:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/add-torrent-url.js
-    description: Add a torrent URL to the uTorrent client.
-  add-torrent:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/add-torrent.js
-    description: Add a Torrent file to the uTorrent client.
-  start-torrent:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/start-torrent.js
-    description: Start downloading the torrent specified by the hash parameter.
-  stop-torrent:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/stop-torrent.js
-    description: Stop downloading the torrent specified by the hash parameter.
-  remove-torrent:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/remove-torrent.js
-    description: Remove the torrent specified by the hash parameter from the download list.
+      file: scripts/remove-torrent.js
+      description: >-
+        Remove the torrent specified by the hash parameter from the download
+        list.

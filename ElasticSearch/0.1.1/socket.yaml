@@ -6,16 +6,9 @@ author:
 endpoints:
   search:
     POST:
-      script: search
+      file: scripts/search.js
+      description: search
   searchcustom:
     POST:
-      script: searchcustom
-dependencies:
-  search:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/search.js
-    description: search
-  searchcustom:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/searchcustom.js
-    description: Search custom on Elastic Search
+      file: scripts/searchcustom.js
+      description: Search custom on Elastic Search

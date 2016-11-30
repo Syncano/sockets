@@ -6,44 +6,25 @@ author:
 endpoints:
   first:
     POST:
-      script: first
+      file: scripts/first.js
+      description: Get the first elementement
   last:
     POST:
-      script: last
+      file: scripts/last.js
+      description: Get the last element
   slice:
     POST:
-      script: slice
+      file: scripts/slice.js
+      description: Get a slice of an array
   take:
     POST:
-      script: take
+      file: scripts/take.js
+      description: Slice of array with n elements taken from the start
   takeRight:
     POST:
-      script: takeRight
+      file: scripts/takeRight.js
+      description: Slice of array with n elements taken from the end
   sample:
     POST:
-      script: sample
-dependencies:
-  first:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/first.js
-    description: Get the first elementement
-  last:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/last.js
-    description: Get the last element
-  slice:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/slice.js
-    description: Get a slice of an array
-  take:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/take.js
-    description: Slice of array with n elements taken from the start
-  takeRight:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/takeRight.js
-    description: Slice of array with n elements taken from the end
-  sample:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/sample.js
-    description: Get a random sample from the list
+      file: scripts/sample.js
+      description: Get a random sample from the list

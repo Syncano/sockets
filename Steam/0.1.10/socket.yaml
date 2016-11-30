@@ -6,98 +6,66 @@ author:
 endpoints:
   get-news-for-app:
     POST:
-      script: get-news-for-app
+      file: scripts/get-news-for-app.js
+      description: Fetch news feeds for each Steam game
   get-global-achievement-percentage-for-app:
     POST:
-      script: get-global-achievement-percentage-for-app
+      file: scripts/get-global-achievement-percentage-for-app.js
+      description: >-
+        Returns on global achievements overview of a specific game in
+        percentages.
   get-global-stats-for-game:
     POST:
-      script: get-global-stats-for-game
+      file: scripts/get-global-stats-for-game.js
+      description: Returns on global statistics of a specific game
   get-player-summaries:
     POST:
-      script: get-player-summaries
+      file: scripts/get-player-summaries.js
+      description: Returns basic profile information for a list of 64-bit Steam IDs.
   get-friend-list:
     POST:
-      script: get-friend-list
+      file: scripts/get-friend-list.js
+      description: >-
+        Returns the friend list of any Steam user, provided his Steam Community
+        profile visibility is set to "Public".
   get-player-achievements:
     POST:
-      script: get-player-achievements
+      file: scripts/get-player-achievements.js
+      description: Returns a list of achievements for this user by app id
   get-owned-games:
     POST:
-      script: get-owned-games
+      file: scripts/get-owned-games.js
+      description: >-
+        GetOwnedGames returns a list of games a player owns along with some
+        playtime information, if the profile is publicly visible. Private,
+        friends-only, and other privacy settings are not supported unless you
+        are asking for your own personal details (ie the WebAPI key you are
+        using is linked to the steamid you are requesting).
   get-recently-played-games:
     POST:
-      script: get-recently-played-games
+      file: scripts/get-recently-played-games.js
+      description: >-
+        GetRecentlyPlayedGames returns a list of games a player has played in
+        the last two weeks, if the profile is publicly visible. Private,
+        friends-only, and other privacy settings are not supported unless you
+        are asking for your own personal details (ie the WebAPI key you are
+        using is linked to the steamid you are requesting).
   is-playing-shared-game:
     POST:
-      script: is-playing-shared-game
+      file: scripts/is-playing-shared-game.js
+      description: >-
+        IsPlayingSharedGame returns the original owner's SteamID if a borrowing
+        account is currently playing this game. If the game is not borrowed or
+        the borrower currently doesn't play this game, the result is always 0.
   get-schema-for-game:
     POST:
-      script: get-schema-for-game
+      file: scripts/get-schema-for-game.js
+      description: >-
+        GetSchemaForGame returns gamename, gameversion and
+        availablegamestats(achievements and stats).
   get-player-bans:
     POST:
-      script: get-player-bans
-dependencies:
-  get-news-for-app:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-news-for-app.js
-    description: Fetch news feeds for each Steam game
-  get-global-achievement-percentage-for-app:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-global-achievement-percentage-for-app.js
-    description: Returns on global achievements overview of a specific game in percentages.
-  get-global-stats-for-game:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-global-stats-for-game.js
-    description: Returns on global statistics of a specific game
-  get-player-summaries:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-player-summaries.js
-    description: Returns basic profile information for a list of 64-bit Steam IDs.
-  get-friend-list:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-friend-list.js
-    description: >-
-      Returns the friend list of any Steam user, provided his Steam Community
-      profile visibility is set to "Public".
-  get-player-achievements:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-player-achievements.js
-    description: Returns a list of achievements for this user by app id
-  get-owned-games:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-owned-games.js
-    description: >-
-      GetOwnedGames returns a list of games a player owns along with some
-      playtime information, if the profile is publicly visible. Private,
-      friends-only, and other privacy settings are not supported unless you are
-      asking for your own personal details (ie the WebAPI key you are using is
-      linked to the steamid you are requesting).
-  get-recently-played-games:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-recently-played-games.js
-    description: >-
-      GetRecentlyPlayedGames returns a list of games a player has played in the
-      last two weeks, if the profile is publicly visible. Private, friends-only,
-      and other privacy settings are not supported unless you are asking for
-      your own personal details (ie the WebAPI key you are using is linked to
-      the steamid you are requesting).
-  is-playing-shared-game:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/is-playing-shared-game.js
-    description: >-
-      IsPlayingSharedGame returns the original owner's SteamID if a borrowing
-      account is currently playing this game. If the game is not borrowed or the
-      borrower currently doesn't play this game, the result is always 0.
-  get-schema-for-game:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-schema-for-game.js
-    description: >-
-      GetSchemaForGame returns gamename, gameversion and
-      availablegamestats(achievements and stats).
-  get-player-bans:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-player-bans.js
-    description: >-
-      GetPlayerBans returns Community, VAC, and Economy ban statuses for given
-      players.
+      file: scripts/get-player-bans.js
+      description: >-
+        GetPlayerBans returns Community, VAC, and Economy ban statuses for given
+        players.

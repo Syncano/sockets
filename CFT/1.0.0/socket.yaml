@@ -6,9 +6,5 @@ author:
 endpoints:
   get-cft-surveyssent:
     POST:
-      script: get-cft-surveyssent
-dependencies:
-  get-cft-surveyssent:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-cft-surveyssent.js
-    description: Gets all surveys sent in a specified date range
+      file: scripts/get-cft-surveyssent.js
+      description: Gets all surveys sent in a specified date range

@@ -6,16 +6,9 @@ author:
 endpoints:
   start-server:
     POST:
-      script: start-server
+      file: scripts/start-server.js
+      description: Machine used to start an instance of a jxm server
   start-client:
     POST:
-      script: start-client
-dependencies:
-  start-server:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/start-server.js
-    description: Machine used to start an instance of a jxm server
-  start-client:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/start-client.js
-    description: Machine used to start an instance of a jxm client
+      file: scripts/start-client.js
+      description: Machine used to start an instance of a jxm client

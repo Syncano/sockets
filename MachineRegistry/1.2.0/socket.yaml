@@ -8,25 +8,15 @@ author:
 endpoints:
   list-machinepacks:
     POST:
-      script: list-machinepacks
+      file: scripts/list-machinepacks.js
+      description: List machinepacks in the registry.
   get-machinepack-info:
     POST:
-      script: get-machinepack-info
+      file: scripts/get-machinepack-info.js
+      description: >-
+        Get metadata for the specified machinepack, including a list of its
+        machines.
   get-machine-info:
     POST:
-      script: get-machine-info
-dependencies:
-  list-machinepacks:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/list-machinepacks.js
-    description: List machinepacks in the registry.
-  get-machinepack-info:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-machinepack-info.js
-    description: >-
-      Get metadata for the specified machinepack, including a list of its
-      machines.
-  get-machine-info:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-machine-info.js
-    description: Get metadata for the specified machine within the specified machinepack.
+      file: scripts/get-machine-info.js
+      description: Get metadata for the specified machine within the specified machinepack.

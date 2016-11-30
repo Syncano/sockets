@@ -6,18 +6,11 @@ author:
 endpoints:
   get-login-url:
     POST:
-      script: get-login-url
+      file: scripts/get-login-url.js
+      description: >-
+        Get the URL on Spotify that a user should visit to authorize the
+        specified Spotify app (i.e. your app).
   get-access-token:
     POST:
-      script: get-access-token
-dependencies:
-  get-login-url:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-login-url.js
-    description: >-
-      Get the URL on Spotify that a user should visit to authorize the specified
-      Spotify app (i.e. your app).
-  get-access-token:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-access-token.js
-    description: Get access token to use with requests to Spotify Web API.
+      file: scripts/get-access-token.js
+      description: Get access token to use with requests to Spotify Web API.

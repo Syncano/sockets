@@ -6,18 +6,11 @@ author:
 endpoints:
   unzip:
     POST:
-      script: unzip
+      file: scripts/unzip.js
+      description: >-
+        Unzip the specified .zip file and write the decompressed
+        files/directories as contents of the specified destination directory.
   zip:
     POST:
-      script: zip
-dependencies:
-  unzip:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/unzip.js
-    description: >-
-      Unzip the specified .zip file and write the decompressed files/directories
-      as contents of the specified destination directory.
-  zip:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/zip.js
-    description: Compress the specified source files or directories into a .zip file.
+      file: scripts/zip.js
+      description: Compress the specified source files or directories into a .zip file.

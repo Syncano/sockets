@@ -6,44 +6,25 @@ author:
 endpoints:
   category-retrieve:
     POST:
-      script: category-retrieve
+      file: scripts/category-retrieve.js
+      description: Retrieve categories of products
   product-retrieve:
     POST:
-      script: product-retrieve
+      file: scripts/product-retrieve.js
+      description: Retrieve product by Id
   organization-request:
     POST:
-      script: organization-request
+      file: scripts/organization-request.js
+      description: save a new organizations to be part of paidUp
   organization-response:
     POST:
-      script: organization-response
+      file: scripts/organization-response.js
+      description: authorizate new organizations to be part of paidUp
   organization-response-update:
     POST:
-      script: organization-response-update
+      file: scripts/organization-response-update.js
+      description: authorizate new organizations to be part of paidUp
   organization-get:
     POST:
-      script: organization-get
-dependencies:
-  category-retrieve:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/category-retrieve.js
-    description: Retrieve categories of products
-  product-retrieve:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/product-retrieve.js
-    description: Retrieve product by Id
-  organization-request:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/organization-request.js
-    description: save a new organizations to be part of paidUp
-  organization-response:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/organization-response.js
-    description: authorizate new organizations to be part of paidUp
-  organization-response-update:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/organization-response-update.js
-    description: authorizate new organizations to be part of paidUp
-  organization-get:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/organization-get.js
-    description: get organizations to be part of paidUp
+      file: scripts/organization-get.js
+      description: get organizations to be part of paidUp

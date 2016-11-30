@@ -6,20 +6,13 @@ author:
 endpoints:
   run-ssh-command:
     POST:
-      script: run-ssh-command
+      file: scripts/run-ssh-command.js
+      description: >-
+        Run a command on a remote server via SSH. Requires Host, Username,
+        Password and ommand.
   run-ssh-command-keys:
     POST:
-      script: run-ssh-command-keys
-dependencies:
-  run-ssh-command:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/run-ssh-command.js
-    description: >-
-      Run a command on a remote server via SSH. Requires Host, Username,
-      Password and ommand.
-  run-ssh-command-keys:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/run-ssh-command-keys.js
-    description: >-
-      Run a command on a remote server via SSH. Requires Host, Username,
-      Password and ommand.
+      file: scripts/run-ssh-command-keys.js
+      description: >-
+        Run a command on a remote server via SSH. Requires Host, Username,
+        Password and ommand.

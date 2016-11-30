@@ -6,30 +6,17 @@ author:
 endpoints:
   list-tables:
     POST:
-      script: list-tables
+      file: scripts/list-tables.js
+      description: List the names of the tables in the specified Postgresql database.
   describe-table:
     POST:
-      script: describe-table
+      file: scripts/describe-table.js
+      description: List all the columns that are found in a postgresql table.
   list-records:
     POST:
-      script: list-records
+      file: scripts/list-records.js
+      description: List records in the Postgresql table that match the specified criteria.
   count-records:
     POST:
-      script: count-records
-dependencies:
-  list-tables:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/list-tables.js
-    description: List the names of the tables in the specified Postgresql database.
-  describe-table:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/describe-table.js
-    description: List all the columns that are found in a postgresql table.
-  list-records:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/list-records.js
-    description: List records in the Postgresql table that match the specified criteria.
-  count-records:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/count-records.js
-    description: Count records in the Postgresql table that match the specified criteria.
+      file: scripts/count-records.js
+      description: Count records in the Postgresql table that match the specified criteria.

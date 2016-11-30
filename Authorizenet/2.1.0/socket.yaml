@@ -6,16 +6,9 @@ author:
 endpoints:
   create-transaction-request:
     POST:
-      script: create-transaction-request
+      file: scripts/create-transaction-request.js
+      description: pass credentials to authorize.net to setup a payment transaction
   authorize-transaction-request:
     POST:
-      script: authorize-transaction-request
-dependencies:
-  create-transaction-request:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/create-transaction-request.js
-    description: pass credentials to authorize.net to setup a payment transaction
-  authorize-transaction-request:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/authorize-transaction-request.js
-    description: pass credentials to authorize.net to setup a payment transaction
+      file: scripts/authorize-transaction-request.js
+      description: pass credentials to authorize.net to setup a payment transaction

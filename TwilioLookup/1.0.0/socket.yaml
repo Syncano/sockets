@@ -6,9 +6,5 @@ author:
 endpoints:
   format-lookup:
     POST:
-      script: format-lookup
-dependencies:
-  format-lookup:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/format-lookup.js
-    description: Reformat numbers provided into local format
+      file: scripts/format-lookup.js
+      description: Reformat numbers provided into local format

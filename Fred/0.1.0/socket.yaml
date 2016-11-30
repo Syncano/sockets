@@ -6,9 +6,5 @@ author:
 endpoints:
   get-series-observations:
     POST:
-      script: get-series-observations
-dependencies:
-  get-series-observations:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-series-observations.js
-    description: Get the observations or data values for an economic data series.
+      file: scripts/get-series-observations.js
+      description: Get the observations or data values for an economic data series.

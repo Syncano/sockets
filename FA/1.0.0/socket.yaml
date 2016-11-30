@@ -6,30 +6,17 @@ author:
 endpoints:
   generate-key:
     POST:
-      script: generate-key
+      file: scripts/generate-key.js
+      description: Generates a crypto secure hex key with 32 characters.
   generate-code:
     POST:
-      script: generate-code
+      file: scripts/generate-code.js
+      description: Generates a Code using the users secret key which can then be verified
   generate-qr:
     POST:
-      script: generate-qr
+      file: scripts/generate-qr.js
+      description: Generates a QR code to store it by scanning the QR code.
   validate:
     POST:
-      script: validate
-dependencies:
-  generate-key:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/generate-key.js
-    description: Generates a crypto secure hex key with 32 characters.
-  generate-code:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/generate-code.js
-    description: Generates a Code using the users secret key which can then be verified
-  generate-qr:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/generate-qr.js
-    description: Generates a QR code to store it by scanning the QR code.
-  validate:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/validate.js
-    description: Validates the given code compared to user's key.
+      file: scripts/validate.js
+      description: Validates the given code compared to user's key.

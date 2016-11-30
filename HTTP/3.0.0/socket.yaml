@@ -6,23 +6,13 @@ author:
 endpoints:
   fetch-webpage-html:
     POST:
-      script: fetch-webpage-html
+      file: scripts/fetch-webpage-html.js
+      description: Fetch the HTML from a web page.
   send-http-request:
     POST:
-      script: send-http-request
+      file: scripts/send-http-request.js
+      description: Send an HTTP request and receive the response.
   negotiate-http-status:
     POST:
-      script: negotiate-http-status
-dependencies:
-  fetch-webpage-html:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/fetch-webpage-html.js
-    description: Fetch the HTML from a web page.
-  send-http-request:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/send-http-request.js
-    description: Send an HTTP request and receive the response.
-  negotiate-http-status:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/negotiate-http-status.js
-    description: Trigger a specific exit based on the provided HTTP status code.
+      file: scripts/negotiate-http-status.js
+      description: Trigger a specific exit based on the provided HTTP status code.

@@ -6,149 +6,85 @@ author:
 endpoints:
   coupon-get:
     POST:
-      script: coupon-get
+      file: scripts/coupon-get.js
+      description: get a list of discont coupon
   coupon-create:
     POST:
-      script: coupon-create
+      file: scripts/coupon-create.js
+      description: Create a discount coupon
   coupon-redeem:
     POST:
-      script: coupon-redeem
+      file: scripts/coupon-redeem.js
+      description: Redeem a coupon discount
   coupon-update:
     POST:
-      script: coupon-update
+      file: scripts/coupon-update.js
+      description: Update a coupon discount
   order-create:
     POST:
-      script: order-create
+      file: scripts/order-create.js
+      description: Create a order
   order-add-payments:
     POST:
-      script: order-add-payments
+      file: scripts/order-add-payments.js
+      description: Add dues to order
   order-update-payments:
     POST:
-      script: order-update-payments
+      file: scripts/order-update-payments.js
+      description: update payments to order
   order-get:
     POST:
-      script: order-get
+      file: scripts/order-get.js
+      description: get orders
   order-get-to-charge:
     POST:
-      script: order-get-to-charge
+      file: scripts/order-get-to-charge.js
+      description: get orders to charge (cronjob)
   order-to-complete:
     POST:
-      script: order-to-complete
+      file: scripts/order-to-complete.js
+      description: orders to complete (cronjob)
   order-search:
     POST:
-      script: order-search
+      file: scripts/order-search.js
+      description: search orders
   order-payment-recent:
     POST:
-      script: order-payment-recent
+      file: scripts/order-payment-recent.js
+      description: order payment recent
   order-active:
     POST:
-      script: order-active
+      file: scripts/order-active.js
+      description: get active orders
   order-payment-next:
     POST:
-      script: order-payment-next
+      file: scripts/order-payment-next.js
+      description: order payment next
   order-get-organization:
     POST:
-      script: order-get-organization
+      file: scripts/order-get-organization.js
+      description: get organization orders
   order-update-webhook:
     POST:
-      script: order-update-webhook
+      file: scripts/order-update-webhook.js
+      description: update order from webhook
   order-history:
     POST:
-      script: order-history
+      file: scripts/order-history.js
+      description: get orders
   report-revenue-projection:
     POST:
-      script: report-revenue-projection
+      file: scripts/report-revenue-projection.js
+      description: revenue projection report
   report-revenue:
     POST:
-      script: report-revenue
+      file: scripts/report-revenue.js
+      description: revenue report
   order-transactions:
     POST:
-      script: order-transactions
+      file: scripts/order-transactions.js
+      description: get orders transactions
   order-transactions-organization:
     POST:
-      script: order-transactions-organization
-dependencies:
-  coupon-get:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/coupon-get.js
-    description: get a list of discont coupon
-  coupon-create:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/coupon-create.js
-    description: Create a discount coupon
-  coupon-redeem:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/coupon-redeem.js
-    description: Redeem a coupon discount
-  coupon-update:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/coupon-update.js
-    description: Update a coupon discount
-  order-create:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/order-create.js
-    description: Create a order
-  order-add-payments:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/order-add-payments.js
-    description: Add dues to order
-  order-update-payments:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/order-update-payments.js
-    description: update payments to order
-  order-get:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/order-get.js
-    description: get orders
-  order-get-to-charge:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/order-get-to-charge.js
-    description: get orders to charge (cronjob)
-  order-to-complete:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/order-to-complete.js
-    description: orders to complete (cronjob)
-  order-search:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/order-search.js
-    description: search orders
-  order-payment-recent:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/order-payment-recent.js
-    description: order payment recent
-  order-active:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/order-active.js
-    description: get active orders
-  order-payment-next:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/order-payment-next.js
-    description: order payment next
-  order-get-organization:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/order-get-organization.js
-    description: get organization orders
-  order-update-webhook:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/order-update-webhook.js
-    description: update order from webhook
-  order-history:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/order-history.js
-    description: get orders
-  report-revenue-projection:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/report-revenue-projection.js
-    description: revenue projection report
-  report-revenue:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/report-revenue.js
-    description: revenue report
-  order-transactions:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/order-transactions.js
-    description: get orders transactions
-  order-transactions-organization:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/order-transactions-organization.js
-    description: get orders transactions
+      file: scripts/order-transactions-organization.js
+      description: get orders transactions

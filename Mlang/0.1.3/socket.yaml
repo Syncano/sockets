@@ -6,37 +6,21 @@ author:
 endpoints:
   execute:
     POST:
-      script: execute
+      file: scripts/execute.js
+      description: Execute MLang program
   meta:
     POST:
-      script: meta
+      file: scripts/meta.js
+      description: Extract Meta Data from program
   dependencies:
     POST:
-      script: dependencies
+      file: scripts/dependencies.js
+      description: Extract dependencies from MLang program
   variables:
     POST:
-      script: variables
+      file: scripts/variables.js
+      description: Extract variables from machlang
   methods:
     POST:
-      script: methods
-dependencies:
-  execute:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/execute.js
-    description: Execute MLang program
-  meta:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/meta.js
-    description: Extract Meta Data from program
-  dependencies:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/dependencies.js
-    description: Extract dependencies from MLang program
-  variables:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/variables.js
-    description: Extract variables from machlang
-  methods:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/methods.js
-    description: Extract methods from machlang
+      file: scripts/methods.js
+      description: Extract methods from machlang

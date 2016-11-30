@@ -6,9 +6,5 @@ author:
 endpoints:
   to-number:
     POST:
-      script: to-number
-dependencies:
-  to-number:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/to-number.js
-    description: Convert the given input string to a number.
+      file: scripts/to-number.js
+      description: Convert the given input string to a number.

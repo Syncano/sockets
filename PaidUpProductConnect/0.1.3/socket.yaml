@@ -6,16 +6,9 @@ author:
 endpoints:
   category-retrieve:
     POST:
-      script: category-retrieve
+      file: scripts/category-retrieve.js
+      description: Retrieve categories of products
   product-retrieve:
     POST:
-      script: product-retrieve
-dependencies:
-  category-retrieve:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/category-retrieve.js
-    description: Retrieve categories of products
-  product-retrieve:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/product-retrieve.js
-    description: Retrieve product by Id
+      file: scripts/product-retrieve.js
+      description: Retrieve product by Id

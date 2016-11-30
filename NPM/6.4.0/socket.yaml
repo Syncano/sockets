@@ -6,137 +6,89 @@ author:
 endpoints:
   list-packages:
     POST:
-      script: list-packages
+      file: scripts/list-packages.js
+      description: >-
+        List packages in the public npm registry whose keywords match the
+        specified search query.
   download-package:
     POST:
-      script: download-package
+      file: scripts/download-package.js
+      description: 'Stream the tarball for the NPM package+version to disk, then extract it.'
   list-packages-with-details:
     POST:
-      script: list-packages-with-details
+      file: scripts/list-packages-with-details.js
+      description: >-
+        List matching packages and include metadata from their package.json
+        files.
   install-package:
     POST:
-      script: install-package
+      file: scripts/install-package.js
+      description: >-
+        Install a package from the NPM registry to the node_modules folder of a
+        local project.
   parse-package-json:
     POST:
-      script: parse-package-json
+      file: scripts/parse-package-json.js
+      description: >-
+        Parse metadata for the latest version of the NPM package given a
+        package.json string.
   publish:
     POST:
-      script: publish
+      file: scripts/publish.js
+      description: Publish a package to the public NPM registry.
   unpublish:
     POST:
-      script: unpublish
+      file: scripts/unpublish.js
+      description: Unpublish a package from the public NPM registry.
   open-source:
     POST:
-      script: open-source
+      file: scripts/open-source.js
+      description: Open up public access to a package published on NPM.
   restrict:
     POST:
-      script: restrict
+      file: scripts/restrict.js
+      description: Restrict access to a package published on NPM.
   fetch-info:
     POST:
-      script: fetch-info
+      file: scripts/fetch-info.js
+      description: >-
+        Look up information about the latest version of the specified NPM
+        package.
   arrayify-dependencies:
     POST:
-      script: arrayify-dependencies
+      file: scripts/arrayify-dependencies.js
+      description: >-
+        Flatten the provided depenencies dictionary into a homogeneous array of
+        dictionaries.
   unarrayify-dependencies:
     POST:
-      script: unarrayify-dependencies
+      file: scripts/unarrayify-dependencies.js
+      description: >-
+        Un-flatten the provided array back into a traditional NPM dependencies
+        dictionary.
   install-dependencies:
     POST:
-      script: install-dependencies
+      file: scripts/install-dependencies.js
+      description: Install NPM dependencies of local package at the specified path.
   get-latest-version:
     POST:
-      script: get-latest-version
+      file: scripts/get-latest-version.js
+      description: >-
+        Look up the version string for the latest published version of the
+        specified NPM package.
   validate-version:
     POST:
-      script: validate-version
+      file: scripts/validate-version.js
+      description: >-
+        Validate (and potentially coerce) the specified string, verifying that
+        it is compatible for use as an NPM version string.
   compare-versions:
     POST:
-      script: compare-versions
+      file: scripts/compare-versions.js
+      description: 'Compare two NPM version strings and return either 1, 0, or -1.'
   is-version-compatible:
     POST:
-      script: is-version-compatible
-dependencies:
-  list-packages:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/list-packages.js
-    description: >-
-      List packages in the public npm registry whose keywords match the
-      specified search query.
-  download-package:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/download-package.js
-    description: 'Stream the tarball for the NPM package+version to disk, then extract it.'
-  list-packages-with-details:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/list-packages-with-details.js
-    description: List matching packages and include metadata from their package.json files.
-  install-package:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/install-package.js
-    description: >-
-      Install a package from the NPM registry to the node_modules folder of a
-      local project.
-  parse-package-json:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/parse-package-json.js
-    description: >-
-      Parse metadata for the latest version of the NPM package given a
-      package.json string.
-  publish:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/publish.js
-    description: Publish a package to the public NPM registry.
-  unpublish:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/unpublish.js
-    description: Unpublish a package from the public NPM registry.
-  open-source:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/open-source.js
-    description: Open up public access to a package published on NPM.
-  restrict:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/restrict.js
-    description: Restrict access to a package published on NPM.
-  fetch-info:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/fetch-info.js
-    description: Look up information about the latest version of the specified NPM package.
-  arrayify-dependencies:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/arrayify-dependencies.js
-    description: >-
-      Flatten the provided depenencies dictionary into a homogeneous array of
-      dictionaries.
-  unarrayify-dependencies:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/unarrayify-dependencies.js
-    description: >-
-      Un-flatten the provided array back into a traditional NPM dependencies
-      dictionary.
-  install-dependencies:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/install-dependencies.js
-    description: Install NPM dependencies of local package at the specified path.
-  get-latest-version:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-latest-version.js
-    description: >-
-      Look up the version string for the latest published version of the
-      specified NPM package.
-  validate-version:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/validate-version.js
-    description: >-
-      Validate (and potentially coerce) the specified string, verifying that it
-      is compatible for use as an NPM version string.
-  compare-versions:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/compare-versions.js
-    description: 'Compare two NPM version strings and return either 1, 0, or -1.'
-  is-version-compatible:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/is-version-compatible.js
-    description: >-
-      Determine whether or not a particular NPM version string is compatible
-      within a semver range.
+      file: scripts/is-version-compatible.js
+      description: >-
+        Determine whether or not a particular NPM version string is compatible
+        within a semver range.

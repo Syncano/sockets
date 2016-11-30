@@ -6,9 +6,5 @@ author:
 endpoints:
   broken-route-page:
     POST:
-      script: broken-route-page
-dependencies:
-  broken-route-page:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/broken-route-page.js
-    description: Get the HTML for a page explaining that there was a compile error.
+      file: scripts/broken-route-page.js
+      description: Get the HTML for a page explaining that there was a compile error.

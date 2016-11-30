@@ -6,9 +6,5 @@ author:
 endpoints:
   post-to-channel:
     POST:
-      script: post-to-channel
-dependencies:
-  post-to-channel:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/post-to-channel.js
-    description: Post a message to the specified channel in Slack.
+      file: scripts/post-to-channel.js
+      description: Post a message to the specified channel in Slack.

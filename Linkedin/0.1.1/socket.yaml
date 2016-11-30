@@ -6,25 +6,15 @@ author:
 endpoints:
   get-login-url:
     POST:
-      script: get-login-url
+      file: scripts/get-login-url.js
+      description: Creates the login url used to gain acccess to their LinkedIn account.
   get-authentication-token:
     POST:
-      script: get-authentication-token
+      file: scripts/get-authentication-token.js
+      description: >-
+        Obtains the authentication token after you complete the url login
+        phase.  Make sure to do this within 20 seconds or else the code expires.
   get-profile:
     POST:
-      script: get-profile
-dependencies:
-  get-login-url:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-login-url.js
-    description: Creates the login url used to gain acccess to their LinkedIn account.
-  get-authentication-token:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-authentication-token.js
-    description: >-
-      Obtains the authentication token after you complete the url login phase. 
-      Make sure to do this within 20 seconds or else the code expires.
-  get-profile:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-profile.js
-    description: Obtains the profile from the authorized user.
+      file: scripts/get-profile.js
+      description: Obtains the profile from the authorized user.

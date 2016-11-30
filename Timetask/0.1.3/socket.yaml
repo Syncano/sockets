@@ -6,30 +6,17 @@ author:
 endpoints:
   get:
     POST:
-      script: get
+      file: scripts/get.js
+      description: 'List all or one (project, client, person, ...)'
   add:
     POST:
-      script: add
+      file: scripts/add.js
+      description: 'Add (project, task, time,...)'
   remove:
     POST:
-      script: remove
+      file: scripts/remove.js
+      description: 'Remove (project, task, time,...)'
   update:
     POST:
-      script: update
-dependencies:
-  get:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get.js
-    description: 'List all or one (project, client, person, ...)'
-  add:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/add.js
-    description: 'Add (project, task, time,...)'
-  remove:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/remove.js
-    description: 'Remove (project, task, time,...)'
-  update:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/update.js
-    description: 'Update (project, task, time,...)'
+      file: scripts/update.js
+      description: 'Update (project, task, time,...)'

@@ -6,9 +6,5 @@ author:
 endpoints:
   get-new-cards:
     POST:
-      script: get-new-cards
-dependencies:
-  get-new-cards:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-new-cards.js
-    description: Gets the newly created cards
+      file: scripts/get-new-cards.js
+      description: Gets the newly created cards

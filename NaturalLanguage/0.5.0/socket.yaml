@@ -6,30 +6,17 @@ author:
 endpoints:
   levenshtein:
     POST:
-      script: levenshtein
+      file: scripts/levenshtein.js
+      description: Determine the Levenstein distance between two strings.
   tokenize:
     POST:
-      script: tokenize
+      file: scripts/tokenize.js
+      description: Split a string into an array of strings using the Treebank algorithm.
   pluralize:
     POST:
-      script: pluralize
+      file: scripts/pluralize.js
+      description: Determine the plural version of a singular noun.
   singularize:
     POST:
-      script: singularize
-dependencies:
-  levenshtein:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/levenshtein.js
-    description: Determine the Levenstein distance between two strings.
-  tokenize:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/tokenize.js
-    description: Split a string into an array of strings using the Treebank algorithm.
-  pluralize:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/pluralize.js
-    description: Determine the plural version of a singular noun.
-  singularize:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/singularize.js
-    description: Determine the singular version of a plural noun.
+      file: scripts/singularize.js
+      description: Determine the singular version of a plural noun.

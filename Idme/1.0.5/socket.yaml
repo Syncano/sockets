@@ -6,16 +6,9 @@ author:
 endpoints:
   get-auth-token:
     POST:
-      script: get-auth-token
+      file: scripts/get-auth-token.js
+      description: Retrieve access_token from using ID.me
   get-profile:
     POST:
-      script: get-profile
-dependencies:
-  get-auth-token:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-auth-token.js
-    description: Retrieve access_token from using ID.me
-  get-profile:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-profile.js
-    description: Return profile information for a specified end-point
+      file: scripts/get-profile.js
+      description: Return profile information for a specified end-point

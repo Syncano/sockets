@@ -6,30 +6,17 @@ author:
 endpoints:
   insertion-sort:
     POST:
-      script: insertion-sort
+      file: scripts/insertion-sort.js
+      description: 'Sort an array using Insertion sort algorithm. '
   selection-sort:
     POST:
-      script: selection-sort
+      file: scripts/selection-sort.js
+      description: 'Sort an array with Selection sort algorithm '
   bubble-sort:
     POST:
-      script: bubble-sort
+      file: scripts/bubble-sort.js
+      description: Sort an array using Bubble sort algorithm
   merge-sort:
     POST:
-      script: merge-sort
-dependencies:
-  insertion-sort:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/insertion-sort.js
-    description: 'Sort an array using Insertion sort algorithm. '
-  selection-sort:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/selection-sort.js
-    description: 'Sort an array with Selection sort algorithm '
-  bubble-sort:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/bubble-sort.js
-    description: Sort an array using Bubble sort algorithm
-  merge-sort:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/merge-sort.js
-    description: Sort an array using Merge sort algorithm
+      file: scripts/merge-sort.js
+      description: Sort an array using Merge sort algorithm

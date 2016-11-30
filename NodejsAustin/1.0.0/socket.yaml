@@ -6,9 +6,5 @@ author:
 endpoints:
   hello:
     POST:
-      script: hello
-dependencies:
-  hello:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/hello.js
-    description: Say hello on the console.
+      file: scripts/hello.js
+      description: Say hello on the console.

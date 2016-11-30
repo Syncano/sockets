@@ -6,16 +6,9 @@ author:
 endpoints:
   get-board-lists:
     POST:
-      script: get-board-lists
+      file: scripts/get-board-lists.js
+      description: Retrieve all lists for a given board
   move-list-to-board:
     POST:
-      script: move-list-to-board
-dependencies:
-  get-board-lists:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-board-lists.js
-    description: Retrieve all lists for a given board
-  move-list-to-board:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/move-list-to-board.js
-    description: 'Move the cards from one list, to another list on a specified board'
+      file: scripts/move-list-to-board.js
+      description: 'Move the cards from one list, to another list on a specified board'

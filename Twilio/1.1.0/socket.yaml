@@ -8,25 +8,15 @@ author:
 endpoints:
   send-message:
     POST:
-      script: send-message
+      file: scripts/send-message.js
+      description: Send a message using the Twilio API
   list-phone-numbers:
     POST:
-      script: list-phone-numbers
+      file: scripts/list-phone-numbers.js
+      description: List the available phone numbers for a particular account.
   list-potential-numbers:
     POST:
-      script: list-potential-numbers
-dependencies:
-  send-message:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/send-message.js
-    description: Send a message using the Twilio API
-  list-phone-numbers:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/list-phone-numbers.js
-    description: List the available phone numbers for a particular account.
-  list-potential-numbers:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/list-potential-numbers.js
-    description: >-
-      List the phone numbers potentially available (but not yet provisioned) to
-      your Twilio account.
+      file: scripts/list-potential-numbers.js
+      description: >-
+        List the phone numbers potentially available (but not yet provisioned)
+        to your Twilio account.

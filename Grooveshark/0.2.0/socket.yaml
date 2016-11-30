@@ -6,23 +6,13 @@ author:
 endpoints:
   download-song-by-name-and-artist:
     POST:
-      script: download-song-by-name-and-artist
+      file: scripts/download-song-by-name-and-artist.js
+      description: 'Download a song, and save it into a folder, by name and artist'
   download-playlist:
     POST:
-      script: download-playlist
+      file: scripts/download-playlist.js
+      description: 'Download all the song, and save it into a folder, by playlist ID'
   download-playlist-save:
     POST:
-      script: download-playlist-save
-dependencies:
-  download-song-by-name-and-artist:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/download-song-by-name-and-artist.js
-    description: 'Download a song, and save it into a folder, by name and artist'
-  download-playlist:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/download-playlist.js
-    description: 'Download all the song, and save it into a folder, by playlist ID'
-  download-playlist-save:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/download-playlist-save.js
-    description: 'Download all the song, and save it into a folder, by playlist ID'
+      file: scripts/download-playlist-save.js
+      description: 'Download all the song, and save it into a folder, by playlist ID'

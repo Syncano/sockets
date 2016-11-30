@@ -6,9 +6,5 @@ author:
 endpoints:
   get-url:
     POST:
-      script: get-url
-dependencies:
-  get-url:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-url.js
-    description: Get's the URL from URLBOX.io to display the screen capture.
+      file: scripts/get-url.js
+      description: Get's the URL from URLBOX.io to display the screen capture.

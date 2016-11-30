@@ -10,27 +10,17 @@ author:
 endpoints:
   get-request-header:
     POST:
-      script: get-request-header
+      file: scripts/get-request-header.js
+      description: >-
+        Get the value of the specified request header from the current
+        HTTP/vHTTP request.
   upload-files:
     POST:
-      script: upload-files
+      file: scripts/upload-files.js
+      description: >-
+        Upload any incoming files from the current request and write them to
+        your desired destination.
   get-credentials:
     POST:
-      script: get-credentials
-dependencies:
-  get-request-header:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-request-header.js
-    description: >-
-      Get the value of the specified request header from the current HTTP/vHTTP
-      request.
-  upload-files:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/upload-files.js
-    description: >-
-      Upload any incoming files from the current request and write them to your
-      desired destination.
-  get-credentials:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-credentials.js
-    description: "Parse the username\_and password from HTTP Basic Auth credentials encoded in the current request."
+      file: scripts/get-credentials.js
+      description: "Parse the username\_and password from HTTP Basic Auth credentials encoded in the current request."

@@ -6,16 +6,9 @@ author:
 endpoints:
   list:
     POST:
-      script: list
+      file: scripts/list.js
+      description: Retrieve the list of APIs supported at this endpoint.
   get-rest:
     POST:
-      script: get-rest
-dependencies:
-  list:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/list.js
-    description: Retrieve the list of APIs supported at this endpoint.
-  get-rest:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-rest.js
-    description: Retrieve the description of a particular version of an api.
+      file: scripts/get-rest.js
+      description: Retrieve the description of a particular version of an api.

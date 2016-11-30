@@ -6,30 +6,17 @@ author:
 endpoints:
   get-play-count:
     POST:
-      script: get-play-count
+      file: scripts/get-play-count.js
+      description: Display the number of views of a Youtube Video.
   parse-video-id:
     POST:
-      script: parse-video-id
+      file: scripts/parse-video-id.js
+      description: Parse the video ID from the provided YouTube.com URL.
   get-base-url:
     POST:
-      script: get-base-url
+      file: scripts/get-base-url.js
+      description: Return the base URL for the YouTube API.
   search-videos:
     POST:
-      script: search-videos
-dependencies:
-  get-play-count:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-play-count.js
-    description: Display the number of views of a Youtube Video.
-  parse-video-id:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/parse-video-id.js
-    description: Parse the video ID from the provided YouTube.com URL.
-  get-base-url:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-base-url.js
-    description: Return the base URL for the YouTube API.
-  search-videos:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/search-videos.js
-    description: List Youtube videos which match the specified search query.
+      file: scripts/search-videos.js
+      description: List Youtube videos which match the specified search query.

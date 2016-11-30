@@ -6,65 +6,39 @@ author:
 endpoints:
   ecs-register-task-definition:
     POST:
-      script: ecs-register-task-definition
+      file: scripts/ecs-register-task-definition.js
+      description: Register a ECS task definition.
   ecs-list-task-definitions:
     POST:
-      script: ecs-list-task-definitions
+      file: scripts/ecs-list-task-definitions.js
+      description: Return a list of task definitions that are registered to your account.
   ecs-run-task:
     POST:
-      script: ecs-run-task
+      file: scripts/ecs-run-task.js
+      description: >-
+        Start a task using random placement and the default Amazon ECS
+        scheduler.
   ecs-list-tasks:
     POST:
-      script: ecs-list-tasks
+      file: scripts/ecs-list-tasks.js
+      description: 'Return a list of tasks for a specified cluster. '
   ecs-stop-task:
     POST:
-      script: ecs-stop-task
+      file: scripts/ecs-stop-task.js
+      description: Stop a running ECS task.
   ec2-describe-instances:
     POST:
-      script: ec2-describe-instances
+      file: scripts/ec2-describe-instances.js
+      description: Describe one or more of your instances.
   ecs-describe-container-instances:
     POST:
-      script: ecs-describe-container-instances
+      file: scripts/ecs-describe-container-instances.js
+      description: Describe Amazon EC2 Container Service container instances
   ecs-describe-tasks:
     POST:
-      script: ecs-describe-tasks
+      file: scripts/ecs-describe-tasks.js
+      description: Describe a specified task or tasks.
   ecs-describe-task-definition:
     POST:
-      script: ecs-describe-task-definition
-dependencies:
-  ecs-register-task-definition:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/ecs-register-task-definition.js
-    description: Register a ECS task definition.
-  ecs-list-task-definitions:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/ecs-list-task-definitions.js
-    description: Return a list of task definitions that are registered to your account.
-  ecs-run-task:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/ecs-run-task.js
-    description: Start a task using random placement and the default Amazon ECS scheduler.
-  ecs-list-tasks:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/ecs-list-tasks.js
-    description: 'Return a list of tasks for a specified cluster. '
-  ecs-stop-task:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/ecs-stop-task.js
-    description: Stop a running ECS task.
-  ec2-describe-instances:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/ec2-describe-instances.js
-    description: Describe one or more of your instances.
-  ecs-describe-container-instances:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/ecs-describe-container-instances.js
-    description: Describe Amazon EC2 Container Service container instances
-  ecs-describe-tasks:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/ecs-describe-tasks.js
-    description: Describe a specified task or tasks.
-  ecs-describe-task-definition:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/ecs-describe-task-definition.js
-    description: 'Describe an ECS task definition '
+      file: scripts/ecs-describe-task-definition.js
+      description: 'Describe an ECS task definition '

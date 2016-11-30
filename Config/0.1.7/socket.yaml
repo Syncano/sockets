@@ -6,23 +6,13 @@ author:
 endpoints:
   get:
     POST:
-      script: get
+      file: scripts/get.js
+      description: Get simply a config with few json file
   multiple:
     POST:
-      script: multiple
+      file: scripts/multiple.js
+      description: Get a multiple config with define some key
   load:
     POST:
-      script: load
-dependencies:
-  get:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get.js
-    description: Get simply a config with few json file
-  multiple:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/multiple.js
-    description: Get a multiple config with define some key
-  load:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/load.js
-    description: Load a config of config's file...
+      file: scripts/load.js
+      description: Load a config of config's file...

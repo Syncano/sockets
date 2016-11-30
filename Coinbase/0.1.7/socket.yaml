@@ -6,16 +6,9 @@ author:
 endpoints:
   get-buy-price:
     POST:
-      script: get-buy-price
+      file: scripts/get-buy-price.js
+      description: Total price to buy some amount of bitcoin.
   get-sell-price:
     POST:
-      script: get-sell-price
-dependencies:
-  get-buy-price:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-buy-price.js
-    description: Total price to buy some amount of bitcoin.
-  get-sell-price:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-sell-price.js
-    description: Total price to sell some amount of bitcoin.
+      file: scripts/get-sell-price.js
+      description: Total price to sell some amount of bitcoin.

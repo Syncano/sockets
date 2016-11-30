@@ -6,9 +6,5 @@ author:
 endpoints:
   create-ticket:
     POST:
-      script: create-ticket
-dependencies:
-  create-ticket:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/create-ticket.js
-    description: Log a hello message with a generated secret code and other information
+      file: scripts/create-ticket.js
+      description: Log a hello message with a generated secret code and other information

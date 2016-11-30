@@ -6,9 +6,5 @@ author:
 endpoints:
   get-price-estimate:
     POST:
-      script: get-price-estimate
-dependencies:
-  get-price-estimate:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-price-estimate.js
-    description: A price estimate for each product offered.
+      file: scripts/get-price-estimate.js
+      description: A price estimate for each product offered.

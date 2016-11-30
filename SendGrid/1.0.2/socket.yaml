@@ -6,9 +6,5 @@ author:
 endpoints:
   send-email:
     POST:
-      script: send-email
-dependencies:
-  send-email:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/send-email.js
-    description: Send an email
+      file: scripts/send-email.js
+      description: Send an email

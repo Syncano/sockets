@@ -6,16 +6,9 @@ author:
 endpoints:
   get-number:
     POST:
-      script: get-number
+      file: scripts/get-number.js
+      description: Get company by ID
   get-name:
     POST:
-      script: get-name
-dependencies:
-  get-number:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-number.js
-    description: Get company by ID
-  get-name:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-name.js
-    description: Get company by name
+      file: scripts/get-name.js
+      description: Get company by name

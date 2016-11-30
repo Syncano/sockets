@@ -6,65 +6,37 @@ author:
 endpoints:
   create-read:
     POST:
-      script: create-read
+      file: scripts/create-read.js
+      description: Create a read stream
   create-write:
     POST:
-      script: create-write
+      file: scripts/create-write.js
+      description: Create Write Stream
   zip:
     POST:
-      script: zip
+      file: scripts/zip.js
+      description: Zip a stream
   unzip:
     POST:
-      script: unzip
+      file: scripts/unzip.js
+      description: Unzip a stream
   md:
     POST:
-      script: md
+      file: scripts/md.js
+      description: Markdown
   minify:
     POST:
-      script: minify
+      file: scripts/minify.js
+      description: Minify html
   stringify:
     POST:
-      script: stringify
+      file: scripts/stringify.js
+      description: a toString method
   replace:
     POST:
-      script: replace
+      file: scripts/replace.js
+      description: Search and replace
   insert:
     POST:
-      script: insert
-dependencies:
-  create-read:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/create-read.js
-    description: Create a read stream
-  create-write:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/create-write.js
-    description: Create Write Stream
-  zip:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/zip.js
-    description: Zip a stream
-  unzip:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/unzip.js
-    description: Unzip a stream
-  md:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/md.js
-    description: Markdown
-  minify:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/minify.js
-    description: Minify html
-  stringify:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/stringify.js
-    description: a toString method
-  replace:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/replace.js
-    description: Search and replace
-  insert:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/insert.js
-    description: Insert content before or after a string
+      file: scripts/insert.js
+      description: Insert content before or after a string

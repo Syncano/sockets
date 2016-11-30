@@ -6,30 +6,17 @@ author:
 endpoints:
   set:
     POST:
-      script: set
+      file: scripts/set.js
+      description: Put a new object in the cache associated with the specified key.
   get:
     POST:
-      script: get
+      file: scripts/get.js
+      description: Get the value for a key from the LRU Cache
   clear:
     POST:
-      script: clear
+      file: scripts/clear.js
+      description: Clear all the objects from the LRUCache
   remove:
     POST:
-      script: remove
-dependencies:
-  set:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/set.js
-    description: Put a new object in the cache associated with the specified key.
-  get:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get.js
-    description: Get the value for a key from the LRU Cache
-  clear:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/clear.js
-    description: Clear all the objects from the LRUCache
-  remove:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/remove.js
-    description: Remove the object associated with the specified key from the cache
+      file: scripts/remove.js
+      description: Remove the object associated with the specified key from the cache

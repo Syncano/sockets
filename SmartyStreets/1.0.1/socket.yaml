@@ -6,16 +6,9 @@ author:
 endpoints:
   verify-address:
     POST:
-      script: verify-address
+      file: scripts/verify-address.js
+      description: Verify one or more addresses using the SmartyStreets API
   verify-city-state-zip:
     POST:
-      script: verify-city-state-zip
-dependencies:
-  verify-address:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/verify-address.js
-    description: Verify one or more addresses using the SmartyStreets API
-  verify-city-state-zip:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/verify-city-state-zip.js
-    description: 'Look up and verify city, state, and ZIP Code combinations'
+      file: scripts/verify-city-state-zip.js
+      description: 'Look up and verify city, state, and ZIP Code combinations'

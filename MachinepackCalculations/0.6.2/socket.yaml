@@ -6,9 +6,5 @@ author:
 endpoints:
   product-price-v2:
     POST:
-      script: product-price-v2
-dependencies:
-  product-price-v2:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/product-price-v2.js
-    description: Calculate final price when user does not assume any fee.
+      file: scripts/product-price-v2.js
+      description: Calculate final price when user does not assume any fee.

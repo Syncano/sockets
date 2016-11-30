@@ -6,51 +6,29 @@ author:
 endpoints:
   join:
     POST:
-      script: join
+      file: scripts/join.js
+      description: Subscribes the specified sockets to a room.
   broadcast:
     POST:
-      script: broadcast
+      file: scripts/broadcast.js
+      description: Broadcast a message to all connected sockets in the specified room.
   leave:
     POST:
-      script: leave
+      file: scripts/leave.js
+      description: Unsubscribes the specified sockets from a room.
   blast:
     POST:
-      script: blast
+      file: scripts/blast.js
+      description: Blast out a message to all connected sockets.
   emit:
     POST:
-      script: emit
+      file: scripts/emit.js
+      description: Send a message to one or more connected sockets.
   get-socket-id:
     POST:
-      script: get-socket-id
+      file: scripts/get-socket-id.js
+      description: Get the unique ID of the socket making this virtual HTTP request.
   connect-client-socket:
     POST:
-      script: connect-client-socket
-dependencies:
-  join:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/join.js
-    description: Subscribes the specified sockets to a room.
-  broadcast:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/broadcast.js
-    description: Broadcast a message to all connected sockets in the specified room.
-  leave:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/leave.js
-    description: Unsubscribes the specified sockets from a room.
-  blast:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/blast.js
-    description: Blast out a message to all connected sockets.
-  emit:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/emit.js
-    description: Send a message to one or more connected sockets.
-  get-socket-id:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-socket-id.js
-    description: Get the unique ID of the socket making this virtual HTTP request.
-  connect-client-socket:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/connect-client-socket.js
-    description: Connect a Socket.io client to a Sails.js server.
+      file: scripts/connect-client-socket.js
+      description: Connect a Socket.io client to a Sails.js server.

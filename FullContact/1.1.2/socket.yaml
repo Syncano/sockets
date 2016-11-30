@@ -6,39 +6,23 @@ author:
 endpoints:
   get-person-from-email:
     POST:
-      script: get-person-from-email
+      file: scripts/get-person-from-email.js
+      description: Retrieves contact information by e-mail address.
   get-person-from-twitter:
     POST:
-      script: get-person-from-twitter
+      file: scripts/get-person-from-twitter.js
+      description: Retrieves contact information by Twitter username.
   get-person-from-phone:
     POST:
-      script: get-person-from-phone
+      file: scripts/get-person-from-phone.js
+      description: Retrieves contact information by phone number.
   get-person-from-email-md5:
     POST:
-      script: get-person-from-email-md5
+      file: scripts/get-person-from-email-md5.js
+      description: Retrieves contact information by an MD5 of an email address
   get-person-from-facebook:
     POST:
-      script: get-person-from-facebook
-dependencies:
-  get-person-from-email:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-person-from-email.js
-    description: Retrieves contact information by e-mail address.
-  get-person-from-twitter:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-person-from-twitter.js
-    description: Retrieves contact information by Twitter username.
-  get-person-from-phone:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-person-from-phone.js
-    description: Retrieves contact information by phone number.
-  get-person-from-email-md5:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-person-from-email-md5.js
-    description: Retrieves contact information by an MD5 of an email address
-  get-person-from-facebook:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-person-from-facebook.js
-    description: >-
-      Retrieve more information about a specific person by facebook username or
-      facebook ID
+      file: scripts/get-person-from-facebook.js
+      description: >-
+        Retrieve more information about a specific person by facebook username
+        or facebook ID

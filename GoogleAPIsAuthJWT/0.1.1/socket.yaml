@@ -8,9 +8,5 @@ author:
 endpoints:
   authorize:
     POST:
-      script: authorize
-dependencies:
-  authorize:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/authorize.js
-    description: Get authorization tokens
+      file: scripts/authorize.js
+      description: Get authorization tokens

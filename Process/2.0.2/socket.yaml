@@ -6,32 +6,19 @@ author:
 endpoints:
   escape-cli-opt:
     POST:
-      script: escape-cli-opt
+      file: scripts/escape-cli-opt.js
+      description: >-
+        Escape a value for use as a command-line option (e.g. the "XXXXX" in
+        `--foobar='XXXXX'`).
   kill-child-process:
     POST:
-      script: kill-child-process
+      file: scripts/kill-child-process.js
+      description: Gracefully kill a child process.
   spawn-child-process:
     POST:
-      script: spawn-child-process
+      file: scripts/spawn-child-process.js
+      description: Spawn a child process and have it run a command.
   execute-command:
     POST:
-      script: execute-command
-dependencies:
-  escape-cli-opt:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/escape-cli-opt.js
-    description: >-
-      Escape a value for use as a command-line option (e.g. the "XXXXX" in
-      `--foobar='XXXXX'`).
-  kill-child-process:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/kill-child-process.js
-    description: Gracefully kill a child process.
-  spawn-child-process:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/spawn-child-process.js
-    description: Spawn a child process and have it run a command.
-  execute-command:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/execute-command.js
-    description: Execute a command like you would on the terminal.
+      file: scripts/execute-command.js
+      description: Execute a command like you would on the terminal.

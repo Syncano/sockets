@@ -8,27 +8,17 @@ author:
 endpoints:
   get-login-url:
     POST:
-      script: get-login-url
+      file: scripts/get-login-url.js
+      description: >-
+        Get the URL on twitter.com that a user should visit to allow/deny the
+        specified Twitter Developer app (i.e. your app).
   get-access-token:
     POST:
-      script: get-access-token
+      file: scripts/get-access-token.js
+      description: >-
+        Generate a new access token for acting on behalf of a particular Twitter
+        user account.
   get-user-profile:
     POST:
-      script: get-user-profile
-dependencies:
-  get-login-url:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-login-url.js
-    description: >-
-      Get the URL on twitter.com that a user should visit to allow/deny the
-      specified Twitter Developer app (i.e. your app).
-  get-access-token:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-access-token.js
-    description: >-
-      Generate a new access token for acting on behalf of a particular Twitter
-      user account.
-  get-user-profile:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-user-profile.js
-    description: Get a user's Twitter profile information.
+      file: scripts/get-user-profile.js
+      description: Get a user's Twitter profile information.

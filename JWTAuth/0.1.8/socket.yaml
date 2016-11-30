@@ -6,9 +6,5 @@ author:
 endpoints:
   verify-from-header:
     POST:
-      script: verify-from-header
-dependencies:
-  verify-from-header:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/verify-from-header.js
-    description: Verify a token that is provided in a request header.
+      file: scripts/verify-from-header.js
+      description: Verify a token that is provided in a request header.

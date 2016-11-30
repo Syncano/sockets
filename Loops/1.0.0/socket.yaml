@@ -6,16 +6,9 @@ author:
 endpoints:
   map:
     POST:
-      script: map
+      file: scripts/map.js
+      description: Iterate over each item of an array to build a new transformed array.
   each:
     POST:
-      script: each
-dependencies:
-  map:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/map.js
-    description: Iterate over each item of an array to build a new transformed array.
-  each:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/each.js
-    description: Run a given machine on each item of an array.
+      file: scripts/each.js
+      description: Run a given machine on each item of an array.

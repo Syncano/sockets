@@ -6,30 +6,17 @@ author:
 endpoints:
   parse:
     POST:
-      script: parse
+      file: scripts/parse.js
+      description: Parse metadata from a URL.
   format:
     POST:
-      script: format
+      file: scripts/format.js
+      description: Build a URL from a template string and a set of route parameters.
   resolve:
     POST:
-      script: resolve
+      file: scripts/resolve.js
+      description: 'Build a sanitized, fully-qualified version of the provided URL.'
   is-url:
     POST:
-      script: is-url
-dependencies:
-  parse:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/parse.js
-    description: Parse metadata from a URL.
-  format:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/format.js
-    description: Build a URL from a template string and a set of route parameters.
-  resolve:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/resolve.js
-    description: 'Build a sanitized, fully-qualified version of the provided URL.'
-  is-url:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/is-url.js
-    description: 'Determine whether the specified string is a valid, fully-qualified URL.'
+      file: scripts/is-url.js
+      description: 'Determine whether the specified string is a valid, fully-qualified URL.'

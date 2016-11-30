@@ -6,30 +6,17 @@ author:
 endpoints:
   delete-dns-record:
     POST:
-      script: delete-dns-record
+      file: scripts/delete-dns-record.js
+      description: Delete a record for a domain
   add-dns-record:
     POST:
-      script: add-dns-record
+      file: scripts/add-dns-record.js
+      description: Create a DNS record for a zone
   edit-dns-record:
     POST:
-      script: edit-dns-record
+      file: scripts/edit-dns-record.js
+      description: Edit a DNS record for a zone
   stats:
     POST:
-      script: stats
-dependencies:
-  delete-dns-record:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/delete-dns-record.js
-    description: Delete a record for a domain
-  add-dns-record:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/add-dns-record.js
-    description: Create a DNS record for a zone
-  edit-dns-record:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/edit-dns-record.js
-    description: Edit a DNS record for a zone
-  stats:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/stats.js
-    description: Retrieve domain statistics for a given time frame
+      file: scripts/stats.js
+      description: Retrieve domain statistics for a given time frame

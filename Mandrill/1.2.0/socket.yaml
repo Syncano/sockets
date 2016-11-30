@@ -6,51 +6,29 @@ author:
 endpoints:
   send-plaintext-email:
     POST:
-      script: send-plaintext-email
+      file: scripts/send-plaintext-email.js
+      description: Send a plaintext email to the specified recipient.
   add-template:
     POST:
-      script: add-template
+      file: scripts/add-template.js
+      description: Add a new email template to a Mandrill account.
   delete-all-templates:
     POST:
-      script: delete-all-templates
+      file: scripts/delete-all-templates.js
+      description: Delete all mandrill templates from an account.
   migrate-templates:
     POST:
-      script: migrate-templates
+      file: scripts/migrate-templates.js
+      description: Get all mandrill templates from one account and add them to another.
   list-templates:
     POST:
-      script: list-templates
+      file: scripts/list-templates.js
+      description: List all templates available to a user
   delete-template:
     POST:
-      script: delete-template
+      file: scripts/delete-template.js
+      description: Delete a mandrill template.
   send-template-email:
     POST:
-      script: send-template-email
-dependencies:
-  send-plaintext-email:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/send-plaintext-email.js
-    description: Send a plaintext email to the specified recipient.
-  add-template:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/add-template.js
-    description: Add a new email template to a Mandrill account.
-  delete-all-templates:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/delete-all-templates.js
-    description: Delete all mandrill templates from an account.
-  migrate-templates:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/migrate-templates.js
-    description: Get all mandrill templates from one account and add them to another.
-  list-templates:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/list-templates.js
-    description: List all templates available to a user
-  delete-template:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/delete-template.js
-    description: Delete a mandrill template.
-  send-template-email:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/send-template-email.js
-    description: Send a templated email to the specified recipient.
+      file: scripts/send-template-email.js
+      description: Send a templated email to the specified recipient.

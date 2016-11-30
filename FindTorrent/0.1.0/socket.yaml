@@ -6,58 +6,33 @@ author:
 endpoints:
   query-kickass:
     POST:
-      script: query-kickass
+      file: scripts/query-kickass.js
+      description: Query Kickass Torrents.
   query-eztv:
     POST:
-      script: query-eztv
+      file: scripts/query-eztv.js
+      description: Query EZTV Torrents.
   find-movie:
     POST:
-      script: find-movie
+      file: scripts/find-movie.js
+      description: Find a torrent for a given movie
   find-episode:
     POST:
-      script: find-episode
+      file: scripts/find-episode.js
+      description: Find a torrent for a given show episode
   query-all:
     POST:
-      script: query-all
+      file: scripts/query-all.js
+      description: Query for torrents from all torrent providers
   get-eztv-showlist:
     POST:
-      script: get-eztv-showlist
+      file: scripts/get-eztv-showlist.js
+      description: List all shows found on EZTV
   get-eztv-show-episodes:
     POST:
-      script: get-eztv-show-episodes
+      file: scripts/get-eztv-show-episodes.js
+      description: Get Episodes for an EZTV Show
   query-yts:
     POST:
-      script: query-yts
-dependencies:
-  query-kickass:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/query-kickass.js
-    description: Query Kickass Torrents.
-  query-eztv:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/query-eztv.js
-    description: Query EZTV Torrents.
-  find-movie:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/find-movie.js
-    description: Find a torrent for a given movie
-  find-episode:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/find-episode.js
-    description: Find a torrent for a given show episode
-  query-all:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/query-all.js
-    description: Query for torrents from all torrent providers
-  get-eztv-showlist:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-eztv-showlist.js
-    description: List all shows found on EZTV
-  get-eztv-show-episodes:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/get-eztv-show-episodes.js
-    description: Get Episodes for an EZTV Show
-  query-yts:
-    runtime_name: nodejs_library_v1.0
-    file: scripts/query-yts.js
-    description: Query YTS Torrents.
+      file: scripts/query-yts.js
+      description: Query YTS Torrents.
