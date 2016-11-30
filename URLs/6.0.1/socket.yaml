@@ -5,16 +5,16 @@ author:
   email: hello@syncano.io
 endpoints:
   parse:
-    GET:
+    POST:
       script: parse
   format:
-    GET:
+    POST:
       script: format
   resolve:
-    GET:
+    POST:
       script: resolve
   is-url:
-    GET:
+    POST:
       script: is-url
 dependencies:
   parse:

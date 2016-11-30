@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   get-tests:
-    GET:
+    POST:
       script: get-tests
   get-tests-details:
-    GET:
+    POST:
       script: get-tests-details
 dependencies:
   get-tests:

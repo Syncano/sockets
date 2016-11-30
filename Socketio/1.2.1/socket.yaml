@@ -5,25 +5,25 @@ author:
   email: hello@syncano.io
 endpoints:
   join:
-    GET:
+    POST:
       script: join
   broadcast:
-    GET:
+    POST:
       script: broadcast
   leave:
-    GET:
+    POST:
       script: leave
   blast:
-    GET:
+    POST:
       script: blast
   emit:
-    GET:
+    POST:
       script: emit
   get-socket-id:
-    GET:
+    POST:
       script: get-socket-id
   connect-client-socket:
-    GET:
+    POST:
       script: connect-client-socket
 dependencies:
   join:

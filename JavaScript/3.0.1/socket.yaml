@@ -5,16 +5,16 @@ author:
   email: hello@syncano.io
 endpoints:
   validate-varname:
-    GET:
+    POST:
       script: validate-varname
   minify:
-    GET:
+    POST:
       script: minify
   coerce-varname:
-    GET:
+    POST:
       script: coerce-varname
   beautify:
-    GET:
+    POST:
       script: beautify
 dependencies:
   validate-varname:

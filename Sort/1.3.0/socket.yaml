@@ -5,16 +5,16 @@ author:
   email: hello@syncano.io
 endpoints:
   insertion-sort:
-    GET:
+    POST:
       script: insertion-sort
   selection-sort:
-    GET:
+    POST:
       script: selection-sort
   bubble-sort:
-    GET:
+    POST:
       script: bubble-sort
   merge-sort:
-    GET:
+    POST:
       script: merge-sort
 dependencies:
   insertion-sort:

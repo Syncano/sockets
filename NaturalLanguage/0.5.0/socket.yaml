@@ -5,16 +5,16 @@ author:
   email: hello@syncano.io
 endpoints:
   levenshtein:
-    GET:
+    POST:
       script: levenshtein
   tokenize:
-    GET:
+    POST:
       script: tokenize
   pluralize:
-    GET:
+    POST:
       script: pluralize
   singularize:
-    GET:
+    POST:
       script: singularize
 dependencies:
   levenshtein:

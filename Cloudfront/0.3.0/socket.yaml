@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   sign-cloudfront-url:
-    GET:
+    POST:
       script: sign-cloudfront-url
   invalidate-paths:
-    GET:
+    POST:
       script: invalidate-paths
 dependencies:
   sign-cloudfront-url:

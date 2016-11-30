@@ -5,40 +5,40 @@ author:
   email: hello@syncano.io
 endpoints:
   get-ad-account-id:
-    GET:
+    POST:
       script: get-ad-account-id
   get-first-campaign-id-for-given-campaign-name:
-    GET:
+    POST:
       script: get-first-campaign-id-for-given-campaign-name
   get-ad-campaigns:
-    GET:
+    POST:
       script: get-ad-campaigns
   get-ads-in-ad-set:
-    GET:
+    POST:
       script: get-ads-in-ad-set
   get-ad-sets-in-campaign:
-    GET:
+    POST:
       script: get-ad-sets-in-campaign
   get-top-ad-in-ad-set:
-    GET:
+    POST:
       script: get-top-ad-in-ad-set
   get-ad-creative-by-adgroup-id:
-    GET:
+    POST:
       script: get-ad-creative-by-adgroup-id
   get-campaign-overview:
-    GET:
+    POST:
       script: get-campaign-overview
   get-campaign-details:
-    GET:
+    POST:
       script: get-campaign-details
   create-campaign:
-    GET:
+    POST:
       script: create-campaign
   create-ad-set:
-    GET:
+    POST:
       script: create-ad-set
   update-ad-set:
-    GET:
+    POST:
       script: update-ad-set
 dependencies:
   get-ad-account-id:

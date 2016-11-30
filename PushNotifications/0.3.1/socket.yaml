@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   send-push-notification:
-    GET:
+    POST:
       script: send-push-notification
 dependencies:
   send-push-notification:

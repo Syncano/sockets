@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   create-manager:
-    GET:
+    POST:
       script: create-manager
 dependencies:
   create-manager:

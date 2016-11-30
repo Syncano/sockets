@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   compile-stylesheet:
-    GET:
+    POST:
       script: compile-stylesheet
 dependencies:
   compile-stylesheet:

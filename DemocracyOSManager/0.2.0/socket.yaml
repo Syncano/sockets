@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   create-deployment:
-    GET:
+    POST:
       script: create-deployment
   delete-deployment:
-    GET:
+    POST:
       script: delete-deployment
 dependencies:
   create-deployment:

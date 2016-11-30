@@ -7,10 +7,10 @@ author:
   email: hello@syncano.io
 endpoints:
   return-object:
-    GET:
+    POST:
       script: return-object
   return-string:
-    GET:
+    POST:
       script: return-string
 dependencies:
   return-object:

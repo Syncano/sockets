@@ -5,19 +5,19 @@ author:
   email: hello@syncano.io
 endpoints:
   deduce-controllers:
-    GET:
+    POST:
       script: deduce-controllers
   get-signature:
-    GET:
+    POST:
       script: get-signature
   build-routes-config:
-    GET:
+    POST:
       script: build-routes-config
   build-controller:
-    GET:
+    POST:
       script: build-controller
   build-model:
-    GET:
+    POST:
       script: build-model
 dependencies:
   deduce-controllers:

@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   convert:
-    GET:
+    POST:
       script: convert
   resolve:
-    GET:
+    POST:
       script: resolve
 dependencies:
   convert:

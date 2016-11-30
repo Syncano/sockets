@@ -7,13 +7,13 @@ author:
   email: hello@syncano.io
 endpoints:
   get-access-token:
-    GET:
+    POST:
       script: get-access-token
   get-login-url:
-    GET:
+    POST:
       script: get-login-url
   get-current-user:
-    GET:
+    POST:
       script: get-current-user
 dependencies:
   get-access-token:

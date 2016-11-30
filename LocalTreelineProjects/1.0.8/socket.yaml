@@ -5,28 +5,28 @@ author:
   email: hello@syncano.io
 endpoints:
   read-keychain:
-    GET:
+    POST:
       script: read-keychain
   write-keychain:
-    GET:
+    POST:
       script: write-keychain
   read-linkfile:
-    GET:
+    POST:
       script: read-linkfile
   write-linkfile:
-    GET:
+    POST:
       script: write-linkfile
   install-treeline-deps:
-    GET:
+    POST:
       script: install-treeline-deps
   normalize-type:
-    GET:
+    POST:
       script: normalize-type
   sync-remote-changes:
-    GET:
+    POST:
       script: sync-remote-changes
   apply-pack-changelog:
-    GET:
+    POST:
       script: apply-pack-changelog
 dependencies:
   read-keychain:

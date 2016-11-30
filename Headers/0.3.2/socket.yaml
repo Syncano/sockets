@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   get-request-header:
-    GET:
+    POST:
       script: get-request-header
   set-response-header:
-    GET:
+    POST:
       script: set-response-header
 dependencies:
   get-request-header:

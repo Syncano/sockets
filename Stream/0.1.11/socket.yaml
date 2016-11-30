@@ -5,31 +5,31 @@ author:
   email: hello@syncano.io
 endpoints:
   create-read:
-    GET:
+    POST:
       script: create-read
   create-write:
-    GET:
+    POST:
       script: create-write
   zip:
-    GET:
+    POST:
       script: zip
   unzip:
-    GET:
+    POST:
       script: unzip
   md:
-    GET:
+    POST:
       script: md
   minify:
-    GET:
+    POST:
       script: minify
   stringify:
-    GET:
+    POST:
       script: stringify
   replace:
-    GET:
+    POST:
       script: replace
   insert:
-    GET:
+    POST:
       script: insert
 dependencies:
   create-read:

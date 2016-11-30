@@ -5,55 +5,55 @@ author:
   email: hello@syncano.io
 endpoints:
   cp:
-    GET:
+    POST:
       script: cp
   ls:
-    GET:
+    POST:
       script: ls
   rmrf:
-    GET:
+    POST:
       script: rmrf
   write:
-    GET:
+    POST:
       script: write
   read-json:
-    GET:
+    POST:
       script: read-json
   template:
-    GET:
+    POST:
       script: template
   read:
-    GET:
+    POST:
       script: read
   write-json:
-    GET:
+    POST:
       script: write-json
   mv:
-    GET:
+    POST:
       script: mv
   exists:
-    GET:
+    POST:
       script: exists
   mkdir:
-    GET:
+    POST:
       script: mkdir
   ensure-dir:
-    GET:
+    POST:
       script: ensure-dir
   ensure-json:
-    GET:
+    POST:
       script: ensure-json
   write-sync:
-    GET:
+    POST:
       script: write-sync
   read-sync:
-    GET:
+    POST:
       script: read-sync
   read-stream:
-    GET:
+    POST:
       script: read-stream
   write-stream:
-    GET:
+    POST:
       script: write-stream
 dependencies:
   cp:

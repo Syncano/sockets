@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   get-series-observations:
-    GET:
+    POST:
       script: get-series-observations
 dependencies:
   get-series-observations:

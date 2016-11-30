@@ -5,13 +5,13 @@ author:
   email: hello@syncano.io
 endpoints:
   compile-to-html-file-from-md-file:
-    GET:
+    POST:
       script: compile-to-html-file-from-md-file
   parse-docmeta-tags:
-    GET:
+    POST:
       script: parse-docmeta-tags
   compile-to-html:
-    GET:
+    POST:
       script: compile-to-html
 dependencies:
   compile-to-html-file-from-md-file:

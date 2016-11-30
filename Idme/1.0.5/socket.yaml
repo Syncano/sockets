@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   get-auth-token:
-    GET:
+    POST:
       script: get-auth-token
   get-profile:
-    GET:
+    POST:
       script: get-profile
 dependencies:
   get-auth-token:

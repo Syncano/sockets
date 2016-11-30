@@ -5,13 +5,13 @@ author:
   email: hello@syncano.io
 endpoints:
   parse:
-    GET:
+    POST:
       script: parse
   stringify:
-    GET:
+    POST:
       script: stringify
   stringify-safe:
-    GET:
+    POST:
       script: stringify-safe
 dependencies:
   parse:

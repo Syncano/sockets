@@ -5,19 +5,19 @@ author:
   email: hello@syncano.io
 endpoints:
   if-absolute:
-    GET:
+    POST:
       script: if-absolute
   resolve:
-    GET:
+    POST:
       script: resolve
   parse:
-    GET:
+    POST:
       script: parse
   home:
-    GET:
+    POST:
       script: home
   join:
-    GET:
+    POST:
       script: join
 dependencies:
   if-absolute:

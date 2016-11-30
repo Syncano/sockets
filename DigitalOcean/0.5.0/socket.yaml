@@ -7,25 +7,25 @@ author:
   email: hello@syncano.io
 endpoints:
   droplet-create:
-    GET:
+    POST:
       script: droplet-create
   droplet-list:
-    GET:
+    POST:
       script: droplet-list
   droplet-get-backups:
-    GET:
+    POST:
       script: droplet-get-backups
   droplet-delete:
-    GET:
+    POST:
       script: droplet-delete
   droplet-get-snapshots:
-    GET:
+    POST:
       script: droplet-get-snapshots
   droplet-get:
-    GET:
+    POST:
       script: droplet-get
   droplet-action:
-    GET:
+    POST:
       script: droplet-action
 dependencies:
   droplet-create:

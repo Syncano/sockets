@@ -7,10 +7,10 @@ author:
   email: hello@syncano.io
 endpoints:
   get-venue:
-    GET:
+    POST:
       script: get-venue
   list-venues:
-    GET:
+    POST:
       script: list-venues
 dependencies:
   get-venue:

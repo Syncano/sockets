@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   get-coindesk-bitcoin-price-index:
-    GET:
+    POST:
       script: get-coindesk-bitcoin-price-index
 dependencies:
   get-coindesk-bitcoin-price-index:

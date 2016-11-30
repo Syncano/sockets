@@ -5,22 +5,22 @@ author:
   email: hello@syncano.io
 endpoints:
   category-retrieve:
-    GET:
+    POST:
       script: category-retrieve
   product-retrieve:
-    GET:
+    POST:
       script: product-retrieve
   organization-request:
-    GET:
+    POST:
       script: organization-request
   organization-response:
-    GET:
+    POST:
       script: organization-response
   organization-response-update:
-    GET:
+    POST:
       script: organization-response-update
   organization-get:
-    GET:
+    POST:
       script: organization-get
 dependencies:
   category-retrieve:

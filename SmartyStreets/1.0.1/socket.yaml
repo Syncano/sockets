@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   verify-address:
-    GET:
+    POST:
       script: verify-address
   verify-city-state-zip:
-    GET:
+    POST:
       script: verify-city-state-zip
 dependencies:
   verify-address:

@@ -7,25 +7,25 @@ author:
   email: hello@syncano.io
 endpoints:
   validate:
-    GET:
+    POST:
       script: validate
   validate-strict:
-    GET:
+    POST:
       script: validate-strict
   infer:
-    GET:
+    POST:
       script: infer
   compile:
-    GET:
+    POST:
       script: compile
   coerce:
-    GET:
+    POST:
       script: coerce
   sample:
-    GET:
+    POST:
       script: sample
   get-display-type:
-    GET:
+    POST:
       script: get-display-type
 dependencies:
   validate:

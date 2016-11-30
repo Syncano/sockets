@@ -5,34 +5,34 @@ author:
   email: hello@syncano.io
 endpoints:
   coupon-get:
-    GET:
+    POST:
       script: coupon-get
   coupon-create:
-    GET:
+    POST:
       script: coupon-create
   coupon-redeem:
-    GET:
+    POST:
       script: coupon-redeem
   coupon-update:
-    GET:
+    POST:
       script: coupon-update
   order-create:
-    GET:
+    POST:
       script: order-create
   order-add-payments:
-    GET:
+    POST:
       script: order-add-payments
   order-update-payments:
-    GET:
+    POST:
       script: order-update-payments
   order-get:
-    GET:
+    POST:
       script: order-get
   order-get-to-charge:
-    GET:
+    POST:
       script: order-get-to-charge
   order-to-complete:
-    GET:
+    POST:
       script: order-to-complete
 dependencies:
   coupon-get:

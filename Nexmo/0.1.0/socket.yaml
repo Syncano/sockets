@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   send-text-message:
-    GET:
+    POST:
       script: send-text-message
 dependencies:
   send-text-message:

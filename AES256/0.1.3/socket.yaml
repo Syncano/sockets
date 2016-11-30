@@ -5,22 +5,22 @@ author:
   email: hello@syncano.io
 endpoints:
   encrypt:
-    GET:
+    POST:
       script: encrypt
   decrypt:
-    GET:
+    POST:
       script: decrypt
   encrypt-stream:
-    GET:
+    POST:
       script: encrypt-stream
   decrypt-stream:
-    GET:
+    POST:
       script: decrypt-stream
   encrypt-stream-file:
-    GET:
+    POST:
       script: encrypt-stream-file
   decrypt-stream-file:
-    GET:
+    POST:
       script: decrypt-stream-file
 dependencies:
   encrypt:

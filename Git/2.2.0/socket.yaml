@@ -5,16 +5,16 @@ author:
   email: hello@syncano.io
 endpoints:
   clone:
-    GET:
+    POST:
       script: clone
   status:
-    GET:
+    POST:
       script: status
   pull-or-clone:
-    GET:
+    POST:
       script: pull-or-clone
   pull:
-    GET:
+    POST:
       script: pull
 dependencies:
   clone:

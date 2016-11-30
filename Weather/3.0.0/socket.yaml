@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   get-current-forecast:
-    GET:
+    POST:
       script: get-current-forecast
   get-forecast:
-    GET:
+    POST:
       script: get-forecast
 dependencies:
   get-current-forecast:

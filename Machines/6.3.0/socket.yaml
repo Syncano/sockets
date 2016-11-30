@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   run-instantiated-machine:
-    GET:
+    POST:
       script: run-instantiated-machine
   validate:
-    GET:
+    POST:
       script: validate
 dependencies:
   run-instantiated-machine:

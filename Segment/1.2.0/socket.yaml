@@ -5,19 +5,19 @@ author:
   email: hello@syncano.io
 endpoints:
   track:
-    GET:
+    POST:
       script: track
   identify:
-    GET:
+    POST:
       script: identify
   group:
-    GET:
+    POST:
       script: group
   alias:
-    GET:
+    POST:
       script: alias
   page:
-    GET:
+    POST:
       script: page
 dependencies:
   track:

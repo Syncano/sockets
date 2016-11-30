@@ -5,22 +5,22 @@ author:
   email: hello@syncano.io
 endpoints:
   first:
-    GET:
+    POST:
       script: first
   last:
-    GET:
+    POST:
       script: last
   slice:
-    GET:
+    POST:
       script: slice
   take:
-    GET:
+    POST:
       script: take
   takeRight:
-    GET:
+    POST:
       script: takeRight
   sample:
-    GET:
+    POST:
       script: sample
 dependencies:
   first:

@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   unzip:
-    GET:
+    POST:
       script: unzip
   zip:
-    GET:
+    POST:
       script: zip
 dependencies:
   unzip:

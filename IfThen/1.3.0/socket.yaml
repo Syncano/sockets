@@ -5,25 +5,25 @@ author:
   email: hello@syncano.io
 endpoints:
   if-defined:
-    GET:
+    POST:
       script: if-defined
   if-less-than:
-    GET:
+    POST:
       script: if-less-than
   if-greater-than:
-    GET:
+    POST:
       script: if-greater-than
   if-equal:
-    GET:
+    POST:
       script: if-equal
   if-between:
-    GET:
+    POST:
       script: if-between
   if-then-finally:
-    GET:
+    POST:
       script: if-then-finally
   if-then-finally-sync:
-    GET:
+    POST:
       script: if-then-finally-sync
 dependencies:
   if-defined:

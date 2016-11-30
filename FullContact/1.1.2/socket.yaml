@@ -5,19 +5,19 @@ author:
   email: hello@syncano.io
 endpoints:
   get-person-from-email:
-    GET:
+    POST:
       script: get-person-from-email
   get-person-from-twitter:
-    GET:
+    POST:
       script: get-person-from-twitter
   get-person-from-phone:
-    GET:
+    POST:
       script: get-person-from-phone
   get-person-from-email-md5:
-    GET:
+    POST:
       script: get-person-from-email-md5
   get-person-from-facebook:
-    GET:
+    POST:
       script: get-person-from-facebook
 dependencies:
   get-person-from-email:

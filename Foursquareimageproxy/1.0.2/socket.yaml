@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   best:
-    GET:
+    POST:
       script: best
 dependencies:
   best:

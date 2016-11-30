@@ -5,37 +5,37 @@ author:
   email: hello@syncano.io
 endpoints:
   get-news-for-app:
-    GET:
+    POST:
       script: get-news-for-app
   get-global-achievement-percentage-for-app:
-    GET:
+    POST:
       script: get-global-achievement-percentage-for-app
   get-global-stats-for-game:
-    GET:
+    POST:
       script: get-global-stats-for-game
   get-player-summaries:
-    GET:
+    POST:
       script: get-player-summaries
   get-friend-list:
-    GET:
+    POST:
       script: get-friend-list
   get-player-achievements:
-    GET:
+    POST:
       script: get-player-achievements
   get-owned-games:
-    GET:
+    POST:
       script: get-owned-games
   get-recently-played-games:
-    GET:
+    POST:
       script: get-recently-played-games
   is-playing-shared-game:
-    GET:
+    POST:
       script: is-playing-shared-game
   get-schema-for-game:
-    GET:
+    POST:
       script: get-schema-for-game
   get-player-bans:
-    GET:
+    POST:
       script: get-player-bans
 dependencies:
   get-news-for-app:

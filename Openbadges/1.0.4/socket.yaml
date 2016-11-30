@@ -5,16 +5,16 @@ author:
   email: hello@syncano.io
 endpoints:
   convert-email:
-    GET:
+    POST:
       script: convert-email
   get-collections:
-    GET:
+    POST:
       script: get-collections
   get-badges:
-    GET:
+    POST:
       script: get-badges
   bake-assertion:
-    GET:
+    POST:
       script: bake-assertion
 dependencies:
   convert-email:

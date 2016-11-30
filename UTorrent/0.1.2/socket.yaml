@@ -5,28 +5,28 @@ author:
   email: hello@syncano.io
 endpoints:
   list-torrents:
-    GET:
+    POST:
       script: list-torrents
   get-torrent-details:
-    GET:
+    POST:
       script: get-torrent-details
   create-client:
-    GET:
+    POST:
       script: create-client
   add-torrent-url:
-    GET:
+    POST:
       script: add-torrent-url
   add-torrent:
-    GET:
+    POST:
       script: add-torrent
   start-torrent:
-    GET:
+    POST:
       script: start-torrent
   stop-torrent:
-    GET:
+    POST:
       script: stop-torrent
   remove-torrent:
-    GET:
+    POST:
       script: remove-torrent
 dependencies:
   list-torrents:

@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   verify-from-header:
-    GET:
+    POST:
       script: verify-from-header
 dependencies:
   verify-from-header:

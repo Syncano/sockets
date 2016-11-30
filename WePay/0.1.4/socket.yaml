@@ -7,55 +7,55 @@ author:
   email: hello@syncano.io
 endpoints:
   app-details:
-    GET:
+    POST:
       script: app-details
   user-details:
-    GET:
+    POST:
       script: user-details
   user-callback:
-    GET:
+    POST:
       script: user-callback
   account-create:
-    GET:
+    POST:
       script: account-create
   account-details:
-    GET:
+    POST:
       script: account-details
   account-find:
-    GET:
+    POST:
       script: account-find
   account-modify:
-    GET:
+    POST:
       script: account-modify
   account-delete:
-    GET:
+    POST:
       script: account-delete
   account-get-uri:
-    GET:
+    POST:
       script: account-get-uri
   checkout-create:
-    GET:
+    POST:
       script: checkout-create
   checkout-capture:
-    GET:
+    POST:
       script: checkout-capture
   user-register:
-    GET:
+    POST:
       script: user-register
   user-confirm:
-    GET:
+    POST:
       script: user-confirm
   checkout-find:
-    GET:
+    POST:
       script: checkout-find
   checkout-refund:
-    GET:
+    POST:
       script: checkout-refund
   checkout-details:
-    GET:
+    POST:
       script: checkout-details
   checkout-cancel:
-    GET:
+    POST:
       script: checkout-cancel
 dependencies:
   app-details:

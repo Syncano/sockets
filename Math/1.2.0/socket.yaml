@@ -5,40 +5,40 @@ author:
   email: hello@syncano.io
 endpoints:
   add:
-    GET:
+    POST:
       script: add
   divide:
-    GET:
+    POST:
       script: divide
   subtract:
-    GET:
+    POST:
       script: subtract
   multiply:
-    GET:
+    POST:
       script: multiply
   parse:
-    GET:
+    POST:
       script: parse
   random:
-    GET:
+    POST:
       script: random
   e:
-    GET:
+    POST:
       script: e
   sqrt:
-    GET:
+    POST:
       script: sqrt
   pi:
-    GET:
+    POST:
       script: pi
   pow:
-    GET:
+    POST:
       script: pow
   ln:
-    GET:
+    POST:
       script: ln
   log:
-    GET:
+    POST:
       script: log
 dependencies:
   add:

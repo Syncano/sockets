@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   get-login-url:
-    GET:
+    POST:
       script: get-login-url
   get-access-token:
-    GET:
+    POST:
       script: get-access-token
 dependencies:
   get-login-url:

@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   get-klout-id:
-    GET:
+    POST:
       script: get-klout-id
   get-klout-score:
-    GET:
+    POST:
       script: get-klout-score
 dependencies:
   get-klout-id:

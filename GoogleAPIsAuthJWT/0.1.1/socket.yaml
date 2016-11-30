@@ -7,7 +7,7 @@ author:
   email: hello@syncano.io
 endpoints:
   authorize:
-    GET:
+    POST:
       script: authorize
 dependencies:
   authorize:

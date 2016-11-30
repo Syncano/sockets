@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   sanitize:
-    GET:
+    POST:
       script: sanitize
   validate:
-    GET:
+    POST:
       script: validate
 dependencies:
   sanitize:

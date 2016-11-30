@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   get-buy-price:
-    GET:
+    POST:
       script: get-buy-price
   get-sell-price:
-    GET:
+    POST:
       script: get-sell-price
 dependencies:
   get-buy-price:

@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   get-price-estimate:
-    GET:
+    POST:
       script: get-price-estimate
 dependencies:
   get-price-estimate:

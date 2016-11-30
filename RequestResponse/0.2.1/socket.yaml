@@ -9,13 +9,13 @@ author:
   email: hello@syncano.io
 endpoints:
   get-request-header:
-    GET:
+    POST:
       script: get-request-header
   upload-files:
-    GET:
+    POST:
       script: upload-files
   get-credentials:
-    GET:
+    POST:
       script: get-credentials
 dependencies:
   get-request-header:

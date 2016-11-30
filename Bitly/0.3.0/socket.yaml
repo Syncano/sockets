@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   shorten-link:
-    GET:
+    POST:
       script: shorten-link
 dependencies:
   shorten-link:

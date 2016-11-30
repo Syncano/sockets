@@ -5,16 +5,16 @@ author:
   email: hello@syncano.io
 endpoints:
   list-tables:
-    GET:
+    POST:
       script: list-tables
   describe-table:
-    GET:
+    POST:
       script: describe-table
   list-records:
-    GET:
+    POST:
       script: list-records
   count-records:
-    GET:
+    POST:
       script: count-records
 dependencies:
   list-tables:

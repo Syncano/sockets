@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   broken-route-page:
-    GET:
+    POST:
       script: broken-route-page
 dependencies:
   broken-route-page:

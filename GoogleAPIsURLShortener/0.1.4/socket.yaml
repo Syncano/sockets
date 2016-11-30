@@ -5,13 +5,13 @@ author:
   email: hello@syncano.io
 endpoints:
   url-get:
-    GET:
+    POST:
       script: url-get
   url-insert:
-    GET:
+    POST:
       script: url-insert
   url-list:
-    GET:
+    POST:
       script: url-list
 dependencies:
   url-get:

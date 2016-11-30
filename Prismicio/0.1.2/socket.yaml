@@ -5,16 +5,16 @@ author:
   email: hello@syncano.io
 endpoints:
   get-document:
-    GET:
+    POST:
       script: get-document
   get-document-by-slug:
-    GET:
+    POST:
       script: get-document-by-slug
   get-many-documents:
-    GET:
+    POST:
       script: get-many-documents
   get-bookmark:
-    GET:
+    POST:
       script: get-bookmark
 dependencies:
   get-document:

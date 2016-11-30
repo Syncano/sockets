@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   format-lookup:
-    GET:
+    POST:
       script: format-lookup
 dependencies:
   format-lookup:

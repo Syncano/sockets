@@ -5,55 +5,55 @@ author:
   email: hello@syncano.io
 endpoints:
   list-packages:
-    GET:
+    POST:
       script: list-packages
   download-package:
-    GET:
+    POST:
       script: download-package
   list-packages-with-details:
-    GET:
+    POST:
       script: list-packages-with-details
   install-package:
-    GET:
+    POST:
       script: install-package
   parse-package-json:
-    GET:
+    POST:
       script: parse-package-json
   publish:
-    GET:
+    POST:
       script: publish
   unpublish:
-    GET:
+    POST:
       script: unpublish
   open-source:
-    GET:
+    POST:
       script: open-source
   restrict:
-    GET:
+    POST:
       script: restrict
   fetch-info:
-    GET:
+    POST:
       script: fetch-info
   arrayify-dependencies:
-    GET:
+    POST:
       script: arrayify-dependencies
   unarrayify-dependencies:
-    GET:
+    POST:
       script: unarrayify-dependencies
   install-dependencies:
-    GET:
+    POST:
       script: install-dependencies
   get-latest-version:
-    GET:
+    POST:
       script: get-latest-version
   validate-version:
-    GET:
+    POST:
       script: validate-version
   compare-versions:
-    GET:
+    POST:
       script: compare-versions
   is-version-compatible:
-    GET:
+    POST:
       script: is-version-compatible
 dependencies:
   list-packages:

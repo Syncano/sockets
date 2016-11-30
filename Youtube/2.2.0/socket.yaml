@@ -5,16 +5,16 @@ author:
   email: hello@syncano.io
 endpoints:
   get-play-count:
-    GET:
+    POST:
       script: get-play-count
   parse-video-id:
-    GET:
+    POST:
       script: parse-video-id
   get-base-url:
-    GET:
+    POST:
       script: get-base-url
   search-videos:
-    GET:
+    POST:
       script: search-videos
 dependencies:
   get-play-count:

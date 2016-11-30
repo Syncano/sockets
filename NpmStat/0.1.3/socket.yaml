@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   get-stats:
-    GET:
+    POST:
       script: get-stats
 dependencies:
   get-stats:

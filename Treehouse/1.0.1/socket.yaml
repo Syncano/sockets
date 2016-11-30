@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   get-user-profile:
-    GET:
+    POST:
       script: get-user-profile
 dependencies:
   get-user-profile:

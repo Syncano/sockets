@@ -7,13 +7,13 @@ author:
   email: hello@syncano.io
 endpoints:
   list-machinepacks:
-    GET:
+    POST:
       script: list-machinepacks
   get-machinepack-info:
-    GET:
+    POST:
       script: get-machinepack-info
   get-machine-info:
-    GET:
+    POST:
       script: get-machine-info
 dependencies:
   list-machinepacks:

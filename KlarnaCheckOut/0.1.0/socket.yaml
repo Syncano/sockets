@@ -5,16 +5,16 @@ author:
   email: hello@syncano.io
 endpoints:
   place-order:
-    GET:
+    POST:
       script: place-order
   fetchorder:
-    GET:
+    POST:
       script: fetchorder
   confirm-order:
-    GET:
+    POST:
       script: confirm-order
   update-order:
-    GET:
+    POST:
       script: update-order
 dependencies:
   place-order:

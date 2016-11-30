@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   upload-to-s3:
-    GET:
+    POST:
       script: upload-to-s3
 dependencies:
   upload-to-s3:

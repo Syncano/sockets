@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   bundle:
-    GET:
+    POST:
       script: bundle
 dependencies:
   bundle:

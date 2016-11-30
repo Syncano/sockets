@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   get-current-conditions:
-    GET:
+    POST:
       script: get-current-conditions
 dependencies:
   get-current-conditions:

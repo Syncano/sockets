@@ -5,43 +5,43 @@ author:
   email: hello@syncano.io
 endpoints:
   list-apps:
-    GET:
+    POST:
       script: list-apps
   login:
-    GET:
+    POST:
       script: login
   create-app:
-    GET:
+    POST:
       script: create-app
   destroy-app:
-    GET:
+    POST:
       script: destroy-app
   set-config:
-    GET:
+    POST:
       script: set-config
   unset-config:
-    GET:
+    POST:
       script: unset-config
   create-build:
-    GET:
+    POST:
       script: create-build
   list-processes:
-    GET:
+    POST:
       script: list-processes
   scale-process:
-    GET:
+    POST:
       script: scale-process
   set-limit:
-    GET:
+    POST:
       script: set-limit
   unset-limit:
-    GET:
+    POST:
       script: unset-limit
   list-limits:
-    GET:
+    POST:
       script: list-limits
   list-config:
-    GET:
+    POST:
       script: list-config
 dependencies:
   list-apps:

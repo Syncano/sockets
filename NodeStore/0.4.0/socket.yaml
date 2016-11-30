@@ -7,16 +7,16 @@ author:
   email: hello@syncano.io
 endpoints:
   save-to-storage:
-    GET:
+    POST:
       script: save-to-storage
   read-from-storage:
-    GET:
+    POST:
       script: read-from-storage
   delete-from-storage:
-    GET:
+    POST:
       script: delete-from-storage
   save-json-to-storage:
-    GET:
+    POST:
       script: save-json-to-storage
 dependencies:
   save-to-storage:

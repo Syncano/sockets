@@ -5,28 +5,28 @@ author:
   email: hello@syncano.io
 endpoints:
   query-kickass:
-    GET:
+    POST:
       script: query-kickass
   query-eztv:
-    GET:
+    POST:
       script: query-eztv
   find-movie:
-    GET:
+    POST:
       script: find-movie
   find-episode:
-    GET:
+    POST:
       script: find-episode
   query-all:
-    GET:
+    POST:
       script: query-all
   get-eztv-showlist:
-    GET:
+    POST:
       script: get-eztv-showlist
   get-eztv-show-episodes:
-    GET:
+    POST:
       script: get-eztv-show-episodes
   query-yts:
-    GET:
+    POST:
       script: query-yts
 dependencies:
   query-kickass:

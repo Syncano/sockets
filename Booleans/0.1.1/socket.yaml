@@ -7,43 +7,43 @@ author:
   email: hello@syncano.io
 endpoints:
   to-boolean:
-    GET:
+    POST:
       script: to-boolean
   is-between:
-    GET:
+    POST:
       script: is-between
   is-defined:
-    GET:
+    POST:
       script: is-defined
   is-undefined:
-    GET:
+    POST:
       script: is-undefined
   is-equal:
-    GET:
+    POST:
       script: is-equal
   is-not-equal:
-    GET:
+    POST:
       script: is-not-equal
   is-greater-than:
-    GET:
+    POST:
       script: is-greater-than
   is-less-than:
-    GET:
+    POST:
       script: is-less-than
   is-truthy:
-    GET:
+    POST:
       script: is-truthy
   is-falsy:
-    GET:
+    POST:
       script: is-falsy
   and:
-    GET:
+    POST:
       script: and
   or:
-    GET:
+    POST:
       script: or
   not:
-    GET:
+    POST:
       script: not
 dependencies:
   to-boolean:

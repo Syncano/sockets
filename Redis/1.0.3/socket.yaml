@@ -5,16 +5,16 @@ author:
   email: hello@syncano.io
 endpoints:
   get-connection:
-    GET:
+    POST:
       script: get-connection
   release-connection:
-    GET:
+    POST:
       script: release-connection
   create-manager:
-    GET:
+    POST:
       script: create-manager
   destroy-manager:
-    GET:
+    POST:
       script: destroy-manager
 dependencies:
   get-connection:

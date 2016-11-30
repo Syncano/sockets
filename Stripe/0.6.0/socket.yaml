@@ -5,37 +5,37 @@ author:
   email: hello@syncano.io
 endpoints:
   create-card:
-    GET:
+    POST:
       script: create-card
   capture-charge:
-    GET:
+    POST:
       script: capture-charge
   create-customer:
-    GET:
+    POST:
       script: create-customer
   list-cards:
-    GET:
+    POST:
       script: list-cards
   delete-card:
-    GET:
+    POST:
       script: delete-card
   create-charge:
-    GET:
+    POST:
       script: create-charge
   subscribe-customer:
-    GET:
+    POST:
       script: subscribe-customer
   update-subscription:
-    GET:
+    POST:
       script: update-subscription
   cancel-subscription:
-    GET:
+    POST:
       script: cancel-subscription
   retrieve-subscription-details:
-    GET:
+    POST:
       script: retrieve-subscription-details
   one-off-charge:
-    GET:
+    POST:
       script: one-off-charge
 dependencies:
   create-card:

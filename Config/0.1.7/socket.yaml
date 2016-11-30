@@ -5,13 +5,13 @@ author:
   email: hello@syncano.io
 endpoints:
   get:
-    GET:
+    POST:
       script: get
   multiple:
-    GET:
+    POST:
       script: multiple
   load:
-    GET:
+    POST:
       script: load
 dependencies:
   get:

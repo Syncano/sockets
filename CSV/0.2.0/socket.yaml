@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   parse-csv:
-    GET:
+    POST:
       script: parse-csv
 dependencies:
   parse-csv:

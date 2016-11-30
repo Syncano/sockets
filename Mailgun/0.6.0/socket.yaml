@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   send-plaintext-email:
-    GET:
+    POST:
       script: send-plaintext-email
   send-html-email:
-    GET:
+    POST:
       script: send-html-email
 dependencies:
   send-plaintext-email:

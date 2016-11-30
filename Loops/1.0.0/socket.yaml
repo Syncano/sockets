@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   map:
-    GET:
+    POST:
       script: map
   each:
-    GET:
+    POST:
       script: each
 dependencies:
   map:

@@ -5,31 +5,31 @@ author:
   email: hello@syncano.io
 endpoints:
   timestamp:
-    GET:
+    POST:
       script: timestamp
   parse-date:
-    GET:
+    POST:
       script: parse-date
   parse-time:
-    GET:
+    POST:
       script: parse-time
   stringify:
-    GET:
+    POST:
       script: stringify
   parse:
-    GET:
+    POST:
       script: parse
   format:
-    GET:
+    POST:
       script: format
   time-from:
-    GET:
+    POST:
       script: time-from
   now:
-    GET:
+    POST:
       script: now
   parse-timestamp:
-    GET:
+    POST:
       script: parse-timestamp
 dependencies:
   timestamp:

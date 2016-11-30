@@ -5,25 +5,25 @@ author:
   email: hello@syncano.io
 endpoints:
   get-login-url:
-    GET:
+    POST:
       script: get-login-url
   get-access-token:
-    GET:
+    POST:
       script: get-access-token
   get-user-by-access-token:
-    GET:
+    POST:
       script: get-user-by-access-token
   get-object-by-id:
-    GET:
+    POST:
       script: get-object-by-id
   create-object:
-    GET:
+    POST:
       script: create-object
   update-object-by-id:
-    GET:
+    POST:
       script: update-object-by-id
   describe-object-type:
-    GET:
+    POST:
       script: describe-object-type
 dependencies:
   get-login-url:

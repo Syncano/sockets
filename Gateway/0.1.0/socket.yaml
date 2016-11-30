@@ -5,25 +5,25 @@ author:
   email: hello@syncano.io
 endpoints:
   charge:
-    GET:
+    POST:
       script: charge
   refund:
-    GET:
+    POST:
       script: refund
   authorize:
-    GET:
+    POST:
       script: authorize
   capture:
-    GET:
+    POST:
       script: capture
   void-transaction:
-    GET:
+    POST:
       script: void-transaction
   get-settled-batch-list:
-    GET:
+    POST:
       script: get-settled-batch-list
   get-unsettled-transaction-list:
-    GET:
+    POST:
       script: get-unsettled-transaction-list
 dependencies:
   charge:

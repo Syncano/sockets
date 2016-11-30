@@ -5,16 +5,16 @@ author:
   email: hello@syncano.io
 endpoints:
   select:
-    GET:
+    POST:
       script: select
   confirm:
-    GET:
+    POST:
       script: confirm
   text:
-    GET:
+    POST:
       script: text
   multiselect:
-    GET:
+    POST:
       script: multiselect
 dependencies:
   select:

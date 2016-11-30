@@ -5,19 +5,19 @@ author:
   email: hello@syncano.io
 endpoints:
   get-host:
-    GET:
+    POST:
       script: get-host
   get-subnet:
-    GET:
+    POST:
       script: get-subnet
   get-next-available-ip:
-    GET:
+    POST:
       script: get-next-available-ip
   get-network-ref:
-    GET:
+    POST:
       script: get-network-ref
   get-record:
-    GET:
+    POST:
       script: get-record
 dependencies:
   get-host:

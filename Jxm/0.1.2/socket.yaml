@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   start-server:
-    GET:
+    POST:
       script: start-server
   start-client:
-    GET:
+    POST:
       script: start-client
 dependencies:
   start-server:

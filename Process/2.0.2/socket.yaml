@@ -5,16 +5,16 @@ author:
   email: hello@syncano.io
 endpoints:
   escape-cli-opt:
-    GET:
+    POST:
       script: escape-cli-opt
   kill-child-process:
-    GET:
+    POST:
       script: kill-child-process
   spawn-child-process:
-    GET:
+    POST:
       script: spawn-child-process
   execute-command:
-    GET:
+    POST:
       script: execute-command
 dependencies:
   escape-cli-opt:

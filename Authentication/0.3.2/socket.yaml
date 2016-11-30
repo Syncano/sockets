@@ -7,13 +7,13 @@ author:
   email: hello@syncano.io
 endpoints:
   login:
-    GET:
+    POST:
       script: login
   logout:
-    GET:
+    POST:
       script: logout
   check-login:
-    GET:
+    POST:
       script: check-login
 dependencies:
   login:

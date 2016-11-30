@@ -5,76 +5,76 @@ author:
   email: hello@syncano.io
 endpoints:
   reverse:
-    GET:
+    POST:
       script: reverse
   index-of:
-    GET:
+    POST:
       script: index-of
   slice:
-    GET:
+    POST:
       script: slice
   length:
-    GET:
+    POST:
       script: length
   concat:
-    GET:
+    POST:
       script: concat
   last:
-    GET:
+    POST:
       script: last
   nth:
-    GET:
+    POST:
       script: nth
   construct:
-    GET:
+    POST:
       script: construct
   pluck:
-    GET:
+    POST:
       script: pluck
   sort-strings:
-    GET:
+    POST:
       script: sort-strings
   sort-numbers:
-    GET:
+    POST:
       script: sort-numbers
   each:
-    GET:
+    POST:
       script: each
   map:
-    GET:
+    POST:
       script: map
   reduce:
-    GET:
+    POST:
       script: reduce
   find-one:
-    GET:
+    POST:
       script: find-one
   find-where:
-    GET:
+    POST:
       script: find-where
   insert:
-    GET:
+    POST:
       script: insert
   sample:
-    GET:
+    POST:
       script: sample
   sort-by:
-    GET:
+    POST:
       script: sort-by
   uniq-by:
-    GET:
+    POST:
       script: uniq-by
   uniq:
-    GET:
+    POST:
       script: uniq
   find-index-of:
-    GET:
+    POST:
       script: find-index-of
   replace:
-    GET:
+    POST:
       script: replace
   sample-subset:
-    GET:
+    POST:
       script: sample-subset
 dependencies:
   reverse:

@@ -5,13 +5,13 @@ author:
   email: hello@syncano.io
 endpoints:
   download-song-by-name-and-artist:
-    GET:
+    POST:
       script: download-song-by-name-and-artist
   download-playlist:
-    GET:
+    POST:
       script: download-playlist
   download-playlist-save:
-    GET:
+    POST:
       script: download-playlist-save
 dependencies:
   download-song-by-name-and-artist:

@@ -5,52 +5,52 @@ author:
   email: hello@syncano.io
 endpoints:
   get-user-details:
-    GET:
+    POST:
       script: get-user-details
   create-repo:
-    GET:
+    POST:
       script: create-repo
   list-organization-repos:
-    GET:
+    POST:
       script: list-organization-repos
   get-repo:
-    GET:
+    POST:
       script: get-repo
   list-repo-commits-at-path:
-    GET:
+    POST:
       script: list-repo-commits-at-path
   list-repo-commits:
-    GET:
+    POST:
       script: list-repo-commits
   list-repo-activity:
-    GET:
+    POST:
       script: list-repo-activity
   list-repos:
-    GET:
+    POST:
       script: list-repos
   build-installable-url:
-    GET:
+    POST:
       script: build-installable-url
   get-login-url:
-    GET:
+    POST:
       script: get-login-url
   get-access-token:
-    GET:
+    POST:
       script: get-access-token
   get-current-user:
-    GET:
+    POST:
       script: get-current-user
   parse-repo-str:
-    GET:
+    POST:
       script: parse-repo-str
   build-github-search-string:
-    GET:
+    POST:
       script: build-github-search-string
   get-download-url:
-    GET:
+    POST:
       script: get-download-url
   list-issue-comments:
-    GET:
+    POST:
       script: list-issue-comments
 dependencies:
   get-user-details:

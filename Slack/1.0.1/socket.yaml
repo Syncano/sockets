@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   post-to-channel:
-    GET:
+    POST:
       script: post-to-channel
 dependencies:
   post-to-channel:

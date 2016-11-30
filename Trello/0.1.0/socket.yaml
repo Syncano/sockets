@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   get-board-lists:
-    GET:
+    POST:
       script: get-board-lists
   move-list-to-board:
-    GET:
+    POST:
       script: move-list-to-board
 dependencies:
   get-board-lists:

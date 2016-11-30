@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   calculate-price:
-    GET:
+    POST:
       script: calculate-price
   calculate-prices:
-    GET:
+    POST:
       script: calculate-prices
 dependencies:
   calculate-price:

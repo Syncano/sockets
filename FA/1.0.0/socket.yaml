@@ -5,16 +5,16 @@ author:
   email: hello@syncano.io
 endpoints:
   generate-key:
-    GET:
+    POST:
       script: generate-key
   generate-code:
-    GET:
+    POST:
       script: generate-code
   generate-qr:
-    GET:
+    POST:
       script: generate-qr
   validate:
-    GET:
+    POST:
       script: validate
 dependencies:
   generate-key:

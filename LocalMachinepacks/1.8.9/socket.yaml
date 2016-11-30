@@ -5,73 +5,73 @@ author:
   email: hello@syncano.io
 endpoints:
   prompt-about-new-machinepack:
-    GET:
+    POST:
       script: prompt-about-new-machinepack
   prompt-about-new-machine:
-    GET:
+    POST:
       script: prompt-about-new-machine
   get-machines-dir:
-    GET:
+    POST:
       script: get-machines-dir
   remove-machine:
-    GET:
+    POST:
       script: remove-machine
   rename-machine:
-    GET:
+    POST:
       script: rename-machine
   copy-machine:
-    GET:
+    POST:
       script: copy-machine
   list-machines:
-    GET:
+    POST:
       script: list-machines
   run-machine:
-    GET:
+    POST:
       script: run-machine
   read-machine-file:
-    GET:
+    POST:
       script: read-machine-file
   write-machine-file:
-    GET:
+    POST:
       script: write-machine-file
   build-machine-code:
-    GET:
+    POST:
       script: build-machine-code
   prompt-for-input-vals:
-    GET:
+    POST:
       script: prompt-for-input-vals
   add-machine:
-    GET:
+    POST:
       script: add-machine
   run-machine-interactive:
-    GET:
+    POST:
       script: run-machine-interactive
   parse-machinepack-metadata:
-    GET:
+    POST:
       script: parse-machinepack-metadata
   initialize-machinepack:
-    GET:
+    POST:
       script: initialize-machinepack
   read-package-json:
-    GET:
+    POST:
       script: read-package-json
   interpret-machine-module:
-    GET:
+    POST:
       script: interpret-machine-module
   scaffold-tests:
-    GET:
+    POST:
       script: scaffold-tests
   add-test:
-    GET:
+    POST:
       script: add-test
   browse-to-pack-url:
-    GET:
+    POST:
       script: browse-to-pack-url
   get-signature:
-    GET:
+    POST:
       script: get-signature
   write-pack:
-    GET:
+    POST:
       script: write-pack
 dependencies:
   prompt-about-new-machinepack:

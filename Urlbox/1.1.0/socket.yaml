@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   get-url:
-    GET:
+    POST:
       script: get-url
 dependencies:
   get-url:

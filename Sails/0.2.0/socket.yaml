@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   get-configuration:
-    GET:
+    POST:
       script: get-configuration
   is-production:
-    GET:
+    POST:
       script: is-production
 dependencies:
   get-configuration:

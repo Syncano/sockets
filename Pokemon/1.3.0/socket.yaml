@@ -7,10 +7,10 @@ author:
   email: hello@syncano.io
 endpoints:
   list-all-pokemon:
-    GET:
+    POST:
       script: list-all-pokemon
   get-pokemon:
-    GET:
+    POST:
       script: get-pokemon
 dependencies:
   list-all-pokemon:

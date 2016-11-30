@@ -5,19 +5,19 @@ author:
   email: hello@syncano.io
 endpoints:
   execute:
-    GET:
+    POST:
       script: execute
   meta:
-    GET:
+    POST:
       script: meta
   dependencies:
-    GET:
+    POST:
       script: dependencies
   variables:
-    GET:
+    POST:
       script: variables
   methods:
-    GET:
+    POST:
       script: methods
 dependencies:
   execute:

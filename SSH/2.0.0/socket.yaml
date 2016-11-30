@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   run-ssh-command:
-    GET:
+    POST:
       script: run-ssh-command
   run-ssh-command-keys:
-    GET:
+    POST:
       script: run-ssh-command-keys
 dependencies:
   run-ssh-command:

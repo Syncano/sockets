@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   create-transaction-request:
-    GET:
+    POST:
       script: create-transaction-request
   authorize-transaction-request:
-    GET:
+    POST:
       script: authorize-transaction-request
 dependencies:
   create-transaction-request:

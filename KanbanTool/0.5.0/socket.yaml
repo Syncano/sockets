@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   get-new-cards:
-    GET:
+    POST:
       script: get-new-cards
 dependencies:
   get-new-cards:

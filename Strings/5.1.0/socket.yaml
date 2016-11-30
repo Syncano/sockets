@@ -5,64 +5,64 @@ author:
   email: hello@syncano.io
 endpoints:
   match:
-    GET:
+    POST:
       script: match
   construct:
-    GET:
+    POST:
       script: construct
   capitalize:
-    GET:
+    POST:
       script: capitalize
   length:
-    GET:
+    POST:
       script: length
   trunc:
-    GET:
+    POST:
       script: trunc
   trim:
-    GET:
+    POST:
       script: trim
   replace:
-    GET:
+    POST:
       script: replace
   split:
-    GET:
+    POST:
       script: split
   deburr:
-    GET:
+    POST:
       script: deburr
   slice:
-    GET:
+    POST:
       script: slice
   at:
-    GET:
+    POST:
       script: at
   join:
-    GET:
+    POST:
       script: join
   template:
-    GET:
+    POST:
       script: template
   ensure-uniq:
-    GET:
+    POST:
       script: ensure-uniq
   to-stream:
-    GET:
+    POST:
       script: to-stream
   random:
-    GET:
+    POST:
       script: random
   to-lower-case:
-    GET:
+    POST:
       script: to-lower-case
   to-upper-case:
-    GET:
+    POST:
       script: to-upper-case
   to-kebab-case:
-    GET:
+    POST:
       script: to-kebab-case
   to-camel-case:
-    GET:
+    POST:
       script: to-camel-case
 dependencies:
   match:

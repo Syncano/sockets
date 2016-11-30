@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   submit:
-    GET:
+    POST:
       script: submit
   submit-file:
-    GET:
+    POST:
       script: submit-file
 dependencies:
   submit:

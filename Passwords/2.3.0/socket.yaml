@@ -5,10 +5,10 @@ author:
   email: hello@syncano.io
 endpoints:
   check-password:
-    GET:
+    POST:
       script: check-password
   encrypt-password:
-    GET:
+    POST:
       script: encrypt-password
 dependencies:
   check-password:

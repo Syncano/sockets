@@ -5,22 +5,22 @@ author:
   email: hello@syncano.io
 endpoints:
   search:
-    GET:
+    POST:
       script: search
   bulk:
-    GET:
+    POST:
       script: bulk
   searchCustom:
-    GET:
+    POST:
       script: searchCustom
   getAlias:
-    GET:
+    POST:
       script: getAlias
   deleteByQuery:
-    GET:
+    POST:
       script: deleteByQuery
   updateAliases:
-    GET:
+    POST:
       script: updateAliases
 dependencies:
   search:

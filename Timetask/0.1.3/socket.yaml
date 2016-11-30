@@ -5,16 +5,16 @@ author:
   email: hello@syncano.io
 endpoints:
   get:
-    GET:
+    POST:
       script: get
   add:
-    GET:
+    POST:
       script: add
   remove:
-    GET:
+    POST:
       script: remove
   update:
-    GET:
+    POST:
       script: update
 dependencies:
   get:

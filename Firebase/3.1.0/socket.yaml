@@ -7,25 +7,25 @@ author:
   email: hello@syncano.io
 endpoints:
   set-data:
-    GET:
+    POST:
       script: set-data
   push-data:
-    GET:
+    POST:
       script: push-data
   update-data:
-    GET:
+    POST:
       script: update-data
   read-value:
-    GET:
+    POST:
       script: read-value
   json-to-string:
-    GET:
+    POST:
       script: json-to-string
   string-to-json:
-    GET:
+    POST:
       script: string-to-json
   remove-value:
-    GET:
+    POST:
       script: remove-value
 dependencies:
   set-data:

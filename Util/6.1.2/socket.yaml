@@ -7,19 +7,19 @@ author:
   email: hello@syncano.io
 endpoints:
   log:
-    GET:
+    POST:
       script: log
   hash:
-    GET:
+    POST:
       script: hash
   inspect:
-    GET:
+    POST:
       script: inspect
   coalesce:
-    GET:
+    POST:
       script: coalesce
   require:
-    GET:
+    POST:
       script: require
 dependencies:
   log:

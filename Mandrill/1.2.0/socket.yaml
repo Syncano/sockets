@@ -5,25 +5,25 @@ author:
   email: hello@syncano.io
 endpoints:
   send-plaintext-email:
-    GET:
+    POST:
       script: send-plaintext-email
   add-template:
-    GET:
+    POST:
       script: add-template
   delete-all-templates:
-    GET:
+    POST:
       script: delete-all-templates
   migrate-templates:
-    GET:
+    POST:
       script: migrate-templates
   list-templates:
-    GET:
+    POST:
       script: list-templates
   delete-template:
-    GET:
+    POST:
       script: delete-template
   send-template-email:
-    GET:
+    POST:
       script: send-template-email
 dependencies:
   send-plaintext-email:

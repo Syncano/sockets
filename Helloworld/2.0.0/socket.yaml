@@ -5,7 +5,7 @@ author:
   email: hello@syncano.io
 endpoints:
   say-hello:
-    GET:
+    POST:
       script: say-hello
 dependencies:
   say-hello:

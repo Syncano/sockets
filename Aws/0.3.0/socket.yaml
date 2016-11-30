@@ -5,31 +5,31 @@ author:
   email: hello@syncano.io
 endpoints:
   ecs-register-task-definition:
-    GET:
+    POST:
       script: ecs-register-task-definition
   ecs-list-task-definitions:
-    GET:
+    POST:
       script: ecs-list-task-definitions
   ecs-run-task:
-    GET:
+    POST:
       script: ecs-run-task
   ecs-list-tasks:
-    GET:
+    POST:
       script: ecs-list-tasks
   ecs-stop-task:
-    GET:
+    POST:
       script: ecs-stop-task
   ec2-describe-instances:
-    GET:
+    POST:
       script: ec2-describe-instances
   ecs-describe-container-instances:
-    GET:
+    POST:
       script: ecs-describe-container-instances
   ecs-describe-tasks:
-    GET:
+    POST:
       script: ecs-describe-tasks
   ecs-describe-task-definition:
-    GET:
+    POST:
       script: ecs-describe-task-definition
 dependencies:
   ecs-register-task-definition:

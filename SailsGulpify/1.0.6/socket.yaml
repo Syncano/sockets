@@ -5,28 +5,28 @@ author:
   email: hello@syncano.io
 endpoints:
   create-gulp-file:
-    GET:
+    POST:
       script: create-gulp-file
   create-gulp-tasks:
-    GET:
+    POST:
       script: create-gulp-tasks
   sails-gulpify:
-    GET:
+    POST:
       script: sails-gulpify
   toggle-sailsrc:
-    GET:
+    POST:
       script: toggle-sailsrc
   copy-files:
-    GET:
+    POST:
       script: copy-files
   install-gulp-dependencies:
-    GET:
+    POST:
       script: install-gulp-dependencies
   install-package-npm:
-    GET:
+    POST:
       script: install-package-npm
   create-gulp-engine:
-    GET:
+    POST:
       script: create-gulp-engine
 dependencies:
   create-gulp-file:

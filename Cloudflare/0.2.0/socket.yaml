@@ -5,16 +5,16 @@ author:
   email: hello@syncano.io
 endpoints:
   delete-dns-record:
-    GET:
+    POST:
       script: delete-dns-record
   add-dns-record:
-    GET:
+    POST:
       script: add-dns-record
   edit-dns-record:
-    GET:
+    POST:
       script: edit-dns-record
   stats:
-    GET:
+    POST:
       script: stats
 dependencies:
   delete-dns-record:
