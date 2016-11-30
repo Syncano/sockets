@@ -4,139 +4,137 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - cp:
-      GET:
-        script: cp
-  - ls:
-      GET:
-        script: ls
-  - rmrf:
-      GET:
-        script: rmrf
-  - write:
-      GET:
-        script: write
-  - read-json:
-      GET:
-        script: read-json
-  - template:
-      GET:
-        script: template
-  - read:
-      GET:
-        script: read
-  - write-json:
-      GET:
-        script: write-json
-  - mv:
-      GET:
-        script: mv
-  - exists:
-      GET:
-        script: exists
-  - mkdir:
-      GET:
-        script: mkdir
-  - ensure-dir:
-      GET:
-        script: ensure-dir
-  - ensure-json:
-      GET:
-        script: ensure-json
-  - write-sync:
-      GET:
-        script: write-sync
-  - read-sync:
-      GET:
-        script: read-sync
-  - read-stream:
-      GET:
-        script: read-stream
-  - write-stream:
-      GET:
-        script: write-stream
+  cp:
+    GET:
+      script: cp
+  ls:
+    GET:
+      script: ls
+  rmrf:
+    GET:
+      script: rmrf
+  write:
+    GET:
+      script: write
+  read-json:
+    GET:
+      script: read-json
+  template:
+    GET:
+      script: template
+  read:
+    GET:
+      script: read
+  write-json:
+    GET:
+      script: write-json
+  mv:
+    GET:
+      script: mv
+  exists:
+    GET:
+      script: exists
+  mkdir:
+    GET:
+      script: mkdir
+  ensure-dir:
+    GET:
+      script: ensure-dir
+  ensure-json:
+    GET:
+      script: ensure-json
+  write-sync:
+    GET:
+      script: write-sync
+  read-sync:
+    GET:
+      script: read-sync
+  read-stream:
+    GET:
+      script: read-stream
+  write-stream:
+    GET:
+      script: write-stream
 dependencies:
-  - cp:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/cp.js
-      description: >-
-        Copy file or directory located at source path to the destination path
-        (overwriting an existing file at the destination path, if there is one).
-  - ls:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/ls.js
-      description: List contents of a directory on the local filesystem.
-  - rmrf:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/rmrf.js
-      description: Completely remove a file or directory (like rm -rf).
-  - write:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/write.js
-      description: >-
-        Generate a file on the local filesystem using the specified utf8 string
-        as its contents.
-  - read-json:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/read-json.js
-      description: >-
-        Read and parse JSON file located at source path on disk into usable
-        data.
-  - template:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/template.js
-      description: >-
-        Read file at source path as a template, render with provided data, then
-        write to destination path.
-  - read:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/read.js
-      description: Read a file on disk as a string.
-  - write-json:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/write-json.js
-      description: Write some data to the specified destination path on disk.
-  - mv:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/mv.js
-      description: Move file or directory located at source path to the destination path.
-  - exists:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/exists.js
-      description: Check whether a file or directory exists at the given path.
-  - mkdir:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/mkdir.js
-      description: Make a new directory.
-  - ensure-dir:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/ensure-dir.js
-      description: >-
-        Ensure that the directory exists. If the directory structure does not
-        exist, it is created.
-  - ensure-json:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/ensure-json.js
-      description: 'Attempt to read from a JSON file, and if it does not exist, create it.'
-  - write-sync:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/write-sync.js
-      description: >-
-        Generate a file on the local filesystem using the specified utf8 string
-        as its contents.
-  - read-sync:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/read-sync.js
-      description: Read a file on disk as a string.
-  - read-stream:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/read-stream.js
-      description: >-
-        Open a readable stream that will pump out the contents from a file on
-        disk.
-  - write-stream:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/write-stream.js
-      description: >-
-        Generate a file on the local filesystem using the specified Readable
-        stream for its contents.
+  cp:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/cp.js
+    description: >-
+      Copy file or directory located at source path to the destination path
+      (overwriting an existing file at the destination path, if there is one).
+  ls:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/ls.js
+    description: List contents of a directory on the local filesystem.
+  rmrf:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/rmrf.js
+    description: Completely remove a file or directory (like rm -rf).
+  write:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/write.js
+    description: >-
+      Generate a file on the local filesystem using the specified utf8 string as
+      its contents.
+  read-json:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/read-json.js
+    description: Read and parse JSON file located at source path on disk into usable data.
+  template:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/template.js
+    description: >-
+      Read file at source path as a template, render with provided data, then
+      write to destination path.
+  read:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/read.js
+    description: Read a file on disk as a string.
+  write-json:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/write-json.js
+    description: Write some data to the specified destination path on disk.
+  mv:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/mv.js
+    description: Move file or directory located at source path to the destination path.
+  exists:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/exists.js
+    description: Check whether a file or directory exists at the given path.
+  mkdir:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/mkdir.js
+    description: Make a new directory.
+  ensure-dir:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/ensure-dir.js
+    description: >-
+      Ensure that the directory exists. If the directory structure does not
+      exist, it is created.
+  ensure-json:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/ensure-json.js
+    description: 'Attempt to read from a JSON file, and if it does not exist, create it.'
+  write-sync:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/write-sync.js
+    description: >-
+      Generate a file on the local filesystem using the specified utf8 string as
+      its contents.
+  read-sync:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/read-sync.js
+    description: Read a file on disk as a string.
+  read-stream:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/read-stream.js
+    description: >-
+      Open a readable stream that will pump out the contents from a file on
+      disk.
+  write-stream:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/write-stream.js
+    description: >-
+      Generate a file on the local filesystem using the specified Readable
+      stream for its contents.

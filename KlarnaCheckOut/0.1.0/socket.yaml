@@ -4,32 +4,32 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - place-order:
-      GET:
-        script: place-order
-  - fetchorder:
-      GET:
-        script: fetchorder
-  - confirm-order:
-      GET:
-        script: confirm-order
-  - update-order:
-      GET:
-        script: update-order
+  place-order:
+    GET:
+      script: place-order
+  fetchorder:
+    GET:
+      script: fetchorder
+  confirm-order:
+    GET:
+      script: confirm-order
+  update-order:
+    GET:
+      script: update-order
 dependencies:
-  - place-order:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/place-order.js
-      description: null
-  - fetchorder:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/fetchorder.js
-      description: null
-  - confirm-order:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/confirm-order.js
-      description: null
-  - update-order:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/update-order.js
-      description: Update an order
+  place-order:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/place-order.js
+    description: null
+  fetchorder:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/fetchorder.js
+    description: null
+  confirm-order:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/confirm-order.js
+    description: null
+  update-order:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/update-order.js
+    description: Update an order

@@ -4,18 +4,18 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - send-html-email:
-      GET:
-        script: send-html-email
-  - send-plaintext-email:
-      GET:
-        script: send-plaintext-email
+  send-html-email:
+    GET:
+      script: send-html-email
+  send-plaintext-email:
+    GET:
+      script: send-plaintext-email
 dependencies:
-  - send-html-email:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/send-html-email.js
-      description: Send an html email.
-  - send-plaintext-email:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/send-plaintext-email.js
-      description: Send a simple plaintext email.
+  send-html-email:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/send-html-email.js
+    description: Send an html email.
+  send-plaintext-email:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/send-plaintext-email.js
+    description: Send a simple plaintext email.

@@ -4,46 +4,46 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - search:
-      GET:
-        script: search
-  - bulk:
-      GET:
-        script: bulk
-  - searchCustom:
-      GET:
-        script: searchCustom
-  - getAlias:
-      GET:
-        script: getAlias
-  - deleteByQuery:
-      GET:
-        script: deleteByQuery
-  - updateAliases:
-      GET:
-        script: updateAliases
+  search:
+    GET:
+      script: search
+  bulk:
+    GET:
+      script: bulk
+  searchCustom:
+    GET:
+      script: searchCustom
+  getAlias:
+    GET:
+      script: getAlias
+  deleteByQuery:
+    GET:
+      script: deleteByQuery
+  updateAliases:
+    GET:
+      script: updateAliases
 dependencies:
-  - search:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/search.js
-      description: search
-  - bulk:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/bulk.js
-      description: Perform many index/delete operations in a single API call.
-  - searchCustom:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/searchCustom.js
-      description: Search custom on Elastic Search
-  - getAlias:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/getAlias.js
-      description: Get elastic alias and see the pointed index
-  - deleteByQuery:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/deleteByQuery.js
-      description: Delete by query
-  - updateAliases:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/updateAliases.js
-      description: 'Perform an atomic alias swap, for a rotating index.'
+  search:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/search.js
+    description: search
+  bulk:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/bulk.js
+    description: Perform many index/delete operations in a single API call.
+  searchCustom:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/searchCustom.js
+    description: Search custom on Elastic Search
+  getAlias:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/getAlias.js
+    description: Get elastic alias and see the pointed index
+  deleteByQuery:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/deleteByQuery.js
+    description: Delete by query
+  updateAliases:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/updateAliases.js
+    description: 'Perform an atomic alias swap, for a rotating index.'

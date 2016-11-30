@@ -6,57 +6,57 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - set-data:
-      GET:
-        script: set-data
-  - push-data:
-      GET:
-        script: push-data
-  - update-data:
-      GET:
-        script: update-data
-  - read-value:
-      GET:
-        script: read-value
-  - json-to-string:
-      GET:
-        script: json-to-string
-  - string-to-json:
-      GET:
-        script: string-to-json
-  - remove-value:
-      GET:
-        script: remove-value
+  set-data:
+    GET:
+      script: set-data
+  push-data:
+    GET:
+      script: push-data
+  update-data:
+    GET:
+      script: update-data
+  read-value:
+    GET:
+      script: read-value
+  json-to-string:
+    GET:
+      script: json-to-string
+  string-to-json:
+    GET:
+      script: string-to-json
+  remove-value:
+    GET:
+      script: remove-value
 dependencies:
-  - set-data:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/set-data.js
-      description: Write data to your Firebase instance with the Set method.
-  - push-data:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/push-data.js
-      description: Write data to your Firebase instance with the Push method.
-  - update-data:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/update-data.js
-      description: Update data in a Firebase child node per field.
-  - read-value:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/read-value.js
-      description: 'Read data from a specific firebase location, such as "/users/".'
-  - json-to-string:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/json-to-string.js
-      description: >-
-        Firebase reads data as a JSON object. You can convert this to a string
-        with this machine.
-  - string-to-json:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/string-to-json.js
-      description: >-
-        Firebase writes data as a JSON object. You can convert your JSON-format
-        string to a JSON object with this machine.
-  - remove-value:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/remove-value.js
-      description: 'Remove data from a specific firebase location, such as "/users/".'
+  set-data:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/set-data.js
+    description: Write data to your Firebase instance with the Set method.
+  push-data:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/push-data.js
+    description: Write data to your Firebase instance with the Push method.
+  update-data:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/update-data.js
+    description: Update data in a Firebase child node per field.
+  read-value:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/read-value.js
+    description: 'Read data from a specific firebase location, such as "/users/".'
+  json-to-string:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/json-to-string.js
+    description: >-
+      Firebase reads data as a JSON object. You can convert this to a string
+      with this machine.
+  string-to-json:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/string-to-json.js
+    description: >-
+      Firebase writes data as a JSON object. You can convert your JSON-format
+      string to a JSON object with this machine.
+  remove-value:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/remove-value.js
+    description: 'Remove data from a specific firebase location, such as "/users/".'

@@ -4,36 +4,36 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - get-connection:
-      GET:
-        script: get-connection
-  - release-connection:
-      GET:
-        script: release-connection
-  - create-manager:
-      GET:
-        script: create-manager
-  - destroy-manager:
-      GET:
-        script: destroy-manager
+  get-connection:
+    GET:
+      script: get-connection
+  release-connection:
+    GET:
+      script: release-connection
+  create-manager:
+    GET:
+      script: create-manager
+  destroy-manager:
+    GET:
+      script: destroy-manager
 dependencies:
-  - get-connection:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-connection.js
-      description: Get an active connection to Redis.
-  - release-connection:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/release-connection.js
-      description: Close an active connection to the Redis server.
-  - create-manager:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/create-manager.js
-      description: >-
-        Build and initialize a connection manager instance for this Redis
-        database.
-  - destroy-manager:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/destroy-manager.js
-      description: >-
-        Destroy the specified connection manager and destroy all of its active
-        connections.
+  get-connection:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-connection.js
+    description: Get an active connection to Redis.
+  release-connection:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/release-connection.js
+    description: Close an active connection to the Redis server.
+  create-manager:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/create-manager.js
+    description: >-
+      Build and initialize a connection manager instance for this Redis
+      database.
+  destroy-manager:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/destroy-manager.js
+    description: >-
+      Destroy the specified connection manager and destroy all of its active
+      connections.

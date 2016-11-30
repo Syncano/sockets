@@ -4,32 +4,32 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - get-document:
-      GET:
-        script: get-document
-  - get-document-by-slug:
-      GET:
-        script: get-document-by-slug
-  - get-many-documents:
-      GET:
-        script: get-many-documents
-  - get-bookmark:
-      GET:
-        script: get-bookmark
+  get-document:
+    GET:
+      script: get-document
+  get-document-by-slug:
+    GET:
+      script: get-document-by-slug
+  get-many-documents:
+    GET:
+      script: get-many-documents
+  get-bookmark:
+    GET:
+      script: get-bookmark
 dependencies:
-  - get-document:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-document.js
-      description: Get a prismic document by id.
-  - get-document-by-slug:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-document-by-slug.js
-      description: Get a prismic document by slug.
-  - get-many-documents:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-many-documents.js
-      description: Get many documents by Array of ids
-  - get-bookmark:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-bookmark.js
-      description: Get a prismic document by bookmark.
+  get-document:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-document.js
+    description: Get a prismic document by id.
+  get-document-by-slug:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-document-by-slug.js
+    description: Get a prismic document by slug.
+  get-many-documents:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-many-documents.js
+    description: Get many documents by Array of ids
+  get-bookmark:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-bookmark.js
+    description: Get a prismic document by bookmark.

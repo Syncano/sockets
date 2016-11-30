@@ -4,11 +4,11 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - say-hello:
-      GET:
-        script: say-hello
+  say-hello:
+    GET:
+      script: say-hello
 dependencies:
-  - say-hello:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/say-hello.js
-      description: Log a hello message with a generated secret code and other information
+  say-hello:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/say-hello.js
+    description: Log a hello message with a generated secret code and other information

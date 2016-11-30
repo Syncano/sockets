@@ -4,46 +4,46 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - category-retrieve:
-      GET:
-        script: category-retrieve
-  - product-retrieve:
-      GET:
-        script: product-retrieve
-  - organization-request:
-      GET:
-        script: organization-request
-  - organization-response:
-      GET:
-        script: organization-response
-  - organization-response-update:
-      GET:
-        script: organization-response-update
-  - organization-get:
-      GET:
-        script: organization-get
+  category-retrieve:
+    GET:
+      script: category-retrieve
+  product-retrieve:
+    GET:
+      script: product-retrieve
+  organization-request:
+    GET:
+      script: organization-request
+  organization-response:
+    GET:
+      script: organization-response
+  organization-response-update:
+    GET:
+      script: organization-response-update
+  organization-get:
+    GET:
+      script: organization-get
 dependencies:
-  - category-retrieve:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/category-retrieve.js
-      description: Retrieve categories of products
-  - product-retrieve:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/product-retrieve.js
-      description: Retrieve product by Id
-  - organization-request:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/organization-request.js
-      description: save a new organizations to be part of paidUp
-  - organization-response:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/organization-response.js
-      description: authorizate new organizations to be part of paidUp
-  - organization-response-update:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/organization-response-update.js
-      description: authorizate new organizations to be part of paidUp
-  - organization-get:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/organization-get.js
-      description: get organizations to be part of paidUp
+  category-retrieve:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/category-retrieve.js
+    description: Retrieve categories of products
+  product-retrieve:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/product-retrieve.js
+    description: Retrieve product by Id
+  organization-request:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/organization-request.js
+    description: save a new organizations to be part of paidUp
+  organization-response:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/organization-response.js
+    description: authorizate new organizations to be part of paidUp
+  organization-response-update:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/organization-response-update.js
+    description: authorizate new organizations to be part of paidUp
+  organization-get:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/organization-get.js
+    description: get organizations to be part of paidUp

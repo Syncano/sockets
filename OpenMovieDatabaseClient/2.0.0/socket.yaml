@@ -4,11 +4,11 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - search-by-title:
-      GET:
-        script: search-by-title
+  search-by-title:
+    GET:
+      script: search-by-title
 dependencies:
-  - search-by-title:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/search-by-title.js
-      description: 'Get information about movies and tv shows '
+  search-by-title:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/search-by-title.js
+    description: 'Get information about movies and tv shows '

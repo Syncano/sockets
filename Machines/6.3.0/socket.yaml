@@ -4,20 +4,20 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - run-instantiated-machine:
-      GET:
-        script: run-instantiated-machine
-  - validate:
-      GET:
-        script: validate
+  run-instantiated-machine:
+    GET:
+      script: run-instantiated-machine
+  validate:
+    GET:
+      script: validate
 dependencies:
-  - run-instantiated-machine:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/run-instantiated-machine.js
-      description: >-
-        Run a machine which is already instantiated using the provided input
-        values.
-  - validate:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/validate.js
-      description: Validate the specified machine definition.
+  run-instantiated-machine:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/run-instantiated-machine.js
+    description: >-
+      Run a machine which is already instantiated using the provided input
+      values.
+  validate:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/validate.js
+    description: Validate the specified machine definition.

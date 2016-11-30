@@ -4,25 +4,25 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - get:
-      GET:
-        script: get
-  - multiple:
-      GET:
-        script: multiple
-  - load:
-      GET:
-        script: load
+  get:
+    GET:
+      script: get
+  multiple:
+    GET:
+      script: multiple
+  load:
+    GET:
+      script: load
 dependencies:
-  - get:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get.js
-      description: Get simply a config with few json file
-  - multiple:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/multiple.js
-      description: Get a multiple config with define some key
-  - load:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/load.js
-      description: Load a config of config's file...
+  get:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get.js
+    description: Get simply a config with few json file
+  multiple:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/multiple.js
+    description: Get a multiple config with define some key
+  load:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/load.js
+    description: Load a config of config's file...

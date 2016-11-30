@@ -4,18 +4,18 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - get-tests:
-      GET:
-        script: get-tests
-  - get-tests-details:
-      GET:
-        script: get-tests-details
+  get-tests:
+    GET:
+      script: get-tests
+  get-tests-details:
+    GET:
+      script: get-tests-details
 dependencies:
-  - get-tests:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-tests.js
-      description: Get all Tests connected to your StatusCake account.
-  - get-tests-details:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-tests-details.js
-      description: Get detail information about a Test.
+  get-tests:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-tests.js
+    description: Get all Tests connected to your StatusCake account.
+  get-tests-details:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-tests-details.js
+    description: Get detail information about a Test.

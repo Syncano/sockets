@@ -4,20 +4,20 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - get-login-url:
-      GET:
-        script: get-login-url
-  - get-access-token:
-      GET:
-        script: get-access-token
+  get-login-url:
+    GET:
+      script: get-login-url
+  get-access-token:
+    GET:
+      script: get-access-token
 dependencies:
-  - get-login-url:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-login-url.js
-      description: >-
-        Get the URL on Spotify that a user should visit to authorize the
-        specified Spotify app (i.e. your app).
-  - get-access-token:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-access-token.js
-      description: Get access token to use with requests to Spotify Web API.
+  get-login-url:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-login-url.js
+    description: >-
+      Get the URL on Spotify that a user should visit to authorize the specified
+      Spotify app (i.e. your app).
+  get-access-token:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-access-token.js
+    description: Get access token to use with requests to Spotify Web API.

@@ -4,53 +4,53 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - send-plaintext-email:
-      GET:
-        script: send-plaintext-email
-  - add-template:
-      GET:
-        script: add-template
-  - delete-all-templates:
-      GET:
-        script: delete-all-templates
-  - migrate-templates:
-      GET:
-        script: migrate-templates
-  - list-templates:
-      GET:
-        script: list-templates
-  - delete-template:
-      GET:
-        script: delete-template
-  - send-template-email:
-      GET:
-        script: send-template-email
+  send-plaintext-email:
+    GET:
+      script: send-plaintext-email
+  add-template:
+    GET:
+      script: add-template
+  delete-all-templates:
+    GET:
+      script: delete-all-templates
+  migrate-templates:
+    GET:
+      script: migrate-templates
+  list-templates:
+    GET:
+      script: list-templates
+  delete-template:
+    GET:
+      script: delete-template
+  send-template-email:
+    GET:
+      script: send-template-email
 dependencies:
-  - send-plaintext-email:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/send-plaintext-email.js
-      description: Send a plaintext email to the specified recipient.
-  - add-template:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/add-template.js
-      description: Add a new email template to a Mandrill account.
-  - delete-all-templates:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/delete-all-templates.js
-      description: Delete all mandrill templates from an account.
-  - migrate-templates:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/migrate-templates.js
-      description: Get all mandrill templates from one account and add them to another.
-  - list-templates:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/list-templates.js
-      description: List all templates available to a user
-  - delete-template:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/delete-template.js
-      description: Delete a mandrill template.
-  - send-template-email:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/send-template-email.js
-      description: Send a templated email to the specified recipient.
+  send-plaintext-email:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/send-plaintext-email.js
+    description: Send a plaintext email to the specified recipient.
+  add-template:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/add-template.js
+    description: Add a new email template to a Mandrill account.
+  delete-all-templates:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/delete-all-templates.js
+    description: Delete all mandrill templates from an account.
+  migrate-templates:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/migrate-templates.js
+    description: Get all mandrill templates from one account and add them to another.
+  list-templates:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/list-templates.js
+    description: List all templates available to a user
+  delete-template:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/delete-template.js
+    description: Delete a mandrill template.
+  send-template-email:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/send-template-email.js
+    description: Send a templated email to the specified recipient.

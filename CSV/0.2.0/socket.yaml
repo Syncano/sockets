@@ -4,11 +4,11 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - parse-csv:
-      GET:
-        script: parse-csv
+  parse-csv:
+    GET:
+      script: parse-csv
 dependencies:
-  - parse-csv:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/parse-csv.js
-      description: Parse comma-separated value data
+  parse-csv:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/parse-csv.js
+    description: Parse comma-separated value data

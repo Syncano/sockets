@@ -4,143 +4,139 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - list-packages:
-      GET:
-        script: list-packages
-  - download-package:
-      GET:
-        script: download-package
-  - list-packages-with-details:
-      GET:
-        script: list-packages-with-details
-  - install-package:
-      GET:
-        script: install-package
-  - parse-package-json:
-      GET:
-        script: parse-package-json
-  - publish:
-      GET:
-        script: publish
-  - unpublish:
-      GET:
-        script: unpublish
-  - open-source:
-      GET:
-        script: open-source
-  - restrict:
-      GET:
-        script: restrict
-  - fetch-info:
-      GET:
-        script: fetch-info
-  - arrayify-dependencies:
-      GET:
-        script: arrayify-dependencies
-  - unarrayify-dependencies:
-      GET:
-        script: unarrayify-dependencies
-  - install-dependencies:
-      GET:
-        script: install-dependencies
-  - get-latest-version:
-      GET:
-        script: get-latest-version
-  - validate-version:
-      GET:
-        script: validate-version
-  - compare-versions:
-      GET:
-        script: compare-versions
-  - is-version-compatible:
-      GET:
-        script: is-version-compatible
+  list-packages:
+    GET:
+      script: list-packages
+  download-package:
+    GET:
+      script: download-package
+  list-packages-with-details:
+    GET:
+      script: list-packages-with-details
+  install-package:
+    GET:
+      script: install-package
+  parse-package-json:
+    GET:
+      script: parse-package-json
+  publish:
+    GET:
+      script: publish
+  unpublish:
+    GET:
+      script: unpublish
+  open-source:
+    GET:
+      script: open-source
+  restrict:
+    GET:
+      script: restrict
+  fetch-info:
+    GET:
+      script: fetch-info
+  arrayify-dependencies:
+    GET:
+      script: arrayify-dependencies
+  unarrayify-dependencies:
+    GET:
+      script: unarrayify-dependencies
+  install-dependencies:
+    GET:
+      script: install-dependencies
+  get-latest-version:
+    GET:
+      script: get-latest-version
+  validate-version:
+    GET:
+      script: validate-version
+  compare-versions:
+    GET:
+      script: compare-versions
+  is-version-compatible:
+    GET:
+      script: is-version-compatible
 dependencies:
-  - list-packages:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/list-packages.js
-      description: >-
-        List packages in the public npm registry whose keywords match the
-        specified search query.
-  - download-package:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/download-package.js
-      description: 'Stream the tarball for the NPM package+version to disk, then extract it.'
-  - list-packages-with-details:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/list-packages-with-details.js
-      description: >-
-        List matching packages and include metadata from their package.json
-        files.
-  - install-package:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/install-package.js
-      description: >-
-        Install a package from the NPM registry to the node_modules folder of a
-        local project.
-  - parse-package-json:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/parse-package-json.js
-      description: >-
-        Parse metadata for the latest version of the NPM package given a
-        package.json string.
-  - publish:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/publish.js
-      description: Publish a package to the public NPM registry.
-  - unpublish:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/unpublish.js
-      description: Unpublish a package from the public NPM registry.
-  - open-source:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/open-source.js
-      description: Open up public access to a package published on NPM.
-  - restrict:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/restrict.js
-      description: Restrict access to a package published on NPM.
-  - fetch-info:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/fetch-info.js
-      description: >-
-        Look up information about the latest version of the specified NPM
-        package.
-  - arrayify-dependencies:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/arrayify-dependencies.js
-      description: >-
-        Flatten the provided depenencies dictionary into a homogeneous array of
-        dictionaries.
-  - unarrayify-dependencies:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/unarrayify-dependencies.js
-      description: >-
-        Un-flatten the provided array back into a traditional NPM dependencies
-        dictionary.
-  - install-dependencies:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/install-dependencies.js
-      description: Install NPM dependencies of local package at the specified path.
-  - get-latest-version:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-latest-version.js
-      description: >-
-        Look up the version string for the latest published version of the
-        specified NPM package.
-  - validate-version:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/validate-version.js
-      description: >-
-        Validate (and potentially coerce) the specified string, verifying that
-        it is compatible for use as an NPM version string.
-  - compare-versions:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/compare-versions.js
-      description: 'Compare two NPM version strings and return either 1, 0, or -1.'
-  - is-version-compatible:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/is-version-compatible.js
-      description: >-
-        Determine whether or not a particular NPM version string is compatible
-        within a semver range.
+  list-packages:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/list-packages.js
+    description: >-
+      List packages in the public npm registry whose keywords match the
+      specified search query.
+  download-package:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/download-package.js
+    description: 'Stream the tarball for the NPM package+version to disk, then extract it.'
+  list-packages-with-details:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/list-packages-with-details.js
+    description: List matching packages and include metadata from their package.json files.
+  install-package:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/install-package.js
+    description: >-
+      Install a package from the NPM registry to the node_modules folder of a
+      local project.
+  parse-package-json:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/parse-package-json.js
+    description: >-
+      Parse metadata for the latest version of the NPM package given a
+      package.json string.
+  publish:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/publish.js
+    description: Publish a package to the public NPM registry.
+  unpublish:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/unpublish.js
+    description: Unpublish a package from the public NPM registry.
+  open-source:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/open-source.js
+    description: Open up public access to a package published on NPM.
+  restrict:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/restrict.js
+    description: Restrict access to a package published on NPM.
+  fetch-info:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/fetch-info.js
+    description: Look up information about the latest version of the specified NPM package.
+  arrayify-dependencies:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/arrayify-dependencies.js
+    description: >-
+      Flatten the provided depenencies dictionary into a homogeneous array of
+      dictionaries.
+  unarrayify-dependencies:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/unarrayify-dependencies.js
+    description: >-
+      Un-flatten the provided array back into a traditional NPM dependencies
+      dictionary.
+  install-dependencies:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/install-dependencies.js
+    description: Install NPM dependencies of local package at the specified path.
+  get-latest-version:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-latest-version.js
+    description: >-
+      Look up the version string for the latest published version of the
+      specified NPM package.
+  validate-version:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/validate-version.js
+    description: >-
+      Validate (and potentially coerce) the specified string, verifying that it
+      is compatible for use as an NPM version string.
+  compare-versions:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/compare-versions.js
+    description: 'Compare two NPM version strings and return either 1, 0, or -1.'
+  is-version-compatible:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/is-version-compatible.js
+    description: >-
+      Determine whether or not a particular NPM version string is compatible
+      within a semver range.

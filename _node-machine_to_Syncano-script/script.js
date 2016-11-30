@@ -2,6 +2,7 @@ var fs = require('fs');
 var dedent = require('dedent');
 var mkdirp = require('mkdirp');
 var yaml = require('write-yaml');
+var _ = require('lodash');
 
 const machines = require('./data.json');
 const BLACK_LIST = [
@@ -71,31 +72,9 @@ machines
         name: 'Syncano',
         email: 'hello@syncano.io'
       },
-      endpoints: renderEndpoints(machines),
-      dependencies: renderDependencies(machines)
+      endpoints: _.assign.apply(_, renderEndpoints(machines)),
+      dependencies: _.assign.apply(_, renderDependencies(machines))
     }
-
-    // const meta = dedent`  
-    //   name: ${variableName}
-    //   description: ${machine.description}
-
-    //   author:
-    //     name: Syncano
-    //     email: hello@syncano.io
-    // `;
-
-    // const endpoints = dedent`
-    //   endpoints:${renderEndpoints(machines)}
-    // `;
-
-    // const dependencies = dedent
-    // `
-    //   dependencies:
-    //       scripts:
-    //           ${renderDependencies(machines)}
-    // `;
-
-    // const content = [meta, endpoints, dependencies].join('\n\n');
 
     createDirs(rootDir);
     createYamlInput(content, rootDir);

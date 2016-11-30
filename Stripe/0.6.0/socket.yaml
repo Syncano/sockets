@@ -4,81 +4,81 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - create-card:
-      GET:
-        script: create-card
-  - capture-charge:
-      GET:
-        script: capture-charge
-  - create-customer:
-      GET:
-        script: create-customer
-  - list-cards:
-      GET:
-        script: list-cards
-  - delete-card:
-      GET:
-        script: delete-card
-  - create-charge:
-      GET:
-        script: create-charge
-  - subscribe-customer:
-      GET:
-        script: subscribe-customer
-  - update-subscription:
-      GET:
-        script: update-subscription
-  - cancel-subscription:
-      GET:
-        script: cancel-subscription
-  - retrieve-subscription-details:
-      GET:
-        script: retrieve-subscription-details
-  - one-off-charge:
-      GET:
-        script: one-off-charge
+  create-card:
+    GET:
+      script: create-card
+  capture-charge:
+    GET:
+      script: capture-charge
+  create-customer:
+    GET:
+      script: create-customer
+  list-cards:
+    GET:
+      script: list-cards
+  delete-card:
+    GET:
+      script: delete-card
+  create-charge:
+    GET:
+      script: create-charge
+  subscribe-customer:
+    GET:
+      script: subscribe-customer
+  update-subscription:
+    GET:
+      script: update-subscription
+  cancel-subscription:
+    GET:
+      script: cancel-subscription
+  retrieve-subscription-details:
+    GET:
+      script: retrieve-subscription-details
+  one-off-charge:
+    GET:
+      script: one-off-charge
 dependencies:
-  - create-card:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/create-card.js
-      description: Create a new card for a customer
-  - capture-charge:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/capture-charge.js
-      description: Capture the payment of a previously-created charge in Stripe.
-  - create-customer:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/create-customer.js
-      description: Create a new customer in Stripe
-  - list-cards:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/list-cards.js
-      description: List all cards in Stripe for a customer.
-  - delete-card:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/delete-card.js
-      description: Delete a card in Stripe for a customer
-  - create-charge:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/create-charge.js
-      description: Create a new charge for a customer
-  - subscribe-customer:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/subscribe-customer.js
-      description: Subscribe a customer to a pre-existing plan.
-  - update-subscription:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/update-subscription.js
-      description: Update a customer's subscription to change plan or quantity.
-  - cancel-subscription:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/cancel-subscription.js
-      description: Cancel an existing subscription attached to a customer.
-  - retrieve-subscription-details:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/retrieve-subscription-details.js
-      description: 'Retrieve details of a specific, active subsription for a customer.'
-  - one-off-charge:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/one-off-charge.js
-      description: Create a new charge without storing customer or card objects in Stripe.
+  create-card:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/create-card.js
+    description: Create a new card for a customer
+  capture-charge:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/capture-charge.js
+    description: Capture the payment of a previously-created charge in Stripe.
+  create-customer:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/create-customer.js
+    description: Create a new customer in Stripe
+  list-cards:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/list-cards.js
+    description: List all cards in Stripe for a customer.
+  delete-card:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/delete-card.js
+    description: Delete a card in Stripe for a customer
+  create-charge:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/create-charge.js
+    description: Create a new charge for a customer
+  subscribe-customer:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/subscribe-customer.js
+    description: Subscribe a customer to a pre-existing plan.
+  update-subscription:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/update-subscription.js
+    description: Update a customer's subscription to change plan or quantity.
+  cancel-subscription:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/cancel-subscription.js
+    description: Cancel an existing subscription attached to a customer.
+  retrieve-subscription-details:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/retrieve-subscription-details.js
+    description: 'Retrieve details of a specific, active subsription for a customer.'
+  one-off-charge:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/one-off-charge.js
+    description: Create a new charge without storing customer or card objects in Stripe.

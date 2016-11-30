@@ -6,40 +6,40 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - save-to-storage:
-      GET:
-        script: save-to-storage
-  - read-from-storage:
-      GET:
-        script: read-from-storage
-  - delete-from-storage:
-      GET:
-        script: delete-from-storage
-  - save-json-to-storage:
-      GET:
-        script: save-json-to-storage
+  save-to-storage:
+    GET:
+      script: save-to-storage
+  read-from-storage:
+    GET:
+      script: read-from-storage
+  delete-from-storage:
+    GET:
+      script: delete-from-storage
+  save-json-to-storage:
+    GET:
+      script: save-json-to-storage
 dependencies:
-  - save-to-storage:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/save-to-storage.js
-      description: >-
-        Save a key-value pair in string format to the persistent data store.
-        This is compatible with PhoneGap/Cordova
-  - read-from-storage:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/read-from-storage.js
-      description: >-
-        Retrieve a key-value pair from the persistent data store. This is
-        compatible with PhoneGap/Cordova
-  - delete-from-storage:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/delete-from-storage.js
-      description: >-
-        Delete a key-value pair from the persistent data store. This is
-        compatible with PhoneGap/Cordova
-  - save-json-to-storage:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/save-json-to-storage.js
-      description: >-
-        Save a key-value pair in string format to the persistent data store.
-        This is compatible with PhoneGap/Cordova
+  save-to-storage:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/save-to-storage.js
+    description: >-
+      Save a key-value pair in string format to the persistent data store. This
+      is compatible with PhoneGap/Cordova
+  read-from-storage:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/read-from-storage.js
+    description: >-
+      Retrieve a key-value pair from the persistent data store. This is
+      compatible with PhoneGap/Cordova
+  delete-from-storage:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/delete-from-storage.js
+    description: >-
+      Delete a key-value pair from the persistent data store. This is compatible
+      with PhoneGap/Cordova
+  save-json-to-storage:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/save-json-to-storage.js
+    description: >-
+      Save a key-value pair in string format to the persistent data store. This
+      is compatible with PhoneGap/Cordova

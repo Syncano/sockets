@@ -4,32 +4,32 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - insertion-sort:
-      GET:
-        script: insertion-sort
-  - selection-sort:
-      GET:
-        script: selection-sort
-  - bubble-sort:
-      GET:
-        script: bubble-sort
-  - merge-sort:
-      GET:
-        script: merge-sort
+  insertion-sort:
+    GET:
+      script: insertion-sort
+  selection-sort:
+    GET:
+      script: selection-sort
+  bubble-sort:
+    GET:
+      script: bubble-sort
+  merge-sort:
+    GET:
+      script: merge-sort
 dependencies:
-  - insertion-sort:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/insertion-sort.js
-      description: 'Sort an array using Insertion sort algorithm. '
-  - selection-sort:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/selection-sort.js
-      description: 'Sort an array with Selection sort algorithm '
-  - bubble-sort:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/bubble-sort.js
-      description: Sort an array using Bubble sort algorithm
-  - merge-sort:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/merge-sort.js
-      description: Sort an array using Merge sort algorithm
+  insertion-sort:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/insertion-sort.js
+    description: 'Sort an array using Insertion sort algorithm. '
+  selection-sort:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/selection-sort.js
+    description: 'Sort an array with Selection sort algorithm '
+  bubble-sort:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/bubble-sort.js
+    description: Sort an array using Bubble sort algorithm
+  merge-sort:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/merge-sort.js
+    description: Sort an array using Merge sort algorithm

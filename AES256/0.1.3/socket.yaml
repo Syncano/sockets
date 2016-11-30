@@ -4,46 +4,46 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - encrypt:
-      GET:
-        script: encrypt
-  - decrypt:
-      GET:
-        script: decrypt
-  - encrypt-stream:
-      GET:
-        script: encrypt-stream
-  - decrypt-stream:
-      GET:
-        script: decrypt-stream
-  - encrypt-stream-file:
-      GET:
-        script: encrypt-stream-file
-  - decrypt-stream-file:
-      GET:
-        script: decrypt-stream-file
+  encrypt:
+    GET:
+      script: encrypt
+  decrypt:
+    GET:
+      script: decrypt
+  encrypt-stream:
+    GET:
+      script: encrypt-stream
+  decrypt-stream:
+    GET:
+      script: decrypt-stream
+  encrypt-stream-file:
+    GET:
+      script: encrypt-stream-file
+  decrypt-stream-file:
+    GET:
+      script: decrypt-stream-file
 dependencies:
-  - encrypt:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/encrypt.js
-      description: Encrypt content
-  - decrypt:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/decrypt.js
-      description: Decrypt content
-  - encrypt-stream:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/encrypt-stream.js
-      description: Encrypt stream content and zip it
-  - decrypt-stream:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/decrypt-stream.js
-      description: Decrypt stream content and unzip it
-  - encrypt-stream-file:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/encrypt-stream-file.js
-      description: Encrypt a streamfile with source path
-  - decrypt-stream-file:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/decrypt-stream-file.js
-      description: Decrypt a streamfile with source path
+  encrypt:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/encrypt.js
+    description: Encrypt content
+  decrypt:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/decrypt.js
+    description: Decrypt content
+  encrypt-stream:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/encrypt-stream.js
+    description: Encrypt stream content and zip it
+  decrypt-stream:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/decrypt-stream.js
+    description: Decrypt stream content and unzip it
+  encrypt-stream-file:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/encrypt-stream-file.js
+    description: Encrypt a streamfile with source path
+  decrypt-stream-file:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/decrypt-stream-file.js
+    description: Decrypt a streamfile with source path

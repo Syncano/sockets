@@ -6,59 +6,59 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - validate:
-      GET:
-        script: validate
-  - validate-strict:
-      GET:
-        script: validate-strict
-  - infer:
-      GET:
-        script: infer
-  - compile:
-      GET:
-        script: compile
-  - coerce:
-      GET:
-        script: coerce
-  - sample:
-      GET:
-        script: sample
-  - get-display-type:
-      GET:
-        script: get-display-type
+  validate:
+    GET:
+      script: validate
+  validate-strict:
+    GET:
+      script: validate-strict
+  infer:
+    GET:
+      script: infer
+  compile:
+    GET:
+      script: compile
+  coerce:
+    GET:
+      script: coerce
+  sample:
+    GET:
+      script: sample
+  get-display-type:
+    GET:
+      script: get-display-type
 dependencies:
-  - validate:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/validate.js
-      description: >-
-        Validate a value against a type schema. If it's close enough, coerce it
-        to fit.
-  - validate-strict:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/validate-strict.js
-      description: Validate a value against a type schema.
-  - infer:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/infer.js
-      description: Infer the type schema from the provided example value.
-  - compile:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/compile.js
-      description: >-
-        Return a JavaScript code snippet which would accurately represent the
-        given value in code.
-  - coerce:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/coerce.js
-      description: Coerce a value against the given type schema.
-  - sample:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/sample.js
-      description: >-
-        Generate some sample values that validate against the provided type
-        schema.
-  - get-display-type:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-display-type.js
-      description: 'Given a value, return its type as a human-readable string.'
+  validate:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/validate.js
+    description: >-
+      Validate a value against a type schema. If it's close enough, coerce it to
+      fit.
+  validate-strict:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/validate-strict.js
+    description: Validate a value against a type schema.
+  infer:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/infer.js
+    description: Infer the type schema from the provided example value.
+  compile:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/compile.js
+    description: >-
+      Return a JavaScript code snippet which would accurately represent the
+      given value in code.
+  coerce:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/coerce.js
+    description: Coerce a value against the given type schema.
+  sample:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/sample.js
+    description: >-
+      Generate some sample values that validate against the provided type
+      schema.
+  get-display-type:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-display-type.js
+    description: 'Given a value, return its type as a human-readable string.'

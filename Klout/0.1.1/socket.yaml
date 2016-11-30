@@ -4,18 +4,18 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - get-klout-id:
-      GET:
-        script: get-klout-id
-  - get-klout-score:
-      GET:
-        script: get-klout-score
+  get-klout-id:
+    GET:
+      script: get-klout-id
+  get-klout-score:
+    GET:
+      script: get-klout-score
 dependencies:
-  - get-klout-id:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-klout-id.js
-      description: Get the Klout Id from a Twitter screen name.
-  - get-klout-score:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-klout-score.js
-      description: Get the Klout score of a Klout Id.
+  get-klout-id:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-klout-id.js
+    description: Get the Klout Id from a Twitter screen name.
+  get-klout-score:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-klout-score.js
+    description: Get the Klout score of a Klout Id.

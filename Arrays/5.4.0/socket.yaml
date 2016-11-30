@@ -4,190 +4,190 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - reverse:
-      GET:
-        script: reverse
-  - index-of:
-      GET:
-        script: index-of
-  - slice:
-      GET:
-        script: slice
-  - length:
-      GET:
-        script: length
-  - concat:
-      GET:
-        script: concat
-  - last:
-      GET:
-        script: last
-  - nth:
-      GET:
-        script: nth
-  - construct:
-      GET:
-        script: construct
-  - pluck:
-      GET:
-        script: pluck
-  - sort-strings:
-      GET:
-        script: sort-strings
-  - sort-numbers:
-      GET:
-        script: sort-numbers
-  - each:
-      GET:
-        script: each
-  - map:
-      GET:
-        script: map
-  - reduce:
-      GET:
-        script: reduce
-  - find-one:
-      GET:
-        script: find-one
-  - find-where:
-      GET:
-        script: find-where
-  - insert:
-      GET:
-        script: insert
-  - sample:
-      GET:
-        script: sample
-  - sort-by:
-      GET:
-        script: sort-by
-  - uniq-by:
-      GET:
-        script: uniq-by
-  - uniq:
-      GET:
-        script: uniq
-  - find-index-of:
-      GET:
-        script: find-index-of
-  - replace:
-      GET:
-        script: replace
-  - sample-subset:
-      GET:
-        script: sample-subset
+  reverse:
+    GET:
+      script: reverse
+  index-of:
+    GET:
+      script: index-of
+  slice:
+    GET:
+      script: slice
+  length:
+    GET:
+      script: length
+  concat:
+    GET:
+      script: concat
+  last:
+    GET:
+      script: last
+  nth:
+    GET:
+      script: nth
+  construct:
+    GET:
+      script: construct
+  pluck:
+    GET:
+      script: pluck
+  sort-strings:
+    GET:
+      script: sort-strings
+  sort-numbers:
+    GET:
+      script: sort-numbers
+  each:
+    GET:
+      script: each
+  map:
+    GET:
+      script: map
+  reduce:
+    GET:
+      script: reduce
+  find-one:
+    GET:
+      script: find-one
+  find-where:
+    GET:
+      script: find-where
+  insert:
+    GET:
+      script: insert
+  sample:
+    GET:
+      script: sample
+  sort-by:
+    GET:
+      script: sort-by
+  uniq-by:
+    GET:
+      script: uniq-by
+  uniq:
+    GET:
+      script: uniq
+  find-index-of:
+    GET:
+      script: find-index-of
+  replace:
+    GET:
+      script: replace
+  sample-subset:
+    GET:
+      script: sample-subset
 dependencies:
-  - reverse:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/reverse.js
-      description: >-
-        Build a new array which is an exact clone of an existing array, but in
-        reverse order.
-  - index-of:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/index-of.js
-      description: >-
-        Look up the first occurrence of the specified item and return its array
-        index.
-  - slice:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/slice.js
-      description: Copy a sub-array of consecutive items from the specified array.
-  - length:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/length.js
-      description: Get the length of the provided array.
-  - concat:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/concat.js
-      description: >-
-        Combine (aka concatenate) two arrays into a single array- one in front
-        of the other.
-  - last:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/last.js
-      description: Look up the last item in an array.
-  - nth:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/nth.js
-      description: Look up an item from the array at the specified index.
-  - construct:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/construct.js
-      description: Construct an array.
-  - pluck:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/pluck.js
-      description: List the values of a particular key from an array of dictionaries.
-  - sort-strings:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/sort-strings.js
-      description: Sort an array of strings alphabetically (A to Z)
-  - sort-numbers:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/sort-numbers.js
-      description: Sort an array of numbers (ascending)
-  - each:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/each.js
-      description: Run some logic (the "iteratee") once for each item of an array.
-  - map:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/map.js
-      description: Iterate over each item of an array to build a new transformed array.
-  - reduce:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/reduce.js
-      description: >-
-        Run some logic (the "iteratee") once for each item of an array,
-        accumulating a single result.
-  - find-one:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/find-one.js
-      description: >-
-        Search the array for the first dictionary that matches the specified
-        criteria.
-  - find-where:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/find-where.js
-      description: >-
-        Search the array and return all dictionaries that match the specified
-        criteria.
-  - insert:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/insert.js
-      description: Insert or append an item and return the result (a new array).
-  - sample:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/sample.js
-      description: Randomly select one item from an array.
-  - sort-by:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/sort-by.js
-      description: Sort an array of dictionaries by a particular key.
-  - uniq-by:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/uniq-by.js
-      description: >-
-        Build a duplicate-free version of an array of dictionaries, judging
-        uniqueness based on a particular key.
-  - uniq:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/uniq.js
-      description: Build a duplicate-free version of an array.
-  - find-index-of:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/find-index-of.js
-      description: >-
-        Look up the first occurrence of the dictionary matching the specified
-        criteria and return its array index.
-  - replace:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/replace.js
-      description: >-
-        Replace the item located at the specified index and return the result (a
-        new array).
-  - sample-subset:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/sample-subset.js
-      description: Randomly select an unordered subset of the array
+  reverse:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/reverse.js
+    description: >-
+      Build a new array which is an exact clone of an existing array, but in
+      reverse order.
+  index-of:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/index-of.js
+    description: >-
+      Look up the first occurrence of the specified item and return its array
+      index.
+  slice:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/slice.js
+    description: Copy a sub-array of consecutive items from the specified array.
+  length:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/length.js
+    description: Get the length of the provided array.
+  concat:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/concat.js
+    description: >-
+      Combine (aka concatenate) two arrays into a single array- one in front of
+      the other.
+  last:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/last.js
+    description: Look up the last item in an array.
+  nth:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/nth.js
+    description: Look up an item from the array at the specified index.
+  construct:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/construct.js
+    description: Construct an array.
+  pluck:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/pluck.js
+    description: List the values of a particular key from an array of dictionaries.
+  sort-strings:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/sort-strings.js
+    description: Sort an array of strings alphabetically (A to Z)
+  sort-numbers:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/sort-numbers.js
+    description: Sort an array of numbers (ascending)
+  each:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/each.js
+    description: Run some logic (the "iteratee") once for each item of an array.
+  map:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/map.js
+    description: Iterate over each item of an array to build a new transformed array.
+  reduce:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/reduce.js
+    description: >-
+      Run some logic (the "iteratee") once for each item of an array,
+      accumulating a single result.
+  find-one:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/find-one.js
+    description: >-
+      Search the array for the first dictionary that matches the specified
+      criteria.
+  find-where:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/find-where.js
+    description: >-
+      Search the array and return all dictionaries that match the specified
+      criteria.
+  insert:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/insert.js
+    description: Insert or append an item and return the result (a new array).
+  sample:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/sample.js
+    description: Randomly select one item from an array.
+  sort-by:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/sort-by.js
+    description: Sort an array of dictionaries by a particular key.
+  uniq-by:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/uniq-by.js
+    description: >-
+      Build a duplicate-free version of an array of dictionaries, judging
+      uniqueness based on a particular key.
+  uniq:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/uniq.js
+    description: Build a duplicate-free version of an array.
+  find-index-of:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/find-index-of.js
+    description: >-
+      Look up the first occurrence of the dictionary matching the specified
+      criteria and return its array index.
+  replace:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/replace.js
+    description: >-
+      Replace the item located at the specified index and return the result (a
+      new array).
+  sample-subset:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/sample-subset.js
+    description: Randomly select an unordered subset of the array

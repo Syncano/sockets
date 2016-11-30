@@ -4,11 +4,11 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - send-text-message:
-      GET:
-        script: send-text-message
+  send-text-message:
+    GET:
+      script: send-text-message
 dependencies:
-  - send-text-message:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/send-text-message.js
-      description: Send a text message using the Nexmo SMS API
+  send-text-message:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/send-text-message.js
+    description: Send a text message using the Nexmo SMS API

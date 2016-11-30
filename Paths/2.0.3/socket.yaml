@@ -4,41 +4,41 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - if-absolute:
-      GET:
-        script: if-absolute
-  - resolve:
-      GET:
-        script: resolve
-  - parse:
-      GET:
-        script: parse
-  - home:
-      GET:
-        script: home
-  - join:
-      GET:
-        script: join
+  if-absolute:
+    GET:
+      script: if-absolute
+  resolve:
+    GET:
+      script: resolve
+  parse:
+    GET:
+      script: parse
+  home:
+    GET:
+      script: home
+  join:
+    GET:
+      script: join
 dependencies:
-  - if-absolute:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/if-absolute.js
-      description: Determine whether or not a is absolute.
-  - resolve:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/resolve.js
-      description: Resolve and normalize a potentially-relative path into an absolute path.
-  - parse:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/parse.js
-      description: Parse a path to determine its component parts.
-  - home:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/home.js
-      description: >-
-        Get the absolute path to your home directory on this computer
-        (OS-agnostic)
-  - join:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/join.js
-      description: Combine multiple path segments into a single result path.
+  if-absolute:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/if-absolute.js
+    description: Determine whether or not a is absolute.
+  resolve:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/resolve.js
+    description: Resolve and normalize a potentially-relative path into an absolute path.
+  parse:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/parse.js
+    description: Parse a path to determine its component parts.
+  home:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/home.js
+    description: >-
+      Get the absolute path to your home directory on this computer
+      (OS-agnostic)
+  join:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/join.js
+    description: Combine multiple path segments into a single result path.

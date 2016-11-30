@@ -4,27 +4,27 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - get-login-url:
-      GET:
-        script: get-login-url
-  - get-access-token:
-      GET:
-        script: get-access-token
-  - get-oauth2-client:
-      GET:
-        script: get-oauth2-client
+  get-login-url:
+    GET:
+      script: get-login-url
+  get-access-token:
+    GET:
+      script: get-access-token
+  get-oauth2-client:
+    GET:
+      script: get-oauth2-client
 dependencies:
-  - get-login-url:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-login-url.js
-      description: Generating an authentication URL
-  - get-access-token:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-access-token.js
-      description: >-
-        Getting access token using authorization token that Google provided you
-        with
-  - get-oauth2-client:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-oauth2-client.js
-      description: Get OAuth2 client
+  get-login-url:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-login-url.js
+    description: Generating an authentication URL
+  get-access-token:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-access-token.js
+    description: >-
+      Getting access token using authorization token that Google provided you
+      with
+  get-oauth2-client:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-oauth2-client.js
+    description: Get OAuth2 client

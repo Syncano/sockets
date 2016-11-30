@@ -4,22 +4,22 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - run-ssh-command:
-      GET:
-        script: run-ssh-command
-  - run-ssh-command-keys:
-      GET:
-        script: run-ssh-command-keys
+  run-ssh-command:
+    GET:
+      script: run-ssh-command
+  run-ssh-command-keys:
+    GET:
+      script: run-ssh-command-keys
 dependencies:
-  - run-ssh-command:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/run-ssh-command.js
-      description: >-
-        Run a command on a remote server via SSH. Requires Host, Username,
-        Password and ommand.
-  - run-ssh-command-keys:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/run-ssh-command-keys.js
-      description: >-
-        Run a command on a remote server via SSH. Requires Host, Username,
-        Password and ommand.
+  run-ssh-command:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/run-ssh-command.js
+    description: >-
+      Run a command on a remote server via SSH. Requires Host, Username,
+      Password and ommand.
+  run-ssh-command-keys:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/run-ssh-command-keys.js
+    description: >-
+      Run a command on a remote server via SSH. Requires Host, Username,
+      Password and ommand.

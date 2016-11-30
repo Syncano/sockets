@@ -4,11 +4,11 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - calculate:
-      GET:
-        script: calculate
+  calculate:
+    GET:
+      script: calculate
 dependencies:
-  - calculate:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/calculate.js
-      description: Calculate depth of field properties
+  calculate:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/calculate.js
+    description: Calculate depth of field properties

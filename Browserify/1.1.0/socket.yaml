@@ -4,13 +4,13 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - bundle:
-      GET:
-        script: bundle
+  bundle:
+    GET:
+      script: bundle
 dependencies:
-  - bundle:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/bundle.js
-      description: >-
-        Bundle the specified script and its required dependencies into a single
-        JavaScript file.
+  bundle:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/bundle.js
+    description: >-
+      Bundle the specified script and its required dependencies into a single
+      JavaScript file.

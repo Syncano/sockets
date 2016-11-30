@@ -4,27 +4,27 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - compile-to-html-file-from-md-file:
-      GET:
-        script: compile-to-html-file-from-md-file
-  - parse-docmeta-tags:
-      GET:
-        script: parse-docmeta-tags
-  - compile-to-html:
-      GET:
-        script: compile-to-html
+  compile-to-html-file-from-md-file:
+    GET:
+      script: compile-to-html-file-from-md-file
+  parse-docmeta-tags:
+    GET:
+      script: parse-docmeta-tags
+  compile-to-html:
+    GET:
+      script: compile-to-html
 dependencies:
-  - compile-to-html-file-from-md-file:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/compile-to-html-file-from-md-file.js
-      description: >-
-        Load a markdown file from disk, compile to HTML, then save it back to
-        disk.
-  - parse-docmeta-tags:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/parse-docmeta-tags.js
-      description: Parse data encoded via <docmeta> tags in a Markdown string.
-  - compile-to-html:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/compile-to-html.js
-      description: Compile a Markdown string into an HTML string.
+  compile-to-html-file-from-md-file:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/compile-to-html-file-from-md-file.js
+    description: >-
+      Load a markdown file from disk, compile to HTML, then save it back to
+      disk.
+  parse-docmeta-tags:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/parse-docmeta-tags.js
+    description: Parse data encoded via <docmeta> tags in a Markdown string.
+  compile-to-html:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/compile-to-html.js
+    description: Compile a Markdown string into an HTML string.

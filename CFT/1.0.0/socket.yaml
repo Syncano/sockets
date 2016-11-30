@@ -4,11 +4,11 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - get-cft-surveyssent:
-      GET:
-        script: get-cft-surveyssent
+  get-cft-surveyssent:
+    GET:
+      script: get-cft-surveyssent
 dependencies:
-  - get-cft-surveyssent:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-cft-surveyssent.js
-      description: Gets all surveys sent in a specified date range
+  get-cft-surveyssent:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-cft-surveyssent.js
+    description: Gets all surveys sent in a specified date range

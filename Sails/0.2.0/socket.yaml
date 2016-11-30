@@ -4,20 +4,20 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - get-configuration:
-      GET:
-        script: get-configuration
-  - is-production:
-      GET:
-        script: is-production
+  get-configuration:
+    GET:
+      script: get-configuration
+  is-production:
+    GET:
+      script: is-production
 dependencies:
-  - get-configuration:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-configuration.js
-      description: Retrieve the value of the specified Sails configuration setting.
-  - is-production:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/is-production.js
-      description: >-
-        Determine whether a Sails application is running in the production
-        environment.
+  get-configuration:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-configuration.js
+    description: Retrieve the value of the specified Sails configuration setting.
+  is-production:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/is-production.js
+    description: >-
+      Determine whether a Sails application is running in the production
+      environment.

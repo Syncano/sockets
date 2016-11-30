@@ -4,27 +4,27 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - get-login-url:
-      GET:
-        script: get-login-url
-  - get-authentication-token:
-      GET:
-        script: get-authentication-token
-  - get-profile:
-      GET:
-        script: get-profile
+  get-login-url:
+    GET:
+      script: get-login-url
+  get-authentication-token:
+    GET:
+      script: get-authentication-token
+  get-profile:
+    GET:
+      script: get-profile
 dependencies:
-  - get-login-url:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-login-url.js
-      description: Creates the login url used to gain acccess to their LinkedIn account.
-  - get-authentication-token:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-authentication-token.js
-      description: >-
-        Obtains the authentication token after you complete the url login
-        phase.  Make sure to do this within 20 seconds or else the code expires.
-  - get-profile:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-profile.js
-      description: Obtains the profile from the authorized user.
+  get-login-url:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-login-url.js
+    description: Creates the login url used to gain acccess to their LinkedIn account.
+  get-authentication-token:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-authentication-token.js
+    description: >-
+      Obtains the authentication token after you complete the url login phase. 
+      Make sure to do this within 20 seconds or else the code expires.
+  get-profile:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-profile.js
+    description: Obtains the profile from the authorized user.

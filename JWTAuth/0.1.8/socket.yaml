@@ -4,11 +4,11 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - verify-from-header:
-      GET:
-        script: verify-from-header
+  verify-from-header:
+    GET:
+      script: verify-from-header
 dependencies:
-  - verify-from-header:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/verify-from-header.js
-      description: Verify a token that is provided in a request header.
+  verify-from-header:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/verify-from-header.js
+    description: Verify a token that is provided in a request header.

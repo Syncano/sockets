@@ -4,67 +4,67 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - create-read:
-      GET:
-        script: create-read
-  - create-write:
-      GET:
-        script: create-write
-  - zip:
-      GET:
-        script: zip
-  - unzip:
-      GET:
-        script: unzip
-  - md:
-      GET:
-        script: md
-  - minify:
-      GET:
-        script: minify
-  - stringify:
-      GET:
-        script: stringify
-  - replace:
-      GET:
-        script: replace
-  - insert:
-      GET:
-        script: insert
+  create-read:
+    GET:
+      script: create-read
+  create-write:
+    GET:
+      script: create-write
+  zip:
+    GET:
+      script: zip
+  unzip:
+    GET:
+      script: unzip
+  md:
+    GET:
+      script: md
+  minify:
+    GET:
+      script: minify
+  stringify:
+    GET:
+      script: stringify
+  replace:
+    GET:
+      script: replace
+  insert:
+    GET:
+      script: insert
 dependencies:
-  - create-read:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/create-read.js
-      description: Create a read stream
-  - create-write:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/create-write.js
-      description: Create Write Stream
-  - zip:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/zip.js
-      description: Zip a stream
-  - unzip:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/unzip.js
-      description: Unzip a stream
-  - md:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/md.js
-      description: Markdown
-  - minify:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/minify.js
-      description: Minify html
-  - stringify:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/stringify.js
-      description: a toString method
-  - replace:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/replace.js
-      description: Search and replace
-  - insert:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/insert.js
-      description: Insert content before or after a string
+  create-read:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/create-read.js
+    description: Create a read stream
+  create-write:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/create-write.js
+    description: Create Write Stream
+  zip:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/zip.js
+    description: Zip a stream
+  unzip:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/unzip.js
+    description: Unzip a stream
+  md:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/md.js
+    description: Markdown
+  minify:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/minify.js
+    description: Minify html
+  stringify:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/stringify.js
+    description: a toString method
+  replace:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/replace.js
+    description: Search and replace
+  insert:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/insert.js
+    description: Insert content before or after a string

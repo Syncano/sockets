@@ -4,18 +4,18 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - get-auth-token:
-      GET:
-        script: get-auth-token
-  - get-profile:
-      GET:
-        script: get-profile
+  get-auth-token:
+    GET:
+      script: get-auth-token
+  get-profile:
+    GET:
+      script: get-profile
 dependencies:
-  - get-auth-token:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-auth-token.js
-      description: Retrieve access_token from using ID.me
-  - get-profile:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-profile.js
-      description: Return profile information for a specified end-point
+  get-auth-token:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-auth-token.js
+    description: Retrieve access_token from using ID.me
+  get-profile:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-profile.js
+    description: Return profile information for a specified end-point

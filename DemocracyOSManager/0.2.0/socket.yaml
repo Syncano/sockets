@@ -4,18 +4,18 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - create-deployment:
-      GET:
-        script: create-deployment
-  - delete-deployment:
-      GET:
-        script: delete-deployment
+  create-deployment:
+    GET:
+      script: create-deployment
+  delete-deployment:
+    GET:
+      script: delete-deployment
 dependencies:
-  - create-deployment:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/create-deployment.js
-      description: Create a DemocracyOS deployment for a given user.
-  - delete-deployment:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/delete-deployment.js
-      description: Delete a DemocracyOS Deployment.
+  create-deployment:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/create-deployment.js
+    description: Create a DemocracyOS deployment for a given user.
+  delete-deployment:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/delete-deployment.js
+    description: Delete a DemocracyOS Deployment.

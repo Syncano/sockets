@@ -4,36 +4,36 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - select:
-      GET:
-        script: select
-  - confirm:
-      GET:
-        script: confirm
-  - text:
-      GET:
-        script: text
-  - multiselect:
-      GET:
-        script: multiselect
+  select:
+    GET:
+      script: select
+  confirm:
+    GET:
+      script: confirm
+  text:
+    GET:
+      script: text
+  multiselect:
+    GET:
+      script: multiselect
 dependencies:
-  - select:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/select.js
-      description: Prompt the command-line user to make a choice from a list of options.
-  - confirm:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/confirm.js
-      description: Prompt command-line user to confirm with "y" or "n" before proceeding.
-  - text:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/text.js
-      description: >-
-        Prompt the command-line user for a value entered interactively as a
-        string.
-  - multiselect:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/multiselect.js
-      description: >-
-        Prompt the command-line user to check/uncheck items from a list of
-        options.
+  select:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/select.js
+    description: Prompt the command-line user to make a choice from a list of options.
+  confirm:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/confirm.js
+    description: Prompt command-line user to confirm with "y" or "n" before proceeding.
+  text:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/text.js
+    description: >-
+      Prompt the command-line user for a value entered interactively as a
+      string.
+  multiselect:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/multiselect.js
+    description: >-
+      Prompt the command-line user to check/uncheck items from a list of
+      options.

@@ -4,18 +4,18 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - convert:
-      GET:
-        script: convert
-  - resolve:
-      GET:
-        script: resolve
+  convert:
+    GET:
+      script: convert
+  resolve:
+    GET:
+      script: resolve
 dependencies:
-  - convert:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/convert.js
-      description: Convert Natural Language to file system path
-  - resolve:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/resolve.js
-      description: Resolve list of directory names to file system path
+  convert:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/convert.js
+    description: Convert Natural Language to file system path
+  resolve:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/resolve.js
+    description: Resolve list of directory names to file system path

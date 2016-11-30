@@ -4,53 +4,53 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - charge:
-      GET:
-        script: charge
-  - refund:
-      GET:
-        script: refund
-  - authorize:
-      GET:
-        script: authorize
-  - capture:
-      GET:
-        script: capture
-  - void-transaction:
-      GET:
-        script: void-transaction
-  - get-settled-batch-list:
-      GET:
-        script: get-settled-batch-list
-  - get-unsettled-transaction-list:
-      GET:
-        script: get-unsettled-transaction-list
+  charge:
+    GET:
+      script: charge
+  refund:
+    GET:
+      script: refund
+  authorize:
+    GET:
+      script: authorize
+  capture:
+    GET:
+      script: capture
+  void-transaction:
+    GET:
+      script: void-transaction
+  get-settled-batch-list:
+    GET:
+      script: get-settled-batch-list
+  get-unsettled-transaction-list:
+    GET:
+      script: get-unsettled-transaction-list
 dependencies:
-  - charge:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/charge.js
-      description: Charge Credit Card
-  - refund:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/refund.js
-      description: Refund a processed transaction
-  - authorize:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/authorize.js
-      description: Auhtorize a transaction
-  - capture:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/capture.js
-      description: Capture a previously authorized transaction
-  - void-transaction:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/void-transaction.js
-      description: Void a non-settled transaction
-  - get-settled-batch-list:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-settled-batch-list.js
-      description: get a batch list of settled transaction within the window of time
-  - get-unsettled-transaction-list:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-unsettled-transaction-list.js
-      description: get data for unsettled transactions
+  charge:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/charge.js
+    description: Charge Credit Card
+  refund:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/refund.js
+    description: Refund a processed transaction
+  authorize:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/authorize.js
+    description: Auhtorize a transaction
+  capture:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/capture.js
+    description: Capture a previously authorized transaction
+  void-transaction:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/void-transaction.js
+    description: Void a non-settled transaction
+  get-settled-batch-list:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-settled-batch-list.js
+    description: get a batch list of settled transaction within the window of time
+  get-unsettled-transaction-list:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-unsettled-transaction-list.js
+    description: get data for unsettled transactions

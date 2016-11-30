@@ -27,6 +27,7 @@
     "dedent": "^0.6.0",
     "fs": "0.0.1-security",
     "json2yaml": "^1.1.0",
+    "lodash": "^4.17.2",
     "mkdirp": "^0.5.1",
     "syncano": "^1.0.28",
     "write-yaml": "^0.2.2"

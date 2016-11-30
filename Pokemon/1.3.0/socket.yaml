@@ -6,18 +6,18 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - list-all-pokemon:
-      GET:
-        script: list-all-pokemon
-  - get-pokemon:
-      GET:
-        script: get-pokemon
+  list-all-pokemon:
+    GET:
+      script: list-all-pokemon
+  get-pokemon:
+    GET:
+      script: get-pokemon
 dependencies:
-  - list-all-pokemon:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/list-all-pokemon.js
-      description: List the name and resource_uri for each known Pokemon.
-  - get-pokemon:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-pokemon.js
-      description: Get information about a Pokemon based on its unique ID number
+  list-all-pokemon:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/list-all-pokemon.js
+    description: List the name and resource_uri for each known Pokemon.
+  get-pokemon:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-pokemon.js
+    description: Get information about a Pokemon based on its unique ID number

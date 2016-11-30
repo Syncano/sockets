@@ -4,128 +4,128 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - get-user-details:
-      GET:
-        script: get-user-details
-  - create-repo:
-      GET:
-        script: create-repo
-  - list-organization-repos:
-      GET:
-        script: list-organization-repos
-  - get-repo:
-      GET:
-        script: get-repo
-  - list-repo-commits-at-path:
-      GET:
-        script: list-repo-commits-at-path
-  - list-repo-commits:
-      GET:
-        script: list-repo-commits
-  - list-repo-activity:
-      GET:
-        script: list-repo-activity
-  - list-repos:
-      GET:
-        script: list-repos
-  - build-installable-url:
-      GET:
-        script: build-installable-url
-  - get-login-url:
-      GET:
-        script: get-login-url
-  - get-access-token:
-      GET:
-        script: get-access-token
-  - get-current-user:
-      GET:
-        script: get-current-user
-  - parse-repo-str:
-      GET:
-        script: parse-repo-str
-  - build-github-search-string:
-      GET:
-        script: build-github-search-string
-  - get-download-url:
-      GET:
-        script: get-download-url
-  - list-issue-comments:
-      GET:
-        script: list-issue-comments
+  get-user-details:
+    GET:
+      script: get-user-details
+  create-repo:
+    GET:
+      script: create-repo
+  list-organization-repos:
+    GET:
+      script: list-organization-repos
+  get-repo:
+    GET:
+      script: get-repo
+  list-repo-commits-at-path:
+    GET:
+      script: list-repo-commits-at-path
+  list-repo-commits:
+    GET:
+      script: list-repo-commits
+  list-repo-activity:
+    GET:
+      script: list-repo-activity
+  list-repos:
+    GET:
+      script: list-repos
+  build-installable-url:
+    GET:
+      script: build-installable-url
+  get-login-url:
+    GET:
+      script: get-login-url
+  get-access-token:
+    GET:
+      script: get-access-token
+  get-current-user:
+    GET:
+      script: get-current-user
+  parse-repo-str:
+    GET:
+      script: parse-repo-str
+  build-github-search-string:
+    GET:
+      script: build-github-search-string
+  get-download-url:
+    GET:
+      script: get-download-url
+  list-issue-comments:
+    GET:
+      script: list-issue-comments
 dependencies:
-  - get-user-details:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-user-details.js
-      description: Get the GitHub profile data for a user.
-  - create-repo:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/create-repo.js
-      description: Create a new GitHub repository in the specified organization.
-  - list-organization-repos:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/list-organization-repos.js
-      description: Fetch the list of repos in the specified Github organization.
-  - get-repo:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-repo.js
-      description: Fetch metadata about a repository on GitHub.
-  - list-repo-commits-at-path:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/list-repo-commits-at-path.js
-      description: >-
-        Fetch recent commits from a remote GitHub repository within the specifed
-        path.
-  - list-repo-commits:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/list-repo-commits.js
-      description: Fetch recent commits from the specified GitHub repository.
-  - list-repo-activity:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/list-repo-activity.js
-      description: Fetch activity in a github repo.
-  - list-repos:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/list-repos.js
-      description: >-
-        Fetch the list of repos belonging to the specified Github user or
-        organization.
-  - build-installable-url:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/build-installable-url.js
-      description: Build an npm-installable URL compatible with private repos.
-  - get-login-url:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-login-url.js
-      description: >-
-        Get the URL on github.com that a user should visit to authorize the
-        specified GitHub app (i.e. your app).
-  - get-access-token:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-access-token.js
-      description: >-
-        Generate a new access token for acting on behalf of a particular GitHub
-        user account.
-  - get-current-user:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-current-user.js
-      description: Get the GitHub profile data for a user by access token.
-  - parse-repo-str:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/parse-repo-str.js
-      description: Parse a repo string (e.g. '/node-machine/machine')
-  - build-github-search-string:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/build-github-search-string.js
-      description: >-
-        Build a GitHub search string (the 'q' parameter for use with the GitHub
-        Search API).
-  - get-download-url:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-download-url.js
-      description: >-
-        Build the URL to download a specific release/branch .zip file for a
-        particular repo.
-  - list-issue-comments:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/list-issue-comments.js
-      description: Fetch recent comments from the specified GitHub repository.
+  get-user-details:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-user-details.js
+    description: Get the GitHub profile data for a user.
+  create-repo:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/create-repo.js
+    description: Create a new GitHub repository in the specified organization.
+  list-organization-repos:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/list-organization-repos.js
+    description: Fetch the list of repos in the specified Github organization.
+  get-repo:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-repo.js
+    description: Fetch metadata about a repository on GitHub.
+  list-repo-commits-at-path:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/list-repo-commits-at-path.js
+    description: >-
+      Fetch recent commits from a remote GitHub repository within the specifed
+      path.
+  list-repo-commits:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/list-repo-commits.js
+    description: Fetch recent commits from the specified GitHub repository.
+  list-repo-activity:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/list-repo-activity.js
+    description: Fetch activity in a github repo.
+  list-repos:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/list-repos.js
+    description: >-
+      Fetch the list of repos belonging to the specified Github user or
+      organization.
+  build-installable-url:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/build-installable-url.js
+    description: Build an npm-installable URL compatible with private repos.
+  get-login-url:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-login-url.js
+    description: >-
+      Get the URL on github.com that a user should visit to authorize the
+      specified GitHub app (i.e. your app).
+  get-access-token:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-access-token.js
+    description: >-
+      Generate a new access token for acting on behalf of a particular GitHub
+      user account.
+  get-current-user:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-current-user.js
+    description: Get the GitHub profile data for a user by access token.
+  parse-repo-str:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/parse-repo-str.js
+    description: Parse a repo string (e.g. '/node-machine/machine')
+  build-github-search-string:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/build-github-search-string.js
+    description: >-
+      Build a GitHub search string (the 'q' parameter for use with the GitHub
+      Search API).
+  get-download-url:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-download-url.js
+    description: >-
+      Build the URL to download a specific release/branch .zip file for a
+      particular repo.
+  list-issue-comments:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/list-issue-comments.js
+    description: Fetch recent comments from the specified GitHub repository.

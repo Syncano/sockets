@@ -3,5 +3,5 @@ description: Work with yelp 2.0 API.
 author:
   name: Syncano
   email: hello@syncano.io
-endpoints: []
-dependencies: []
+endpoints: {}
+dependencies: {}

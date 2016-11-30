@@ -3,5 +3,5 @@ description: Machinepack to parse with Knwl
 author:
   name: Syncano
   email: hello@syncano.io
-endpoints: []
-dependencies: []
+endpoints: {}
+dependencies: {}

@@ -4,11 +4,11 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - run:
-      GET:
-        script: run
+  run:
+    GET:
+      script: run
 dependencies:
-  - run:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/run.js
-      description: Run PageSpeed analizer
+  run:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/run.js
+    description: Run PageSpeed analizer

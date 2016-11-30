@@ -4,34 +4,34 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - convert-email:
-      GET:
-        script: convert-email
-  - get-collections:
-      GET:
-        script: get-collections
-  - get-badges:
-      GET:
-        script: get-badges
-  - bake-assertion:
-      GET:
-        script: bake-assertion
+  convert-email:
+    GET:
+      script: convert-email
+  get-collections:
+    GET:
+      script: get-collections
+  get-badges:
+    GET:
+      script: get-badges
+  bake-assertion:
+    GET:
+      script: bake-assertion
 dependencies:
-  - convert-email:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/convert-email.js
-      description: To convert an earner email address to Backpack user ID
-  - get-collections:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-collections.js
-      description: Querying for Badge Groups
-  - get-badges:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-badges.js
-      description: Querying for Badges in a Group
-  - bake-assertion:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/bake-assertion.js
-      description: >-
-        The baker will retrieve this image and bake your assertion data into it,
-        returning it to you if your API call was successful.
+  convert-email:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/convert-email.js
+    description: To convert an earner email address to Backpack user ID
+  get-collections:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-collections.js
+    description: Querying for Badge Groups
+  get-badges:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-badges.js
+    description: Querying for Badges in a Group
+  bake-assertion:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/bake-assertion.js
+    description: >-
+      The baker will retrieve this image and bake your assertion data into it,
+      returning it to you if your API call was successful.

@@ -4,18 +4,18 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - get-board-lists:
-      GET:
-        script: get-board-lists
-  - move-list-to-board:
-      GET:
-        script: move-list-to-board
+  get-board-lists:
+    GET:
+      script: get-board-lists
+  move-list-to-board:
+    GET:
+      script: move-list-to-board
 dependencies:
-  - get-board-lists:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-board-lists.js
-      description: Retrieve all lists for a given board
-  - move-list-to-board:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/move-list-to-board.js
-      description: 'Move the cards from one list, to another list on a specified board'
+  get-board-lists:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-board-lists.js
+    description: Retrieve all lists for a given board
+  move-list-to-board:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/move-list-to-board.js
+    description: 'Move the cards from one list, to another list on a specified board'

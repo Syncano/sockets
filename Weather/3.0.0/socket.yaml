@@ -4,20 +4,20 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - get-current-forecast:
-      GET:
-        script: get-current-forecast
-  - get-forecast:
-      GET:
-        script: get-forecast
+  get-current-forecast:
+    GET:
+      script: get-current-forecast
+  get-forecast:
+    GET:
+      script: get-forecast
 dependencies:
-  - get-current-forecast:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-current-forecast.js
-      description: Get the current weather at a specific latitude and longitude.
-  - get-forecast:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-forecast.js
-      description: >-
-        Retrieves the forecast of a specific latitude and longitude at a
-        specific time
+  get-current-forecast:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-current-forecast.js
+    description: Get the current weather at a specific latitude and longitude.
+  get-forecast:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-forecast.js
+    description: >-
+      Retrieves the forecast of a specific latitude and longitude at a specific
+      time

@@ -4,43 +4,43 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - track:
-      GET:
-        script: track
-  - identify:
-      GET:
-        script: identify
-  - group:
-      GET:
-        script: group
-  - alias:
-      GET:
-        script: alias
-  - page:
-      GET:
-        script: page
+  track:
+    GET:
+      script: track
+  identify:
+    GET:
+      script: identify
+  group:
+    GET:
+      script: group
+  alias:
+    GET:
+      script: alias
+  page:
+    GET:
+      script: page
 dependencies:
-  - track:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/track.js
-      description: Track a user action by triggering an event in Segment.
-  - identify:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/identify.js
-      description: Identify a user by her unique id and a set of associated traits.
-  - group:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/group.js
-      description: 'Associate a user with a group, like an account or an organization.'
-  - alias:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/alias.js
-      description: >-
-        Merge two user identities, effectively connecting two sets of user data
-        as one.
-  - page:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/page.js
-      description: >-
-        Track whenever a user sees a page of your website or screen of your
-        mobile app, along with any properties about the page.
+  track:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/track.js
+    description: Track a user action by triggering an event in Segment.
+  identify:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/identify.js
+    description: Identify a user by her unique id and a set of associated traits.
+  group:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/group.js
+    description: 'Associate a user with a group, like an account or an organization.'
+  alias:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/alias.js
+    description: >-
+      Merge two user identities, effectively connecting two sets of user data as
+      one.
+  page:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/page.js
+    description: >-
+      Track whenever a user sees a page of your website or screen of your mobile
+      app, along with any properties about the page.

@@ -6,11 +6,11 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - send:
-      GET:
-        script: send
+  send:
+    GET:
+      script: send
 dependencies:
-  - send:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/send.js
-      description: 'Send an email, either in plaintext or from an HTML template.'
+  send:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/send.js
+    description: 'Send an email, either in plaintext or from an HTML template.'

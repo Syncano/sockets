@@ -4,11 +4,11 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - hello:
-      GET:
-        script: hello
+  hello:
+    GET:
+      script: hello
 dependencies:
-  - hello:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/hello.js
-      description: Say hello on the console.
+  hello:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/hello.js
+    description: Say hello on the console.

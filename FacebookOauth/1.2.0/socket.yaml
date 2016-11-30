@@ -6,29 +6,29 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - get-access-token:
-      GET:
-        script: get-access-token
-  - get-login-url:
-      GET:
-        script: get-login-url
-  - get-user-by-access-token:
-      GET:
-        script: get-user-by-access-token
+  get-access-token:
+    GET:
+      script: get-access-token
+  get-login-url:
+    GET:
+      script: get-login-url
+  get-user-by-access-token:
+    GET:
+      script: get-user-by-access-token
 dependencies:
-  - get-access-token:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-access-token.js
-      description: >-
-        Generate a new access token for acting on behalf of a particular
-        Facebook user account.
-  - get-login-url:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-login-url.js
-      description: >-
-        Get the URL on facebook.com that a user should visit to allow/deny the
-        specified Facebook Developer app (i.e. your app).
-  - get-user-by-access-token:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-user-by-access-token.js
-      description: Get information about the Facebook user with the specified access token.
+  get-access-token:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-access-token.js
+    description: >-
+      Generate a new access token for acting on behalf of a particular Facebook
+      user account.
+  get-login-url:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-login-url.js
+    description: >-
+      Get the URL on facebook.com that a user should visit to allow/deny the
+      specified Facebook Developer app (i.e. your app).
+  get-user-by-access-token:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-user-by-access-token.js
+    description: Get information about the Facebook user with the specified access token.

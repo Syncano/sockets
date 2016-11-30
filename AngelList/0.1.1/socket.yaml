@@ -4,13 +4,13 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - get-login-url:
-      GET:
-        script: get-login-url
+  get-login-url:
+    GET:
+      script: get-login-url
 dependencies:
-  - get-login-url:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-login-url.js
-      description: >-
-        Get the URL on angel.co that a user should visit to allow/deny the
-        specified AngelList developer app (i.e. your app).
+  get-login-url:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-login-url.js
+    description: >-
+      Get the URL on angel.co that a user should visit to allow/deny the
+      specified AngelList developer app (i.e. your app).

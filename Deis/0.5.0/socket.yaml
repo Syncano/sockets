@@ -4,95 +4,95 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - list-apps:
-      GET:
-        script: list-apps
-  - login:
-      GET:
-        script: login
-  - create-app:
-      GET:
-        script: create-app
-  - destroy-app:
-      GET:
-        script: destroy-app
-  - set-config:
-      GET:
-        script: set-config
-  - unset-config:
-      GET:
-        script: unset-config
-  - create-build:
-      GET:
-        script: create-build
-  - list-processes:
-      GET:
-        script: list-processes
-  - scale-process:
-      GET:
-        script: scale-process
-  - set-limit:
-      GET:
-        script: set-limit
-  - unset-limit:
-      GET:
-        script: unset-limit
-  - list-limits:
-      GET:
-        script: list-limits
-  - list-config:
-      GET:
-        script: list-config
+  list-apps:
+    GET:
+      script: list-apps
+  login:
+    GET:
+      script: login
+  create-app:
+    GET:
+      script: create-app
+  destroy-app:
+    GET:
+      script: destroy-app
+  set-config:
+    GET:
+      script: set-config
+  unset-config:
+    GET:
+      script: unset-config
+  create-build:
+    GET:
+      script: create-build
+  list-processes:
+    GET:
+      script: list-processes
+  scale-process:
+    GET:
+      script: scale-process
+  set-limit:
+    GET:
+      script: set-limit
+  unset-limit:
+    GET:
+      script: unset-limit
+  list-limits:
+    GET:
+      script: list-limits
+  list-config:
+    GET:
+      script: list-config
 dependencies:
-  - list-apps:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/list-apps.js
-      description: Lists applications visible to the current user.
-  - login:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/login.js
-      description: Logs in by authenticating against a controller.
-  - create-app:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/create-app.js
-      description: Creates a new application.
-  - destroy-app:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/destroy-app.js
-      description: Destroys an application.
-  - set-config:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/set-config.js
-      description: Set environment variables for an app
-  - unset-config:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/unset-config.js
-      description: Unsets an environment variable for an application.
-  - create-build:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/create-build.js
-      description: Creates a new build of an application.
-  - list-processes:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/list-processes.js
-      description: Lists processes servicing an application.
-  - scale-process:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/scale-process.js
-      description: Scales an application's processes by type.
-  - set-limit:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/set-limit.js
-      description: Sets resource limits for an application.
-  - unset-limit:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/unset-limit.js
-      description: Unsets resource limits for an application.
-  - list-limits:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/list-limits.js
-      description: Lists resource limits for an application.
-  - list-config:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/list-config.js
-      description: Lists environment variables for an application.
+  list-apps:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/list-apps.js
+    description: Lists applications visible to the current user.
+  login:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/login.js
+    description: Logs in by authenticating against a controller.
+  create-app:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/create-app.js
+    description: Creates a new application.
+  destroy-app:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/destroy-app.js
+    description: Destroys an application.
+  set-config:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/set-config.js
+    description: Set environment variables for an app
+  unset-config:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/unset-config.js
+    description: Unsets an environment variable for an application.
+  create-build:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/create-build.js
+    description: Creates a new build of an application.
+  list-processes:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/list-processes.js
+    description: Lists processes servicing an application.
+  scale-process:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/scale-process.js
+    description: Scales an application's processes by type.
+  set-limit:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/set-limit.js
+    description: Sets resource limits for an application.
+  unset-limit:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/unset-limit.js
+    description: Unsets resource limits for an application.
+  list-limits:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/list-limits.js
+    description: Lists resource limits for an application.
+  list-config:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/list-config.js
+    description: Lists environment variables for an application.

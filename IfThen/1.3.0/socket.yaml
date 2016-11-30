@@ -4,57 +4,57 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - if-defined:
-      GET:
-        script: if-defined
-  - if-less-than:
-      GET:
-        script: if-less-than
-  - if-greater-than:
-      GET:
-        script: if-greater-than
-  - if-equal:
-      GET:
-        script: if-equal
-  - if-between:
-      GET:
-        script: if-between
-  - if-then-finally:
-      GET:
-        script: if-then-finally
-  - if-then-finally-sync:
-      GET:
-        script: if-then-finally-sync
+  if-defined:
+    GET:
+      script: if-defined
+  if-less-than:
+    GET:
+      script: if-less-than
+  if-greater-than:
+    GET:
+      script: if-greater-than
+  if-equal:
+    GET:
+      script: if-equal
+  if-between:
+    GET:
+      script: if-between
+  if-then-finally:
+    GET:
+      script: if-then-finally
+  if-then-finally-sync:
+    GET:
+      script: if-then-finally-sync
 dependencies:
-  - if-defined:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/if-defined.js
-      description: Determine whether the value is defined.
-  - if-less-than:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/if-less-than.js
-      description: Determine whether the first value is less than the second.
-  - if-greater-than:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/if-greater-than.js
-      description: Determine whether the first value is greater than the second.
-  - if-equal:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/if-equal.js
-      description: Determine whether the first value is equivalent to the second.
-  - if-between:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/if-between.js
-      description: Check that a value is within the specified range (inclusive).
-  - if-then-finally:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/if-then-finally.js
-      description: >-
-        If the provided value is true, then run the "then" circuit.  Otherwise
-        run the "else" circuit.  Either way, exit "success".
-  - if-then-finally-sync:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/if-then-finally-sync.js
-      description: >-
-        If the provided value is true, then run the "then" circuit.  Otherwise
-        run the "else" circuit.  Either way, exit "success".
+  if-defined:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/if-defined.js
+    description: Determine whether the value is defined.
+  if-less-than:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/if-less-than.js
+    description: Determine whether the first value is less than the second.
+  if-greater-than:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/if-greater-than.js
+    description: Determine whether the first value is greater than the second.
+  if-equal:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/if-equal.js
+    description: Determine whether the first value is equivalent to the second.
+  if-between:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/if-between.js
+    description: Check that a value is within the specified range (inclusive).
+  if-then-finally:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/if-then-finally.js
+    description: >-
+      If the provided value is true, then run the "then" circuit.  Otherwise run
+      the "else" circuit.  Either way, exit "success".
+  if-then-finally-sync:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/if-then-finally-sync.js
+    description: >-
+      If the provided value is true, then run the "then" circuit.  Otherwise run
+      the "else" circuit.  Either way, exit "success".

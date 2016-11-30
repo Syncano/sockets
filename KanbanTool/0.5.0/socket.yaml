@@ -4,11 +4,11 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - get-new-cards:
-      GET:
-        script: get-new-cards
+  get-new-cards:
+    GET:
+      script: get-new-cards
 dependencies:
-  - get-new-cards:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-new-cards.js
-      description: Gets the newly created cards
+  get-new-cards:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-new-cards.js
+    description: Gets the newly created cards

@@ -4,11 +4,11 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - create-sprite:
-      GET:
-        script: create-sprite
+  create-sprite:
+    GET:
+      script: create-sprite
 dependencies:
-  - create-sprite:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/create-sprite.js
-      description: Create an SVGs sprite from multiple SVG source files.
+  create-sprite:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/create-sprite.js
+    description: Create an SVGs sprite from multiple SVG source files.

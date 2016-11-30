@@ -4,11 +4,11 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - validate:
-      GET:
-        script: validate
+  validate:
+    GET:
+      script: validate
 dependencies:
-  - validate:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/validate.js
-      description: Determine whether or not the provided string is an email address.
+  validate:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/validate.js
+    description: Determine whether or not the provided string is an email address.

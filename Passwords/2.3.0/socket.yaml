@@ -4,20 +4,18 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - check-password:
-      GET:
-        script: check-password
-  - encrypt-password:
-      GET:
-        script: encrypt-password
+  check-password:
+    GET:
+      script: check-password
+  encrypt-password:
+    GET:
+      script: encrypt-password
 dependencies:
-  - check-password:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/check-password.js
-      description: >-
-        Compare a plaintext password attempt against an already-encrypted
-        version.
-  - encrypt-password:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/encrypt-password.js
-      description: Encrypt a string using the BCrypt algorithm.
+  check-password:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/check-password.js
+    description: Compare a plaintext password attempt against an already-encrypted version.
+  encrypt-password:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/encrypt-password.js
+    description: Encrypt a string using the BCrypt algorithm.

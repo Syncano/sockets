@@ -4,11 +4,11 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - connect:
-      GET:
-        script: connect
+  connect:
+    GET:
+      script: connect
 dependencies:
-  - connect:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/connect.js
-      description: Connect to an Interaction Center® server
+  connect:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/connect.js
+    description: Connect to an Interaction Center® server

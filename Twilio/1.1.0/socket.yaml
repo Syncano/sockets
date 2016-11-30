@@ -6,27 +6,27 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - send-message:
-      GET:
-        script: send-message
-  - list-phone-numbers:
-      GET:
-        script: list-phone-numbers
-  - list-potential-numbers:
-      GET:
-        script: list-potential-numbers
+  send-message:
+    GET:
+      script: send-message
+  list-phone-numbers:
+    GET:
+      script: list-phone-numbers
+  list-potential-numbers:
+    GET:
+      script: list-potential-numbers
 dependencies:
-  - send-message:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/send-message.js
-      description: Send a message using the Twilio API
-  - list-phone-numbers:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/list-phone-numbers.js
-      description: List the available phone numbers for a particular account.
-  - list-potential-numbers:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/list-potential-numbers.js
-      description: >-
-        List the phone numbers potentially available (but not yet provisioned)
-        to your Twilio account.
+  send-message:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/send-message.js
+    description: Send a message using the Twilio API
+  list-phone-numbers:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/list-phone-numbers.js
+    description: List the available phone numbers for a particular account.
+  list-potential-numbers:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/list-potential-numbers.js
+    description: >-
+      List the phone numbers potentially available (but not yet provisioned) to
+      your Twilio account.

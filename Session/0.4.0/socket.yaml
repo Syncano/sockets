@@ -6,25 +6,25 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - load:
-      GET:
-        script: load
-  - save:
-      GET:
-        script: save
-  - del:
-      GET:
-        script: del
+  load:
+    GET:
+      script: load
+  save:
+    GET:
+      script: save
+  del:
+    GET:
+      script: del
 dependencies:
-  - load:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/load.js
-      description: Load a string from the session using the specified key.
-  - save:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/save.js
-      description: Save a string value to the current session under the specified key.
-  - del:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/del.js
-      description: Delete the specified key in the session.
+  load:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/load.js
+    description: Load a string from the session using the specified key.
+  save:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/save.js
+    description: Save a string value to the current session under the specified key.
+  del:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/del.js
+    description: Delete the specified key in the session.

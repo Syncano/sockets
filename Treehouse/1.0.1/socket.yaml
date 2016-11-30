@@ -4,11 +4,11 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - get-user-profile:
-      GET:
-        script: get-user-profile
+  get-user-profile:
+    GET:
+      script: get-user-profile
 dependencies:
-  - get-user-profile:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/get-user-profile.js
-      description: Get a user's Treehouse profile information.
+  get-user-profile:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/get-user-profile.js
+    description: Get a user's Treehouse profile information.

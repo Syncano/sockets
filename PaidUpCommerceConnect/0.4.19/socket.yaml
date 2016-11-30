@@ -4,74 +4,74 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - coupon-get:
-      GET:
-        script: coupon-get
-  - coupon-create:
-      GET:
-        script: coupon-create
-  - coupon-redeem:
-      GET:
-        script: coupon-redeem
-  - coupon-update:
-      GET:
-        script: coupon-update
-  - order-create:
-      GET:
-        script: order-create
-  - order-add-payments:
-      GET:
-        script: order-add-payments
-  - order-update-payments:
-      GET:
-        script: order-update-payments
-  - order-get:
-      GET:
-        script: order-get
-  - order-get-to-charge:
-      GET:
-        script: order-get-to-charge
-  - order-to-complete:
-      GET:
-        script: order-to-complete
+  coupon-get:
+    GET:
+      script: coupon-get
+  coupon-create:
+    GET:
+      script: coupon-create
+  coupon-redeem:
+    GET:
+      script: coupon-redeem
+  coupon-update:
+    GET:
+      script: coupon-update
+  order-create:
+    GET:
+      script: order-create
+  order-add-payments:
+    GET:
+      script: order-add-payments
+  order-update-payments:
+    GET:
+      script: order-update-payments
+  order-get:
+    GET:
+      script: order-get
+  order-get-to-charge:
+    GET:
+      script: order-get-to-charge
+  order-to-complete:
+    GET:
+      script: order-to-complete
 dependencies:
-  - coupon-get:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/coupon-get.js
-      description: get a list of discont coupon
-  - coupon-create:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/coupon-create.js
-      description: Create a discount coupon
-  - coupon-redeem:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/coupon-redeem.js
-      description: Redeem a coupon discount
-  - coupon-update:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/coupon-update.js
-      description: Update a coupon discount
-  - order-create:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/order-create.js
-      description: Create a order
-  - order-add-payments:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/order-add-payments.js
-      description: Add dues to order
-  - order-update-payments:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/order-update-payments.js
-      description: update payments to order
-  - order-get:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/order-get.js
-      description: get orders
-  - order-get-to-charge:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/order-get-to-charge.js
-      description: get orders to charge (cronjob)
-  - order-to-complete:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/order-to-complete.js
-      description: orders to complete (cronjob)
+  coupon-get:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/coupon-get.js
+    description: get a list of discont coupon
+  coupon-create:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/coupon-create.js
+    description: Create a discount coupon
+  coupon-redeem:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/coupon-redeem.js
+    description: Redeem a coupon discount
+  coupon-update:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/coupon-update.js
+    description: Update a coupon discount
+  order-create:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/order-create.js
+    description: Create a order
+  order-add-payments:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/order-add-payments.js
+    description: Add dues to order
+  order-update-payments:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/order-update-payments.js
+    description: update payments to order
+  order-get:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/order-get.js
+    description: get orders
+  order-get-to-charge:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/order-get-to-charge.js
+    description: get orders to charge (cronjob)
+  order-to-complete:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/order-to-complete.js
+    description: orders to complete (cronjob)

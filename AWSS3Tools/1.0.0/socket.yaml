@@ -4,11 +4,11 @@ author:
   name: Syncano
   email: hello@syncano.io
 endpoints:
-  - upload-to-s3:
-      GET:
-        script: upload-to-s3
+  upload-to-s3:
+    GET:
+      script: upload-to-s3
 dependencies:
-  - upload-to-s3:
-      runtime_name: nodejs_library_v1.0
-      file: scripts/upload-to-s3.js
-      description: Upload an object to S3.
+  upload-to-s3:
+    runtime_name: nodejs_library_v1.0
+    file: scripts/upload-to-s3.js
+    description: Upload an object to S3.
