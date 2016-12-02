@@ -1,18 +1,10 @@
-var fs = require('fs');
-var dedent = require('dedent');
-var mkdirp = require('mkdirp');
-var yaml = require('write-yaml');
-var _ = require('lodash');
-
+const { BLACK_LIST } = require('./helpers');
+const fs = require('fs');
+const dedent = require('dedent');
+const mkdirp = require('mkdirp');
+const yaml = require('write-yaml');
+const _ = require('lodash');
 const machines = require('./data.json');
-const BLACK_LIST = [
-  'machinepack-elasticsearch',
-  'machinepack-assets',
-  'machinepack-weather',
-  'machinepack-azure',
-  'machinepack-mongodb',
-  'machinepack-thumb',
-];
 
 function renderEndpoints(endpoints) {
   return (endpoints.map(function(item) {
