@@ -1,7 +1,7 @@
 const axios = require('axios');
-let newAccountInfo = require('./newAccountInfo');
+const newAccountInfo = require('./newAccountInfo');
 const { apiKey, instanceName } = newAccountInfo;
-const host = 'api.syncano.rocks';
+const host = process.env.SYNCANO_BASE_URL;
 const BLACK_LIST = [
   'machinepack-elasticsearch',
   'machinepack-assets',
@@ -10,13 +10,15 @@ const BLACK_LIST = [
   'machinepack-mongodb',
   'machinepack-thumb',
 ];
-
+const rawAddress = 'https://raw.githubusercontent.com/Syncano/sockets/master'
 const request = axios.create({
-  baseURL: `https://${host}/v2/instances/${instanceName}/sockets`,
+  baseURL: `${host}/v2/instances/${instanceName}/sockets`,
   headers: {'X-API-KEY': apiKey}
 });
 
 module.exports = {
   request,
-  BLACK_LIST
+  host,
+  BLACK_LIST,
+  rawAddress
 };

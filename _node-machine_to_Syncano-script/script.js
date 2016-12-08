@@ -10,33 +10,22 @@ function renderEndpoints(endpoints) {
   return (endpoints.map(function(item) {
     return ({
       [`${item.identity}`]: {
-        GET: {
-          script: item.identity
+        POST: {
+          file: `scripts/${item.identity}.js`,
+          description: item.description
         }
       }
     })
   }))
 }
 
-function renderDependencies(dependencies) {
-  return dependencies.map(function(item) {
-    return ({
-      [`${item.identity}`]: {
-        runtime_name: 'nodejs_library_v1.0',
-        file: `scripts/${item.identity}.js`,
-        description: item.description
-      }
-    })
-  })
-}
-
 function createDirs(rootDir) {
   mkdirp.sync(`${rootDir}/scripts`);
-  fs.writeFileSync(`${rootDir}/socket.yaml`, '');
+  fs.writeFileSync(`${rootDir}/socket.yml`, '');
 }
 
 function createYamlInput(content, rootDir) {
-  yaml.sync(`${rootDir}/socket.yaml`, content);
+  yaml.sync(`${rootDir}/socket.yml`, content);
 }
 
 function createScript(script, rootDir) {
@@ -55,7 +44,7 @@ machines
   .filter((machine) => whiteListMachine(machine, BLACK_LIST))
   .forEach((machine) => {
     const { machines, variableName, version } = machine;
-    const rootDir = `sockets/${variableName}/${version}`;
+    const rootDir = `../${variableName}/${version}`;
 
     const content = {
       name: variableName,
@@ -64,8 +53,7 @@ machines
         name: 'Syncano',
         email: 'hello@syncano.io'
       },
-      endpoints: _.assign.apply(_, renderEndpoints(machines)),
-      dependencies: _.assign.apply(_, renderDependencies(machines))
+      endpoints: _.assign.apply(_, renderEndpoints(machines))
     }
 
     createDirs(rootDir);

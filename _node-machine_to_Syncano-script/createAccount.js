@@ -1,18 +1,17 @@
 const Syncano = require('syncano');
+const { host } = require('./helpers');
 const fs = require('fs');
-let connection = Syncano({baseUrl: 'https://api.syncano.rocks'});
+let connection = Syncano({baseUrl: host});
 const generateCiCredentials = require('./generateCiCredentials');
 
 var Account = connection.Account;
 var credentials = generateCiCredentials();
-let api_key;
-let instance_name;
 
 function account() {
   return Account
   .register(credentials)
   .then((account) => {
-    connection = Syncano({accountKey: account.account_key, baseUrl: 'https://api.syncano.rocks'});
+    connection = Syncano({accountKey: account.account_key, baseUrl: host});
     var Instance = connection.Instance;
     var instance = {
       "name": Math.random().toString(36).substring(7)
@@ -25,13 +24,12 @@ function account() {
         const accountInfo = {
           apiKey: account.account_key,
           instanceName: newInstance.name,
-          accountEmail: account.email
+          accountEmail: account.email,
+          password: credentials.password
         };
         fs.writeFileSync('./newAccountInfo.json', JSON.stringify(accountInfo, null, 2), function (err) { });
       })
-  });  
+  });
 };
 
 account();
-
-module.exports = account;
