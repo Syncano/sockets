@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/Syncano/sockets#readme",
   "dependencies": {
+    "archiver": "^1.2.0",
     "axios": "^0.15.3",
     "dedent": "^0.6.0",
     "fs": "0.0.1-security",
@@ -31,5 +32,8 @@
     "mkdirp": "^0.5.1",
     "syncano": "^1.0.28",
     "write-yaml": "^0.2.2"
+  },
+  "devDependencies": {
+    "form-data": "^2.1.2"
   }
 }
