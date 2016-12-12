@@ -22,8 +22,10 @@
     "url": "https://github.com/Syncano/sockets/issues"
   },
   "homepage": "https://github.com/Syncano/sockets#readme",
-  "dependencies": {
-    "archiver": "^1.2.0",
+  "devDependencies": {
+    "form-data": "^2.1.2",
+    "rimraf": "^2.5.4",
+     "archiver": "^1.2.0",
     "axios": "^0.15.3",
     "dedent": "^0.6.0",
     "fs": "0.0.1-security",
@@ -33,7 +35,10 @@
     "syncano": "^1.0.28",
     "write-yaml": "^0.2.2"
   },
-  "devDependencies": {
-    "form-data": "^2.1.2"
+   "scripts": {
+    "sockets": "node createSockets.js",
+    "account": "node createAccount.js",
+    "test": "node createAccount.js && node test.js",
+    "start": "node createAccount.js && node createSockets.js && node test.js"
   }
 }

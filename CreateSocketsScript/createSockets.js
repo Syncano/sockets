@@ -4,7 +4,7 @@ const dedent = require('dedent');
 const mkdirp = require('mkdirp');
 const yaml = require('write-yaml');
 const _ = require('lodash');
-const machines = require('./data.json');
+const machines = require('./machines.json');
 
 function renderEndpoints(endpoints) {
   return (endpoints.map(function(item) {
@@ -15,8 +15,8 @@ function renderEndpoints(endpoints) {
           description: item.description
         }
       }
-    })
-  }))
+    });
+  }));
 }
 
 function createDirs(rootDir) {
@@ -54,7 +54,7 @@ machines
         email: 'hello@syncano.io'
       },
       endpoints: _.assign.apply(_, renderEndpoints(machines))
-    }
+    };
 
     createDirs(rootDir);
     createYamlInput(content, rootDir);
@@ -65,4 +65,4 @@ machines
   }
 );
 
-console.log('DONE')
+console.log("Sockets' folders created");
