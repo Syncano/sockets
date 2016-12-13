@@ -1,2 +1,4 @@
-_scriptsGenerator/node_modules
-_scriptsGenerator/test
+_socketsGenerator/node_modules
+_socketsGenerator/test
++.nyc_output
+
