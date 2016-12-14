@@ -79,15 +79,13 @@ function createSockets() {
       });
     }
   )
+    console.log('Folders created');
 };
+createSockets();
 
-// createSockets();
-
-export default {
-  renderEndpoints,
-  createDirs,
-  createYamlInput,
-  createScript,
-  whiteListMachine,
-  createSockets 
-};
+module.exports.renderEndpoints = renderEndpoints;
+module.exports.createDirs = createDirs;
+module.exports.createYamlInput = createYamlInput;
+module.exports.createScript = createScript;
+module.exports.whiteListMachine = whiteListMachine;
+module.exports.createSockets = createSockets;

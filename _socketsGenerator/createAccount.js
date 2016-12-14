@@ -36,3 +36,4 @@ if (!fs.existsSync(dir)){
   fs.mkdirSync(dir);
 }
 createAccount();
+console.log('Test account created');
