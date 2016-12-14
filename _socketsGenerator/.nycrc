@@ -1,0 +1,10 @@
+{
+  "branches": 5,
+  "function": 5,
+  "lines": 5,
+  "statements": 5,
+  "exclude": ["../*.test.js", "lib"],
+  "require": ["babel-register"],
+  "all": true,
+  "check-coverage": true
+}
