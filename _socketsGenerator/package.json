@@ -8,7 +8,7 @@
     "account": "node createAccount.js",
     "e2e": "node createAccount.js && node test.js",
     "start": "node createAccount.js && node createSockets.js && node test.js",
-    "test": "mocha --require babel-register",
+    "test": "mocha test/main_test.js --require babel-register",
     "check-coverage": "nyc npm run test",
     "test:watch": "npm t -- -w"
   },
