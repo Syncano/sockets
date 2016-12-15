@@ -1,5 +1,4 @@
 import sinon from 'sinon';
-import assert from 'assert';
 import { expect } from 'chai';
 import functions from '../test';
 
@@ -22,7 +21,7 @@ describe('Test test.js', function () {
     it('should get a correct parameter', function() {
       result(name);
 
-      assert(result.withArgs(name).called);
+      expect(result.withArgs(name).called).to.be.true;
     });
     it("socket's name should be a string", function() {
       name = {};
@@ -37,7 +36,7 @@ describe('Test test.js', function () {
     it('should get a correct parameter', function() {
       result(name);
 
-      assert(result.withArgs(name).called);
+      expect(result.withArgs(name).called).to.be.true;
     });
     it("socket's name should be a string", function() {
       name = {};
@@ -72,7 +71,7 @@ describe('Test test.js', function () {
     it('should get a correct parameter', function() {
       result(name);
 
-      assert(result.withArgs(name).called);
+      expect(result.withArgs(name).called).to.be.true;
     });
     it("socket's name should be a string", function() {
       name = {};
@@ -88,7 +87,7 @@ describe('Test test.js', function () {
     it('should get a correct parameter', function() {
       result(name);
 
-      assert(result.withArgs(name).called);
+      expect(result.withArgs(name).called).to.be.true;
     });
     it("socket's name should be a string", function() {
       name = {};
@@ -105,7 +104,7 @@ describe('Test test.js', function () {
     it('should get correct parameters', function() {
       result(name, version);
 
-      assert(result.withArgs(name, version).called);
+      expect(result.withArgs(name, version).called).to.be.true;
     });
     it("parameters should have correct types", function() {
       name = {};
@@ -122,7 +121,7 @@ describe('Test test.js', function () {
     it('should get a correct parameter', function() {
       result(name);
 
-      assert(result.withArgs(name).called);
+      expect(result.withArgs(name).called).to.be.true;
     });
     it("zip's name should be a string", function() {
       name = {};
@@ -139,7 +138,7 @@ describe('Test test.js', function () {
     it('should get correct parameters', function() {
       result(name, path);
 
-      assert(result.withArgs(name, path).called);
+      expect(result.withArgs(name, path).called).to.be.true;
     });
     it("parameters should have correct types", function() {
       name = {};

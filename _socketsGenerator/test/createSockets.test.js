@@ -1,5 +1,4 @@
 import sinon from 'sinon';
-import assert from 'assert';
 import { expect } from 'chai';
 import functions from '../createSockets';
 
@@ -82,7 +81,7 @@ describe('Test createSockets.js', function () {
     it('should get correct parameter', function() {
       result(dir);
 
-      assert(result.withArgs(dir).called);
+      expect(result.withArgs(dir).called).to.be.true;
     });
 
     it('argument should be a string', function() {
@@ -106,8 +105,8 @@ describe('Test createSockets.js', function () {
 
     it('should get correct parameters', function() {
       result(content, dir);
-     
-      assert(result.withArgs(content, dir).called);
+
+      expect(result.withArgs(content, dir).called).to.be.true;
     });
 
     it('parameters should have correct types', function() {
@@ -127,8 +126,8 @@ describe('Test createSockets.js', function () {
 
     it('should get correct parameters', function() {
       result(script, dir);
-     
-      assert(result.withArgs(script, dir).called);
+
+      expect(result.withArgs(script, dir).called).to.be.true;
     });
 
     it('parameters should have correct types', function() {
@@ -162,7 +161,8 @@ describe('Test createSockets.js', function () {
 
     it('should be executed at least once', function() {
       result();
-      sinon.assert.calledOnce(result);
+
+      expect(result.calledOnce).to.be.true;
      });
   });
 });

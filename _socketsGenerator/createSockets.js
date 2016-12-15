@@ -1,12 +1,12 @@
-const { BLACK_LIST } = require('./helpers');
-const fs = require('fs');
-const dedent = require('dedent');
-const mkdirp = require('mkdirp');
-const yaml = require('write-yaml');
-const _ = require('lodash');
-const machines = require('./machines.json');
+import { BLACK_LIST } from './helpers';
+import fs from 'fs';
+import dedent from 'dedent';
+import mkdirp from 'mkdirp';
+import yaml from 'write-yaml';
+import _ from'lodash';
+import machines from './machines.json';
 
-function renderEndpoints(endpoints) {
+const renderEndpoints = (endpoints) => {
   return (endpoints.map(function(item) {
     if (!item.identity && !item.description) {
       return false
@@ -23,7 +23,7 @@ function renderEndpoints(endpoints) {
   }));
 }
 
-function createDirs(rootDir) {
+const createDirs = (rootDir) => {
   if (typeof(rootDir) !== 'string') {
     return false;
   }
@@ -32,7 +32,7 @@ function createDirs(rootDir) {
   fs.writeFileSync(`${rootDir}/socket.yml`, '');
 }
 
-function createYamlInput(content, rootDir) {
+const createYamlInput = (content, rootDir) => {
   if (typeof(rootDir) !== 'string' || typeof(content) !== 'object') {
     return false;
   }
@@ -40,7 +40,7 @@ function createYamlInput(content, rootDir) {
   return yaml.sync(`${rootDir}/socket.yml`, content);
 }
 
-function createScript(script, rootDir) {
+const createScript = (script, rootDir) => {
   if (typeof(rootDir) !== 'string' || typeof(script) !== 'object') {
     return false;
   }
@@ -48,7 +48,7 @@ function createScript(script, rootDir) {
   return fs.writeFileSync(`${rootDir}/scripts/${script.identity}.js`, dedent(script.fn));
 }
 
-function whiteListMachine(machine, blackList) {
+const whiteListMachine = (machine, blackList) => {
   if (typeof(blackList) !== 'array' && typeof(machine) !== 'object') {
     if (blackList.indexOf(machine.identity) > -1) {
       return false;
@@ -58,7 +58,7 @@ function whiteListMachine(machine, blackList) {
   return true;
 }
 
-function createSockets() {
+const createSockets = () => {
   machines
     .filter((machine) => whiteListMachine(machine, BLACK_LIST))
     .forEach((machine) => {
@@ -85,7 +85,10 @@ function createSockets() {
   )
     console.log('Folders created');
 };
-// createSockets();
+
+if (process.argv[2] !== 'test/main_test.js') {
+  createSockets();
+}
 
 export default {
   renderEndpoints,

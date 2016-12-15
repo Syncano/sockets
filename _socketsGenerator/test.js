@@ -1,15 +1,15 @@
-const { request, BLACK_LIST } = require('./helpers');
-const fs = require('fs');
-const mypath = require('path');
-const newAccountInfo = require('./test/newAccountInfo');
-const FormData = require('form-data');
-const machines = require('./machines.json');
-const archiver = require('archiver');
-const rimraf = require('rimraf');
+import { request, BLACK_LIST } from './helpers';
+import fs from 'fs';
+import mypath from 'path';
+import newAccountInfo from './test/newAccountInfo';
+import FormData from 'form-data';
+import machines from './machines.json';
+import archiver from 'archiver';
+import rimraf from 'rimraf';
 
 const { apiKey, instanceName } = newAccountInfo;
 
-function getSocket(name) {
+const getSocket = (name) => {
   if (typeof(name) !== 'string') {
     return false
   }
@@ -17,7 +17,7 @@ function getSocket(name) {
   return request.get(`/${name}/`);
 }
 
-function deleteSocket(name) {
+const deleteSocket = (name) => {
   if (typeof(name) !== 'string') {
     return false
   }
@@ -28,7 +28,7 @@ function deleteSocket(name) {
     .catch(console.log);
 }
 
-function whiteListMachine(machine, blackList) {
+const whiteListMachine = (machine, blackList) => {
   if (typeof(blackList) !== 'array' && typeof(machine) !== 'object') {
     if (blackList.indexOf(machine.identity) > -1) {
       return false;
@@ -38,7 +38,7 @@ function whiteListMachine(machine, blackList) {
   return true;
 }
 
-function deleteFolder(folderName) {
+const deleteFolder =(folderName) => {
   if (typeof(name) !== 'string') {
     return false;
   }
@@ -47,7 +47,7 @@ function deleteFolder(folderName) {
 }
 
 
-function checkIfInstalled(name) {
+const checkIfInstalled = (name) => {
   if (typeof(name) !== 'string') {
     return false;
   }
@@ -72,7 +72,7 @@ function checkIfInstalled(name) {
   });
 }
 
-function createZip(name, version) {
+const createZip = (name, version) => {
   if (typeof(name) !== 'string' && typeof(version) !== 'string') {
     return false;
   }
@@ -99,7 +99,7 @@ function createZip(name, version) {
   });
 }
 
-function deleteZip(name) {
+const deleteZip = (name) => {
   if (typeof(name) !== 'string') {
     return false;
   }
@@ -108,7 +108,7 @@ function deleteZip(name) {
   console.log('Zip file deleted \n');
 }
 
-function installSocket(socketName, path) {
+const installSocket = (socketName, path) => {
   if (typeof(socketName) !== 'string' && typeof(path) !== 'string') {
     return false;
   }
@@ -153,7 +153,9 @@ const promises = machines
 
 const runPromisesInSequence = (p, fn) => p.then(fn);
 
-// promises.reduce(runPromisesInSequence, Promise.resolve());
+if (process.argv[2] !== 'test/main_test.js') {
+  promises.reduce(runPromisesInSequence, Promise.resolve());
+} 
 
 export default {
   checkIfInstalled,
