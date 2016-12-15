@@ -38,4 +38,4 @@ if (!fs.existsSync(dir)){
 // createAccount();
 // console.log('Test account created');
 
-module.exports.createAccount = createAccount;
+export default { createAccount };

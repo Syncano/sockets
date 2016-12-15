@@ -87,9 +87,11 @@ function createSockets() {
 };
 // createSockets();
 
-module.exports.renderEndpoints = renderEndpoints;
-module.exports.createDirs = createDirs;
-module.exports.createYamlInput = createYamlInput;
-module.exports.createScript = createScript;
-module.exports.whiteListMachine = whiteListMachine;
-module.exports.createSockets = createSockets;
+export default {
+  renderEndpoints,
+  createDirs,
+  createSockets,
+  createScript,
+  createYamlInput,
+  whiteListMachine
+};

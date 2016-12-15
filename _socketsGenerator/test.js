@@ -155,12 +155,14 @@ const runPromisesInSequence = (p, fn) => p.then(fn);
 
 // promises.reduce(runPromisesInSequence, Promise.resolve());
 
-module.exports.getSocket = getSocket;
-module.exports.deleteSocket = deleteSocket;
-module.exports.whiteListMachine = whiteListMachine;
-module.exports.deleteFolder = deleteFolder;
-module.exports.checkIfInstalled = checkIfInstalled;
-module.exports.createZip = createZip;
-module.exports.deleteZip = deleteZip;
-module.exports.installSocket = installSocket;
-module.exports.runPromisesInSequence = runPromisesInSequence;
+export default {
+  checkIfInstalled,
+  createZip,
+  deleteFolder,
+  deleteSocket,
+  deleteZip,
+  getSocket,
+  installSocket,
+  runPromisesInSequence,
+  whiteListMachine
+};
