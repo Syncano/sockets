@@ -11,6 +11,11 @@ $ npm install
 $ npm start
 ```
 
+## To Run Tests
+```sh
+$ npm run tests
+```
+
 1. Create a temporary testing account on Syncano.
 `npm run account`
 2. Convert node machines into Syncano sockets by creating *.js and *.yml files.

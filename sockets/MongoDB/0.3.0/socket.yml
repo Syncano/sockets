@@ -1,0 +1,32 @@
+name: MongoDB
+description: Structured Node.js bindings for MongoDB.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  update-documents:
+    POST:
+      file: scripts/update-documents.js
+      description: Modify existing documents in a collection.
+  list-collections:
+    POST:
+      file: scripts/list-collections.js
+      description: List the names of collections in the specified Mongo database.
+  count-documents:
+    POST:
+      file: scripts/count-documents.js
+      description: >-
+        Count the documents in this collection which match the specified
+        criteria.
+  describe-collection:
+    POST:
+      file: scripts/describe-collection.js
+      description: >-
+        List an approximation of the fields that are found in each document of a
+        Mongo collection.
+  list-documents:
+    POST:
+      file: scripts/list-documents.js
+      description: >-
+        List documents in this Mongo collection which match the specified
+        criteria.

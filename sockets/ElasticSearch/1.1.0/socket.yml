@@ -1,0 +1,24 @@
+name: ElasticSearch
+description: Access the ElasticSearch API in Node.js.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  search:
+    POST:
+      file: scripts/search.js
+      description: >-
+        Search across all indexed fields, returning the ids of the documents
+        which match the query.
+  update:
+    POST:
+      file: scripts/update.js
+      description: Update (reindex) the document with the specified unique id.
+  create:
+    POST:
+      file: scripts/create.js
+      description: 'Store the provided document (a dictionary), making it searchable.'
+  destroy:
+    POST:
+      file: scripts/destroy.js
+      description: Delete the document with the specified unique id.

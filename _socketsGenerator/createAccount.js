@@ -35,5 +35,7 @@ function createAccount() {
 if (!fs.existsSync(dir)){
   fs.mkdirSync(dir);
 }
-createAccount();
-console.log('Test account created');
+// createAccount();
+// console.log('Test account created');
+
+module.exports.createAccount = createAccount;

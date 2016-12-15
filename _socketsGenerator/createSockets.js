@@ -11,6 +11,7 @@ function renderEndpoints(endpoints) {
     if (!item.identity && !item.description) {
       return false
     }
+
     return ({
       [`${item.identity}`]: {
         POST: {
@@ -26,6 +27,7 @@ function createDirs(rootDir) {
   if (typeof(rootDir) !== 'string') {
     return false;
   }
+
   mkdirp.sync(`${rootDir}/scripts`);
   fs.writeFileSync(`${rootDir}/socket.yml`, '');
 }
@@ -34,14 +36,16 @@ function createYamlInput(content, rootDir) {
   if (typeof(rootDir) !== 'string' || typeof(content) !== 'object') {
     return false;
   }
-  yaml.sync(`${rootDir}/socket.yml`, content);
+
+  return yaml.sync(`${rootDir}/socket.yml`, content);
 }
 
 function createScript(script, rootDir) {
   if (typeof(rootDir) !== 'string' || typeof(script) !== 'object') {
     return false;
   }
-  fs.writeFileSync(`${rootDir}/scripts/${script.identity}.js`, dedent(script.fn));
+
+  return fs.writeFileSync(`${rootDir}/scripts/${script.identity}.js`, dedent(script.fn));
 }
 
 function whiteListMachine(machine, blackList) {
@@ -59,7 +63,7 @@ function createSockets() {
     .filter((machine) => whiteListMachine(machine, BLACK_LIST))
     .forEach((machine) => {
       const { machines, variableName, version } = machine;
-      const rootDir = `../${variableName}/${version}`;
+      const rootDir = `../sockets/${variableName}/${version}`;
 
       const content = {
         name: variableName,
@@ -81,7 +85,7 @@ function createSockets() {
   )
     console.log('Folders created');
 };
-createSockets();
+// createSockets();
 
 module.exports.renderEndpoints = renderEndpoints;
 module.exports.createDirs = createDirs;

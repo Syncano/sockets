@@ -10,11 +10,18 @@ const rimraf = require('rimraf');
 const { apiKey, instanceName } = newAccountInfo;
 
 function getSocket(name) {
-  return request
-    .get(`/${name}/`);
+  if (typeof(name) !== 'string') {
+    return false
+  }
+
+  return request.get(`/${name}/`);
 }
 
 function deleteSocket(name) {
+  if (typeof(name) !== 'string') {
+    return false
+  }
+
   return request
     .delete(`/${name}/`)
     .then((res) => res.url)
@@ -22,15 +29,29 @@ function deleteSocket(name) {
 }
 
 function whiteListMachine(machine, blackList) {
-  return blackList.indexOf(machine.identity) === -1;
+  if (typeof(blackList) !== 'array' && typeof(machine) !== 'object') {
+    if (blackList.indexOf(machine.identity) > -1) {
+      return false;
+    } 
+  }
+
+  return true;
 }
 
 function deleteFolder(folderName) {
-  rimraf.sync(mypath.resolve(`../${folderName}`));
+  if (typeof(name) !== 'string') {
+    return false;
+  }
+
+  return rimraf.sync(mypath.resolve(`../${folderName}`));
 }
 
 
 function checkIfInstalled(name) {
+  if (typeof(name) !== 'string') {
+    return false;
+  }
+
   return getSocket(name).then((response) => {
     console.log(`${name} installation status: ${response.data.status}`);
 
@@ -52,6 +73,10 @@ function checkIfInstalled(name) {
 }
 
 function createZip(name, version) {
+  if (typeof(name) !== 'string' && typeof(version) !== 'string') {
+    return false;
+  }
+
   return new Promise((resolve, reject) => {
     const output = fs.createWriteStream(`./test/${name}-${version}.zip`, { mode: 0o700 });
     const archive = archiver('zip', {
@@ -64,7 +89,7 @@ function createZip(name, version) {
       reject();
     });
 
-    archive.directory(`../${name}/${version}`, '/');
+    archive.directory(`../sockets/${name}/${version}`, '/');
     archive.finalize();
 
     output.on('close', () => {
@@ -75,11 +100,18 @@ function createZip(name, version) {
 }
 
 function deleteZip(name) {
+  if (typeof(name) !== 'string') {
+    return false;
+  }
+
   fs.unlinkSync(name);
   console.log('Zip file deleted \n');
 }
 
 function installSocket(socketName, path) {
+  if (typeof(socketName) !== 'string' && typeof(path) !== 'string') {
+    return false;
+  }
   const endpointPath = `/v2/instances/${instanceName}/sockets/`;
 
   return new Promise((resolve, reject) => {
@@ -121,4 +153,14 @@ const promises = machines
 
 const runPromisesInSequence = (p, fn) => p.then(fn);
 
-promises.reduce(runPromisesInSequence, Promise.resolve());
+// promises.reduce(runPromisesInSequence, Promise.resolve());
+
+module.exports.getSocket = getSocket;
+module.exports.deleteSocket = deleteSocket;
+module.exports.whiteListMachine = whiteListMachine;
+module.exports.deleteFolder = deleteFolder;
+module.exports.checkIfInstalled = checkIfInstalled;
+module.exports.createZip = createZip;
+module.exports.deleteZip = deleteZip;
+module.exports.installSocket = installSocket;
+module.exports.runPromisesInSequence = runPromisesInSequence;
