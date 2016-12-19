@@ -81,7 +81,8 @@ describe('Test createSockets.js', function () {
     it('should get correct parameter', function() {
       result(dir);
 
-      expect(result.withArgs(dir).called).to.be.true;
+      sinon.assert.called(result);
+      sinon.assert.calledWith(result, dir);
     });
 
     it('argument should be a string', function() {

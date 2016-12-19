@@ -1,9 +1,6 @@
 import sinon from 'sinon';
-import assert from 'assert';
 import { expect } from 'chai';
 import functions from '../createAccount';
-
-const { createAccount } = functions;
 
 describe('Test createAccount.js', function () {
   var apiResponse = {

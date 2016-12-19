@@ -21,7 +21,8 @@ describe('Test test.js', function () {
     it('should get a correct parameter', function() {
       result(name);
 
-      expect(result.withArgs(name).called).to.be.true;
+      sinon.assert.called(result);
+      sinon.assert.calledWith(result, name);
     });
     it("socket's name should be a string", function() {
       name = {};
@@ -36,7 +37,8 @@ describe('Test test.js', function () {
     it('should get a correct parameter', function() {
       result(name);
 
-      expect(result.withArgs(name).called).to.be.true;
+      sinon.assert.called(result);
+      sinon.assert.calledWith(result, name);
     });
     it("socket's name should be a string", function() {
       name = {};
@@ -71,7 +73,8 @@ describe('Test test.js', function () {
     it('should get a correct parameter', function() {
       result(name);
 
-      expect(result.withArgs(name).called).to.be.true;
+      sinon.assert.called(result);
+      sinon.assert.calledWith(result, name);
     });
     it("socket's name should be a string", function() {
       name = {};
@@ -87,7 +90,8 @@ describe('Test test.js', function () {
     it('should get a correct parameter', function() {
       result(name);
 
-      expect(result.withArgs(name).called).to.be.true;
+      sinon.assert.called(result);
+      sinon.assert.calledWith(result, name);
     });
     it("socket's name should be a string", function() {
       name = {};
@@ -104,7 +108,8 @@ describe('Test test.js', function () {
     it('should get correct parameters', function() {
       result(name, version);
 
-      expect(result.withArgs(name, version).called).to.be.true;
+      sinon.assert.called(result);
+      sinon.assert.calledWith(result, name);
     });
     it("parameters should have correct types", function() {
       name = {};
@@ -121,7 +126,8 @@ describe('Test test.js', function () {
     it('should get a correct parameter', function() {
       result(name);
 
-      expect(result.withArgs(name).called).to.be.true;
+      sinon.assert.called(result);
+      sinon.assert.calledWith(result, name);
     });
     it("zip's name should be a string", function() {
       name = {};

@@ -8,7 +8,7 @@ const Account = connection.Account;
 const credentials = generateCiCredentials();
 const dir = './test';
 
-const createAccount = () => {
+function createAccount() {
   return Account
   .register(credentials)
   .then((account) => {
@@ -29,7 +29,7 @@ const createAccount = () => {
           password: credentials.password
         };
         fs.writeFileSync('./test/newAccountInfo.json', JSON.stringify(accountInfo, null, 2), function (err) { });
-          console.log('Account was created')
+        console.log('Account was created')
       });
   });
 }
@@ -37,7 +37,7 @@ if (!fs.existsSync(dir)){
   fs.mkdirSync(dir);
 }
 
-if (process.argv[2] !== 'test/main_test.js') {
+if (!process.argv.includes('test/main_test.js')) {
   createAccount();
 }
 

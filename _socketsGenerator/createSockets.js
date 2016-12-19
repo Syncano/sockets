@@ -6,7 +6,7 @@ import yaml from 'write-yaml';
 import _ from'lodash';
 import machines from './machines.json';
 
-const renderEndpoints = (endpoints) => {
+function renderEndpoints(endpoints) {
   return (endpoints.map(function(item) {
     if (!item.identity && !item.description) {
       return false
@@ -23,7 +23,7 @@ const renderEndpoints = (endpoints) => {
   }));
 }
 
-const createDirs = (rootDir) => {
+function createDirs(rootDir) {
   if (typeof(rootDir) !== 'string') {
     return false;
   }
@@ -32,7 +32,7 @@ const createDirs = (rootDir) => {
   fs.writeFileSync(`${rootDir}/socket.yml`, '');
 }
 
-const createYamlInput = (content, rootDir) => {
+function createYamlInput(content, rootDir) {
   if (typeof(rootDir) !== 'string' || typeof(content) !== 'object') {
     return false;
   }
@@ -40,7 +40,7 @@ const createYamlInput = (content, rootDir) => {
   return yaml.sync(`${rootDir}/socket.yml`, content);
 }
 
-const createScript = (script, rootDir) => {
+function createScript(script, rootDir) {
   if (typeof(rootDir) !== 'string' || typeof(script) !== 'object') {
     return false;
   }
@@ -48,7 +48,7 @@ const createScript = (script, rootDir) => {
   return fs.writeFileSync(`${rootDir}/scripts/${script.identity}.js`, dedent(script.fn));
 }
 
-const whiteListMachine = (machine, blackList) => {
+function whiteListMachine(machine, blackList) {
   if (typeof(blackList) !== 'array' && typeof(machine) !== 'object') {
     if (blackList.indexOf(machine.identity) > -1) {
       return false;
@@ -58,7 +58,7 @@ const whiteListMachine = (machine, blackList) => {
   return true;
 }
 
-const createSockets = () => {
+function createSockets() {
   machines
     .filter((machine) => whiteListMachine(machine, BLACK_LIST))
     .forEach((machine) => {
@@ -86,7 +86,7 @@ const createSockets = () => {
     console.log('Folders created');
 };
 
-if (process.argv[2] !== 'test/main_test.js') {
+if (!process.argv.includes('test/main_test.js')) {
   createSockets();
 }
 

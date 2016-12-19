@@ -9,7 +9,7 @@ import rimraf from 'rimraf';
 
 const { apiKey, instanceName } = newAccountInfo;
 
-const getSocket = (name) => {
+function getSocket(name) {
   if (typeof(name) !== 'string') {
     return false
   }
@@ -17,7 +17,7 @@ const getSocket = (name) => {
   return request.get(`/${name}/`);
 }
 
-const deleteSocket = (name) => {
+function deleteSocket(name) {
   if (typeof(name) !== 'string') {
     return false
   }
@@ -28,7 +28,7 @@ const deleteSocket = (name) => {
     .catch(console.log);
 }
 
-const whiteListMachine = (machine, blackList) => {
+function whiteListMachine(machine, blackList) {
   if (typeof(blackList) !== 'array' && typeof(machine) !== 'object') {
     if (blackList.indexOf(machine.identity) > -1) {
       return false;
@@ -38,7 +38,7 @@ const whiteListMachine = (machine, blackList) => {
   return true;
 }
 
-const deleteFolder =(folderName) => {
+function deleteFolder(folderName) {
   if (typeof(name) !== 'string') {
     return false;
   }
@@ -47,7 +47,7 @@ const deleteFolder =(folderName) => {
 }
 
 
-const checkIfInstalled = (name) => {
+function checkIfInstalled(name) {
   if (typeof(name) !== 'string') {
     return false;
   }
@@ -72,7 +72,7 @@ const checkIfInstalled = (name) => {
   });
 }
 
-const createZip = (name, version) => {
+function createZip(name, version) {
   if (typeof(name) !== 'string' && typeof(version) !== 'string') {
     return false;
   }
@@ -99,8 +99,9 @@ const createZip = (name, version) => {
   });
 }
 
-const deleteZip = (name) => {
+function deleteZip(name) {
   if (typeof(name) !== 'string') {
+    console.log('Invalid zip file name')
     return false;
   }
 
@@ -108,7 +109,7 @@ const deleteZip = (name) => {
   console.log('Zip file deleted \n');
 }
 
-const installSocket = (socketName, path) => {
+function installSocket(socketName, path) {
   if (typeof(socketName) !== 'string' && typeof(path) !== 'string') {
     return false;
   }
@@ -153,7 +154,7 @@ const promises = machines
 
 const runPromisesInSequence = (p, fn) => p.then(fn);
 
-if (process.argv[2] !== 'test/main_test.js') {
+if (!process.argv.includes('test/main_test.js')) {
   promises.reduce(runPromisesInSequence, Promise.resolve());
 } 
 
