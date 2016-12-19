@@ -1,4 +1,5 @@
 _socketsGenerator/node_modules
-_socketsGenerator/test
-+.nyc_output
+_socketsGenerator/coverage
+_socketsGenerator/.nyc_output
+
 

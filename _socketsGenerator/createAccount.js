@@ -1,8 +1,8 @@
-const Syncano = require('syncano');
-const fs = require('fs');
-const generateCiCredentials = require('./generateCiCredentials');
-const host = process.env.SYNCANO_BASE_URL;
+import Syncano from 'syncano';
+import fs from 'fs';
+import generateCiCredentials from './generateCiCredentials';
 
+const host = process.env.SYNCANO_BASE_URL;
 let connection = Syncano({ baseUrl: host });
 const Account = connection.Account;
 const credentials = generateCiCredentials();
@@ -29,11 +29,16 @@ function createAccount() {
           password: credentials.password
         };
         fs.writeFileSync('./test/newAccountInfo.json', JSON.stringify(accountInfo, null, 2), function (err) { });
+        console.log('Account was created')
       });
   });
 }
 if (!fs.existsSync(dir)){
   fs.mkdirSync(dir);
 }
-createAccount();
-console.log('Test account created');
+
+if (!process.argv.includes('test/main_test.js')) {
+  createAccount();
+}
+
+export default { createAccount };

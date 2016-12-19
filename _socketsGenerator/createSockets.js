@@ -1,16 +1,17 @@
-const { BLACK_LIST } = require('./helpers');
-const fs = require('fs');
-const dedent = require('dedent');
-const mkdirp = require('mkdirp');
-const yaml = require('write-yaml');
-const _ = require('lodash');
-const machines = require('./machines.json');
+import { BLACK_LIST } from './helpers';
+import fs from 'fs';
+import dedent from 'dedent';
+import mkdirp from 'mkdirp';
+import yaml from 'write-yaml';
+import _ from'lodash';
+import machines from './machines.json';
 
 function renderEndpoints(endpoints) {
   return (endpoints.map(function(item) {
     if (!item.identity && !item.description) {
       return false
     }
+
     return ({
       [`${item.identity}`]: {
         POST: {
@@ -26,6 +27,7 @@ function createDirs(rootDir) {
   if (typeof(rootDir) !== 'string') {
     return false;
   }
+
   mkdirp.sync(`${rootDir}/scripts`);
   fs.writeFileSync(`${rootDir}/socket.yml`, '');
 }
@@ -34,14 +36,16 @@ function createYamlInput(content, rootDir) {
   if (typeof(rootDir) !== 'string' || typeof(content) !== 'object') {
     return false;
   }
-  yaml.sync(`${rootDir}/socket.yml`, content);
+
+  return yaml.sync(`${rootDir}/socket.yml`, content);
 }
 
 function createScript(script, rootDir) {
   if (typeof(rootDir) !== 'string' || typeof(script) !== 'object') {
     return false;
   }
-  fs.writeFileSync(`${rootDir}/scripts/${script.identity}.js`, dedent(script.fn));
+
+  return fs.writeFileSync(`${rootDir}/scripts/${script.identity}.js`, dedent(script.fn));
 }
 
 function whiteListMachine(machine, blackList) {
@@ -59,7 +63,7 @@ function createSockets() {
     .filter((machine) => whiteListMachine(machine, BLACK_LIST))
     .forEach((machine) => {
       const { machines, variableName, version } = machine;
-      const rootDir = `../${variableName}/${version}`;
+      const rootDir = `../sockets/${variableName}/${version}`;
 
       const content = {
         name: variableName,
@@ -81,11 +85,16 @@ function createSockets() {
   )
     console.log('Folders created');
 };
-createSockets();
 
-module.exports.renderEndpoints = renderEndpoints;
-module.exports.createDirs = createDirs;
-module.exports.createYamlInput = createYamlInput;
-module.exports.createScript = createScript;
-module.exports.whiteListMachine = whiteListMachine;
-module.exports.createSockets = createSockets;
+if (!process.argv.includes('test/main_test.js')) {
+  createSockets();
+}
+
+export default {
+  renderEndpoints,
+  createDirs,
+  createSockets,
+  createScript,
+  createYamlInput,
+  whiteListMachine
+};

@@ -1,20 +1,27 @@
-const { request, BLACK_LIST } = require('./helpers');
-const fs = require('fs');
-const mypath = require('path');
-const newAccountInfo = require('./test/newAccountInfo');
-const FormData = require('form-data');
-const machines = require('./machines.json');
-const archiver = require('archiver');
-const rimraf = require('rimraf');
+import { request, BLACK_LIST } from './helpers';
+import fs from 'fs';
+import mypath from 'path';
+import newAccountInfo from './test/newAccountInfo';
+import FormData from 'form-data';
+import machines from './machines.json';
+import archiver from 'archiver';
+import rimraf from 'rimraf';
 
 const { apiKey, instanceName } = newAccountInfo;
 
 function getSocket(name) {
-  return request
-    .get(`/${name}/`);
+  if (typeof(name) !== 'string') {
+    return false
+  }
+
+  return request.get(`/${name}/`);
 }
 
 function deleteSocket(name) {
+  if (typeof(name) !== 'string') {
+    return false
+  }
+
   return request
     .delete(`/${name}/`)
     .then((res) => res.url)
@@ -22,15 +29,29 @@ function deleteSocket(name) {
 }
 
 function whiteListMachine(machine, blackList) {
-  return blackList.indexOf(machine.identity) === -1;
+  if (typeof(blackList) !== 'array' && typeof(machine) !== 'object') {
+    if (blackList.indexOf(machine.identity) > -1) {
+      return false;
+    } 
+  }
+
+  return true;
 }
 
 function deleteFolder(folderName) {
-  rimraf.sync(mypath.resolve(`../${folderName}`));
+  if (typeof(name) !== 'string') {
+    return false;
+  }
+
+  return rimraf.sync(mypath.resolve(`../${folderName}`));
 }
 
 
 function checkIfInstalled(name) {
+  if (typeof(name) !== 'string') {
+    return false;
+  }
+
   return getSocket(name).then((response) => {
     console.log(`${name} installation status: ${response.data.status}`);
 
@@ -52,6 +73,10 @@ function checkIfInstalled(name) {
 }
 
 function createZip(name, version) {
+  if (typeof(name) !== 'string' && typeof(version) !== 'string') {
+    return false;
+  }
+
   return new Promise((resolve, reject) => {
     const output = fs.createWriteStream(`./test/${name}-${version}.zip`, { mode: 0o700 });
     const archive = archiver('zip', {
@@ -64,7 +89,7 @@ function createZip(name, version) {
       reject();
     });
 
-    archive.directory(`../${name}/${version}`, '/');
+    archive.directory(`../sockets/${name}/${version}`, '/');
     archive.finalize();
 
     output.on('close', () => {
@@ -75,11 +100,19 @@ function createZip(name, version) {
 }
 
 function deleteZip(name) {
+  if (typeof(name) !== 'string') {
+    console.log('Invalid zip file name')
+    return false;
+  }
+
   fs.unlinkSync(name);
   console.log('Zip file deleted \n');
 }
 
 function installSocket(socketName, path) {
+  if (typeof(socketName) !== 'string' && typeof(path) !== 'string') {
+    return false;
+  }
   const endpointPath = `/v2/instances/${instanceName}/sockets/`;
 
   return new Promise((resolve, reject) => {
@@ -121,4 +154,18 @@ const promises = machines
 
 const runPromisesInSequence = (p, fn) => p.then(fn);
 
-promises.reduce(runPromisesInSequence, Promise.resolve());
+if (!process.argv.includes('test/main_test.js')) {
+  promises.reduce(runPromisesInSequence, Promise.resolve());
+} 
+
+export default {
+  checkIfInstalled,
+  createZip,
+  deleteFolder,
+  deleteSocket,
+  deleteZip,
+  getSocket,
+  installSocket,
+  runPromisesInSequence,
+  whiteListMachine
+};

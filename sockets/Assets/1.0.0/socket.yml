@@ -1,0 +1,44 @@
+name: Assets
+description: >-
+  Experimental utilities for preparing fonts, images, JavaScript files, and LESS
+  stylesheets, then publishing them to NPM as production-ready asset packages.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  minify-javascript-assets:
+    POST:
+      file: scripts/minify-javascript-assets.js
+      description: >-
+        Generate a minified js string by reading, concating, and minifying the
+        contents of the specified directory.
+  copy-fonts:
+    POST:
+      file: scripts/copy-fonts.js
+      description: Copy font files into the output directory.
+  copy-images:
+    POST:
+      file: scripts/copy-images.js
+      description: Copy image files into the output directory.
+  productionify:
+    POST:
+      file: scripts/productionify.js
+      description: 'Prepare the assets in this package for production, then publish to NPM.'
+  write-readme-and-package-json:
+    POST:
+      file: scripts/write-readme-and-package-json.js
+      description: Write README.md and package.json files for a production asset package.
+  write-minified-javascript:
+    POST:
+      file: scripts/write-minified-javascript.js
+      description: Bundle and write a minified JavaScript file to the output directory.
+  write-compiled-stylesheet-if-relevant:
+    POST:
+      file: scripts/write-compiled-stylesheet-if-relevant.js
+      description: Bundle and write a minified CSS file to the output directory.
+  compile-less-stylesheets:
+    POST:
+      file: scripts/compile-less-stylesheets.js
+      description: >-
+        Compile a LESS importer file and all connected stylesheets into CSS
+        (this is usually the single entry point for all LESS in the project)

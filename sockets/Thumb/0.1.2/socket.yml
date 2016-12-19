@@ -1,0 +1,24 @@
+name: Thumb
+description: Easy Generate thumb file with ImageMagick native
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  read:
+    POST:
+      file: scripts/read.js
+      description: Create a read stream with a source path
+  write:
+    POST:
+      file: scripts/write.js
+      description: Write your file in destination path
+  to:
+    POST:
+      file: scripts/to.js
+      description: >-
+        Transform an convert image (PNG, JPG) with crop, resize, blur, rotate,
+        flip, ...
+  multiple:
+    POST:
+      file: scripts/multiple.js
+      description: generate multiple thumbs for an image

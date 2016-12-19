@@ -1,0 +1,60 @@
+name: Azure
+description: Work with the Microsoft Azure API.
+author:
+  name: Syncano
+  email: hello@syncano.io
+endpoints:
+  list-images:
+    POST:
+      file: scripts/list-images.js
+      description: List all the virtual machine images available to a particular account.
+  register-azure-account:
+    POST:
+      file: scripts/register-azure-account.js
+      description: Launches default browser to download default .publishsettings
+  set-azure-account:
+    POST:
+      file: scripts/set-azure-account.js
+      description: Sets the active azure subscription
+  check-active-subscription:
+    POST:
+      file: scripts/check-active-subscription.js
+      description: Detects if there is an active azure subscription
+  create-website:
+    POST:
+      file: scripts/create-website.js
+      description: Creates an Azure Website Instance
+  exists-website:
+    POST:
+      file: scripts/exists-website.js
+      description: >-
+        Detects if a website with a given name exists in the currently selected
+        account
+  upload-webjob:
+    POST:
+      file: scripts/upload-webjob.js
+      description: 'Uploads a webjob to a given website, overwriting if it already exists.'
+  trigger-webjob:
+    POST:
+      file: scripts/trigger-webjob.js
+      description: Triggers a webjob on a given website.
+  info-webjob:
+    POST:
+      file: scripts/info-webjob.js
+      description: Gets the latest info about a webjob on a given website.
+  log-webjob:
+    POST:
+      file: scripts/log-webjob.js
+      description: Gets the latest log from a webjob on a given website.
+  upload-file:
+    POST:
+      file: scripts/upload-file.js
+      description: 'Uploads a file to a given website, overwriting if it already exists.'
+  set-deploy-credentials:
+    POST:
+      file: scripts/set-deploy-credentials.js
+      description: Sets the deployment credentials of an Azure website
+  list-azure-accounts:
+    POST:
+      file: scripts/list-azure-accounts.js
+      description: Sets the deployment credntials of an Azure website
