@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-timetask",
+    "description": "Communicate with the Timetask API to get times, projects, etc.",
+    "version": "0.1.3",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-timetask": "0.1.3"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Timetask",
+        "Timetask-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

@@ -2,9 +2,10 @@ name: Weather
 description: Communicate with the forecast.io API to get weather forecasts.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   get-current-weather:
     POST:
       file: scripts/get-current-weather.js
       description: This machine will get the current weather at your location.
+      parameters: {}

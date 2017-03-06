@@ -1,27 +1,19 @@
-var Http = require('machinepack-http');
+var treehouse = require('machinepack-treehouse');
 
-Http.sendHttpRequest({
-  baseUrl: 'https://teamtreehouse.com',
-  url: '/' + inputs.username + '.json',
-  method: 'get'
-}).exec({
-  error: function(err) {
-    return exits.error('An unexpected error occured.');
-  },
+// Get a user's Treehouse profile information.
+treehouse.getUserProfile(ARGS).exec({
 
-  notFound: function(result) {
-    return exits.notFound('Treehouse profile not found.');
-  },
-
-  success: function(result) {
-    var responseBody;
-
-    try {
-      responseBody = JSON.parse(result.body);
-    } catch(e) {
-      return exits.error('An error occurred while parsing the body.');
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
 
-    return exits.success(responseBody);
-  }
 });

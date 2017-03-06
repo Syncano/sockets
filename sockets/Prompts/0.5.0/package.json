@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-prompts",
+    "description": "Produce interactive prompts in the console and consume the answers.",
+    "version": "0.5.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-prompts": "0.5.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Prompts",
+        "Prompts-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

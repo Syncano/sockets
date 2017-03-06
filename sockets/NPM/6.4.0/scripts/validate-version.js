@@ -1,32 +1,31 @@
-var _ = require('lodash');
-var semver = require('semver');
+var npm = require('machinepack-npm');
 
-// Coerce (/validate strict):
-//////////////////////////////////////////////////////////////////
+// Validate (and potentially coerce) the specified string, verifying that it is compatible for use as an NPM version string.
+npm.validateVersion(ARGS).exec({
 
-// TODO: coerce "almost" version strings, e.g. `1.0`
+    // The validated version string (which might also have been coerced a bit).
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    isEmpty: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    tooLong: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    invalidSemanticVersion: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notStrictlyValid: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-
-// Validate:
-//////////////////////////////////////////////////////////////////
-
-// Not Blank
-//
-// i.e. empty string ('')
-if (inputs.string.length === 0) {
-  return exits.isEmpty();
-}
-
-// 20 Characters Max
-if (inputs.string.length > 20) {
-  return exits.tooLong();
-}
-
-// Semantic Version
-if (!semver.valid(inputs.string)) {
-  return exits.invalidSemanticVersion();
-}
-
-// If we made it here, the provided string is valid and good to go!
-// (it also might have been coerced a bit)
-return exits.success(inputs.string);
+});

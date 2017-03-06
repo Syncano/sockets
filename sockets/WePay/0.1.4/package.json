@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-wepay",
+    "description": "Communicate with WePay API to register users, create accounts and accept payments.",
+    "version": "0.1.4",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-wepay": "0.1.4"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-WePay",
+        "WePay-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

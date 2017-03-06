@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-sailsgulpify",
+    "description": "Add toggle ability to choose gulp or grunt as task runner on create new ",
+    "version": "1.0.6",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-sailsgulpify": "1.0.6"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-SailsGulpify",
+        "SailsGulpify-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

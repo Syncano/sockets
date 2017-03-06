@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-googleapicustomsearch",
+    "description": "Communicate with Google Customsearch API.",
+    "version": "0.1.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-googleapicustomsearch": "0.1.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-GoogleAPICustomSearch",
+        "GoogleAPICustomSearch-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

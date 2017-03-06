@@ -2,9 +2,50 @@ name: Clickatell
 description: Send text messages using the Clickatell api
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   send-text-message:
     POST:
       file: scripts/send-text-message.js
       description: Send a text message using the Clickatell SMS API
+      parameters:
+        user:
+          example: companyname
+          description: Your Clickatell username.
+          required: true
+          type: string
+        password:
+          example: '******'
+          description: Your Clickatell password
+          required: true
+          type: string
+        api_id:
+          example: GJD79867
+          description: Your Clickatell API id.
+          required: true
+          type: string
+        from:
+          example: '2772000000'
+          description: Sender SMS number.
+          extendedDescription: >-
+            The number may be alphanumeric (Ex: from=MyCompany20). Restrictions
+            may apply, depending on the destination.
+          required: false
+          type: string
+        to:
+          example: '2772000000'
+          description: Recipient SMS number.
+          extendedDescription: >-
+            Mobile number in international format, and one recipient per
+            request. Ex: to=447525856424 or to=00447525856424 when sending to
+            UK.
+          required: true
+          type: string
+        text:
+          example: Hello world
+          description: Body of the text message.
+          extendedDescription: >-
+            Maximum length of a text message is 3200 characters, UTF-8 and URL
+            encoded value.
+          required: true
+          type: string

@@ -1,7 +1,15 @@
-// If the input valid is truthy, return `true` through the `success` exit.
-if (inputs.value) {
-  return exits.success(true);
-}
+var booleans = require('machinepack-booleans');
 
-// Otherwise return `false` through the `success` exit.
-return exits.success(false);
+// Determine whether the value is "truthy".
+booleans.isTruthy(ARGS).exec({
+
+    // A boolean indicating whether the input value is truthy.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

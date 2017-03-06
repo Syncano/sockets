@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-requestresponse",
+    "description": "Methods for working with the current incoming request and outgoing response.  Includes everything from accessing an incoming file upload stream, to reading/parsing incoming request headers, to customizing the content type for a file download or other outg",
+    "version": "0.2.1",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-reqres": "0.2.1"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-RequestResponse",
+        "RequestResponse-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

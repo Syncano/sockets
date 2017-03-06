@@ -1,46 +1,15 @@
-/**
-* Module Dependencies
-*/
+var wepay = require('machinepack-wepay');
 
-var wepay = require('wepay').WEPAY;
+// Find existing payment accounts. No params for all accounts by access token.
+wepay.accountFind(ARGS).exec({
 
-// wepay object options
-var wepay_options = {
-  'access_token': inputs.accessToken
-  // 'api_version': 'API_VERSION'
-};
-
-// wepay request params
-// requred
-var wepay_params = {
-  'name': inputs.name || undefined,
-  'reference_id': inputs.referenceId || undefined,
-  'sort_order': inputs.sortOrder || undefined
-};
-
-// Instantiate new wepay instance with settings
-var wp = new wepay(wepay_options);
-
-// Set API environment
-if(inputs.useProduction){
-  wp.use_production();
-}
-else{
-  wp.use_staging();
-}
-
-wp.call('/account/find', wepay_params, function onResponse(response) {
-
-  // Convert buffer respond to JSON object
-  var responseObj = JSON.parse(String(response));
-
-  // Catch error
-  if(responseObj.error){
-    return exits.error(responseObj);
-  }
-  // Else success
-  else{
-    return exits.success(responseObj);
-  }
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
 });

@@ -1,12 +1,15 @@
-var nodeTrello = require('node-trello'),
-    config = require('../config/auth.json'),
-    trello = new nodeTrello(config.apiKey, config.token),
-    boardId = inputs.boardId;
+var trello = require('machinepack-trello');
 
-return trello.get('/1/boards/' + boardId + '/lists', function(err, data) {
-    if (err) {
-        return exits.error(err);
-    } else {
-        return exits.success(data);
+// Retrieve all lists for a given board
+trello.getBoardLists(ARGS).exec({
+
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     }
+
 });

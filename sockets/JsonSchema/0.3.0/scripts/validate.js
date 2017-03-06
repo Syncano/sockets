@@ -1,19 +1,19 @@
-var BaseValidator = require('jsonschema').Validator;
-var validator = new BaseValidator();
+var jsonschema = require('machinepack-jsonschema');
 
-var result = validator.validate(inputs.data, inputs.schema);
-// => {
-//   instance: 55,
-//   schema: {
-//     type: 'number'
-//   },
-//   propertyPath: 'instance',
-//   errors: [],
-//   throwError: undefined
-// }
+// Validate some json data against a schema.
+jsonschema.validate(ARGS).exec({
 
-if (result.errors.length > 0) {
-  return exits.invalid(result.errors);
-}
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    invalid: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-return exits.success();
+});

@@ -2,9 +2,30 @@ name: Foursquareimageproxy
 description: proxy images of a foursquare venue based on its foursqaure id
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   best:
     POST:
       file: scripts/best.js
       description: get the best image of a venue based on the foursqaure id
+      parameters:
+        id:
+          description: The unique id for a Venue
+          example: 40b28c80f964a5204df81ee3
+          required: true
+          type: string
+        client_id:
+          example: XYRA11GEUJ0GQSS4APL0VXCI1GZIHVRBQQIR0XB32GIEDUYT
+          description: Your Foursquare app CLIENT_ID
+          required: true
+          type: string
+        client_secret:
+          example: H4JII1UI2AQK5VH4G1CASEN3XWFXM2KTY0OUWVKYZSZERR30
+          description: Your Foursquare app CLIENT_SECRET
+          required: true
+          type: string
+        size:
+          example: width640
+          description: size string
+          required: false
+          type: string

@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-azure",
+    "description": "Work with the Microsoft Azure API.",
+    "version": "1.2.5",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-azure": "1.2.5"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Azure",
+        "Azure-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

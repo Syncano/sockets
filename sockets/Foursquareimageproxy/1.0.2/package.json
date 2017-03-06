@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-foursquareimageproxy",
+    "description": "proxy images of a foursquare venue based on its foursqaure id",
+    "version": "1.0.2",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-foursquareimageproxy": "1.0.2"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Foursquareimageproxy",
+        "Foursquareimageproxy-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

@@ -2,25 +2,126 @@ name: Redis
 description: Structured Node.js bindings for Redis.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   get-connection:
     POST:
       file: scripts/get-connection.js
       description: Get an active connection to Redis.
+      parameters:
+        manager:
+          friendlyName: Manager
+          description: The connection manager instance to acquire the connection from.
+          extendedDescription: >-
+            Only managers built using the `createManager()` method of this
+            driver are supported. Also, the database connection manager instance
+            provided must not have been destroyed--i.e. once `destroyManager()`
+            is called on a manager, no more connections can be acquired from it
+            (also note that all existing connections become inactive-- see
+            `destroyManager()` for more on that).
+          example: ===
+          required: true
+          type: string
+        meta:
+          friendlyName: Meta (custom)
+          description: Additional stuff to pass to the driver.
+          extendedDescription: >-
+            This is reserved for custom driver-specific extensions.  Please
+            refer to the documentation for the driver you are using for more
+            specific information.
+          example: ===
+          type: string
   release-connection:
     POST:
       file: scripts/release-connection.js
       description: Close an active connection to the Redis server.
+      parameters:
+        connection:
+          friendlyName: Connection
+          description: An active Redis connection.
+          extendedDescription: >-
+            The provided Redis connection instance must still be active.  Only
+            Redis connection instances created by the `getConnection()` machine
+            in this driver are supported.
+          example: ===
+          required: true
+          type: string
+        meta:
+          friendlyName: Meta (custom)
+          description: Additional metadata to pass to the driver.
+          extendedDescription: >-
+            This input is not currently in use, but is reserved for
+            driver-specific customizations in the future.
+          example: ===
+          type: string
   create-manager:
     POST:
       file: scripts/create-manager.js
       description: >-
         Build and initialize a connection manager instance for this Redis
         database.
+      parameters:
+        connectionString:
+          description: >-
+            A string containing all metadata and credentials necessary for
+            connecting to the Redis database.
+          example: 'redis://127.0.0.1:6379'
+          required: true
+          type: string
+        onUnexpectedFailure:
+          description: >-
+            A function to call any time an unexpected error event is received
+            from this manager or any of its connections.
+          extendedDescription: >-
+            This can be used for anything you like, whether that's sending an
+            email to devops, or something as simple as logging a warning to the
+            console.
+
+
+            For example:
+
+            ```
+
+            onUnexpectedFailure: function (err) {
+              console.warn('Unexpected failure in database manager:',err);
+            }
+
+            ```
+          example: '->'
+          type: string
+        meta:
+          friendlyName: Meta (custom)
+          description: Additional Redis-specific options to use when connecting.
+          extendedDescription: 'If specified, should be a dictionary.'
+          moreInfoUrl: >-
+            https://github.com/NodeRedis/node_redis#options-is-an-object-with-the-following-possible-properties
+          example: ===
+          type: string
   destroy-manager:
     POST:
       file: scripts/destroy-manager.js
       description: >-
         Destroy the specified connection manager and destroy all of its active
         connections.
+      parameters:
+        manager:
+          friendlyName: Manager
+          description: The connection manager instance to destroy.
+          extendedDescription: >-
+            Only managers built using the `createManager()` method of this
+            driver are supported.  Also, the database connection manager
+            instance provided must not have already been destroyed--i.e. once
+            `destroyManager()` is called on a manager, it cannot be destroyed
+            again (also note that all existing connections become inactive).
+          example: ===
+          required: true
+          type: string
+        meta:
+          friendlyName: Meta (custom)
+          description: Additional stuff to pass to the driver.
+          extendedDescription: >-
+            This is reserved for custom driver-specific extensions.  Please
+            refer to the documentation for the driver you are using for more
+            specific information.
+          example: ===
+          type: string

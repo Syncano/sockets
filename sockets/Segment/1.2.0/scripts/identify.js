@@ -1,16 +1,15 @@
-var SegmentIO = require('analytics-node');
-var api = new SegmentIO(inputs.writeKey);
+var segment = require('machinepack-segment');
 
-api.identify({
-  userId: inputs.userId,
-  traits: inputs.traits||{},
-  // context: inputs.context||{},
-  integrations: inputs.integrations||{
-    All: true,
-    Mixpanel: false,
-    Salesforce: false
-  }
-}, function(err, batch){
-  if (err) return exits.error(err);
-  return exits.success();
+// Identify a user by her unique id and a set of associated traits.
+segment.identify(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

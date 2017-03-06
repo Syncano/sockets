@@ -1,11 +1,19 @@
-if (inputs.index < 0) {
-  return exits.error('Index must be least zero.');
-}
-if (inputs.array.length < inputs.index) {
-  return exits.notFound();
-}
+var arrays = require('machinepack-arrays');
 
-// Insert item
-inputs.array.splice(inputs.index, 0, inputs.value);
+// Insert or append an item and return the result (a new array).
+arrays.insert(ARGS).exec({
 
-return exits.success(inputs.array);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    // The resulting array after inserting the new item.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

@@ -2,21 +2,174 @@ name: Cloudflare
 description: Works with the Cloudflare API.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   delete-dns-record:
     POST:
       file: scripts/delete-dns-record.js
       description: Delete a record for a domain
+      parameters:
+        token:
+          example: 8afbe6dea02407989af4dd4c97bb6e25
+          description: The API key made available on your Cloudflare account page.
+          required: true
+          whereToGet:
+            url: 'https://www.cloudflare.com/my-account'
+            description: The API key is found at the bottom of your Account page.
+          type: string
+        email:
+          example: sample@example.com
+          description: The e-mail address associated with your Cloudflare account.
+          required: true
+          type: string
+        domain:
+          example: example.com
+          description: The target domain.
+          required: true
+          type: string
+        recordId:
+          example: '9001'
+          description: The DNS record ID.
+          required: true
+          type: string
   add-dns-record:
     POST:
       file: scripts/add-dns-record.js
       description: Create a DNS record for a zone
+      parameters:
+        token:
+          example: 8afbe6dea02407989af4dd4c97bb6e25
+          description: The API key made available on your Cloudflare account page.
+          required: true
+          whereToGet:
+            url: 'https://www.cloudflare.com/my-account'
+            description: The API key is found at the bottom of your Account page.
+          type: string
+        email:
+          example: sample@example.com
+          description: The e-mail address associated with your Cloudflare account.
+          required: true
+          type: string
+        domain:
+          example: example.com
+          description: The target domain.
+          required: true
+          type: string
+        type:
+          example: A
+          description: Type of DNS record.
+          extendedDescription: 'Values include: A/CNAME/MX/TXT/SPF/AAAA/NS/SRV/LOC'
+          required: true
+          type: string
+        name:
+          example: sub
+          description: Name of the DNS record.
+          required: true
+          type: string
+        content:
+          example: 96.126.126.36
+          description: >-
+            The content of the DNS record, will depend on the the type of record
+            being added.
+          required: true
+          type: string
+        ttl:
+          example: '1'
+          description: The TTL of record in seconds.
+          extendedDescription: >-
+            1 = Automatic, otherwise, value must in between 120 and 86400
+            seconds.
+          required: true
+          type: string
   edit-dns-record:
     POST:
       file: scripts/edit-dns-record.js
       description: Edit a DNS record for a zone
+      parameters:
+        token:
+          example: 8afbe6dea02407989af4dd4c97bb6e25
+          description: The API key made available on your Cloudflare account page.
+          required: true
+          whereToGet:
+            url: 'https://www.cloudflare.com/my-account'
+            description: The API key is found at the bottom of your Account page.
+          type: string
+        email:
+          example: sample@example.com
+          description: The e-mail address associated with your Cloudflare account.
+          required: true
+          type: string
+        domain:
+          example: example.com
+          description: The target domain.
+          required: true
+          type: string
+        recordId:
+          example: '9001'
+          description: The DNS record ID.
+          required: true
+          type: string
+        type:
+          example: A
+          description: Type of DNS record.
+          extendedDescription: 'Values include: A/CNAME/MX/TXT/SPF/AAAA/NS/SRV/LOC'
+          required: true
+          type: string
+        name:
+          example: sub
+          description: Name of the DNS record.
+          required: true
+          type: string
+        content:
+          example: 96.126.126.36
+          description: >-
+            The content of the DNS record, will depend on the the type of record
+            being added.
+          required: true
+          type: string
+        ttl:
+          example: '1'
+          description: The TTL of record in seconds.
+          extendedDescription: >-
+            1 = Automatic, otherwise, value must in between 120 and 86400
+            seconds.
+          required: true
+          type: string
+        onCloudflare:
+          example: 1
+          description: Status of CloudFlare Proxy.
+          extendedDescription: Applies to A/AAAA/CNAME.
+          required: false
+          type: number
   stats:
     POST:
       file: scripts/stats.js
       description: Retrieve domain statistics for a given time frame
+      parameters:
+        token:
+          example: 8afbe6dea02407989af4dd4c97bb6e25
+          description: The API key made available on your Cloudflare account page.
+          required: true
+          whereToGet:
+            url: 'https://www.cloudflare.com/my-account'
+            description: The API key is found at the bottom of your Account page.
+          type: string
+        email:
+          example: sample@example.com
+          description: The e-mail address associated with your Cloudflare account.
+          required: true
+          type: string
+        domain:
+          example: example.com
+          description: The target domain.
+          required: true
+          type: string
+        interval:
+          example: 20
+          description: The The time interval for the statistics.
+          extendedDescription: >-
+            For these values, the latest data is from one day ago: 20 = Past 30
+            days, 30 = Past 7 days, 40 = Past day. These values are for Pro
+            accounts: 100 = 24 hours ago, 110 = 12 hours ago, 120 = 6 hours ago.
+          required: true
+          type: number

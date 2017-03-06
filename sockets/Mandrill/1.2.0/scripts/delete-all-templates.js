@@ -1,26 +1,15 @@
-var Machine = require('machine');
-var async = require('async');
+var mandrill = require('machinepack-mandrill');
 
-Machine.require('./list-templates')
-.configure({
-  apiKey: inputs.apiKey
-})
-.exec({
-  error: exits.error,
-  success: function (templates) {
-    async.each(templates, function (template, next) {
-      Machine
-      .require('./delete-template')
-      .configure({
-        apiKey: inputs.apiKey,
-        name: template.name
-      })
-      .exec({
-        error: next,
-        success: function (deletedTemplate) {
-          next();
-        }
-      });
-    }, exits);
-  }
+// Delete all mandrill templates from an account.
+mandrill.deleteAllTemplates(ARGS).exec({
+
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
 });

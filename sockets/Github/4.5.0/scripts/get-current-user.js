@@ -1,30 +1,15 @@
-var Http = require('machinepack-http');
+var github = require('machinepack-github');
 
-// Send an HTTP request and receive the response.
-Http.sendHttpRequest({
-  baseUrl: 'https://api.github.com',
-  url: '/user',
-  method: 'get',
-  headers: {
-    'Accept': 'application/json',
-    'Authorization': 'token ' + inputs.accessToken,
-    'User-Agent': 'MachinePack'
-  },
-}).exec({
+// Get the GitHub profile data for a user by access token.
+github.getCurrentUser(ARGS).exec({
 
-  success: function(response) {
-    // Parse data from the response body
-    try {
-      var data = JSON.parse(response.body);
-      return exits.success(data);
-    }
-    catch (e) {
-      return exits.error(e);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
 
-  },
-
-  error: function(err) {
-    return exits.error(err);
-  }
 });

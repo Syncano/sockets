@@ -1,39 +1,19 @@
-var URL = require('url');
-var Http = require('machinepack-http');
+var brreg = require('machinepack-brreg');
 
-Http.sendHttpRequest({
-    baseUrl: 'http://data.brreg.no/enhetsregisteret/enhet/' + inputs.organisasjonsnummer + '.json',
-    url: '',
-    method: 'get',
-}).exec({
-    // OK.
-    success: function(result) {
-        //console.log(result.body);
+// Get company by ID
+brreg.getNumber(ARGS).exec({
 
-        try {
-            var responseBody = JSON.parse(result.body);
-        } catch (e) {
-            return exits.error('An error occurred while parsing the body.');
-        }
-
-        return exits.success(responseBody);
-
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     },
-    // Non-2xx status code returned from server
-    notOk: function(result) {
-
-        try {
-            if (result.status === 400) {
-                return exits.unknownOrInvalidID("Invalid or unknown ID.");
-            }
-        } catch (e) {
-            return exits.error(e);
-        }
-
+    
+    unknownOrInvalidID: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     },
-    // An unexpected error occurred.
-    error: function(err) {
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-        exits.error(err);
-    },
 });

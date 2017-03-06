@@ -1,9 +1,15 @@
-var discovery = google.discovery('v1');
-var params = {};
-_.merge(params, inputs);
-discovery.apis.list(params, function(err, result) {
-  if (err) {
-    return exits.error(err);
-  }
-  return exits.success(result);
+var googleapisdiscoveryservice = require('machinepack-googleapisdiscoveryservice');
+
+// Retrieve the list of APIs supported at this endpoint.
+googleapisdiscoveryservice.list(ARGS).exec({
+
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
 });

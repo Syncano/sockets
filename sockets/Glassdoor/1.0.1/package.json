@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-glassdoor",
+    "description": "Communicate with the Glassdoor API",
+    "version": "1.0.1",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-glassdoor": "1.0.1"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Glassdoor",
+        "Glassdoor-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

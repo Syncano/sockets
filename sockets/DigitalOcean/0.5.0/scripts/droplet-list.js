@@ -1,9 +1,15 @@
-// Set up our parent-wrapper
- var Dropkit = require("dropkit");
-// And add our token found in the API section of the Digital Ocean Control panel. 
- var v2 = new Dropkit(inputs.token);
+var digitalocean = require('machinepack-digitalocean');
 
- // Specify our arguments in JSON format. 
- v2.droplets().then(function(droplet) {
-      return exits.success(droplet);
- });
+// List information on all droplets in your DigitalOcean account.
+digitalocean.dropletList(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

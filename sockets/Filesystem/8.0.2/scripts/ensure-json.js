@@ -1,38 +1,19 @@
-var rttc = require('rttc');
-var thisPack = require('../');
+var fs = require('machinepack-fs');
 
-thisPack.readJson({
-  source: inputs.path,
-  schema: inputs.schema
-}).exec({
-  error: function (err){
-    return exits.error(err);
-  },
-  couldNotParse: function (parseErr){
-    return exits.couldNotParse(parseErr);
-  },
-  doesNotExist: function (){
-    try {
-      // If the JSON file does not exist, create it using the base value
-      // for the provided schema.
-      var baseVal = rttc.coerce(rttc.infer(inputs.schema));
-      thisPack.writeJson({
-        destination: inputs.path,
-        json: baseVal
-      }).exec({
-        error: function (err){
-          return exits.error(err);
-        },
-        success: function (){
-          return exits.success(baseVal);
-        }
-      });// </writeJson>
+// Attempt to read from a JSON file, and if it does not exist, create it.
+fs.ensureJson(ARGS).exec({
+
+    // The data which is stored in the JSON file now.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    couldNotParse: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     }
-    catch (e) {
-      return exits.error(e);
-    }
-  },//</readJson.doesNotExist>
-  success: function (data){
-    return exits.success(data);
-  }//</readJson.success>
-});//</readJson>
+
+});

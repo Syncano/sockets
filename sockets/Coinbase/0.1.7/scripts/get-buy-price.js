@@ -1,31 +1,15 @@
-var util = require('util');
-var _ = require('lodash');
-var Http = require('machinepack-http');
+var coinbase = require('machinepack-coinbase');
 
-Http.sendHttpRequest({
-  baseUrl: 'https://coinbase.com',
-  url: '/api/v1/prices/buy',
-  method: 'get',
-  params: {
-    qty: inputs.quantity || '1'
-  }
-}).exec({
-  success: function(httpResponse) {
-    // Parse response body and build up result.
-    var responseBody;
-    try {
-      responseBody = JSON.parse(httpResponse.body);
+// Total price to buy some amount of bitcoin.
+coinbase.getBuyPrice(ARGS).exec({
 
-      return exits.success(responseBody);
-    } catch (e) {
-      return exits.error('Unexpected response from the Coinbase API:
-' + util.inspect(responseBody, false, null) + '
-Parse error:
-' + util.inspect(e));
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
-  },
-  // An unexpected error occurred.
-  error: function(err) {
-    return exits.error(err);
-  }
+
 });

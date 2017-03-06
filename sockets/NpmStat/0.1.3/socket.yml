@@ -2,9 +2,15 @@ name: NpmStat
 description: Talk to npm-stat.com to get NPM statistics.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   get-stats:
     POST:
       file: scripts/get-stats.js
       description: Fetch download stats for the specified NPM package and date range.
+      parameters:
+        packageName:
+          description: The name of the NPM package.
+          example: machinepack-util
+          required: true
+          type: string

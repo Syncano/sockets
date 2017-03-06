@@ -2,23 +2,92 @@ name: Git
 description: Machines for working with the `git` command line interface.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   clone:
     POST:
       file: scripts/clone.js
       description: Clone a remote git repository into a new local directory.
+      parameters:
+        destination:
+          friendlyName: Destination
+          description: >-
+            Path (relative or absolute) to the directory where the repo should
+            be cloned.  Will be created if necessary.
+          example: ./put/the/new/local/repo/here
+          required: true
+          type: string
+        remote:
+          friendlyName: Remote (URL)
+          description: The URL of the git remote repository that will be cloned.
+          example: 'git://github.com/balderdashy/sails-docs.git'
+          required: true
+          type: string
+        branch:
+          description: >-
+            The remote branch to check out after pulling (if omitted, do not
+            check out anything-- just use whatever the default is)
+          example: master
+          type: string
   status:
     POST:
       file: scripts/status.js
       description: Get the current "working tree status" of a local git repo.
+      parameters:
+        dir:
+          description: >-
+            Path (relative or absolute) to the working copy to get the status
+            of.
+          example: ./
+          required: true
+          type: string
   pull-or-clone:
     POST:
       file: scripts/pull-or-clone.js
       description: >-
         Clone a git repo to a folder on disk (or if the folder already exists,
         just pull)
+      parameters:
+        destination:
+          description: >-
+            The path where the remote repo should be pulled (will be created if
+            necessary)
+          example: ./
+          required: true
+          type: string
+        remote:
+          description: >-
+            The git remote to pull from (defaults to "origin", but you can
+            specify a named remote or URL)
+          example: origin
+          defaultsTo: origin
+          type: string
+        branch:
+          description: The remote branch to pull (defaults to "master")
+          example: master
+          defaultsTo: master
+          type: string
   pull:
     POST:
       file: scripts/pull.js
       description: Fetch from and integrate with a git repository or a local branch
+      parameters:
+        destination:
+          description: >-
+            The path where the working copy exists locally (where the remote
+            repo should be pulled)
+          example: ./
+          required: true
+          type: string
+        remote:
+          description: >-
+            The git remote to pull from (defaults to "origin", but you can
+            specify a named remote or URL)
+          example: origin
+          defaultsTo: origin
+          type: string
+        branch:
+          description: The remote branch to pull (defaults to "master")
+          example: master
+          defaultsTo: master
+          type: string

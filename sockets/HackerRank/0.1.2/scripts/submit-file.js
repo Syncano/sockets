@@ -1,26 +1,15 @@
-var fs = require('fs');
+var hackerrank = require('machinepack-hackerrank');
 
-fs.readFile(inputs.filePath , { encoding : 'utf8'} , function(err , data ){
-  if(err)
-    return exits.error(err);
-  else 
-  {
-    var submit = require("machine").build(require('./submit'));
-    submit({
-      apiKey : inputs.apiKey ,
-      source : data ,
-      language : inputs.language ,
-      testcases : inputs.testcases , 
-      wait : inputs.wait ,
-      callbackUrl : inputs.callbackUrl ,
-      format : inputs.format
-    }).exec({
-      error : function(err){
-        return exits.error(err);
-      } ,
-      success : function(result){
-        return exits.success(result);
-      }
-    })
-  }
+// Submit a source code file for compilation
+hackerrank.submitFile(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

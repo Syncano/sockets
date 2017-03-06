@@ -1,16 +1,15 @@
-var sender;
-try {
-    sender = new Sender(inputs.type, inputs.connectionOptions);
-}
-catch (ex) {
-    return exits.error(ex);
-}
+var pushnotifications = require('machinepack-pushnotifications');
 
-try {
-    sender.send(inputs.message, inputs.deviceToken);
-}
-catch (ex) {
-    return exits.error(ex);
-}
+// Send a push notification using APN or GCM
+pushnotifications.sendPushNotification(ARGS).exec({
 
-return exits.success();
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-findtorrent",
+    "description": "Find torrents from Kickass, EZTV, and more",
+    "version": "0.1.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-findtorrent": "0.1.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-FindTorrent",
+        "FindTorrent-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

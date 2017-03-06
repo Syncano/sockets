@@ -1,15 +1,19 @@
-var path = require('path'),
-  cp = require('machine').build(require('./copy-files'));
+var sailsgulpify = require('machinepack-sailsgulpify');
 
-cp({
-  gulpFileSrcPath: path.resolve(__dirname, inputs.gulpFolderSrcPath),
-  outputDir: path.resolve(__dirname, inputs.outputFolderDir)
-}).exec({
-  error: function (err){
-    console.error('an error occurred- error details:',err);
-    return exits.error();
-  },
-  success: function() {
-    return exits.success();
-  }
+// Creates the gulp task folder and all related task files
+sailsgulpify.createGulpTasks(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    doesNotExist: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
 });

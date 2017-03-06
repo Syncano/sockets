@@ -2,7 +2,7 @@ name: Pipl
 description: Interface with the Pipl people search API
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   search-by-raw-name:
     POST:
@@ -10,11 +10,62 @@ endpoints:
       description: >-
         Search for a person by their raw name (John Doe) without having to
         separate first and last name
+      parameters:
+        key:
+          required: true
+          example: '00011122233344455'
+          description: Your Pipl API key
+          whereToGet:
+            url: 'https://pipl.com/dev/'
+            description: ''
+            extendedDescription: ''
+          type: string
+        raw_name:
+          required: true
+          example: John Doe
+          description: >-
+            Full Name. Use this parameter if the accurate name parts
+            (first/middle/last) are not available.
+          type: string
   get-person-from-search-pointer:
     POST:
       file: scripts/get-person-from-search-pointer.js
       description: Retrieve more information about a Person object from its search_pointer
+      parameters:
+        key:
+          required: true
+          example: '00011122233344455'
+          description: Your Pipl API key
+          whereToGet:
+            url: 'https://pipl.com/dev/'
+            description: ''
+            extendedDescription: ''
+          type: string
+        search_pointer:
+          required: true
+          example: 165ed762c03848ea3b23101228441577f5a4c8041793
+          description: >-
+            In the case when the API returns multiple possible persons, they
+            will each have special string called “search pointer”. This string
+            can be used to run a follow-up search, which will pull up more data
+            about this person.
+          type: string
   search-by-email-address:
     POST:
       file: scripts/search-by-email-address.js
       description: Search for a Person by Email address
+      parameters:
+        key:
+          required: true
+          example: '00011122233344455'
+          description: Your Pipl API key
+          whereToGet:
+            url: 'https://pipl.com/dev/'
+            description: ''
+            extendedDescription: ''
+          type: string
+        email:
+          required: true
+          example: jdoe@company.com
+          description: Email address
+          type: string

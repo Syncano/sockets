@@ -1,7 +1,15 @@
-if ( typeof cache !== 'undefined' && cache) {
-     cache.del(inputs.key);
-} else {
-    var SimpleCache = require("simple-lru-cache");
-    cache = new SimpleCache({"maxSize":100000});
-}
-return exits.success();
+var lrucache = require('machinepack-lrucache');
+
+// Remove the object associated with the specified key from the cache
+lrucache.remove(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

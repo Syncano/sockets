@@ -2,5 +2,5 @@ name: OCR
 description: Recognize text in images using OCR (optical character recognition) techniques.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints: {}

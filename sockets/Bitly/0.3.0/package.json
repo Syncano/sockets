@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-bitly",
+    "description": "Work with the bitly API ",
+    "version": "0.3.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-bitly": "0.3.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Bitly",
+        "Bitly-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

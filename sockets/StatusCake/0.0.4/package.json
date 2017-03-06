@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-statuscake",
+    "description": "Work with StatusCake API to get Tests, Contact Groups, Alerts, etc.",
+    "version": "0.0.4",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-statuscake": "0.0.4"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-StatusCake",
+        "StatusCake-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

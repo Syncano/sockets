@@ -1,35 +1,23 @@
-// require a few modules
-var request = require('request');
-var fbdata = '';
-// Add more objects to the inputs object and set up a few defaults
-var options = {
-  "rejectUnauthorized": false,
-  "url": "https://clientfeedbacktool.com/api/SurveysSent/",
-  "method": "Get",
-  "gzip": true,
-  "qs": {
-    "output": "json",
-    "UserName": inputs.userName,
-    "Password": inputs.password,
-    // Accepts 1 or 0
-    "Flat": 0,
-    // Dates should be in the form YYYYMMDD
-    // "FromDate": inputs.fromDate,
-    // "ToDate": inputs.toDate,
+var cft = require('machinepack-cft');
 
-    //if you only want stats
-    "ShowStatsOnly": 0
+// Gets all surveys sent in a specified date range
+cft.getCftSurveyssent(ARGS).exec({
 
-  }
-};
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    InvalidPassword: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    NoAccess: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-request(options)
-  .on('data', function (chunk) {
-    fbdata += chunk;
-  })
-  .on('end', function () {
-    return exits.success(JSON.parse(fbdata).List);
-  })
-  .on('error', function (err) {
-    return exits.error(e);
-  });
+});

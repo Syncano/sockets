@@ -2,7 +2,7 @@ name: LocalSailsApps
 description: Work with a local Sails.js app.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   deduce-controllers:
     POST:
@@ -10,27 +10,96 @@ endpoints:
       description: >-
         Determine the conventional controller+action to use for the given set of
         routes.
+      parameters:
+        routes:
+          friendlyName: Routes
+          description: An array of route definitions (HTTP method + URL path)
+          example:
+            - method: GET
+              path: '/:user/ducks'
+              responses: {}
+              files:
+                - avatar
+              machine: {}
+          required: true
+          type: array
   get-signature:
     POST:
       file: scripts/get-signature.js
       description: >-
         Lookup top-level metadata, dehydrate the machine definitions, and
         compute a hash for the public API of this app.
+      parameters:
+        dir:
+          description: >-
+            The path to the app (if path is not absolute, will be resolved from
+            the current working directory)
+          example: /Users/mikermcneil/foo/
+          required: true
+          type: string
   build-routes-config:
     POST:
       file: scripts/build-routes-config.js
       description: >-
         Generate a JavaScript code string for the `config/routes.js` file (i.e.
         in a Sails.js app.)
+      parameters:
+        targets:
+          friendlyName: Targets
+          description: >-
+            An array of configured route targets (i.e. including controller and
+            action)
+          example:
+            - controller: Slug$Controller
+              action: find_ducks
+              method: GET
+              path: '/:user/ducks'
+          required: true
+          type: array
   build-controller:
     POST:
       file: scripts/build-controller.js
       description: >-
         Build a JavaScript code string for a Sails.js controller using the
         provided metadata.
+      parameters:
+        actionTargets:
+          friendlyName: Action/machine defs
+          description: >-
+            An array of action target definitions (action + machine identity +
+            responses)
+          example:
+            - action: find_ducks
+              responses: {}
+              files:
+                - avatar
+              machine: {}
+          required: true
+          type: array
   build-model:
     POST:
       file: scripts/build-model.js
       description: >-
         Build a JavaScript code string for a Sails.js model using the provided
         metadata.
+      parameters:
+        modelDef:
+          friendlyName: Model definition
+          description: A definition of a model built in Treeline
+          example:
+            description: a foo
+            friendlyName: Foo
+            globalId: Foo
+            identity: foo
+            primaryKey:
+              type: string
+              example: '*'
+            attributes:
+              - defaultsTo: foobar
+                example: '*'
+                name: testtype
+                required: false
+                type: string
+                unique: false
+          required: true
+          type: object

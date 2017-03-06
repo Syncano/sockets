@@ -1,10 +1,19 @@
-var inspector = require('schema-inspector');
-inspector.validate(inputs.schema, inputs.data, function (err, result) {
-  if (err) {
-    return exits.error(err);
-  }
-  if (!result.valid) {
-    return exits.invalid(result.format());
-  }
-  return exits.success(inputs.data);
+var schemainspector = require('machinepack-schemainspector');
+
+// Validate some json data against a schema.
+schemainspector.validate(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    invalid: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

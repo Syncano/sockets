@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-pipl",
+    "description": "Interface with the Pipl people search API",
+    "version": "1.0.2",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-pipl": "1.0.2"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Pipl",
+        "Pipl-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

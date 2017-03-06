@@ -1,16 +1,15 @@
-var util = require('util');
-var url = 'https://github.com/login/oauth/authorize';
-inputs.scope = inputs.scope || [];
+var github = require('machinepack-github');
 
-// Generate a semi-random string to use for the state
-var state = (Math.random() + 1).toString(36).substring(7);
+// Get the URL on github.com that a user should visit to authorize the specified GitHub app (i.e. your app).
+github.getLoginUrl(ARGS).exec({
 
-try {
-  return exits.success(util.format(
-    'https://github.com/login/oauth/authorize?client_id=%s&redirect_uri=%s&scope=%s&state=%s',
-    inputs.clientId, inputs.callbackUrl, inputs.scope.join(','), state
-  ));
-}
-catch(e) {
-  return exits.error(e);
-}
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

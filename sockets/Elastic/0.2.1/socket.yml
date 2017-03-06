@@ -2,29 +2,238 @@ name: Elastic
 description: Use elastic API
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   search:
     POST:
       file: scripts/search.js
       description: search
+      parameters:
+        hostname:
+          description: The hostname of your ElasticSearch server
+          example: localhost
+          required: true
+          whereToGet:
+            description: Copy the hostname of your ElasticSearch server
+            extendedDescription: >-
+              i.e. if you are using a hosted ElasticSearch instance at
+              "bae23592g23523.some-hosted-service.com", that is your hostname. 
+              If you are running ElasticSearch locally, this will be
+              "localhost".
+          type: string
+        port:
+          description: The port your ElasticSearch server is running on
+          defaultsTo: 9200
+          example: 9200
+          whereToGet:
+            description: Copy the port of your ElasticSearch server
+            extendedDescription: The conventional port number for ElasticSearch servers is 9200.
+          type: number
+        index:
+          description: The name of the index to search
+          extendedDescription: >-
+            An "index" in ElasticSearch is a lot like a "database" in MySQL or
+            MongoDB.
+          example: myindex
+          required: true
+          type: string
+        query:
+          description: The search query
+          example: cute dogs
+          required: true
+          type: string
   bulk:
     POST:
       file: scripts/bulk.js
       description: Perform many index/delete operations in a single API call.
+      parameters:
+        hostname:
+          description: The hostname of your ElasticSearch server
+          example: localhost
+          required: true
+          whereToGet:
+            description: Copy the hostname of your ElasticSearch server
+            extendedDescription: >-
+              i.e. if you are using a hosted ElasticSearch instance at
+              "bae23592g23523.some-hosted-service.com", that is your hostname. 
+              If you are running ElasticSearch locally, this will be
+              "localhost".
+          type: string
+        port:
+          description: The port your ElasticSearch server is running on
+          defaultsTo: 9200
+          example: 9200
+          whereToGet:
+            description: Copy the port of your ElasticSearch server
+            extendedDescription: The conventional port number for ElasticSearch servers is 9200.
+          type: number
+        index:
+          description: Default index for items which don't provide one
+          extendedDescription: >-
+            An "index" in ElasticSearch is a lot like a "database" in MySQL or
+            MongoDB.
+          example: myindex
+          required: false
+          type: string
+        type:
+          description: Default document type for items which don't provide one
+          extendedDescription: >-
+            An "index" in ElasticSearch is a lot like a "database" in MySQL or
+            MongoDB.
+          example: myindex
+          required: false
+          type: string
+        actions:
+          description: Actions to do ! (see elastic documentation for more details)
+          required: true
+          typeclass: array
+          type: array
   searchCustom:
     POST:
       file: scripts/searchCustom.js
       description: Search custom on Elastic Search
+      parameters:
+        hostname:
+          description: The hostname of your ElasticSearch server
+          example: localhost
+          required: true
+          whereToGet:
+            description: Copy the hostname of your ElasticSearch server
+            extendedDescription: >-
+              i.e. if you are using a hosted ElasticSearch instance at
+              "bae23592g23523.some-hosted-service.com", that is your hostname. 
+              If you are running ElasticSearch locally, this will be
+              "localhost".
+          type: string
+        port:
+          description: The port your ElasticSearch server is running on
+          defaultsTo: 9200
+          example: 9200
+          whereToGet:
+            description: Copy the port of your ElasticSearch server
+            extendedDescription: The conventional port number for ElasticSearch servers is 9200.
+          type: number
+        index:
+          description: The name of the index to search
+          extendedDescription: >-
+            An "index" in ElasticSearch is a lot like a "database" in MySQL or
+            MongoDB.
+          example: myindex
+          required: true
+          type: string
+        type:
+          description: The name of the type to search
+          extendedDescription: ''
+          example: mytype
+          required: true
+          type: string
+        query:
+          description: The search query
+          example: cute dogs
+          required: true
+          type: string
   getAlias:
     POST:
       file: scripts/getAlias.js
       description: Get elastic alias and see the pointed index
+      parameters:
+        hostname:
+          description: The hostname of your ElasticSearch server
+          example: localhost
+          required: true
+          whereToGet:
+            description: Copy the hostname of your ElasticSearch server
+            extendedDescription: >-
+              i.e. if you are using a hosted ElasticSearch instance at
+              "bae23592g23523.some-hosted-service.com", that is your hostname. 
+              If you are running ElasticSearch locally, this will be
+              "localhost".
+          type: string
+        port:
+          description: The port your ElasticSearch server is running on
+          defaultsTo: 9200
+          example: 9200
+          whereToGet:
+            description: Copy the port of your ElasticSearch server
+            extendedDescription: The conventional port number for ElasticSearch servers is 9200.
+          type: number
+        name:
+          description: The alias name
+          example: alias
+          required: true
+          type: string
   deleteByQuery:
     POST:
       file: scripts/deleteByQuery.js
       description: Delete by query
+      parameters:
+        hostname:
+          description: The hostname of your ElasticSearch server
+          example: localhost
+          required: true
+          whereToGet:
+            description: Copy the hostname of your ElasticSearch server
+            extendedDescription: >-
+              i.e. if you are using a hosted ElasticSearch instance at
+              "bae23592g23523.some-hosted-service.com", that is your hostname. 
+              If you are running ElasticSearch locally, this will be
+              "localhost".
+          type: string
+        port:
+          description: The port your ElasticSearch server is running on
+          defaultsTo: 9200
+          example: 9200
+          whereToGet:
+            description: Copy the port of your ElasticSearch server
+            extendedDescription: The conventional port number for ElasticSearch servers is 9200.
+          type: number
+        index:
+          description: The name of the index where are documents to delete
+          extendedDescription: >-
+            An "index" in ElasticSearch is a lot like a "database" in MySQL or
+            MongoDB.
+          example: myindex
+          required: true
+          type: string
+        type:
+          description: The "type" of the document to delete
+          defaultsTo: default
+          example: mytype
+          type: string
+        query:
+          description: The delete query
+          example: '{ query: { "match_all" : {} } }'
+          required: true
+          type: string
   updateAliases:
     POST:
       file: scripts/updateAliases.js
       description: 'Perform an atomic alias swap, for a rotating index.'
+      parameters:
+        hostname:
+          description: The hostname of your ElasticSearch server
+          example: localhost
+          required: true
+          whereToGet:
+            description: Copy the hostname of your ElasticSearch server
+            extendedDescription: >-
+              i.e. if you are using a hosted ElasticSearch instance at
+              "bae23592g23523.some-hosted-service.com", that is your hostname. 
+              If you are running ElasticSearch locally, this will be
+              "localhost".
+          type: string
+        port:
+          description: The port your ElasticSearch server is running on
+          defaultsTo: 9200
+          example: 9200
+          whereToGet:
+            description: Copy the port of your ElasticSearch server
+            extendedDescription: The conventional port number for ElasticSearch servers is 9200.
+          type: number
+        actions:
+          description: The search query
+          example: >-
+            {actions: [{ remove: { index: "response_1", alias: "response" } }, {
+            add:    { index: "response_2", alias: "response" } }] }
+          required: true
+          type: string

@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-sails",
+    "description": "General purpose machines for interfacing with a Sails application.",
+    "version": "0.2.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-sails": "0.2.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Sails",
+        "Sails-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

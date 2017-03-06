@@ -1,15 +1,15 @@
-var SegmentIO = require('analytics-node');
-var api = new SegmentIO(inputs.writeKey);
+var segment = require('machinepack-segment');
 
-api.alias({
-  userId: inputs.destinationUserId,
-  previousId: inputs.sourceUserId,
-  integrations: inputs.integrations||{
-    All: true,
-    Mixpanel: false,
-    Salesforce: false
-  }
-}, function(err, batch){
-  if (err) return exits.error(err);
-  return exits.success();
+// Merge two user identities, effectively connecting two sets of user data as one.
+segment.alias(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

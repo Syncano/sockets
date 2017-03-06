@@ -1,34 +1,23 @@
-var GS = require('grooveshark-downloader');
-var async = require('async');
-var fs = require('fs');
-var request = require('request');
+var grooveshark = require('machinepack-grooveshark');
 
-GS.Tinysong.getSongInfo(inputs.name, inputs.artist, function(err, info) {
-  if(err) return exits.error(err);
+// Download a song, and save it into a folder, by name and artist
+grooveshark.downloadSongByNameAndArtist(ARGS).exec({
 
-  if(!info) return exits.notFound();
-
-  GS.Grooveshark.getStreamingUrl(info.SongID, function(err, streamUrl) {
-    if(err){
-      if(err === 'banned') return exits.downloadLimitExceded();
-      return exits.error(err);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    downloadLimitExceded: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
 
-    if(!fs.existsSync(inputs.path)){
-      var mkdirp = require('mkdirp');
-      mkdirp.sync(inputs.path);
-    }
-
-    var songPath = inputs.path + '/' + info.SongName + '.mp3';
-
-    request
-      .get(streamUrl)
-       .on('error', function(err){
-         return exits.error(err);
-       })
-       .on('end', function(){
-         return exits.success(songPath);
-       })
-       .pipe(fs.createWriteStream(songPath));
-  });
 });

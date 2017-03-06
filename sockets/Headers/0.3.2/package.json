@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-headers",
+    "description": "Work with HTTP /vHTTP request and response headers.",
+    "version": "0.3.2",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-headers": "0.3.2"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Headers",
+        "Headers-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

@@ -1,36 +1,23 @@
-var Url = require('url');
-var isObject = require('lodash.isobject');
-var isFunction = require('lodash.isfunction');
+var redis = require('machinepack-redis');
 
-// Ensure that, if provided, `meta` is a dictionary.
-// This will be used as additional Redis client options.
-if (inputs.meta !== undefined) {
-  if (!isObject(inputs.meta) || isFunction(inputs.meta)) {
-    return exits.error('If provided, `meta` must be a dictionary.');
-  }
-}
+// Build and initialize a connection manager instance for this Redis database.
+redis.createManager(ARGS).exec({
 
-// Validate connection string (call `malformed` if invalid).
-try {
-  Url.parse(inputs.connectionString);
-} catch (e) {
-  e.message =
-    'Provided value (`' + inputs.connectionString + '`) is not a valid Redis connection string: ' +
-    e.message;
-  return exits.malformed({
-    error: e
-  });
-}
+    // The `manager` property is a manager instance that will be passed into `getConnection()`. The `meta` property is reserved for custom driver-specific extensions.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    // The `error` property is a JavaScript Error instance explaining that (and preferably "why") the provided connection string is invalid.  The `meta` property is reserved for custom driver-specific extensions.
+    malformed: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    // The `error` property is a JavaScript Error instance with more information and a stack trace.  The `meta` property is reserved for custom driver-specific extensions.
+    failed: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-// Finally, build and return the manager.
-var mgr = {
-  meta: inputs.meta,
-  connectionString: inputs.connectionString,
-  onUnexpectedFailure: inputs.onUnexpectedFailure,
-  // We set up an empty array for our redis clients, since we need to
-  // track them in order to ensure calling destroyManager() kills them all.
-  redisClients: []
-};
-return exits.success({
-  manager: mgr
 });

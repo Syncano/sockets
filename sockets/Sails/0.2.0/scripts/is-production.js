@@ -1,12 +1,15 @@
-// Import `lodash`.
-var _ = require('lodash');
+var sails = require('machinepack-sails');
 
-// Ensure `env.sails`, returning through the `error` exit
-// if it cannot be found or is not an object.
-if (!_.isObject(env.sails)) {
-  return exits.error(new Error('No Sails application object could be found in the machine environment!'));
-}
+// Determine whether a Sails application is running in the production environment.
+sails.isProduction(ARGS).exec({
 
-// Return whether or not the environment is 'production'
-// through the `success` exit.
-return exits.success(env.sails.config.environment === 'production');
+    // Whether or not the Sails app is running in the production environment.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

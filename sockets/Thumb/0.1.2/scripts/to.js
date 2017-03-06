@@ -1,24 +1,15 @@
-var helper = require("../lib/helper.js")
-  , stream;
+var thumb = require('machinepack-thumb');
 
-if (inputs.source && inputs.destination) {
-  stream = helper.read(inputs.source)
-    .pipe( helper.convert(inputs) )
-    .pipe( helper.write(inputs.destination) )
-    .on('close', inputs.done);
+// Transform an convert image (PNG, JPG) with crop, resize, blur, rotate, flip, ...
+thumb.to(ARGS).exec({
 
-} else if (inputs.source) {
-  stream = helper.read(inputs.source)
-    .pipe( helper.convert(inputs) )
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-} else if (inputs.destination) {
-  stream = process.stdin
-    .pipe( helper.convert(inputs) );
-  //need to separate this pipe for working.
-  stream
-    .pipe( helper.write(inputs.destination) )
-    .on('close', inputs.done);
-
-}
-
-return exits.success( stream||helper.convert(inputs) );
+});

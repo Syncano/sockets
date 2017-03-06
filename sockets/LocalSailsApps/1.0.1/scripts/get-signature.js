@@ -1,13 +1,15 @@
-var path = require('path');
-var Arrays = require('machinepack-arrays');
-var JSON = require('machinepack-json');
-var Util = require('machinepack-util');
-var thisPack = require('../');
-var LocalMachinepacks = require('machinepack-localmachinepacks');
+var local-sails-apps = require('machinepack-local-sails-apps');
 
-// Resolve absolute path
-inputs.dir = path.resolve(process.cwd(), inputs.dir);
+// Lookup top-level metadata, dehydrate the machine definitions, and compute a hash for the public API of this app.
+local-sails-apps.getSignature(ARGS).exec({
 
-LocalMachinepacks.getSignature({
-  dir: inputs.dir
-}).exec(exits);
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

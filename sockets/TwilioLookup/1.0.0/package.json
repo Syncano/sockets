@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-twiliolookup",
+    "description": "Validate number format",
+    "version": "1.0.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-twiliolookup": "1.0.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-TwilioLookup",
+        "TwilioLookup-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

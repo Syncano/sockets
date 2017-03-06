@@ -1,13 +1,15 @@
-var _ = require('lodash');
-var client = require('twilio')(inputs.accountSid, inputs.authToken);
+var twilio = require('machinepack-twilio');
 
-client.incomingPhoneNumbers.list({}, function(err, response) {
-  if (err) return exits.error(err);
-  try {
-    var numbers = _.pluck(response.incomingPhoneNumbers, 'phone_number');
-    return exits.success(numbers);
-  }
-  catch (e) {
-    return exits.error(e);
-  }
+// List the available phone numbers for a particular account.
+twilio.listPhoneNumbers(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

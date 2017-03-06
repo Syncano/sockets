@@ -1,9 +1,19 @@
-var helper = require("../lib/helper.js");
+var aes256 = require('machinepack-aes256');
 
-if (helper.isStream(inputs.stream) !== true)
-  return exits.errorNotStream({error: "It's not a valid stream"});
+// Encrypt stream content and zip it
+aes256.encryptStream(ARGS).exec({
 
-// Return an a crypted stream
-return exits.success({
-  stream: helper.encryptStream(inputs.stream, inputs.secret)
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    errorNotStream: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

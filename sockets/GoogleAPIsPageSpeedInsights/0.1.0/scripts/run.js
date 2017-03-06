@@ -1,10 +1,15 @@
-var params = {};
-_.merge(params, inputs);
+var googleapispagespeedinsights = require('machinepack-googleapispagespeedinsights');
 
-var pageSpeed = google.pagespeedonline('v2');
-pageSpeed.pagespeedapi.runpagespeed(params, function(err, result) {
-  if (err) {
-    return exits.error(err);
-  }
-  return exits.success(result);
+// Run PageSpeed analizer
+googleapispagespeedinsights.run(ARGS).exec({
+
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
 });

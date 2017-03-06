@@ -2,9 +2,57 @@ name: IC
 description: Communicate with Interaction Center® servers via the ICWS API
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   connect:
     POST:
       file: scripts/connect.js
       description: Connect to an Interaction Center® server
+      parameters:
+        protocol:
+          example: https
+          description: >-
+            The protocol (http, https) to use to connect to the Interaction
+            Center server
+          required: false
+          type: string
+        server:
+          example: cic.acme.com
+          description: The Interaction Center server to connect to
+          required: true
+          type: string
+        port:
+          example: 8019
+          description: The Interaction Center port to connect to
+          required: false
+          type: number
+        applicationName:
+          example: My Client Application
+          description: Associate the given Application to a Session
+          required: true
+          type: string
+        userID:
+          example: operator
+          description: The Interaction Center user ID to log in with
+          required: true
+          type: string
+        password:
+          example: '1234'
+          description: The Interaction Center password for the supplied user ID
+          required: true
+          type: string
+        marketPlaceApplicationLicenseName:
+          example: ACME
+          description: The Interactive Intelligence application's license name
+          required: false
+          type: string
+        marketPlaceApplicationCode:
+          example: '{{UUID}}'
+          description: The Interactive Intelligence application code
+          required: false
+          type: string
+        language:
+          example: en-US
+          description: The language to use with the Interaction Center server
+          required: false
+          type: string

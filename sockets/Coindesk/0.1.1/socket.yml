@@ -2,9 +2,14 @@ name: Coindesk
 description: Communicate with the CoinDesk API to get bitcoin index prices.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   get-coindesk-bitcoin-price-index:
     POST:
       file: scripts/get-coindesk-bitcoin-price-index.js
       description: Display CoinDesk bitcoin price index.
+      parameters:
+        currency:
+          example: USD
+          description: The currency used to calculate the price of the index.
+          type: string

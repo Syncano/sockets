@@ -1,18 +1,15 @@
-var params = {};
-if (inputs.scope && _.isArray(inputs.scope)) {
-  params.scope = inputs.scope;
-}
+var googleapisoauth2v2 = require('machinepack-googleapisoauth2v2');
 
-if (inputs.accessType && _.isString(inputs.accessType)) {
-  params.access_type = inputs.accessType;
-}
-if (!params.scope) {
-  params.scope = ['https://www.googleapis.com/auth/plus.me'];
-}
+// Generating an authentication URL
+googleapisoauth2v2.getLoginUrl(ARGS).exec({
 
-try {
-  var oauth2Client = require('../lib/getOAuth2Client')(inputs);
-  return exits.success(oauth2Client.generateAuthUrl(params || {}));
-} catch(err) {
-  return exits.error(err);
-}
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

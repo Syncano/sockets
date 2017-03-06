@@ -1,8 +1,15 @@
-var angel = require('angellist');
+var angellist = require('machinepack-angellist');
 
-// Init an AngelList object
-angel.init(inputs.clientId, inputs.clientSecret);
+// Get the URL on angel.co that a user should visit to allow/deny the specified AngelList developer app (i.e. your app).
+angellist.getLoginUrl(ARGS).exec({
 
-var loginUrl = angel.getAuthUrl();
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-return exits.success(loginUrl);
+});

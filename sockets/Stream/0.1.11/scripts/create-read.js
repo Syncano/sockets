@@ -1,16 +1,23 @@
-var fs = require('fs'),
-  util = require('util');
-if (inputs.path && !fs.existsSync(inputs.path))
-  return exits.pathError();
-else if (!inputs.text)
-  inputs.text = '';
+var stream = require('machinepack-stream');
 
-try {
-  return exits.success(
-    inputs.path
-    ?
-    fs.createReadStream(inputs.path)
-    :
-    require('resumer')().queue(inputs.text).end()
-  );
-} catch (err) { return exits.error(err); }
+// Create a read stream
+stream.createRead(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    pathError: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    noStreamError: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

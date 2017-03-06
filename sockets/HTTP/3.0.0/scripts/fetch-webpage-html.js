@@ -1,23 +1,39 @@
-var Machine = require('machine');
+var http = require('machinepack-http');
 
-var Urls = require('machinepack-urls');
+// Fetch the HTML from a web page.
+http.fetchWebpageHtml(ARGS).exec({
 
-// Make sure this is a fully-qualified URL, and coerce it if necessary.
-var url = Urls.resolve({url: inputs.url}).execSync();
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    notFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    badRequest: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    forbidden: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    unauthorized: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    serverError: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    requestFailed: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-Machine.build(require('./send-http-request')).configure({
-  method: 'get',
-  url: url
-}).exec({
-  error: exits.error,
-  requestFailed: exits.requestFailed,
-  badRequest: exits.badRequest,
-  unauthorized: exits.unauthorized,
-  forbidden: exits.forbidden,
-  notFound: exits.notFound,
-  serverError: exits.serverError,
-  success: function (response){
-    var html = response.body;
-    return exits.success(html);
-  }
 });

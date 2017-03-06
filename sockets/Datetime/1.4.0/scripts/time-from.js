@@ -1,19 +1,23 @@
-var MomentTz = require('moment-timezone');
+var datetime = require('machinepack-datetime');
 
-// Build moment obj for `toWhen`
-var toWhenObj = MomentTz.tz(new Date(inputs.toWhen), 'Etc/Greenwich');
-if (!toWhenObj.isValid()) {
-  return exits.invalidToWhen();
-}
+// Format a human-readable a JS timestamp (epoch ms) and timezone into a human-readable "time from" format (e.g. "6 minutes ago")
+datetime.timeFrom(ARGS).exec({
 
-// Build moment obj for `fromWhen`
-// (default to current date/time if no `fromWhen` timestamp was provided)
-inputs.fromWhen = (typeof inputs.fromWhen === 'undefined') ? (new Date()).getTime() : inputs.fromWhen;
-var fromWhenObj = MomentTz.tz(new Date(inputs.fromWhen), 'Etc/Greenwich');
-if (!fromWhenObj.isValid()) {
-  return exits.invalidFromWhen();
-}
+    
+    invalidToWhen: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    invalidFromWhen: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-// Format final "time from" string
-var resultStr = toWhenObj.from(fromWhenObj);
-return exits.success(resultStr);
+});

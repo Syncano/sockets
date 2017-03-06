@@ -1,11 +1,15 @@
-// Import `lodash`.
-var _ = require('lodash');
+var booleans = require('machinepack-booleans');
 
-// If the two input values are semantically equal, return `false`
-// through the `success` exit.
-if (_.isEqual(inputs.a, inputs.b)) {
-  return exits.success(false);
-}
+// Determine whether the first value is not equivalent to the second.
+booleans.isNotEqual(ARGS).exec({
 
-// Otherwise return `true` through the `success` exit.
-return exits.success(true);
+    // A boolean indicating whether the first value is not equal to the second.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

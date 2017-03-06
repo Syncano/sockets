@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-postgresql",
+    "description": "Structured Node.js bindings for Postgresql.",
+    "version": "0.4.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-postgresql": "0.4.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Postgresql",
+        "Postgresql-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

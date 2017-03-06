@@ -2,21 +2,45 @@ name: LRUCache
 description: Work with lRUCache.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   set:
     POST:
       file: scripts/set.js
       description: Put a new object in the cache associated with the specified key.
+      parameters:
+        key:
+          description: The key used to store the obejct in the cache.
+          example: id
+          required: true
+          type: string
+        value:
+          description: The object associated with the key.
+          example: some object
+          required: true
+          type: string
   get:
     POST:
       file: scripts/get.js
       description: Get the value for a key from the LRU Cache
+      parameters:
+        key:
+          description: The key used to store the obejct in the cache.
+          example: id
+          required: true
+          type: string
   clear:
     POST:
       file: scripts/clear.js
       description: Clear all the objects from the LRUCache
+      parameters: {}
   remove:
     POST:
       file: scripts/remove.js
       description: Remove the object associated with the specified key from the cache
+      parameters:
+        key:
+          description: The key used to store the obejct in the cache.
+          example: id
+          required: true
+          type: string

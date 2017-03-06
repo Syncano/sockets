@@ -1,45 +1,27 @@
-var util = require('util');
-var _ = require('lodash');
-var elasticsearch = require('elasticsearch');
+var elasticsearch = require('machinepack-elasticsearch');
 
-var client = new elasticsearch.Client({
-  host: util.format('%s:%d', inputs.hostname, inputs.port||9200),
-  log: require('../helpers/noop-logger')
-});
+// Delete the document with the specified unique id.
+elasticsearch.destroy(ARGS).exec({
 
-client.delete({
-  index: inputs.index,
-  type: inputs.type||'default',
-  id: inputs.id
-}, function (err, body) {
-  if (err) {
-    client.close();
-    if (typeof err !== 'object' || typeof err.message !== 'string'){
-      return exits.error(err);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    couldNotConnect: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    noSuchIndex: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    documentNotFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
-    if (err.constructor && err.constructor.name === 'NoConnections' || err.message.match(/No Living connections/)){
-      return exits.couldNotConnect();
-    }
-    if (err.message.match(/Not Found/)) {
-      return exits.documentNotFound();
-    }
-    if (err.message.match(/IndexMissingException/)){
-      return exits.noSuchIndex();
-    }
-    return exits.error(err);
-  }
-  // console.log(body);
 
-  // try {
-  //   if (body.created) {
-  //     throw new Error('Expected response from ElasticSearch to specify `created:false`');
-  //   }
-  // }
-  // catch (e) {
-  //   client.close();
-  //   return exits.error(e);
-  // }
-
-  client.close();
-  return exits.success();
 });

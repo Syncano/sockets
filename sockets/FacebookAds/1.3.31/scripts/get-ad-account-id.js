@@ -1,14 +1,15 @@
-var doJSONRequest = require('../lib/do-request');
+var dk-facebookads = require('dk-machinepack-facebookads');
 
-// GET ad accounts/ and send the api token as a header
-doJSONRequest({
-  method: 'get',
-  url: ['/v2.3/', inputs.fbUserId, '/adaccounts'].join(""),
-  data: {
-    'access_token': inputs.accessToken,
-  },
-  headers: {},
-}, function (err, responseBody) {
-  if (err) { return exits.error(err); }
-  return exits.success(responseBody);
+// get ad account ids for a given user with an access token
+dk-facebookads.getAdAccountId(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

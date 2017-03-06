@@ -2,19 +2,50 @@ name: JSON
 description: Encode and decode data to and from JSON.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   parse:
     POST:
       file: scripts/parse.js
       description: Parse data from a JSON-encoded string.
+      parameters:
+        json:
+          friendlyName: JSON string
+          description: The JSON string to parse
+          example: '...{"some json": "like this"}...'
+          required: true
+          type: string
+        schema:
+          friendlyName: Expected schema
+          description: >-
+            A representative example (RTTC exemplar) of what the resulting data
+            should look like.
+          moreInfoUrl: 'http://github.com/node-machine/rttc'
+          example: '*'
+          constant: true
+          isExemplar: true
+          type: string
   stringify:
     POST:
       file: scripts/stringify.js
       description: Encode the specified value into a JSON string.
+      parameters:
+        value:
+          friendlyName: Data
+          description: The data to encode as a JSON string
+          example: '*'
+          required: true
+          type: string
   stringify-safe:
     POST:
       file: scripts/stringify-safe.js
       description: >-
         Encode the specified value into a JSON string, but tolerate recursive
         objects and preserve functions, errors, and regexps.
+      parameters:
+        value:
+          friendlyName: Data
+          description: The data to encode as a JSON string
+          example: '*'
+          required: true
+          type: string

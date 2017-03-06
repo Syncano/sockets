@@ -1,17 +1,15 @@
-var _ = require('lodash');
+var github = require('machinepack-github');
 
-inputs.string = _.trimLeft(inputs.string, '/');
-var owner = inputs.string.split('/')[0];
-var name = inputs.string.split('/')[1];
-var branch = 'master';
+// Parse a repo string (e.g. '/node-machine/machine')
+github.parseRepoStr(ARGS).exec({
 
-if (~name.indexOf('#')) {
-  branch = name.split('#')[1];
-  name = name.split('#')[0];
-}
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-return exits.success({
-  owner: owner,
-  repo: name,
-  branch: branch
 });

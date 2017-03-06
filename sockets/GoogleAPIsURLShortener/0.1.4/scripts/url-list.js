@@ -1,24 +1,23 @@
-var params = {};
-// Mergind given objects
-_.merge(params, inputs);
-// Make API call
-urlshortener.url.list(params, function(err, response) {
-  if (err) {
-    console.log(err);
-    if (!err.code) {
-      return exits.error(err);
+var googleapisurlshortener = require('machinepack-googleapisurlshortener');
+
+// REQUIRED AUTH ! The url.list method retrieves a list of URLs shortened by the authenticated user.
+googleapisurlshortener.urlList(ARGS).exec({
+
+    
+    unauthorized: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    invalidParameter: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     }
-    switch (err.code) {
-      case 401:
-        return exits.unauthorized(err);
-        break;
-      case 400:
-        return exits.invalidParameter(err);
-        break;
-      default:
-        return exits.error(err);
-        break;
-    }
-  }
-  return exits.success(response);
+
 });

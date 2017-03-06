@@ -1,12 +1,15 @@
-var Proc = require('machinepack-process');
+var npm = require('machinepack-npm');
 
-Proc.spawn({
-  command: 'npm access public '+inputs.packageName
-}).exec({
-  error: function (err){
-    return exits.error(err);
-  },
-  success: function (bufferedOutput){
-    return exits.success();
-  }
+// Open up public access to a package published on NPM.
+npm.openSource(ARGS).exec({
+
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
 });

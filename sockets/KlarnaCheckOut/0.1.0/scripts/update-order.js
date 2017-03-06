@@ -1,5 +1,15 @@
-function (inputs, exits
-  /**/
-) {
-  return exits.success();
-}
+var klarnacheckout = require('machinepack-klarnacheckout');
+
+// Update an order
+klarnacheckout.updateOrder(ARGS).exec({
+
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

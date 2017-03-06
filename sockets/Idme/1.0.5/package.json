@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-idme",
+    "description": "Communicate with ID.me to authorize and receive tokens and user information",
+    "version": "1.0.5",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-idme": "1.0.5"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Idme",
+        "Idme-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

@@ -1,38 +1,19 @@
-var Prismic = require('prismic.io').Prismic;
+var prismicio = require('machinepack-prismicio');
 
-function linkResolver(doc) {
-  if (doc.isBroken) return false;
-  return '/documents/' + doc.id + '/' + doc.slug;
-}
+// Get many documents by Array of ids
+prismicio.getManyDocuments(ARGS).exec({
 
-var mappedIds = inputs.ids.map(function(id) {
-  return '"' + id + '"';
-}).join(',');
-
-var query = '[[:d = any(document.id, [' + mappedIds + '])]]';
-console.log(query);
-
-Prismic.Api(inputs.apiEndpoint, function(err, Api) {
-  if (err && err.toString().indexOf('401') !== -1) {
-    return exits.notAuthorized(err);
-  } else if (err) {
-    return exits.error(err);
-  }
-  var ctx = {
-    api: Api,
-    ref: inputs.ref || Api.master(),
-    linkResolver: function(doc) {
-      return linkResolver(doc);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notAuthorized: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
-  };
-  ctx.api
-    .forms('everything')
-    .ref(ctx.ref)
-    .query(query)
-    .submit(function(err, documents) {
-      if (err) {
-        return exits.error(err);
-      }
-      return exits.success(documents.results);
-    });
-}, inputs.accessToken);
+
+});

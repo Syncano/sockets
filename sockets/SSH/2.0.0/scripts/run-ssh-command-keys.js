@@ -1,26 +1,15 @@
-var Client = require('ssh2').Client;
-  // Debugging? Un-comment the console.log lines.
-  var conn = new Client();
+var ssh = require('machinepack-ssh');
 
-  conn.on('ready', function() {
-  // console.log('Client :: ready');
-  conn.exec(inputs.command, function(err, stream) {
-    if (err) throw err;
-    stream.on('close', function(code, signal) {
-      // console.log('Stream :: close :: code: ' + code + ', signal: ' + signal);
-      conn.end();
-    }).on('data', function(data) {
-      // console.log('STDOUT: ' + data);
-    }).stderr.on('data', function(data) {
-      // console.log('STDERR: ' + data);
-    });
-  });
-}).connect({
-  host: inputs.hostName,
-  port: inputs.port,
-  username: inputs.userName,
-  privateKey: require('fs').readFileSync(inputs.privateKey)
+// Run a command on a remote server via SSH. Requires Host, Username, Password and ommand.
+ssh.runSshCommandKeys(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });
-
-
-  return exits.success();

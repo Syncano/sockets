@@ -2,27 +2,70 @@ name: Paths
 description: Utilities for handling and transforming file paths.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   if-absolute:
     POST:
       file: scripts/if-absolute.js
       description: Determine whether or not a is absolute.
+      parameters:
+        path:
+          friendlyName: Path
+          description: The path to examine.
+          example: /usr/bin
+          required: true
+          type: string
   resolve:
     POST:
       file: scripts/resolve.js
       description: Resolve and normalize a potentially-relative path into an absolute path.
+      parameters:
+        path:
+          friendlyName: Path
+          description: The path to be resolved to an absolute path.
+          extendedDescription: >-
+            If first path is not absolute, it will be resolved from the
+            process's present working directory (`pwd`).
+          example: node_modules/sails/bin/sails.js
+          required: true
+          type: string
+        from:
+          friendlyName: From
+          description: The working directory to resolve from.
+          extendedDescription: >-
+            If omitted, the result path will be resolved from the process's
+            present working directory (`pwd`). If `from` is not absolute, then
+            it will first be resolved from the present working directory itself
+            before being used to resolve `path`.
+          example: /usr/local/lib
+          type: string
   parse:
     POST:
       file: scripts/parse.js
       description: Parse a path to determine its component parts.
+      parameters:
+        path:
+          friendlyName: Path
+          description: The path to parse.
+          example: 'C:\\a\b\index.html'
+          required: true
+          type: string
   home:
     POST:
       file: scripts/home.js
       description: >-
         Get the absolute path to your home directory on this computer
         (OS-agnostic)
+      parameters: {}
   join:
     POST:
       file: scripts/join.js
       description: Combine multiple path segments into a single result path.
+      parameters:
+        paths:
+          friendlyName: Paths
+          description: 'The paths to join, in left-to-right order.'
+          example:
+            - lib/node_modules
+          required: true
+          type: array

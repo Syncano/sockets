@@ -2,39 +2,197 @@ name: UTorrent
 description: Communicate with uTorrent client API to list and add torrents.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   list-torrents:
     POST:
       file: scripts/list-torrents.js
       description: List all Torrents from the uTorrent client.
+      parameters:
+        host:
+          example: localhost
+          required: true
+          type: string
+        port:
+          example: 26085
+          required: true
+          type: number
+        username:
+          example: admin
+          required: true
+          type: string
+        password:
+          example: '12345'
+          required: true
+          type: string
   get-torrent-details:
     POST:
       file: scripts/get-torrent-details.js
       description: Get details of a Torrent from uTorrent client.
+      parameters: {}
   create-client:
     POST:
       file: scripts/create-client.js
       description: Create a client instance for uTorrent API
+      parameters:
+        host:
+          example: localhost
+          required: true
+          type: string
+        port:
+          example: 26085
+          required: true
+          type: number
+        username:
+          example: admin
+          required: true
+          type: string
+        password:
+          example: '12345'
+          required: true
+          type: string
   add-torrent-url:
     POST:
       file: scripts/add-torrent-url.js
       description: Add a torrent URL to the uTorrent client.
+      parameters:
+        host:
+          example: localhost
+          required: true
+          type: string
+        port:
+          example: 26085
+          required: true
+          type: number
+        username:
+          example: admin
+          required: true
+          type: string
+        password:
+          example: '12345'
+          required: true
+          type: string
+        torrentUrl:
+          example: ''
+          required: true
+          type: string
+        downloadDir:
+          example: 0
+          required: false
+          type: number
+        path:
+          example: /dir/path/
+          description: Download directory path relative to downloadDir index
+          required: false
+          type: string
   add-torrent:
     POST:
       file: scripts/add-torrent.js
       description: Add a Torrent file to the uTorrent client.
+      parameters:
+        host:
+          example: localhost
+          required: true
+          type: string
+        port:
+          example: 26085
+          required: true
+          type: number
+        username:
+          example: admin
+          required: true
+          type: string
+        password:
+          example: '12345'
+          required: true
+          type: string
+        torrentContents:
+          example: Torrent Contents
+          required: true
+          type: string
+        downloadDir:
+          example: 0
+          required: false
+          type: number
+        path:
+          example: /dir/path/
+          description: Download directory path relative to downloadDir index
+          required: false
+          type: string
   start-torrent:
     POST:
       file: scripts/start-torrent.js
       description: Start downloading the torrent specified by the hash parameter.
+      parameters:
+        host:
+          example: localhost
+          required: true
+          type: string
+        port:
+          example: 26085
+          required: true
+          type: number
+        username:
+          example: admin
+          required: true
+          type: string
+        password:
+          example: '12345'
+          required: true
+          type: string
+        hash:
+          example: ''
+          required: true
+          type: string
   stop-torrent:
     POST:
       file: scripts/stop-torrent.js
       description: Stop downloading the torrent specified by the hash parameter.
+      parameters:
+        host:
+          example: localhost
+          required: true
+          type: string
+        port:
+          example: 26085
+          required: true
+          type: number
+        username:
+          example: admin
+          required: true
+          type: string
+        password:
+          example: '12345'
+          required: true
+          type: string
+        hash:
+          example: ''
+          required: true
+          type: string
   remove-torrent:
     POST:
       file: scripts/remove-torrent.js
       description: >-
         Remove the torrent specified by the hash parameter from the download
         list.
+      parameters:
+        host:
+          example: localhost
+          required: true
+          type: string
+        port:
+          example: 26085
+          required: true
+          type: number
+        username:
+          example: admin
+          required: true
+          type: string
+        password:
+          example: '12345'
+          required: true
+          type: string
+        hash:
+          example: ''
+          required: true
+          type: string

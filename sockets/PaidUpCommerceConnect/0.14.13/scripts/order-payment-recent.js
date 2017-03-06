@@ -1,20 +1,15 @@
-var Connector = require('../core/common/connector')
-var config = {
-  url: '/api/v3/commerce/order/recent/' + inputs.userId + '/' + inputs.limit,
-  baseUrl: inputs.baseUrl,
-  method: 'get',
-  token: inputs.token
-}
-Connector.request(config, {}, {}, function (err, resp) {
-  if (err) {
-    return exits.error({
-      status: err.status,
-      message: JSON.stringify(err.message)
-    })
-  } else {
-    return exits.success({
-      status: resp.status,
-      body: resp.body
-    })
-  }
-})
+var paidup-commerce-connect = require('paidup-commerce-connect');
+
+// order payment recent
+paidup-commerce-connect.orderPaymentRecent(ARGS).exec({
+
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

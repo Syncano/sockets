@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-naturalpath",
+    "description": "Convert Natural Language into a file/directory path",
+    "version": "0.1.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-naturalpath": "0.1.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-NaturalPath",
+        "NaturalPath-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

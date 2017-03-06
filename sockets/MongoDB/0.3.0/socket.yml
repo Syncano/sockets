@@ -2,31 +2,173 @@ name: MongoDB
 description: Structured Node.js bindings for MongoDB.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   update-documents:
     POST:
       file: scripts/update-documents.js
       description: Modify existing documents in a collection.
+      parameters:
+        connectionUrl:
+          description: The mongoDB connection URL
+          moreInfoUrl: 'http://docs.mongodb.org/manual/reference/connection-string/'
+          defaultsTo: 'mongodb://localhost:27017/machinepack-mongodb-default'
+          example: 'mongodb://localhost:27017/machinepack-mongodb-default'
+          type: string
+        collection:
+          description: The name of the collection.
+          example: direwolves
+          required: true
+          type: string
+        query:
+          description: The selection criteria for the update.
+          extendedDescription: Uses the same query selectors as in the find() method.
+          moreInfoUrl: >-
+            http://docs.mongodb.org/manual/reference/operator/query/#query-selectors
+          typeclass: dictionary
+          required: true
+          type: dictionary
+        update:
+          description: The modifications to apply.
+          moreInfoUrl: >-
+            http://docs.mongodb.org/manual/reference/method/db.collection.update/#update-parameter
+          typeclass: dictionary
+          required: true
+          type: dictionary
+        upsert:
+          description: ' If set to true, creates a new document when no document matches the query criteria.'
+          extendedDescription: >-
+            The default value is false, which does not insert a new document
+            when no match is found.
+          defaultsTo: false
+          example: true
+          type: boolean
+        multi:
+          description: >-
+            If set to true, updates multiple documents that meet the query
+            criteria.
+          extendedDescription: 'If set to false, updates one document. The default value is false.'
+          defaultsTo: false
+          moreInfoUrl: >-
+            http://docs.mongodb.org/manual/reference/method/db.collection.update/#multi-parameter
+          example: true
+          type: boolean
+        writeConcern:
+          description: ' A document expressing the write concern. Omit to use the default write concern.'
+          moreInfoUrl: >-
+            http://docs.mongodb.org/manual/reference/method/db.collection.update/#db.collection.update
+          typeclass: dictionary
+          type: dictionary
   list-collections:
     POST:
       file: scripts/list-collections.js
       description: List the names of collections in the specified Mongo database.
+      parameters:
+        connectionUrl:
+          description: The mongoDB connection URL
+          moreInfoUrl: 'http://docs.mongodb.org/manual/reference/connection-string/'
+          defaultsTo: 'mongodb://localhost:27017/machinepack-mongodb-default'
+          example: 'mongodb://localhost:27017/machinepack-mongodb-default'
+          type: string
   count-documents:
     POST:
       file: scripts/count-documents.js
       description: >-
         Count the documents in this collection which match the specified
         criteria.
+      parameters:
+        connectionUrl:
+          description: The mongoDB connection URL
+          moreInfoUrl: 'http://docs.mongodb.org/manual/reference/connection-string/'
+          defaultsTo: 'mongodb://localhost:27017/machinepack-mongodb-default'
+          example: 'mongodb://localhost:27017/machinepack-mongodb-default'
+          type: string
+        collection:
+          description: The name of the collection.
+          example: direwolves
+          required: true
+          type: string
+        query:
+          description: The selection criteria (like the WHERE clause)
+          extendedDescription: Uses the same query selectors as in the find() method.
+          moreInfoUrl: >-
+            http://docs.mongodb.org/manual/reference/operator/query/#query-selectors
+          typeclass: dictionary
+          required: true
+          type: dictionary
   describe-collection:
     POST:
       file: scripts/describe-collection.js
       description: >-
         List an approximation of the fields that are found in each document of a
         Mongo collection.
+      parameters:
+        connectionUrl:
+          description: The mongoDB connection URL
+          moreInfoUrl: 'http://docs.mongodb.org/manual/reference/connection-string/'
+          defaultsTo: 'mongodb://localhost:27017/machinepack-mongodb-default'
+          example: 'mongodb://localhost:27017/machinepack-mongodb-default'
+          type: string
+        collection:
+          description: The name of the collection.
+          example: direwolves
+          required: true
+          type: string
   list-documents:
     POST:
       file: scripts/list-documents.js
       description: >-
         List documents in this Mongo collection which match the specified
         criteria.
+      parameters:
+        connectionUrl:
+          description: The mongoDB connection URL
+          moreInfoUrl: 'http://docs.mongodb.org/manual/reference/connection-string/'
+          defaultsTo: 'mongodb://localhost:27017/machinepack-mongodb-default'
+          example: 'mongodb://localhost:27017/machinepack-mongodb-default'
+          type: string
+        collection:
+          description: The name of the collection.
+          example: direwolves
+          required: true
+          type: string
+        query:
+          description: The selection criteria (like the WHERE clause)
+          extendedDescription: Standard query selectors from the Mongo find() method.
+          moreInfoUrl: >-
+            http://docs.mongodb.org/manual/reference/operator/query/#query-selectors
+          typeclass: dictionary
+          required: true
+          type: dictionary
+        limit:
+          description: >-
+            If specified, limits number of documents returned in the query
+            (useful for pagination)
+          moreInfoUrl: >-
+            http://mongodb.github.io/node-mongodb-native/api-generated/collection.html#find
+          example: 30
+          type: number
+        skip:
+          description: >-
+            If specified, skips N documents ahead in the query (useful for
+            pagination)
+          moreInfoUrl: >-
+            http://mongodb.github.io/node-mongodb-native/api-generated/collection.html#find
+          example: 30
+          type: number
+        sort:
+          description: >-
+            If specified, the documents coming back from the query will be
+            sorted according to this dictionary.
+          typeclass: dictionary
+          moreInfoUrl: >-
+            http://mongodb.github.io/node-mongodb-native/api-generated/collection.html#find
+          type: dictionary
+        schema:
+          description: An example indicating what each returned document should look like.
+          extendedDescription: >-
+            This is used to determine the `fields` (i.e. projection) passed in
+            w/ the query.
+          typeclass: dictionary
+          required: true
+          type: dictionary

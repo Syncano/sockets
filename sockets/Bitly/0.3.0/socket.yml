@@ -2,9 +2,34 @@ name: Bitly
 description: 'Work with the bitly API '
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   shorten-link:
     POST:
       file: scripts/shorten-link.js
       description: Generate a bitly URL
+      parameters:
+        clientId:
+          description: Your bitly OAuth client ID
+          friendlyName: Client ID
+          example: xyz123abcxxx
+          required: true
+          type: string
+        clientSecret:
+          description: Your bitly OAuth client secret
+          friendlyName: Client Secret
+          example: xyz123abcxxx
+          required: true
+          type: string
+        accessToken:
+          description: Your bitly OAuth access token
+          friendlyName: Access Token
+          example: xyz123abcxxx
+          required: true
+          type: string
+        url:
+          description: The URL to shorten
+          friendlyName: URL
+          example: 'http://www.somereallylongurl.com/man/that/is/long.html'
+          required: true
+          type: string

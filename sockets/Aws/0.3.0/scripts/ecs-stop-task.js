@@ -1,25 +1,15 @@
-// Dependencies
-var AWS = require('aws-sdk');
+var aws = require('machinepack-aws');
 
-var config = {
-  accessKeyId: inputs.accessKeyId,
-  secretAccessKey: inputs.secretAccessKey,
-  region: inputs.region || 'us-west-2',
-  apiVersion: inputs.apiVersion || 'latest'
-};
+// Stop a running ECS task.
+aws.ecsStopTask(ARGS).exec({
 
-// Construct the ECS Service
-var ecs = new AWS.ECS(config);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-var params = {
-  task: inputs.task,
-  cluster: inputs.cluster || 'default'
-};
-
-ecs.stopTask(params, function(err, data) {
-  if(err) {
-    return exits.error(err);
-  }
-
-  exits.success(data);
 });

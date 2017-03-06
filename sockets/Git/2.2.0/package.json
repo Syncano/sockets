@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-git",
+    "description": "Machines for working with the `git` command line interface.",
+    "version": "2.2.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-git": "2.2.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Git",
+        "Git-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

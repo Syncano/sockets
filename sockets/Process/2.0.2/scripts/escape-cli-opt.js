@@ -1,23 +1,19 @@
-var util = require('util');
-var isObject = require('lodash.isobject');
-var isString = require('lodash.isstring');
-var MPJSON = require('machinepack-json');
+var process = require('machinepack-process');
 
-// If this is a dictionary/array, then JSON stringify it.
-var val = inputs.value;
-if (isObject(val)) {
-  val = MPJSON.stringifySafe({value:val}).execSync();
-}
-// Otherwise, cast it to a string.
-else {
-  val = val+'';
-}
+// Escape a value for use as a command-line option (e.g. the "XXXXX" in `--foobar='XXXXX'`).
+process.escapeCliOpt(ARGS).exec({
 
-if (!isString(val)) {
-  return exits.couldNotSerialize();
-}
+    
+    couldNotSerialize: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-// Now escape the resulting string as a CLI option.
-val = val.replace(/'/g,'\'\\\'\'');
-
-return exits.success(val);
+});

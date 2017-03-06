@@ -1,16 +1,15 @@
-var BitlyAPI = require("node-bitlyapi");
-var Bitly = new BitlyAPI({
-    client_id: inputs.clientId,
-    client_secret: inputs.clientSecret,
-});
-Bitly.setAccessToken(inputs.accessToken);
-Bitly.shorten({longUrl:inputs.url}, function(err, json) {
-  try {
-    var results = JSON.parse(json);
-    if (results.status_code != 200) {return exits.error(results);}
-    if (!results.data || !results.data.url) {return exits.error(results);}
-    return exits.success(results.data.url.trim());
-  } catch (e) {
-    return exits.error(e);
-  }
+var bitly = require('machinepack-bitly');
+
+// Generate a bitly URL
+bitly.shortenLink(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

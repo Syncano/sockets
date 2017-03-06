@@ -2,7 +2,7 @@ name: Passwords
 description: Encrypt or compare passwords.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   check-password:
     POST:
@@ -10,7 +10,30 @@ endpoints:
       description: >-
         Compare a plaintext password attempt against an already-encrypted
         version.
+      parameters:
+        passwordAttempt:
+          example: l0lcatzz
+          friendlyName: Password attempt
+          description: The password attempt (unencrypted).
+          required: true
+          protect: true
+          type: string
+        encryptedPassword:
+          example: 'as34hafsu#w34ndcarok'
+          friendlyName: Encrypted password
+          description: The existing (already-encrypted) password hash to compare against.
+          required: true
+          protect: true
+          type: string
   encrypt-password:
     POST:
       file: scripts/encrypt-password.js
       description: Encrypt a string using the BCrypt algorithm.
+      parameters:
+        password:
+          example: l0lcatzz
+          friendlyName: Password
+          description: String to be encrypted
+          required: true
+          protect: true
+          type: string

@@ -1,16 +1,15 @@
-var util = require('util');
-var url = 'https://accounts.spotify.com';
-inputs.scope = inputs.scope || [];
+var spotify = require('machinepack-spotify');
 
-// Generate a semi-random string to use for the state
-var state = (Math.random() + 1).toString(36).substring(7);
+// Get the URL on Spotify that a user should visit to authorize the specified Spotify app (i.e. your app).
+spotify.getLoginUrl(ARGS).exec({
 
-try {
-  return exits.success(util.format(
-    'https://accounts.spotify.com/authorize/?client_id=%s&response_type=%s&redirect_uri=%s&scope=%s&state=%s',
-    inputs.clientId, inputs.responseType, inputs.redirectUri, inputs.scope, state
-  ));
-}
-catch(e) {
-  return exits.error(e);
-}
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

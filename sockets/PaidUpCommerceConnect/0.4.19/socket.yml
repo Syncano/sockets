@@ -2,45 +2,383 @@ name: PaidUpCommerceConnect
 description: Connector for TDCommerce
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   coupon-get:
     POST:
       file: scripts/coupon-get.js
       description: get a list of discont coupon
+      parameters:
+        baseUrl:
+          example: 'http://localhost:9002'
+          description: Url microservice.
+          required: true
+          type: string
+        token:
+          example: TDCommerceToken-CHANGE-ME!
+          description: secret word for authenticate microservice.
+          required: true
+          type: string
+        filter:
+          example: '*'
+          description: >-
+            It is a object that contain the key value to filters the list
+            coupons. if you want a complete list os coupon send a empty object
+            {}
+          required: false
+          type: string
   coupon-create:
     POST:
       file: scripts/coupon-create.js
       description: Create a discount coupon
+      parameters:
+        baseUrl:
+          example: 'http://localhost:9002'
+          description: Url microservice.
+          required: true
+          type: string
+        token:
+          example: secret-word
+          description: secret word for authenticate microservice.
+          required: true
+          type: string
+        code:
+          example: NEWDISCOUNTCOUPON
+          description: Label used to apply discount
+          required: true
+          type: string
+        startDate:
+          example: '2016-05-05'
+          description: >-
+            Date that allow to know when the coupon started its available.
+            Format YYYY-MM-DD
+          required: true
+          type: string
+        endDate:
+          example: '2016-06-06'
+          description: >-
+            Date that allow to know when the coupon ended its available. Format
+            YYYY-MM-DD
+          required: true
+          type: string
+        percent:
+          example: 10
+          description: value in percent to apply on the final order.
+          required: true
+          type: number
+        quantity:
+          example: 2
+          description: Quantity of coupon is available.
+          required: true
+          type: number
+        productsId:
+          example:
+            - someProductId
+          description: >-
+            array to productsId, this contain a list of products that the coupon
+            is available.
+          required: true
+          type: array
   coupon-redeem:
     POST:
       file: scripts/coupon-redeem.js
       description: Redeem a coupon discount
+      parameters:
+        baseUrl:
+          example: 'http://localhost:9002'
+          description: Url microservice.
+          required: true
+          type: string
+        token:
+          example: secret-word
+          description: secret word for authenticate microservice.
+          required: true
+          type: string
+        coupon:
+          example: NEWDISCOUNTCOUPON
+          description: It is a object that contain the key value to filters the coupons
+          required: true
+          type: string
+        productId:
+          example: Id1
+          description: >-
+            It is a object that contain the key value to filters the list
+            coupons. if you want a complete list os coupon send a empty object
+            {}
+          required: true
+          type: string
   coupon-update:
     POST:
       file: scripts/coupon-update.js
       description: Update a coupon discount
+      parameters:
+        baseUrl:
+          example: 'http://localhost:9002'
+          description: Url microservice.
+          required: true
+          type: string
+        token:
+          example: secret-word
+          description: secret word for authenticate microservice.
+          required: true
+          type: string
+        filter:
+          example: '*'
+          description: It is a object that contain the key value to filters the coupons
+          required: true
+          type: string
+        data:
+          example: '*'
+          description: >-
+            It is a object that contain the key value to filters the list
+            coupons. if you want a complete list os coupon send a empty object
+            {}
+          required: true
+          type: string
   order-create:
     POST:
       file: scripts/order-create.js
       description: Create a order
+      parameters:
+        baseUrl:
+          example: 'http://localhost:9002'
+          description: Url microservice.
+          required: true
+          type: string
+        token:
+          example: secret-word
+          description: secret word for authenticate microservice.
+          required: true
+          type: string
+        userId:
+          example: userId
+          description: userId to own order.
+          required: true
+          type: string
+        paymentsPlan:
+          example:
+            - destinationId: destinationId
+              email: some@email.com
+              dateCharge: '2016-05-05'
+              price: 100
+              originalPrice: 90
+              totalFee: 10
+              feePaidUp: 4.2
+              feeStripe: 3.6
+              paymentId: paymentId
+              typeAccount: typeAccount
+              account: account
+              accountBrand: Diners Club
+              last4: '0000'
+              discount: 0
+              discountCode: discountCode
+              wasProcessed: false
+              status: pending
+              description: some description
+              processingFees:
+                cardFee: 12
+                cardFeeActual: 21
+                cardFeeFlat: 12
+                cardFeeFlatActual: 21
+                achFee: 12
+                achFeeActual: 21
+                achFeeFlat: 12
+                achFeeFlatActual: 21
+              collectionsFee:
+                fee: 12
+                feeFlat: 21
+              paysFees:
+                processing: true
+                collections: true
+              productInfo:
+                productId: productId
+                productName: productName
+                productImage: someUrl
+                organizationId: organizationId
+                organizationName: organization name
+                organizationLocation: 'Austin, TX'
+                organizationImage: someUrl
+              userInfo:
+                userId: UserId
+                userName: userName
+              beneficiaryInfo:
+                beneficiaryId: beneficiaryId
+                beneficiaryName: beneficiaryName
+          description: paymentsPlan to own order.
+          required: true
+          type: array
   order-add-payments:
     POST:
       file: scripts/order-add-payments.js
       description: Add dues to order
+      parameters:
+        baseUrl:
+          example: 'http://localhost:9002'
+          description: Url microservice.
+          required: true
+          type: string
+        token:
+          example: secret-word
+          description: secret word for authenticate microservice.
+          required: true
+          type: string
+        orderId:
+          example: orderId
+          description: order that you want add payment.
+          required: true
+          type: string
+        paymentsPlan:
+          example:
+            - destinationId: destinationId
+              dateCharge: '2016-05-05'
+              price: 100
+              typeAccount: typeAccount
+              account: account
+              discount: 0
+              discountCode: discountCode
+              wasProcessed: false
+              status: pending
+              last4: '0000'
+              originalPrice: 90
+              totalFee: 10
+              feePaidUp: 4.2
+              feeStripe: 3.6
+              processingFees:
+                cardFee: 12
+                cardFeeActual: 21
+                cardFeeFlat: 12
+                cardFeeFlatActual: 21
+                achFee: 12
+                achFeeActual: 21
+                achFeeFlat: 12
+                achFeeFlatActual: 21
+              collectionsFee:
+                fee: 12
+                feeFlat: 21
+              paysFees:
+                processing: true
+                collections: true
+              productInfo:
+                productId: productId
+                productName: productName
+                productImage: someUrl
+                organizationId: organizationId
+                organizationName: organization name
+                organizationLocation: 'Austin, TX'
+                organizationImage: someUrl
+              userInfo:
+                userId: UserId
+                userName: userName
+              beneficiaryInfo:
+                beneficiaryId: beneficiaryId
+                beneficiaryName: beneficiaryName
+          description: array of payments plan
+          required: true
+          type: array
   order-update-payments:
     POST:
       file: scripts/order-update-payments.js
       description: update payments to order
+      parameters:
+        baseUrl:
+          example: 'http://localhost:9002'
+          description: Url microservice.
+          required: true
+          type: string
+        token:
+          example: secret-word
+          description: secret word for authenticate microservice.
+          required: true
+          type: string
+        orderId:
+          example: orderId
+          description: order ID
+          required: true
+          type: string
+        paymentPlanId:
+          example: paymentPlanId
+          description: payment Id
+          required: true
+          type: string
+        paymentPlan:
+          example:
+            destinationId: destinationId
+            description: some description
+            email: email@email.com
+            dateCharge: '2016-05-05'
+            price: 100
+            typeAccount: typeAccount
+            account: account
+            accountBrand: Diners Club
+            discount: 0
+            discountCode: discountCode
+            wasProcessed: false
+            status: pending
+            last4: '0000'
+            originalPrice: 90
+            totalFee: 10
+            feePaidUp: 4.2
+            feeStripe: 3.6
+            processingFees:
+              cardFee: 12
+              cardFeeActual: 21
+              cardFeeFlat: 12
+              cardFeeFlatActual: 21
+              achFee: 12
+              achFeeActual: 21
+              achFeeFlat: 12
+              achFeeFlatActual: 21
+            attempts: '*'
+          description: object of payments plan
+          required: true
+          type: object
   order-get:
     POST:
       file: scripts/order-get.js
       description: get orders
+      parameters:
+        baseUrl:
+          example: 'http://localhost:9002'
+          description: Url microservice.
+          required: true
+          type: string
+        token:
+          example: secret-word
+          description: secret word for authenticate microservice.
+          required: true
+          type: string
+        filter:
+          example: '*'
+          description: filter to retrieve orders
+          required: true
+          type: string
   order-get-to-charge:
     POST:
       file: scripts/order-get-to-charge.js
       description: get orders to charge (cronjob)
+      parameters:
+        baseUrl:
+          example: 'http://localhost:9002'
+          description: Url microservice.
+          required: true
+          type: string
+        token:
+          example: secret-word
+          description: secret word for authenticate microservice.
+          required: true
+          type: string
   order-to-complete:
     POST:
       file: scripts/order-to-complete.js
       description: orders to complete (cronjob)
+      parameters:
+        baseUrl:
+          example: 'http://localhost:9002'
+          description: Url microservice.
+          required: true
+          type: string
+        token:
+          example: secret-word
+          description: secret word for authenticate microservice.
+          required: true
+          type: string

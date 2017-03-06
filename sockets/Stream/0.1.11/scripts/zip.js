@@ -1,7 +1,19 @@
-if (inputs.stream && require('isstream')(inputs.stream) !== true)
-  return exits.errorNotStream({error: "It's not a valid stream"});
-try {
-  return exits.success( inputs.stream ? inputs.stream.pipe(require('zlib').createGzip()) : require('zlib').createGzip())
-} catch (err) {
-  return exits.error(err);
-}
+var stream = require('machinepack-stream');
+
+// Zip a stream
+stream.zip(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    errorNotStream: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

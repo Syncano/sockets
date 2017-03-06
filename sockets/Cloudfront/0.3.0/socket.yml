@@ -2,13 +2,84 @@ name: Cloudfront
 description: Node.js wrapper for AWS CloudFront.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   sign-cloudfront-url:
     POST:
       file: scripts/sign-cloudfront-url.js
       description: Sign an Amazon CloudFront URL.
+      parameters:
+        keypairId:
+          description: Your CloudFront keypair id (i.e. "Access Key ID")
+          example: APKAJU5MWXIKYDV3YILQ
+          whereToGet:
+            url: >-
+              https://console.aws.amazon.com/iam/home?region=us-east-1#security_credential
+            description: >-
+              Generate a CloudFront keypair in the AWS IAM console, then copy
+              and paste the "Access Key Id"
+          required: true
+          type: string
+        privateKey:
+          description: Your CloudFront private key
+          whereToGet:
+            url: >-
+              https://console.aws.amazon.com/iam/home?region=us-east-1#security_credential
+            description: >-
+              Generate a CloudFront keypair in the AWS IAM console, download
+              your private key file, then copy and paste its contents.
+          example: |-
+            -----BEGIN RSA PRIVATE KEY-----
+            MIIEow......
+            -----END RSA PRIVATE KEY-----
+          required: true
+          type: string
+        src:
+          description: The CloudFront URL to sign
+          example: 'http://cloudfront.net/path/to/thing.jpg'
+          required: true
+          type: string
+        ttl:
+          description: >-
+            Number of miliseconds to cache the contents of the src URL on
+            CloudFront
+          example: 3600
+          type: number
   invalidate-paths:
     POST:
       file: scripts/invalidate-paths.js
       description: Invalidate one or more paths within a CloudFront distribution.
+      parameters:
+        accessKeyId:
+          description: Your AWS access key id
+          example: BJIBJB5SF3Z5QQDJFHHX
+          required: true
+          whereToGet:
+            url: 'https://console.aws.amazon.com/iam/home#security_credential'
+          type: string
+        secretAccessKey:
+          description: Your AWS secret
+          example: JOpq29vhaJ2VVae2jfkN/+z9/ulqRzd
+          required: true
+          whereToGet:
+            url: 'https://console.aws.amazon.com/iam/home#security_credential'
+          type: string
+        region:
+          description: Your AWS region (defaults to "us-east-1")
+          example: us-east-1
+          type: string
+        distribution:
+          description: >-
+            The unique id of the CloudFront distribution containing the paths to
+            invalidate.
+          example: E672U0C5WS3M1
+          required: true
+          type: string
+        paths:
+          description: >-
+            The paths to invalidate, relative to this distribution (each one
+            starting with a leading slash)
+          example:
+            - /images/foobar.jpg
+          required: true
+          type: array

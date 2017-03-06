@@ -1,16 +1,15 @@
-var SegmentIO = require('analytics-node');
-var api = new SegmentIO(inputs.writeKey);
+var segment = require('machinepack-segment');
 
-api.track({
-  userId: inputs.userId,
-  event: inputs.event,
-  properties: inputs.properties||{},
-  integrations: inputs.integrations||{
-    All: true,
-    Mixpanel: false,
-    Salesforce: false
-  }
-}, function(err, batch){
-  if (err) return exits.error(err);
-  return exits.success();
+// Track a user action by triggering an event in Segment.
+segment.track(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

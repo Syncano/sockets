@@ -1,12 +1,15 @@
-var child_process = require('child_process');
-var cliPath = require('path').resolve(__dirname, '../node_modules/azure-cli/bin/azure');
+var azure = require('machinepack-azure');
 
-var command = 'node ' + cliPath + ' site deployment user set ' + inputs.deploymentUser + ' ' + inputs.deploymentPassword;
-child_process.exec(command, function (err, stdout) {
+// Sets the deployment credentials of an Azure website
+azure.setDeployCredentials(ARGS).exec({
 
-  if(err){
-    return exits.error(err);
-  }
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-  return exits.success();
 });

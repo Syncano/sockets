@@ -1,12 +1,15 @@
-var cloudinary = require('cloudinary');
+var cloudinary = require('machinepack-cloudinary');
 
-cloudinary.config({
-  cloud_name: inputs.cloudName,
-  api_key: inputs.apiKey,
-  api_secret: inputs.apiSecret
-});
-cloudinary.api.delete_resources([inputs.imageId], function(result) {
-  if (result.error)
-    return exits.error(result.error);
-  exits.success();
+// Delete an image on Cloudinary.
+cloudinary.deleteImage(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

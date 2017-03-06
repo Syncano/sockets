@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-localtreelineprojects",
+    "description": "Work with local treeline projects.",
+    "version": "1.0.8",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-local-treeline-projects": "1.0.8"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-LocalTreelineProjects",
+        "LocalTreelineProjects-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

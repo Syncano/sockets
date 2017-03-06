@@ -1,25 +1,15 @@
-function (inputs, exits
-  /**/
-) {
+var jxm = require('machinepack-jxm');
 
-    var server = require('jxm');
-    var _ = require('lodash');
-    var baseUrlPath = null;
+// Machine used to start an instance of a jxm server
+jxm.startServer(ARGS).exec({
 
-    if (_.isUndefined(inputs.baseUrlPath)){
-        baseUrlPath = '/'.concat(inputs.serviceName);
-    } else {
-        baseUrlPath = inputs.baseUrlPath;
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     }
 
-
-    server.setApplication(inputs.serviceName, baseUrlPath, "NUBISA-STANDARD-KEY-CHANGE-THIS");
-
-    server.addJSMethod("serverMethod", function (env, params) {
-        console.log('received :'.concat(params));
-       server.sendCallBack(env, 'Simon Says : '.concat(params));
-    });
-    server.start();
-
-  return exits.success('server started!');
-}
+});

@@ -1,32 +1,15 @@
-var _ = require('lodash');
-var Http = require('machinepack-http');
+var pokemon = require('machinepack-pokemon');
 
-// Send an HTTP request and receive the response.
-Http.sendHttpRequest({
-  url: '/pokedex/1',
-  baseUrl: 'http://pokeapi.co/api/v1'
-}).exec({
-  // An unexpected error occurred.
-  error: function(err) {
-    return exits.error(err);
-  },
-  // OK.
-  success: function(result) {
+// List the name and resource_uri for each known Pokemon.
+pokemon.listAllPokemon(ARGS).exec({
 
-    var pokemons;
-    try {
-      var parsedResponse = JSON.parse(result.body);
-      pokemons = _.map(parsedResponse.pokemon, function (aPokemon){
-        // Derive the pokemon's id from the resource_uri
-        // (that way it can be used in the `get-pokemon` machine)
-        aPokemon.id = +(aPokemon.resource_uri.match(/pokemon\/([0-9]+)/)[1]);
-        return aPokemon;
-      });
-    }
-    catch (e) {
-      return exits.error(e);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
 
-    return exits.success(pokemons);
-  },
 });

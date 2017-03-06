@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-youtube",
+    "description": "Communicate with the Youtube API to get video views, etc.",
+    "version": "2.2.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-youtube": "2.2.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Youtube",
+        "Youtube-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

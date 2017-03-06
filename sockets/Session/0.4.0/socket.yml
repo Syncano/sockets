@@ -4,17 +4,40 @@ description: >-
   request.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   load:
     POST:
       file: scripts/load.js
       description: Load a string from the session using the specified key.
+      parameters:
+        key:
+          description: The name of the key in the session store.
+          example: loggedInAs
+          required: true
+          type: string
   save:
     POST:
       file: scripts/save.js
       description: Save a string value to the current session under the specified key.
+      parameters:
+        key:
+          description: The name of the key in the session store.
+          example: loggedInAs
+          required: true
+          type: string
+        value:
+          description: The data to save to the current session.
+          example: some string
+          required: true
+          type: string
   del:
     POST:
       file: scripts/del.js
       description: Delete the specified key in the session.
+      parameters:
+        key:
+          description: The name of the key in the session store.
+          example: loggedInAs
+          required: true
+          type: string

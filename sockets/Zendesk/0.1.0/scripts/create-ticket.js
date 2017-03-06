@@ -1,30 +1,15 @@
-var zendesk = require('node-zendesk');
+var zendesk = require('machinepack-zendesk');
 
-var client = zendesk.createClient({
-  username: inputs.username,
-  token: inputs.token,
-  remoteUri: inputs.remoteUri
-});
+// Log a hello message with a generated secret code and other information
+zendesk.createTicket(ARGS).exec({
 
-var ticket = {
-  'ticket': {
-    requester: {
-      name: inputs.requestorName,
-      email: inputs.requestorEmail,
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     },
-    tags: inputs.tags,
-    subject: inputs.subject,
-    comment: {
-      body: inputs.comment || '<no comment provided>'
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
-  }
-};
 
-console.log(ticket);
-
-client.tickets.create(ticket, function(err, req, result) {
-  if (err) {
-    exits.error(err);
-  }
-  exits.success(result);
 });

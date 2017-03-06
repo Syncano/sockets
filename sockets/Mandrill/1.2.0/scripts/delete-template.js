@@ -1,28 +1,19 @@
-var request = require('request');
+var mandrill = require('machinepack-mandrill');
 
-// Base url for API requests.
-var BASE_URL = 'https://mandrillapp.com/api/1.0';
+// Delete a mandrill template.
+mandrill.deleteTemplate(ARGS).exec({
 
-request.post({
-  url: BASE_URL + '/templates/delete.json',
-  form: {
-    key: inputs.apiKey,
-    name: inputs.name
-  },
-  json: true
-}, function(err, response, httpBody) {
-  if (err) {
-    return exits(err);
-  } else if (response.statusCode >= 300 || response.statusCode < 200) {
-    return exits.error(httpBody);
-  } else if (typeof httpBody !== 'object' || httpBody.status === 'error') {
-    switch (httpBody.name) {
-      case 'Unknown_Template':
-        return exits.notFound(httpBody);
-      default:
-        return exits.error(httpBody);
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     }
-  } else {
-    return exits.success(httpBody);
-  }
+
 });

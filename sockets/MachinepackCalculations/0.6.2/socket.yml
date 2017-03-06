@@ -2,9 +2,55 @@ name: MachinepackCalculations
 description: Calculations for PaidUp
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   product-price-v2:
     POST:
       file: scripts/product-price-v2.js
       description: Calculate final price when user does not assume any fee.
+      parameters:
+        type:
+          example: bank
+          description: Type of entity.
+          required: false
+          type: string
+        capAmount:
+          example: '456'
+          description: Amount limit for choose a kind of calculation.
+          required: false
+          type: string
+        originalPrice:
+          example: 200.23
+          description: Price base for calculate owed price.
+          required: true
+          type: number
+        stripePercent:
+          example: 2.9
+          description: Percentage for calculate stripe fee.
+          required: true
+          type: number
+        stripeFlat:
+          example: 0.3
+          description: Amount base to calcualte stripe fee.
+          required: true
+          type: number
+        paidUpFee:
+          example: 5
+          description: Percentage to calculate Paid Up Fee.
+          required: true
+          type: number
+        discount:
+          example: 20
+          description: Percentage to discount at original price
+          required: true
+          type: number
+        payProcessing:
+          example: false
+          description: This parameter define if user pay stripe processing
+          required: true
+          type: boolean
+        payCollecting:
+          example: true
+          description: This parameter define if user pay PadUp processing
+          required: true
+          type: boolean

@@ -1,26 +1,19 @@
-var params = {
-  key: inputs.key
-};
-if (inputs.sort) {
-  params.sort = inputs.sort;
-}
-if (inputs.fields) {
-  params.fields = inputs.fields;
-}
-var webFonts = google.webfonts('v1');
-webFonts.webfonts.list(params, function(err, result) {
-  if (err) {
-    if (!err.code) {
-      return exits.error(err);
+var googleapisdeveloperfonts = require('machinepack-googleapisdeveloperfonts');
+
+// List Web Fonts
+googleapisdeveloperfonts.list(ARGS).exec({
+
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    accessNotConfigured: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     }
-    switch(err.code) {
-      case 403:
-        return exits.accessNotConfigured(err);
-        break;
-      default:
-        return exits.error(err);
-        break;
-    }
-  }
-  return exits.success(result);
+
 });

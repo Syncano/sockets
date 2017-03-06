@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-firebase",
+    "description": "This machinepack lets you commuicate with the Firebase API to store and sync your data in realtime.",
+    "version": "3.1.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-firebase": "3.1.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Firebase",
+        "Firebase-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

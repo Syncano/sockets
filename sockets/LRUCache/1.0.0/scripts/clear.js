@@ -1,7 +1,15 @@
-if ( typeof cache !== 'undefined' && cache) {
-     cache.reset();
-} else {
-    var SimpleCache = require("simple-lru-cache");
-    cache = new SimpleCache({"maxSize":100000});
-}
-return exits.success();
+var lrucache = require('machinepack-lrucache');
+
+// Clear all the objects from the LRUCache
+lrucache.clear(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

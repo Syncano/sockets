@@ -1,17 +1,15 @@
-var doJSONRequest = require('../lib/do-request');
-var fields = inputs.fields || 'adcreatives{title,body,object_url}';
-//GET ad accounts/ and send the api token as a header
-doJSONRequest({
-  method: 'get',
-  url: ['/v2.3/', inputs.adGroupId ].join(""),
-  data: {
-    'access_token': inputs.accessToken,
-    'fields' : fields
-  },
-  headers: {},
-  },
-  function (err, responseBody) {
-    if (err) { return exits.error(err); }
-    return exits.success(responseBody);
-  }
-)
+var dk-facebookads = require('dk-machinepack-facebookads');
+
+// return the ad creative and some metadata
+dk-facebookads.getAdCreativeByAdgroupId(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

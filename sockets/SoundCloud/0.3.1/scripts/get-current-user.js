@@ -1,25 +1,15 @@
-var request = require('request');
+var soundcloud = require('machinepack-soundcloud');
 
-request.get({
-  url: 'https://api.soundcloud.com/me.json',
-  qs: {
-    'oauth_token': inputs.accessToken
-  },
-  json: true,
-  headers: {}
-}, function(err, response, body) {
-   if (err) {
-    return exits.error(err);
-  }
-  if (response.statusCode > 299 || response.statusCode < 200) {
-    return exits.error(response.statusCode);
-  }
+// Get the SoundCloud profile data for a user by access token.
+soundcloud.getCurrentUser(ARGS).exec({
 
-   // Parse profile data from the response body
-    try {
-      return exits.success(body);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
-    catch (e) {
-      return exits.error(e);
-    }
+
 });

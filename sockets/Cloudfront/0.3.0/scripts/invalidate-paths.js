@@ -1,33 +1,23 @@
-var _ = require('lodash');
-var AmazonWebServices = require('aws-sdk');
-AmazonWebServices.config.update({
-  region: inputs.region||'us-east-1',
-  accessKeyId: inputs.accessKeyId,
-  secretAccessKey: inputs.secretAccessKey
-});
+var cloudfront = require('machinepack-cloudfront');
 
-var CloudFront = new AmazonWebServices.CloudFront();
+// Invalidate one or more paths within a CloudFront distribution.
+cloudfront.invalidatePaths(ARGS).exec({
 
-CloudFront.createInvalidation({
-  DistributionId: inputs.distribution,
-  InvalidationBatch: {
-    CallerReference: (new Date()).toString(),
-    Paths: {
-      Quantity: inputs.paths.length,
-      Items: inputs.paths
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    invalidCredentials: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    unknownDistribution: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
-  }
-}, function(err, data) {
-  if (err) {
-    if (!_.isObject(err)) return exits.error(err);
-    console.log(err.code, err.type, err.name);
-    if (err.code === 'InvalidClientTokenId') {
-      return exits.invalidCredentials();
-    }
-    if (err.code === 'NoSuchDistribution') {
-      return exits.unknownDistribution();
-    }
-    return exits.error(err);
-  }
-  return exits.success();
+
 });

@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-foursquare",
+    "description": "Communicate with the Foursquare API to list venues, get reviews, check-ins, etc",
+    "version": "1.0.2",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-foursquare": "1.0.2"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Foursquare",
+        "Foursquare-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

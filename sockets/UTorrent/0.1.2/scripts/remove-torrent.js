@@ -1,17 +1,15 @@
-var Machine = require('machine');
-var createClient = Machine.build(require('./create-client'));
-var client = createClient({
-  host: inputs.host,
-  port: inputs.port,
-  username: inputs.username,
-  password: inputs.password,
-}).execSync();
-var options = {
-  'hash': inputs.hash
-};
-client.call('remove', options, function (err, data) {
-  if (err) {
-    return exits.error(err);
-  }
-  return exits.success(data);
+var utorrent = require('machinepack-utorrent');
+
+// Remove the torrent specified by the hash parameter from the download list.
+utorrent.removeTorrent(ARGS).exec({
+
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
 });

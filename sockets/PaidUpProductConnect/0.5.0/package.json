@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-paidupproductconnect",
+    "description": "Connector for PaidUp Microservice Product",
+    "version": "0.5.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "paidup-product-connect": "0.5.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-PaidUpProductConnect",
+        "PaidUpProductConnect-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

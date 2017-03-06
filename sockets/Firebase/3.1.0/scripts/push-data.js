@@ -1,23 +1,15 @@
-// Require the Firebase SDK
-var Firebase = require('firebase');
+var firebase = require('machinepack-firebase');
 
-// Get the root reference
-var rootRef = new Firebase(inputs.firebaseURL);
+// Write data to your Firebase instance with the Push method.
+firebase.pushData(ARGS).exec({
 
-// If a child path is specified, get a reference to that data path
-var finalRef = inputs.child ? rootRef.child(inputs.child) : rootRef;
-
-// Create a new data reference
-var dataRef = finalRef.push(inputs.write, function(error) {
-
-    // Handle errors
-    if (error) {
-      return exits.error(error);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
 
-    // Get the unique ID of the new data path
-    var key = dataRef.key();
-
-    // Return it through the success exit
-    return exits.success(key);
-  });
+});

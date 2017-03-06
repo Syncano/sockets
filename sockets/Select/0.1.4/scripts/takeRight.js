@@ -1,4 +1,19 @@
-if (!Array.isArray(inputs.collection)) { return exits.error(); }
-else if (!inputs.collection.length) { return exits.emptyError(); }
-var end = inputs.collection.length;
-return exits.success(inputs.collection.slice(end-inputs.num, end));
+var select = require('machinepack-select');
+
+// Slice of array with n elements taken from the end
+select.takeRight(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    emptyError: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

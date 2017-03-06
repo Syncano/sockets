@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-ssh",
+    "description": "Use SSH to send any command to a remote server with or without private keys.",
+    "version": "2.0.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-ssh": "2.0.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-SSH",
+        "SSH-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

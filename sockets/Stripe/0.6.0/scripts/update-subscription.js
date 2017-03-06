@@ -1,16 +1,15 @@
-// TODO: handle more specific exits (i.e. rate limit, customer does not exist, etc.)
+var stripe = require('machinepack-stripe');
 
-var stripe = require('stripe')(inputs.apiKey);
+// Update a customer's subscription to change plan or quantity.
+stripe.updateSubscription(ARGS).exec({
 
-// Get the base options
-var options = {
-  plan: inputs.plan,
-  quantity: inputs.quantity,
-  prorate: inputs.prorate
-};
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-
-stripe.customers.updateSubscription(inputs.customer, inputs.sub, options, function(err, charge) {
-  if (err) return exits.error(err);
-  return exits.success(charge);
 });

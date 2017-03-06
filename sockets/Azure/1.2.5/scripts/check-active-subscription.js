@@ -1,18 +1,15 @@
-var child_process = require('child_process');
-var cliPath = require('path').resolve(__dirname, '../node_modules/azure-cli/bin/azure');
-var command;
+var azure = require('machinepack-azure');
 
-command = 'node ' + cliPath + ' account list ';
-child_process.exec(command, function (err, stdout) {
+// Detects if there is an active azure subscription
+azure.checkActiveSubscription(ARGS).exec({
 
-  if(err){
-    return exits.error(err);
-  }
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-  if(stdout.indexOf('  true') > -1){
-    return exits.success(true);
-  }
-  else{
-    return exits.success(false);
-  }
 });

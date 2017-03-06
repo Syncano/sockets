@@ -1,18 +1,19 @@
-var Github = require('github');
+var github = require('machinepack-github');
 
-var github = new Github({
-  version: '3.0.0',
-});
+// Fetch metadata about a repository on GitHub.
+github.getRepo(ARGS).exec({
 
-github.repos.get({
-  repo: inputs.repo,
-  user: inputs.owner
-}, function(err, data) {
-  if (err) {
-    if (_.isObject(err) && (+err.code)===403) {
-      return exits.rateLimitExceeded(err.message);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    rateLimitExceeded: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
-    return exits.error(err);
-  }
-  return exits.success(data);
+
 });

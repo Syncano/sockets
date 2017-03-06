@@ -2,17 +2,85 @@ name: Heroku
 description: Work with the Heroku API.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   add-app-setup:
     POST:
       file: scripts/add-app-setup.js
       description: Add an app setup for an account.
+      parameters:
+        apiToken:
+          example: abc12421-1234-abdc-5343-ae4adf123fea4
+          description: Your Heroku API token
+          whereToGet:
+            url: >-
+              https://devcenter.heroku.com/articles/authentication#authenticating-with-the-api-token
+            description: >-
+              Copy the API key from your Heroku dashboard on the "Manage
+              Account" page.
+          required: true
+          type: string
+        sourceUrl:
+          example: 'https://example.com/source.tgz?token=xyz'
+          description: >-
+            URL of gzipped tarball of source code containing app.json manifest
+            file
+          required: true
+          type: string
+        environment:
+          typeclass: dictionary
+          description: Environment variable overrides to use in setting up the app.
+          type: dictionary
+        name:
+          example: My awesome app
+          description: Unique name for the app.
+          type: string
   list-apps:
     POST:
       file: scripts/list-apps.js
       description: List all apps for an account.
+      parameters:
+        apiToken:
+          example: abc12421-1234-abdc-5343-ae4adf123fea4
+          description: Your Heroku API token
+          whereToGet:
+            url: >-
+              https://devcenter.heroku.com/articles/authentication#authenticating-with-the-api-token
+            description: >-
+              Copy the API key from your Heroku dashboard on the "Manage
+              Account" page.
+          required: true
+          type: string
   add-dyno:
     POST:
       file: scripts/add-dyno.js
       description: Add a dyno to an existing app.
+      parameters:
+        apiToken:
+          example: abc12421-1234-abdc-5343-ae4adf123fea4
+          description: Your Heroku API token
+          whereToGet:
+            url: >-
+              https://devcenter.heroku.com/articles/authentication#authenticating-with-the-api-token
+            description: >-
+              Copy the API key from your Heroku dashboard on the "Manage
+              Account" page.
+          required: true
+          type: string
+        app:
+          example: app-123
+          description: Unique ID or name of your Heroku app.
+          required: true
+          type: string
+        command:
+          example: bash
+          description: Command used to start this process
+          type: string
+        environment:
+          typeclass: dictionary
+          description: Environment variable overrides to use in setting up the app.
+          type: dictionary
+        size:
+          example: 1X
+          description: Number of dynos to spin up.
+          type: string

@@ -1,12 +1,15 @@
-var Path = require('path');
+var localmachinepacks = require('machinepack-localmachinepacks');
 
-require('machine').build(require('./read-package-json'))
-.configure({
-  dir: inputs.dir
-}).exec({
-  error: exits.error,
-  notMachinepack: exits.notMachinepack,
-  success: function (machinepack){
-    return exits.success(Path.resolve(inputs.dir, machinepack.machineDir));
-  }
+// Get the path to this machinepack's `machines/` directory.
+localmachinepacks.getMachinesDir(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

@@ -4,19 +4,57 @@ description: >-
   http://node-machine.org.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   list-machinepacks:
     POST:
       file: scripts/list-machinepacks.js
       description: List machinepacks in the registry.
+      parameters:
+        registry:
+          description: >-
+            The base URL of the machine registry to use (defaults to the public
+            registry at http://node-machine.org)
+          example: 'http://node-machine.org'
+          defaultsTo: 'http://www.node-machine.org'
+          type: string
   get-machinepack-info:
     POST:
       file: scripts/get-machinepack-info.js
       description: >-
         Get metadata for the specified machinepack, including a list of its
         machines.
+      parameters:
+        machinepack:
+          description: The identity of the machinepack to look up.
+          example: machinepack-whatever
+          required: true
+          type: string
+        registry:
+          description: >-
+            The base URL of the machine registry to use (defaults to the public
+            registry at http://node-machine.org)
+          example: 'http://node-machine.org'
+          defaultsTo: 'http://www.node-machine.org'
+          type: string
   get-machine-info:
     POST:
       file: scripts/get-machine-info.js
       description: Get metadata for the specified machine within the specified machinepack.
+      parameters:
+        machinepack:
+          description: The identity of the machinepack this machine belongs to.
+          example: machinepack-whatever
+          required: true
+          type: string
+        machine:
+          description: The identity of the machine to look up.
+          example: do-stuff
+          required: true
+          type: string
+        registry:
+          description: >-
+            The base URL of the machine registry to use (defaults to the public
+            registry at http://node-machine.org)
+          example: 'http://node-machine.org'
+          type: string

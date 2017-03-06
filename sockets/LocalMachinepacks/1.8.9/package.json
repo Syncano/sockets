@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-localmachinepacks",
+    "description": "Work with local machinepacks.",
+    "version": "1.8.9",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-localmachinepacks": "1.8.9"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-LocalMachinepacks",
+        "LocalMachinepacks-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

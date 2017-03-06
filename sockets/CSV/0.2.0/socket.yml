@@ -2,9 +2,30 @@ name: CSV
 description: Work with CSV (comma-separated value) data
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   parse-csv:
     POST:
       file: scripts/parse-csv.js
       description: Parse comma-separated value data
+      parameters:
+        csvData:
+          friendlyName: CSV Data
+          description: A string of CSV data.
+          example: |-
+            "1","2","3","4"
+            "a","b","c","d"
+          required: true
+          type: string
+        hasHeaderRow:
+          friendlyName: Has header row?
+          description: Indicates whether or not the data has a header row.
+          example: true
+          extendedDescription: 'If the data has a header row, it will be ignored in the output.'
+          type: boolean
+        schema:
+          friendlyName: Schema
+          description: Expected schema of each parsed row
+          typeclass: '*'
+          required: true
+          type: '*'

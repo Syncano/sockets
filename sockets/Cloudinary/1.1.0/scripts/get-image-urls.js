@@ -1,15 +1,15 @@
-var cloudinary = require('cloudinary');
+var cloudinary = require('machinepack-cloudinary');
 
-cloudinary.config({
-  cloud_name: inputs.cloudName,
-  api_key: inputs.apiKey,
-  api_secret: inputs.apiSecret
-});
-inputs.options.secure = false;
-var http = cloudinary.url(inputs.imageId, inputs.options);
-inputs.options.secure = true;
-var https = cloudinary.url(inputs.imageId, inputs.options);
-exits.success({
-  http: http,
-  https: https
+// Get Image URLS from Cloudinary based on Image ID.
+cloudinary.getImageUrls(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

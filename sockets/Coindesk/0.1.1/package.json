@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-coindesk",
+    "description": "Communicate with the CoinDesk API to get bitcoin index prices.",
+    "version": "0.1.1",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-coindesk": "0.1.1"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Coindesk",
+        "Coindesk-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

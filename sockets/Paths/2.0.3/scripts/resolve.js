@@ -1,13 +1,15 @@
-var result;
+var paths = require('machinepack-paths');
 
-// If `from` was provided, resolve `path` from it.
-// (if `from` is a relative path it will be resolved relative to pwd first)
-if (inputs.from) {
-  result = require('path').resolve(inputs.from, inputs.path);
-}
-// Otherwise, use pwd.
-else {
-  result = require('path').resolve(inputs.path);
-}
+// Resolve and normalize a potentially-relative path into an absolute path.
+paths.resolve(ARGS).exec({
 
-return exits.success(result);
+    // An absolute path.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

@@ -1,18 +1,23 @@
-var path = require('path');
-var Filesystem = require('machinepack-fs');
+var local-treeline-projects = require('machinepack-local-treeline-projects');
 
-// Ensure we have an absolute destination path.
-inputs.dir = inputs.dir ? path.resolve(inputs.dir) : process.cwd();
+// Read data from the linkfile in the current directory.
+local-treeline-projects.readLinkfile(ARGS).exec({
 
-// Read and parse JSON file located at source path on disk into usable data.
-Filesystem.readJson({
-  source: path.join(inputs.dir, 'treeline.json'),
-  schema: {
-    id: '123',
-    identity: 'my-cool-app',
-    displayName: 'My Cool App',
-    type: 'app',
-    owner: 'mikermcneil',
-    hashes: {}
-  }
-}).exec(exits);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    doesNotExist: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    couldNotParse: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-paidupscheduleconnect",
+    "description": "Connector from TDSchedule",
+    "version": "2.2.7",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "pu-schedule-connect": "2.2.7"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-PaidUpScheduleConnect",
+        "PaidUpScheduleConnect-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

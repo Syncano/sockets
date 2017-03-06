@@ -1,5 +1,15 @@
-// Dependencies
-var _ = require('lodash');
-var util = require('util');
+var github = require('machinepack-github');
 
-return exits.success(util.format('git+https://%s:x-oauth-basic@github.com/%s/%s.git',inputs.personalAccessToken, inputs.owner, inputs.repo));
+// Build an npm-installable URL compatible with private repos.
+github.buildInstallableUrl(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

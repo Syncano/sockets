@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-emailaddresses",
+    "description": "Work with email addresses.",
+    "version": "0.4.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-emailaddresses": "0.4.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Emailaddresses",
+        "Emailaddresses-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-facebookads",
+    "description": "interact with the facebook marketing api",
+    "version": "1.5.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-facebookads": "1.5.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-FacebookAds",
+        "FacebookAds-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

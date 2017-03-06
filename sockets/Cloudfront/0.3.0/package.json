@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-cloudfront",
+    "description": "Node.js wrapper for AWS CloudFront.",
+    "version": "0.3.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-cloudfront": "0.3.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Cloudfront",
+        "Cloudfront-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

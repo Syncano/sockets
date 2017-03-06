@@ -1,14 +1,23 @@
-var _ = require('lodash');
+var dictionaries = require('machinepack-dictionaries');
 
-var value = inputs.dictionary[inputs.originalKey];
-if (_.isUndefined(value)) {
-  return exits.noSuchKey();
-}
+// Copy a key in a dictionary and return the result (a new dictionary).
+dictionaries.copyKey(ARGS).exec({
 
-var force = _.isUndefined(inputs.force) ? true : inputs.force;
-if (!force && !_.isUndefined(inputs.dictionary[inputs.newKey])) {
-  return exits.keyAlreadyExists();
-}
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    noSuchKey: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    keyAlreadyExists: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-inputs.dictionary[inputs.newKey] = value;
-return exits.success(inputs.dictionary);
+});

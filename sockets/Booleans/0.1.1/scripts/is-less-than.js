@@ -1,20 +1,15 @@
-// If using the `isInclusive` flag, check whether a <= b.
-if (inputs.isInclusive){
+var booleans = require('machinepack-booleans');
 
-  // If so, return `true` through the `success` exit.
-  if (inputs.a <= inputs.b) {
-    return exits.success(true);
-  }
+// Determine whether the first value is less than the second.
+booleans.isLessThan(ARGS).exec({
 
-  // Otherwise, return `false` through the `success` exit.
-  return exits.success(false);
-}
+    // A boolean indicating whether the first value is less than (or equal to, if `Inclusive?` was set) the second.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-// If not using the `isInclusive` flag, check whether a < b.
-// If so, return `true` through the `success` exit.
-if (inputs.a < inputs.b) {
-  return exits.success(true);
-}
-
-// Otherwise, return `false` through the `success` exit.
-return exits.success(false);
+});

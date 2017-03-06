@@ -2,9 +2,25 @@ name: TwilioLookup
 description: Validate number format
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   format-lookup:
     POST:
       file: scripts/format-lookup.js
       description: Reformat numbers provided into local format
+      parameters:
+        phoneNumber:
+          example: 209 525-6325
+          description: Phone number you wish to validate.
+          required: true
+          type: string
+        accountSid:
+          example: AC2b6da5680e4cdd77db1a679e8c7a42f3
+          description: Twilio Accoutn SID.
+          required: true
+          type: string
+        authToken:
+          example: 4135d4dba945c3d883d260148860aaaa
+          description: Your Twilio Auth Token.
+          required: true
+          type: string

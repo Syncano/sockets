@@ -2,9 +2,16 @@ name: NodejsAustin
 description: Cool stuff for Node.js Austin.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   hello:
     POST:
       file: scripts/hello.js
       description: Say hello on the console.
+      parameters:
+        msg:
+          friendlyName: Message
+          description: The message to be logged.
+          example: hello world
+          required: true
+          type: string

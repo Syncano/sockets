@@ -1,10 +1,15 @@
-var reduce = require('lodash.reduce');
+var markdown = require('machinepack-markdown');
 
-var metadata = reduce(inputs.mdString.match(/<docmeta[^>]*>/igm)||[], function (memo, tag) {
-  var name = tag.match(/name="([^">]+)"/i)[1];
-  var value = tag.match(/value="([^">]+)"/i)[1];
-  memo[name] = value;
-  return memo;
-}, {});
+// Parse data encoded via <docmeta> tags in a Markdown string.
+markdown.parseDocmetaTags(ARGS).exec({
 
-return exits.success(metadata);
+    // The metadata parsed from <docmeta> tags in the source markdown.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

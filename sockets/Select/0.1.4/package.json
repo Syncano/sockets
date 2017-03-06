@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-select",
+    "description": "Select first, last or a slice of an array",
+    "version": "0.1.4",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-select": "0.1.4"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Select",
+        "Select-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

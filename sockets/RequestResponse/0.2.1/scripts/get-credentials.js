@@ -1,25 +1,15 @@
-// Import `lodash`.
-var _ = require('lodash');
+var reqres = require('machinepack-reqres');
 
-// Import `basic-auth`.
-var dougsBasicAuthParser = require('basic-auth');
+// Parse the username and password from HTTP Basic Auth credentials encoded in the current request.
+reqres.getCredentials(ARGS).exec({
 
-// If we don't have a request object in our `env` (or if it somehow doesn't know how to read request headers),
-// then bail through the `error` exit.
-if (!_.isObject(env.req) || !_.isFunction(env.req.get)) {
-  return exits.error(new Error('A valid Sails/Express request object must be provided through `.setEnv()` in order to use this machine.'));
-}
+    // The `username` and `password` parsed from the current request.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-var credentials = dougsBasicAuthParser(env.req);
-
-if (!_.isObject(credentials)) {
-  credentials = {
-    name: '',
-    pass: ''
-  };
-}
-
-return exits.success({
-  username: credentials.name,
-  password: credentials.pass,
 });

@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-csv",
+    "description": "Work with CSV (comma-separated value) data",
+    "version": "0.2.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-csv": "0.2.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-CSV",
+        "CSV-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

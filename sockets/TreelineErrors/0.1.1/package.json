@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-treelineerrors",
+    "description": "Tools for handling Treeline errors in userland applications and packages.",
+    "version": "0.1.1",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-treeline-errors": "0.1.1"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-TreelineErrors",
+        "TreelineErrors-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

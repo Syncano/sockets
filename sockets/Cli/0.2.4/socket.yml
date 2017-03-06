@@ -2,9 +2,15 @@ name: Cli
 description: Simple Maker command line interface
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   prompt:
     POST:
       file: scripts/prompt.js
       description: Simple prompt
+      parameters:
+        debug:
+          example: true
+          description: debug mode
+          required: false
+          type: boolean

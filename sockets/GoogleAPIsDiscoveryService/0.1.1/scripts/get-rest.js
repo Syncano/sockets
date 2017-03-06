@@ -1,9 +1,15 @@
-var discovery = google.discovery('v1');
-var params = {};
-_.merge(params, inputs);
-discovery.apis.getRest(params, function(err, result) {
-  if (err) {
-    return exits.error(err);
-  }
-  return exits.success(result);
+var googleapisdiscoveryservice = require('machinepack-googleapisdiscoveryservice');
+
+// Retrieve the description of a particular version of an api.
+googleapisdiscoveryservice.getRest(ARGS).exec({
+
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
 });

@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-jwt",
+    "description": "Work with JSON Web Tokens.",
+    "version": "0.1.14",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-jwt": "0.1.14"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-JWT",
+        "JWT-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

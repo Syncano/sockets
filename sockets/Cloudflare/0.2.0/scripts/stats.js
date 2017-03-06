@@ -1,20 +1,27 @@
-var Cloudflare = require('../cloudflare.js');
-var params = {
-  z: inputs.domain,
-  interval: inputs.interval
-};
+var cloudflare = require('machinepack-cloudflare');
 
-Cloudflare.auth(inputs.email, inputs.token).send('stats', params, function (err, response, body) {
-  if (err)
-    return exits.error(err);
+// Retrieve domain statistics for a given time frame
+cloudflare.stats(ARGS).exec({
 
-  if (response.statusCode > 299 || response.statusCode < 200)
-    return exits.error(response.statusCode);
+    
+    notAuthorized: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    invalidInput: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    apiLimit: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-  response = JSON.parse(response.body);
-
-  if (response.result === 'error')
-    return Cloudflare.handleError(response, exits);
-
-  return exits.success(response.response.rec.obj);
 });

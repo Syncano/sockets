@@ -1,32 +1,15 @@
-function (inputs, exits
-/**/
-) {
-  var Connector = require('../core/common/connector')
+var pu-commerce-connect = require('pu-commerce-connect');
 
-  var config = {
-    url: '/api/v2/commerce/order/update-payments',
-    baseUrl: inputs.baseUrl,
-    method: 'post',
-    token: inputs.token
-  }
+// update payments to order
+pu-commerce-connect.orderUpdatePayments(ARGS).exec({
 
-  var body = {
-    orderId: inputs.orderId,
-    paymentPlanId: inputs.paymentPlanId,
-    paymentPlan: inputs.paymentPlan
-  }
-
-  Connector.request(config, {}, body, function (err, resp) {
-    if (err) {
-      return exits.error({
-        status: err.status,
-        message: err.body
-      })
-    } else {
-      return exits.success({
-        status: resp.status,
-        body: resp.body
-      })
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     }
-  })
-}
+
+});

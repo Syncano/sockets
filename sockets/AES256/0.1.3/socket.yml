@@ -2,29 +2,123 @@ name: AES256
 description: AES-256 Encrypt and decrypt content with node JS crypto API (AES-256)
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   encrypt:
     POST:
       file: scripts/encrypt.js
       description: Encrypt content
+      parameters:
+        value:
+          example: >-
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          description: a text or a buffer (if buffer = true) for encrypt
+          required: true
+          type: string
+        secret:
+          example: a secure phrase or password
+          description: a secure phrase
+          required: true
+          type: string
+        buffer:
+          example: false
+          description: a text for encrypt
+          required: false
+          type: boolean
   decrypt:
     POST:
       file: scripts/decrypt.js
       description: Decrypt content
+      parameters:
+        value:
+          example: >-
+            cXJYIINixoiZtVE/gKhx/grE5QMWQblr17wxdlTQyR1uSEcVA/iNpOwVbiF3U+6QaUDhbRDK5VEpzS26e/+kLP+NJmcgfqsA5WRHfPQy4TfmzarIUrbL+NsPJm2Gxq+n8KtovheB6YNCqEyvTeB+fbtosSdFkNgUR+u6EFQwbrGF7200zqZx9UMd+1zcTHXxjdOo+EwZlULlpQ52KInPJlTk9FH2G2hgfqx2kotD2/sdTtcqWTZZSssWINJcVNO4cVM56XWfdcwxhQ==
+          description: a text or a buffer (if buffer = true) for decrypt
+          required: true
+          type: string
+        secret:
+          example: a secure phrase
+          description: a secure phrase for encrypt
+          required: true
+          type: string
+        buffer:
+          example: false
+          description: 'a boolean to define it''s a buffer. default: false'
+          required: false
+          type: boolean
   encrypt-stream:
     POST:
       file: scripts/encrypt-stream.js
       description: Encrypt stream content and zip it
+      parameters:
+        stream:
+          example: a stream
+          description: a stream
+          required: true
+          type: string
+        secret:
+          example: a secure phrase or password
+          description: a secure phrase
+          required: true
+          type: string
   decrypt-stream:
     POST:
       file: scripts/decrypt-stream.js
       description: Decrypt stream content and unzip it
+      parameters:
+        stream:
+          example: a stream
+          description: a stream
+          required: true
+          type: string
+        secret:
+          example: a secure phrase or password
+          description: a secure phrase
+          required: true
+          type: string
   encrypt-stream-file:
     POST:
       file: scripts/encrypt-stream-file.js
       description: Encrypt a streamfile with source path
+      parameters:
+        path:
+          example: file.txt
+          description: a path
+          required: true
+          type: string
+        secret:
+          example: a secure phrase or password
+          description: a secure phrase
+          required: true
+          type: string
+        save:
+          example: true
+          description: 'a boolean, saving in the same folder'
+          required: false
+          type: boolean
   decrypt-stream-file:
     POST:
       file: scripts/decrypt-stream-file.js
       description: Decrypt a streamfile with source path
+      parameters:
+        path:
+          example: file.txt.gz
+          description: a path
+          required: true
+          type: string
+        secret:
+          example: a secure phrase or password
+          description: a secure phrase
+          required: true
+          type: string
+        save:
+          example: true
+          description: 'a boolean, saving in the same folder'
+          required: false
+          type: boolean

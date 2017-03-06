@@ -1,20 +1,15 @@
-// TODO: handle more specific exits (i.e. rate limit, customer does not exist, etc.)
-var stripe = require("stripe")(
-    inputs.apiKey
-);
+var stripe = require('machinepack-stripe');
 
-stripe.charges.create({
-  amount: inputs.amount,
-  currency: "usd",
-  source: {
-      number:   inputs.cardnumber,
-      exp_month:inputs.cardexpmonth,
-      exp_year: inputs.cardexpyear,
-      cvc: inputs.cardcvc
-  },
-    description: inputs.description
-}, function(err, charge) {
-    // asynchronously called
-    if (err) return exits.error(err);
-    return exits.success(charge);
+// Create a new charge without storing customer or card objects in Stripe.
+stripe.oneOffCharge(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

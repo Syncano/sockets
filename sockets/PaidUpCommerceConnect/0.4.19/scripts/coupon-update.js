@@ -1,30 +1,15 @@
-function (inputs, exits
-  /**/
-) {
-  var Connector  = require('../core/common/connector');
+var pu-commerce-connect = require('pu-commerce-connect');
 
-  var config = {
-    url: '/api/v1/commerce/coupon/update',
-    baseUrl: inputs.baseUrl,
-    method: 'put',
-    token : inputs.token
-  }
-  var body = {
-    filter: inputs.filter,
-    data: inputs.data
-  }
+// Update a coupon discount
+pu-commerce-connect.couponUpdate(ARGS).exec({
 
-  Connector.request(config, {}, body, function(err, resp){
-    if(err){
-      return exits.error({
-        status: err.staus,
-        message: err.body
-      });
-    }else{
-      return exits.success({
-        status: resp.status,
-        body: resp.body
-      });
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     }
-  });
-}
+
+});

@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-gateway",
+    "description": "Credit Card processing gateway wrapper",
+    "version": "0.1.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-gateway": "0.1.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Gateway",
+        "Gateway-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

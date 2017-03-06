@@ -2,9 +2,49 @@ name: Nexmo
 description: Interact with the Nexmo SMS-related API
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   send-text-message:
     POST:
       file: scripts/send-text-message.js
       description: Send a text message using the Nexmo SMS API
+      parameters:
+        apiKey:
+          example: n3xm0rocks
+          description: Your NEXMO API Key.
+          required: true
+          type: string
+        apiSecret:
+          example: 12ab34cd
+          description: Your NEXMO API Secret.
+          required: true
+          type: string
+        from:
+          example: '18479121345'
+          description: Sender SMS number.
+          extendedDescription: >-
+            The number may be alphanumeric (Ex: from=MyCompany20). Restrictions
+            may apply, depending on the destination.
+          required: true
+          type: string
+        to:
+          example: '447525856424'
+          description: Recipient SMS number.
+          extendedDescription: >-
+            Mobile number in international format, and one recipient per
+            request. Ex: to=447525856424 or to=00447525856424 when sending to
+            UK.
+          required: true
+          type: string
+        text:
+          example: D%c3%a9j%c3%a0+vu
+          description: Body of the text message.
+          extendedDescription: >-
+            Maximum length of a text message is 3200 characters, UTF-8 and URL
+            encoded value.
+          required: true
+          type: string
+        protocol:
+          example: http
+          description: Default protocol for the request is https. User can switch to http.
+          type: string

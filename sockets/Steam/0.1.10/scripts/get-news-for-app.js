@@ -1,22 +1,15 @@
-var Http = require('machinepack-http');
+var steam = require('machinepack-steam');
 
-Http.sendHttpRequest({
-  baseUrl: 'http://api.steampowered.com/',
-  url: 'ISteamNews/GetNewsForApp/v0002/',
-  method: 'get',
-  params: {
-    appid: inputs.appid,
-    count: inputs.count,
-    maxlength: inputs.maxlength,
-    format: 'json'
-  }
-})
-.exec({
-  success: function (res) {
-    var response = JSON.parse(res.body);
-    return exits.success(response);
-  },
-  error: function (err) {
-    return exits.error(err);
-  }
-})
+// Fetch news feeds for each Steam game
+steam.getNewsForApp(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

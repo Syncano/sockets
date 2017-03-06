@@ -2,13 +2,35 @@ name: Klout
 description: 'Communicate with the Klout API to get Ids, Klout Scores, etc.'
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   get-klout-id:
     POST:
       file: scripts/get-klout-id.js
       description: Get the Klout Id from a Twitter screen name.
+      parameters:
+        twitterScreenName:
+          example: tuneyards
+          description: The Twitter screen name of Klout Id
+          required: true
+          type: string
+        apiKey:
+          example: ODUfdisauPUdufsoUSF
+          description: Your Klout API key.
+          required: true
+          type: string
   get-klout-score:
     POST:
       file: scripts/get-klout-score.js
       description: Get the Klout score of a Klout Id.
+      parameters:
+        kloutId:
+          example: '32423423432342'
+          description: A Klout Id.
+          required: true
+          type: string
+        apiKey:
+          example: ODUfdisauPUdufsoUSF
+          description: Your Klout API key.
+          required: true
+          type: string

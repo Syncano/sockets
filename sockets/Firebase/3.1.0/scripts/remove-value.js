@@ -1,17 +1,15 @@
-// Require the Firebase SDK
-var Firebase = require('firebase');
+var firebase = require('machinepack-firebase');
 
-// Get the data path reference
-var ref = new Firebase(inputs.firebaseURL);
+// Remove data from a specific firebase location, such as "/users/".
+firebase.removeValue(ARGS).exec({
 
-// Attempt to read from the data path
-ref.remove(function(error) {
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-  // Handle errors
-  if (error) {
-    return exits.error(error);
-  }
-
-  // Return through the success exit
-  return exits.success();
 });

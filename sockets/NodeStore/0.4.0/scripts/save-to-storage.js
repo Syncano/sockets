@@ -1,13 +1,15 @@
-// Making sure we don't wipe the local storage everytime we write to it.
-if (typeof localStorage === "undefined" || localStorage === null) {
+var nodestore = require('machinepack-nodestore');
 
-  var LocalStorage = require('node-localstorage').LocalStorage;
+// Save a key-value pair in string format to the persistent data store. This is compatible with PhoneGap/Cordova
+nodestore.saveToStorage(ARGS).exec({
 
-  localStorage = new LocalStorage('./scratch');
-}
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-localStorage.setItem(inputs.key, inputs.value);
-
-
-// Let the server know the data has been saved successfully and return the approproate exit.
-return exits.success(inputs.value);
+});

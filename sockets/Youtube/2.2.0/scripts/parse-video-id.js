@@ -1,10 +1,19 @@
-var URL = require('url');
-var QS = require('querystring');
+var youtube = require('machinepack-youtube');
 
-try {
-  var videoId = QS.parse(URL.parse(inputs.url).query).v;
-  return exits.success(videoId);
-}
-catch (e) {
-  return exits.invalidUrl(e);
-}
+// Parse the video ID from the provided YouTube.com URL.
+youtube.parseVideoId(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    invalidUrl: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

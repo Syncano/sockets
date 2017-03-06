@@ -1,14 +1,15 @@
-var _ = require('lodash');
-var client = require('twilio')(inputs.accountSid, inputs.authToken);
+var twilio = require('machinepack-twilio');
 
-client.availablePhoneNumbers(inputs.country||'US')[inputs.type||'local'].list({}, function(err, response) {
-  if (err) return exits.error(err);
+// List the phone numbers potentially available (but not yet provisioned) to your Twilio account.
+twilio.listPotentialNumbers(ARGS).exec({
 
-  try {
-    var numbers = _.pluck(response.availablePhoneNumbers, 'phone_number');
-    return exits.success(numbers);
-  }
-  catch (e) {
-    return exits.error(e);
-  }
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

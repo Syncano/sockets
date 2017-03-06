@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-coinbase",
+    "description": "Communicate with the Coinbase API to get bitcoin index prices.",
+    "version": "0.1.7",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-coinbase": "0.1.7"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Coinbase",
+        "Coinbase-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

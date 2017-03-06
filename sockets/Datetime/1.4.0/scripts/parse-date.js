@@ -1,14 +1,19 @@
-var Moment = require('moment');
+var datetime = require('machinepack-datetime');
 
-var momentObj = Moment(Date.parse(inputs.monthDayYear));
+// Parse a string containing a human-readable date.
+datetime.parseDate(ARGS).exec({
 
-if (!momentObj.isValid()) {
-  return exits.couldNotParse();
-}
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    couldNotParse: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-return exits.success({
-  month: momentObj.month()+1,
-  date: momentObj.date(),
-  year: momentObj.year(),
-  dayOfWeek: momentObj.format('dddd')
 });

@@ -1,12 +1,19 @@
-var path = require('path');
-var fsx = require('fs-extra');
+var fs = require('machinepack-fs');
 
-fsx.copy(path.resolve(inputs.source), path.resolve(inputs.destination), function (err) {
-  if (err) {
-    if (err.code === 'ENOENT') {
-      return exits.doesNotExist();
+// Copy file or directory located at source path to the destination path (overwriting an existing file at the destination path, if there is one).
+fs.cp(ARGS).exec({
+
+    
+    doesNotExist: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     }
-    return exits.error(err);
-  }
-  return exits.success();
+
 });

@@ -1,6 +1,15 @@
-var stripe = require('stripe')(inputs.apiKey);
+var stripe-subscriptions = require('machinepack-stripe-subscriptions');
 
-stripe.customers.createCard(inputs.customer, {card: inputs.token}, function(err, card) {
-  if (err) return exits.error(err);
-  return exits.success(card);
+// Create a new card for a customer
+stripe-subscriptions.createCard(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

@@ -1,23 +1,15 @@
-var request = require('request');
+var salesforce-expanded = require('machinepack-salesforce-expanded');
 
-var options = {
-  url: inputs.id,
-  headers: {
-    'Authorization': inputs.tokenType + " " + inputs.accessToken
-  }
-};
+// Get information about the Salesforce user with the specified access token.
+salesforce-expanded.getUserByAccessToken(ARGS).exec({
 
-request(options, function(error, res, body) {
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-  try{
-
-    body = JSON.parse(body);
-
-    return exits.success(body);
-  } catch(e) {
-
-      return exits.error('Error when parsing body.')
-
-  }
-
-})
+});

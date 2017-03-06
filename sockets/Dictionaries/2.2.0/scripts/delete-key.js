@@ -1,6 +1,19 @@
-var _ = require('lodash');
-if (_.isUndefined(inputs.dictionary[inputs.key])){
-  return exits.noSuchKey();
-}
-delete inputs.dictionary[inputs.key];
-return exits.success(inputs.dictionary);
+var dictionaries = require('machinepack-dictionaries');
+
+// Delete a key from a dictionary and return the result (a new dictionary).
+dictionaries.deleteKey(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    noSuchKey: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

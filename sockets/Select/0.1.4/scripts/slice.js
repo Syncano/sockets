@@ -1,9 +1,19 @@
-var result;
-if (!Array.isArray(inputs.collection)) { return exits.error(); }
-else if (!inputs.collection.length) { return exits.emptyError(); }
-try {
-  if (inputs.include && inputs.end) { var end = inputs.end + 1; }
-  result = inputs.collection.slice(inputs.start, end||inputs.end||inputs.collection.length);
-} catch (err) { return exits.error(err); }
+var select = require('machinepack-select');
 
-return exits.success(result);
+// Get a slice of an array
+select.slice(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    emptyError: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

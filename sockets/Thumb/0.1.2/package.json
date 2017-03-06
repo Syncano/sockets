@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-thumb",
+    "description": "Easy Generate thumb file with ImageMagick native",
+    "version": "0.1.2",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-thumb": "0.1.2"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Thumb",
+        "Thumb-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

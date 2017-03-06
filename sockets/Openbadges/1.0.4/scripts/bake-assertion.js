@@ -1,24 +1,19 @@
-/**
- * Module Dependencies
- */
-var Http = require('machinepack-http');
+var openbadges = require('machinepack-openbadges');
 
-Http.sendHttpRequest({
-  url: '/baker?assertion='+inputs.url,
-  baseUrl: 'http://backpack.openbadges.org',
-  method: 'get',
-  params: {},
-  formData: false,
-  headers: {},
-}).exec({
-  error: function (err){
-    return exits.error(err);
-  },
-  badRequest: function (result){
-    console.log(result);
-    return exits.badAssertion(result);
-  },
-  success: function (result){
-    return exits.success(result);
-  }
+// The baker will retrieve this image and bake your assertion data into it, returning it to you if your API call was successful.
+openbadges.bakeAssertion(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    badAssertion: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

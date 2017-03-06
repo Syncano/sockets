@@ -1,10 +1,19 @@
-if (inputs.stream && require('isstream')(inputs.stream) !== true)
-  return exits.errorNotStream({error: "It's not a valid stream"});
+var stream = require('machinepack-stream');
 
-var MinifyStream = require('../lib/stream-transformer.js').simple()
-  , minify = require('html-minifier').minify;
+// Minify html
+stream.minify(ARGS).exec({
 
-try {
-  var mstream = new MinifyStream(minify);
-  return exits.success( inputs.stream ? inputs.stream.pipe(mstream) : mstream);
-} catch (err) { return exits.error(err); }
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    errorNotStream: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

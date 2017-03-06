@@ -1,11 +1,15 @@
-var parse = require('csv-parse');
-var options = {};
-if (inputs.hasHeaderRow) {options.columns = true;}
-options.auto_parse = true;
-options.ltrim = true;
-options.rtrim = true;
-options.skip_empty_lines = true;
-parse(inputs.csvData, options, function(err, output) {
-  if (err) {return exits.error(err);}
-  return exits.success(output);
+var csv = require('machinepack-csv');
+
+// Parse comma-separated value data
+csv.parseCsv(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

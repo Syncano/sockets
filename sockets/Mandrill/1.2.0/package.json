@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-mandrill",
+    "description": "Machines for talking to the Mandrill API.",
+    "version": "1.2.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-mandrill": "1.2.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Mandrill",
+        "Mandrill-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

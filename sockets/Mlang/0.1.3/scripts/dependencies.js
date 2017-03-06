@@ -1,17 +1,15 @@
-var meta = require('machine').build(require('./meta'));
+var mlang = require('machinepack-mlang');
 
-/**
- * Module Dependencies
- */
+// Extract dependencies from MLang program
+mlang.dependencies(ARGS).exec({
 
-var program = inputs.program;
-// Run
-return meta({
-  program: program
-}, function(error, results) {
-  if (error){
-    return exits.error(error);
-  }
-  // Return an object containing myLength and the secretCode
-  return exits.success(results.dependencies);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

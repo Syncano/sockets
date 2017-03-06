@@ -2,9 +2,71 @@ name: Urlbox
 description: This machinepack is a screen capture service.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   get-url:
     POST:
       file: scripts/get-url.js
       description: Get's the URL from URLBOX.io to display the screen capture.
+      parameters:
+        apiKey:
+          example: ODUfdisauPUdufsoUSF
+          description: Your URLBOX.io API key.
+          required: true
+          type: string
+        secret:
+          example: ODUfdisauPUdufsoUSF
+          description: Your URLBOX.io secret.
+          required: true
+          type: string
+        url:
+          example: 'http://www.apple.com'
+          description: HTTP Encoded target url
+          required: true
+          type: string
+        width:
+          example: 1280
+          description: Viewport width of the browser.  Default 1280.
+          required: false
+          type: number
+        height:
+          example: 1024
+          description: Viewport of the height of the browser.  Default 1024.
+          required: false
+          type: number
+        thumb_width:
+          example: 200
+          description: 'Width of the generated thumbnail, leave off for full-size screen'
+          required: false
+          type: number
+        user_agent:
+          example: >-
+            Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36
+            (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36
+          description: The user-agent string used to emulate a particular client
+          required: false
+          type: string
+        wrap:
+          example: true
+          description: >-
+            Optionally place a screenshot inside an image of an iPhone or other
+            device.
+          required: false
+          type: boolean
+        delay:
+          example: 1000
+          description: >-
+            Amount of time to wait in milliseconds before urlbox takes the
+            screen capture.
+          required: false
+          type: number
+        full_page:
+          example: true
+          description: specify whether to capture the full-length of the website.
+          required: true
+          type: boolean
+        force:
+          example: false
+          description: Take a fresh screenshot instead of getting a cached version.
+          required: false
+          type: boolean

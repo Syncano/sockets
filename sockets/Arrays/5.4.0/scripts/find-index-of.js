@@ -1,10 +1,19 @@
-var _ = require('lodash');
-var item = _.find(inputs.array, inputs.criteria);
-if (!item) {
-  return exits.notFound();
-}
-var index = _.indexOf(inputs.array, item);
-if (index === -1 ) {
-  return exits.notFound();
-}
-return exits.success(index);
+var arrays = require('machinepack-arrays');
+
+// Look up the first occurrence of the dictionary matching the specified criteria and return its array index.
+arrays.findIndexOf(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    // The index where the array item is located.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

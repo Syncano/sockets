@@ -2,13 +2,50 @@ name: Idme
 description: Communicate with ID.me to authorize and receive tokens and user information
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   get-auth-token:
     POST:
       file: scripts/get-auth-token.js
       description: Retrieve access_token from using ID.me
+      parameters:
+        code:
+          description: the exact code that you received during the authorization request.
+          required: true
+          example: ''
+          type: string
+        client_id:
+          description: your client id
+          required: true
+          example: ''
+          type: string
+        client_secret:
+          description: your client secret
+          required: true
+          example: ''
+          type: string
+        redirect_uri:
+          description: your redirect URI
+          required: true
+          example: ''
+          type: string
+        grant_type:
+          description: The only supported value is currently `authorization_code`
+          required: false
+          example: ''
+          type: string
   get-profile:
     POST:
       file: scripts/get-profile.js
       description: Return profile information for a specified end-point
+      parameters:
+        access_token:
+          description: Access code requested from and OAuth response. See Get-Auth-Token
+          example: 3b57cc74ec7f1cf3e32527b1fa47e842a00755d643695a3dcbd0ee85885adb5c
+          required: true
+          type: string
+        end_point:
+          description: The specified group affiliation
+          example: 'military,student,responder,teacher,government'
+          required: true
+          type: string

@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-arrays",
+    "description": "Work with arrays.",
+    "version": "5.4.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-arrays": "5.4.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Arrays",
+        "Arrays-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

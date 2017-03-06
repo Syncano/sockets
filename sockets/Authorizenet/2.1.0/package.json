@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-authorizenet",
+    "description": "a machinepack for authorize-net version 1.0.6 (nov 2 2015)",
+    "version": "2.1.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-authorizenet": "2.1.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Authorizenet",
+        "Authorizenet-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

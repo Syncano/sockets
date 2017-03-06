@@ -1,28 +1,15 @@
-// Dependencies
-var AWS = require('aws-sdk');
+var aws = require('machinepack-aws');
 
-var config = {
-  accessKeyId: inputs.accessKeyId,
-  secretAccessKey: inputs.secretAccessKey,
-  region: inputs.region || 'us-west-2',
-  apiVersion: inputs.apiVersion || 'latest'
-};
+// Return a list of tasks for a specified cluster. 
+aws.ecsListTasks(ARGS).exec({
 
-// Construct the ECS Service
-var ecs = new AWS.ECS(config);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-var params = {
-  cluster: inputs.cluster || 'default'
-};
-
-if(inputs.family) params.family = inputs.family;
-if(inputs.nextToken) params.nextToken = inputs.nextToken;
-if(inputs.maxResults) params.maxResults = inputs.maxResults;
-
-ecs.listTasks(params, function(err, data) {
-  if(err) {
-    return exits.error(err);
-  }
-
-  exits.success(data);
 });

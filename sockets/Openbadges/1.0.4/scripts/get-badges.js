@@ -1,23 +1,19 @@
-/**
- * Module Dependencies
- */
-var Http = require('machinepack-http');
+var openbadges = require('machinepack-openbadges');
 
-Http.sendHttpRequest({
-  url: '/displayer/'+inputs.uid+'/group/'+inputs.gid+'.json',
-  baseUrl: 'http://backpack.openbadges.org',
-  method: 'get',
-  params: {},
-  formData: false,
-  headers: {},
-}).exec({
-  error: function (err){
-    return exits.error(err);
-  },
-  notFound: function (result){
-    return exits.badgesNotFound(result);
-  },
-  success: function (result){
-    return exits.success(result);
-  }
+// Querying for Badges in a Group
+openbadges.getBadges(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    badgesNotFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

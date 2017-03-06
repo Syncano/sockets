@@ -1,11 +1,15 @@
-var util = require('util');
-var isError = require('lodash.iserror');
-var isObject = require('lodash.isobject');
+var util = require('machinepack-util');
 
-if (isError(inputs.value)) {
-  return exits.success(util.inspect(inputs.value.stack));
-}
-if (isObject(inputs.value)) {
-  return exits.success(util.inspect(inputs.value, {depth: null}));
-}
-return exits.success(util.inspect(inputs.value));
+// Pretty-print any value into a more-readable string.
+util.inspect(ARGS).exec({
+
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

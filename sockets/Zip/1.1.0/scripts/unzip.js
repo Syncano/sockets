@@ -1,27 +1,15 @@
-var path = require('path');
-var fs = require('fs');
-var unzip = require('unzip');
-var Filesystem = require('machinepack-fs');
+var zip = require('machinepack-zip');
 
-var sourceArchive = path.resolve(inputs.source);
-var destinationDir = path.resolve(inputs.destination);
+// Unzip the specified .zip file and write the decompressed files/directories as contents of the specified destination directory.
+zip.unzip(ARGS).exec({
 
-// Ensure the parent directory exists.
-Filesystem.ensureDir({
-  dir: destinationDir
-}).exec({
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-  // An unexpected error occurred.
-  error: exits.error,
-
-  // OK.
-  success: function() {
-
-    var srcStream = fs.createReadStream(sourceArchive);
-    var drainStream = unzip.Extract({ path: destinationDir });
-    drainStream.once('close', function (){ return exits.success(); });
-    drainStream.once('error', function (err){ return exits.error(err); });
-    srcStream.once('error', function (err){ return exits.error(err); });
-    srcStream.pipe(drainStream);
-  }
 });

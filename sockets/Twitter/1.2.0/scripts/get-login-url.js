@@ -1,23 +1,15 @@
-var request = require('request');
-var qs = require('querystring');
+var twitter = require('machinepack-twitter');
 
-request.post({
-  url: 'https://api.twitter.com/oauth/request_token',
-  oauth: {
-    callback: inputs.callbackUrl,
-    consumer_key: inputs.consumerKey,
-    consumer_secret: inputs.consumerSecret
-  }
-}, function(err, response, body) {
-  if (err) {
-    return exits.error(err);
-  }
-  if (response.statusCode > 299 || response.statusCode < 200) {
-    return exits.error(response.statusCode);
-  }
+// Get the URL on twitter.com that a user should visit to allow/deny the specified Twitter Developer app (i.e. your app).
+twitter.getLoginUrl(ARGS).exec({
 
-  var access_token = qs.parse(body);
-
-  return exits.success('https://twitter.com/oauth/authenticate?oauth_token=' + access_token.oauth_token);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
 });

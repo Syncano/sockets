@@ -1,20 +1,19 @@
-var request = require('superagent');
+var omdb = require('machinepack-omdb');
 
-request
-.get('http://www.omdbapi.com/')
-.query({ 't': inputs.t,
-         'y': inputs.y,
-         'plot':inputs.plot || "full",
-         'r': inputs.r  || "json"
-})
-.set('Accept', 'application/json')
-.end(function(err, data){
-    if(!err){
-      return  exits.success(data.body)
-    }else{
-      return exits.notFound(err)
+// Get information about movies and tv shows 
+omdb.searchByTitle(ARGS).exec({
+
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     }
-})
-.on('error', function(err){
-  return exits.error(err)
-})
+
+});

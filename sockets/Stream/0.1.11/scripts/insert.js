@@ -1,41 +1,19 @@
-if (inputs.stream && require('isstream')(inputs.stream) !== true)
-  return exits.errorNotStream({error: "It's not a valid stream"});
+var stream = require('machinepack-stream');
 
-var Transform = require('stream').Transform
-  , util = require('util');
+// Insert content before or after a string
+stream.insert(ARGS).exec({
 
-var InsertStream = function() {
-  if ( !(this instanceof InsertStream) )
-    return( new InsertStream() );
-  Transform.call(this, {objectMode: true});
-};
-util.inherits(InsertStream, Transform);
-
-var transformer = function(str, val, by, before){
-  var res = str+"";
-  if (util.isArray(val)) {
-    for(var i=0,len=val.length; i<len; i++){
-      res = res.split(val[i]).join(
-        before ? by + val[i] : val[i] + by
-      );
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    errorNotStream: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
-  } else
-    res = res.split(val).join(before ? by + val : val + by);
-  return res;
-}
 
-InsertStream.prototype._transform = function(chunk, encoding, callback) {
-  var str = chunk.toString();
-  if (inputs.before)
-    str = transformer(str, inputs.before, inputs.text, true );
-  if (inputs.after)
-    str = transformer(str, inputs.after, inputs.text );
-  this.push(str);
-  callback();
-};
-
-try {
-  return exits.success( inputs.stream ? inputs.stream.pipe(new InsertStream()) : new InsertStream())
-} catch (err) {
-  return exits.error(err);
-}
+});

@@ -1,13 +1,15 @@
-var util = require('util');
+var facebook = require('machinepack-facebook');
 
-inputs.permissions = inputs.permissions || ['email', 'public_profile', 'user_friends'];
+// Get the URL on facebook.com that a user should visit to allow/deny the specified Facebook Developer app (i.e. your app).
+facebook.getLoginUrl(ARGS).exec({
 
-try {
-  return exits.success(util.format(
-    'https://www.facebook.com/dialog/oauth?client_id=%s&redirect_uri=%s&scope=%s',
-    inputs.appId, inputs.callbackUrl, inputs.permissions.join(',')
-  ));
-}
-catch(e) {
-  return exits.error(e);
-}
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

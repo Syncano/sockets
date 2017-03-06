@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-mailgun",
+    "description": "Machines for the Mailgun API.",
+    "version": "0.6.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-mailgun": "0.6.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Mailgun",
+        "Mailgun-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

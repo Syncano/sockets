@@ -1,23 +1,15 @@
-var cliPath = require('path').resolve(__dirname, '../node_modules/azure-cli/bin/azure');
-var scripty = require('azure-scripty');
+var azure = require('machinepack-azure');
 
-var command = {
-  cmd: 'account list'
-};
+// Sets the deployment credntials of an Azure website
+azure.listAzureAccounts(ARGS).exec({
 
-scripty.invoke(command, function (err, subscriptions) {
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-  if(err){
-    return exits.error(err);
-  }
-
-  var output = [];
-  for(var i in subscriptions){
-    output.push({
-      id: subscriptions[i].id,
-      name: subscriptions[i].name
-    });
-  }
-
-  return exits.success(output);
 });

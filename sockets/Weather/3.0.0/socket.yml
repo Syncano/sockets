@@ -2,15 +2,91 @@ name: Weather
 description: Communicate with the forecast.io API to get weather forecasts.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   get-current-forecast:
     POST:
       file: scripts/get-current-forecast.js
       description: Get the current weather at a specific latitude and longitude.
+      parameters:
+        lat:
+          example: '42.3507282'
+          description: The latitude of the location you are trying to forecast.
+          required: true
+          type: string
+        lng:
+          example: '-71.13212709999999'
+          description: The longitude of the location you are trying to forecast.
+          required: true
+          type: string
+        options:
+          example:
+            units: si
+            exclude:
+              - currently
+              - minutely
+              - hourly
+              - daily
+              - alerts
+              - flags
+            extend: hourly
+            lang: es
+          description: >-
+            An object with keys representing the query parameters accepted by
+            the forecast.io API. (https://developer.forecast.io/docs/v2#options)
+          required: false
+          type: object
+        apiKey:
+          example: ab1d526c3c074c2a48c25476c19a9d0a
+          description: This is your Forecast.io API Key.
+          required: true
+          type: string
   get-forecast:
     POST:
       file: scripts/get-forecast.js
       description: >-
         Retrieves the forecast of a specific latitude and longitude at a
         specific time
+      parameters:
+        lat:
+          example: '42.3507282'
+          description: The latitude of the location you are trying to forecast.
+          required: true
+          type: string
+        lng:
+          example: '-71.13212709999999'
+          description: The longitude of the location you are trying to forecast.
+          required: true
+          type: string
+        time:
+          example: '2013-05-06T12:00:00-0400'
+          description: 'Any valid Moment.js time (http://momentjs.com)'
+          required: true
+          type: string
+        timeFormat:
+          example: YYYY-MM-DD
+          description: 'Any valid Moment.js time format (http://momentjs.com)'
+          required: true
+          type: string
+        options:
+          example:
+            units: si
+            exclude:
+              - currently
+              - minutely
+              - hourly
+              - daily
+              - alerts
+              - flags
+            extend: hourly
+            lang: es
+          description: >-
+            An object with keys representing the query parameters accepted by
+            the forecast.io API. (https://developer.forecast.io/docs/v2#options)
+          required: false
+          type: object
+        apiKey:
+          example: ab1d526c3c074c2a48c25476c19a9d0a
+          description: This is your Forecast.io API Key.
+          required: true
+          type: string

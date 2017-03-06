@@ -1,21 +1,35 @@
-var FullContact = require('fullcontact');
-var fullcontact = new FullContact(inputs.apiKey);
+var fullcontact = require('machinepack-fullcontact');
 
-fullcontact.person.phone(inputs.phone, function(err, data) {
-  if (err) {
-    if (404 === err.status) {
-      return exits.wait24Hours(err);
-    } else if (400 === err.status) {
-      return exits.malformedRequest(err);
-    } else if (403 === err.status) {
-      return exits.apiKeyProblem(err);
-    } else if (422 === err.status) {
-      return exits.queryParamProblem(err);
+// Retrieves contact information by phone number.
+fullcontact.getPersonFromPhone(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    malformedRequest: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    apiKeyProblem: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    queryParamProblem: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    queued: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    wait24Hours: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
-    return exits.error(err);
-  }
-  if (202 === data.status) {
-    return exits.queued(data);
-  }
-  return exits.success(data);
+
 });

@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-saneauth",
+    "description": "A Sane Stack Addon giving you basic OAauth2-JWT authentication for the full stack",
+    "version": "0.3.3",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "sane-auth": "0.3.3"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-SaneAuth",
+        "SaneAuth-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

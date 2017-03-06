@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-socketio",
+    "description": "Publish messages to rooms and/or sockets and more using Sails & Socket.io.",
+    "version": "1.2.1",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-sockets": "1.2.1"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Socketio",
+        "Socketio-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

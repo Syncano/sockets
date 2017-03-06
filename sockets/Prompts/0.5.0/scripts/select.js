@@ -1,27 +1,15 @@
-var inquirer = require('inquirer');
+var prompts = require('machinepack-prompts');
 
-var spinlock;
+// Prompt the command-line user to make a choice from a list of options.
+prompts.select(ARGS).exec({
 
-// Since inquirer doesn't allow us to tap into this,
-// we'll handle it here with the help of a spin-lock to ensure
-// that no issues arise.
-//
-// ...but.... this doesn't work yet.
-//////////////////////////////////////////////////////////////////////////////
-// process.on( 'SIGINT', function (){
-//   if (spinlock) return;
-//   spinlock = true;
-//   return exits.sigint();
-// });
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-inquirer.prompt([{
-  type: 'list',
-  name: 'choice',
-  message: inputs.message || 'Please choose one of the following.',
-  paginated: inputs.paginated || false,
-  choices: inputs.choices
-}], function(answers) {
-  if (spinlock) return;
-  spinlock = true;
-  return exits.success(answers.choice);
 });

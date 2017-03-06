@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-localsailsapps",
+    "description": "Work with a local Sails.js app.",
+    "version": "1.0.1",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-local-sails-apps": "1.0.1"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-LocalSailsApps",
+        "LocalSailsApps-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

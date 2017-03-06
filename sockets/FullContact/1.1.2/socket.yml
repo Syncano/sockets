@@ -2,27 +2,213 @@ name: FullContact
 description: Interact with the FullContact.com API
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   get-person-from-email:
     POST:
       file: scripts/get-person-from-email.js
       description: Retrieves contact information by e-mail address.
+      parameters:
+        apiKey:
+          required: true
+          example: '00011122233344455'
+          description: Your FullContact API key
+          whereToGet:
+            url: 'https://www.fullcontact.com/developer/'
+            description: ''
+            extendedDescription: ''
+          type: string
+        email:
+          required: true
+          example: jane@example.com
+          description: The email address of the person you are looking up
+          type: string
+        queue:
+          example: '1'
+          description: >-
+            Using this parameter notifies FullContact that the email address in
+            question will be called later. It allows the API to make sure it has
+            indexed the email address prior to the application needing it. When
+            using this parameter, it will always return a response code of 202.
+          type: string
+        webhookUrl:
+          example: 'https://mydomain.com/callback/listener'
+          description: The callback url you'd like the data to be posted back to.
+          extendedDescription: >-
+            Read the webhook flow diagram:
+            https://www.fullcontact.com/developer/docs/person/#webhook-flow-diagram
+          type: string
+        webhookId:
+          example: myId
+          description: >-
+            You can enter anything you want here, we will just pass it back in
+            the response. This allows you to track the webhook if you wish.
+          type: string
+        webhookBody:
+          example: json
+          description: >-
+            You can specify that the payload of the webhook response be retuned
+            as a JSON document instead of a URL-encoded form using the
+            webhookBody=json query parameter. A JSON document will be the format
+            regardless of whether the initial request to v2/Person was to the
+            .json, .xml or .html version of the person endpoint.
+          type: string
   get-person-from-twitter:
     POST:
       file: scripts/get-person-from-twitter.js
       description: Retrieves contact information by Twitter username.
+      parameters:
+        apiKey:
+          required: true
+          example: '00011122233344455'
+          description: Your FullContact API key
+          whereToGet:
+            url: 'https://www.fullcontact.com/developer/'
+            description: >-
+              Sign up for a free FullContact developer account here:
+              https://www.fullcontact.com/developer/try-fullcontact/
+            extendedDescription: ''
+          type: string
+        twitter:
+          required: true
+          example: janedoe
+          description: The twitter name fo the person being looked up
+          type: string
+        queue:
+          example: '1'
+          description: >-
+            Using this parameter notifies FullContact that the email address in
+            question will be called later. It allows the API to make sure it has
+            indexed the email address prior to the application needing it. When
+            using this parameter, it will always return a response code of 202.
+          type: string
+        webhookUrl:
+          example: 'https://mydomain.com/callback/listener'
+          description: The callback url you'd like the data to be posted back to.
+          extendedDescription: >-
+            Read the webhook flow diagram:
+            https://www.fullcontact.com/developer/docs/person/#webhook-flow-diagram
+          type: string
+        webhookId:
+          example: myId
+          description: >-
+            You can enter anything you want here, we will just pass it back in
+            the response. This allows you to track the webhook if you wish.
+          type: string
   get-person-from-phone:
     POST:
       file: scripts/get-person-from-phone.js
       description: Retrieves contact information by phone number.
+      parameters:
+        apiKey:
+          required: true
+          example: '00011122233344455'
+          description: Your FullContact API key
+          whereToGet:
+            url: 'https://www.fullcontact.com/developer/'
+            description: >-
+              Sign up for a free FullContact developer account here:
+              https://www.fullcontact.com/developer/try-fullcontact/
+            extendedDescription: ''
+          type: string
+        phone:
+          required: true
+          example: 123-555-4444
+          description: The phone number of the person you are looking up
+          type: string
   get-person-from-email-md5:
     POST:
       file: scripts/get-person-from-email-md5.js
       description: Retrieves contact information by an MD5 of an email address
+      parameters:
+        apiKey:
+          required: true
+          example: '00011122233344455'
+          description: Your FullContact API key
+          whereToGet:
+            url: 'https://www.fullcontact.com/developer/'
+            description: ''
+            extendedDescription: ''
+          type: string
+        emailMD5:
+          required: true
+          example: a4cb1b07d68a3436a190e1559586ae3c
+          description: >-
+            Allows you to query by an MD5-hashed email address. Match rates for
+            emailMD5 lookups will be slightly lower than those returned via the
+            standard email parameter.
+          type: string
+        queue:
+          example: '1'
+          description: >-
+            Using this parameter notifies FullContact that the email address in
+            question will be called later. It allows the API to make sure it has
+            indexed the email address prior to the application needing it. When
+            using this parameter, it will always return a response code of 202.
+          type: string
+        webhookUrl:
+          example: 'https://mydomain.com/callback/listener'
+          description: The callback url you'd like the data to be posted back to.
+          extendedDescription: >-
+            Read the webhook flow diagram:
+            https://www.fullcontact.com/developer/docs/person/#webhook-flow-diagram
+          type: string
+        webhookId:
+          example: myId
+          description: >-
+            You can enter anything you want here, we will just pass it back in
+            the response. This allows you to track the webhook if you wish.
+          type: string
   get-person-from-facebook:
     POST:
       file: scripts/get-person-from-facebook.js
       description: >-
         Retrieve more information about a specific person by facebook username
         or facebook ID
+      parameters:
+        apiKey:
+          required: true
+          example: '00011122233344455'
+          description: Your FullContact API key
+          whereToGet:
+            url: 'https://www.fullcontact.com/developer/'
+            description: >-
+              Sign up for a free FullContact developer account here:
+              https://www.fullcontact.com/developer/try-fullcontact/
+            extendedDescription: ''
+          type: string
+        username:
+          example: janedoe
+          description: The facebook name of the person being looked up
+          extendedDescription: >-
+            facebookUsername takes precedence over facebookId if both are
+            specified.
+          type: string
+        id:
+          example: '123456789'
+          description: The facebook ID of the person being looked up
+          extendedDescription: >-
+            facebookUsername takes precedence over facebookId if both are
+            specified.
+          type: string
+        queue:
+          example: '1'
+          description: >-
+            Using this parameter notifies FullContact that the email address in
+            question will be called later. It allows the API to make sure it has
+            indexed the email address prior to the application needing it. When
+            using this parameter, it will always return a response code of 202.
+          type: string
+        webhookUrl:
+          example: 'https://mydomain.com/callback/listener'
+          description: The callback url you'd like the data to be posted back to.
+          extendedDescription: >-
+            Read the webhook flow diagram:
+            https://www.fullcontact.com/developer/docs/person/#webhook-flow-diagram
+          type: string
+        webhookId:
+          example: myId
+          description: >-
+            You can enter anything you want here, we will just pass it back in
+            the response. This allows you to track the webhook if you wish.
+          type: string

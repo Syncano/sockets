@@ -2,9 +2,44 @@ name: JWTAuth
 description: Handle JSON Web Token authentication requests.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   verify-from-header:
     POST:
       file: scripts/verify-from-header.js
       description: Verify a token that is provided in a request header.
+      parameters:
+        header:
+          friendlyName: Header Name
+          example: Authorization
+          description: The name/key of the header from which to get the token string.
+          required: true
+          type: string
+        secret:
+          friendlyName: Secret
+          example: abc123jdhs3h4js
+          description: Secret used to decode the JSON web token.
+          required: true
+          type: string
+        schema:
+          friendlyName: Schema
+          typeclass: '*'
+          description: >-
+            Example of expected token object to make available in output. Can be
+            example object or a list/array of parameter names.
+          type: '*'
+        headerPrefix:
+          friendlyName: Prefix
+          example: 'Bearer '
+          description: >-
+            Prefix attached to token within header value. This is only nessesary
+            if you have set a prefix within the request.
+          type: string
+        algorithm:
+          friendlyName: Algorithm
+          example: HS256
+          description: >-
+            The type of algorithm that is used to decode the JWT. Options:
+            HS256, HS384, HS512 and RS256. Make sure to use the same algorithm
+            that you used to encode the JWT.
+          type: string

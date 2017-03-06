@@ -2,13 +2,122 @@ name: SmartyStreets
 description: Interact with the SmartyStreets.com address API
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   verify-address:
     POST:
       file: scripts/verify-address.js
       description: Verify one or more addresses using the SmartyStreets API
+      parameters:
+        authId:
+          required: true
+          example: ffffffff-1111-37f9-aaa2-abcdefghijkl
+          description: Your SmartyStreet Auth ID
+          whereToGet:
+            url: 'https://smartystreets.com/account#keys'
+            description: ''
+            extendedDescription: ''
+          type: string
+        authToken:
+          required: true
+          example: ljadfolaj2lkjasdiosadfhlksdalkdasjfsdlkfjklsjf8yoihaksdfh/USDF
+          description: Your SmartyStreet Auth Token
+          whereToGet:
+            url: 'https://smartystreets.com/account#keys'
+            description: ''
+            extendedDescription: ''
+          type: string
+        input_id:
+          example: address-123
+          description: >-
+            A unique identifier for this address used in your application; this
+            field will be copied into the output.
+          type: string
+        street:
+          required: true
+          example: 123 Main Street
+          description: 'The street line of the address, or an entire address'
+          type: string
+        street2:
+          example: North
+          description: Any extra address information
+          type: string
+        secondary:
+          example: Suite 2A
+          description: 'Apartment, suite, or office number'
+          type: string
+        city:
+          example: Doylestown
+          description: The city name
+          type: string
+        state:
+          example: PA or Pennsylvania
+          description: The state name or abbreviation
+          type: string
+        zipcode:
+          example: '18901'
+          description: The ZIP Code
+          type: string
+        lastline:
+          example: 'Doylestown, PA 18901'
+          description: 'City, state, and ZIP Code combined'
+          type: string
+        addressee:
+          example: Jane Doe
+          description: 'The name of the recipient, firm, or company at this address'
+          type: string
+        urbanization:
+          example: San Juan
+          description: Only used in Puerto Rico
+          type: string
+        candidates:
+          example: '1, 5, or 10 (max value)'
+          description: >-
+            The maximum number of valid addresses returned when the input is
+            ambiguous
+          extendedDescription: The max value is 10.
+          type: string
   verify-city-state-zip:
     POST:
       file: scripts/verify-city-state-zip.js
       description: 'Look up and verify city, state, and ZIP Code combinations'
+      parameters:
+        authId:
+          required: true
+          example: ffffffff-1111-37f9-aaa2-abcdefghijkl
+          description: Your SmartyStreet Auth ID
+          whereToGet:
+            url: 'https://smartystreets.com/account#keys'
+            description: ''
+            extendedDescription: ''
+          type: string
+        authToken:
+          required: true
+          example: ljadfolaj2lkjasdiosadfhlksdalkdasjfsdlkfjklsjf8yoihaksdfh/USDF
+          description: Your SmartyStreet Auth Token
+          whereToGet:
+            url: 'https://smartystreets.com/account#keys'
+            description: ''
+            extendedDescription: ''
+          type: string
+        city:
+          example: Doylestown
+          description: The city name
+          extendedDescription: >-
+            You must provide a ZIP code and/or a city/state combination.  You
+            cannot provide city alone.
+          type: string
+        state:
+          example: PA or Pennsylvania
+          description: The state name or abbreviation
+          type: string
+        zipcode:
+          example: '18901'
+          description: The 5-digit ZIP Code
+          type: string
+        input_id:
+          example: address-123
+          description: >-
+            A unique identifier for this address used in your application; this
+            field will be copied into the output.
+          type: string

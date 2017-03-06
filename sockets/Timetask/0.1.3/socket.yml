@@ -2,21 +2,123 @@ name: Timetask
 description: 'Communicate with the Timetask API to get times, projects, etc.'
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   get:
     POST:
       file: scripts/get.js
       description: 'List all or one (project, client, person, ...)'
+      parameters:
+        account:
+          example: myaccount
+          description: account name
+          required: true
+          type: string
+        token:
+          example: gfg12DF
+          description: your token
+          required: true
+          type: string
+        model:
+          example: project
+          description: name of the model
+          required: true
+          type: string
+        id:
+          example: 125031
+          description: id of the model
+          required: false
+          type: number
+        params:
+          typeclass: dictionary
+          description: params object for filtering
+          required: false
+          type: dictionary
   add:
     POST:
       file: scripts/add.js
       description: 'Add (project, task, time,...)'
+      parameters:
+        account:
+          example: myaccount
+          description: account name
+          required: true
+          type: string
+        token:
+          example: gfg12DF
+          description: your token
+          required: true
+          type: string
+        model:
+          example: project
+          description: name of the model
+          required: true
+          type: string
+        params:
+          example:
+            name: Mon Atelier
+          description: params object
+          required: true
+          type: object
   remove:
     POST:
       file: scripts/remove.js
       description: 'Remove (project, task, time,...)'
+      parameters:
+        account:
+          example: myaccount
+          description: account name
+          required: true
+          type: string
+        token:
+          example: gfg12DF
+          description: your token
+          required: true
+          type: string
+        model:
+          example: project
+          description: name of the model
+          required: true
+          type: string
+        params:
+          example:
+            name: Mon Atelier
+          description: params object
+          required: true
+          type: object
+        id:
+          example: 125031
+          description: id of the model
+          required: true
+          type: number
   update:
     POST:
       file: scripts/update.js
       description: 'Update (project, task, time,...)'
+      parameters:
+        account:
+          example: myaccount
+          description: account name
+          required: true
+          type: string
+        token:
+          example: gfg12DF
+          description: your token
+          required: true
+          type: string
+        model:
+          example: project
+          description: name of the model
+          required: true
+          type: string
+        params:
+          example:
+            name: Mon Atelier
+          description: params object
+          required: true
+          type: object
+        id:
+          example: 125031
+          description: id of the model
+          required: true
+          type: number

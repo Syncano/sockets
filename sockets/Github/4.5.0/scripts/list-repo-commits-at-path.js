@@ -1,26 +1,19 @@
-var Github = new require('github');
+var github = require('machinepack-github');
 
-try {
-  var github = new Github({
-    version: '3.0.0',
-  });
+// Fetch recent commits from a remote GitHub repository within the specifed path.
+github.listRepoCommitsAtPath(ARGS).exec({
 
-  github.repos.getCommits({
-    repo: inputs.repo,
-    user: inputs.owner,
-    path: inputs.path
-  }, function(err, data) {
-    if (err) {
-      if (typeof err === 'object' && +err.code === 400) {
-        err.status = 400;
-        return exits.badRequest(err);
-      }
-      return exits.error(err);
+    
+    badRequest: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
 
-    return exits.success(data);
-  });
-}
-catch (e) {
-  return exits.error(e);
-}
+});

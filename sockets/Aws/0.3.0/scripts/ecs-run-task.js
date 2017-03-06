@@ -1,26 +1,15 @@
-// Dependencies
-var AWS = require('aws-sdk');
+var aws = require('machinepack-aws');
 
-var config = {
-  accessKeyId: inputs.accessKeyId,
-  secretAccessKey: inputs.secretAccessKey,
-  region: inputs.region || 'us-west-2',
-  apiVersion: inputs.apiVersion || 'latest'
-};
+// Start a task using random placement and the default Amazon ECS scheduler.
+aws.ecsRunTask(ARGS).exec({
 
-// Construct the ECS Service
-var ecs = new AWS.ECS(config);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-var params = {
-  taskDefinition: inputs.taskDefinition,
-  cluster: inputs.cluster || 'default',
-  count: inputs.count || 1
-};
-
-ecs.runTask(params, function(err, data) {
-  if(err) {
-    return exits.error(err);
-  }
-
-  exits.success(data);
 });

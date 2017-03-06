@@ -1,13 +1,15 @@
-var Machine = require('machine');
-var queryAll = Machine.build(require('./query-all'));
-queryAll({
-  query: inputs.query,
-  category: 'tv'
-}).exec({
-  error: function(error) {
-    return exits.error(error);
-  },
-  success: function(torrents) {
-    return exits.success(torrents);
-  }
-})
+var findtorrent = require('machinepack-findtorrent');
+
+// Find a torrent for a given show episode
+findtorrent.findEpisode(ARGS).exec({
+
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

@@ -1,20 +1,15 @@
-// Require the Firebase SDK
-var Firebase = require('firebase');
+var firebase = require('machinepack-firebase');
 
-// Get the root reference
-var rootRef = new Firebase(inputs.firebaseURL);
+// Write data to your Firebase instance with the Set method.
+firebase.setData(ARGS).exec({
 
-// If a child path is specified, get a reference to that data path
-var finalRef = inputs.child ? rootRef.child(inputs.child) : rootRef;
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-// Set the data at the path
-finalRef.set(inputs.write, function(error) {
-
-  // Handle errors
-  if (error) {
-    return exits.error(error);
-  }
-
-  // Return success
-  return exits.success();
 });

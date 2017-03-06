@@ -2,9 +2,25 @@ name: GoogleAPIsDeveloperFonts
 description: Work with google aPIs developer fonts.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   list:
     POST:
       file: scripts/list.js
       description: List Web Fonts
+      parameters:
+        key:
+          example: YOUR_API_KEY
+          description: Your API key
+          required: true
+          type: string
+        sort:
+          example: alpha
+          description: Enables sorting of the list
+          whereToGet:
+            url: 'https://developers.google.com/fonts/docs/developer_api'
+          type: string
+        fields:
+          example: 'items,kind'
+          description: Selector specifying which fields to include in a partial response.
+          type: string

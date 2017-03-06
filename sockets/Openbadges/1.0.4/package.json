@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-openbadges",
+    "description": "Communicate with the Mozilla Backpack API to get badges, collections.",
+    "version": "1.0.4",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-openbadges": "1.0.4"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Openbadges",
+        "Openbadges-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

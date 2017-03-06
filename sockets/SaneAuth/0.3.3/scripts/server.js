@@ -1,14 +1,15 @@
-/**
- * Module Dependencies
- */
+var sane-auth = require('sane-auth');
 
-// ...
+// Handle the addon logic for the sane backend
+sane-auth.server(ARGS).exec({
 
-// Return an object containing the commands to run by the generator
-return exits.success({
-  addNpmPackages: [
-    { name: 'bcrypt', target: '~0.8.2'},
-    { name: 'express-jwt', target: '~3.0.0'},
-    { name: 'jsonwebtoken', target: '~5.0.0'},
-  ]
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

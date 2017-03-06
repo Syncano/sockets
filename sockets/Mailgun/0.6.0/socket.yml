@@ -2,13 +2,157 @@ name: Mailgun
 description: Machines for the Mailgun API.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   send-plaintext-email:
     POST:
       file: scripts/send-plaintext-email.js
       description: Send a simple plaintext email.
+      parameters:
+        apiKey:
+          description: The API key of the Mailgun account to use.
+          example: key-3432afa32e9401482aba183c13f3
+          required: true
+          whereToGet:
+            url: 'https://mailgun.com/cp'
+            description: Copy the "API Key" in your Mailgun dashboard.
+            extendedDescription: >-
+              To retrieve your API key, you will first need to log in to your
+              Mailgun account, or sign up for one if you have not already done
+              so.
+          type: string
+        domain:
+          description: The Mailgun domain to use.
+          example: sandbox5f89931913a9ab31130131350101.mailgun.og
+          required: true
+          whereToGet:
+            url: 'https://mailgun.com/cp'
+            description: >-
+              Copy a domain from either "Mailgun Subdomains" or "Custom Domains"
+              in your Mailgun dashboard.
+            extendedDescription: >-
+              You will first need to log in to your Mailgun account, or sign up
+              for one if you have not already done so.
+          type: string
+        toEmail:
+          friendlyName: To (email)
+          example: jane@example.com
+          description: Email address of the primary recipient.
+          required: true
+          type: string
+        toName:
+          friendlyName: To (name)
+          example: Jane Doe
+          description: Full name of the primary recipient.
+          extendedDescription: 'If left blank, defaults to the recipient''s email address.'
+          type: string
+        subject:
+          friendlyName: Subject
+          description: Subject line for the email.
+          example: 'Welcome, Jane!'
+          type: string
+        message:
+          friendlyName: Message
+          description: The plaintext body of the email.
+          example: >-
+            Jane,
+
+            Thanks for joining our community.  If you have any questions, please
+            don't hesitate to send them our way.  Feel free to reply to this
+            email directly.
+
+
+            Sincerely,
+
+            The Management
+          type: string
+        fromEmail:
+          friendlyName: From (email)
+          description: Email address of the sender.
+          example: harold@example.enterprise
+          type: string
+        fromName:
+          friendlyName: From (name)
+          description: Full name of the sender.
+          example: Harold Greaseworthy
+          type: string
   send-html-email:
     POST:
       file: scripts/send-html-email.js
       description: Send an html email.
+      parameters:
+        apiKey:
+          description: The API key of the Mailgun account to use.
+          example: key-3432afa32e9401482aba183c13f3
+          required: true
+          whereToGet:
+            url: 'https://mailgun.com/cp'
+            description: Copy the "API Key" in your Mailgun dashboard.
+            extendedDescription: >-
+              To retrieve your API key, you will first need to log in to your
+              Mailgun account, or sign up for one if you have not already done
+              so.
+          type: string
+        domain:
+          description: The Mailgun domain to use.
+          example: sandbox5f89931913a9ab31130131350101.mailgun.og
+          required: true
+          whereToGet:
+            url: 'https://mailgun.com/cp'
+            description: >-
+              Copy a domain from either "Mailgun Subdomains" or "Custom Domains"
+              in your Mailgun dashboard.
+            extendedDescription: >-
+              You will first need to log in to your Mailgun account, or sign up
+              for one if you have not already done so.
+          type: string
+        toEmail:
+          example: jane@example.com
+          description: Email address of the primary recipient.
+          required: true
+          type: string
+        toName:
+          example: Jane Doe
+          description: Full name of the primary recipient.
+          extendedDescription: 'If left blank, defaults to the recipient''s email address.'
+          type: string
+        subject:
+          description: Subject line for the email.
+          example: 'Welcome, Jane!'
+          type: string
+        textMessage:
+          description: The plaintext body of the email.
+          example: >-
+            Jane,
+
+            Thanks for joining our community.  If you have any questions, please
+            don't hesitate to send them our way.  Feel free to reply to this
+            email directly.
+
+
+            Sincerely,
+
+            The Management
+          type: string
+        htmlMessage:
+          description: The html body of the email.
+          example: >-
+            Jane,
+
+            Thanks for joining our community.  If you have any questions, please
+            don't hesitate to send them our way.  Feel free to reply to this
+            email directly.
+
+
+            Sincerely,
+
+            The Management
+          type: string
+        fromEmail:
+          description: Email address of the sender.
+          example: harold@example.enterprise
+          type: string
+        fromName:
+          description: Full name of the sender.
+          example: Harold Greaseworthy
+          type: string

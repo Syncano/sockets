@@ -1,35 +1,31 @@
-// Dependencies
-var _ = require('lodash');
-var Machines = require('machinepack-machines');
+var localmachinepacks = require('machinepack-localmachinepacks');
 
+// Run a machine in the specified local pack using the provided input values.
+localmachinepacks.runMachine(ARGS).exec({
 
-// Require the machinepack
-var mp;
-try {
-  mp = require(inputs.machinepackPath);
-}
-catch (e) {
-  return exits.error(e);
-}
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    unknownInput: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    invalidMachine: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    cantStringifyOutput: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-// Look up the appropriate machine instance
-var machineInstance;
-_.each(mp, function (_machine, methodName) {
-  if (_machine.identity === inputs.identity) {
-    machineInstance = _machine;
-  }
-});
-if (!machineInstance) {
-  return exits.notFound();
-}
-
-// Now run the instantiated machine using the provided input values.
-Machines.runInstantiatedMachine({
-  machineInstance: machineInstance,
-  inputValues: inputs.inputValues
-}).exec({
-  error: exits.error,
-  cantStringifyOutput: exits.cantStringifyOutput,
-  unknownInput: exits.unknownInput,
-  success: exits.success
 });
