@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-lrucache",
+    "description": "Work with lRUCache.",
+    "version": "1.0.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-lrucache": "1.0.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-LRUCache",
+        "LRUCache-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

@@ -2,13 +2,177 @@ name: JangoSMTP
 description: Send transactional emails through JangoSMTP.com service
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   send-html-email:
     POST:
       file: scripts/send-html-email.js
       description: Send an html email.
+      parameters:
+        username:
+          example: ''
+          description: Your JangoSMTP username
+          required: true
+          type: string
+        password:
+          example: ''
+          description: Your JangoSMTP password
+          required: true
+          type: string
+        toEmail:
+          example: jane@example.com
+          description: Email address of the primary recipient.
+          required: true
+          type: string
+        subject:
+          required: true
+          description: Subject line for the email.
+          example: 'Welcome, Jane!'
+          type: string
+        textMessage:
+          description: The plaintext body of the email.
+          example: >-
+            Jane,
+
+            Thanks for joining our community.  If you have any questions, please
+            don't hesitate to send them our way.  Feel free to reply to this
+            email directly.
+
+
+            Sincerely,
+
+            The Management
+          type: string
+        htmlMessage:
+          required: true
+          description: The html body of the email.
+          example: >-
+            Jane,
+
+            Thanks for joining our community.  If you have any questions, please
+            don't hesitate to send them our way.  Feel free to reply to this
+            email directly.
+
+
+            Sincerely,
+
+            The Management
+          type: string
+        fromEmail:
+          required: true
+          description: Email address of the sender.
+          example: harold@example.enterprise
+          type: string
+        fromName:
+          required: true
+          description: Full name of the sender.
+          example: Harold Greaseworthy
+          type: string
+        options:
+          description: Options string to set additional options.
+          extendedDescription: >-
+            Must be comma separated string of option=value pairs with these
+            options: TransactionalGroupID, ReplyTo, CC, BCC, CharacterSet,
+            Encoding, Priority, UseSystemMAILFROM, Receipt, Wrapping,
+            ClickTrack, OpenTrack, NoClickTrackText, Attachment1, Attachment2,
+            Attachment3, Attachment4, Attachment5, SkipUnsubCheck. For example,
+            an acceptable value for this parameter would be
+            "OpenTrack=True,ClickTrack=True,ReplyTo=john@hotmail.com".
+            TransactionalGroupID, if specified, must be the ID number assigned
+            to a Transactional Group that has been created under My Options of
+            the JangoMail account. UseSystemMAILFROM can be "True" or "False".
+            ReplyTo must be a valid e-mail address. CC must be a valid e-mail
+            address. BCC must be a valid e-mail address. Encoding must be "7
+            bit", "Base 64", or "Quoted Printable". CharacterSet must be one of
+            the official JangoMail character sets. Receipt must be "True" or
+            "False". Priority must be "Low", "Medium", or "High". Wrapping must
+            be an integer >= 0. ClickTrack must be "True" or "False". OpenTrack
+            must be "True" or "False". NoClickTrackText must be "True" or
+            "False". Attachment1 through 5 must be valid file names that have
+            already been uploaded to your account. SkipUnsubCheck, which
+            defaults to "False", can be set to "True" to avoid checking
+            recipients against your unsubscribe list.
+          example: 'OpenTrack=True,ClickTrack=True,ReplyTo=john@hotmail.com'
+          whereToGet:
+            url: >-
+              http://api.jangomail.com/help/html/655d20ca-2164-c483-fb21-d3d0ee049155.htm
+          type: string
   send-plaintext-email:
     POST:
       file: scripts/send-plaintext-email.js
       description: Send a simple plaintext email.
+      parameters:
+        username:
+          example: ''
+          description: Your JangoSMTP username
+          required: true
+          type: string
+        password:
+          example: ''
+          description: Your JangoSMTP password
+          required: true
+          type: string
+        toEmail:
+          example: jane@example.com
+          description: Email address of the primary recipient.
+          required: true
+          type: string
+        subject:
+          required: true
+          description: Subject line for the email.
+          example: 'Welcome, Jane!'
+          type: string
+        textMessage:
+          required: true
+          description: The plaintext body of the email.
+          example: >-
+            Jane,
+
+            Thanks for joining our community.  If you have any questions, please
+            don't hesitate to send them our way.  Feel free to reply to this
+            email directly.
+
+
+            Sincerely,
+
+            The Management
+          type: string
+        fromEmail:
+          required: true
+          description: Email address of the sender.
+          example: harold@example.enterprise
+          type: string
+        fromName:
+          required: true
+          description: Full name of the sender.
+          example: Harold Greaseworthy
+          type: string
+        options:
+          description: Options string to set additional options.
+          extendedDescription: >-
+            Must be comma separated string of option=value pairs with these
+            options: TransactionalGroupID, ReplyTo, CC, BCC, CharacterSet,
+            Encoding, Priority, UseSystemMAILFROM, Receipt, Wrapping,
+            ClickTrack, OpenTrack, NoClickTrackText, Attachment1, Attachment2,
+            Attachment3, Attachment4, Attachment5, SkipUnsubCheck. For example,
+            an acceptable value for this parameter would be
+            "OpenTrack=True,ClickTrack=True,ReplyTo=john@hotmail.com".
+            TransactionalGroupID, if specified, must be the ID number assigned
+            to a Transactional Group that has been created under My Options of
+            the JangoMail account. UseSystemMAILFROM can be "True" or "False".
+            ReplyTo must be a valid e-mail address. CC must be a valid e-mail
+            address. BCC must be a valid e-mail address. Encoding must be "7
+            bit", "Base 64", or "Quoted Printable". CharacterSet must be one of
+            the official JangoMail character sets. Receipt must be "True" or
+            "False". Priority must be "Low", "Medium", or "High". Wrapping must
+            be an integer >= 0. ClickTrack must be "True" or "False". OpenTrack
+            must be "True" or "False". NoClickTrackText must be "True" or
+            "False". Attachment1 through 5 must be valid file names that have
+            already been uploaded to your account. SkipUnsubCheck, which
+            defaults to "False", can be set to "True" to avoid checking
+            recipients against your unsubscribe list.
+          example: 'OpenTrack=True,ClickTrack=True,ReplyTo=john@hotmail.com'
+          whereToGet:
+            url: >-
+              http://api.jangomail.com/help/html/655d20ca-2164-c483-fb21-d3d0ee049155.htm
+          type: string

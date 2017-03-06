@@ -1,9 +1,15 @@
-var path = require('path');
-var Filesystem = require('machinepack-fs');
+var treeline-errors = require('machinepack-treeline-errors');
 
-Filesystem.read({
-  source: path.resolve(__dirname, '../html/broken-route.html')
-}).exec({
-  error: exits.error,
-  success: exits.success
+// Get the HTML for a page explaining that there was a compile error.
+treeline-errors.brokenRoutePage(ARGS).exec({
+
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
 });

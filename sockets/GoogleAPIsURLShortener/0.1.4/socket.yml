@@ -2,19 +2,99 @@ name: GoogleAPIsURLShortener
 description: API will have several methods to work with Google URL Shortener
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   url-get:
     POST:
       file: scripts/url-get.js
       description: Expand a short URL
+      parameters:
+        shortUrl:
+          example: 'http://goo.gl/xKbRu3'
+          description: Short URL
+          required: true
+          type: string
+        projection:
+          example: ANALYTICS_TOP_STRINGS
+          description: Additional information to return.
+          type: string
+        fields:
+          example: 'analytics,created,id,kind,longUrl,status'
+          description: Selector specifying which fields to include in a partial response
+          type: string
+        key:
+          example: AIzaSyAYVDlaoVs_GZw9JNvSclRWH_PEMKII6tc
+          description: Your api key
+          whereToGet:
+            url: >-
+              https://developers.google.com/url-shortener/v1/getting_started#APIKey
+          type: string
   url-insert:
     POST:
       file: scripts/url-insert.js
       description: Create a short URL from given long version
+      parameters:
+        longUrl:
+          example: 'https://www.google.com'
+          description: ''
+          type: string
+        analitics:
+          typeclass: dictionary
+          description: ''
+          type: dictionary
+        id:
+          example: someUniqId
+          description: >-
+            id is the short URL that expands to the long URL you provided. If
+            your request includes an auth token, then this URL will be unique.
+            If not, then it might be reused from a previous request to shorten
+            the same URL.
+          type: string
+        kind:
+          example: 'urlshortener#url'
+          description: 'https://developers.google.com/url-shortener/v1/url/insert'
+          type: string
+        status:
+          example: SomeStatus
+          description: 'https://developers.google.com/url-shortener/v1/url/insert'
+          type: string
+        created:
+          example: '1605-11-05T00:00:00.000Z'
+          description: 'https://developers.google.com/url-shortener/v1/url/insert'
+          type: string
+        fields:
+          example: 'analytics,created,id,kind,longUrl,status'
+          description: Selector specifying which fields to include in a partial response
+          type: string
+        key:
+          example: AIzaSyAYVDlaoVs_GZw9JNvSclRWH_PEMKII6tc
+          description: Your api key
+          whereToGet:
+            url: >-
+              https://developers.google.com/url-shortener/v1/getting_started#APIKey
+          type: string
   url-list:
     POST:
       file: scripts/url-list.js
       description: >-
         REQUIRED AUTH ! The url.list method retrieves a list of URLs shortened
         by the authenticated user.
+      parameters:
+        key:
+          example: AIzaSyAYVDlaoVs_GZw9JNvSclRWH_PEMKII6tc
+          description: Your API key
+          required: true
+          type: string
+        projection:
+          example: ANALYTICS_CLICKS
+          description: >-
+            Additional information to return. Supporting only (ANALYTICS_CLICKS
+            | FULL)
+          type: string
+        start-token:
+          example: nextPageToken
+          description: >-
+            The index into the paginated list (using the start-token query
+            parameter). To request successive pages of results, set the
+            start-token parameter to the current result's nextPageToken value.
+          type: string

@@ -1,22 +1,15 @@
-function (inputs,exits)
-{
-	var state = (Math.random() + 1).toString(36).substring(7);
-	var util = require('util');
+var linkedin = require('machinepack-linkedin');
 
-	inputs.scope = inputs.scope || [];
+// Creates the login url used to gain acccess to their LinkedIn account.
+linkedin.getLoginUrl(ARGS).exec({
 
-	console.log(inputs.scope);
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-	try
-	{
-return exits.success(util.format(
-	   'https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=%s&redirect_uri=%s&state=%s&scope=%s',
-	   inputs.client_id, inputs.redirecturl, state, inputs.scope.join(',')
-	  ));
-	}
-
-	catch(e)
-	{
-return exits.error(e);
-	}
-}
+});

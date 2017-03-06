@@ -1,18 +1,15 @@
-var path = require('path');
-var Filesystem = require('machinepack-fs');
-var Paths = require('machinepack-paths');
+var local-treeline-projects = require('machinepack-local-treeline-projects');
 
-// If specified, ensure keychainPath is an absolute path. If not specified,
-// assume the default (`~/.treeline.secret.json`)
-inputs.keychainPath = inputs.keychainPath ? path.resolve(inputs.keychainPath) : path.resolve(Paths.home().execSync(), '.treeline.secret.json');
+// Write or overwrite the Treeline keychain/identity/config file.
+local-treeline-projects.writeKeychain(ARGS).exec({
 
-// Read and parse JSON file located at source path on disk into usable data.
-Filesystem.writeJson({
-  // Allow the destination to be overridden by an environment var
-  destination: inputs.keychainPath,
-  force: true,
-  json: {
-    username: inputs.username,
-    secret: inputs.secret
-  }
-}).exec(exits);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

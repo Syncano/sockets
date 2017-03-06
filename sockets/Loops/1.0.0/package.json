@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-loops",
+    "description": "Machines that allow the use of other machines in a loop.",
+    "version": "1.0.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-loops": "1.0.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Loops",
+        "Loops-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

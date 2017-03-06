@@ -1,18 +1,15 @@
-var tfa = require('2fa');
-var QR = require('qr-image');
-// build data
-var data = 'otpauth://totp/' + encodeURIComponent(inputs.application + ' | ' + inputs.username)
-       + '?secret=' + tfa.base32Encode(inputs.key);
+var 2fa = require('machinepack-2fa');
 
-// turn data into a QR code
-var formatter = function(buf) {
-  return 'data:image/png;base64,' + buf.toString('base64')
-};
-var qrOpts = { type: 'png' };
-var pngStream = QR.image(data, qrOpts);
-var pngData = [];
-pngStream.on('data', function(d) { pngData.push(d); });
-pngStream.on('end', function() {
-  var png = Buffer.concat(pngData);
-  return exits.success(formatter(png));
+// Generates a QR code to store it by scanning the QR code.
+2fa.generateQr(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

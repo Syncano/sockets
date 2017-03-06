@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-assets",
+    "description": "Experimental utilities for preparing fonts, images, JavaScript files, and LESS stylesheets, then publishing them to NPM as production-ready asset packages.",
+    "version": "1.0.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-assets": "1.0.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Assets",
+        "Assets-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-googleapisauthjwt",
+    "description": "The JWT authorization is ideal for performing server-to-server communication without asking for user consent.",
+    "version": "0.1.1",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-googleapisauthjwt": "0.1.1"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-GoogleAPIsAuthJWT",
+        "GoogleAPIsAuthJWT-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

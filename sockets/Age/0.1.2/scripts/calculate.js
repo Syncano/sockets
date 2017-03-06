@@ -1,11 +1,19 @@
-var dateOfBirth = inputs.dateOfBirth;
+var age = require('machinepack-age');
 
-if (typeof dateOfBirth === 'string') {
-  dateOfBirth = new Date(Date.parse(dateOfBirth));
-}
+// Calculate an age based on date of birth.
+age.calculate(ARGS).exec({
 
-if (!dateOfBirth instanceof Date || dateOfBirth.toString() === 'Invalid Date') {
-  return exits.invalidDateFormat('Invalid date supplied.');
-}
+    
+    invalidDateFormat: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-return exits.success(~~((Date.now() - (+dateOfBirth)) / (31557600000)));
+});

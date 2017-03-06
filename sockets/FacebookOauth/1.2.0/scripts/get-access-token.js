@@ -1,35 +1,15 @@
-var doJSONRequest = require('../lib/do-request');
+var facebook-oauth = require('machinepack-facebook-oauth');
 
-// GET projects/ and send the api token as a header
-doJSONRequest({
-  method: 'get',
-  url: '/oauth/access_token',
-  data: {
-    'redirect_uri': inputs.callbackUrl,
-    'client_id': inputs.appId,
-    'client_secret': inputs.appSecret,
-    'code': inputs.code,
-  },
-  headers: {}
-}, function (err, responseBody) {
-  if (err) {
-    return exits.error(err);
-  }
+// Generate a new access token for acting on behalf of a particular Facebook user account.
+facebook-oauth.getAccessToken(ARGS).exec({
 
-  // Parse Facebook Access Token from request Body
-  var token;
-  try {
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-    return exits.success({
-      token: responseBody.match(/access_token=([a-z0-9]+)[^a-z0-9]{0,}/i)[1],
-      expires: (function getExpirationDateAsISOString (){
-        var now = new Date();
-        var secondsFromNowToExpiry = +(responseBody.match(/expires=([0-9]+)[^0-9]{0,}/i)[1]);
-        var expirationDate = new Date( (now.getTime() + (secondsFromNowToExpiry*1000)) );
-        return expirationDate.toJSON();
-      })()
-    });
-  } catch (parseError){
-    return exits.error(parseError);
-  }
 });

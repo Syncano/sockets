@@ -2,9 +2,39 @@ name: Uber
 description: 'Communicate with the Uber API to get price estimates, time estimates, etc.'
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   get-price-estimate:
     POST:
       file: scripts/get-price-estimate.js
       description: A price estimate for each product offered.
+      parameters:
+        apiKey:
+          example: xAmBxAmBxAmBkjbyKkjbyKkjbyK
+          description: The private Uber API key for this application.
+          required: true
+          whereToGet:
+            url: 'https://developer.uber.com/apps/'
+            description: 'Copy and paste an API key, or create one if you haven''t already.'
+            extendedDescription: ''
+          type: string
+        startLatitude:
+          example: 37.623908
+          description: Latitude component of start location.
+          required: true
+          type: number
+        startLongitude:
+          example: -122.381592
+          description: Longitude component of start location.
+          required: true
+          type: number
+        endLatitude:
+          example: 37.623908
+          description: Latitude component of end location.
+          required: true
+          type: number
+        endLongitude:
+          example: -122.401213
+          description: Longitude component of end location.
+          required: true
+          type: number

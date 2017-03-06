@@ -1,23 +1,23 @@
-var oauth2Client = require('../lib/getOAuth2Client')(inputs);
+var googleapisoauth2v2 = require('machinepack-googleapisoauth2v2');
 
-oauth2Client.getToken(inputs.code, function(err, tokens) {
-  if (err) {
-    if (!err.code) {
-      return exits.error(err);
+// Getting access token using authorization token that Google provided you with
+googleapisoauth2v2.getAccessToken(ARGS).exec({
+
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    invalidRequest: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    invalidToken: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     }
-    console.log(err);
-    switch(err.code) {
-      case 400:
-        return exits.invalidRequest(err);
-        break;
-      case 401:
-        return exits.invalidToken(err);
-        break;
-      default:
-        return exits.error(err);
-        break;
-    }
-    console.log(err);
-  }
-  return exits.success(tokens);
+
 });

@@ -1,28 +1,15 @@
-var Http = require('machinepack-http');
+var steam = require('machinepack-steam');
 
-var params = {
-  appid: inputs.appid,
-  count: inputs.name.length,
-  format: 'json'
-};
+// Returns on global statistics of a specific game
+steam.getGlobalStatsForGame(ARGS).exec({
 
-inputs.name.forEach(function (val, idx) {
-  var key = 'name[' + idx + ']';
-  params[key] = val;
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });
-
-Http.sendHttpRequest({
-  baseUrl: 'http://api.steampowered.com/',
-  url: 'ISteamUserStats/GetGlobalStatsForGame/v0001/',
-  method: 'get',
-  params: params
-})
-.exec({
-  success: function (res) {
-    var response = JSON.parse(res.body).response;
-    return exits.success(response);
-  },
-  error: function (err) {
-    return exits.error(err);
-  }
-})

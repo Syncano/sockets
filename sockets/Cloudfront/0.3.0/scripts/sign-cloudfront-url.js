@@ -1,6 +1,15 @@
-var signedUrl = require('aws-cloudfront-sign').getSignedUrl(inputs.src, {
-  keypairId: inputs.keypairId,
-  privateKeyString: inputs.privateKey,
-  expireTime: (new Date()).getTime() + (inputs.ttl || 24*60*60*1000)
+var cloudfront = require('machinepack-cloudfront');
+
+// Sign an Amazon CloudFront URL.
+cloudfront.signCloudfrontUrl(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });
-return exits.success(signedUrl);

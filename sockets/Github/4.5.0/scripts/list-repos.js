@@ -1,17 +1,15 @@
-var Github = require('github');
+var github = require('machinepack-github');
 
-var limit = inputs.limit || 30;
-var skip = inputs.skip || 0;
+// Fetch the list of repos belonging to the specified Github user or organization.
+github.listRepos(ARGS).exec({
 
-var github = new Github({
-  version: '3.0.0'
-});
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-github.repos.getFromUser({
-  user: inputs.owner,
-  per_page: limit,
-  page: Math.ceil(skip / limit)
-}, function(err, data) {
-  if (err) return exits.error(err);
-  return exits.success(data);
 });

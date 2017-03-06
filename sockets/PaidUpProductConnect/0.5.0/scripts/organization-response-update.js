@@ -1,21 +1,15 @@
-var Connector = require('../core/common/connector')
-var url = '/api/v1/organization/response/' + inputs.organizationId + '/' + inputs.paymentId
-var config = {
-  url: url,
-  baseUrl: inputs.baseUrl,
-  method: 'put',
-  token: inputs.token
-}
-Connector.request(config, {}, {}, function (err, resp) {
-  if (err) {
-    return exits.error({
-      status: err.status,
-      message: err.message.message || err.message
-    })
-  } else {
-    return exits.success({
-      status: 200,
-      body: resp.body
-    })
-  }
-})
+var paidup-product-connect = require('paidup-product-connect');
+
+// authorizate new organizations to be part of paidUp
+paidup-product-connect.organizationResponseUpdate(ARGS).exec({
+
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

@@ -2,13 +2,59 @@ name: DemocracyOSManager
 description: Communicate with a DemocracyOS Manager API to manage Deployments.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   create-deployment:
     POST:
       file: scripts/create-deployment.js
       description: Create a DemocracyOS deployment for a given user.
+      parameters:
+        url:
+          description: Url of Manager API.
+          example: 'http://manager.democracyos.com'
+          required: true
+          type: string
+        access_token:
+          description: Access Token for the given Manager API.
+          example: a6f743e10d6ba3001c70d0c190c71cf668093370
+          required: true
+          type: string
+        name:
+          description: Deployment name.
+          example: mars-democracy
+          required: true
+          type: string
+        title:
+          description: Deployment Title.
+          example: Mars Democracy
+          required: true
+          type: string
+        owner:
+          description: Owner id.
+          example: 54eb6ab10eabd7d1254b1d88
+          required: true
+          type: string
+        summary:
+          description: Deployment long description.
+          example: Mars Democracy
+          type: string
   delete-deployment:
     POST:
       file: scripts/delete-deployment.js
       description: Delete a DemocracyOS Deployment.
+      parameters:
+        url:
+          description: Url of Manager API.
+          example: 'http://manager.democracyos.com'
+          required: true
+          type: string
+        access_token:
+          description: Access Token for the given Manager API.
+          example: a6f743e10d6ba3001c70d0c190c71cf668093370
+          required: true
+          type: string
+        name:
+          description: Name of the instnace to Delete.
+          example: mars-democracy
+          required: true
+          type: string

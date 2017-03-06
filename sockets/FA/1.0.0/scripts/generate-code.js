@@ -1,9 +1,15 @@
-var tfa = require('2fa');
+var 2fa = require('machinepack-2fa');
 
-   // calculate the counter for the HOTP (pretending it's actually TOTP) 
-   var counter = Math.floor(Date.now() / 1000 / 30);
-  
-   // generate a valid code (in real-life this will be user-input) 
-   var code = tfa.generateCode(inputs.key, counter);
+// Generates a Code using the users secret key which can then be verified
+2fa.generateCode(ARGS).exec({
 
-   return exits.success(code);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

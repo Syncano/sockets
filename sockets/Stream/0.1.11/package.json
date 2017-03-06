@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-stream",
+    "description": "work with stream readable, writable",
+    "version": "0.1.11",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-stream": "0.1.11"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Stream",
+        "Stream-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

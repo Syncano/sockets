@@ -1,33 +1,23 @@
-var params = {
-  resource: {}
-};
-var inputParams = _.clone(inputs);
-if (inputParams.fields && inputParams.fields.length > 0) {
-  params.fields = inputParams.fields;
-  delete inputParams.fields; // Have to remove this
-}
-// Check and add key
-if (inputParams.key && inputParams.key.length > 0) {
-  params.key = inputParams.key;
-  delete inputParams.key;
-}
-_.merge(params.resource, inputParams);
-urlshortener.url.insert(params, function(err, response) {
-  if (err) {
-    if (!err.code) {
-      return exits.errro(err);
+var googleapisurlshortener = require('machinepack-googleapisurlshortener');
+
+// Create a short URL from given long version
+googleapisurlshortener.urlInsert(ARGS).exec({
+
+    
+    invalidParameter: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    dailyLimitExceededUnreg: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     }
-    switch(err.code) {
-      case 400:
-        return exits.invalidParameter(err);
-        break;
-      case 403:
-        return exits.dailyLimitExceededUnreg(err);
-        break;
-      default:
-          return exits.error(err);
-        break;
-    }
-  }
-  return exits.success(response);
+
 });

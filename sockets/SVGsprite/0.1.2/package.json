@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-svgsprite",
+    "description": "Create an SVGs sprite from multiple SVG source files.",
+    "version": "0.1.2",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-svg-sprite": "0.1.2"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-SVGsprite",
+        "SVGsprite-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

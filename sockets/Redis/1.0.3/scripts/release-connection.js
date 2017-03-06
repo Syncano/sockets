@@ -1,35 +1,19 @@
-var util = require('util');
+var redis = require('machinepack-redis');
 
-// Validate provided connection (which is actually a redis client)
-if ( !util.isObject(inputs.connection) || !util.isFunction(inputs.connection.end) || !util.isFunction(inputs.connection.removeAllListeners) ) {
-  return exits.badConnection();
-}
+// Close an active connection to the Redis server.
+redis.releaseConnection(ARGS).exec({
 
-// Grab a reference to the manager instance we piggybacked on this redis client.
-var mgr = inputs.connection._fromWLManager;
+    // The `meta` property is reserved for custom driver-specific extensions.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    // The `error` property is a JavaScript Error instance containing the raw error from the database.  The `meta` property is reserved for custom driver-specific extensions.
+    badConnection: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-// Release connection.
-try {
-  inputs.connection.end(true);
-
-  // If necessary, we could also do the following here:
-  // inputs.connection.removeAllListeners();
-  //
-  // (but not doing that unless absolutely necessary because it could cause crashing
-  //  of the process if our `redis` dep decides to emit any surprise "error" events.)
-}
-catch (e) {
-  return exits.error(e);
-}
-
-// Remove this redis client from the manager.
-var foundAtIndex = mgr.redisClients.indexOf(inputs.connection);
-if (foundAtIndex === -1) {
-  return exits.badConnection({
-    meta: new Error('Attempting to release connection that is no longer referenced by its manager.')
-  });
-}
-mgr.redisClients.splice(foundAtIndex, 1);
-
-// And that's it!
-return exits.success();
+});

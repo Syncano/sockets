@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-machines",
+    "description": "Work with machines and machinepacks.",
+    "version": "6.3.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-machines": "6.3.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Machines",
+        "Machines-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

@@ -1,36 +1,19 @@
-var Connector = require('../core/common/connector')
+var paidup-commerce-connect = require('paidup-commerce-connect');
 
-var config = {
-  url: '/api/v1/commerce/coupon/create',
-  baseUrl: inputs.baseUrl,
-  method: 'post',
-  token: inputs.token
-}
+// Create a discount coupon
+paidup-commerce-connect.couponCreate(ARGS).exec({
 
-var body = {
-  code: inputs.code,
-  startDate: inputs.startDate,
-  endDate: inputs.endDate,
-  percent: inputs.percent,
-  quantity: inputs.quantity,
-  productsId: inputs.productsId
-}
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    validationError: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-Connector.request(config, {}, body, function (err, resp) {
-  if (err && err.status === 500) {
-    return exits.error({
-      status: err.status,
-      message: err.message
-    })
-  } else if (err && err.status === 400) {
-    return exits.validationError({
-      status: err.status,
-      message: err.message.err.message || err.message.err.errmsg
-    })
-  } else {
-    return exits.success({
-      status: resp.status,
-      body: resp.body.coupon
-    })
-  }
-})
+});

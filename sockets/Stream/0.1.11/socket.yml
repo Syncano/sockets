@@ -2,41 +2,167 @@ name: Stream
 description: 'work with stream readable, writable'
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   create-read:
     POST:
       file: scripts/create-read.js
       description: Create a read stream
+      parameters:
+        path:
+          friendlyName: path
+          description: A path file
+          example: tmp.log
+          required: false
+          type: string
+          name: path
+        text:
+          friendlyName: text
+          description: A text
+          example: lorem ipsum
+          required: false
+          type: string
+          name: text
   create-write:
     POST:
       file: scripts/create-write.js
       description: Create Write Stream
+      parameters:
+        stream:
+          friendlyName: stream
+          description: A readable stream
+          typeclass: '*'
+          required: false
+          name: stream
+          type: '*'
+        path:
+          friendlyName: path
+          description: A destination path file
+          example: tmp.log
+          required: true
+          type: string
+          name: path
   zip:
     POST:
       file: scripts/zip.js
       description: Zip a stream
+      parameters:
+        stream:
+          friendlyName: stream
+          description: A readable stream
+          typeclass: '*'
+          required: false
+          name: stream
+          type: '*'
   unzip:
     POST:
       file: scripts/unzip.js
       description: Unzip a stream
+      parameters:
+        stream:
+          friendlyName: stream
+          description: A readable stream
+          typeclass: '*'
+          required: false
+          name: stream
+          type: '*'
   md:
     POST:
       file: scripts/md.js
       description: Markdown
+      parameters:
+        stream:
+          friendlyName: stream
+          description: A readable stream
+          typeclass: '*'
+          required: false
+          name: stream
+          type: '*'
   minify:
     POST:
       file: scripts/minify.js
       description: Minify html
+      parameters:
+        stream:
+          friendlyName: stream
+          description: A readable stream
+          typeclass: '*'
+          required: false
+          name: stream
+          type: '*'
   stringify:
     POST:
       file: scripts/stringify.js
       description: a toString method
+      parameters:
+        stream:
+          friendlyName: stream
+          description: A readable stream
+          typeclass: '*'
+          required: true
+          name: stream
+          type: '*'
+        write:
+          example: .tmp/test.log
+          description: 'a path for writing file '
+          required: false
+          type: string
   replace:
     POST:
       file: scripts/replace.js
       description: Search and replace
+      parameters:
+        stream:
+          friendlyName: stream
+          description: A readable stream
+          typeclass: '*'
+          required: false
+          name: stream
+          type: '*'
+        search:
+          friendlyName: search
+          description: A string or a string's array to search
+          typeclass: '*'
+          required: true
+          name: search
+          type: '*'
+        replace:
+          friendlyName: replace
+          description: 'A string, replace'
+          example: abc
+          required: false
+          name: replace
+          type: string
   insert:
     POST:
       file: scripts/insert.js
       description: Insert content before or after a string
+      parameters:
+        stream:
+          friendlyName: stream
+          description: A readable stream
+          typeclass: '*'
+          required: false
+          name: stream
+          type: '*'
+        text:
+          friendlyName: text
+          description: Insert a string before of after a string
+          example: a string to insert
+          required: true
+          name: text
+          type: string
+        after:
+          friendlyName: after
+          description: a string or string's array to search and insert text after
+          typeclass: '*'
+          required: false
+          name: after
+          type: '*'
+        before:
+          friendlyName: before
+          description: a string or string's array to search and insert text before
+          typeclass: '*'
+          required: false
+          name: before
+          type: '*'

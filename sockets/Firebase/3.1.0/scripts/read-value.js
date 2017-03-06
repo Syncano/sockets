@@ -1,17 +1,15 @@
-// Require the Firebase SDK
-var Firebase = require('firebase');
+var firebase = require('machinepack-firebase');
 
-// Get the data path reference
-var ref = new Firebase(inputs.firebaseURL);
+// Read data from a specific firebase location, such as "/users/".
+firebase.readValue(ARGS).exec({
 
-// Attempt to read from the data path
-ref.once("value", function(snapshot) {
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-  // Return the data as a JSON string through the success exit
-  return exits.success(JSON.stringify(snapshot.val()));
-},
-
-// In case of error, send the error throuh the error exit
-function(errorObject) {
-    return exits.error(errorObject);
 });

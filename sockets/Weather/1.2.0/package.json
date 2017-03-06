@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-weather",
+    "description": "Communicate with the forecast.io API to get weather forecasts.",
+    "version": "1.2.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-weather": "1.2.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Weather",
+        "Weather-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

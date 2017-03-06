@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-fa",
+    "description": "Two Factor Authentication",
+    "version": "1.0.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-2fa": "1.0.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-FA",
+        "FA-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

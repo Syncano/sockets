@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-less",
+    "description": "Work with LESS stylesheets.",
+    "version": "1.0.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-less": "1.0.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-LESS",
+        "LESS-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

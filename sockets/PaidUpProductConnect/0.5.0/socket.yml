@@ -2,29 +2,148 @@ name: PaidUpProductConnect
 description: Connector for PaidUp Microservice Product
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   category-retrieve:
     POST:
       file: scripts/category-retrieve.js
       description: Retrieve categories of products
+      parameters:
+        baseUrl:
+          example: 'http://localhost:9002'
+          description: Url microservice.
+          required: true
+          type: string
+        token:
+          example: secret-word
+          description: secret word for authenticate microservice.
+          required: true
+          type: string
   product-retrieve:
     POST:
       file: scripts/product-retrieve.js
       description: Retrieve product by Id
+      parameters:
+        baseUrl:
+          example: 'http://localhost:9002'
+          description: Url microservice.
+          required: true
+          type: string
+        token:
+          example: secret-word
+          description: secret word for authenticate microservice.
+          required: true
+          type: string
+        productId:
+          example: '12'
+          description: id product.
+          required: true
+          type: string
   organization-request:
     POST:
       file: scripts/organization-request.js
       description: save a new organizations to be part of paidUp
+      parameters:
+        baseUrl:
+          example: 'http://localhost:9007'
+          description: Url microservice.
+          required: true
+          type: string
+        token:
+          example: secret-word
+          description: secret word for authenticate microservice.
+          required: true
+          type: string
+        organizationInfo:
+          example:
+            ownerFirstName: John
+            ownerLastName: Due
+            ownerDOB: 12/12/1990
+            ownerSSN: '123456789'
+            ownerEmail: austin@boom.com
+            ownerPhone: '1234567890'
+            country: US
+            state: TX
+            city: Austin
+            zipCode: '12345'
+            EIN: '123123123'
+            Address: calle fake
+            AddressLineTwo: '123'
+            businessName: bname
+            businessType: Corporation
+            aba: '110000'
+            dda: 000123456789
+            referralCode: promoCode
+          description: product info.
+          required: true
+          type: object
+        userId:
+          example: userId
+          description: id user owner organization.
+          required: true
+          type: string
   organization-response:
     POST:
       file: scripts/organization-response.js
       description: authorizate new organizations to be part of paidUp
+      parameters:
+        baseUrl:
+          example: 'http://localhost:9007'
+          description: Url microservice.
+          required: true
+          type: string
+        token:
+          example: secret-word
+          description: secret word for authenticate microservice.
+          required: true
+          type: string
+        organizationId:
+          example: xxxyyyxxxx
+          description: id organization.
+          required: true
+          type: string
   organization-response-update:
     POST:
       file: scripts/organization-response-update.js
       description: authorizate new organizations to be part of paidUp
+      parameters:
+        baseUrl:
+          example: 'http://localhost:9007'
+          description: Url microservice.
+          required: true
+          type: string
+        token:
+          example: secret-word
+          description: secret word for authenticate microservice.
+          required: true
+          type: string
+        organizationId:
+          example: xxxyyyxxxx
+          description: id organization.
+          required: true
+          type: string
+        paymentId:
+          example: xxxyyyxxxx
+          description: 'id payment service (stripe, paypal).'
+          required: true
+          type: string
   organization-get:
     POST:
       file: scripts/organization-get.js
       description: get organizations to be part of paidUp
+      parameters:
+        baseUrl:
+          example: 'http://localhost:9007'
+          description: Url microservice.
+          required: true
+          type: string
+        token:
+          example: secret-word
+          description: secret word for authenticate microservice.
+          required: true
+          type: string
+        organizationId:
+          example: xxxyyyxxxx
+          description: id organization.
+          required: true
+          type: string

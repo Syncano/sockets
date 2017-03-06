@@ -1,7 +1,23 @@
-if (inputs.number <= 0) {
-  return exits.invalidLog();
-}
-if (inputs.base <= 0 || inputs.base === 1) {
-  return exits.invalidBase();
-}
-return exits.success(Math.log(inputs.number) / Math.log(inputs.base));
+var math = require('machinepack-math');
+
+// Calculate the logarithm of a number at a particular base.
+math.log(ARGS).exec({
+
+    
+    invalidLog: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    invalidBase: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

@@ -1,13 +1,15 @@
-// TODO: handle more specific exits (i.e. rate limit, invalid API key, etc.)
+var stripe-subscriptions = require('machinepack-stripe-subscriptions');
 
-var stripe = require('stripe')(inputs.apiKey);
+// Create a new customer in Stripe
+stripe-subscriptions.createCustomer(ARGS).exec({
 
-// Get the base options
-var options = {
-  description: inputs.description
-};
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-stripe.customers.create(options, function(err, customer) {
-  if (err) return exits.error(err);
-  return exits.success(customer);
 });

@@ -1,18 +1,15 @@
-// Import `url`.
-var Url = require('url');
+var urls = require('machinepack-urls');
 
-// Use the `parse` function of the `url` package to get information about the given URL.
-var parsedUrl = Url.parse(inputs.url);
+// Parse metadata from a URL.
+urls.parse(ARGS).exec({
 
-// Attempt to infer port if it doesn't exist.
-if (!parsedUrl.port) {
-  if (parsedUrl.protocol === 'https:') {
-    parsedUrl.port = 443;
-  }
-  else {
-    parsedUrl.port = 80;
-  }
-}
+    // Information obtained by parsing the input URL.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-// Return the parsed URL info through the `success` exit.
-return exits.success(parsedUrl);
+});

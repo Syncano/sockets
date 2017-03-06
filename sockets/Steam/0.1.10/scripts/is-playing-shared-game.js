@@ -1,22 +1,15 @@
-var Http = require('machinepack-http');
+var steam = require('machinepack-steam');
 
-Http.sendHttpRequest({
-  baseUrl: 'http://api.steampowered.com/',
-  url: 'IPlayerService/IsPlayingSharedGame/v0001/',
-  method: 'get',
-  params: {
-    steamid: inputs.steamid,
-    key: inputs.key,
-    appid_playing: inputs.appid_playing,
-    format: 'json'
-  }
-})
-.exec({
-  success: function (res) {
-    var response = JSON.parse(res.body).response;
-    return exits.success(response);
-  },
-  error: function (err) {
-    return exits.error(err);
-  }
+// IsPlayingSharedGame returns the original owner's SteamID if a borrowing account is currently playing this game. If the game is not borrowed or the borrower currently doesn't play this game, the result is always 0.
+steam.isPlayingSharedGame(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

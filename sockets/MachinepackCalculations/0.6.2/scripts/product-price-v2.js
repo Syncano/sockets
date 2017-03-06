@@ -1,17 +1,15 @@
-var calculatePriceV2 = require('../api/v2/calculate-price');
+var calculations = require('machinepack-calculations');
 
-if (inputs.type && (inputs.type !== 'bank_account' && inputs.type !== 'card')) {
-  return exits.error({ description: 'type must be `bank_account` or `card`' });
-}
+// Calculate final price when user does not assume any fee.
+calculations.productPriceV2(ARGS).exec({
 
-if (inputs.type === 'bank_account') {
-  if (!inputs.capAmount || isNaN(parseFloat(inputs.capAmount))) {
-    return exits.error({ description: 'capAmount is require and must be a number' });
-  }
-  else {
-    return calculatePriceV2.bank(inputs, exits);
-  }
-}
-else {
-  return calculatePriceV2.card(inputs, exits);
-}
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

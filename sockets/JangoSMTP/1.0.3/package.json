@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-jangosmtp",
+    "description": "Send transactional emails through JangoSMTP.com service",
+    "version": "1.0.3",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-jangosmtp": "1.0.3"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-JangoSMTP",
+        "JangoSMTP-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

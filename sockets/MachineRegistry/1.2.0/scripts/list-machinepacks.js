@@ -1,21 +1,15 @@
-var Http = require('machinepack-http');
+var registry = require('machinepack-registry');
 
-// Look up list of machinepacks
-Http.sendHttpRequest({
-  baseUrl: inputs.registry,
-  url: '/machinepacks'
-}).exec({
-  error: exits.error,
-  success: function (resp){
+// List machinepacks in the registry.
+registry.listMachinepacks(ARGS).exec({
 
-    var machinepacks;
-    try {
-      machinepacks = JSON.parse(resp.body);
-    }
-    catch (e){
-      return exits.error(e);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
 
-    return exits.success(machinepacks);
-  }
 });

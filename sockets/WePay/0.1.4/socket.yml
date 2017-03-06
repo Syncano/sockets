@@ -4,79 +4,837 @@ description: >-
   payments.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   app-details:
     POST:
       file: scripts/app-details.js
       description: Get details about a WePay application.
+      parameters:
+        clientId:
+          example: 123456
+          description: >-
+            The integer client ID issued to the app, found on your application's
+            dashboard
+          required: true
+          type: number
+        clientSecret:
+          example: 6446c521bd
+          description: >-
+            The string client secret issued to the app, found on your
+            application's dashboard
+          required: true
+          type: string
+        useProduction:
+          example: false
+          description: >-
+            Use WePay production API - payments will be charged. Defaults to
+            WePay staging - payments are not charged.
+          required: false
+          type: boolean
   user-details:
     POST:
       file: scripts/user-details.js
       description: Look up details about a user by access token.
+      parameters:
+        accessToken:
+          example: 604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184
+          description: >-
+            The string access token of the user you want to send confirmation
+            to.
+          required: true
+          type: string
+        useProduction:
+          example: false
+          description: >-
+            Use WePay production API - payments will be charged. Defaults to
+            WePay staging - payments are not charged.
+          required: false
+          type: boolean
   user-callback:
     POST:
       file: scripts/user-callback.js
       description: Add callback_uri to user.
+      parameters:
+        accessToken:
+          example: 604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184
+          description: The string access token of the user you want IPNs for.
+          required: true
+          type: string
+        callbackUri:
+          example: 'https://www.wepay.com/ipn/12345'
+          description: The callback_uri you want to receive IPNs on. Must be a full URI.
+          required: true
+          type: string
+        useProduction:
+          example: false
+          description: >-
+            Use WePay production API - payments will be charged. Defaults to
+            WePay staging - payments are not charged.
+          required: false
+          type: boolean
   account-create:
     POST:
       file: scripts/account-create.js
       description: Create a new payment account.
+      parameters:
+        accessToken:
+          example: 604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184
+          description: >-
+            The string access token of the user you want to create a payment
+            account for.
+          required: true
+          type: string
+        name:
+          example: My Payment Account
+          description: The name of the account you want to create.
+          required: true
+          type: string
+        description:
+          example: My payment account is for money.
+          description: The description of the account you want to create.
+          required: true
+          type: string
+        useProduction:
+          example: false
+          description: >-
+            Use WePay production API - payments will be charged. Defaults to
+            WePay staging - payments are not charged.
+          required: false
+          type: boolean
+        referenceId:
+          example: ABCD1234
+          description: >-
+            The reference id of the account. Can be any string, but must be
+            unique for the application/user pair.
+          required: false
+          type: string
+        type:
+          example: business
+          description: >-
+            The type of account you are creating. Can be "nonprofit",
+            "business", or "personal".
+          required: false
+          type: string
+        imageUri:
+          example: 'http://s3.amazonaws.com/myphoto.jpg'
+          description: >-
+            The uri for an image that you want to use for the accounts icon.
+            This image will be used in the co-branded checkout process.
+          required: false
+          type: string
+        gaqDomains:
+          example:
+            - mydomain.com
+            - myotherdomain.com
+          description: >-
+            An array of Google Analytics domains associated with the account.
+            See the analytics tutorial
+            (https://stage.wepay.com/developer/reference/analytics) for more
+            details.
+          required: false
+          type: array
+        themeObject:
+          example: {}
+          description: >-
+            The theme structure (a JSON object, not a JSON serialized string)
+            you want to be used for account's flows and emails. See
+            https://stage.wepay.com/deeloper/reference/structures#theme.
+          required: false
+          type: object
+        mcc:
+          example: 7392
+          description: >-
+            The mcc code that is relevant to the type of account this is. See
+            the mcc reference page
+            (https://stage.wepay.com/developer/reference/mcc) for more
+            information.
+          required: false
+          type: number
+        callbackUri:
+          example: 'https://www.baggins.com/callback'
+          description: >-
+            The uri that will receive IPNs for this account. You will receive an
+            IPN whenever the account is verified or deleted.
+          required: false
+          type: string
+        country:
+          example: US
+          description: >-
+            The account's country of origin 2-letter ISO code (e.g. "US" or
+            "CA")
+          required: false
+          type: string
+        currencies:
+          example:
+            - USD
+          description: >-
+            Array of supported currency strings for this account (e.g. ["USD"])
+            Both "USD" and "CAD" are currently supported. Only one currency
+            string per account is allowed at this time.
+          required: false
+          type: array
+        countryOptions:
+          example: {}
+          description: '{"debit_opt_in":true|false}. Used for Canadian accounts only.'
+          required: false
+          type: object
+        feeScheduleSlot:
+          example: 9
+          description: >-
+            The custom fee schedule value to use for the merchant. Values start
+            at 0, not 1. Passing null will remove the custom fee schedule. NOTE:
+            Use of this parameter requires permission from WePay.
+          required: false
+          type: number
   account-details:
     POST:
       file: scripts/account-details.js
       description: Look up the details of a payment account on WePay.
+      parameters:
+        accessToken:
+          example: 604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184
+          description: >-
+            The string access token of the user you want to create a payment
+            account for.
+          required: true
+          type: string
+        accountId:
+          example: 12345
+          description: >-
+            The string access token of the user you want to create a payment
+            account for.
+          required: true
+          type: number
+        useProduction:
+          example: false
+          description: >-
+            Use WePay production API - payments will be charged. Defaults to
+            WePay staging - payments are not charged.
+          required: false
+          type: boolean
   account-find:
     POST:
       file: scripts/account-find.js
       description: >-
         Find existing payment accounts. No params for all accounts by access
         token.
+      parameters:
+        accessToken:
+          example: 604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184
+          description: >-
+            The string access token of the user you want to find a payment
+            account for.
+          required: true
+          type: string
+        name:
+          example: My Payment Account
+          description: The name of the account you want to search for.
+          required: false
+          type: string
+        referenceId:
+          example: 1234abcd
+          description: The reference ID of the account you are searching for.
+          required: false
+          type: string
+        sortOrder:
+          example: DESC
+          description: >-
+            Sort the results of the search by time created. Use "DESC" for most
+            recent to least recent. Use "ASC" for least recent to most recent.
+            Defaults to "DESC".
+          required: false
+          type: string
+        useProduction:
+          example: false
+          description: >-
+            Use WePay production API - payments will be charged. Defaults to
+            WePay staging - payments are not charged.
+          required: false
+          type: boolean
   account-modify:
     POST:
       file: scripts/account-modify.js
       description: Modify an existing payment account.
+      parameters:
+        accessToken:
+          example: 604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184
+          description: >-
+            The string access token of the user you want to create a payment
+            account for.
+          required: true
+          type: string
+        accountId:
+          example: 12345
+          description: The unique ID of the account you want to modify.
+          required: true
+          type: number
+        name:
+          example: My new payment account name
+          description: The name for the account.
+          required: false
+          type: string
+        description:
+          example: My new payment account description
+          description: The description for the account.
+          required: false
+          type: string
+        useProduction:
+          example: false
+          description: >-
+            Use WePay production API - payments will be charged. Defaults to
+            WePay staging - payments are not charged.
+          required: false
+          type: boolean
+        referenceId:
+          example: ABCD1234
+          description: >-
+            The reference id of the account. Can be any string, but must be
+            unique for the application/user pair.
+          required: false
+          type: string
+        imageUri:
+          example: 'http://s3.amazonaws.com/myphoto.jpg'
+          description: >-
+            The uri for an image that you want to use for the accounts icon.
+            This image will be used in the co-branded checkout process.
+          required: false
+          type: string
+        gaqDomains:
+          example:
+            - mydomain.com
+            - myotherdomain.com
+          description: >-
+            An array of Google Analytics domains associated with the account.
+            See the analytics tutorial for more details.
+          required: false
+          type: array
+        themeObject:
+          example: {}
+          description: >-
+            The theme structure you want to be used for account's flows and
+            emails. See
+            https://stage.wepay.com/deeloper/reference/structures#theme.
+          required: false
+          type: object
+        callbackUri:
+          example: 'https://www.baggins.com/callback'
+          description: >-
+            The uri that will receive IPNs for this account. You will receive an
+            IPN whenever the account is verified or deleted.
+          required: false
+          type: string
+        countryOptions:
+          example: {}
+          description: '{"debit_opt_in":true|false}. Used for Canadian accounts only.'
+          required: false
+          type: object
+        feeScheduleSlot:
+          example: 9
+          description: >-
+            The custom fee schedule value to use for the merchant. Values start
+            at 0, not 1. Passing null will remove the custom fee schedule. NOTE:
+            Use of this parameter requires permission from WePay.
+          required: false
+          type: number
   account-delete:
     POST:
       file: scripts/account-delete.js
       description: Delete an existing payment account.
+      parameters:
+        accessToken:
+          example: 604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184
+          description: >-
+            The string access token of the user with permission to delete this
+            account.
+          required: true
+          type: string
+        accountId:
+          example: 12345
+          description: The unique ID of the account you want to delete.
+          required: true
+          type: number
+        reason:
+          example: No longer being used.
+          description: Reason for deleting the account.
+          required: false
+          type: string
+        useProduction:
+          example: false
+          description: >-
+            Use WePay production API - payments will be charged. Defaults to
+            WePay staging - payments are not charged.
+          required: false
+          type: boolean
   account-get-uri:
     POST:
       file: scripts/account-get-uri.js
       description: Get account URI to update account at WePay.
+      parameters:
+        accessToken:
+          example: 604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184
+          description: >-
+            String access token of the user with permission to delete this
+            account.
+          required: true
+          type: string
+        accountId:
+          example: 12345
+          description: Unique ID of the account you want to delete.
+          required: true
+          type: number
+        mode:
+          example: regular
+          description: >-
+            Mode the process will be displayed in. The options are 'iframe' or
+            'regular'. Choose iframe if you would like to frame the process on
+            your site. Mode defaults to 'regular'.
+          required: false
+          type: string
+        redirectUri:
+          example: 'https://www.baggins.com/updated'
+          description: URI the user will be redirected to after completing the process.
+          required: false
+          type: string
   checkout-create:
     POST:
       file: scripts/checkout-create.js
       description: Create a checkout for an account.
+      parameters:
+        accessToken:
+          example: 604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184
+          description: The string access token of the user accepting the checkout payment.
+          required: true
+          type: string
+        accountId:
+          example: 1548718026
+          description: The unique ID of the account you want to create a checkout for.
+          required: true
+          type: number
+        shortDescription:
+          example: 2 dozen bisquits
+          description: A short description of what is being paid for. Max 255 chars.
+          required: true
+          type: string
+        type:
+          example: goods
+          description: >-
+            The checkout type (one of the following: goods, service, donation,
+            event or personal). Must be in lowercase.
+          required: true
+          type: string
+        amount:
+          example: 9.99
+          description: The amount that the payer will pay.
+          required: true
+          type: number
+        currency:
+          example: USD
+          description: 'The currency used. Possible values: USD, CAD'
+          required: true
+          type: string
+        longDescription:
+          example: >-
+            This recipe will produce the biggest biscuits in the history of the
+            world! Serve these gems with butter, preserves, gravy or they can
+            also be used as dinner rolls...you get the picture.
+          description: A long description of what is being paid for. Max 2047 chars.
+          required: false
+          type: string
+        emailMessage:
+          example: {}
+          description: >-
+            Specifies a short message to send to the payee and payer when a
+            checkout is successful. More at
+            https://stage.wepay.com/developer/reference/structures#email_message
+          required: false
+          type: object
+        fee:
+          example: {}
+          description: >-
+            Specify whether an app fee will be collected and who should pay the
+            app fee. For EMV transactions, this parameter must be present. More
+            at https://stage.wepay.com/developer/reference/structures#fee
+          required: false
+          type: object
+        callbackUri:
+          example: 'https://www.baggins.com/callback'
+          description: >-
+            The uri that will receive any instant payment notifications sent.
+            Needs to be a full uri (ex https://www.wepay.com ) and must NOT be
+            localhost or 127.0.0.1 or include wepay.com.
+          required: false
+          type: string
+        autoCapture:
+          example: false
+          description: A boolean value (true or false) default is true.
+          extendedDescription: >-
+            A boolean value (true or false) default is true. If set to false
+            then the payment will not automatically be released to the account
+            and will be held by WePay in payment state "reserved". To release
+            funds to the account you must call /checkout/capture. If you do not
+            capture the funds within 14 days then the payment will be
+            automatically cancelled or refunded.
+          required: false
+          type: boolean
+        referenceId:
+          example: 1234abcd
+          description: Reference id for this checkout.
+          required: false
+          type: string
+        uniqueId:
+          example: abcdef123456
+          description: >-
+            Customer-generated unique_id. WePay will only process a single call
+            with a given unique_id. Platforms can use this to prevent
+            duplicates, e.g. when retrying if a call times out. See below for
+            tips on handling errors.
+          required: false
+          type: string
+        hostedCheckout:
+          example: {}
+          description: >-
+            Use this to have payers enter payment information on a WePay hosted
+            checkout URL. Send either hosted_checkout or payment_method
+            parameter. Do not send both parameters at the same time. If neither
+            parameter is specified, default behavior will be hosted_checkout.
+            Full example object at
+            https://stage.wepay.com/developer/reference/structures#hosted_checkout.
+          required: false
+          type: object
+        paymentMethod:
+          example: {}
+          description: >-
+            Use this to pay using previously acquired payment information, such
+            as a preapproval or a credit card.
+          extendedDescription: >-
+            Use this to pay using previously acquired payment information, such
+            as a preapproval or a credit card. Send either hosted_checkout or
+            payment_method parameter. Do not send both parameters at the same
+            time. If neither parameter is specified, default behavior will be
+            hosted_checkout.
+          required: false
+          type: object
+        deliveryType:
+          example: none
+          description: >-
+            Delivery type for checkout. Possible values: none, fully_delivered,
+            point_of_sale, shipping, donation, subscription, partial_prepayment,
+            full_prepayment. Must be in lower case.
+          required: false
+          type: string
+        useProduction:
+          example: false
+          description: >-
+            Use WePay production API - payments will be charged. Defaults to
+            WePay staging - payments are not charged.
+          required: false
+          type: boolean
   checkout-capture:
     POST:
       file: scripts/checkout-capture.js
       description: Capture a checkout that was not auto captured.
+      parameters:
+        accessToken:
+          example: 604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184
+          description: >-
+            The string access token of the user you want to capture a payment
+            for.
+          required: true
+          type: string
+        checkoutId:
+          example: 12345
+          description: The unique ID of the checkout to be captured.
+          required: true
+          type: number
+        useProduction:
+          example: false
+          description: >-
+            Use WePay production API - payments will be charged. Defaults to
+            WePay staging - payments are not charged.
+          required: false
+          type: boolean
   user-register:
     POST:
       file: scripts/user-register.js
       description: Register a new user account that can accept payments.
+      parameters:
+        clientId:
+          example: 123456
+          description: >-
+            The integer client ID issued to the app, found on your application's
+            dashboard
+          required: true
+          type: number
+        clientSecret:
+          example: 6446c521bd
+          description: >-
+            The string client secret issued to the app, found on your
+            application's dashboard
+          required: true
+          type: string
+        email:
+          example: bilbo@baggins.com
+          description: The email of the user you want to register
+          required: true
+          type: string
+        scope:
+          example: >-
+            manage_accounts,collect_payments,view_user,send_money,preapprove_payments
+          description: A comma separated list of permissions.
+          required: true
+          type: string
+        firstName:
+          example: Bilbo
+          description: The first name of the user you want to register
+          required: true
+          type: string
+        lastName:
+          example: Baggins
+          description: The last name of the user you want to register
+          required: true
+          type: string
+        originalIp:
+          example: 74.125.224.84
+          description: The IP address of the user you want to register
+          required: true
+          type: string
+        originalDevice:
+          example: >-
+            Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_6; en-US)
+            AppleWebKit/534.13 (KHTML, like Gecko) Chrome/9.0.597.102
+            Safari/534.13
+          description: >-
+            The user-agent (for web) or the IMEI (for mobile) of the user you
+            want to register
+          required: true
+          type: string
+        tosAcceptanceTime:
+          example: 1209600
+          description: >-
+            A Unix timestamp referencing the time the user accepted WePay's
+            terms of service.
+          required: true
+          type: number
+        useProduction:
+          example: false
+          description: >-
+            Use WePay production API - payments will be charged. Defaults to
+            WePay staging - payments are not charged.
+          required: false
+          type: boolean
+        redirectUri:
+          example: 'https://www.baggins.com/thanks'
+          description: >-
+            The uri the user will be redirected to after they have confirmed
+            they wanted to be registered on WePay. By default this will be your
+            application's homepage.
+          required: false
+          type: string
+        callbackUri:
+          example: 'https://www.baggins.com/callback'
+          description: The callback_uri you want to receive IPNs on. Must be a full URI.
+          required: false
+          type: string
   user-confirm:
     POST:
       file: scripts/user-confirm.js
       description: Send confirmation email to users registered with Register User machine.
+      parameters:
+        accessToken:
+          example: 604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184
+          description: >-
+            The string access token of the user you want to send confirmation
+            to.
+          required: true
+          type: string
+        emailMessage:
+          example: Welcome to my <strong>application</strong>
+          description: A short message that will be included in the email to the user.
+          required: true
+          type: string
+        useProduction:
+          example: false
+          description: >-
+            Use WePay production API - payments will be charged. Defaults to
+            WePay staging - payments are not charged.
+          required: false
+          type: boolean
   checkout-find:
     POST:
       file: scripts/checkout-find.js
       description: >-
         Search for checkouts associated with an account. Returns an array of
         matching checkouts.
+      parameters:
+        accessToken:
+          example: 604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184
+          description: The string access token of the user accepting the checkout payment.
+          required: true
+          type: string
+        accountId:
+          example: 1548718026
+          description: The unique ID of the account you want to create a checkout for.
+          required: true
+          type: number
+        start:
+          example: 10
+          description: The start position for your search (default 0).
+          required: false
+          type: number
+        limit:
+          example: 25
+          description: The maximum number of returned entries (default 50).
+          required: false
+          type: number
+        referenceId:
+          example: 123abc
+          description: >-
+            The unique reference id of the checkout (set by Create Checkout
+            machine).
+          required: false
+          type: string
+        state:
+          example: active
+          description: What state the checkout is in.
+          required: false
+          whereToGet:
+            url: 'https://www.wepay.com/developer/reference/checkout#states'
+            description: View a list of possible states in WePay docs.
+          type: string
+        preapprovalId:
+          example: 123
+          description: >-
+            The ID of the preapproval that was used to create the checkout.
+            Useful if you want to look up all of the payments for an
+            auto_recurring preapproval.
+          required: false
+          type: number
+        startTime:
+          example: 1209600
+          description: All checkouts after a given unix timestamp.
+          required: false
+          type: number
+        endTime:
+          example: 1209600
+          description: All checkouts before a given unix timestamp.
+          required: false
+          type: number
+        sortOrder:
+          example: DESC
+          description: >-
+            Sort the results of the search by time created. Use "DESC" for most
+            recent to least recent. Use "ASC" for least recent to most recent.
+            Defaults to "DESC".
+          required: false
+          type: string
+        shippingFee:
+          example: 2.99
+          description: All checkouts that have the given shipping fee.
+          required: false
+          type: number
   checkout-refund:
     POST:
       file: scripts/checkout-refund.js
       description: >-
         Refunds the payment associated with the checkout created by the
         application. Checkout must be in "captured" state.
+      parameters:
+        accessToken:
+          example: 604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184
+          description: The string access token of the user issuing the checkout refund.
+          required: true
+          type: string
+        checkoutId:
+          example: 1548718026
+          description: The unique ID of the checkout you want to refund.
+          required: true
+          type: number
+        refundReason:
+          example: Accidental payment
+          description: The reason the payment is being refunded.
+          required: true
+          type: string
+        amount:
+          example: 4.99
+          description: The total amount that will be refunded back to the payer.
+          extendedDescription: >-
+            Note that this amount must be less than the "net" of the
+            transaction. To perform a full refund, do not pass the amount
+            parameter.
+          required: false
+          type: number
+        appFee:
+          example: 1.99
+          description: >-
+            The portion of the "amount" that will be refunded as an app_fee
+            refund.
+          required: false
+          type: number
+        payerEmailMessage:
+          example: Here is your refund.
+          description: >-
+            A short message that will be included in the payment refund email to
+            the payer.
+          required: false
+          type: string
+        payeeEmailMessage:
+          example: A refund was issued.
+          description: >-
+            A short message that will be included in the payment refund email to
+            the payee.
+          required: false
+          type: string
   checkout-details:
     POST:
       file: scripts/checkout-details.js
       description: Get details about a checkout.
+      parameters:
+        accessToken:
+          example: 604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184
+          description: >-
+            The string access token of the user you want to capture a payment
+            for.
+          required: true
+          type: string
+        checkoutId:
+          example: 12345
+          description: The unique ID of the checkout to get details for.
+          required: true
+          type: number
+        useProduction:
+          example: false
+          description: >-
+            Use WePay production API - payments will be charged. Defaults to
+            WePay staging - payments are not charged.
+          required: false
+          type: boolean
   checkout-cancel:
     POST:
       file: scripts/checkout-cancel.js
       description: Cancel a checkout.
+      parameters:
+        accessToken:
+          example: 604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184
+          description: >-
+            The string access token of the user you want to capture a payment
+            for.
+          required: true
+          type: string
+        checkoutId:
+          example: 12345
+          description: The unique ID of the checkout to get details for.
+          required: true
+          type: number
+        cancelReason:
+          example: Product was defective. Do not want.
+          description: The reason the payment is being cancelled.
+          required: true
+          type: string
+        useProduction:
+          example: false
+          description: >-
+            Use WePay production API - payments will be charged. Defaults to
+            WePay staging - payments are not charged.
+          required: false
+          type: boolean

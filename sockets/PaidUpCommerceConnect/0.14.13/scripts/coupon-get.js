@@ -1,24 +1,15 @@
-var Connector  = require('../core/common/connector');
+var paidup-commerce-connect = require('paidup-commerce-connect');
 
-var config = {
-  url: '/api/v1/commerce/coupon/list',
-  baseUrl: inputs.baseUrl,
-  method: 'post',
-  token : inputs.token
-};
+// get a list of discont coupon
+paidup-commerce-connect.couponGet(ARGS).exec({
 
-var body = inputs.filter;
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-Connector.request(config, {}, body, function(err, resp){
-  if(err){
-    return exits.error({
-      status: err.status,
-      message: err.body
-    });
-  }else{
-    return exits.success({
-      status: resp.status,
-      body: resp.body
-    });
-  }
 });

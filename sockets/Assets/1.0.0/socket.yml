@@ -4,7 +4,7 @@ description: >-
   stylesheets, then publishing them to NPM as production-ready asset packages.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   minify-javascript-assets:
     POST:
@@ -12,33 +12,216 @@ endpoints:
       description: >-
         Generate a minified js string by reading, concating, and minifying the
         contents of the specified directory.
+      parameters:
+        dir:
+          friendlyName: Directory
+          description: The path to the folder of JavaScript assets.
+          example: ./my-stuff/my-proj/js
+          required: true
+          type: string
   copy-fonts:
     POST:
       file: scripts/copy-fonts.js
       description: Copy font files into the output directory.
+      parameters:
+        fontsSrcPath:
+          friendlyName: Fonts source path
+          description: The path to the directory where font files should be copied from.
+          example: ./foo/fonts
+          required: true
+          type: string
+        outputDir:
+          friendlyName: Output directory
+          description: >-
+            The path to the temporary directory where production assets are
+            being compiled.
+          example: ./foo/.tmp/processing
+          required: true
+          type: string
   copy-images:
     POST:
       file: scripts/copy-images.js
       description: Copy image files into the output directory.
+      parameters:
+        imgSrcPath:
+          friendlyName: Images source path
+          description: >-
+            The directory where the source image files live.  It not specified
+            as an absolute path, this will be resolved relative to the current
+            working directory.
+          example: ./foo/images
+          required: true
+          type: string
+        outputDir:
+          friendlyName: Output directory
+          description: >-
+            The path to the temporary directory where production assets are
+            being compiled.
+          example: ./my-projects/some-assets/.tmp/processing
+          required: true
+          type: string
   productionify:
     POST:
       file: scripts/productionify.js
       description: 'Prepare the assets in this package for production, then publish to NPM.'
+      parameters:
+        srcDir:
+          friendlyName: srcDir
+          description: >-
+            The path to the source directory where assets should be pulled
+            from.  If specified as a relative path, this will be resolved
+            relative to the current working directory.
+          example: /code/treeline-assets
+          required: true
+          type: string
+        prodPkgName:
+          friendlyName: prodPkgName
+          description: >-
+            The NPM module name for the production package.  If omitted, this
+            will simply default to the module name of the development package
+            with a `-prod` suffix.
+          example: '@treelinehq/whatever'
+          type: string
   write-readme-and-package-json:
     POST:
       file: scripts/write-readme-and-package-json.js
       description: Write README.md and package.json files for a production asset package.
+      parameters:
+        srcDir:
+          friendlyName: Source directory
+          description: >-
+            The directory where the development source lives.  It not specified
+            as an absolute path, this will be resolved relative to the current
+            working directory.
+          example: ./my-projects/some-assets/
+          required: true
+          type: string
+        outputDir:
+          friendlyName: Output directory
+          description: >-
+            The output directory where the production assets will be temporarily
+            written.  It not specified as an absolute path, this will be
+            resolved relative to the current working directory.
+          example: ./my-projects/some-assets/.tmp/processing
+          required: true
+          type: string
+        prodPkgName:
+          friendlyName: Production package name
+          description: The name for the production package (i.e. `npm install XXXXX`)
+          example: '@automatic/socket.io-client'
+          required: true
+          type: string
+        prodPkgDescription:
+          friendlyName: Production package description
+          description: >-
+            Description for the production package to include in the
+            package.json file and the README.
+          example: >-
+            This package contains the production-compressed release of an asset
+            package (i.e. shared LESS stylesheets, client-side JavaScript files,
+            fonts, and/or images).
+          defaultsTo: >-
+            This package contains the production-compressed release of an asset
+            package (i.e. shared LESS stylesheets, client-side JavaScript files,
+            fonts, and/or images).
+          type: string
+        prodPkgVersion:
+          friendlyName: Production package version
+          description: >-
+            The NPM version for the production package (will be included in the
+            package.json file).
+          example: 1.0.5
+          required: true
+          type: string
+        author:
+          friendlyName: Author
+          description: The package author.
+          example: Automatic
+          defaultsTo: ''
+          type: string
+        copyright:
+          friendlyName: Copyright
+          description: >-
+            The copyright string for the package.  If left unspecified, will
+            attempt to generate a copyright string from the "author".
+          example: 'Copyright &copy; 2015, Guillermo Rauch'
+          defaultsTo: ''
+          type: string
+        license:
+          friendlyName: License
+          description: The license string for this package.
+          example: MIT
+          defaultsTo: ''
+          type: string
+        homepageUrl:
+          friendlyName: Homepage URL
+          description: The homepage URL for this package.
+          example: 'http://socket.io'
+          defaultsTo: ''
+          type: string
   write-minified-javascript:
     POST:
       file: scripts/write-minified-javascript.js
       description: Bundle and write a minified JavaScript file to the output directory.
+      parameters:
+        outputDir:
+          friendlyName: Output directory
+          description: >-
+            The path to the temporary directory where production assets are
+            being compiled.
+          example: ./my-projects/some-assets/.tmp/processing
+          required: true
+          type: string
+        jsSrcDir:
+          friendlyName: JavaScript source directory
+          description: >-
+            The directory where the JavaScript source files live.  It not
+            specified as an absolute path, this will be resolved relative to the
+            current working directory.
+          example: ./my-projects/some-assets/js
+          required: true
+          type: string
   write-compiled-stylesheet-if-relevant:
     POST:
       file: scripts/write-compiled-stylesheet-if-relevant.js
       description: Bundle and write a minified CSS file to the output directory.
+      parameters:
+        outputDir:
+          friendlyName: Output directory
+          description: >-
+            The path to the temporary directory where production assets are
+            being compiled.
+          example: ./my-projects/some-assets/.tmp/processing
+          required: true
+          type: string
+        lessSrcDir:
+          friendlyName: LESS source directory
+          description: >-
+            The path to the source directory containing LESS stylesheets;
+            including the entry point (i.e. importer.less).  It not specified as
+            an absolute path, this will be resolved relative to the current
+            working directory.
+          example: ./foo/styles/
+          required: true
+          type: string
   compile-less-stylesheets:
     POST:
       file: scripts/compile-less-stylesheets.js
       description: >-
         Compile a LESS importer file and all connected stylesheets into CSS
         (this is usually the single entry point for all LESS in the project)
+      parameters:
+        lessSrcDir:
+          friendlyName: LESS source directory
+          description: >-
+            The source directory of LESS stylesheets with a single
+            `importer.less` file which serves as the entry point.
+          example: ./foo/styles
+          required: true
+          type: string
+        minify:
+          friendlyName: Minify?
+          description: Whether or not the resulting CSS should be minified.
+          example: false
+          defaultsTo: false
+          type: boolean

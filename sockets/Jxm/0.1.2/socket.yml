@@ -2,13 +2,42 @@ name: Jxm
 description: Work with jxm
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   start-server:
     POST:
       file: scripts/start-server.js
       description: Machine used to start an instance of a jxm server
+      parameters:
+        serviceName:
+          example: Hello World
+          description: The name of our service
+          required: true
+          type: string
+        baseUrlPath:
+          example: /helloworld
+          description: >-
+            The base url path of our service. If none is provided, inferred from
+            serviceName
+          required: false
+          type: string
   start-client:
     POST:
       file: scripts/start-client.js
       description: Machine used to start an instance of a jxm client
+      parameters:
+        ipServer:
+          example: 0.0.0.0
+          description: The IP address of our server
+          required: true
+          type: string
+        serviceName:
+          example: Hello World
+          description: The name of our service
+          required: true
+          type: string
+        message:
+          example: Clap your hands
+          description: The message to send to the server
+          required: true
+          type: string

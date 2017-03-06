@@ -2,33 +2,241 @@ name: Mandrill
 description: Machines for talking to the Mandrill API.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   send-plaintext-email:
     POST:
       file: scripts/send-plaintext-email.js
       description: Send a plaintext email to the specified recipient.
+      parameters:
+        apiKey:
+          friendlyName: Mandrill API Key
+          example: 1dTOFDXzJdU5cXiMNd6jRq
+          description: A valid Mandrill API key.
+          extendedDescription: >-
+            To look up your API key, log in to your Mandrill account and visit
+            the settings page (https://mandrillapp.com/settings/).
+          required: true
+          type: string
+        toEmail:
+          friendlyName: To (email)
+          example: jane@example.com
+          description: Email address of the primary recipient.
+          required: true
+          type: string
+        toName:
+          friendlyName: To (name)
+          example: Jane Doe
+          description: Full name of the primary recipient.
+          extendedDescription: 'If left blank, defaults to the recipient''s email address.'
+          type: string
+        subject:
+          friendlyName: Subject
+          description: Subject line for the email.
+          example: 'Welcome, Jane!'
+          type: string
+        message:
+          friendlyName: Message
+          description: The plaintext body of the email.
+          example: >-
+            Jane,
+
+            Thanks for joining our community.  If you have any questions, please
+            don't hesitate to send them our way.  Feel free to reply to this
+            email directly.
+
+
+            Sincerely,
+
+            The Management
+          type: string
+        fromEmail:
+          friendlyName: From (email)
+          description: Email address of the sender.
+          example: harold@example.enterprise
+          type: string
+        fromName:
+          friendlyName: From (name)
+          description: Full name of the sender.
+          example: Harold Greaseworthy
+          type: string
   add-template:
     POST:
       file: scripts/add-template.js
       description: Add a new email template to a Mandrill account.
+      parameters:
+        apiKey:
+          example: 1dTOFDXzJdU5cXiMNd6jRq
+          description: A valid Mandrill API key.
+          required: true
+          type: string
+        name:
+          example: reset-your-password
+          description: Name for the new template (must be unique to the account).
+          required: true
+          type: string
+        from_email:
+          description: A default sending address for emails sent using this template.
+          example: harold@foo.enterprise
+          type: string
+        from_name:
+          description: A default from name to be used for emails sent using this template.
+          example: Harold Greaseworthy
+          type: string
+        subject:
+          description: >-
+            A default subject line to be used for emails sent using this
+            template.
+          example: Click the link in this email to reset your password
+          type: string
+        code:
+          description: >-
+            The HTML code for the template with mc:edit attributes for the
+            editable elements.
+          example: >-
+            <div>Click <a href="*|RESET_LINK|*">here</a> to reset your
+            password.</div>
+          type: string
+        text:
+          description: A default text part to be used when sending with this template.
+          example: |-
+            Click on the following link to reset your password: 
+             *|RESET_LINK|*
+          type: string
+        publish:
+          description: >-
+            Set to false to add a draft template without publishing (defaults to
+            true).
+          example: true
+          type: boolean
+        labels:
+          description: An optional array of up to 10 labels to use for filtering templates.
+          example:
+            - password
+          type: array
   delete-all-templates:
     POST:
       file: scripts/delete-all-templates.js
       description: Delete all mandrill templates from an account.
+      parameters:
+        apiKey:
+          description: A valid Mandrill API key.
+          example: tzTDP_JZlGoqFw3Rvy1bpw
+          required: true
+          type: string
   migrate-templates:
     POST:
       file: scripts/migrate-templates.js
       description: Get all mandrill templates from one account and add them to another.
+      parameters:
+        srcApiKey:
+          description: A valid Mandrill API key to copy templates from.
+          example: 1dTGOXT_JZlGoqRw3Qvy1bpz
+          required: true
+          type: string
+        destApiKey:
+          description: A valid Mandrill API key to copy templates to.
+          example: tzTDP_JZlGoqFw3Rvy1bpw
+          required: true
+          type: string
   list-templates:
     POST:
       file: scripts/list-templates.js
       description: List all templates available to a user
+      parameters:
+        apiKey:
+          description: A valid Mandrill API key.
+          example: 1dTOFDXzJdU5cXiMNd6jRq
+          required: true
+          type: string
   delete-template:
     POST:
       file: scripts/delete-template.js
       description: Delete a mandrill template.
+      parameters:
+        apiKey:
+          description: A valid Mandrill API key.
+          example: 1dTOFDXzJdU5cXiMNd6jRq
+          required: true
+          type: string
+        name:
+          description: The name of an existing template to delete.
+          example: example-template
+          required: true
+          type: string
   send-template-email:
     POST:
       file: scripts/send-template-email.js
       description: Send a templated email to the specified recipient.
+      parameters:
+        apiKey:
+          friendlyName: Mandrill API Key
+          example: 1dTOFDXzJdU5cXiMNd6jRq
+          description: A valid Mandrill API key.
+          extendedDescription: >-
+            To look up your API key, log in to your Mandrill account and visit
+            the settings page (https://mandrillapp.com/settings/).
+          required: true
+          type: string
+        toEmail:
+          friendlyName: To (email)
+          example: jane@example.com
+          description: Email address of the primary recipient.
+          required: true
+          type: string
+        toName:
+          friendlyName: To (name)
+          example: Jane Doe
+          description: Full name of the primary recipient.
+          extendedDescription: 'If left blank, defaults to the recipient''s email address.'
+          type: string
+        subject:
+          friendlyName: Subject
+          description: Subject line for the email.
+          example: 'Welcome, Jane!'
+          type: string
+        templateName:
+          friendlyName: Template
+          description: The template's name
+          example: myTemplate
+          required: true
+          type: string
+        templateContent:
+          friendlyName: Data
+          description: An array of data you want to inject into the template.
+          example:
+            - name: of attribute
+              content: of attribute
+          type: array
+        message:
+          friendlyName: Message
+          description: Optional full text content to be sent
+          example: >-
+            Jane,
+
+            Thanks for joining our community.  If you have any questions, please
+            don't hesitate to send them our way.  Feel free to reply to this
+            email directly.
+
+
+            Sincerely,
+
+            The Management
+          type: string
+        fromEmail:
+          friendlyName: From (email)
+          description: Email address of the sender.
+          example: harold@example.enterprise
+          type: string
+        fromName:
+          friendlyName: From (name)
+          description: Full name of the sender.
+          example: Harold Greaseworthy
+          type: string
+        mergeVars:
+          friendlyName: Merge Tags
+          description: Content to be placed within template merge tags.
+          example:
+            - name: FNAME
+              content: First Name
+          type: array

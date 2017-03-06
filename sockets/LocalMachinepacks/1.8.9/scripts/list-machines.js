@@ -1,12 +1,19 @@
-require('machine').build(require('./read-package-json'))
-.configure({
-  dir: inputs.dir
-}).exec({
-  error: exits.error,
-  notMachinepack: exits.notMachinepack,
-  success: function (machinepack){
-    // Return list of machines, sorted alphabetically for easier reading
-    var machineIdentities = machinepack.machines.sort();
-    return exits.success(machineIdentities);
-  }
+var localmachinepacks = require('machinepack-localmachinepacks');
+
+// List the machines in a local pack.
+localmachinepacks.listMachines(ARGS).exec({
+
+    
+    notMachinepack: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
 });

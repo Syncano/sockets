@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-datetime",
+    "description": "Work the dates and times.",
+    "version": "1.4.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-datetime": "1.4.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Datetime",
+        "Datetime-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

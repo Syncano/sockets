@@ -1,24 +1,15 @@
-var klarna = require("klarna-checkout");
+var klarnacheckout = require('machinepack-klarnacheckout');
 
-klarna.init({
-  eid: inputs.eid,
-  secret: inputs.secret,
-  live: inputs.live
-});
+// null
+klarnacheckout.fetchorder(ARGS).exec({
 
-klarna.config({
-  purchase_country: inputs.country,
-  purchase_currency: inputs.currency,
-  locale: inputs.locale,
-  terms_uri: 'http://www.example.com',
-  cancellation_terms_uri: 'http://www.example.com',
-  checkout_uri: 'http://www.example.com',
-  confirmation_uri: 'http://localhost:3000/confirmation?klarna_order_id={checkout.order.id}',
-  push_uri: 'http://www.example.com'
-});
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-return klarna.fetch(inputs.id).then(function(order) {
-  return exits.success(order);
-}, function(error) {
-  return exits.success(error);
 });

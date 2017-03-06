@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-dof",
+    "description": "Computes Depth of Field property of specific photoshoot attributes.",
+    "version": "1.0.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-dof": "1.0.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-DoF",
+        "DoF-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

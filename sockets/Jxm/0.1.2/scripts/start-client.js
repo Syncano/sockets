@@ -1,35 +1,19 @@
-function (inputs, exits
-    /**/
-) {
-    var server = require('jxm');
+var jxm = require('machinepack-jxm');
 
+// Machine used to start an instance of a jxm client
+jxm.startClient(ARGS).exec({
 
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    serverCallFailed: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-    var client = server.createClient(null, inputs.serviceName,
-    "NUBISA-STANDARD-KEY-CHANGE-THIS", inputs.ipServer, 8000);
-
-    client.on('connect', function(client) {
-        client.Call("serverMethod", inputs.message, function(param, err) {
-            if (err) {
-                client.Close();
-                return exits.serverCallFailed("Error while calling server's method. Code: ", err);
-
-            } else {
-                client.Close();
-                return exits.success(param);
-            }
-        });
-    });
-
-    client.on('close', function(client) {
-        console.log("Client disconnected");
-    });
-
-    client.on('error', function(client, err) {
-        return exits.error("Error 1 : "+err);
-    });
-
-    client.Connect();
-
-
-}
+});

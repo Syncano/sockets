@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-gravatar",
+    "description": "Communicate with the Gravatar api to get a gravatar image.",
+    "version": "1.2.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-gravatar": "1.2.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Gravatar",
+        "Gravatar-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

@@ -1,23 +1,19 @@
-var path = require('path');
-var fs = require('fs');
-var fsx = require('fs-extra');
+var fs = require('machinepack-fs');
 
-// In case we ended up here w/ a relative path,
-// resolve it using the process's CWD
-inputs.destination = path.resolve(inputs.destination);
+// Generate a file on the local filesystem using the specified utf8 string as its contents.
+fs.writeSync(ARGS).exec({
 
-// Only override an existing file if `inputs.force` is true
-if (inputs.force) {
-  fsx.outputFileSync(inputs.destination, inputs.string);
-  return exits.success();
-}
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    alreadyExists: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-// Otherwise don't override existing files.
-if (fs.existsSync(inputs.destination)) {
-  // TODO: Some time before fs.existsSync() is deprecated in
-  // Node core, switch this to use a different strategy.
-  // See `https://nodejs.org/api/fs.html#fs_fs_exists_path_callback`
-  return exits.alreadyExists();
-}
-fs.writeFileSync(inputs.destination, inputs.string);
-return exits.success();
+});

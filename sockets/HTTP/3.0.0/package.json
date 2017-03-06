@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-http",
+    "description": "Send an HTTP request.",
+    "version": "3.0.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-http": "3.0.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-HTTP",
+        "HTTP-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

@@ -4,9 +4,37 @@ description: >-
   without asking for user consent.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   authorize:
     POST:
       file: scripts/authorize.js
       description: Get authorization tokens
+      parameters:
+        email:
+          example: service-account-email@developer.gserviceaccount.com
+          description: Service account email
+          required: true
+          type: string
+        keyFile:
+          example: path/to/key.pem
+          description: Path to your generated key.pem
+          type: string
+        key:
+          example: keyContent
+          description: >-
+            Contents of private_key.pem if you want to load the pem file
+            yourself. (do not use the path parameter above if using this param)
+          type: string
+        scopes:
+          example:
+            - 'https://www.googleapis.com/auth/drive.readonly'
+          description: >-
+            Scopes can be specified either as an array or as a single,
+            space-delimited string
+          typeclass: array
+          type: array
+        impersonateEmail:
+          example: subject-account-email@example.com
+          description: User to impersonate (leave empty if no impersonation needed)
+          type: string

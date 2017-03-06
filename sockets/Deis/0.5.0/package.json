@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-deis",
+    "description": "SDK for working with a Deis install",
+    "version": "0.5.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-deis": "0.5.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Deis",
+        "Deis-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

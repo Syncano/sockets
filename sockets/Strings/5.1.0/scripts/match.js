@@ -1,43 +1,23 @@
-var _ = require('lodash');
+var strings = require('machinepack-strings');
 
-// Case-insensitive by default
-if (_.isUndefined(inputs.caseInsensitive)) {
-  inputs.caseInsensitive = true;
-}
+// Search a string using a regular expression and return the first match.
+strings.match(ARGS).exec({
 
-// Check that the regexp is valid
-var regexp;
-try {
+    // The matched substring.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    invalidRegexp: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-  regexp = inputs.regexp;
-
-  /////////////////////////////////////////////////////////
-  // Skip this-- we want users to be able to provide an actual
-  // regexp with all the things (i.e. should be able to use the
-  // star and dot and ? operators, etc)
-  /////////////////////////////////////////////////////////
-  // Then escape the provided string before instantiating
-  // regexp = _.escapeRegExp(regexp);
-  /////////////////////////////////////////////////////////
-
-  // Then construct it
-  // (and if relevant, enable case-insensitivity)
-  if (inputs.caseInsensitive) {
-    regexp = new RegExp(regexp, 'i');
-  }
-  else {
-    regexp = new RegExp(regexp);
-  }
-} catch (e) {
-  return exits.invalidRegexp(e);
-}
-
-var matches = inputs.string.match(regexp);
-if (!matches) {
-  return exits.notFound();
-}
-
-return exits.success({
-  found: matches[0],
-  at: matches.index
 });

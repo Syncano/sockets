@@ -4,35 +4,165 @@ description: >-
   droplets.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   droplet-create:
     POST:
       file: scripts/droplet-create.js
       description: Create a DigitalOcean droplet.
+      parameters:
+        token:
+          example: FFDFdf8f8d
+          description: Your DigitalOcean API token.
+          required: true
+          type: string
+        name:
+          example: My-New-Droplet
+          description: The hostname you wish to assign your new droplet.
+          required: true
+          type: string
+        region:
+          example: NYC2
+          description: The region name where you wish to spin up your new droplet.
+          required: true
+          type: string
+        size:
+          example: 512mb
+          description: The droplet size you wish to spin up (E.G 512mb.)
+          required: true
+          type: string
+        image:
+          example: 434348
+          description: >-
+            The ID of the private image you wish to use as the base for your new
+            droplet.
+          required: true
+          type: number
+        sshkeys:
+          example: '10, 11, 12'
+          description: >-
+            The ID of the SSH keys you wish to apply to your droplet. These must
+            be saved to your digitalocean account. Separate with a command to
+            add multiple.
+          required: false
+          type: string
+        backups:
+          example: false
+          description: >-
+            A true/false indicating whether or not you wish to add auto-backups
+            to your droplet
+          required: false
+          type: boolean
+        ipv6:
+          example: 'false'
+          description: >-
+            A true/false indicating whether or not you wish to add IPV6 to your
+            droplet
+          required: false
+          type: string
+        private_networking:
+          example: 'false'
+          description: >-
+            A true/false indicating whether or not you wish to add private
+            networking to your droplet
+          required: false
+          type: string
+        user_data:
+          example: MetadataInfoHere
+          description: The userdata you wish to include with your droplet.
+          required: false
+          type: string
   droplet-list:
     POST:
       file: scripts/droplet-list.js
       description: List information on all droplets in your DigitalOcean account.
+      parameters:
+        token:
+          example: FFDFdf8f8d
+          description: Your DigitalOcean API token.
+          required: true
+          type: string
   droplet-get-backups:
     POST:
       file: scripts/droplet-get-backups.js
       description: Return a list of Backups for a specific Droplet
+      parameters:
+        token:
+          example: FFDFdf8f8d
+          description: Your DigitalOcean API token.
+          required: true
+          type: string
+        dropletID:
+          example: '7564837494'
+          description: Droplet ID - This will let you return details on a specific droplet.
+          required: true
+          type: string
   droplet-delete:
     POST:
       file: scripts/droplet-delete.js
       description: Delete a specific Droplet
+      parameters:
+        token:
+          example: FFDFdf8f8d
+          description: Your DigitalOcean API token.
+          required: true
+          type: string
+        dropletID:
+          example: '7564837494'
+          description: Droplet ID - The droplet specified will be deleted.
+          required: true
+          type: string
   droplet-get-snapshots:
     POST:
       file: scripts/droplet-get-snapshots.js
       description: Return a list of Snapshots for a specific Droplet
+      parameters:
+        token:
+          example: FFDFdf8f8d
+          description: Your DigitalOcean API token.
+          required: true
+          type: string
+        dropletID:
+          example: '7564837494'
+          description: Droplet ID - This will let you return details on a specific droplet.
+          required: true
+          type: string
   droplet-get:
     POST:
       file: scripts/droplet-get.js
       description: Return information for a specific Droplet
+      parameters:
+        token:
+          example: FFDFdf8f8d
+          description: Your DigitalOcean API token.
+          required: true
+          type: string
+        dropletID:
+          example: '7564837494'
+          description: Droplet ID - This will let you return details on a specific droplet.
+          required: true
+          type: string
   droplet-action:
     POST:
       file: scripts/droplet-action.js
       description: >-
         Actions include: disable_backups, reboot, shutdown, power_on, restore,
         password_reset etc
+      parameters:
+        token:
+          example: FFDFdf8f8d
+          description: Your DigitalOcean API token.
+          required: true
+          type: string
+        dropletID:
+          example: 7564837494
+          description: Droplet ID - The droplet specified will be deleted.
+          required: true
+          type: number
+        action:
+          example: reboot
+          description: >-
+            All actions can be found here:
+            https://developers.digitalocean.com/documentation/v2/#droplet-actions
+          required: true
+          type: string

@@ -1,46 +1,23 @@
-var util = require('util');
-var _ = require('lodash');
-var elasticsearch = require('elasticsearch');
+var elasticsearch = require('machinepack-elasticsearch');
 
-var client = new elasticsearch.Client({
-  host: util.format('%s:%d', inputs.hostname, inputs.port||9200),
-  log: require('../helpers/noop-logger')
-});
+// Store the provided document (a dictionary), making it searchable.
+elasticsearch.create(ARGS).exec({
 
-client.index({
-  index: inputs.index,
-  type: inputs.type||'default',
-  // id: '1',
-  body: {
-    doc: inputs.document
-  },
-}, function (err, body) {
-  if (err) {
-    client.close();
-    if (typeof err !== 'object' || typeof err.message !== 'string'){
-      return exits.error(err);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    couldNotConnect: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    noSuchIndex: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
-    if (err.constructor && err.constructor.name === 'NoConnections' || err.message.match(/No Living connections/)){
-      return exits.couldNotConnect();
-    }
-    if (err.message.match(/IndexMissingException/)){
-      return exits.noSuchIndex();
-    }
-    return exits.error(err);
-  }
 
-  var id;
-  try {
-    id = body._id;
-    if (!body.created){
-      throw new Error('Expected response from ElasticSearch to specify `created:true`');
-    }
-  }
-  catch (e) {
-    client.close();
-    return exits.error(e);
-  }
-
-  client.close();
-  return exits.success(id);
 });

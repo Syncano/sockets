@@ -1,34 +1,15 @@
-var Github = require('github');
-var _ = require('lodash');
+var github = require('machinepack-github');
 
-var github = new Github({
-  version: '3.0.0'
-});
+// Fetch recent comments from the specified GitHub repository.
+github.listIssueComments(ARGS).exec({
 
-github.issues.getComments({
-  repo: inputs.repo,
-  user: inputs.owner,
-  number: inputs.issueNumber
-}, function(err, data) {
-  try {
-    if (err) return exits.error(err);
-    var comments = _.map(data, function(commentData){
-      return {
-        author: {
-          username: commentData.user.login,
-          avatarUrl: commentData.user.avatar_url,
-          profileUrl: commentData.user.html_url,
-        },
-        body: commentData.body,
-        timestamp: commentData.created_at,
-        id: commentData.id,
-        url: commentData.html_url
-      };
-    });
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-    return exits.success(comments);
-  }
-  catch (e) {
-    return exits.error(e);
-  }
 });

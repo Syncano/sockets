@@ -1,23 +1,23 @@
-var params = {};
-// Mergind given objects
-_.merge(params, inputs);
-// Make API call
-urlshortener.url.get(params, function(err, response) {
-  if (err) {
-    if (!err.code) {
-      return exits.error(err);
+var googleapisurlshortener = require('machinepack-googleapisurlshortener');
+
+// Expand a short URL
+googleapisurlshortener.urlGet(ARGS).exec({
+
+    
+    invalidParameter: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    dailyLimitExceededUnreg: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     }
-    switch (err.code) {
-      case 400:
-        return exits.invalidParameter(err);
-        break;
-      case 403:
-        return exits.dailyLimitExceededUnreg(err);
-        break;
-      default:
-        return exits.error(err);
-        break;
-    }
-  }
-  return exits.success(response);
+
 });

@@ -1,10 +1,15 @@
-var Session = require('machinepack-session');
+var sessionauth = require('machinepack-sessionauth');
 
-Session.del({
-  key: 'me'
-}).setEnvironment({
-  req: env.req
-}).exec({
-  error: exits.error,
-  success: exits.success
+// Log the current user session out.
+sessionauth.logout(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-utorrent",
+    "description": "Communicate with uTorrent client API to list and add torrents.",
+    "version": "0.1.2",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-utorrent": "0.1.2"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-UTorrent",
+        "UTorrent-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

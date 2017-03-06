@@ -1,15 +1,19 @@
-var _ = require('lodash');
-var MomentTz = require('moment-timezone');
+var datetime = require('machinepack-datetime');
 
-// Default to current date/time/zone if no timestamp was provided.
-inputs.timestamp = _.isUndefined(inputs.timestamp) ? (new Date()).getTime() : inputs.timestamp;
+// Convert a JS timestamp into conventional JSON date/time format (ISO 8601)
+datetime.stringify(ARGS).exec({
 
-// Build moment date using appropriate timezone
-var momentObj = MomentTz.tz(inputs.timestamp, 'Etc/Greenwich');
-if (!momentObj.isValid()) {
-  return exits.invalidDatetime();
-}
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    invalidDatetime: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-// Format date
-var resultStr = momentObj.toDate().toJSON();
-return exits.success(resultStr);
+});

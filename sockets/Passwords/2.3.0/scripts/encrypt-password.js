@@ -1,6 +1,15 @@
-require('bcrypt-nodejs').hash(inputs.password, null , null, function(err, hash) {
-  if (err) {
-    return exits.error(err);
-  }
-  return exits.success(hash);
+var passwords = require('machinepack-passwords');
+
+// Encrypt a string using the BCrypt algorithm.
+passwords.encryptPassword(ARGS).exec({
+
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
 });

@@ -1,10 +1,15 @@
-for(var i = 1 ; i < inputs.array.length ; i++){
-  var value = inputs.array[i]; 
-  var hole_position = i ;
-  while( hole_position > 0 &&  inputs.array[hole_position - 1] > value ){
-    inputs.array[hole_position] = inputs.array[hole_position - 1];
-    hole_position--;
-  }
-  inputs.array[hole_position] = value ;      
-}
-return exits.success(inputs.array);
+var sort = require('machinepack-sort');
+
+// Sort an array using Insertion sort algorithm. 
+sort.insertionSort(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

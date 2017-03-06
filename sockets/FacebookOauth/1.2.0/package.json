@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-facebookoauth",
+    "description": "Communicate with Facebook to authenticate, get profile data, friends, likes, and more. This is a fork of the machinepack-facebook module.",
+    "version": "1.2.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-facebook-oauth": "1.2.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-FacebookOauth",
+        "FacebookOauth-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

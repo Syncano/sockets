@@ -1,9 +1,15 @@
-// TODO: handle more specific exits (i.e. rate limit, customer does not exist, etc.)
+var stripe = require('machinepack-stripe');
 
-var stripe = require('stripe')(inputs.apiKey);
+// Retrieve details of a specific, active subsription for a customer.
+stripe.retrieveSubscriptionDetails(ARGS).exec({
 
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-stripe.customers.retrieveSubscription(inputs.customer, inputs.sub, function(err, confirmation) {
-  if (err) return exits.error(err);
-  return exits.success(confirmation);
 });

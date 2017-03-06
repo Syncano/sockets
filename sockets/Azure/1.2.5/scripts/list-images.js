@@ -1,20 +1,19 @@
-var _ = require('lodash');
-var AzureCompute = require('azure-mgmt-compute');
+var azure = require('machinepack-azure');
 
-var azureClient = AzureCompute.createComputeManagementClient(AzureCompute.createCertificateCloudCredentials({
-  subscriptionId: inputs.subscriptionId,
-  pem: inputs.certificate
-}));
+// List all the virtual machine images available to a particular account.
+azure.listImages(ARGS).exec({
 
-azureClient.virtualMachineOSImages.list(function (err, result) {
-  if (err) {
-    if (!_.isObject(err)) return exits.error(err);
-    if (err.code === 'ForbiddenError') {
-      return exits.forbidden(err);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    forbidden: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
-    // console.log(err.code,err.type,err.name,err);
-    return exits.error(err);
-  }
 
-  return exits.success(result);
 });

@@ -1,21 +1,23 @@
-request
-.post(urljoin(inputs.url, 'deployments'))
-.type('application/json')
-.accept('application/json')
-.send({
-  access_token: inputs.access_token,
-  deployment: {
-    name: inputs.name,
-    title: inputs.title,
-    owner: inputs.owner,
-    summary: inputs.summary,
-  }
-})
-.end(function(res){
-  if (res.ok) return exits.success(res.body, res);
-  if (res.body.code) {
-    if (res.badRequest) return exits.badRequest(res.body);
-    if (res.serverError) return exits.serverError(res.body);
-  }
-  return exits.error(res);
+var democracyosmanager = require('machinepack-democracyosmanager');
+
+// Create a DemocracyOS deployment for a given user.
+democracyosmanager.createDeployment(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    serverError: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    badRequest: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

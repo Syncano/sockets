@@ -1,32 +1,15 @@
-var _ = require('lodash');
-var Javascript = require('machinepack-javascript');
-var pathToRegexp = require('path-to-regexp');
+var local-sails-apps = require('machinepack-local-sails-apps');
 
-// Sort the targets with the most dynamic ones at the bottom
-inputs.targets.sort(function(routeA, routeB) {
-  var routeParamsA = [];
-  var regexpA = pathToRegexp(routeA.path, routeParamsA);
-  var routeParamsB = [];
-  var regexpB = pathToRegexp(routeB.path, routeParamsB);
+// Generate a JavaScript code string for the `config/routes.js` file (i.e. in a Sails.js app.)
+local-sails-apps.buildRoutesConfig(ARGS).exec({
 
-  // If routeA has more dynamic route params than routeB, make it go last.
-  if (routeParamsA.length > routeParamsB.length) {
-    return 1;
-  }
-  else return -1;
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });
-
-var CRLF = '
-';
-
-var code = 'module.exports.routes = {' + CRLF;
-code += _.reduce(inputs.targets, function(js, target) {
-  js += '\'' + target.method + ' ' + target.path + '\':' +
-    ' \'' + target.controller + '.' + target.action +
-    '\',';
-  js += CRLF;
-  return js;
-}, '');
-code += CRLF + '};';
-
-return exits.success(Javascript.beautify({code: code}).execSync());

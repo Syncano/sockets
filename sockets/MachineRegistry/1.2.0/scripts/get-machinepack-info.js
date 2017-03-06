@@ -1,23 +1,19 @@
-var util = require('util');
-var Http = require('machinepack-http');
+var registry = require('machinepack-registry');
 
-// Look up machinepack, including list of machines
-Http.sendHttpRequest({
-  baseUrl: inputs.registry || 'http://www.node-machine.org',
-  url: util.format('/%s', inputs.machinepack)
-}).exec({
-  error: exits.error,
-  notFound: exits.notFound,
-  success: function (resp){
+// Get metadata for the specified machinepack, including a list of its machines.
+registry.getMachinepackInfo(ARGS).exec({
 
-    var machinepack;
-    try {
-      machinepack = JSON.parse(resp.body);
-    }
-    catch (e){
-      return exits.error(e);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
 
-    return exits.success(machinepack);
-  }
 });

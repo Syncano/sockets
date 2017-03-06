@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-booleans",
+    "description": "Work with true/false values and boolean operators like AND (&&), OR (||), NOT (!), and the ternary qualifier (?/:).",
+    "version": "0.1.1",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-booleans": "0.1.1"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Booleans",
+        "Booleans-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

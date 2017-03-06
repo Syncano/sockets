@@ -1,16 +1,15 @@
-var SegmentIO = require('analytics-node');
-var api = new SegmentIO(inputs.writeKey);
+var segment = require('machinepack-segment');
 
-api.group({
-  userId: inputs.userId,
-  groupId: inputs.groupId,
-  traits: inputs.traits||{},
-  integrations: inputs.integrations||{
-    All: true,
-    Mixpanel: false,
-    Salesforce: false
-  }
-}, function(err, batch) {
-  if (err) return exits.error(err);
-  return exits.success();
+// Associate a user with a group, like an account or an organization.
+segment.group(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

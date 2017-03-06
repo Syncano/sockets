@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-awss3tools",
+    "description": "Upload files to S3 buckets and more with Treeline.",
+    "version": "1.0.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-awss3tools": "1.0.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-AWSS3Tools",
+        "AWSS3Tools-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

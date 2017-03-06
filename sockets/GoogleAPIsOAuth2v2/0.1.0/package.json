@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-googleapisoauth2v2",
+    "description": "Work with Google OAuth2 API",
+    "version": "0.1.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-googleapisoauth2v2": "0.1.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-GoogleAPIsOAuth2v2",
+        "GoogleAPIsOAuth2v2-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

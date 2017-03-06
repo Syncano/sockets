@@ -1,20 +1,15 @@
-// Require the Firebase SDK
-var Firebase = require('firebase');
+var firebase = require('machinepack-firebase');
 
-// Get the root reference
-var rootRef = new Firebase(inputs.firebaseURL);
+// Update data in a Firebase child node per field.
+firebase.updateData(ARGS).exec({
 
-// If a child path is specified, get a reference to that data path
-var finalRef = inputs.child ? rootRef.child(inputs.child) : rootRef;
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-// Set the data at the path
-finalRef.update(inputs.write, function(error) {
-
-  // Handle errors
-  if (error) {
-    return exits.error(error);
-  }
-
-  // Return success
-  return exits.success();
 });

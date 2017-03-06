@@ -1,35 +1,15 @@
-var request = require('request');
+var soundcloud = require('machinepack-soundcloud');
 
-request.post({
-  url: 'https://api.soundcloud.com/oauth2/token',
-  json: {
-    client_id: inputs.clientId,
-    client_secret: inputs.clientSecret,
-    grant_type: inputs.grantType || 'authorization_code',
-    code: inputs.code,
-    redirect_uri: inputs.callbackUrl
-  },
-  headers: {}
-}, function(err, response, body) {
-    if (err) {
-      return exits.error(err);
+// Generate a new access token for acting on behalf of a particular SoundCloud user account.
+soundcloud.getAccessToken(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
 
-    if (response.statusCode > 299 || response.statusCode < 200) {
-      return exits.error(response.statusCode);
-    }
-
-    // Parse AccessToken from the response body
-    try {
-      //var data = JSON.parse(body);
-      //console.log(body);
-      //var accessToken = response.access_token;
-      return exits.success({
-        token: body.access_token,
-        scope: body.scope
-      });
-    }
-    catch (e) {
-      return exits.error(e);
-    }
 });

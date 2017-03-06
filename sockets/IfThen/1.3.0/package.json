@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-ifthen",
+    "description": "Machines for branching based on comparisons, validations, etc.",
+    "version": "1.3.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-ifthen": "1.3.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-IfThen",
+        "IfThen-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

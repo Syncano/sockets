@@ -1,16 +1,19 @@
-var path = require('path');
-var fsx = require('fs-extra');
+var fs = require('machinepack-fs');
 
-// Ensure absolute paths.
-inputs.source = path.resolve(inputs.source);
-inputs.destination = path.resolve(inputs.destination);
+// Move file or directory located at source path to the destination path.
+fs.mv(ARGS).exec({
 
-fsx.move(inputs.source, inputs.destination, function (err) {
-  if (err) {
-    if (err.code === 'ENOENT') {
-      return exits.doesNotExist();
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    doesNotExist: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     }
-    return exits.error(err);
-  }
-  return exits.success();
+
 });

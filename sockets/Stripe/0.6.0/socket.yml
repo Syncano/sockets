@@ -2,49 +2,452 @@ name: Stripe
 description: 'Communicate with the Stripe API to charge credit cards, etc.'
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   create-card:
     POST:
       file: scripts/create-card.js
       description: Create a new card for a customer
+      parameters:
+        apiKey:
+          description: Your Stripe API key
+          whereToGet:
+            url: 'https://dashboard.stripe.com/account/apikeys'
+            description: >-
+              Copy either "Test Secret Key" or "Live Secret Key" from your
+              Stripe dashboard.
+            extendedDescription: >-
+              Make sure you are logged in to your Stripe account, or create an
+              account if you have not already done so.
+          example: somestring837483749blah
+          required: true
+          type: string
+        token:
+          description: 'The Stripe token for the card, as returned by the Stripe.js SDK'
+          whereToGet:
+            moreInfoUrl: 'https://stripe.com/docs/stripe.js'
+          example: tok_someCardIdjsd2isnsd
+          required: true
+          type: string
+        customer:
+          description: The Stripe id of the customer who this card belongs to
+          whereToGet:
+            description: Create a customer.
+          example: cus_4kmLwU2PvQBeqq
+          required: true
+          type: string
   capture-charge:
     POST:
       file: scripts/capture-charge.js
       description: Capture the payment of a previously-created charge in Stripe.
+      parameters:
+        apiKey:
+          description: Your Stripe API key
+          whereToGet:
+            url: 'https://dashboard.stripe.com/account/apikeys'
+            description: >-
+              Copy either "Test Secret Key" or "Live Secret Key" from your
+              Stripe dashboard.
+            extendedDescription: >-
+              Make sure you are logged in to your Stripe account, or create an
+              account if you have not already done so.
+          example: somestring837483749blah
+          required: true
+          type: string
+        charge:
+          description: The Stripe id of an "uncaptured" charge
+          example: ch_14ziQH2eZvKYlo2Ci0BoqQvT
+          whereToGet:
+            description: Create a charge with the "capture" option set to false.
+          required: true
+          type: string
   create-customer:
     POST:
       file: scripts/create-customer.js
       description: Create a new customer in Stripe
+      parameters:
+        apiKey:
+          description: Your Stripe API key
+          whereToGet:
+            url: 'https://dashboard.stripe.com/account/apikeys'
+            description: >-
+              Copy either "Test Secret Key" or "Live Secret Key" from your
+              Stripe dashboard.
+            extendedDescription: >-
+              Make sure you are logged in to your Stripe account, or create an
+              account if you have not already done so.
+          example: somestring837483749blah
+          required: true
+          type: string
+        description:
+          description: Arbitrary string to attach to the customer in Stripe
+          example: sdjasnd928u8duasd
+          type: string
   list-cards:
     POST:
       file: scripts/list-cards.js
       description: List all cards in Stripe for a customer.
+      parameters:
+        apiKey:
+          description: Your Stripe API key
+          whereToGet:
+            url: 'https://dashboard.stripe.com/account/apikeys'
+            description: >-
+              Copy either "Test Secret Key" or "Live Secret Key" from your
+              Stripe dashboard.
+            extendedDescription: >-
+              Make sure you are logged in to your Stripe account, or create an
+              account if you have not already done so.
+          example: somestring837483749blah
+          required: true
+          type: string
+        customer:
+          description: The Stripe id of the customer whose cards will be listed
+          example: cus_4kmLwU2PvQBeqq
+          required: true
+          type: string
   delete-card:
     POST:
       file: scripts/delete-card.js
       description: Delete a card in Stripe for a customer
+      parameters:
+        apiKey:
+          description: Your Stripe API key
+          whereToGet:
+            url: 'https://dashboard.stripe.com/account/apikeys'
+            description: >-
+              Copy either "Test Secret Key" or "Live Secret Key" from your
+              Stripe dashboard.
+            extendedDescription: >-
+              Make sure you are logged in to your Stripe account, or create an
+              account if you have not already done so.
+          example: somestring837483749blah
+          required: true
+          type: string
+        card:
+          description: The Stripe id of the card to delete
+          example: card_14t5VD2eZvKYlo2CbhcljD3Y
+          required: true
+          type: string
   create-charge:
     POST:
       file: scripts/create-charge.js
       description: Create a new charge for a customer
+      parameters:
+        apiKey:
+          description: Your Stripe API key
+          whereToGet:
+            url: 'https://dashboard.stripe.com/account/apikeys'
+            description: >-
+              Copy either "Test Secret Key" or "Live Secret Key" from your
+              Stripe dashboard.
+            extendedDescription: >-
+              Make sure you are logged in to your Stripe account, or create an
+              account if you have not already done so.
+          example: somestring837483749blah
+          required: true
+          type: string
+        amount:
+          description: >-
+            The amount to charge, in the smallest currency unit (e.g. 500 to
+            charge $5.00)
+          extendedDescription: >-
+            A positive integer in the smallest currency unit (e.g 100 cents to
+            charge $1.00, or 1 to charge ¥1, a 0-decimal currency) representing
+            how much to charge the card. The minimum amount is $0.50 (or
+            equivalent in charge currency).
+          example: 500
+          required: true
+          type: number
+        currency:
+          description: 3-letter ISO code for currency.
+          example: usd
+          required: true
+          type: string
+        card:
+          description: The Stripe id of a saved card to charge.
+          extendedDescription: >-
+            If you also pass a customer ID, the card must be the ID of a card
+            belonging to the customer. Otherwise, if you do not pass a customer
+            ID, the card you provide must either be a Stripe token, like the
+            ones returned by Stripe.js.
+          example: tok_someCardIdjsd2isnsd
+          required: true
+          type: string
+        capture:
+          description: 'Whether to capture payment immediately, or just authorize it.'
+          extendedDescription: >-
+            If the payment is not captured, you will need to capture it within 7
+            days in order for payment to be collected.
+          example: true
+          required: true
+          type: boolean
+        description:
+          description: An arbitrary string to attach to the charge object in Stripe.
+          extendedDescription: >-
+            It is displayed when in the web interface alongside the charge. Note
+            that if you use Stripe to send automatic email receipts to your
+            customers, your receipt emails will include the description of the
+            charge(s) that they are describing.
+          example: This notable charge was for several gallons of mayonnaise!
+          type: string
+        customer:
+          description: The Stripe id of an existing customer to charge.
+          example: cus_4kmLwU2PvQBeqq
+          type: string
   subscribe-customer:
     POST:
       file: scripts/subscribe-customer.js
       description: Subscribe a customer to a pre-existing plan.
+      parameters:
+        apiKey:
+          description: Your Stripe API key
+          whereToGet:
+            url: 'https://dashboard.stripe.com/account/apikeys'
+            description: >-
+              Copy either "Test Secret Key" or "Live Secret Key" from your
+              Stripe dashboard.
+            extendedDescription: >-
+              Make sure you are logged in to your Stripe account, or create an
+              account if you have not already done so.
+          example: somestring837483749blah
+          required: true
+          type: string
+        plan:
+          description: The plan id to subscribe the customer to.
+          extendedDescription: >-
+            You can find this in your stripe control panel after creating a
+            subscription.
+          example: premium
+          required: true
+          type: string
+        quantity:
+          description: >-
+            If using a plan with multiple users or other dynamic elements,
+            specify the quantity.
+          example: 20
+          required: true
+          type: number
+        card:
+          description: The Stripe id of a saved card to charge.
+          extendedDescription: >-
+            If you also pass a customer ID, the card must be the ID of a card
+            belonging to the customer. Otherwise, if you do not pass a customer
+            ID, the card you provide must either be a Stripe token, like the
+            ones returned by Stripe.js.
+          example: tok_someCardIdjsd2isnsd
+          required: true
+          type: string
+        customer:
+          description: The Stripe id of an existing customer to subscribe to the plan.
+          example: cus_4kmLwU2PvQBeqq
+          required: true
+          type: string
   update-subscription:
     POST:
       file: scripts/update-subscription.js
       description: Update a customer's subscription to change plan or quantity.
+      parameters:
+        apiKey:
+          description: Your Stripe API key
+          whereToGet:
+            url: 'https://dashboard.stripe.com/account/apikeys'
+            description: >-
+              Copy either "Test Secret Key" or "Live Secret Key" from your
+              Stripe dashboard.
+            extendedDescription: >-
+              Make sure you are logged in to your Stripe account, or create an
+              account if you have not already done so.
+          example: somestring837483749blah
+          required: true
+          type: string
+        plan:
+          description: The plan ID to subscribe the customer to.
+          extendedDescription: >-
+            You can find this in your stripe control panel after creating a
+            subscription.
+          example: premium
+          required: true
+          type: string
+        quantity:
+          description: >-
+            If using a plan with multiple users or other dynamic elements,
+            specify the quantity.
+          example: 20
+          required: false
+          type: number
+        sub:
+          description: The subscription ID of the specific customer's plan.
+          extendedDescription: >-
+            If you also pass a customer ID, the card must be the ID of a card
+            belonging to the customer. Otherwise, if you do not pass a customer
+            ID, the card you provide must either be a Stripe token, like the
+            ones returned by Stripe.js.
+          example: sub_someSubIdjsd2isnsd
+          required: true
+          type: string
+        prorate:
+          description: Should the subscription be prorated during the switch? true/false
+          extendedDescription: >-
+            A pro-rata example situation can be seen here:
+            https://stripe.com/docs/subscriptions#changing-a-customers-subscriptions
+          example: 'true'
+          required: true
+          type: string
+        customer:
+          description: >-
+            The Stripe ID of an existing customer whom is subscribed to the
+            plan.
+          example: cus_4kmLwU2PvQBeqq
+          required: true
+          type: string
   cancel-subscription:
     POST:
       file: scripts/cancel-subscription.js
       description: Cancel an existing subscription attached to a customer.
+      parameters:
+        apiKey:
+          description: Your Stripe API key
+          whereToGet:
+            url: 'https://dashboard.stripe.com/account/apikeys'
+            description: >-
+              Copy either "Test Secret Key" or "Live Secret Key" from your
+              Stripe dashboard.
+            extendedDescription: >-
+              Make sure you are logged in to your Stripe account, or create an
+              account if you have not already done so.
+          example: somestring837483749blah
+          required: true
+          type: string
+        sub:
+          description: >-
+            The subscription ID of the specific customers plan you wish to
+            cancel.
+          extendedDescription: >-
+            When you create a subscription for a customer, this will have a
+            specific ID. You must still provide the customer ID to successfully
+            cancel the subscription.
+          example: sub_someSubIdjsd2isnsd
+          required: true
+          type: string
+        instant:
+          description: >-
+            (true/false) Should the subscription be cancelled instantly, or at
+            the end of the subscription period?
+          extendedDescription: >-
+            True/false - More information:
+            https://stripe.com/docs/api#cancel_subscription
+          example: 'true'
+          required: true
+          type: string
+        customer:
+          description: >-
+            The Stripe id of an existing customer whom is subscribed to the
+            plan.
+          example: cus_4kmLwU2PvQBeqq
+          required: true
+          type: string
   retrieve-subscription-details:
     POST:
       file: scripts/retrieve-subscription-details.js
       description: 'Retrieve details of a specific, active subsription for a customer.'
+      parameters:
+        apiKey:
+          description: Your Stripe API key
+          whereToGet:
+            url: 'https://dashboard.stripe.com/account/apikeys'
+            description: >-
+              Copy either "Test Secret Key" or "Live Secret Key" from your
+              Stripe dashboard.
+            extendedDescription: >-
+              Make sure you are logged in to your Stripe account, or create an
+              account if you have not already done so.
+          example: somestring837483749blah
+          required: true
+          type: string
+        sub:
+          description: >-
+            The subscription ID of the specific customer's plan you wish to
+            retrieve details for.
+          extendedDescription: >-
+            When you create a subscription for a customer, this will have a
+            specific ID.
+          example: sub_someSubIdjsd2isnsd
+          required: true
+          type: string
+        customer:
+          description: >-
+            The Stripe id of an existing customer whom is subscribed to the
+            plan.
+          example: cus_4kmLwU2PvQBeqq
+          required: true
+          type: string
   one-off-charge:
     POST:
       file: scripts/one-off-charge.js
       description: Create a new charge without storing customer or card objects in Stripe.
+      parameters:
+        apiKey:
+          description: Your Stripe API key
+          whereToGet:
+            url: 'https://dashboard.stripe.com/account/apikeys'
+            description: >-
+              Copy either "Test Secret Key" or "Live Secret Key" from your
+              Stripe dashboard.
+            extendedDescription: >-
+              Make sure you are logged in to your Stripe account, or create an
+              account if you have not already done so.
+          example: somestring837483749blah
+          required: true
+          type: string
+        amount:
+          description: >-
+            The amount to charge, in the smallest currency unit (e.g. 500 to
+            charge $5.00)
+          extendedDescription: >-
+            A positive integer in the smallest currency unit (e.g 100 cents to
+            charge $1.00, or 1 to charge ¥1, a 0-decimal currency) representing
+            how much to charge the card. The minimum amount is $0.50 (or
+            equivalent in charge currency).
+          example: 500
+          required: true
+          type: number
+        currency:
+          description: 3-letter ISO code for currency.
+          example: usd
+          required: true
+          type: string
+        cardnumber:
+          description: The Credit Card number to charge.
+          extendedDescription: >-
+            If you also pass a customer ID, the card must be the ID of a card
+            belonging to the customer. Otherwise, if you do not pass a customer
+            ID, the card you provide must either be a Stripe token, like the
+            ones returned by Stripe.js.
+          example: '4242424242424242'
+          required: true
+          type: string
+        cardexpmonth:
+          description: The credit card expiration month.
+          example: 12
+          required: true
+          type: number
+        cardexpyear:
+          description: The credit card expiration year.
+          example: 2016
+          required: true
+          type: number
+        cardcvc:
+          description: The credit card CVC.
+          example: '123'
+          required: true
+          type: string
+        description:
+          description: An arbitrary string to attach to the charge object in Stripe.
+          extendedDescription: >-
+            It is displayed when in the web interface alongside the charge. Note
+            that if you use Stripe to send automatic email receipts to your
+            customers, your receipt emails will include the description of the
+            charge(s) that they are describing.
+          example: This notable charge was for several gallons of mayonnaise!
+          type: string

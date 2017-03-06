@@ -1,26 +1,23 @@
-var _ = require('lodash');
-var MomentTz = require('moment-timezone');
+var datetime = require('machinepack-datetime');
 
-// Default to current date/time/zone if no timestamp was provided.
-inputs.timestamp = _.isUndefined(inputs.timestamp) ? (new Date()).getTime() : inputs.timestamp;
+// Convert a JS timestamp and timezone into a human readable date/time.
+datetime.format(ARGS).exec({
 
-// Validate this is a known timezone
-// (case-insensitive)
-var foundTimezone = _.find(MomentTz.tz.names(), function (timezoneName){
-  if (inputs.timezone.toLowerCase().match(timezoneName.toLowerCase())) {
-    return timezoneName;
-  }
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    unknownTimezone: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    invalidDatetime: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
 });
-if (!foundTimezone) {
-  return exits.unknownTimezone();
-}
-
-// Build moment date using appropriate timezone
-var momentObj = MomentTz.tz(inputs.timestamp, foundTimezone);
-if (!momentObj.isValid()) {
-  return exits.invalidDatetime();
-}
-
-// Format date
-var resultStr = momentObj.format(inputs.formatString);
-return exits.success(resultStr);

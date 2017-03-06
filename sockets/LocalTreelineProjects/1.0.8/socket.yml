@@ -2,43 +2,311 @@ name: LocalTreelineProjects
 description: Work with local treeline projects.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   read-keychain:
     POST:
       file: scripts/read-keychain.js
       description: Read data from the Treeline identity/config file.
+      parameters:
+        keychainPath:
+          description: >-
+            Path to the keychain file on this computer. Defaults to
+            `.treeline.secret.json` in the home directory.
+          extendedDescription: >-
+            If provided as a relative path, this will be resolved from the
+            current working directory.
+          example: /Users/mikermcneil/Desktop/foo
+          type: string
   write-keychain:
     POST:
       file: scripts/write-keychain.js
       description: Write or overwrite the Treeline keychain/identity/config file.
+      parameters:
+        username:
+          description: The username to write to the keychain file.
+          example: mikermcneil
+          required: true
+          type: string
+        secret:
+          description: The secret to write to the keychain file
+          example: 29f559ae-3bec-4d0a-8458-1f4e32a72407
+          required: true
+          type: string
+        keychainPath:
+          description: >-
+            Path to the keychain file on this computer. Defaults to
+            `.treeline.secret.json` in the home directory.
+          extendedDescription: >-
+            If provided as a relative path, this will be resolved from the
+            current working directory.
+          example: /Users/mikermcneil/Desktop/foo
+          type: string
   read-linkfile:
     POST:
       file: scripts/read-linkfile.js
       description: Read data from the linkfile in the current directory.
+      parameters:
+        dir:
+          description: Path to the local project.
+          extendedDescription: >-
+            If unspecified, defaults to the current working directory.  If
+            provided as a relative path, this will be resolved from the current
+            working directory.
+          example: /Users/mikermcneil/Desktop/foo
+          type: string
   write-linkfile:
     POST:
       file: scripts/write-linkfile.js
       description: Write or overwrite the linkfile in the current directory.
+      parameters:
+        dir:
+          description: Path to the local project.
+          extendedDescription: >-
+            If unspecified, defaults to the current working directory.  If
+            provided as a relative path, this will be resolved from the current
+            working directory.
+          example: /Users/mikermcneil/Desktop/foo
+          type: string
+        id:
+          description: The id of the app
+          example: '432'
+          required: true
+          type: string
+        identity:
+          description: The identity (i.e. slug) of the linked machinepack or app
+          example: my-cool-app
+          required: true
+          type: string
+        displayName:
+          description: The display name of the app to use as a label throughout the CLI
+          example: My Cool App
+          required: true
+          type: string
+        type:
+          description: >-
+            The type of linked Treeline project this is (i.e. "app",
+            "machinepack", etc.)
+          example: app
+          required: true
+          type: string
+        owner:
+          description: The username of the account which owns this Treeline project
+          example: mikermcneil
+          required: true
+          type: string
+        hashes:
+          description: Hash values for installed machinepacks
+          example: {}
+          type: object
   install-treeline-deps:
     POST:
       file: scripts/install-treeline-deps.js
       description: Install Treeline pack dependencies for the specified pack.
+      parameters:
+        dir:
+          description: >-
+            Path to the local machinepack where the dependencies should be
+            installed.
+          extendedDescription: >-
+            If unspecified, defaults to the current working directory.  If
+            provided as a relative path, this will be resolved from the current
+            working directory.
+          example: /Users/mikermcneil/Desktop/foo
+          type: string
+        keychainPath:
+          description: >-
+            Path to the keychain file on this computer. Defaults to
+            `.treeline.secret.json` in the home directory.
+          extendedDescription: >-
+            If provided as a relative path, this will be resolved from the
+            current working directory.
+          example: /Users/mikermcneil/Desktop/foo
+          type: string
+        treelineApiUrl:
+          description: >-
+            The base URL for the Treeline API (useful if you're in a country
+            that can't use SSL, etc.)
+          example: 'http://api.treeline.io'
+          defaultsTo: 'https://api.treeline.io'
+          type: string
+        useCachedHashes:
+          description: >-
+            Flag indicating that the hashes in the link file should be sent to
+            the server, instead of being recalculted from disk.
+          example: false
+          defaultsTo: false
+          type: boolean
   normalize-type:
     POST:
       file: scripts/normalize-type.js
       description: >-
         Validate+coerce the provided project type, or if unspecified, look in
         the package.json file and take a guess.
+      parameters:
+        type:
+          friendlyName: Type
+          description: The type of Treeline project ("app" or "machinepack")
+          example: machinepack
+          type: string
+        dir:
+          description: Path to the local project.
+          extendedDescription: >-
+            If unspecified, defaults to the current working directory.  If
+            provided as a relative path, this will be resolved from the current
+            working directory.
+          example: /Users/mikermcneil/Desktop/foo
+          type: string
   sync-remote-changes:
     POST:
       file: scripts/sync-remote-changes.js
       description: >-
         Apply a changelog of remote changes from treeline.io to the local
         project.
+      parameters:
+        type:
+          friendlyName: Type
+          description: The type of Treeline project this is ("app" or "machinepack")
+          extendedDescription: >-
+            If left unspecified, we'll sniff around in the directory and guess
+            what kind of thing this is based on its package.json file.
+          example: machinepack
+          type: string
+        changelog:
+          friendlyName: Changelog
+          description: A set of changes to apply to this local project.
+          example:
+            - {}
+          required: true
+          type: array
+        smash:
+          friendlyName: Smash
+          description: >-
+            Flag indicating whether these changes should replace existing files
+            completely
+          example: true
+          type: boolean
+        onSyncSuccess:
+          description: >-
+            An optional notifier function that will be called when Treeline
+            attempts to sync remote changes to the local project and it works.
+          example: '->'
+          type: string
+        onNpmInstall:
+          description: >-
+            An optional notifier function that will be called when we start NPM
+            installing things.
+          example: '->'
+          type: string
+        onNpmInstallError:
+          description: >-
+            An optional notifier function that will be called when we start NPM
+            installing things.
+          example: '->'
+          type: string
+        onNpmInstallSuccess:
+          description: >-
+            An optional notifier function that will be called when we start NPM
+            installing things.
+          example: '->'
+          type: string
+        localPort:
+          description: >-
+            The local port to run the preview server on (either a sails app or
+            the `scribe` utility, depending on what is being previewed). 
+            Defaults to 1337.
+          example: 1337
+          defaultsTo: 1337
+          type: number
+        dir:
+          description: Path to the local machinepack where the changelog should be applied.
+          extendedDescription: >-
+            If unspecified, defaults to the current working directory.  If
+            provided as a relative path, this will be resolved from the current
+            working directory.
+          example: /Users/mikermcneil/Desktop/foo
+          type: string
+        treelineApiUrl:
+          description: >-
+            The base URL for the Treeline API (useful if you're in a country
+            that can't use SSL, etc.)
+          example: 'http://api.treeline.io'
+          defaultsTo: 'https://api.treeline.io'
+          type: string
+        npmInstall:
+          description: >-
+            Whether to run a blanket NPM install, or use the target dependency
+            installation machines
+          extendedDescription: >-
+            By default, this machine runs "NPM.installDependencies" at the end,
+            which is a wrapper for "npm install".  Setting this flag to false
+            causes the machine to instead run the "installTreelineDeps" and
+            "installExternalDeps" machines, which may or may not actually npm
+            install anything.
+          example: true
+          defaultsTo: true
+          type: boolean
+        previewServerLifted:
+          description: Whether a preview server is lifted
+          extendedDescription: >-
+            If there is a preview server (or Scribe server) running, the sync
+            machine will attempt to communicate with it.
+          example: true
+          type: boolean
   apply-pack-changelog:
     POST:
       file: scripts/apply-pack-changelog.js
       description: >-
         Apply a changelog of remote changes from treeline.io to the local
         machinepack.
+      parameters:
+        changelog:
+          friendlyName: Changelog
+          description: A set of changes to apply to this local machinepack.
+          example:
+            - {}
+          required: true
+          type: array
+        onNpmInstall:
+          description: >-
+            An optional notifier function that will be called when we start NPM
+            installing things.
+          example: '->'
+          type: string
+        onNpmInstallError:
+          description: >-
+            An optional notifier function that will be called when we start NPM
+            installing things.
+          example: '->'
+          type: string
+        onNpmInstallSuccess:
+          description: >-
+            An optional notifier function that will be called when we start NPM
+            installing things.
+          example: '->'
+          type: string
+        dir:
+          description: Path to the local machinepack where the changelog should be applied.
+          extendedDescription: >-
+            If unspecified, defaults to the current working directory.  If
+            provided as a relative path, this will be resolved from the current
+            working directory.
+          example: /Users/mikermcneil/Desktop/foo
+          type: string
+        treelineApiUrl:
+          description: >-
+            The base URL for the Treeline API (useful if you're in a country
+            that can't use SSL, etc.)
+          example: 'http://api.treeline.io'
+          defaultsTo: 'https://api.treeline.io'
+          type: string
+        isDependency:
+          description: >-
+            Whether or not this changelog represents changes to a dependency
+            pack.
+          extendedDescription: >-
+            If true, logic pertaining to postinstall scripts and treeline.json
+            files will be skipped.
+          example: true
+          defaultsTo: false
+          type: boolean

@@ -1,15 +1,15 @@
-var path = require('path'),
-  cp = require('machine').build(require('./copy-files'));
+var sailsgulpify = require('machinepack-sailsgulpify');
 
-cp({
-  gulpFileSrcPath: path.resolve(__dirname, inputs.gulpFileSrcPath),
-  outputDir: path.resolve(__dirname, inputs.outputDir)
-}).exec({
-  error: function (err){
-    console.error('an error occurred- error details:',err);
-    return exits.error();
-  },
-  success: function() {
-    return exits.success();
-  }
+// Creates a gulp file from template in the root project directory
+sailsgulpify.createGulpFile(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

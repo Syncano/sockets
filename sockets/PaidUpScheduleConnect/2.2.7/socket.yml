@@ -2,13 +2,84 @@ name: PaidUpScheduleConnect
 description: Connector from TDSchedule
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   calculate-price:
     POST:
       file: scripts/calculate-price.js
       description: Calculate price for a product
+      parameters:
+        baseUrl:
+          example: 'http://localhost:9006'
+          description: Url TDSchedule microservice..
+          required: true
+          type: string
+        token:
+          example: secret-word
+          description: secret word for autenticate microservice.
+          required: true
+          type: string
+        originalPrice:
+          example: 200.23
+          description: Price base for calculate owed price.
+          required: true
+          type: number
+        stripePercent:
+          example: 2.9
+          description: Percentage for calculate stripe fee.
+          required: true
+          type: number
+        stripeFlat:
+          example: 0.3
+          description: Amount base to calcualte stripe fee.
+          required: true
+          type: number
+        paidUpFee:
+          example: 5
+          description: Percentage to calculate Paid Up Fee.
+          required: true
+          type: number
+        discount:
+          example: 20
+          description: Percentage to discount at original price
+          required: true
+          type: number
+        payProcessing:
+          example: false
+          description: This parameter define if user pay stripe processing
+          required: true
+          type: boolean
+        payCollecting:
+          example: true
+          description: This parameter define if user pay PadUp processing
+          required: true
+          type: boolean
   calculate-prices:
     POST:
       file: scripts/calculate-prices.js
       description: Calculate prices for a product
+      parameters:
+        baseUrl:
+          example: 'http://localhost:9006'
+          description: TDSchedule microservice url.
+          required: true
+          type: string
+        token:
+          example: secret-word
+          description: token for authentication.
+          required: true
+          type: string
+        prices:
+          description: List of amount to calculate
+          required: true
+          example:
+            - description: some description
+              dateCharge: some string data description
+              originalPrice: 203
+              stripePercent: 2.9
+              stripeFlat: 0.3
+              paidUpFee: 5
+              discount: 10
+              payProcessing: false
+              payCollecting: true
+          type: array

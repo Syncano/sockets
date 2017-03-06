@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-urlbox",
+    "description": "This machinepack is a screen capture service.",
+    "version": "1.1.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-urlbox": "1.1.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Urlbox",
+        "Urlbox-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

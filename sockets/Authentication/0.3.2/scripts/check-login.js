@@ -1,15 +1,19 @@
-var Session = require('machinepack-session');
+var sessionauth = require('machinepack-sessionauth');
 
-Session.load({
-  key: 'me'
-}).setEnvironment({
-  req: env.req
-}).exec({
-  error: exits.error,
-  notFound: function (){
-    return exits.otherwise();
-  },
-  success: function (id){
-    return exits.success(id);
-  }
+// Check whether the current user is logged in.
+sessionauth.checkLogin(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    otherwise: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
 });

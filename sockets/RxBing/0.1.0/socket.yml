@@ -2,7 +2,7 @@ name: RxBing
 description: Reactive extensions for Bing location and mapping services
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   whats-around-me:
     POST:
@@ -10,3 +10,52 @@ endpoints:
       description: >-
         Bing Spatial Data Service: collects all entities around a specified geo
         location
+      parameters:
+        apiKey:
+          example: 232edfdnfddf4450
+          description: >-
+            Your api access key to access bing spatial data services. This can
+            be obtained at
+            https://msdn.microsoft.com/en-us/library/ff428642.aspx
+          required: true
+          type: string
+        location:
+          example: '34.23245532,-40.47464. {latitude},{longitude}'
+          description: The users latitude and longitude
+          required: true
+          type: string
+        select:
+          example: 'Latitude,Longitude,IsWiFiHotSpot,DisplayName'
+          description: The selection fields from the bing spatial data source
+          required: false
+          type: string
+        datasourceName:
+          example: NAVTEQNA
+          description: The Bing spatial data public data source name to query
+          required: false
+          type: string
+        poiName:
+          example: NavteqPOIs
+          description: The point of interest name
+          required: false
+          type: string
+        filter:
+          example: 'StartsWith(PrimaryCity, Clear) eq true'
+          description: The Odata filter for the bing spatial data query
+          required: false
+          type: string
+        orberByClause:
+          example: IsWheelchairAccessible
+          description: The Odata filter for the bing spatial data query
+          required: false
+          type: string
+        top:
+          example: '3'
+          description: Sets the max returned alllwable results
+          required: false
+          type: string
+        radius:
+          example: '1'
+          description: Spatial data filter radius(in kilometers)
+          required: true
+          type: string

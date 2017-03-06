@@ -1,14 +1,15 @@
-var machine = require('machine');
-var get = machine.build(require('./get'));
-get({path:inputs.path, merge:true, nomethod: true}).exec(function(err, data){
-  if(data.multiple){
-    var multiple = machine.build(require('./multiple'));
-    multiple({schema: data.multiple}).exec(function(err, result){
-      return exits.success(result);
-    });
-  } else {
-    get(data).exec(function(err, result){
-      return exits.success(result);
-    });
-  }
+var config = require('machinepack-config');
+
+// Load a config of config's file...
+config.load(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

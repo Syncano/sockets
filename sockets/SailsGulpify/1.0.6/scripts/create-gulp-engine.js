@@ -1,27 +1,19 @@
-var path = require('path'),
-  cp = require('machine').build(require('./copy-files'));
+var sailsgulpify = require('machinepack-sailsgulpify');
 
-cp({
-  gulpFileSrcPath: path.resolve(__dirname, inputs.gulpFolderSrcPath),
-  outputDir: path.resolve(__dirname, inputs.outputDir)
-}).exec({
-  error: function (err){
-    console.error('an error occurred- error details:',err);
-    return exits.error();
-  },
-  success: function() {
-    //return exits.success();
-    cp({
-      gulpFileSrcPath: path.resolve(__dirname, '../lib/default-hooks.js'),
-      outputDir: path.resolve(__dirname, '../../sails/lib/app/configuration/default-hooks.js')
-    }).exec({
-      error: function (err){
-        console.error('an error occurred- error details:',err);
-        return exits.error();
-      },
-      success: function() {
-        return exits.success();
-      }
-    });
-  }
+// Modifies core sails files ading the ability to toggle between grunt and gulp via cli argument
+sailsgulpify.createGulpEngine(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    doesNotExist: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
 });

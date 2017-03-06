@@ -1,15 +1,19 @@
-// Set up our parent-wrapper
- var Dropkit = require("dropkit");
-// And add our token found in the API section of the Digital Ocean Control panel. 
- var v2 = new Dropkit(inputs.token);
+var digitalocean = require('machinepack-digitalocean');
 
- // Specify our arguments in JSON format. 
- v2.droplet.backups(inputs.dropletID).then(function(droplet) {
-      return exits.success(droplet);
- }).error(function(error) {
-    return exits.notFound({
-        description: "Not found.",
-        statuscode: error.statuscode,
-        response: error.res
-    });
- });
+// Return a list of Backups for a specific Droplet
+digitalocean.dropletGetBackups(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

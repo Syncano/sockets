@@ -1,18 +1,19 @@
-var helper = require("../lib/helper.js");
-var fs = require("fs");
+var aes256 = require('machinepack-aes256');
 
-if (fs.existsSync(inputs.path) !== true)
-  return exits.errorFileNotFind();
+// Decrypt a streamfile with source path
+aes256.decryptStreamFile(ARGS).exec({
 
-var stream = helper.decryptStream(fs.createReadStream(inputs.path), inputs.secret);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    errorFileNotFind: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-if (inputs.save){
-  var newPath = inputs.path.slice(0, -3);
-  console.log("newPath",newPath);
-  stream.pipe(fs.createWriteStream(newPath));
-}
-
-return exits.success({
-  stream: stream,
-  path: inputs.save ? inputs.path.slice(0, -3) : inputs.path
 });

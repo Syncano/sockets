@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-grooveshark",
+    "description": "Download songs from playlists or by name from Grooveshark. NOT OFFICIAL API",
+    "version": "0.2.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-grooveshark": "0.2.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Grooveshark",
+        "Grooveshark-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-javascript",
+    "description": "Machines for working with javascript code strings.",
+    "version": "3.0.1",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-javascript": "3.0.1"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-JavaScript",
+        "JavaScript-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

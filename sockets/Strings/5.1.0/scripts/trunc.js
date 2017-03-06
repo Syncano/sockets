@@ -1,12 +1,15 @@
-var _ = require('lodash');
+var strings = require('machinepack-strings');
 
-var opts = {
-  length: inputs.maxLength,
-  omission: inputs.omission
-};
-if (inputs.pretty){
-  opts.separator = /[^0-9a-z]?\s+/i;
-}
+// If the string is longer than the given maximum length, chop off characters from the end.
+strings.trunc(ARGS).exec({
 
-var truncated = _.trunc(inputs.string, opts);
-return exits.success(truncated);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

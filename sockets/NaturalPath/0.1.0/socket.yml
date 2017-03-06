@@ -2,13 +2,36 @@ name: NaturalPath
 description: Convert Natural Language into a file/directory path
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   convert:
     POST:
       file: scripts/convert.js
       description: Convert Natural Language to file system path
+      parameters:
+        string:
+          example: >-
+            Go to Google Drive go into School go into 2015 2016 and find the
+            Cryptography folder
+          description: The natural language path
+          required: true
+          type: string
   resolve:
     POST:
       file: scripts/resolve.js
       description: Resolve list of directory names to file system path
+      parameters:
+        names:
+          example:
+            - Google Drive
+            - School
+            - 2015 2016
+            - Cryptography
+          description: List of directory names
+          required: true
+          type: array
+        cwd:
+          example: /Users/Glavin
+          description: Current working directory to resolve the directory names
+          required: false
+          type: string

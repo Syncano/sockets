@@ -1,7 +1,19 @@
-var _ = require('lodash');
+var dictionaries = require('machinepack-dictionaries');
 
-if (!inputs.force && !_.isUndefined(inputs.dictionary[inputs.newKey])) {
-  return exits.keyAlreadyExists();
-}
-inputs.dictionary[inputs.newKey] = inputs.value;
-return exits.success(inputs.dictionary);
+// Add a new key to a dictionary.
+dictionaries.addKey(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    keyAlreadyExists: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

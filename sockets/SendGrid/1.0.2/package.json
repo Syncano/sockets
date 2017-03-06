@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-sendgrid",
+    "description": "Communicate with the SendGrid API to send emails",
+    "version": "1.0.2",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-sendgrid": "1.0.2"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-SendGrid",
+        "SendGrid-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

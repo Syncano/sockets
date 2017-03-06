@@ -1,24 +1,15 @@
-var Connector = require('../core/common/connector')
+var paidup-commerce-connect = require('paidup-commerce-connect');
 
-var config = {
-  url: '/api/v3/commerce/order/search',
-  baseUrl: inputs.baseUrl,
-  method: 'post',
-  token: inputs.token
-}
+// search orders
+paidup-commerce-connect.orderSearch(ARGS).exec({
 
-var body = { params: inputs.params }
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-Connector.request(config, {}, body, function (err, resp) {
-  if (err) {
-    return exits.error({
-      status: err.status,
-      message: JSON.stringify(err.message)
-    })
-  } else {
-    return exits.success({
-      status: resp.status,
-      body: resp.body
-    })
-  }
-})
+});

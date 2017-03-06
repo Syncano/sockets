@@ -1,9 +1,15 @@
-var _ = require('lodash');
+var npm = require('machinepack-npm');
 
-// Un-flatten dependencies.
-var dependenciesDict = _.reduce(inputs.dependencies, function (memo, dependency){
-  memo[dependency.name] = dependency.semverRange;
-  return memo;
-}, {});
+// Un-flatten the provided array back into a traditional NPM dependencies dictionary.
+npm.unarrayifyDependencies(ARGS).exec({
 
-return exits.success(dependenciesDict);
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

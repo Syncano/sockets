@@ -1,15 +1,19 @@
-var _ = require('lodash');
+var arrays = require('machinepack-arrays');
 
-var foundAtIndex;
-_.each(inputs.array, function (item, i){
-  if (!_.isUndefined(foundAtIndex)) {
-    return;
-  }
-  if (_.isEqual(item, inputs.item)) {
-    foundAtIndex = i;
-  }
+// Look up the first occurrence of the specified item and return its array index.
+arrays.indexOf(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    // The index where the array item is located.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });
-if (_.isUndefined(foundAtIndex)) {
-  return exits.notFound();
-}
-return exits.success(foundAtIndex);

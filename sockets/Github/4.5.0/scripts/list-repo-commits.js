@@ -1,38 +1,15 @@
-var Github = require('github');
-var _ = require('lodash');
+var github = require('machinepack-github');
 
-var github = new Github({
-  version: '3.0.0'
-});
+// Fetch recent commits from the specified GitHub repository.
+github.listRepoCommits(ARGS).exec({
 
-github.repos.getCommits({
-  repo: inputs.repo,
-  user: inputs.owner
-}, function(err, data) {
-  try {
-    if (err) return exits.error(err);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-    var commits = [];
-
-    _.each(data, function(commitData){
-      var formattedCommit = {
-        author: {
-          name: commitData.commit.author.name
-        },
-        commitUrl: commitData.html_url,
-        timestamp: commitData.commit.author.date
-      };
-      if (!_.isNull(commitData.author) && !_.isUndefined(commitData.author)) {
-        formattedCommit.author.username = commitData.author.login;
-        formattedCommit.author.avatarUrl = commitData.author.avatar_url;
-        formattedCommit.author.profileUrl = commitData.author.html_url;
-      }
-      commits.push(formattedCommit);
-    });
-
-    return exits.success(commits);
-  }
-  catch (e) {
-    return exits.error(e);
-  }
 });

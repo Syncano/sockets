@@ -2,21 +2,55 @@ name: FA
 description: Two Factor Authentication
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   generate-key:
     POST:
       file: scripts/generate-key.js
       description: Generates a crypto secure hex key with 32 characters.
+      parameters: {}
   generate-code:
     POST:
       file: scripts/generate-code.js
       description: Generates a Code using the users secret key which can then be verified
+      parameters:
+        key:
+          example: 44xtha1v228542u5q6ddxzdoukji1m74
+          description: 'The secret key, which is to be stored with the userdata.'
+          required: true
+          type: string
   generate-qr:
     POST:
       file: scripts/generate-qr.js
       description: Generates a QR code to store it by scanning the QR code.
+      parameters:
+        application:
+          example: MachineDev
+          description: The name of the application
+          required: true
+          type: string
+        username:
+          example: John
+          description: The name of the user/account.
+          required: true
+          type: string
+        key:
+          example: 44xtha1v228542u5q6ddxzdoukji1m74
+          description: 'The secret key, which is to be stored with the userdata.'
+          required: true
+          type: string
   validate:
     POST:
       file: scripts/validate.js
       description: Validates the given code compared to user's key.
+      parameters:
+        key:
+          example: 44xtha1v228542u5q6ddxzdoukji1m74
+          description: 'The secret key, which is to be stored with the userdata.'
+          required: true
+          type: string
+        code:
+          example: '123456'
+          description: The code the user entered to be validated.
+          required: true
+          type: string

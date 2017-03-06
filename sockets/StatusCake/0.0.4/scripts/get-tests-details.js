@@ -1,11 +1,19 @@
-var statuscake = require("statuscake");
-statuscake
-  .username(inputs.statusCakeUser)
-  .key(inputs.apiKey)
-  .testsDetails(inputs.id, function (err, data) {
-    if (err) return exits.error(err);
-    if (undefined !== data.ErrNo && 0 === data.ErrNo) {
-      return exits.wrongOrNotUser(data.Error);
+var statuscake = require('machinepack-statuscake');
+
+// Get detail information about a Test.
+statuscake.getTestsDetails(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    wrongOrNotUser: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
-    return exits.success(data);
-  });
+
+});

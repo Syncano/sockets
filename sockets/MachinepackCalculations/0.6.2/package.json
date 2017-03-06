@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-machinepackcalculations",
+    "description": "Calculations for PaidUp",
+    "version": "0.6.2",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-calculations": "0.6.2"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-MachinepackCalculations",
+        "MachinepackCalculations-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

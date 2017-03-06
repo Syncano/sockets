@@ -1,63 +1,15 @@
-var _ = require('lodash');
-var async = require('async');
+var arrays = require('machinepack-arrays');
 
-// Use either `async.each` (parallel) or `async.eachSeries` (series)
-var iteratorFn = inputs.series ? async.eachSeries : async.each;
+// Run some logic (the "iteratee") once for each item of an array.
+arrays.each(ARGS).exec({
 
-// `haltEarly` is a flag which is used in the iterations
-// below to indicate that all future iterations should be skipped.
-var haltEarly = false;
-
-// `numIterationsStarted` will track the number of iterations
-// which have been at least started being processed by the iteratee.
-var numIterationsStarted = 0;
-
-// Start iterating...
-iteratorFn(inputs.array, function enumerator(item, next) {
-
-  // Increment iterations counter and track current index
-  var currentIndex = numIterationsStarted;
-  numIterationsStarted++;
-
-  // If the `each` loop has already been halted, just skip
-  // this iteration (which effectively means skipping all future iterations)
-  if (haltEarly) {
-    return next();
-  }
-
-  // Execute iteratee machine using generic input configuration
-  inputs.iteratee({
-    index: currentIndex,
-    lastIndex: inputs.array.length-1,
-    item: item
-  }).exec({
-
-    // Catchall (error) exit
-    // (implies that we should stop early and consider
-    //  the entire operation a failure, including all iterations
-    //  so far. `each` will call its error exit.)
-    error: function (err){
-      return next(err);
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     },
-
-    // Halt exit
-    // (implies that we should stop, performing no further
-    //  iterations; but that past iterations are ok.
-    //  `each` will call its success exit)
-    halt: function (){
-      haltEarly = true;
-      return next();
-    },
-
-    // Default (success) exit
-    // (implies that we should continue iterating)
-    success: function enumeratee(){
-      return next();
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     }
-  });
-}, function (err){
-  if (err) {
-    return exits.error(err);
-  }
-  return exits.success();
+
 });

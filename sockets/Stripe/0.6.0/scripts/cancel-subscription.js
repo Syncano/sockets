@@ -1,14 +1,15 @@
-// TODO: handle more specific exits (i.e. rate limit, customer does not exist, etc.)
+var stripe = require('machinepack-stripe');
 
-var stripe = require('stripe')(inputs.apiKey);
+// Cancel an existing subscription attached to a customer.
+stripe.cancelSubscription(ARGS).exec({
 
-// Get the base options
-var options = {
-  at_period_end: inputs.instant
-};
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-
-stripe.customers.cancelSubscription(inputs.customer, inputs.sub, options, function(err, confirmation) {
-  if (err) return exits.error(err);
-  return exits.success(confirmation);
 });

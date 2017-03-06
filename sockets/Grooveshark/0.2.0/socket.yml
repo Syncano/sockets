@@ -2,17 +2,75 @@ name: Grooveshark
 description: Download songs from playlists or by name from Grooveshark. NOT OFFICIAL API
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   download-song-by-name-and-artist:
     POST:
       file: scripts/download-song-by-name-and-artist.js
       description: 'Download a song, and save it into a folder, by name and artist'
+      parameters:
+        name:
+          example: Bohemian Rhapsody
+          description: 'Song name, not case sensitive'
+          required: true
+          type: string
+        artist:
+          example: Queen
+          description: 'Artist name, not case sensitive'
+          required: true
+          type: string
+        path:
+          example: /www/music/userId/coolFolder
+          description: >-
+            ABSOLUTE Path to the folder where the song will be saved, if the
+            folder doesn't exist it will be created
+          required: true
+          type: string
   download-playlist:
     POST:
       file: scripts/download-playlist.js
       description: 'Download all the song, and save it into a folder, by playlist ID'
+      parameters:
+        id:
+          example: '104314395'
+          description: >-
+            E.g: http://grooveshark.com/#!/playlist/Powerexplosive/104314395 the
+            last number, 104314395, is the ID
+          required: true
+          type: string
+        path:
+          example: /www/music/userId/coolFolder
+          description: ' ABSOLUTE Path to the folder where the songs will be saved, if the folder doesn''t exist it will be created'
+          required: true
+          type: string
+        overwrite:
+          example: false
+          description: >-
+            Defaults false, if this is true if a song name is repeated it will
+            overwrite the old song
+          required: false
+          type: boolean
   download-playlist-save:
     POST:
       file: scripts/download-playlist-save.js
       description: 'Download all the song, and save it into a folder, by playlist ID'
+      parameters:
+        id:
+          example: '104314395'
+          description: >-
+            E.g: http://grooveshark.com/#!/playlist/Powerexplosive/104314395 the
+            last number, 104314395, is the ID
+          required: true
+          type: string
+        path:
+          example: /www/music/userId/coolFolder
+          description: ' ABSOLUTE Path to the folder where the songs will be saved, if the folder doesn''t exist it will be created'
+          required: true
+          type: string
+        overwrite:
+          example: false
+          description: >-
+            Defaults false, if this is true if a song name is repeated it will
+            overwrite the old song
+          required: false
+          type: boolean

@@ -1,3 +1,15 @@
-// Cast the two values to booleans and AND the results,
-// passing the final result through the `success` exit.
-return exits.success(!!inputs.a && !!inputs.b);
+var booleans = require('machinepack-booleans');
+
+// Get the result of performing a boolean AND operation on two values.
+booleans.and(ARGS).exec({
+
+    // The value obtained from performing a boolean AND using the two provided inputs.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

@@ -2,9 +2,109 @@ name: SendGrid
 description: Communicate with the SendGrid API to send emails
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   send-email:
     POST:
       file: scripts/send-email.js
       description: Send an email
+      parameters:
+        apiUser:
+          description: The API user of the Sendgrid account to use.
+          example: someuser
+          required: true
+          whereToGet:
+            url: 'https://sendgrid.com/credentials/new'
+            description: >-
+              Use the username you used while creating your SendGrid Account or
+              one of the custom credentials.
+            extendedDescription: >-
+              Your API user is the same string as the password that you use to
+              log onto sendgrid.com. You can also create auxiliary sets of API
+              credentials following this link: https://sendgrid.com/credentials.
+          type: string
+        apiKey:
+          description: The API key of the Sendgrid account to use.
+          example: whateverkey
+          required: true
+          whereToGet:
+            url: 'https://sendgrid.com/credentials/new'
+            description: >-
+              The key is the password of your main SendGrid account, or the one
+              corresponding to the custom credential
+            extendedDescription: >-
+              Your API key is the same string as the password that you use to
+              log onto sendgrid.com. You can also create auxiliary sets of API
+              credentials following this link: https://sendgrid.com/credentials.
+          type: string
+        toEmail:
+          example: jane@example.com
+          description: >-
+            Must be a valid email address. This can also be passed in as an
+            array, to send to multiple locations. Example:
+            to[]=a@mail.com[]=b@mail.com. Note that recipients passed in this
+            parameter will be visible as part of the message.
+          required: true
+          type: string
+        toName:
+          example: Jane Doe
+          description: >-
+            Must be a string. If to parameter is an array, toname must be an
+            array with the exact number of array elements as the to field
+          extendedDescription: 'If left blank, defaults to the recipient''s email address.'
+          type: string
+        subject:
+          description: Subject line for the email.
+          example: 'Welcome, Jane!'
+          required: true
+          type: string
+        textMessage:
+          description: >-
+            The plain text content of the body body of the email. It must
+            include at least one of the textMessage or htmlMessage parameters.
+          example: >-
+            Jane,
+
+            Thanks for joining our community.  If you have any questions, please
+            don't hesitate to send them our way.  Feel free to reply to this
+            email directly.
+
+
+            Sincerely,
+
+            The Management
+          required: true
+          type: string
+        htmlMessage:
+          description: >-
+            The plain text content of the body body of the email. It must
+            include at least one of the textMessage or htmlMessage parameters.
+          example: >-
+            Jane,
+
+            Thanks for joining our community.  If you have any questions, please
+            don't hesitate to send them our way.  Feel free to reply to this
+            email directly.
+
+
+            Sincerely,
+
+            The Management
+          type: string
+        fromEmail:
+          description: "Must be a valid email address from your domain\tThis is where the email will appear to originate from for your recipient"
+          example: harold@example.enterprise
+          required: true
+          type: string
+        fromName:
+          description: >-
+            Must a valid string. It is the name appended to the from email
+            field. IE - Your name or company name
+          example: Harold Greaseworthy
+          type: string
+        replyTo:
+          description: >-
+            Must a valid email address. This is the email that will be used when
+            replying to your email
+          example: support@example.com
+          type: string

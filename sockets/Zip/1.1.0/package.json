@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-zip",
+    "description": "Zip and unzip files or directories in Node.js.",
+    "version": "1.1.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-zip": "1.1.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Zip",
+        "Zip-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

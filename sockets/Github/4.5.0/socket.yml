@@ -2,81 +2,413 @@ name: Github
 description: 'Communicate with the Github API to get repos, commits, etc.'
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   get-user-details:
     POST:
       file: scripts/get-user-details.js
       description: Get the GitHub profile data for a user.
+      parameters:
+        user:
+          description: >-
+            The user or organization to look up (i.e. as it appears in the URL
+            on GitHub)
+          example: mikermcneil
+          required: true
+          type: string
   create-repo:
     POST:
       file: scripts/create-repo.js
       description: Create a new GitHub repository in the specified organization.
+      parameters:
+        repo:
+          description: >-
+            The name for the new GitHub repo (i.e. as it appears in the URL on
+            GitHub)
+          example: sails
+          required: true
+          type: string
+        owner:
+          description: >-
+            The name of the organization or user under which the new repo should
+            be created (i.e. as it appears in the URL on GitHub)
+          example: balderdashy
+          required: true
+          type: string
+        username:
+          description: Your GitHub username (to authenticate with)
+          example: mikermcneil
+          required: true
+          type: string
+        password:
+          description: Your GitHub password (to authenticate with)
+          example: l0lcatzz
+          required: true
+          protect: true
+          type: string
+        homepage:
+          description: A homepage URL to include on the new repo
+          example: 'http://node-machine.org/machinepack-foo'
+          type: string
+        description:
+          description: A short description to include on the new repo
+          example: A utility for working with direwolves.
+          type: string
+        private:
+          description: >-
+            Whether or not the new repo should be private (defaults to false,
+            i.e. open-source)
+          example: false
+          type: boolean
   list-organization-repos:
     POST:
       file: scripts/list-organization-repos.js
       description: Fetch the list of repos in the specified Github organization.
+      parameters:
+        owner:
+          description: >-
+            The name of the organization (i.e. as it appears in the URL on
+            GitHub)
+          example: balderdashy
+          required: true
+          type: string
+        limit:
+          description: Maximum number of repos to retrieve (for pagination)
+          example: 30
+          defaultsTo: 30
+          type: number
+        skip:
+          description: >-
+            Index of the first repo to retrieve, starting from 0 (for
+            pagination)
+          example: 0
+          defaultsTo: 0
+          type: number
+        username:
+          description: Your GitHub username (to authenticate with)
+          example: jresig
+          type: string
+        password:
+          description: Your GitHub password (to authenticate with)
+          example: jqftw
+          protect: true
+          type: string
   get-repo:
     POST:
       file: scripts/get-repo.js
       description: Fetch metadata about a repository on GitHub.
+      parameters:
+        repo:
+          description: >-
+            The name of the Github repo (i.e. as it appears in the URL on
+            GitHub)
+          example: sails
+          required: true
+          type: string
+        owner:
+          description: >-
+            The name of the organization or user that owns the repo (i.e. as it
+            appears in the URL on GitHub)
+          example: balderdashy
+          required: true
+          type: string
   list-repo-commits-at-path:
     POST:
       file: scripts/list-repo-commits-at-path.js
       description: >-
         Fetch recent commits from a remote GitHub repository within the specifed
         path.
+      parameters:
+        repo:
+          description: >-
+            The name of the Github repo (i.e. as it appears in the URL on
+            GitHub)
+          example: sails
+          required: true
+          type: string
+        owner:
+          description: >-
+            The name of the organization or user that owns the repo (i.e. as it
+            appears in the URL on GitHub)
+          example: balderdashy
+          required: true
+          type: string
+        path:
+          description: Filter to the specified relative path within the remote repository
+          example: foo/bar
+          required: false
+          type: string
   list-repo-commits:
     POST:
       file: scripts/list-repo-commits.js
       description: Fetch recent commits from the specified GitHub repository.
+      parameters:
+        repo:
+          description: >-
+            The name of the Github repo (i.e. as it appears in the URL on
+            GitHub)
+          example: sails
+          required: true
+          type: string
+        owner:
+          description: >-
+            The name of the organization or user that owns the repo (i.e. as it
+            appears in the URL on GitHub)
+          example: balderdashy
+          required: true
+          type: string
   list-repo-activity:
     POST:
       file: scripts/list-repo-activity.js
       description: Fetch activity in a github repo.
+      parameters:
+        repo:
+          description: >-
+            The name of the Github repo (i.e. as it appears in the URL on
+            GitHub)
+          example: sails
+          required: true
+          type: string
+        owner:
+          description: >-
+            The name of the organization or user that owns the repo (i.e. as it
+            appears in the URL on GitHub)
+          example: balderdashy
+          required: true
+          type: string
   list-repos:
     POST:
       file: scripts/list-repos.js
       description: >-
         Fetch the list of repos belonging to the specified Github user or
         organization.
+      parameters:
+        owner:
+          description: >-
+            The name of the user or organization (i.e. as it appears in the URL
+            on GitHub)
+          example: balderdashy
+          required: true
+          type: string
+        limit:
+          description: Maximum number of repos to retrieve (for pagination)
+          example: 30
+          type: number
+        skip:
+          description: >-
+            Index of the first repo to retrieve, starting from 0 (for
+            pagination)
+          example: 0
+          type: number
   build-installable-url:
     POST:
       file: scripts/build-installable-url.js
       description: Build an npm-installable URL compatible with private repos.
+      parameters:
+        personalAccessToken:
+          description: A personal access token
+          example: x32929hghakg1ghdsgkj
+          required: true
+          whereToGet:
+            url: 'https://github.com/settings/applications'
+            description: >-
+              Copy and paste a personal access token, or generate one if you
+              haven't already.
+          type: string
+        owner:
+          description: >-
+            The name of the organization or user who owns this repo (i.e. as it
+            appears in the URL on GitHub)
+          example: balderdashy
+          required: true
+          type: string
+        repo:
+          description: >-
+            The name of the Github repo (i.e. as it appears in the URL on
+            GitHub)
+          example: private-customer-app
+          required: true
+          type: string
   get-login-url:
     POST:
       file: scripts/get-login-url.js
       description: >-
         Get the URL on github.com that a user should visit to authorize the
         specified GitHub app (i.e. your app).
+      parameters:
+        clientId:
+          example: abc123jdhs3h4js
+          description: >-
+            The unique identifier for your GitHub app. It's listed on the
+            application settings page.
+          required: true
+          type: string
+        callbackUrl:
+          example: 'http://my-cool-app.com/auth/callback'
+          description: The URL in your app where users will be sent after authorization.
+          required: true
+          type: string
+        scope:
+          example:
+            - public_repo
+          description: A comma separated list of scopes requested for the authorization.
+          type: array
   get-access-token:
     POST:
       file: scripts/get-access-token.js
       description: >-
         Generate a new access token for acting on behalf of a particular GitHub
         user account.
+      parameters:
+        clientId:
+          example: '215798311808508'
+          description: >-
+            The unique identifier for your GitHub app  (i.e. this is the "Client
+            ID" listed on your app's settings page)
+          required: true
+          type: string
+        clientSecret:
+          example: dsg4901g0123456
+          description: >-
+            The developer "secret" for your GitHub app (i.e. this is the "Client
+            ID" listed on your app's settings page)
+          required: true
+          type: string
+        code:
+          example: >-
+            AQDvCav5zRSafS795TckAerUV53xzgqRyrcfYX2i_PJFObCvACVRP-V7sfemiMPBh3TWypvagfZ6aoqfwKCNcBxg8XR_skdYUe5tsY9UzX9Z_8q4mRrqaLhwSh5OHj9ORmE4ocyd-neZtdceTZjlmEVeO38UH9QOe_md7h5hy2gMhOS6TL9IBk5Guxg3O6I0WmjpFNPoj6JzWIvG9cgj7RQqxMA2q_8EJxGPTqEbmTqOBqqCIOlvPEPCeIiy21VD9__tuzB0JvgqbVh-U_WW8mjwGBqsfxlNvjYwIxk4zBNAxuRJijkkn0TwyogFpZqIlkY
+          description: >-
+            The OAuth `code` generated by GitHub and sent to the `callbackUrl`
+            if the user chooses to grant your app the requested permissions
+          required: true
+          type: string
+        callbackUrl:
+          example: 'http://localhost:1337/user/github/login'
+          description: The redirect URL that was used when generating the provided `code`
+          required: true
+          type: string
   get-current-user:
     POST:
       file: scripts/get-current-user.js
       description: Get the GitHub profile data for a user by access token.
+      parameters:
+        accessToken:
+          description: A valid access token that can be used to access the GitHub api.
+          example: abdg27snhd72
+          required: true
+          type: string
   parse-repo-str:
     POST:
       file: scripts/parse-repo-str.js
       description: Parse a repo string (e.g. '/node-machine/machine')
+      parameters:
+        string:
+          friendlyName: Repo string
+          description: The repo string to parse
+          example: '/node-machine/machine#master'
+          required: true
+          type: string
   build-github-search-string:
     POST:
       file: scripts/build-github-search-string.js
       description: >-
         Build a GitHub search string (the 'q' parameter for use with the GitHub
         Search API).
+      parameters:
+        repo:
+          description: >-
+            The name of the Github repo (i.e. as it appears in the URL on
+            GitHub)
+          example: sails
+          type: string
+        owner:
+          description: >-
+            The name of the organization or user that owns the repo (i.e. as it
+            appears in the URL on GitHub)
+          example: balderdashy
+          type: string
+        state:
+          description: The state to filter issues by (either "open" or "closed".
+          example: open
+          type: string
+        lastUpdatedBefore:
+          description: A JS timestamp.
+          extendedDescription: >-
+            Issues that have been updated _since_ this timestamp will be
+            excluded from the results.
+          example: 1442710858715
+          type: number
+        withAllOfTheseLabels:
+          description: A set of issue labels.
+          extendedDescription: >-
+            Issues that include _all_ of these labels will be included in search
+            results.
+          example:
+            - question
+          type: array
+        withNoneOfTheseLabels:
+          description: A set of issue labels.
+          extendedDescription: >-
+            Issues that include _none_ of these labels will be included in
+            search results.
+          example:
+            - bug
+          type: array
+        type:
+          description: The type of issues to return (either `pr` or `issue).
+          extendedDescription: 'If omitted, both types of issues will be searched.'
+          example: pr
+          type: string
   get-download-url:
     POST:
       file: scripts/get-download-url.js
       description: >-
         Build the URL to download a specific release/branch .zip file for a
         particular repo.
+      parameters:
+        repo:
+          description: >-
+            The name of the Github repo (i.e. as it appears in the URL on
+            GitHub)
+          example: sails
+          required: true
+          type: string
+        owner:
+          description: >-
+            The name of the organization or user that owns the repo (i.e. as it
+            appears in the URL on GitHub)
+          example: balderdashy
+          required: true
+          type: string
+        branch:
+          description: The branch of the repo that will be downloaded.
+          example: master
+          defaultsTo: master
+          type: string
   list-issue-comments:
     POST:
       file: scripts/list-issue-comments.js
       description: Fetch recent comments from the specified GitHub repository.
+      parameters:
+        repo:
+          description: >-
+            The name of the Github repo (i.e. as it appears in the URL on
+            GitHub)
+          example: sails
+          required: true
+          type: string
+        owner:
+          description: >-
+            The name of the organization or user that owns the repo (i.e. as it
+            appears in the URL on GitHub)
+          example: balderdashy
+          required: true
+          type: string
+        issueNumber:
+          description: The issue number of the issue to close.
+          extendedDescription: >-
+            Note that issue numbers are not globally unique-- they are only
+            unique per-repository.
+          example: 237
+          required: true
+          type: number

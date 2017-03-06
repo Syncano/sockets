@@ -1,12 +1,23 @@
-var _ = require('lodash');
+var dictionaries = require('machinepack-dictionaries');
 
-var value = inputs.dictionary[inputs.originalKey];
-if (_.isUndefined(value)) {
-  return exits.noSuchKey();
-}
-delete inputs.dictionary[inputs.originalKey];
-if (!inputs.force && !_.isUndefined(inputs.dictionary[inputs.newKey])) {
-  return exits.keyAlreadyExists();
-}
-inputs.dictionary[inputs.newKey] = value;
-return exits.success(inputs.dictionary);
+// Rename a key in a dictionary and return the result (a new dictionary).
+dictionaries.renameKey(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    noSuchKey: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    keyAlreadyExists: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

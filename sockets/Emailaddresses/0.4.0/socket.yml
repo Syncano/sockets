@@ -2,9 +2,16 @@ name: Emailaddresses
 description: Work with email addresses.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   validate:
     POST:
       file: scripts/validate.js
       description: Determine whether or not the provided string is an email address.
+      parameters:
+        string:
+          friendlyName: Email address (maybe)
+          example: foo@foobar.com
+          description: The email address to validate.
+          required: true
+          type: string

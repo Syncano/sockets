@@ -4,27 +4,73 @@ description: >-
   etc.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   log:
     POST:
       file: scripts/log.js
       description: Output a message to the console
+      parameters:
+        value:
+          friendlyName: Value
+          description: The value that will be written to the console.
+          example: ===
+          type: string
   hash:
     POST:
       file: scripts/hash.js
       description: Generate unique string from the provided value.
+      parameters:
+        value:
+          friendlyName: Value
+          example: '*'
+          description: The value for which to calculate a unique hash string.
+          required: true
+          type: string
   inspect:
     POST:
       file: scripts/inspect.js
       description: Pretty-print any value into a more-readable string.
+      parameters:
+        value:
+          friendlyName: Value
+          example: ===
+          description: The value that will be formatted into a more-readable string.
+          type: string
   coalesce:
     POST:
       file: scripts/coalesce.js
       description: 'Return the first value if it is defined, otherwise the second.'
+      parameters:
+        a:
+          friendlyName: Preferred value
+          description: >-
+            The preferred value to use, if it's defined. Must be the same type
+            as the alternate.
+          example: ===
+          type: string
+        b:
+          friendlyName: Alternate value
+          description: >-
+            The backup/alternate value to use in case the preferred value is not
+            defined.
+          example: ===
+          required: true
+          type: string
   require:
     POST:
       file: scripts/require.js
       description: >-
         Load (`require()`) a Node.js module located at the specified path and
         return whatever it exports.
+      parameters:
+        path:
+          description: >-
+            The absolute path to a Node.js module, or the absolute path to the
+            directory of an NPM package.
+          extendedDescription: >-
+            If a relative path is provided, it will be resolved to an absolute
+            path from the context of the current working directory.
+          example: /code/machinepack-twitter
+          required: true
+          type: string

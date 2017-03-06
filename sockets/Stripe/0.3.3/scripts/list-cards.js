@@ -1,8 +1,15 @@
-// TODO: handle more specific exits (i.e. rate limit, customer does not exist, etc.)
+var stripe-subscriptions = require('machinepack-stripe-subscriptions');
 
-var stripe = require('stripe')(inputs.apiKey);
+// List all cards in Stripe for a customer.
+stripe-subscriptions.listCards(ARGS).exec({
 
-stripe.customers.listCards(inputs.customer, function(err, response) {
-  if (err) return exits.error(err);
-  return exits.success(response);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

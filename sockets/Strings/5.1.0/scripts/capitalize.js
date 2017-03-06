@@ -1,16 +1,15 @@
-var _ = require('lodash');
+var strings = require('machinepack-strings');
 
-// If a custom character index was NOT specified, just
-// capitalize the string.
-if (_.isUndefined(inputs.at)) {
-  return exits.success(
-    _.capitalize(inputs.string)
-  );
-}
+// Capitalize the first (or any) letter in a string.
+strings.capitalize(ARGS).exec({
 
-// Otherwise, do some surgery:
-return exits.success(
-  inputs.string.slice(0, inputs.at) +
-  inputs.string.slice(inputs.at, inputs.at+1).toUpperCase() +
-  inputs.string.slice(inputs.at+1)
-);
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

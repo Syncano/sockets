@@ -1,20 +1,19 @@
-// Import `lodash`.
-var _ = require('lodash');
+var sails = require('machinepack-sails');
 
-// Ensure `env.sails`, returning through the `error` exit
-// if it cannot be found or is not an object.
-if (!_.isObject(env.sails)) {
-  return exits.error(new Error('No Sails application object could be found in the machine environment!'));
-}
+// Retrieve the value of the specified Sails configuration setting.
+sails.getConfiguration(ARGS).exec({
 
-// Check whether the sails config has the specified key.
-if (!_.has(env.sails.config, inputs.key)) {
-  // If not, return through the `noSuchConfig` exit.
-  return exits.noSuchConfig();
-}
+    // The value of the specified `sails.config` key.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    noSuchConfig: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-// Retrieve the specified configuration value.
-var value = _.get(env.sails.config, inputs.key);
-
-// Return it through the `success` exit.
-return exits.success(value);
+});

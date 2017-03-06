@@ -1,6 +1,15 @@
-var beautify = require('js-beautify').js;
-return exits.success(beautify(inputs.code, {
-  indent_size: inputs.numSpaces,
-  indent_char: ' ',
-  indent_with_tabs: inputs.useTabs
-}));
+var javascript = require('machinepack-javascript');
+
+// Beautify a JavaScript code string.
+javascript.beautify(ARGS).exec({
+
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

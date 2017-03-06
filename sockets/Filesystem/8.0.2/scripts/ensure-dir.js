@@ -1,10 +1,15 @@
-var path = require('path');
-var fsx = require('fs-extra');
+var fs = require('machinepack-fs');
 
-// In case we ended up w/ a relative path, make it absolute.
-inputs.path = path.resolve(inputs.path);
+// Ensure that the directory exists. If the directory structure does not exist, it is created.
+fs.ensureDir(ARGS).exec({
 
-fsx.ensureDir(inputs.path, function(err) {
-  if (err) {return exits.error(err);}
-  return exits.success();
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
 });

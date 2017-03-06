@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-fred",
+    "description": "Communicate with the Fred API to get series, releases, observations, etc.",
+    "version": "0.1.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-fred": "0.1.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Fred",
+        "Fred-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

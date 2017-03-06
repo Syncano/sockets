@@ -2,113 +2,570 @@ name: LocalMachinepacks
 description: Work with local machinepacks.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   prompt-about-new-machinepack:
     POST:
       file: scripts/prompt-about-new-machinepack.js
       description: Prompt command-line user for new machinepack details.
+      parameters: {}
   prompt-about-new-machine:
     POST:
       file: scripts/prompt-about-new-machine.js
       description: Prompt command-line user for details about a new machine being created.
+      parameters:
+        identity:
+          example: do-something
+          type: string
   get-machines-dir:
     POST:
       file: scripts/get-machines-dir.js
       description: Get the path to this machinepack's `machines/` directory.
+      parameters:
+        dir:
+          example: /Users/mikermcneil/machinepack-foobar
+          required: true
+          type: string
   remove-machine:
     POST:
       file: scripts/remove-machine.js
       description: Remove a machine from a local pack and update the package.json file.
+      parameters:
+        dir:
+          description: >-
+            The path to the machinepack (if path is not absolute, will be
+            resolved from the current working directory)
+          example: /Users/mikermcneil/machinepack-foo/
+          required: true
+          type: string
+        identity:
+          description: Identity of the machine to remove
+          example: some-machine
+          required: true
+          type: string
   rename-machine:
     POST:
       file: scripts/rename-machine.js
       description: Rename a machine in a local pack and update the package.json file.
+      parameters:
+        dir:
+          description: >-
+            The path to the machinepack (if path is not absolute, will be
+            resolved from the current working directory)
+          example: /Users/mikermcneil/machinepack-foo/
+          required: true
+          type: string
+        originalIdentity:
+          description: Identity of the machine to rename
+          example: do-stuff
+          required: true
+          type: string
+        newIdentity:
+          description: New identity for the machine
+          example: do-stuff-with-a-better-name
+          required: true
+          type: string
   copy-machine:
     POST:
       file: scripts/copy-machine.js
       description: Copy a machine in a local pack and update the package.json file.
+      parameters:
+        dir:
+          description: >-
+            The path to the machinepack (if path is not absolute, will be
+            resolved from the current working directory)
+          example: /Users/mikermcneil/machinepack-foo/
+          required: true
+          type: string
+        originalIdentity:
+          description: Identity of the machine to copy
+          example: do-stuff
+          required: true
+          type: string
+        newIdentity:
+          description: Identity of the new machine
+          example: copy-of-do-stuff
+          required: true
+          type: string
   list-machines:
     POST:
       file: scripts/list-machines.js
       description: List the machines in a local pack.
+      parameters:
+        dir:
+          description: >-
+            The path to the machinepack (if path is not absolute, will be
+            resolved from the current working directory)
+          example: /Users/mikermcneil/machinepack-foo/
+          required: true
+          type: string
   run-machine:
     POST:
       file: scripts/run-machine.js
       description: >-
         Run a machine in the specified local pack using the provided input
         values.
+      parameters:
+        machinepackPath:
+          example: /Users/mikermcneil/machinepack-foo/
+          description: >-
+            The path to the machinepack this machine is a part of (if path is
+            not absolute, will be resolved from the current working directory)
+          required: true
+          type: string
+        identity:
+          example: foo-bar
+          description: The identity of the machine to run.
+          required: true
+          type: string
+        inputValues:
+          description: A set of input name/value pairs.
+          example:
+            - name: someInput
+              value: ===
+          protect: true
+          type: array
   read-machine-file:
     POST:
       file: scripts/read-machine-file.js
       description: >-
         Read machine file located at the specified path into a JSON string w/
         stringified functions.
+      parameters:
+        source:
+          example: /Users/mikermcneil/machinepack-foo/machines/bar.js
+          description: >-
+            The path to the machine file (if path is not absolute, will be
+            resolved from the current working directory)
+          required: true
+          type: string
   write-machine-file:
     POST:
       file: scripts/write-machine-file.js
       description: Write a new machine file to disk at the specified path.
+      parameters:
+        destination:
+          description: The output path where the machine should be written
+          example: /Users/mikermcneil/machinepack-foobar/machines/some-machine.js
+          required: true
+          type: string
+        friendlyName:
+          description: >-
+            The human-readable label for this machine.  Should be short (<5
+            words, <50 characters) and written in the imperative mood.
+          extendedDescription: >-
+            "Imperative mood" means that the description should be written as a
+            command, not a remark.  In other words, a machine that charges a
+            credit card should have a description that begins: "Charge the
+            specified...", not: "Charges the specified..."
+          example: Do something
+          type: string
+        description:
+          description: >-
+            A clear, 1-sentence description (< 80 characters) of what this
+            machine does.
+          extendedDescription: >-
+            "Imperative mood" means that the description should be written as a
+            command, not a remark.  In other words, a machine that charges a
+            credit card should have a description that begins: "Charge the
+            specified...", not: "Charges the specified..."
+          example: Do something useful given stuff; maybe return something else.
+          type: string
+        moreInfoUrl:
+          description: A URL with supplemental information about this machine
+          extendedDescription: >-
+            This optional URL points to somewhere (other than
+            http://node-machine.org) where additional information about the
+            underlying functionality in this machine can be found. Particularly
+            helpful for machines that communicate with 3rd-party APIs like
+            Twitter or Stripe. Be sure and use a fully qualified URL like
+            http://foo.com/bar/baz.
+          example: 'http://api.stuff.org/foo/bar?v=3.1'
+          type: string
+        extendedDescription:
+          description: A markdown string providing additional details about this machine.
+          extendedDescription: >-
+            Provides supplemental info on top of description. Full markdown
+            syntax with complete sentences (including punctuation). Should be
+            less than 2000 characters.  Use cases generally include technical
+            notes, details on how the machine works, or considerations/caveats
+            like rate-limiting.
+          example: ...lots of words...
+          type: string
+        sync:
+          description: >-
+            A flag indicating that this machine is immediate (i.e. executes
+            synchronously / blocks)
+          extendedDescription: >-
+            If `sync` is set to true, **every exit** of this machine should be
+            execute synchronously (i.e. <1 tick of the event loop).  If `sync`
+            is enabled, in addition to standard usage (i.e. `.exec()`) users
+            will be able to call `.execSync()` on instances of this machine.
+          example: true
+          type: boolean
+        cacheable:
+          description: A flag indicating whether or not this machine is cacheable
+          extendedDescription: >-
+            Should only be enabled if this machine has no "side effects". This
+            is sometimes called "referential transparency" or "nullipotence". 
+            For instance, fetching a list of tweets which contain a particular
+            hashtag _is_ cacheable, whereas posting a tweet or updating a
+            Twitter user account _is not_.  Another example is a SELECT query in
+            a SQL database; it returns useful data, but does not change the data
+            structure queried.  If `cacheable` is enabled, users will be able to
+            call `.cache()` on instances of this machine.
+          example: true
+          type: boolean
+        idempotent:
+          description: A flag indicating whether or not this machine is idempotent
+          example: true
+          type: boolean
+        inputs:
+          description: >-
+            A dictionary specifying the inputs that the machine accepts at
+            runtime.
+          example: {}
+          type: object
+        exits:
+          description: >-
+            A dictionary specifying the exit scenarios played out by the machine
+            at runtime.
+          example: {}
+          type: object
   build-machine-code:
     POST:
       file: scripts/build-machine-code.js
       description: >-
         Build a JavaScript code string which represents the provided machine
         metadata.
+      parameters:
+        friendlyName:
+          example: Do something
+          required: true
+          type: string
+        description:
+          example: Do something useful given stuff; maybe return something else.
+          defaultsTo: ''
+          type: string
+        extendedDescription:
+          description: >-
+            The optional `extendedDescription` property for the generated
+            machine definition.
+          example: ...lots of words...
+          type: string
+        moreInfoUrl:
+          description: >-
+            The optional `moreInfoUrl` property for the generated machine
+            definition.
+          example: 'http://www.cis.upenn.edu/~treebank/tokenization.html'
+          type: string
+        fn:
+          description: The stringified contents of the machine function (`fn`).
+          example: '  return exits.success();'
+          type: string
+        cacheable:
+          description: Whether or not this machine should be marked as `cacheable`.
+          example: false
+          defaultsTo: false
+          type: boolean
+        sync:
+          description: >-
+            Whether or not this machine can be run synchronously (with
+            `.execSync()`).
+          example: false
+          defaultsTo: false
+          type: boolean
+        idempotent:
+          description: >-
+            Whether or not running this machine multiple times achieves
+            different results (ceteris paribus.)
+          example: false
+          type: boolean
+        environment:
+          description: >-
+            An optional array of environment objects. If specified, the machine
+            will depend on these objects in order to work.
+          extendedDescription: >-
+            Environments are an experimental feature of the machine spec. For
+            more on environments, see
+            https://groups.google.com/forum/#!searchin/node-machine/environment/node-machine/yipvJSiIj_Q/Wqm1RCOn070J
+          example:
+            - req
+          type: array
+        inputs:
+          description: The `inputs` definition object for this machine.
+          example: {}
+          type: object
+        exits:
+          description: The `exits` definition object for this machine.
+          example: {}
+          type: object
   prompt-for-input-vals:
     POST:
       file: scripts/prompt-for-input-vals.js
       description: Prompt command-line user for the specified machine input values.
+      parameters:
+        prompts:
+          description: >-
+            An array of prompt objects this machine will use to properly prompt
+            for and validate user-defined values for runtime inputs.
+          extendedDescription: >-
+            `expectType` may be "string" or "password".  If it is "password",
+            the relevant prompt will not display typed characters.
+          example:
+            - name: foobar
+              example: here is what a foobar should look like
+              description: >-
+                The foobar that will be used to foo the bar (i.e. input
+                description)
+              expectType: json
+          type: array
   add-machine:
     POST:
       file: scripts/add-machine.js
       description: Add a new machine to a machinepack on your local filesystem.
+      parameters:
+        machinepackRootPath:
+          description: The path to the machinepack of interest
+          example: /Users/mikermcneil/machinepack-foobar
+          required: true
+          type: string
+        identity:
+          description: The identity to use in the generated machine file
+          example: do-something
+          required: true
+          type: string
+        friendlyName:
+          example: Do something
+          type: string
+        description:
+          example: Do something useful given stuff; maybe return something else.
+          type: string
+        extendedDescription:
+          example: ...lots of words...
+          type: string
+        moreInfoUrl:
+          example: 'http://api.stuff.org/foo/bar?v=3.1'
+          type: string
+        cacheable:
+          example: true
+          type: boolean
+        sync:
+          example: true
+          type: boolean
+        idempotent:
+          example: true
+          type: boolean
+        inputs:
+          example: {}
+          type: object
+        exits:
+          example: {}
+          type: object
   run-machine-interactive:
     POST:
       file: scripts/run-machine-interactive.js
       description: >-
         Run a machine in the specified local pack, prompting for required input
         values.
+      parameters:
+        machinepackPath:
+          example: /Users/mikermcneil/machinepack-foo/machines/bar.js
+          description: >-
+            The path to the machinepack this machine is a part of (if path is
+            not absolute, will be resolved from the current working directory)
+          required: true
+          type: string
+        identity:
+          example: foo-bar
+          description: The identity of the machine to run.
+          required: true
+          type: string
+        inputValues:
+          description: >-
+            A set of input values (interactive prompt will be skipped for
+            required inputs provided this way)
+          example:
+            - name: someInput
+              value: some configured string value for the input
+              protect: false
+          type: array
   parse-machinepack-metadata:
     POST:
       file: scripts/parse-machinepack-metadata.js
       description: Parse machinepack data from the provided JSON string.
+      parameters:
+        json:
+          example: '{...package.json string...}'
+          description: The package.json object for the NPM package.
+          required: true
+          type: string
   initialize-machinepack:
     POST:
       file: scripts/initialize-machinepack.js
       description: Initilize or rename a local pack by modifying its package.json file.
+      parameters:
+        dir:
+          description: >-
+            The path to the machinepack (if path is not absolute, will be
+            resolved from the current working directory)
+          example: /Users/mikermcneil/machinepack-foo/
+          required: true
+          type: string
   read-package-json:
     POST:
       file: scripts/read-package-json.js
       description: >-
         Read and parse the package.json file of a local pack in the specified
         directory.
+      parameters:
+        dir:
+          description: >-
+            The path to the machinepack (if path is not absolute, will be
+            resolved from the current working directory)
+          example: /Users/mikermcneil/machinepack-foo/
+          required: true
+          type: string
   interpret-machine-module:
     POST:
       file: scripts/interpret-machine-module.js
       description: Interpret a machine from a Node.js module string into a JSON string.
+      parameters:
+        module:
+          description: >-
+            The machine definition as a Node.js module (a string of JavaScript
+            code).
+          example: >-
+            module.exports = {inputs: {atest: {example: "whatever"    }  }, 
+            exits: {    error: {}, success: {example: {stuff: [{andMore:
+            "stuff"        }]      }    }  },  fn: function(inputs, exits) {   
+            return exits.success();  }};
+          required: true
+          type: string
   scaffold-tests:
     POST:
       file: scripts/scaffold-tests.js
       description: >-
         Generate JSON test files for any machines in this local machinepack
         which don't already have them.
+      parameters:
+        dir:
+          description: >-
+            The path to the machinepack (if path is not absolute, will be
+            resolved from the current working directory)
+          example: /Users/mikermcneil/machinepack-foo/
+          required: true
+          type: string
   add-test:
     POST:
       file: scripts/add-test.js
       description: Add a test for a machine in a machinepack on the local disk.
+      parameters:
+        dir:
+          description: >-
+            The path to the machinepack (if path is not absolute, will be
+            resolved from the current working directory)
+          example: /Users/mikermcneil/machinepack-foo/
+          required: true
+          type: string
+        identity:
+          description: The identity of the machine for whom a test will be generated.
+          example: do-stuff-and-things
+          required: true
+          type: string
+        using:
+          description: An input configuration for this machine.
+          example: {}
+          required: true
+          type: object
+        outcome:
+          description: >-
+            Expected outcome (exit triggered) from the provided input
+            configuration.
+          example: foobar
+          required: true
+          type: string
+        returns:
+          description: Expected return value from the provided input configuration.
+          example: '*'
+          type: string
+        before:
+          description: A stringified function that will be used as the "before" for Mocha.
+          example: |-
+            function before (done) {
+             done(); 
+            }
+          type: string
+        after:
+          description: A stringified function that will be used as the "after" for Mocha.
+          example: |-
+            function after (done) {
+             done(); 
+            }
+          type: string
   browse-to-pack-url:
     POST:
       file: scripts/browse-to-pack-url.js
       description: ''
+      parameters:
+        dir:
+          example: /Users/mikermcneil/machinepack-foo/
+          type: string
+        toWhat:
+          example: npm
+          defaultsTo: docs
+          type: string
   get-signature:
     POST:
       file: scripts/get-signature.js
       description: >-
         Lookup top-level metadata, dehydrate the machine definitions, and
         compute a hash for the public API of this machinepack.
+      parameters:
+        dir:
+          description: >-
+            The path to the machinepack (if path is not absolute, will be
+            resolved from the current working directory)
+          example: /Users/mikermcneil/machinepack-foo/
+          required: true
+          type: string
   write-pack:
     POST:
       file: scripts/write-pack.js
       description: >-
         Write a machinepack to disk at the specified path using the given
         metadata.
+      parameters:
+        destination:
+          description: >-
+            The path to the machinepack (if path is not absolute, will be
+            resolved from the current working directory)
+          example: /Users/mikermcneil/machinepack-foo/
+          required: true
+          type: string
+        packData:
+          description: The metadata and code for the machinepack and its machines.
+          example: {}
+          required: true
+          type: object
+        force:
+          description: >-
+            Whether to force/overwrite files that already exist at the
+            destination
+          example: true
+          defaultsTo: false
+          type: boolean
+        ensureMachineDep:
+          description: >-
+            Whether or not to add a dependency on `machine` to the generated
+            pack if it doesn't have one.  Enabled by default.
+          example: true
+          defaultsTo: true
+          type: boolean
+        mergeDependencies:
+          description: >-
+            Whether the dependencies in the pack data should merge on top of
+            existing dependencies (if any) instead of overwriting them
+          example: true
+          defaultsTo: false
+          type: boolean

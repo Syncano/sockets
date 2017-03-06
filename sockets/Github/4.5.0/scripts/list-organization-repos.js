@@ -1,31 +1,15 @@
-var Github = require('github');
+var github = require('machinepack-github');
 
-var limit = inputs.limit;
-var skip = inputs.skip;
+// Fetch the list of repos in the specified Github organization.
+github.listOrganizationRepos(ARGS).exec({
 
-try {
-  var github = new Github({
-    version: '3.0.0'
-  });
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-  if (inputs.username && inputs.password) {
-    // Authenticate
-    github.authenticate({
-      type: 'basic',
-      username: inputs.username,
-      password: inputs.password
-    });
-  }
-
-  github.repos.getFromOrg({
-    org: inputs.owner,
-    per_page: limit,
-    page: Math.ceil(skip / limit)
-  }, function(err, data) {
-    if (err) return exits(err);
-    else return exits.success(data);
-  });
-}
-catch (e) {
-  return exits.error(e);
-}
+});

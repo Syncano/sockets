@@ -1,14 +1,15 @@
-var jwt = require('jsonwebtoken');
-if(inputs.expires || inputs.algorithm){ //Options exist
-  var options = {};
-  if(inputs.algorithm){
-    options.algorithm = inputs.algorithm;
-  }
-  if(inputs.expires){
-    options.expires = inputs.expires;
-  }
-  return exits.success(jwt.sign(inputs.payload, inputs.secret, options));
-}
-else {
-  return exits.success(jwt.sign(inputs.payload, inputs.secret));
-}
+var jwt = require('machinepack-jwt');
+
+// Encode a JWT.
+jwt.encode(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

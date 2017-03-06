@@ -1,24 +1,15 @@
-var request = require('request'); // "Request" library
+var spotify = require('machinepack-spotify');
 
-var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+// Get access token to use with requests to Spotify Web API.
+spotify.getAccessToken(ARGS).exec({
 
-// your application requests authorization
-var authOptions = {
-  url: 'https://accounts.spotify.com/api/token',
-  headers: {
-    'Authorization': 'Basic ' + (new Buffer(inputs.clientId + ':' + inputs.clientSecret).toString('base64'))
-  },
-  form: {
-    grant_type: 'client_credentials'
-  },
-  json: true
-};
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-request.post(authOptions, function(error, response, body) {
-  if (!error && response.statusCode === 200) {
-    // Return token to access the Spotify Web API
-    return exits.success(body.access_token);
-  } else {
-    return exits.error(error)
-  }
 });

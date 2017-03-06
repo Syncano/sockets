@@ -1,16 +1,19 @@
-var Http = require('machinepack-http');
-Http.sendHttpRequest({
-  url: inputs.webhookUrl,
-  method: 'post',
-  params: {
-    channel: inputs.channel,
-    text: inputs.message,
-    link_names: inputs.linkNames ? 1 : 0,
-    icon_emoji: inputs.iconEmoji,
-    username: inputs.username
-  }
-}).exec({
-  success: exits.success,
-  notFound: exits.notFound,
-  error: exits.error
+var slack = require('machinepack-slack');
+
+// Post a message to the specified channel in Slack.
+slack.postToChannel(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

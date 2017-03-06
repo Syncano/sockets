@@ -2,7 +2,7 @@ name: NPM
 description: Work with the public NPM repository.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   list-packages:
     POST:
@@ -10,85 +10,332 @@ endpoints:
       description: >-
         List packages in the public npm registry whose keywords match the
         specified search query.
+      parameters:
+        query:
+          example: sails-hook-
+          description: A string that will be used when querying npm.
+          required: true
+          type: string
   download-package:
     POST:
       file: scripts/download-package.js
       description: 'Stream the tarball for the NPM package+version to disk, then extract it.'
+      parameters:
+        name:
+          friendlyName: Package name
+          description: The name of the NPM package to fetch
+          example: isarray
+          required: true
+          type: string
+        version:
+          friendlyName: Package version
+          description: The version of the NPM package to fetch
+          example: 0.0.1
+          required: true
+          type: string
+        registry:
+          friendlyName: Registry URL
+          description: >-
+            The URL of the NPM registry to use (defaults to the public npm
+            registry)
+          example: 'https://your-private-registry.npmjs.org'
+          defaultsTo: 'https://registry.npmjs.org'
+          type: string
+        destination:
+          description: The absolute path where the package should be extracted.
+          extendedDescription: >-
+            If a relative path is specified, it will be resolved relative to
+            cwd.
+
+            If left unspecified, the package will be extracted into a new
+            subfolder within the operating system's `tmp/` directory.
+          example: /Users/mikermcneil/dogfood-promo-site
+          type: string
   list-packages-with-details:
     POST:
       file: scripts/list-packages-with-details.js
       description: >-
         List matching packages and include metadata from their package.json
         files.
+      parameters:
+        query:
+          example: sails
+          description: The search query to send to NPM.
+          extendedDescription: This string will be used to search within package keywords.
+          required: true
+          type: string
   install-package:
     POST:
       file: scripts/install-package.js
       description: >-
         Install a package from the NPM registry to the node_modules folder of a
         local project.
+      parameters:
+        name:
+          friendlyName: Package name
+          description: The name of the NPM package to install.
+          extendedDescription: Can also be a custom url to a package.
+          example: express
+          required: true
+          type: string
+        version:
+          friendlyName: Version range
+          description: A version string (or semver range) of the NPM package to install.
+          example: ~1.0.0
+          defaultsTo: '*'
+          type: string
+        dir:
+          friendlyName: Directory
+          description: >-
+            The local path where the package should be installed as a
+            dependency.
+          extendedDescription: >-
+            This is to the local package itself-- NOT its node_modules folder!
+            Also note that, if specified as a relative path, this will be
+            resolved relative to the current working directory.  If unspecified,
+            the current working directory will be used.
+          example: /Users/mikermcneil/dogfood-promo-site
+          type: string
+        save:
+          friendlyName: Save dependency?
+          description: >-
+            If set, the installed package will be saved to the package.json file
+            as a dependency.
+          extendedDescription: This runs `npm install` with the --save flag enabled.
+          example: false
+          defaultsTo: false
+          type: boolean
+        saveDev:
+          friendlyName: Save dev dependency?
+          description: >-
+            If set, the installed package will be saved to the package.json file
+            as a development-only dependency.
+          extendedDescription: This runs `npm install` with the --save-dev flag enabled.
+          example: false
+          defaultsTo: false
+          type: boolean
+        saveExact:
+          friendlyName: Pin version?
+          description: >-
+            If set, the installed package will be saved to the package.json file
+            as an exact version, rather than a semver range.
+          extendedDescription: >-
+            This runs `npm install` with the --save-exact flag enabled.  It
+            should always be used in combination with either `save` or
+            `saveDev`, and never by itself!
+          example: false
+          defaultsTo: false
+          type: boolean
+        prefix:
+          friendlyName: Prefix
+          description: >-
+            An optional path prefix which affects the root path in which this
+            NPM package gets installed.
+          extendedDescription: >-
+            Note that the package will still be installed within node_modules of
+            the destination directory. This just controls the `--prefix`
+            command-line option passed to `npm install`.
+          example: ./path-to-project
+          type: string
+        loglevel:
+          friendlyName: Log level
+          description: >-
+            If set, NPM will write logs to the console at the specified log
+            level.
+          extendedDescription: >-
+            This controls the --loglevel flag passed to `npm install`. Available
+            options are "silent", "warn", "verbose" and "silly".
+          example: warn
+          defaultsTo: silent
+          type: string
   parse-package-json:
     POST:
       file: scripts/parse-package-json.js
       description: >-
         Parse metadata for the latest version of the NPM package given a
         package.json string.
+      parameters:
+        json:
+          example: '{...packagejson contents...}'
+          description: The package.json string for the NPM package.
+          required: true
+          type: string
   publish:
     POST:
       file: scripts/publish.js
       description: Publish a package to the public NPM registry.
+      parameters:
+        dir:
+          friendlyName: Directory
+          description: The path to the directory where the package is located on disk.
+          example: /Users/mikermcneil/dogfood-promo-site
+          required: true
+          type: string
+        restrictAccess:
+          friendlyName: Restrict access?
+          description: Whether or not this package should be marked as private.
+          example: true
+          defaultsTo: false
+          type: boolean
   unpublish:
     POST:
       file: scripts/unpublish.js
       description: Unpublish a package from the public NPM registry.
+      parameters:
+        packageName:
+          friendlyName: Package name
+          description: The name of the NPM package to unpublish.
+          example: cheerio
+          required: true
+          type: string
+        version:
+          friendlyName: Package version
+          description: >-
+            The version to unpublish (if omitted, all versions will be
+            unpublished)
+          example: 1.0.0
+          type: string
   open-source:
     POST:
       file: scripts/open-source.js
       description: Open up public access to a package published on NPM.
+      parameters:
+        packageName:
+          friendlyName: Package name
+          description: The name of the NPM package to open-source.
+          example: '@mattmueller/cheerio'
+          required: true
+          type: string
   restrict:
     POST:
       file: scripts/restrict.js
       description: Restrict access to a package published on NPM.
+      parameters:
+        packageName:
+          friendlyName: Package name
+          description: The name of the NPM package to retrict access to.
+          example: '@mattmueller/cheerio'
+          required: true
+          type: string
   fetch-info:
     POST:
       file: scripts/fetch-info.js
       description: >-
         Look up information about the latest version of the specified NPM
         package.
+      parameters:
+        packageName:
+          description: The unique name of the NPM package.
+          example: browserify
+          required: true
+          type: string
   arrayify-dependencies:
     POST:
       file: scripts/arrayify-dependencies.js
       description: >-
         Flatten the provided depenencies dictionary into a homogeneous array of
         dictionaries.
+      parameters:
+        dependencies:
+          example: {}
+          description: A dependencies dictionary; i.e. from a package.json file
+          required: true
+          type: object
   unarrayify-dependencies:
     POST:
       file: scripts/unarrayify-dependencies.js
       description: >-
         Un-flatten the provided array back into a traditional NPM dependencies
         dictionary.
+      parameters:
+        dependencies:
+          description: >-
+            A homogeneous array of dictionaries representing a set of
+            dependencies.
+          example:
+            - name: lodash
+              semverRange: ^2.4.1
+          required: true
+          type: array
   install-dependencies:
     POST:
       file: scripts/install-dependencies.js
       description: Install NPM dependencies of local package at the specified path.
+      parameters:
+        dir:
+          friendlyName: Directory
+          description: The path to the directory where the package is located on disk.
+          example: /Users/mikermcneil/dogfood-promo-site
+          extendedDescription: >-
+            This is to the local package itself-- NOT its node_modules folder!
+            Also note that, if specified as a relative path, this will be
+            resolved relative to the current working directory.
+          required: true
+          type: string
   get-latest-version:
     POST:
       file: scripts/get-latest-version.js
       description: >-
         Look up the version string for the latest published version of the
         specified NPM package.
+      parameters:
+        packageName:
+          description: The unique name of the NPM package.
+          example: browserify
+          required: true
+          type: string
   validate-version:
     POST:
       file: scripts/validate-version.js
       description: >-
         Validate (and potentially coerce) the specified string, verifying that
         it is compatible for use as an NPM version string.
+      parameters:
+        string:
+          description: The string to validate as a NPM-compatible/semver version string.
+          extendedDescription: >-
+            Keep in mind that this method expects a version string, **not a
+            semver range**.  So in other words, "1.0.0" is valid but "^1.0.0" is
+            not.
+          example: 1.0.0
+          required: true
+          type: string
+        strict:
+          description: >-
+            If set, instead of coercing, the validation will fail as "not
+            strictly valid".
+          example: false
+          defaultsTo: false
+          type: boolean
   compare-versions:
     POST:
       file: scripts/compare-versions.js
       description: 'Compare two NPM version strings and return either 1, 0, or -1.'
+      parameters:
+        a:
+          friendlyName: Version A
+          example: 1.2.5
+          required: true
+          type: string
+        b:
+          friendlyName: Version B
+          example: 4.9.0
+          required: true
+          type: string
   is-version-compatible:
     POST:
       file: scripts/is-version-compatible.js
       description: >-
         Determine whether or not a particular NPM version string is compatible
         within a semver range.
+      parameters:
+        version:
+          description: NPM version to check.
+          example: 1.2.5
+          required: true
+          type: string
+        semverRange:
+          description: Semver range to check against for compatibility.
+          example: ^4.9.0
+          required: true
+          type: string

@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-stripe",
+    "description": "Communicate with the Stripe API to start and stop stripe subscriptions.",
+    "version": "0.3.3",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-stripe-subscriptions": "0.3.3"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Stripe",
+        "Stripe-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

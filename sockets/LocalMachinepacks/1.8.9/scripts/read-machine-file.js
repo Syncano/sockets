@@ -1,43 +1,23 @@
-var Path = require('path');
-var _ = require('lodash');
-var machinePath = Path.resolve(process.cwd(), inputs.source);
+var localmachinepacks = require('machinepack-localmachinepacks');
 
-// console.log(' •-> Reading machine file located @', machinePath);
+// Read machine file located at the specified path into a JSON string w/ stringified functions.
+localmachinepacks.readMachineFile(ARGS).exec({
 
-// Clear the machine out of the require cache, in case it's been modified.
-delete require.cache[machinePath];
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    couldNotStringify: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-// TODO:
-// psuedo-"sandbox" the require of this machine
-// (not a real sandbox, just enough to reasonably catch weird stuff during development)
-var machineDef;
-try {
-  machineDef = _.cloneDeep(require(machinePath));
-
-  // TODO:
-  // validate that no code exists outside module.exports
-}
-catch(e){
-  // Look for MODULE_NOT_FOUND error from Node core- but make sure it's a require error
-  // from the actual module itself, and not one of its dependencies! To accomplish that-
-  // check that the error message string ends in `/package.json'` (note the trailing apostrophe)
-  if (e.code === 'MODULE_NOT_FOUND' && typeof e.message==='string' && e.message.match(new RegExp(machinePath))) {
-    return exits.notFound(e);
-  }
-  return exits.error(e);
-}
-
-machineDef = require('rttc').dehydrate(machineDef, {allowNull: true});
-
-// (TODO: clean up function signature first.)
-
-// Encode as json
-var jsonMachineDefinition;
-try {
-  jsonMachineDefinition = JSON.stringify(machineDef);
-}
-catch (e) {
-  return exits.couldNotStringify(e);
-}
-
-return exits.success(jsonMachineDefinition);
+});

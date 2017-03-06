@@ -1,21 +1,15 @@
-var Http = require('machinepack-http');
+var steam = require('machinepack-steam');
 
-Http.sendHttpRequest({
-  baseUrl: 'http://api.steampowered.com/',
-  url: 'ISteamUser/GetPlayerBans/v1/',
-  method: 'get',
-  params: {
-    steamids: inputs.steamids.join(),
-    key: inputs.key,
-    format: 'json'
-  }
-})
-.exec({
-  success: function (res) {
-    var response = JSON.parse(res.body);
-    return exits.success(response);
-  },
-  error: function (err) {
-    return exits.error(err);
-  }
+// GetPlayerBans returns Community, VAC, and Economy ban statuses for given players.
+steam.getPlayerBans(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

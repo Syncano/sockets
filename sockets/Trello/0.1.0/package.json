@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-trello",
+    "description": "Machinepack for interacting with the trello api",
+    "version": "0.1.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-trello": "0.1.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Trello",
+        "Trello-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

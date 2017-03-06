@@ -1,18 +1,19 @@
-var Proc = require('machinepack-process');
+var npm = require('machinepack-npm');
 
-Proc.spawn({
-  command: 'npm access restricted '+inputs.packageName
-}).exec({
-  error: function (err){
-    try {
-      if (err.message.match(/Sorry, you can\'t change the access level of unscoped packages/i)) {
-        return exits.unscopedPackage();
-      }
+// Restrict access to a package published on NPM.
+npm.restrict(ARGS).exec({
+
+    
+    unscopedPackage: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     }
-    catch (_e){}
-    return exits.error(err);
-  },
-  success: function (bufferedOutput){
-    return exits.success();
-  }
+
 });

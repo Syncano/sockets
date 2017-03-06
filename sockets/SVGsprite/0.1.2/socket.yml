@@ -2,9 +2,15 @@ name: SVGsprite
 description: Create an SVGs sprite from multiple SVG source files.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   create-sprite:
     POST:
       file: scripts/create-sprite.js
       description: Create an SVGs sprite from multiple SVG source files.
+      parameters:
+        svgs:
+          description: An array of SVGs to put into the sprite.
+          required: true
+          typeclass: array
+          type: array

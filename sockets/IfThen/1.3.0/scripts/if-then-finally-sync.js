@@ -1,10 +1,15 @@
-var result;
+var ifthen = require('machinepack-ifthen');
 
-if (inputs.bool) {
-  result = inputs.then().execSync();
-}
-else {
-  result = inputs.orElse().execSync();
-}
+// If the provided value is true, then run the "then" circuit.  Otherwise run the "else" circuit.  Either way, exit "success".
+ifthen.ifThenFinallySync(ARGS).exec({
 
-return exits.success(result);
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

@@ -1,21 +1,15 @@
-var child_process = require('child_process');
-var cliPath = require('path').resolve(__dirname, '../node_modules/azure-cli/bin/azure');
-var _ = require('lodash');
-var command = 'node ' + cliPath + ' site list --json';
+var azure = require('machinepack-azure');
 
-child_process.exec(command, function (err, stdout) {
+// Detects if a website with a given name exists in the currently selected account
+azure.existsWebsite(ARGS).exec({
 
-  if(err){
-    return exits.error(err);
-  }
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-  var listedSites = JSON.parse(stdout);
-  var search = _.findWhere(listedSites, {'name': inputs.name})
-
-  if(search){
-    return exits.success(true);
-  }
-  else{
-    return exits.success(false);
-  }
 });

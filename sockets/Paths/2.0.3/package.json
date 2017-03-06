@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-paths",
+    "description": "Utilities for handling and transforming file paths.",
+    "version": "2.0.3",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-paths": "2.0.3"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Paths",
+        "Paths-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

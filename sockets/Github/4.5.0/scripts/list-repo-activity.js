@@ -1,18 +1,15 @@
-var Github = require('github');
+var github = require('machinepack-github');
 
-try {
-  var github = new Github({
-    version: '3.0.0'
-  });
+// Fetch activity in a github repo.
+github.listRepoActivity(ARGS).exec({
 
-  github.events.getFromRepo({
-    repo: inputs.repo,
-    user: inputs.owner
-  }, function(err, data) {
-    if (err) return exits(err);
-    else return exits.success(data);
-  });
-}
-catch (e) {
-  return exits.error(e);
-}
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

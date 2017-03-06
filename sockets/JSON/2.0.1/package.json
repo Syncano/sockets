@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-json",
+    "description": "Encode and decode data to and from JSON.",
+    "version": "2.0.1",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-json": "2.0.1"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-JSON",
+        "JSON-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

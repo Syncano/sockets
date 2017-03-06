@@ -1,21 +1,19 @@
-var nodeTrello = require('node-trello'),
-    config = require('../config/auth.json'),
-    trello = new nodeTrello(config.apiKey, config.token),
-    listIdToMove = inputs.listIdToMove,
-    boardIdToMoveTo = inputs.boardIdToMoveTo,
-    listIdToMoveTo = inputs.listIdToMoveTo;
+var trello = require('machinepack-trello');
 
-return trello.post('/1/lists/' + listIdToMove + '/moveAllCards', {
-    idBoard: boardIdToMoveTo,
-    idList: listIdToMoveTo
-}, function(err, data) {
-    if (err) {
-        return exits.error(err);
-    } else {
-        if (data.length) {
-            return exits.successNoCardsMoved();
-        } else {
-            return exits.success(data);
-        }
+// Move the cards from one list, to another list on a specified board
+trello.moveListToBoard(ARGS).exec({
+
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    successNoCardsMoved: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     }
+
 });

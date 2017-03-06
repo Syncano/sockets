@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-hackerrank",
+    "description": "Communicate with HackerRank API",
+    "version": "0.1.2",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-hackerrank": "0.1.2"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-HackerRank",
+        "HackerRank-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-salesforce",
+    "description": "Communicate with the Salesforce API to get profiles, accounts, contacts, etc.",
+    "version": "0.1.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-salesforce-expanded": "0.1.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Salesforce",
+        "Salesforce-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

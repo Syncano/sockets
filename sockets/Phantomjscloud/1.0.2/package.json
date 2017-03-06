@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-phantomjscloud",
+    "description": "Work with the PhantomJSCloud.com API to render HTML web pages, etc.",
+    "version": "1.0.2",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-phantomjscloud": "1.0.2"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Phantomjscloud",
+        "Phantomjscloud-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

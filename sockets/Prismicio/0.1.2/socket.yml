@@ -2,21 +2,134 @@ name: Prismicio
 description: Work with prismicio.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   get-document:
     POST:
       file: scripts/get-document.js
       description: Get a prismic document by id.
+      parameters:
+        apiEndpoint:
+          example: 'https://mycompany.prismic.io/api'
+          description: Api endpoint for your prismic instance
+          required: true
+          type: string
+        accessToken:
+          example: >-
+            MC5WUWg4VFOHFh.77-9777-9Me-_73vv73vv70rUO-_vWPvv71O77-9ZUPvv73vv71pX--_vQdaNe-_vQ
+          description: Token provided via settings/apps/.
+          required: true
+          type: string
+        id:
+          example: '1234'
+          description: Document id
+          required: true
+          type: string
+        slug:
+          example: my-great-post
+          description: Slug of document for given id.
+          required: false
+          type: string
+        ref:
+          example: VUYf7y0AAJkBHcVj
+          description: >-
+            Control which versions of documents we can access. Defaults to
+            master which is all live documents.
+          required: false
+          type: string
+        html:
+          example: true
+          description: Return document as html?
+          required: false
+          type: boolean
   get-document-by-slug:
     POST:
       file: scripts/get-document-by-slug.js
       description: Get a prismic document by slug.
+      parameters:
+        apiEndpoint:
+          example: 'https://mycompany.prismic.io/api'
+          description: Api endpoint for your prismic instance
+          required: true
+          type: string
+        accessToken:
+          example: >-
+            MC5WUWg4VFOHFh.77-9777-9Me-_73vv73vv70rUO-_vWPvv71O77-9ZUPvv73vv71pX--_vQdaNe-_vQ
+          description: Token provided via settings/apps/.
+          required: true
+          type: string
+        slug:
+          example: my-great-post
+          description: Slug of document.
+          required: true
+          type: string
+        ref:
+          example: VUYf7y0AAJkBHcVj
+          description: >-
+            Control which versions of documents we can access. Defaults to
+            master which is all live documents.
+          required: false
+          type: string
+        html:
+          example: true
+          description: Return document as html?
+          required: false
+          type: boolean
   get-many-documents:
     POST:
       file: scripts/get-many-documents.js
       description: Get many documents by Array of ids
+      parameters:
+        apiEndpoint:
+          example: 'https://mycompany.prismic.io/api'
+          description: Api endpoint for your prismic instance
+          required: true
+          type: string
+        accessToken:
+          example: >-
+            MC5WUWg4VFOHFh.77-9777-9Me-_73vv73vv70rUO-_vWPvv71O77-9ZUPvv73vv71pX--_vQdaNe-_vQ
+          description: Token provided via settings/apps/.
+          required: true
+          type: string
+        ids:
+          example:
+            - '123'
+            - '456'
+          description: Array of document ids
+          required: true
+          type: array
+        ref:
+          example: VUYf7y0AAJkBHcVj
+          description: >-
+            Control which versions of documents we can access. Defaults to
+            master which is all live documents.
+          required: false
+          type: string
   get-bookmark:
     POST:
       file: scripts/get-bookmark.js
       description: Get a prismic document by bookmark.
+      parameters:
+        apiEndpoint:
+          example: 'https://mycompany.prismic.io/api'
+          description: Api endpoint for your prismic instance
+          required: true
+          type: string
+        accessToken:
+          example: >-
+            MC5WUWg4VFOHFh.77-9777-9Me-_73vv73vv70rUO-_vWPvv71O77-9ZUPvv73vv71pX--_vQdaNe-_vQ
+          description: Token provided via settings/apps/.
+          required: true
+          type: string
+        bookmark:
+          example: my-great-bookmark
+          description: Bookmark of document.
+          required: true
+          type: string
+        ref:
+          example: VUYf7y0AAJkBHcVj
+          description: >-
+            Control which versions of documents we can access. Defaults to
+            master which is all live documents.
+          required: false
+          type: string

@@ -1,11 +1,19 @@
-if (inputs.index < 0) {
-  return exits.error('Index must be least zero.');
-}
-if (inputs.array.length < inputs.index) {
-  return exits.notFound();
-}
+var arrays = require('machinepack-arrays');
 
-// Replace item
-inputs.array.splice(inputs.index, 1, inputs.value);
+// Replace the item located at the specified index and return the result (a new array).
+arrays.replace(ARGS).exec({
 
-return exits.success(inputs.array);
+    
+    notFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    // The resulting array after replacing the specified item.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

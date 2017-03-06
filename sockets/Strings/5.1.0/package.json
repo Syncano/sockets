@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-strings",
+    "description": "Work with strings.",
+    "version": "5.1.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-strings": "5.1.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Strings",
+        "Strings-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

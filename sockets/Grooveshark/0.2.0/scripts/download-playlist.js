@@ -1,57 +1,23 @@
-var GS = require('grooveshark-downloader');
+var grooveshark = require('machinepack-grooveshark');
 
-if(!inputs.overwrite) inputs.overwrite = false;
+// Download all the song, and save it into a folder, by playlist ID
+grooveshark.downloadPlaylist(ARGS).exec({
 
-GS.Grooveshark.getPlaylistSongsList(inputs.id, function(err, res, body){
-  if(err) return exits.error(err);
-
-  var parsedBody = {};
-  try{
-    parsedBody = JSON.parse(body);
-  }catch(e){
-    return exits.error('Error parsing body: ', e);
-  }
-
-  if(parsedBody.result.PlaylistID === 0) return exits.notFound();
-
-  var async = require('async');
-  var fs = require('fs');
-
-  if(!fs.existsSync(inputs.path)){
-    var mkdirp = require('mkdirp');
-    mkdirp.sync(inputs.path);
-  }
-
-  async.mapSeries(parsedBody.result.Songs,
-    function downloadSong(song, next) {
-
-      var request = require('request');
-
-      var fileUrl = inputs.path + '/' + song.Name + '.mp3';
-
-      if(fs.existsSync(fileUrl) && !inputs.overwrite) return next();
-
-      GS.Grooveshark.getStreamingUrl(song.SongID, function(err, streamUrl) {
-        if(err){
-          if(err === 'banned') return exits.downloadLimitExceded();
-          return next(err);
-        }
-
-        request
-          .get(streamUrl)
-          .on('end', function downloadCompleted() {
-            next();
-          })
-          .on('error', function errorDownloading(err) {
-            next(err);
-          }).pipe(fs.createWriteStream(fileUrl));
-
-       });
-
-    }, function playlistDownloaded (err) {
-      if(err) return exits.error(err);
-      return exits.success();
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    downloadLimitExceded: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
-  );
 
 });

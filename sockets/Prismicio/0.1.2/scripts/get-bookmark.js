@@ -1,37 +1,23 @@
-var Prismic = require('prismic.io').Prismic;
+var prismicio = require('machinepack-prismicio');
 
-function linkResolver(doc) {
-  if (doc.isBroken) return false;
-  return '/documents/' + doc.id + '/' + doc.slug;
-}
+// Get a prismic document by bookmark.
+prismicio.getBookmark(ARGS).exec({
 
-Prismic.Api(inputs.apiEndpoint, function(err, Api) {
-  if (err && err.toString().indexOf('401') !== -1) {
-    return exits.notAuthorized(err);
-  } else if (err) {
-    return exits.error(err);
-  }
-  var ctx = {
-    api: Api,
-    ref: inputs.ref || Api.master(),
-    linkResolver: function(doc) {
-      return linkResolver(doc);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notAuthorized: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
-  };
 
-  var id = ctx.api.bookmarks[inputs.bookmark];
-  var getDocument = require('machine').build(require('./get-document'));
-
-  getDocument({
-    apiEndpoint: inputs.apiEndpoint,
-    accessToken: inputs.accessToken,
-    ref: inputs.ref,
-    id: id
-  }).exec({
-    error: exits.error,
-    notFound: exits.notFound,
-    notAuthorized: exits.notAuthorized,
-    success: exits.success
-  });
-
-}, inputs.accessToken);
+});

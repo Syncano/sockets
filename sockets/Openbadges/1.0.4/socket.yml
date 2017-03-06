@@ -2,23 +2,55 @@ name: Openbadges
 description: 'Communicate with the Mozilla Backpack API to get badges, collections.'
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   convert-email:
     POST:
       file: scripts/convert-email.js
       description: To convert an earner email address to Backpack user ID
+      parameters:
+        emailAddress:
+          example: tailot@gmail.com
+          description: An email address.
+          required: true
+          type: string
   get-collections:
     POST:
       file: scripts/get-collections.js
       description: Querying for Badge Groups
+      parameters:
+        uid:
+          example: 125363
+          description: Backpack user ID
+          required: true
+          type: number
   get-badges:
     POST:
       file: scripts/get-badges.js
       description: Querying for Badges in a Group
+      parameters:
+        uid:
+          example: 125363
+          description: Backpack user ID
+          required: true
+          type: number
+        gid:
+          example: 67890
+          description: group ID
+          required: true
+          type: number
   bake-assertion:
     POST:
       file: scripts/bake-assertion.js
       description: >-
         The baker will retrieve this image and bake your assertion data into it,
         returning it to you if your API call was successful.
+      parameters:
+        url:
+          example: >-
+            http://factory.openbadges.it/public/assertions/4c5490b9b83985f02381b4a49cd25c48a7d43185
+          description: >-
+            The assertion is a fundamental building block in the badging
+            ecosystem. An assertion represents a badge awarded to an earner.
+          required: true
+          type: string

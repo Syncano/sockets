@@ -2,41 +2,189 @@ name: SailsGulpify
 description: 'Add toggle ability to choose gulp or grunt as task runner on create new '
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   create-gulp-file:
     POST:
       file: scripts/create-gulp-file.js
       description: Creates a gulp file from template in the root project directory
+      parameters:
+        gulpFileSrcPath:
+          friendlyName: Gulp file source path
+          description: >-
+            The directory where the gulp file lives.  If not specified as an
+            absolute path, this will be resolved relative to the current working
+            directory.
+          example: ../templates/gulpfile.js
+          required: true
+          type: string
+        outputDir:
+          friendlyName: Output directory
+          description: The path to the directory where gulp file should be placed.
+          example: ../../../gulpfile.js
+          required: true
+          type: string
   create-gulp-tasks:
     POST:
       file: scripts/create-gulp-tasks.js
       description: Creates the gulp task folder and all related task files
+      parameters:
+        gulpFolderSrcPath:
+          friendlyName: Gulp file source path
+          description: >-
+            The directory where the gulp file lives.  If not specified as an
+            absolute path, this will be resolved relative to the current working
+            directory.
+          example: ./templates/gulpfile.js
+          required: true
+          type: string
+        outputFolderDir:
+          friendlyName: Output directory
+          description: The path to the directory where gulp file should be placed.
+          example: ./foo
+          required: true
+          type: string
   sails-gulpify:
     POST:
       file: scripts/sails-gulpify.js
       description: >-
         Main Machine that combine all other machines in the pack to gulpify
         sails
+      parameters: {}
   toggle-sailsrc:
     POST:
       file: scripts/toggle-sailsrc.js
       description: 'Swap .sailsrc, changing from grunt to gulp and back'
+      parameters:
+        sailsrcSrc:
+          friendlyName: Gulp file source path
+          description: >-
+            The directory where the gulp file lives.  If not specified as an
+            absolute path, this will be resolved relative to the current working
+            directory.
+          example: ../templates/gulpfile.js
+          required: true
+          type: string
+        outputDir:
+          friendlyName: Output directory
+          description: The path to the directory where gulp file should be placed.
+          example: ../../../gulpfile.js
+          required: true
+          type: string
   copy-files:
     POST:
       file: scripts/copy-files.js
       description: Copy files and folders to another directory
+      parameters:
+        gulpFileSrcPath:
+          friendlyName: Gulp file source path
+          description: >-
+            The directory where the gulp file lives.  If not specified as an
+            absolute path, this will be resolved relative to the current working
+            directory.
+          example: ../templates/gulpfile.js
+          required: true
+          type: string
+        outputDir:
+          friendlyName: Output directory
+          description: The path to the directory where gulp file should be placed.
+          example: ../../../gulpfile.js
+          required: true
+          type: string
   install-gulp-dependencies:
     POST:
       file: scripts/install-gulp-dependencies.js
       description: Adds gulp dependencies to the projects packasge.json
+      parameters: {}
   install-package-npm:
     POST:
       file: scripts/install-package-npm.js
       description: NPM install and --save
+      parameters:
+        name:
+          friendlyName: Package name
+          description: The name of the NPM package to install.
+          extendedDescription: Can also be a custom url to a package.
+          example: express
+          required: true
+          type: string
+        version:
+          friendlyName: Version range
+          description: A version string (or semver range) of the NPM package to install.
+          example: ~1.0.0
+          defaultsTo: '*'
+          type: string
+        dir:
+          friendlyName: Directory
+          description: >-
+            The local path where the package should be installed as a
+            dependency.
+          extendedDescription: >-
+            This is to the local package itself-- NOT its node_modules folder!
+            Also note that, if specified as a relative path, this will be
+            resolved relative to the current working directory.  If unspecified,
+            the current working directory will be used.
+          example: /Users/mikermcneil/dogfood-promo-site
+          type: string
+        save:
+          friendlyName: Save dependency?
+          description: >-
+            If set, the installed package will be saved to the package.json file
+            as a dependency.
+          extendedDescription: This runs `npm install` with the --save flag enabled.
+          example: true
+          defaultsTo: false
+          type: boolean
+        saveDev:
+          friendlyName: Save dev dependency?
+          description: >-
+            If set, the installed package will be saved to the package.json file
+            as a development-only dependency.
+          extendedDescription: This runs `npm install` with the --save-dev flag enabled.
+          example: true
+          defaultsTo: false
+          type: boolean
+        prefix:
+          friendlyName: Prefix
+          description: >-
+            An optional path prefix which affects the root path in which this
+            NPM package gets installed.
+          extendedDescription: >-
+            Note that the package will still be installed within node_modules of
+            the destination directory. This just controls the `--prefix`
+            command-line option passed to `npm install`.
+          example: ./path-to-project
+          type: string
+        loglevel:
+          friendlyName: Log level
+          description: >-
+            If set, NPM will write logs to the console at the specified log
+            level.
+          extendedDescription: >-
+            This controls the --loglevel flag passed to `npm install`. Available
+            options are "silent", "warn", "verbose" and "silly".
+          example: warn
+          defaultsTo: silent
+          type: string
   create-gulp-engine:
     POST:
       file: scripts/create-gulp-engine.js
       description: >-
         Modifies core sails files ading the ability to toggle between grunt and
         gulp via cli argument
+      parameters:
+        gulpFolderSrcPath:
+          friendlyName: Gulp file source path
+          description: >-
+            The directory where the gulp file lives.  If not specified as an
+            absolute path, this will be resolved relative to the current working
+            directory.
+          example: ./templates/gulpfile.js
+          required: true
+          type: string
+        outputDir:
+          friendlyName: Output directory
+          description: The path to the directory where gulp file should be placed.
+          example: ./foo
+          required: true
+          type: string

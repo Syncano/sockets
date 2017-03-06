@@ -1,48 +1,15 @@
-function (inputs,exits)
-{
-	var http = require('machinepack-http');
+var linkedin = require('machinepack-linkedin');
 
-	http.sendHttpRequest({
-baseUrl: 'https://www.linkedin.com',
-url: '/uas/oauth2/accessToken',
-method: 'post',
-params:
-{
-	'grant_type': 'authorization_code',
-	'code' : inputs.code,
-      'redirect_uri' : inputs.redirect_url,
-	'client_id' : inputs.client_id,
-	'client_secret' : inputs.client_secret
+// Obtains the authentication token after you complete the url login phase.  Make sure to do this within 20 seconds or else the code expires.
+linkedin.getAuthenticationToken(ARGS).exec({
 
-},
-headers:
-{
-	'Content-Type' : 'application/x-www-form-urlencoded',
-}
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-	}).exec(
-{
-	success: function(response)
-	{
-		try
-		{
-			var data = JSON.parse(response.body);
-
-			return exits.success(data);
-
-		}
-		catch(e)
-		{
-			return exits.error(e);
-		}
-
-	},
-
-	error: function(err)
-	{
-		return exits.error(err);
-	}
-}
-	);
-
-}
+});

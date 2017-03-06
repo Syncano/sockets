@@ -2,9 +2,37 @@ name: CFT
 description: Communicates with ClientFeedbackTool to get feedback data
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   get-cft-surveyssent:
     POST:
       file: scripts/get-cft-surveyssent.js
       description: Gets all surveys sent in a specified date range
+      parameters:
+        userName:
+          description: >-
+            Your username for ClientFeedbackTool, must be your email address
+            will not work with username
+          required: true
+          example: username@firm.com
+          whereToGet:
+            url: 'https://clientfeedbacktool.com/v10'
+            description: >-
+              attempt to log in if successful use those credentials. Also check
+              and make sure you have access to the API
+          type: string
+        password:
+          description: Your clientfeedbacktool credentials
+          required: true
+          example: password
+          type: string
+        fromDate:
+          description: The earliest date when you want data returned in YYYYMMDD format
+          required: true
+          example: '20151231'
+          type: string
+        toDate:
+          description: The latest date when you want data returned in YYYYMMDD format
+          required: true
+          example: '20161231'
+          type: string

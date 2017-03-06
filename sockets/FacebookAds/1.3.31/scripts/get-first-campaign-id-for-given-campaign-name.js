@@ -1,21 +1,15 @@
-var doJSONRequest = require('../lib/do-request');
+var dk-facebookads = require('dk-machinepack-facebookads');
 
-// GET ad accounts/ and send the api token as a header
-doJSONRequest({
-  method: 'get',
-  url: ['/v2.3/', inputs.adAccountId, '/adcampaign_groups'].join(""),
-  data: {
-    'access_token': inputs.accessToken,
-    'fields' : 'name'
-  },
-  headers: {},
-},
-function (err, responseBody) {
-  if (err) { return exits.error(err); }
-  for (var i in responseBody.data) {
-    if (responseBody.data[i].name == inputs.adCampaignName) {
-        return exits.success(responseBody.data[i].id);
+// look up a campaign by name
+dk-facebookads.getFirstCampaignIdForGivenCampaignName(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
-    }
-  return exits.error('no campaign found by that name');
+
 });

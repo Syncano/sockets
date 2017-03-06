@@ -1,21 +1,23 @@
-var MPJSON = require('machinepack-json');
-var thisPack = require('../');
+var fs = require('machinepack-fs');
 
-thisPack.read({
-  source: inputs.source
-}).exec({
-  error: exits.error,
-  doesNotExist: exits.doesNotExist,
-  success: function (contents){
-    MPJSON.parse({
-      json: contents,
-      schema: inputs.schema
-    }).exec({
-      error: exits.error,
-      couldNotParse: exits.couldNotParse,
-      success: function (parsedData){
-        return exits.success(parsedData);
-      }
-    });
-  }
+// Read and parse JSON file located at source path on disk into usable data.
+fs.readJson(ARGS).exec({
+
+    
+    doesNotExist: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    couldNotParse: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
 });

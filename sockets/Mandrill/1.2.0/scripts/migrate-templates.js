@@ -1,28 +1,15 @@
-var Machine = require('machine');
-var async = require('async');
+var mandrill = require('machinepack-mandrill');
 
-Machine.build(require('./list-templates'))
-.configure({
-  apiKey: inputs.srcApiKey
-})
-.exec({
-  error: exits.error,
-  success: function (templates) {
+// Get all mandrill templates from one account and add them to another.
+mandrill.migrateTemplates(ARGS).exec({
 
-    async.each(templates, function (template, next) {
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-      // Add api key
-      template.apiKey = inputs.destApiKey;
-
-      Machine
-      .build(require('./add-template'))
-      .configure(template)
-      .exec({
-        error: next,
-        success: function (newTemplate) {
-          next();
-        }
-      });
-    }, exits);
-  }
 });

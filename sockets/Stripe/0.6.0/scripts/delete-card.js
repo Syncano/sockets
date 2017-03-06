@@ -1,9 +1,15 @@
-// TODO: handle more specific exits (i.e. rate limit, card does not exist, etc.)
+var stripe = require('machinepack-stripe');
 
-var stripe = require('stripe')(inputs.apiKey);
+// Delete a card in Stripe for a customer
+stripe.deleteCard(ARGS).exec({
 
-stripe.customers.deleteCard(inputs.customer, inputs.card, function(err, response) {
-  if (err) return exits.error(err);
-  if (response.deleted === false) return exits.error(new Error('E_CARD_NOT_DELETED'));
-  return exits.success(response);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

@@ -2,59 +2,248 @@ name: Azure
 description: Work with the Microsoft Azure API.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   list-images:
     POST:
       file: scripts/list-images.js
       description: List all the virtual machine images available to a particular account.
+      parameters:
+        subscriptionId:
+          friendlyName: Subscription ID
+          description: Your Windows Azure subscription id
+          example: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx
+          whereToGet:
+            url: >-
+              https://account.windowsazure.com/Subscriptions/Statement?subscriptionId=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx
+          required: true
+          type: string
+        certificate:
+          friendlyName: Management certificate
+          description: >-
+            The string contents of a management certificate (.pem file)
+            associated with your Azure account
+          example: |-
+            -----BEGIN CERTIFICATE-----
+            xxxxxxxxxxxx
+            xxxxxxxxxxxx
+            xxxxxxxxxxxx
+            ........
+            xxxxxxxxxxxx
+            -----END CERTIFICATE-----
+          whereToGet:
+            description: >-
+              Download or generate the `.pem` certificate file associated with
+              your Azure account.
+            extendedDescription: >-
+              For info on generating a new certificate file, see
+              http://azure.microsoft.com/en-us/documentation/articles/virtual-machines-linux-use-ssh-key/. 
+              An easy way to grab your existing certificate file is to install
+              the Azure CLI tool with `sudo npm install -g azure-cli`
+              (https://github.com/Azure/azure-xplat-cli) and run `azure account
+              cert export`.  To make the command-line tool work, you'll need to
+              follow the directions to set up an organizational account here:
+              http://azure.microsoft.com/en-us/documentation/articles/xplat-cli/. 
+              Note that the uploaded certificate is in `.cer` format, but you
+              should use the `.pem` version here.
+            url: >-
+              https://github.com/Azure/azure-sdk-for-node/tree/master/lib/services/computeManagement#authentication
+          required: true
+          type: string
   register-azure-account:
     POST:
       file: scripts/register-azure-account.js
       description: Launches default browser to download default .publishsettings
+      parameters: {}
   set-azure-account:
     POST:
       file: scripts/set-azure-account.js
       description: Sets the active azure subscription
+      parameters:
+        subNameOrId:
+          description: The subscription id or name to set as active
+          example: johndoe
+          required: true
+          type: string
   check-active-subscription:
     POST:
       file: scripts/check-active-subscription.js
       description: Detects if there is an active azure subscription
+      parameters: {}
   create-website:
     POST:
       file: scripts/create-website.js
       description: Creates an Azure Website Instance
+      parameters:
+        name:
+          description: The name for the website
+          example: mywebsite
+          required: false
+          type: string
+        location:
+          description: The Azure datacenter for the website
+          example: West US
+          required: false
+          type: string
   exists-website:
     POST:
       file: scripts/exists-website.js
       description: >-
         Detects if a website with a given name exists in the currently selected
         account
+      parameters:
+        name:
+          description: The name of the website that will be checked for
+          example: mywebsitename
+          required: true
+          type: string
   upload-webjob:
     POST:
       file: scripts/upload-webjob.js
       description: 'Uploads a webjob to a given website, overwriting if it already exists.'
+      parameters:
+        deploymentUser:
+          description: The deployment username for the website
+          example: johndoe
+          required: true
+          type: string
+        deploymentPassword:
+          description: The deployment password for the website
+          example: p@ssw0rd
+          required: true
+          type: string
+        fileLocation:
+          description: The path to the script that should be uploaded
+          example: /mypath/myscript.sh
+          required: true
+          type: string
+        website:
+          description: The name of the website the file should be uploaded to
+          example: mysite
+          required: true
+          type: string
   trigger-webjob:
     POST:
       file: scripts/trigger-webjob.js
       description: Triggers a webjob on a given website.
+      parameters:
+        deploymentUser:
+          description: The deployment username for the website
+          example: johndoe
+          required: true
+          type: string
+        deploymentPassword:
+          description: The deployment password for the website
+          example: p@ssw0rd
+          required: true
+          type: string
+        name:
+          description: The name of the script that should be triggered
+          example: myscript.ps1
+          required: true
+          type: string
+        website:
+          description: The name of the website the script should be triggered on
+          example: mysite
+          required: true
+          type: string
   info-webjob:
     POST:
       file: scripts/info-webjob.js
       description: Gets the latest info about a webjob on a given website.
+      parameters:
+        deploymentUser:
+          description: The deployment username for the website
+          example: johndoe
+          required: true
+          type: string
+        deploymentPassword:
+          description: The deployment password for the website
+          example: p@ssw0rd
+          required: true
+          type: string
+        name:
+          description: The name of the script for which info should be requested
+          example: myscript.ps1
+          required: true
+          type: string
+        website:
+          description: The name of the website the script lives on
+          example: mysite
+          required: true
+          type: string
   log-webjob:
     POST:
       file: scripts/log-webjob.js
       description: Gets the latest log from a webjob on a given website.
+      parameters:
+        deploymentUser:
+          description: The deployment username for the website
+          example: johndoe
+          required: true
+          type: string
+        deploymentPassword:
+          description: The deployment password for the website
+          example: p@ssw0rd
+          required: true
+          type: string
+        name:
+          description: The name of the script for which info should be requested
+          example: myscript.ps1
+          required: true
+          type: string
+        website:
+          description: The name of the website the script lives on
+          example: mysite
+          required: true
+          type: string
   upload-file:
     POST:
       file: scripts/upload-file.js
       description: 'Uploads a file to a given website, overwriting if it already exists.'
+      parameters:
+        deploymentUser:
+          description: The deployment username for the website
+          example: johndoe
+          required: true
+          type: string
+        deploymentPassword:
+          description: The deployment password for the website
+          example: p@ssw0rd
+          required: true
+          type: string
+        fileLocation:
+          description: The path to the file that should be uploaded
+          example: ''
+          required: true
+          type: string
+        remotePath:
+          description: 'The path the file should be uploaded to, including the filename'
+          example: /site/wwwroot/myfile.zip
+          required: true
+          type: string
+        website:
+          description: The name of the website the file should be uploaded to
+          example: mysite
+          required: true
+          type: string
   set-deploy-credentials:
     POST:
       file: scripts/set-deploy-credentials.js
       description: Sets the deployment credentials of an Azure website
+      parameters:
+        deploymentUser:
+          description: The Name of the User
+          example: johndoe
+          required: true
+          type: string
+        deploymentPassword:
+          description: The deployment password
+          example: p@ssword
+          required: true
+          type: string
   list-azure-accounts:
     POST:
       file: scripts/list-azure-accounts.js
       description: Sets the deployment credntials of an Azure website
+      parameters: {}

@@ -1,23 +1,27 @@
-var Cloudflare = require('../cloudflare.js');
-var params = {
-  z: inputs.domain,
-  type: inputs.type,
-  name: inputs.name,
-  content: inputs.content,
-  ttl: inputs.ttl
-};
+var cloudflare = require('machinepack-cloudflare');
 
-Cloudflare.auth(inputs.email, inputs.token).send('rec_new', params, function (err, response, body) {
-  if (err)
-    return exits.error(err);
+// Create a DNS record for a zone
+cloudflare.addDnsRecord(ARGS).exec({
 
-  if (response.statusCode > 299 || response.statusCode < 200)
-    return exits.error(response.statusCode);
+    
+    notAuthorized: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    invalidInput: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    apiLimit: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-  response = JSON.parse(response.body);
-
-  if (response.result === 'error')
-    return Cloudflare.handleError(response, exits);
-
-  return exits.success(response.response.rec.obj);
 });

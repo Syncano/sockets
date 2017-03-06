@@ -1,23 +1,19 @@
-// Dependencies
-var request = require('request');
+var deis = require('machinepack-deis');
 
-var url = inputs.controller + '/v1/auth/login/';
-var body = {
-  username: inputs.username,
-  password: inputs.password,
-  sslVerify: inputs.sslVerify || false
-};
+// Logs in by authenticating against a controller.
+deis.login(ARGS).exec({
 
-// Make the HTTP request
-request.post({ url: url, form: body, json: true }, function(err, response, body) {
-  if(err) return exits.error(err);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notAuthenticated: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-  var code = response.statusCode;
-  if(!code) return exits.error(new Error('Missing status code'));
-  if(code > 299) return exits.notAuthenticated();
-
-  var token = body.token;
-  if(!token) return exits.notAuthenticated();
-
-  return exits.success(token);
 });

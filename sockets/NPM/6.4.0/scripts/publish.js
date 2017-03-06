@@ -1,54 +1,31 @@
-var Path = require('path');
-var Proc = require('machinepack-process');
-var Filesystem = require('machinepack-fs');
+var npm = require('machinepack-npm');
 
-Filesystem.readJson({
-  source: Path.resolve(inputs.dir, 'package.json'),
-  schema: {
-    name: 'some-package',
-    version: '2.0.0'
-  }
-}, {
-  error: exits.error,
-  doesNotExist: function (){
-    return exits.invalidPackage();
-  },
-  couldNotParse: function (){
-    return exits.invalidPackage();
-  },
-  success: function (pkgData){
+// Publish a package to the public NPM registry.
+npm.publish(ARGS).exec({
 
-    // if this package will be public (`restrictAccess` disabled)
-    // then the command will include `--access=public`
-    var cmd = 'npm publish';
-    if (!inputs.restrictAccess) {
-      cmd += ' --access=public';
+    
+    alreadyExists: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    noSuchDir: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notADir: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    invalidPackage: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     }
 
-    Proc.spawn({
-      command: cmd,
-      dir: inputs.dir
-    }).exec({
-      error: function (err){
-        try {
-          // err.stack
-          // err.killed
-          // err.signal
-          // err.code
-          if (err.message.match(/You cannot publish over the previously published version/i)){
-            return exits.alreadyExists();
-          }
-          return exits.error(err);
-        }
-        catch (_e) {
-          return exits.error(err||_e);
-        }
-      },
-      notADir: exits.notADir,
-      noSuchDir: exits.noSuchDir,
-      success: function (bufferedOutput){
-        return exits.success(pkgData);
-      }
-    });
-  }
 });

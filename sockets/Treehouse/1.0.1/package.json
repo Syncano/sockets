@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-treehouse",
+    "description": "Communicate with the Treehouse API to get profile data.",
+    "version": "1.0.1",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-treehouse": "1.0.1"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Treehouse",
+        "Treehouse-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

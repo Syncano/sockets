@@ -1,10 +1,19 @@
-if (!Array.isArray(inputs.collection)) { return exits.error(); }
-else if (!inputs.collection.length) { return exits.emptyError(); }
-var first = inputs.shift ? inputs.collection.shift() : inputs.collection[0];
-if (inputs.both)
-  return exits.success({
-    first: first,
-    collection: inputs.collection
-  });
-else
-  return exits.success(first);
+var select = require('machinepack-select');
+
+// Get the first elementement
+select.first(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    emptyError: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
+});

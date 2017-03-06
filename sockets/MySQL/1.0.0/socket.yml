@@ -2,9 +2,52 @@ name: MySQL
 description: Structured Node.js bindings for MySQL.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   create-manager:
     POST:
       file: scripts/create-manager.js
       description: Build and initialize a connection manager instance for this database.
+      parameters:
+        connectionString:
+          description: A connection string to use to connect to a MySQL database.
+          extendedDescription: >-
+            Be sure to include credentials.  You can also optionally provide the
+            name of an existing database on your MySQL server.
+          moreInfoUrl: 'https://gist.github.com/mikermcneil/46d10fd816c980cd3d9f'
+          whereToGet:
+            url: 'https://gist.github.com/mikermcneil/46d10fd816c980cd3d9f'
+          example: 'mysql://mikermcneil:p4ssw02D@localhost:3306/some_db'
+          required: true
+          type: string
+        onUnexpectedFailure:
+          description: >-
+            A function to call any time an unexpected error event is received
+            from this manager or any of its connections.
+          extendedDescription: >-
+            This can be used for anything you like, whether that's sending an
+            email to devops, or something as simple as logging a warning to the
+            console.
+
+
+            For example:
+
+            ```
+
+            onUnexpectedFailure: function (err) {
+              console.warn('Unexpected failure in database manager:',err);
+            }
+
+            ```
+          example: '->'
+          type: string
+        meta:
+          friendlyName: Meta (additional options)
+          description: Additional MySQL-specific options to use when connecting.
+          extendedDescription: >-
+            If specified, should be a dictionary. If there is a conflict between
+            something provided in the connection string, and something in
+            `meta`, the connection string takes priority.
+          moreInfoUrl: 'https://gist.github.com/mikermcneil/46d10fd816c980cd3d9f'
+          example: ===
+          type: string

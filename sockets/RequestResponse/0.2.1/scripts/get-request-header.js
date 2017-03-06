@@ -1,12 +1,15 @@
-// Import `lodash`.
-var _ = require('lodash');
+var reqres = require('machinepack-reqres');
 
-// If we don't have a request object in our `env`, bail through the `error` exit.
-if (!_.isObject(env.req) || !_.isFunction(env.req.get)) {
-  return exits.error(new Error('A valid Sails/Express request object must be provided through `.setEnv()` in order to use this machine.'));
-}
+// Get the value of the specified request header from the current HTTP/vHTTP request.
+reqres.getRequestHeader(ARGS).exec({
 
-// Get the value of the specified header and return it
-// through the `success` exit.
-var headerVal = env.req.get(inputs.header);
-return exits.success(headerVal);
+    // The raw string value of the specified request header.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

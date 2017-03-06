@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-facebook",
+    "description": "Communicate with Facebook to authenticate, get profile data, friends, likes, and more.",
+    "version": "1.1.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-facebook": "1.1.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Facebook",
+        "Facebook-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

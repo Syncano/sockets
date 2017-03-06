@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-angellist",
+    "description": "Node.js wrapper for the AngelList API.",
+    "version": "0.1.1",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-angellist": "0.1.1"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-AngelList",
+        "AngelList-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

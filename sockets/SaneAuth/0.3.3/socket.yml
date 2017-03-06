@@ -4,13 +4,35 @@ description: >-
   stack
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   client:
     POST:
       file: scripts/client.js
       description: Handle the addon logic for the sane frontend
+      parameters:
+        name:
+          example: user
+          description: Name of the resource
+          required: false
+          type: string
+        attributes:
+          example: 'name:string age:number'
+          description: extra attributes that will be generated
+          required: false
+          type: string
   server:
     POST:
       file: scripts/server.js
       description: Handle the addon logic for the sane backend
+      parameters:
+        name:
+          example: user
+          description: Name of the resource
+          required: false
+          type: string
+        attributes:
+          example: 'name:string age:number'
+          description: extra attributes that will be generated
+          required: false
+          type: string

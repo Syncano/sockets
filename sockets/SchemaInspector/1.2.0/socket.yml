@@ -2,13 +2,35 @@ name: SchemaInspector
 description: Schema-Inspector is an JSON API sanitisation and validation module.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   sanitize:
     POST:
       file: scripts/sanitize.js
       description: Sanitize some json data against a schema.
+      parameters:
+        schema:
+          description: The JSON-schema to sanitize against
+          required: true
+          example: {}
+          type: object
+        data:
+          description: The data to sanitize (i.e. the "JSON instance")
+          required: true
+          example: '*'
+          type: string
   validate:
     POST:
       file: scripts/validate.js
       description: Validate some json data against a schema.
+      parameters:
+        schema:
+          description: The JSON-schema to validate against
+          required: true
+          example: {}
+          type: object
+        data:
+          description: The data to validate (i.e. the "JSON instance")
+          required: true
+          example: '*'
+          type: string

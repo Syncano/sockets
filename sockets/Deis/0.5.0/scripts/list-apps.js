@@ -1,22 +1,19 @@
-// Dependencies
-var request = require('request');
+var deis = require('machinepack-deis');
 
-var url = inputs.controller + '/v1/apps';
-var headers = {
-  'content-type': 'application/json',
-  'X-Deis-Version': 1,
-  'Authorization': 'token ' + inputs.token
-};
+// Lists applications visible to the current user.
+deis.listApps(ARGS).exec({
 
-// Make the HTTP request
-request.get({ url: url, headers: headers, json: true }, function(err, response, body) {
-  if(err) return exits.error(err);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notAuthenticated: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-  var code = response.statusCode;
-  if(!code) return exits.error(new Error('Missing status code'));
-  if(code > 499) return exits.error(code);
-  if(code > 299) return exits.notAuthenticated();
-
-  var apps = body.results || [];
-  return exits.success(apps);
 });

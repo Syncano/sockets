@@ -2,29 +2,148 @@ name: Select
 description: 'Select first, last or a slice of an array'
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   first:
     POST:
       file: scripts/first.js
       description: Get the first elementement
+      parameters:
+        collection:
+          friendlyName: collection
+          description: A collection
+          typeclass: array
+          required: true
+          type: array
+        shift:
+          friendlyName: shift
+          description: A boolean to specify if use shift method
+          example: true
+          required: false
+          defaultsTo: false
+          type: boolean
+          name: shift
+        both:
+          friendlyName: both
+          description: 'A boolean to specify if we also return the array '
+          example: true
+          required: false
+          defaultsTo: false
+          type: boolean
+          name: both
   last:
     POST:
       file: scripts/last.js
       description: Get the last element
+      parameters:
+        collection:
+          friendlyName: collection
+          description: A collection
+          typeclass: array
+          required: true
+          type: array
+        pop:
+          friendlyName: pop
+          description: A boolean to specify if use pop method
+          example: true
+          required: false
+          defaultsTo: false
+          type: boolean
+          name: pop
+        both:
+          friendlyName: both
+          description: 'A boolean to specify if we also return the array '
+          example: true
+          required: false
+          defaultsTo: false
+          type: boolean
+          name: both
   slice:
     POST:
       file: scripts/slice.js
       description: Get a slice of an array
+      parameters:
+        collection:
+          friendlyName: collection
+          description: A collection
+          typeclass: array
+          required: true
+          type: array
+        start:
+          friendlyName: start
+          description: A start index
+          example: 2
+          required: true
+          type: number
+        end:
+          friendlyName: end
+          description: end index
+          example: 5
+          required: false
+          type: number
+        include:
+          friendlyName: Include end
+          description: include the end of slice
+          defaultsTo: false
+          example: true
+          type: boolean
+          name: include
   take:
     POST:
       file: scripts/take.js
       description: Slice of array with n elements taken from the start
+      parameters:
+        collection:
+          friendlyName: collection
+          description: A collection
+          typeclass: array
+          required: true
+          type: array
+        num:
+          friendlyName: num
+          description: A number of elements
+          example: 2
+          required: true
+          type: number
   takeRight:
     POST:
       file: scripts/takeRight.js
       description: Slice of array with n elements taken from the end
+      parameters:
+        collection:
+          friendlyName: collection
+          description: A collection
+          typeclass: array
+          required: true
+          type: array
+        num:
+          friendlyName: num
+          description: A number of elements
+          example: 2
+          required: true
+          type: number
   sample:
     POST:
       file: scripts/sample.js
       description: Get a random sample from the list
+      parameters:
+        collection:
+          friendlyName: collection
+          description: A collection
+          typeclass: array
+          required: true
+          type: array
+        num:
+          friendlyName: num
+          description: A number of items
+          example: 2
+          required: true
+          type: number
+        both:
+          friendlyName: both
+          description: 'A boolean to specify if we also return the array '
+          example: true
+          required: false
+          defaultsTo: false
+          type: boolean
+          name: both

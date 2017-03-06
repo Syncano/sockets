@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-paidupcommerceconnect",
+    "description": "Connector for PaidUp Microservice Commerce",
+    "version": "0.14.13",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "paidup-commerce-connect": "0.14.13"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-PaidUpCommerceConnect",
+        "PaidUpCommerceConnect-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

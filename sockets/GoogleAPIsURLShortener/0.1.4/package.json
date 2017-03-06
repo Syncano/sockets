@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-googleapisurlshortener",
+    "description": "API will have several methods to work with Google URL Shortener",
+    "version": "0.1.4",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-googleapisurlshortener": "0.1.4"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-GoogleAPIsURLShortener",
+        "GoogleAPIsURLShortener-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

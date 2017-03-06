@@ -1,19 +1,15 @@
-var Machine = require('machine');
-var createClient = Machine.build(require('./create-client'));
-var client = createClient({
-  host: inputs.host,
-  port: inputs.port,
-  username: inputs.username,
-  password: inputs.password,
-}).execSync();
-var options = {
-  'torrent_file': inputs.torrentContents,
-  'download_dir': inputs.downloadDir || 0,
-  'path': inputs.path || ''
-};
-client.call('add-file', options, function(err, data) {
-  if (err) {
-    return exits.error(err);
-  }
-  return exits.success(data);
+var utorrent = require('machinepack-utorrent');
+
+// Add a Torrent file to the uTorrent client.
+utorrent.addTorrent(ARGS).exec({
+
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
 });

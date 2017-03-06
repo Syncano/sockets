@@ -1,49 +1,15 @@
-/**
-* Module Dependencies
-*/
+var wepay = require('machinepack-wepay');
 
-var wepay = require('wepay').WEPAY;
+// Refunds the payment associated with the checkout created by the application. Checkout must be in "captured" state.
+wepay.checkoutRefund(ARGS).exec({
 
-// wepay object options
-var wepay_options = {
-  'access_token': inputs.accessToken
-  // 'api_version': 'API_VERSION'
-};
-
-// wepay request params
-var wepay_params = {
-  'account_id': inputs.accountId,
-  'checkout_id': inputs.checkoutId,
-  'refund_reason': inputs.refundReason,
-  'amount': inputs.amount || undefined,
-  'app_fee': inputs.appFee || undefined,
-  'payer_email_message': inputs.payerEmailMessage || undefined,
-  'payee_email_message': inputs.payeeEmailMessage || undefined
-};
-
-// Instantiate new wepay instance with settings
-var wp = new wepay(wepay_options);
-
-// Set API environment
-if(inputs.useProduction){
-  wp.use_production();
-}
-else{
-  wp.use_staging();
-}
-
-wp.call('/checkout/refund', wepay_params, function onResponse(response) {
-
-  // Convert buffer respond to JSON object
-  var responseObj = JSON.parse(String(response));
-
-  // Catch error
-  if(responseObj.error){
-    return exits.error(responseObj);
-  }
-  // Else success
-  else{
-    return exits.success(responseObj);
-  }
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
 });

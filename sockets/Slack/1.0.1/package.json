@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-slack",
+    "description": "Use the Slack API via Node machines.",
+    "version": "1.0.1",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-slack": "1.0.1"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Slack",
+        "Slack-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

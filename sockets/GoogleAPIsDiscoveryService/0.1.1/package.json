@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-googleapisdiscoveryservice",
+    "description": "Work with google aPIs discovery service.",
+    "version": "0.1.1",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-googleapisdiscoveryservice": "0.1.1"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-GoogleAPIsDiscoveryService",
+        "GoogleAPIsDiscoveryService-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

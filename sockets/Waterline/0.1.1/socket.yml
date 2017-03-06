@@ -4,7 +4,7 @@ description: >-
   db connections, committing/rolling back transactions, and more.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   connect:
     POST:
@@ -12,12 +12,48 @@ endpoints:
       description: >-
         Lease a database connection, perform some logic, then release it back
         from whence it came.
+      parameters:
+        datastore:
+          description: The identity of the datastore to use.
+          example: larrysMySQLCluster
+          required: true
+          type: string
+        during:
+          description: >-
+            A function with custom logic to run once the connection is
+            established.
+          extendedDescription: >-
+            This function will be provided access to the active database
+            connection.
+          example: '->'
+          required: true
+          contract:
+            inputs:
+              connection:
+                example: ===
+            exits:
+              success:
+                outputFriendlyName: Result
+                outputDescription: The data (if any) returned from the connection callback.
+                outputExample: ===
+          type: string
   query:
     POST:
       file: scripts/query.js
       description: >-
         Compile a radar query statement into the native dialect for a database,
         then send the native query.
+      parameters:
+        datastore:
+          description: The identity of the datastore to use.
+          example: larrysMySQLCluster
+          required: true
+          type: string
+        statement:
+          description: A radar query statement to compile and send to the database.
+          example: {}
+          required: true
+          type: object
   transaction:
     POST:
       file: scripts/transaction.js
@@ -25,3 +61,28 @@ endpoints:
         Begin a transaction, perform some logic, then either commit the
         transaction if everything worked, or roll it back if there were any
         errors.
+      parameters:
+        datastore:
+          description: The identity of the datastore to use.
+          example: larrysMySQLCluster
+          required: true
+          type: string
+        during:
+          description: >-
+            A function with custom logic to run once a database connection is
+            established and a transaction has begun.
+          extendedDescription: >-
+            This function will be provided access to the active database
+            connection.
+          example: '->'
+          required: true
+          contract:
+            inputs:
+              connection:
+                example: ===
+            exits:
+              success:
+                outputFriendlyName: Result
+                outputDescription: The data (if any) returned from the transaction callback.
+                outputExample: ===
+          type: string

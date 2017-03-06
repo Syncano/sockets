@@ -1,29 +1,15 @@
-var Http = require('machinepack-http');
+var steam = require('machinepack-steam');
 
-var params = {
-  steamid: inputs.steamid,
-  key: inputs.key,
-  include_appinfo: inputs.include_appinfo,
-  include_played_free_games: inputs.include_played_free_games,
-  format: 'json'
-};
+// GetOwnedGames returns a list of games a player owns along with some playtime information, if the profile is publicly visible. Private, friends-only, and other privacy settings are not supported unless you are asking for your own personal details (ie the WebAPI key you are using is linked to the steamid you are requesting).
+steam.getOwnedGames(ARGS).exec({
 
-if (inputs.appids_filter) {
-  params.appids_filter = '[' + inputs.appids_filter.join() + ']';
-}
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-Http.sendHttpRequest({
-  baseUrl: 'http://api.steampowered.com/',
-  url: 'IPlayerService/GetOwnedGames/v0001/',
-  method: 'get',
-  params: params
-})
-.exec({
-  success: function (res) {
-    var response = JSON.parse(res.body).response;
-    return exits.success(response);
-  },
-  error: function (err) {
-    return exits.error(err);
-  }
 });

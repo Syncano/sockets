@@ -1,26 +1,23 @@
-var util = require('util');
-var _ = require('lodash');
-var Http = require('machinepack-http');
+var npm = require('machinepack-npm');
 
-if (inputs.packageName.match(/^@/)){
-  return exits.error(new Error('This machine does not currently support scoped packages (e.g. @mikermcneil/foobar)'));
-}
+// Look up information about the latest version of the specified NPM package.
+npm.fetchInfo(ARGS).exec({
 
-Http.sendHttpRequest({
-  baseUrl: 'http://registry.npmjs.org',
-  url: util.format('/%s', inputs.packageName)
-}).exec({
-  error: function (err) {
-    return exits.error(err);
-  },
-  notFound: function (response) {
-    return exits.packageNotFound(response);
-  },
-  success: function (response) {
-    var parsed;
-    try { parsed = JSON.parse(response.body); }
-    catch (e) { return exits.couldNotParse(e); }
+    // Information about the specified NPM package, pulled directly from its package.json info in the NPM registry.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    packageNotFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    couldNotParse: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
 
-    return exits.success(parsed);
-  }
 });

@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-config",
+    "description": "A simple load config (with multiple json, xml or csv file)",
+    "version": "0.1.7",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-config": "0.1.7"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Config",
+        "Config-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

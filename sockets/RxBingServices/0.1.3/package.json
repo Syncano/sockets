@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-rxbingservices",
+    "description": "Reactive extensions for Bing location and mapping services",
+    "version": "0.1.3",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-rxbingservices": "0.1.3"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-RxBingServices",
+        "RxBingServices-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

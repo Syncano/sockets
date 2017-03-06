@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-democracyosmanager",
+    "description": "Communicate with a DemocracyOS Manager API to manage Deployments.",
+    "version": "0.2.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-democracyosmanager": "0.2.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-DemocracyOSManager",
+        "DemocracyOSManager-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-passwords",
+    "description": "Encrypt or compare passwords.",
+    "version": "2.3.0",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-passwords": "2.3.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Passwords",
+        "Passwords-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

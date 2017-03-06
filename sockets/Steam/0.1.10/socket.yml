@@ -2,36 +2,129 @@ name: Steam
 description: Communicate with Steam Web API to query Steam information.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   get-news-for-app:
     POST:
       file: scripts/get-news-for-app.js
       description: Fetch news feeds for each Steam game
+      parameters:
+        appid:
+          description: AppID of the game you want the news of.
+          example: 400
+          required: true
+          type: number
+        count:
+          description: How many news entries you want to get returned.
+          example: 3
+          type: number
+        maxlength:
+          description: Maximum length of each news entry.
+          example: 300
+          type: number
   get-global-achievement-percentage-for-app:
     POST:
       file: scripts/get-global-achievement-percentage-for-app.js
       description: >-
         Returns on global achievements overview of a specific game in
         percentages.
+      parameters:
+        gameid:
+          description: AppID of the game you want the percentages of.
+          example: 400
+          required: true
+          type: number
   get-global-stats-for-game:
     POST:
       file: scripts/get-global-stats-for-game.js
       description: Returns on global statistics of a specific game
+      parameters:
+        appid:
+          description: AppID of the game you want the percentages of.
+          example: 400
+          required: true
+          type: number
+        name:
+          description: Name of the achievement as defined in Steamworks.
+          example:
+            - global.map.emp_isle
+          required: true
+          type: array
   get-player-summaries:
     POST:
       file: scripts/get-player-summaries.js
       description: Returns basic profile information for a list of 64-bit Steam IDs.
+      parameters:
+        steamids:
+          description: Array of SteamIDs
+          example:
+            - '76561197960435530'
+          required: true
+          type: array
+        key:
+          description: Steam API Key
+          example: XXXXXXXXXXXXXXXXXXXXXXX
+          required: true
+          whereToGet:
+            url: 'http://steamcommunity.com/dev/apikey/'
+            description: 'Copy and paste an API key, or create one if you haven''t already.'
+            extendedDescription: ''
+          type: string
   get-friend-list:
     POST:
       file: scripts/get-friend-list.js
       description: >-
         Returns the friend list of any Steam user, provided his Steam Community
         profile visibility is set to "Public".
+      parameters:
+        steamid:
+          description: 64 bit Steam ID to return friend list for.
+          example: '76561197960435530'
+          required: true
+          type: string
+        key:
+          description: Steam API Key
+          example: XXXXXXXXXXXXXXXXXXXXXXX
+          required: true
+          whereToGet:
+            url: 'http://steamcommunity.com/dev/apikey/'
+            description: 'Copy and paste an API key, or create one if you haven''t already.'
+            extendedDescription: ''
+          type: string
+        relationship:
+          description: 'Relationship filter. Possibles values: all, friend.'
+          example: friend
+          type: string
   get-player-achievements:
     POST:
       file: scripts/get-player-achievements.js
       description: Returns a list of achievements for this user by app id
+      parameters:
+        steamid:
+          description: 64 bit Steam ID to return achievements for.
+          example: '76561197960435530'
+          required: true
+          type: string
+        key:
+          description: Steam API Key
+          example: XXXXXXXXXXXXXXXXXXXXXXX
+          required: true
+          whereToGet:
+            url: 'http://steamcommunity.com/dev/apikey/'
+            description: 'Copy and paste an API key, or create one if you haven''t already.'
+            extendedDescription: ''
+          type: string
+        appid:
+          description: The ID for the game you're requesting.
+          example: 400
+          required: true
+          type: number
+        l:
+          description: >-
+            Language. If specified, it will return language data for the
+            requested language.
+          example: en_US
+          type: string
   get-owned-games:
     POST:
       file: scripts/get-owned-games.js
@@ -41,6 +134,46 @@ endpoints:
         friends-only, and other privacy settings are not supported unless you
         are asking for your own personal details (ie the WebAPI key you are
         using is linked to the steamid you are requesting).
+      parameters:
+        steamid:
+          description: The SteamID of the account.
+          example: '76561197960434622'
+          required: true
+          type: string
+        key:
+          description: Steam API Key
+          example: XXXXXXXXXXXXXXXXXXXXXXX
+          required: true
+          whereToGet:
+            url: 'http://steamcommunity.com/dev/apikey/'
+            description: 'Copy and paste an API key, or create one if you haven''t already.'
+            extendedDescription: ''
+          type: string
+        include_appinfo:
+          description: >-
+            Include game name and logo information in the output. The default is
+            to return appids only.
+          example: 1
+          type: number
+        include_played_free_games:
+          description: >-
+            By default, free games like Team Fortress 2 are excluded (as
+            technically everyone owns them). If include_played_free_games is
+            set, they will be returned if the player has played them at some
+            point. This is the same behavior as the games list on the Steam
+            Community.
+          example: 1
+          type: number
+        appids_filter:
+          description: >-
+            You can optionally filter the list to a set of appids. Note that
+            these cannot be passed as a URL parameter, instead you must use the
+            JSON format described in Steam_Web_API#Calling_Service_interfaces.
+          example:
+            - 440
+            - 500
+            - 550
+          type: array
   get-recently-played-games:
     POST:
       file: scripts/get-recently-played-games.js
@@ -50,6 +183,27 @@ endpoints:
         friends-only, and other privacy settings are not supported unless you
         are asking for your own personal details (ie the WebAPI key you are
         using is linked to the steamid you are requesting).
+      parameters:
+        steamid:
+          description: 64 bit Steam ID to return achievements for.
+          example: '76561197960435530'
+          required: true
+          type: string
+        key:
+          description: Steam API Key
+          example: XXXXXXXXXXXXXXXXXXXXXXX
+          required: true
+          whereToGet:
+            url: 'http://steamcommunity.com/dev/apikey/'
+            description: 'Copy and paste an API key, or create one if you haven''t already.'
+            extendedDescription: ''
+          type: string
+        count:
+          description: >-
+            Optionally limit to a certain number of games (the number of games a
+            person has played in the last 2 weeks is typically very small)
+          example: 2
+          type: number
   is-playing-shared-game:
     POST:
       file: scripts/is-playing-shared-game.js
@@ -57,15 +211,65 @@ endpoints:
         IsPlayingSharedGame returns the original owner's SteamID if a borrowing
         account is currently playing this game. If the game is not borrowed or
         the borrower currently doesn't play this game, the result is always 0.
+      parameters:
+        steamid:
+          description: The SteamID of the account playing.
+          example: '76561197960435530'
+          required: true
+          type: string
+        key:
+          description: Steam API Key
+          example: XXXXXXXXXXXXXXXXXXXXXXX
+          required: true
+          whereToGet:
+            url: 'http://steamcommunity.com/dev/apikey/'
+            description: 'Copy and paste an API key, or create one if you haven''t already.'
+            extendedDescription: ''
+          type: string
+        appid_playing:
+          description: The AppID of the game currently playing.
+          example: '240'
+          type: string
   get-schema-for-game:
     POST:
       file: scripts/get-schema-for-game.js
       description: >-
         GetSchemaForGame returns gamename, gameversion and
         availablegamestats(achievements and stats).
+      parameters:
+        appid:
+          description: The AppID of the game you want stats of
+          example: '620'
+          required: true
+          type: string
+        key:
+          description: Steam API Key
+          example: XXXXXXXXXXXXXXXXXXXXXXX
+          required: true
+          whereToGet:
+            url: 'http://steamcommunity.com/dev/apikey/'
+            description: 'Copy and paste an API key, or create one if you haven''t already.'
+            extendedDescription: ''
+          type: string
   get-player-bans:
     POST:
       file: scripts/get-player-bans.js
       description: >-
         GetPlayerBans returns Community, VAC, and Economy ban statuses for given
         players.
+      parameters:
+        steamids:
+          description: Array of SteamIDs
+          example:
+            - '76561197960435530'
+          required: true
+          type: array
+        key:
+          description: Steam API Key
+          example: XXXXXXXXXXXXXXXXXXXXXXX
+          required: true
+          whereToGet:
+            url: 'http://steamcommunity.com/dev/apikey/'
+            description: 'Copy and paste an API key, or create one if you haven''t already.'
+            extendedDescription: ''
+          type: string

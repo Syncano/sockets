@@ -1,49 +1,15 @@
-var async = require('async');
-var NPM = require('../');
+var npm = require('machinepack-npm');
 
+// List matching packages and include metadata from their package.json files.
+npm.listPackagesWithDetails(ARGS).exec({
 
-NPM.listPackages({
-  query: inputs.query
-}).exec(function (err, npmPackageNames) {
-  if (err) { return exits.error(err); }
-
-  // Now expand each module with full results directly
-  // from the npm registry.
-  var pkgInfos = [];
-
-  async.each(
-    npmPackageNames,
-
-    function iteratee(packageName, next) {
-
-      NPM.fetchInfo({
-        packageName: packageName
-      }).exec(function (err, pkgInfo) {
-        if (err) { return next(err); }
-
-        var metadata;
-        try {
-
-          var rawJsonStr = JSON.stringify(pkgInfo);
-
-          metadata = NPM.parsePackageJson({ json: rawJsonStr }).execSync();
-
-          // Attach raw json string
-          metadata.rawJson = rawJsonStr;
-
-        } catch (e){ return next(e); }
-
-        pkgInfos.push(metadata);
-
-        return next();
-
-      });
-    },//</iteratee>
-
-    // ~∞%°
-    function afterwards(err) {
-      if (err) { return exits.error(err); }
-      return exits.success(pkgInfos);
+    // An array of package detail dictionaries for each of the matching NPM packages.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
     }
-  );//</async.each>
-});//</listPackages()>
+
+});

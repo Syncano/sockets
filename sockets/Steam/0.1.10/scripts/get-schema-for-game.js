@@ -1,21 +1,15 @@
-var Http = require('machinepack-http');
+var steam = require('machinepack-steam');
 
-Http.sendHttpRequest({
-  baseUrl: 'http://api.steampowered.com/',
-  url: 'ISteamUserStats/GetSchemaForGame/v2/',
-  method: 'get',
-  params: {
-    appid: inputs.appid,
-    key: inputs.key,
-    format: 'json'
-  }
-})
-.exec({
-  success: function (res) {
-    var response = JSON.parse(res.body);
-    return exits.success(response);
-  },
-  error: function (err) {
-    return exits.error(err);
-  }
+// GetSchemaForGame returns gamename, gameversion and availablegamestats(achievements and stats).
+steam.getSchemaForGame(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

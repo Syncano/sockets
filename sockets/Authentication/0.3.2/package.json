@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-authentication",
+    "description": "Support for login, logout, and authentication via encrypted cookies and a session store.",
+    "version": "0.3.2",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-sessionauth": "0.3.2"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Authentication",
+        "Authentication-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

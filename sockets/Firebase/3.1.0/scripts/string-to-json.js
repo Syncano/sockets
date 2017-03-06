@@ -1,13 +1,19 @@
-var jdata;
+var firebase = require('machinepack-firebase');
 
-try {
-  jdata= JSON.parse(inputs.string);
-}
-catch (e){
-  return exits.parseFailure(e);
-}
+// Firebase writes data as a JSON object. You can convert your JSON-format string to a JSON object with this machine.
+firebase.stringToJson(ARGS).exec({
 
-return exits.success({
-  description: "String succesfully converted.",
-  data: jdata
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    parseFailure: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

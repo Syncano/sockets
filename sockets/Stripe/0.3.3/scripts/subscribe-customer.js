@@ -1,16 +1,15 @@
-// TODO: handle more specific exits (i.e. rate limit, customer does not exist, etc.)
+var stripe-subscriptions = require('machinepack-stripe-subscriptions');
 
-var stripe = require('stripe')(inputs.apiKey);
+// Subscribe a customer to a pre-existing plan.
+stripe-subscriptions.subscribeCustomer(ARGS).exec({
 
-// Get the base options
-var options = {
-  plan: inputs.plan,
-  quantity: inputs.quantity,
-  card: inputs.card
-};
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-
-stripe.customers.createSubscription(inputs.customer, options, function(err, charge) {
-  if (err) return exits.error(err);
-  return exits.success(charge);
 });

@@ -1,21 +1,39 @@
-var thisPack = require('../');
+var git = require('machinepack-git');
 
-thisPack.status({
-  dir: inputs.destination
-}).exec({
-  error: exits.error,
-  noSuchDir: function () {
-    thisPack.clone({
-      destination: inputs.destination,
-      remote: inputs.remote,
-      branch: inputs.branch
-    }).exec(exits);
-  }, //</status.noSuchDir>
-  success: function (status){
-    thisPack.pull({
-      destination: inputs.destination,
-      remote: inputs.remote,
-      branch: inputs.branch
-    }).exec(exits);
-  } //</status.success>
-}); // </status>
+// Clone a git repo to a folder on disk (or if the folder already exists, just pull)
+git.pullOrClone(ARGS).exec({
+
+    
+    notRepo: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    forbidden: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    noSuchDir: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    uncommittedChanges: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    unresolvedConflicts: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    failed: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

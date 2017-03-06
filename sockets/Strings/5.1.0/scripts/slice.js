@@ -1,14 +1,15 @@
-var _ = require('lodash');
+var strings = require('machinepack-strings');
 
-if (inputs.start < 0) {
-  return exits.error('`start` index must be least zero.');
-}
-if (_.isUndefined(inputs.end)) {
-  return exits.success(inputs.string.slice(inputs.start));
-}
+// Get a substring of consecutive characters from the string.
+strings.slice(ARGS).exec({
 
-if (inputs.end < 0) {
-  return exits.error('`end` index must be least zero.');
-}
-// Increment `end` by 1 (since the third arg to `_.slice` is exclusive)
-return exits.success(inputs.string.slice(inputs.start, inputs.end+1));
+    // The desired slice of the string.
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    },
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    }
+
+});

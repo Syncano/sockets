@@ -1,23 +1,19 @@
-/**
- * Module Dependencies
- */
-var Http = require('machinepack-http');
+var openbadges = require('machinepack-openbadges');
 
-Http.sendHttpRequest({
-  url: '/displayer/convert/email',
-  baseUrl: 'http://backpack.openbadges.org',
-  method: 'post',
-  params: {email:inputs.emailAddress},
-  formData: false,
-  headers: {},
-}).exec({
-  error: function (err){
-    return exits.error(err);
-  },
-  notFound: function (result){
-    return exits.mailNotFound(result);
-  },
-  success: function (result){
-    return exits.success(result);
-  }
+// To convert an earner email address to Backpack user ID
+openbadges.convertEmail(ARGS).exec({
+
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    mailNotFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
+
 });

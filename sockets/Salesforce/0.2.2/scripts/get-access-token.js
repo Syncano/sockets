@@ -1,23 +1,15 @@
-var oauth2 = require('salesforce-oauth2');
+var salesforce = require('machinepack-salesforce');
 
-oauth2.authenticate({
-  redirect_uri: inputs.callbackUrl,
-  client_id: inputs.consumerKey,
-  client_secret: inputs.consumerSecret,
-  code: inputs.code
-}, function(err, payload) {
+// Generate a new access token for acting on behalf of a particular Salesforce user account.
+salesforce.getAccessToken(ARGS).exec({
 
-  if (err) {
-    return exits.error(err);
-  }
-
-  var options = {
-    url: payload.id,
-    headers: {
-      'Authorization': payload.token_type + " " + payload.access_token
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
-  };
-
-  return exits.success(payload);
 
 });

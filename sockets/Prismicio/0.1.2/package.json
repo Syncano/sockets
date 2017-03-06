@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-prismicio",
+    "description": "Work with prismicio.",
+    "version": "0.1.2",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-prismicio": "0.1.2"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Prismicio",
+        "Prismicio-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

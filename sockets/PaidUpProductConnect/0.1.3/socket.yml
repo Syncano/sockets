@@ -2,13 +2,40 @@ name: PaidUpProductConnect
 description: Connector for payment microservice
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   category-retrieve:
     POST:
       file: scripts/category-retrieve.js
       description: Retrieve categories of products
+      parameters:
+        baseUrl:
+          example: 'http://localhost:9002'
+          description: Url microservice.
+          required: true
+          type: string
+        token:
+          example: secret-word
+          description: secret word for authenticate microservice.
+          required: true
+          type: string
   product-retrieve:
     POST:
       file: scripts/product-retrieve.js
       description: Retrieve product by Id
+      parameters:
+        baseUrl:
+          example: 'http://localhost:9002'
+          description: Url microservice.
+          required: true
+          type: string
+        token:
+          example: secret-word
+          description: secret word for authenticate microservice.
+          required: true
+          type: string
+        productId:
+          example: '12'
+          description: id product.
+          required: true
+          type: string

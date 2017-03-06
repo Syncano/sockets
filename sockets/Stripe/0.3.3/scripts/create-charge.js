@@ -1,22 +1,15 @@
-// TODO: handle more specific exits (i.e. rate limit, customer does not exist, etc.)
+var stripe-subscriptions = require('machinepack-stripe-subscriptions');
 
-var stripe = require('stripe')(inputs.apiKey);
+// Create a new charge for a customer
+stripe-subscriptions.createCharge(ARGS).exec({
 
-// Get the base options
-var options = {
-  amount: inputs.amount,
-  currency: inputs.currency,
-  card: inputs.card,
-  description: inputs.description || '',
-  capture: inputs.capture
-};
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-// Add customer if it's sent in
-if (inputs.customer) {
-  options.customer = inputs.customer;
-}
-
-stripe.charges.create(options, function(err, charge) {
-  if (err) return exits.error(err);
-  return exits.success(charge);
 });

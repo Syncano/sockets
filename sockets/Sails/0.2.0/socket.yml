@@ -2,15 +2,35 @@ name: Sails
 description: General purpose machines for interfacing with a Sails application.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   get-configuration:
     POST:
       file: scripts/get-configuration.js
       description: Retrieve the value of the specified Sails configuration setting.
+      parameters:
+        key:
+          friendlyName: Config key
+          description: The `sails.config` key to retrieve the value of.
+          extendedDescription: >-
+            Use dot notation to retrieve nested keys, e.g. "log.level" to
+            retrieve the value of `sails.config.log.level`".
+          example: log.level
+          required: true
+          type: string
+        expectedOutput:
+          friendlyName: Example result
+          description: Optional example to use to determine the expected output type.
+          extendedDescription: >-
+            If an example result is provided, the retrieved configuration value
+            will be cast to the example's type.
+          example: ===
+          isExemplar: true
+          type: string
   is-production:
     POST:
       file: scripts/is-production.js
       description: >-
         Determine whether a Sails application is running in the production
         environment.
+      parameters: {}

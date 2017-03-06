@@ -1,37 +1,15 @@
-/**
-* Module Dependencies
-*/
+var wepay = require('machinepack-wepay');
 
-var wepay = require('wepay').WEPAY;
+// Add callback_uri to user.
+wepay.userCallback(ARGS).exec({
 
-// wepay request settings
-var wepay_settings = {
-  'access_token': inputs.accessToken
-  // 'api_version': 'API_VERSION'
-};
-
-// Instantiate new wepay instance with settings
-var wp = new wepay(wepay_settings);
-
-// Set API environment
-if(inputs.useProduction){
-  wp.use_production();
-}
-else{
-  wp.use_staging();
-}
-
-wp.call('/user/modify', {
-  'callback_uri': inputs.callbackUri
-}, function onResponse(response) {
-
-  var responseObj = JSON.parse(String(response));
-
-  if(responseObj.error){
-    return exits.error(responseObj);
-  }
-  else{
-    return exits.success(responseObj);
-  }
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
 });

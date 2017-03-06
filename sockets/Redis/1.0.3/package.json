@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-redis",
+    "description": "Structured Node.js bindings for Redis.",
+    "version": "1.0.3",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-redis": "1.0.3"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Redis",
+        "Redis-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

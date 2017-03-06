@@ -1,0 +1,24 @@
+{
+    "name": "syncano-socket-selectone",
+    "description": "Select one item in a list",
+    "version": "1.0.3",
+    "author": "Syncano",
+    "bugs": {
+        "url": "https://github.com/Syncano/sockets/issues"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "machinepack-selectone": "1.0.3"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "syncano",
+        "syncano-socket",
+        "syncano-socket-Selectone",
+        "Selectone-socket"
+    ],
+    "repository": "",
+    "licenses": ""
+}

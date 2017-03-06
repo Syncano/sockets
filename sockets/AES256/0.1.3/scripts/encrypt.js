@@ -1,20 +1,15 @@
-if (inputs.buffer && require('isbuffer')(inputs.value) !== true)
-  return exits.error({error: "It's not a valid buffer"});
+var aes256 = require('machinepack-aes256');
 
-var algorithm = "aes-256-ctr"
-, input_encoding = "utf8"
-, output_encoding = "hex"
-, res = null;
+// Encrypt content
+aes256.encrypt(ARGS).exec({
 
-var cipher = require('crypto').createCipher(algorithm, inputs.secret)
-if (inputs.buffer) {
-  res = Buffer.concat([cipher.update(inputs.value),cipher.final()]);
-} else {
-  res = cipher.update(inputs.value, input_encoding, output_encoding)
-      + cipher.final(output_encoding);
-}
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-// Return an a crypted string
-return exits.success({
-  text: res
 });

@@ -1,31 +1,23 @@
-var util = require('util');
-var _ = require('lodash');
-var elasticsearch = require('elasticsearch');
+var machines-elastic = require('machines-elastic');
 
-var client = elasticsearch.Client({
-  host: util.format('%s:%d', inputs.hostname, inputs.port||9200),
-  log: require('../helpers/noop-logger')
-});
+// Delete by query
+machines-elastic.deleteByQuery(ARGS).exec({
 
-client.deleteByQuery({
-  index: inputs.index,
-  type: inputs.type||'default',
-  body: inputs.query
-}, function (err, body) {
-  if (err) {
-    client.close();
-    if (typeof err !== 'object' || typeof err.message !== 'string') {
-      return exits.error(err);
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    couldNotConnect: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    noSuchIndex: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
     }
-    if (err.constructor && err.constructor.name === 'NoConnections' || err.message.match(/No Living connections/)) {
-      return exits.couldNotConnect();
-    }
-    if (err.message.match(/IndexMissingException/)) {
-      return exits.noSuchIndex();
-    }
-    return exits.error(err);
-  }
 
-  client.close();
-  return exits.success();
 });

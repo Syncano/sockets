@@ -2,57 +2,311 @@ name: Deis
 description: SDK for working with a Deis install
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   list-apps:
     POST:
       file: scripts/list-apps.js
       description: Lists applications visible to the current user.
+      parameters:
+        token:
+          description: An access token for use with a Deis install.
+          example: ''
+          required: true
+          type: string
+        controller:
+          description: The controller location of your Deis install.
+          example: 'http://deis.mydeisapp.com'
+          required: true
+          type: string
   login:
     POST:
       file: scripts/login.js
       description: Logs in by authenticating against a controller.
+      parameters:
+        controller:
+          description: The controller location of your Deis install.
+          example: 'http://deis.mydeisapp.com'
+          required: true
+          type: string
+        username:
+          description: The username to use for login
+          example: foobar
+          required: true
+          type: string
+        password:
+          description: The password to use for login
+          example: deisrocks
+          required: true
+          type: string
+        sslVerify:
+          description: disables SSL certificate verification for API requests
+          defaultsTo: false
+          example: true
+          type: boolean
   create-app:
     POST:
       file: scripts/create-app.js
       description: Creates a new application.
+      parameters:
+        token:
+          description: An access token for use with a Deis install.
+          example: ''
+          required: true
+          type: string
+        controller:
+          description: The controller location of your Deis install.
+          example: 'http://deis.mydeisapp.com'
+          required: true
+          type: string
+        id:
+          description: A name for the application
+          example: myawesomeapp
+          type: string
   destroy-app:
     POST:
       file: scripts/destroy-app.js
       description: Destroys an application.
+      parameters:
+        token:
+          description: An access token for use with a Deis install.
+          example: ''
+          required: true
+          type: string
+        controller:
+          description: The controller location of your Deis install.
+          example: 'http://deis.mydeisapp.com'
+          required: true
+          type: string
+        app:
+          description: The uniquely identifiable name for the application.
+          example: myawesomeapp
+          required: true
+          type: string
   set-config:
     POST:
       file: scripts/set-config.js
       description: Set environment variables for an app
+      parameters:
+        token:
+          description: An access token for use with a Deis install.
+          example: ''
+          required: true
+          type: string
+        controller:
+          description: The controller location of your Deis install.
+          example: 'http://deis.mydeisapp.com'
+          required: true
+          type: string
+        app:
+          description: The uniquely identifiable name for the application.
+          example: myawesomeapp
+          required: true
+          type: string
+        values:
+          description: An array of key/value pairs to set as environment config values.
+          example:
+            - key: DATABASE_URL
+              value: 'postgres://localhost:5432'
+          required: true
+          type: array
   unset-config:
     POST:
       file: scripts/unset-config.js
       description: Unsets an environment variable for an application.
+      parameters:
+        token:
+          description: An access token for use with a Deis install.
+          example: ''
+          required: true
+          type: string
+        controller:
+          description: The controller location of your Deis install.
+          example: 'http://deis.mydeisapp.com'
+          required: true
+          type: string
+        app:
+          description: The uniquely identifiable name for the application.
+          example: myawesomeapp
+          required: true
+          type: string
+        key:
+          description: An the config key to remove.
+          example: DATABASE_URL
+          required: true
+          type: string
   create-build:
     POST:
       file: scripts/create-build.js
       description: Creates a new build of an application.
+      parameters:
+        token:
+          description: An access token for use with a Deis install.
+          example: ''
+          required: true
+          type: string
+        controller:
+          description: The controller location of your Deis install.
+          example: 'http://deis.mydeisapp.com'
+          required: true
+          type: string
+        app:
+          description: The uniquely identifiable name for the application.
+          example: myawesomeapp
+          required: true
+          type: string
+        image:
+          description: >-
+            A fully-qualified docker image, either from Docker Hub or from an
+            in-house registry.
+          example: deis/example-go
+          required: true
+          type: string
   list-processes:
     POST:
       file: scripts/list-processes.js
       description: Lists processes servicing an application.
+      parameters:
+        token:
+          description: An access token for use with a Deis install.
+          example: ''
+          required: true
+          type: string
+        controller:
+          description: The controller location of your Deis install.
+          example: 'http://deis.mydeisapp.com'
+          required: true
+          type: string
+        app:
+          description: The uniquely identifiable name for the application.
+          example: myawesomeapp
+          required: true
+          type: string
   scale-process:
     POST:
       file: scripts/scale-process.js
       description: Scales an application's processes by type.
+      parameters:
+        token:
+          description: An access token for use with a Deis install.
+          example: ''
+          required: true
+          type: string
+        controller:
+          description: The controller location of your Deis install.
+          example: 'http://deis.mydeisapp.com'
+          required: true
+          type: string
+        app:
+          description: The uniquely identifiable name for the application.
+          example: myawesomeapp
+          required: true
+          type: string
+        process:
+          description: The name of the process to scale.
+          example: web
+          required: true
+          type: string
+        number:
+          description: The number of containers to scale to.
+          example: 1
+          required: true
+          type: number
   set-limit:
     POST:
       file: scripts/set-limit.js
       description: Sets resource limits for an application.
+      parameters:
+        token:
+          description: An access token for use with a Deis install.
+          example: ''
+          required: true
+          type: string
+        controller:
+          description: The controller location of your Deis install.
+          example: 'http://deis.mydeisapp.com'
+          required: true
+          type: string
+        app:
+          description: The uniquely identifiable name for the application.
+          example: myawesomeapp
+          required: true
+          type: string
+        limit:
+          description: Which resource limit will be set. Defaults to memory.
+          example: memory
+          type: string
+        value:
+          description: >-
+            The value to set for the limit. With memory, units are represented
+            in Bytes (B), Kilobytes (K), Megabytes(M), or Gigabytes (G). e.g.
+            "1G". With cpu, units are represented in the number of cpu shares.
+            e.g. 1024.
+          example: 512M
+          required: true
+          type: string
   unset-limit:
     POST:
       file: scripts/unset-limit.js
       description: Unsets resource limits for an application.
+      parameters:
+        token:
+          description: An access token for use with a Deis install.
+          example: ''
+          required: true
+          type: string
+        controller:
+          description: The controller location of your Deis install.
+          example: 'http://deis.mydeisapp.com'
+          required: true
+          type: string
+        app:
+          description: The uniquely identifiable name for the application.
+          example: myawesomeapp
+          required: true
+          type: string
+        limit:
+          description: Which resource limit will be set. Defaults to memory.
+          example: memory
+          required: true
+          type: string
   list-limits:
     POST:
       file: scripts/list-limits.js
       description: Lists resource limits for an application.
+      parameters:
+        token:
+          description: An access token for use with a Deis install.
+          example: ''
+          required: true
+          type: string
+        controller:
+          description: The controller location of your Deis install.
+          example: 'http://deis.mydeisapp.com'
+          required: true
+          type: string
+        app:
+          description: The uniquely identifiable name for the application.
+          example: myawesomeapp
+          required: true
+          type: string
   list-config:
     POST:
       file: scripts/list-config.js
       description: Lists environment variables for an application.
+      parameters:
+        token:
+          description: An access token for use with a Deis install.
+          example: ''
+          required: true
+          type: string
+        controller:
+          description: The controller location of your Deis install.
+          example: 'http://deis.mydeisapp.com'
+          required: true
+          type: string
+        app:
+          description: The uniquely identifiable name for the application.
+          example: myawesomeapp
+          required: true
+          type: string

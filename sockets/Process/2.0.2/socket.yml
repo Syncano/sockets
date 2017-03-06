@@ -2,7 +2,7 @@ name: Process
 description: Work with child procs and the running process.
 author:
   name: Syncano
-  email: hello@syncano.io
+  email: support@syncano.io
 endpoints:
   escape-cli-opt:
     POST:
@@ -10,15 +10,134 @@ endpoints:
       description: >-
         Escape a value for use as a command-line option (e.g. the "XXXXX" in
         `--foobar='XXXXX'`).
+      parameters:
+        value:
+          friendlyName: Value
+          description: The value to escape as a CLI option.
+          example: '*'
+          required: true
+          type: string
   kill-child-process:
     POST:
       file: scripts/kill-child-process.js
       description: Gracefully kill a child process.
+      parameters:
+        childProcess:
+          friendlyName: Child process
+          description: The child process to kill.
+          example: ===
+          required: true
+          type: string
+        forceIfNecessary:
+          friendlyName: Force if necessary?
+          description: >-
+            If set, then force the child process to exit if it cannot be killed
+            gracefully (e.g. because it is already dead).
+          extendedDescription: >-
+            If set, this method will first attempt to shut down the child
+            process gracefully (SIGTERM); but if that doesn't work after a few
+            miliseconds (`maxMsToWait`), it will use the nuclear option
+            (SIGKILL) to kill the child process with no exceptions.
+          example: false
+          defaultsTo: false
+          type: boolean
+        maxMsToWait:
+          description: >-
+            The maximum number of miliseconds to wait for the child process to
+            shut down gracefully.
+          example: 500
+          defaultsTo: 500
+          type: number
   spawn-child-process:
     POST:
       file: scripts/spawn-child-process.js
       description: Spawn a child process and have it run a command.
+      parameters:
+        command:
+          friendlyName: Command
+          description: >-
+            The command to run in the child process, without any CLI arguments
+            or options.
+          extendedDescription: >-
+            Node core is tolerant of CLI args mixed in with the main "command"
+            in `child_process.exec()`, but it is not so forgiving when using
+            `child_process.spawn()`.
+          example: ls
+          required: true
+          type: string
+        cliArgs:
+          friendlyName: CLI args
+          description: >-
+            An array of command-line arguments (e.g. `commit` or `install`)
+            and/or options (e.g. `-al` or `-f 7` or `--foo='bar'`) to pass in.
+          example:
+            - '-la'
+          defaultsTo: []
+          type: array
+        dir:
+          friendlyName: Run from...
+          description: The path to the directory where this command will be run.
+          extendedDescription: >-
+            If not set, this defaults to the present working directory.  If a
+            relative path is provided, it will be resolved relative to the
+            present working directory.
+          example: /Users/mikermcneil/foo
+          type: string
+        environmentVars:
+          friendlyName: Environment variables
+          description: >-
+            A dictionary of environment variables to provide to the child
+            process.
+          extendedDescription: >-
+            By default, the same environment variables as in the current process
+            will be used.  If specified, the dictionary should consist of the
+            name of each environment variable as a key, and the value of the
+            variable on the right-hand side.  The value of any environment
+            variable is always a string.
+          example: {}
+          type: object
   execute-command:
     POST:
       file: scripts/execute-command.js
       description: Execute a command like you would on the terminal.
+      parameters:
+        command:
+          friendlyName: Command
+          description: >-
+            The command to run, including any whitespace-delimited CLI
+            args/opts.
+          example: ls -la
+          required: true
+          type: string
+        dir:
+          friendlyName: Run from...
+          description: The path to the directory where this command will be run.
+          extendedDescription: >-
+            If not set, this defaults to the present working directory.  If a
+            relative path is provided, it will be resolved relative to the
+            present working directory.
+          example: /Users/mikermcneil/foo
+          type: string
+        environmentVars:
+          friendlyName: Environment variables
+          description: >-
+            A dictionary of environment variables to provide to the child
+            process.
+          extendedDescription: >-
+            By default, the same environment variables as in the current process
+            will be used.  If specified, the dictionary should consist of the
+            name of each environment variable as a key, and the value of the
+            variable on the right-hand side.  The value of any environment
+            variable is always a string.
+          example: {}
+          type: object
+        timeout:
+          friendlyName: Timeout
+          description: >-
+            The maximum number of miliseconds to wait for this command to
+            finish.
+          extendedDescription: >-
+            By default, no time limit will be enforced.  Note that if the time
+            limit is reached, SIGERM will be sent to the child process.
+          example: 60000
+          type: number

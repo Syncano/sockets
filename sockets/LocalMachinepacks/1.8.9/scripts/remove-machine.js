@@ -1,63 +1,19 @@
-var Path = require('path');
-var _ = require('lodash');
-var Filesystem = require('machinepack-fs');
-var _getMachinesDir = require('machine').build(require('./get-machines-dir'));
+var localmachinepacks = require('machinepack-localmachinepacks');
 
-var machinepackPath = Path.resolve(process.cwd(), inputs.dir);
-var packageJsonPath = Path.resolve(machinepackPath, 'package.json');
+// Remove a machine from a local pack and update the package.json file.
+localmachinepacks.removeMachine(ARGS).exec({
 
-_getMachinesDir({
-  dir: machinepackPath
-}).exec({
-  error: function(err) {
-    return exits.error(err);
-  },
-  success: function(pathToMachines) {
+    
+    error: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    notFound: function (response) {
+      setResponse(new HttpResponse(500, JSON.stringify(response)));
+    },
+    
+    success: function (response) {
+      setResponse(new HttpResponse(200, JSON.stringify(response)));
+    }
 
-    Filesystem.readJson({
-      source: packageJsonPath,
-      schema: {}
-    }).exec({
-      error: function(err) {
-        return exits.error(err);
-      },
-      success: function(jsonData) {
-        try {
-          if (!_.contains(jsonData.machinepack.machines, inputs.identity)) {
-            return exits.notFound();
-          }
-          jsonData.machinepack.machines = _.difference(jsonData.machinepack.machines, [inputs.identity]);
-        }
-        catch (e) {
-          return exits.error(e);
-        }
-
-        // Completely remove a file or directory (like rm -rf).
-        Filesystem.rmrf({
-          dir: Path.resolve(pathToMachines, inputs.identity + '.js')
-        }).exec({
-
-          error: function(err) {
-            return exits.error(err);
-          },
-
-          success: function() {
-
-            Filesystem.writeJson({
-              json: jsonData,
-              destination: packageJsonPath,
-              force: true
-            }).exec({
-              error: function(err) {
-                return exits.error(err);
-              },
-              success: function() {
-                return exits.success();
-              }
-            });
-          }
-        });
-      },
-    });
-  }
 });
