@@ -11,7 +11,7 @@ It is Firebase integration with Syncano. It allows you to this machinepack lets 
 
   firebaseURL: 'your-firebase-database.firebaseio.com',
   child: 'users',
-  write: undefined
+  write: <*>
 ```
 
 
@@ -22,7 +22,7 @@ It is Firebase integration with Syncano. It allows you to this machinepack lets 
 
   firebaseURL: 'your-firebase-database.firebaseio.com',
   child: 'users',
-  write: undefined
+  write: <*>
 ```
 
 
@@ -33,7 +33,7 @@ It is Firebase integration with Syncano. It allows you to this machinepack lets 
 
   firebaseURL: 'your-firebase-database.firebaseio.com/users',
   child: 'users',
-  write: undefined
+  write: <dictionary>
 ```
 
 

@@ -39,6 +39,6 @@ It is NodeStore integration with Syncano. It allows you to this machinepack prov
 ```
 
   key: 'user',
-  value: undefined
+  value: <*>
 ```
 

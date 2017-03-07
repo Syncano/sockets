@@ -26,7 +26,7 @@ It is ElasticSearch integration with Syncano. It allows you to access the elasti
   index: 'myindex',
   type: 'user',
   id: 'lzmkDgMjTbGoacxLMsB_zA',
-  document: undefined
+  document: <dictionary>
 ```
 
 
@@ -39,7 +39,7 @@ It is ElasticSearch integration with Syncano. It allows you to access the elasti
   port: 9200,
   index: 'myindex',
   type: 'user',
-  document: undefined
+  document: <dictionary>
 ```
 
 

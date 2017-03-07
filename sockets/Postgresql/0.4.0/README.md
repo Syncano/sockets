@@ -30,11 +30,11 @@ It is Postgresql integration with Syncano. It allows you to structured node.js b
 
   connectionUrl: 'postgres://foo:bar@localhost:5432/machinepack_postgresql',
   table: 'direwolves',
-  query: undefined,
+  query: <dictionary>,
   limit: 30,
   skip: 30,
-  sort: undefined,
-  schema: undefined
+  sort: <array>,
+  schema: <array>
 ```
 
 
@@ -45,6 +45,6 @@ It is Postgresql integration with Syncano. It allows you to structured node.js b
 
   connectionUrl: 'postgres://foo:bar@localhost:5432/machinepack_postgresql',
   table: 'direwolves',
-  query: undefined
+  query: <dictionary>
 ```
 

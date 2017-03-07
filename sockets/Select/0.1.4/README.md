@@ -9,7 +9,7 @@ It is Select integration with Syncano. It allows you to select first, last or a 
 #### Parameters:
 ```
 
-  collection: undefined,
+  collection: <array>,
   shift: true,
   both: true
 ```
@@ -20,7 +20,7 @@ It is Select integration with Syncano. It allows you to select first, last or a 
 #### Parameters:
 ```
 
-  collection: undefined,
+  collection: <array>,
   pop: true,
   both: true
 ```
@@ -31,7 +31,7 @@ It is Select integration with Syncano. It allows you to select first, last or a 
 #### Parameters:
 ```
 
-  collection: undefined,
+  collection: <array>,
   start: 2,
   end: 5,
   include: true
@@ -43,7 +43,7 @@ It is Select integration with Syncano. It allows you to select first, last or a 
 #### Parameters:
 ```
 
-  collection: undefined,
+  collection: <array>,
   num: 2
 ```
 
@@ -53,7 +53,7 @@ It is Select integration with Syncano. It allows you to select first, last or a 
 #### Parameters:
 ```
 
-  collection: undefined,
+  collection: <array>,
   num: 2
 ```
 
@@ -63,7 +63,7 @@ It is Select integration with Syncano. It allows you to select first, last or a 
 #### Parameters:
 ```
 
-  collection: undefined,
+  collection: <array>,
   num: 2,
   both: true
 ```

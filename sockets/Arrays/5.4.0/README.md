@@ -116,7 +116,7 @@ It is Arrays integration with Syncano. It allows you to work with arrays.
 
   array: *,
   iteratee: '->',
-  series: false
+  series: <boolean>
 ```
 
 
@@ -128,7 +128,7 @@ It is Arrays integration with Syncano. It allows you to work with arrays.
   array: *,
   resultExemplar: *,
   iteratee: '->',
-  series: false
+  series: <boolean>
 ```
 
 
@@ -139,7 +139,7 @@ It is Arrays integration with Syncano. It allows you to work with arrays.
 
   array: *,
   iteratee: '->',
-  resultExemplar: undefined,
+  resultExemplar: <undefined>,
   initialValue: '*',
   series: true
 ```

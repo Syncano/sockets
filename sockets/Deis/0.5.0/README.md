@@ -9,7 +9,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
 #### Parameters:
 ```
 
-  token: '',
+  token: '<string>',
   controller: 'http://deis.mydeisapp.com'
 ```
 
@@ -31,7 +31,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
 #### Parameters:
 ```
 
-  token: '',
+  token: '<string>',
   controller: 'http://deis.mydeisapp.com',
   id: 'myawesomeapp'
 ```
@@ -42,7 +42,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
 #### Parameters:
 ```
 
-  token: '',
+  token: '<string>',
   controller: 'http://deis.mydeisapp.com',
   app: 'myawesomeapp'
 ```
@@ -53,7 +53,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
 #### Parameters:
 ```
 
-  token: '',
+  token: '<string>',
   controller: 'http://deis.mydeisapp.com',
   app: 'myawesomeapp',
   values: [object Object]
@@ -65,7 +65,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
 #### Parameters:
 ```
 
-  token: '',
+  token: '<string>',
   controller: 'http://deis.mydeisapp.com',
   app: 'myawesomeapp',
   key: 'DATABASE_URL'
@@ -77,7 +77,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
 #### Parameters:
 ```
 
-  token: '',
+  token: '<string>',
   controller: 'http://deis.mydeisapp.com',
   app: 'myawesomeapp',
   image: 'deis/example-go'
@@ -89,7 +89,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
 #### Parameters:
 ```
 
-  token: '',
+  token: '<string>',
   controller: 'http://deis.mydeisapp.com',
   app: 'myawesomeapp'
 ```
@@ -100,7 +100,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
 #### Parameters:
 ```
 
-  token: '',
+  token: '<string>',
   controller: 'http://deis.mydeisapp.com',
   app: 'myawesomeapp',
   process: 'web',
@@ -113,7 +113,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
 #### Parameters:
 ```
 
-  token: '',
+  token: '<string>',
   controller: 'http://deis.mydeisapp.com',
   app: 'myawesomeapp',
   limit: 'memory',
@@ -126,7 +126,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
 #### Parameters:
 ```
 
-  token: '',
+  token: '<string>',
   controller: 'http://deis.mydeisapp.com',
   app: 'myawesomeapp',
   limit: 'memory'
@@ -138,7 +138,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
 #### Parameters:
 ```
 
-  token: '',
+  token: '<string>',
   controller: 'http://deis.mydeisapp.com',
   app: 'myawesomeapp'
 ```
@@ -149,7 +149,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
 #### Parameters:
 ```
 
-  token: '',
+  token: '<string>',
   controller: 'http://deis.mydeisapp.com',
   app: 'myawesomeapp'
 ```

@@ -9,8 +9,8 @@ It is JangoSMTP integration with Syncano. It allows you to send transactional em
 #### Parameters:
 ```
 
-  username: '',
-  password: '',
+  username: '<string>',
+  password: '<string>',
   toEmail: 'jane@example.com',
   subject: 'Welcome, Jane!',
   textMessage: 'Jane,
@@ -34,8 +34,8 @@ The Management',
 #### Parameters:
 ```
 
-  username: '',
-  password: '',
+  username: '<string>',
+  password: '<string>',
   toEmail: 'jane@example.com',
   subject: 'Welcome, Jane!',
   textMessage: 'Jane,

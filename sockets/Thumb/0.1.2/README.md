@@ -19,7 +19,7 @@ It is Thumb integration with Syncano. It allows you to easy generate thumb file 
 ```
 
   destination: 'samples/test-blur.png',
-  done: undefined
+  done: <*>
 ```
 
 
@@ -34,7 +34,7 @@ It is Thumb integration with Syncano. It allows you to easy generate thumb file 
   size: '120x250',
   source: 'samples/test.png',
   destination: 'samples/test-blur.png',
-  done: undefined,
+  done: <*>,
   quality: 2
 ```
 
@@ -45,8 +45,8 @@ It is Thumb integration with Syncano. It allows you to easy generate thumb file 
 ```
 
   source: 'samples/test.png',
-  schema: undefined,
-  done: undefined,
+  schema: <array>,
+  done: <*>,
   quality: 2
 ```
 

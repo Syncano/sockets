@@ -30,7 +30,7 @@ It is Strings integration with Syncano. It allows you to work with strings.
 ```
 
   string: 'villeriño',
-  at: 0
+  at: <number>
 ```
 
 
@@ -146,7 +146,7 @@ It is Strings integration with Syncano. It allows you to work with strings.
 
   string: 'Siri',
   existingStrings: Siri,
-  caseSensitive: false
+  caseSensitive: <boolean>
 ```
 
 

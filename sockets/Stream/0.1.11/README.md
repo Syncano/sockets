@@ -19,7 +19,7 @@ It is Stream integration with Syncano. It allows you to work with stream readabl
 #### Parameters:
 ```
 
-  stream: undefined,
+  stream: <*>,
   path: 'tmp.log'
 ```
 
@@ -29,7 +29,7 @@ It is Stream integration with Syncano. It allows you to work with stream readabl
 #### Parameters:
 ```
 
-  stream: undefined
+  stream: <*>
 ```
 
 
@@ -38,7 +38,7 @@ It is Stream integration with Syncano. It allows you to work with stream readabl
 #### Parameters:
 ```
 
-  stream: undefined
+  stream: <*>
 ```
 
 
@@ -47,7 +47,7 @@ It is Stream integration with Syncano. It allows you to work with stream readabl
 #### Parameters:
 ```
 
-  stream: undefined
+  stream: <*>
 ```
 
 
@@ -56,7 +56,7 @@ It is Stream integration with Syncano. It allows you to work with stream readabl
 #### Parameters:
 ```
 
-  stream: undefined
+  stream: <*>
 ```
 
 
@@ -65,7 +65,7 @@ It is Stream integration with Syncano. It allows you to work with stream readabl
 #### Parameters:
 ```
 
-  stream: undefined,
+  stream: <*>,
   write: '.tmp/test.log'
 ```
 
@@ -75,8 +75,8 @@ It is Stream integration with Syncano. It allows you to work with stream readabl
 #### Parameters:
 ```
 
-  stream: undefined,
-  search: undefined,
+  stream: <*>,
+  search: <*>,
   replace: 'abc'
 ```
 
@@ -86,9 +86,9 @@ It is Stream integration with Syncano. It allows you to work with stream readabl
 #### Parameters:
 ```
 
-  stream: undefined,
+  stream: <*>,
   text: 'a string to insert',
-  after: undefined,
-  before: undefined
+  after: <*>,
+  before: <*>
 ```
 

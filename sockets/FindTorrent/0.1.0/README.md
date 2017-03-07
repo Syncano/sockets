@@ -12,7 +12,7 @@ It is FindTorrent integration with Syncano. It allows you to find torrents from 
   apiUrl: 'https://kickass.to',
   sortByKey: 'seeders',
   sortOrder: 'desc',
-  query: '',
+  query: '<string>',
   page: 1,
   category: 'all'
 ```
@@ -24,7 +24,7 @@ It is FindTorrent integration with Syncano. It allows you to find torrents from 
 ```
 
   baseUrl: 'https://eztv.ag',
-  query: '',
+  query: '<string>',
   category: 'all'
 ```
 
@@ -34,7 +34,7 @@ It is FindTorrent integration with Syncano. It allows you to find torrents from 
 #### Parameters:
 ```
 
-  query: ''
+  query: '<string>'
 ```
 
 
@@ -43,7 +43,7 @@ It is FindTorrent integration with Syncano. It allows you to find torrents from 
 #### Parameters:
 ```
 
-  query: ''
+  query: '<string>'
 ```
 
 
@@ -52,7 +52,7 @@ It is FindTorrent integration with Syncano. It allows you to find torrents from 
 #### Parameters:
 ```
 
-  query: ''
+  query: '<string>'
 ```
 
 
@@ -83,7 +83,7 @@ It is FindTorrent integration with Syncano. It allows you to find torrents from 
   apiUrl: 'https://yts.ag',
   sortByKey: 'seeds',
   sortOrder: 'desc',
-  query: '',
+  query: '<string>',
   page: 1
 ```
 

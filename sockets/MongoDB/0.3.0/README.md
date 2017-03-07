@@ -11,11 +11,11 @@ It is MongoDB integration with Syncano. It allows you to structured node.js bind
 
   connectionUrl: 'mongodb://localhost:27017/machinepack-mongodb-default',
   collection: 'direwolves',
-  query: undefined,
-  update: undefined,
+  query: <dictionary>,
+  update: <dictionary>,
   upsert: true,
   multi: true,
-  writeConcern: undefined
+  writeConcern: <dictionary>
 ```
 
 
@@ -35,7 +35,7 @@ It is MongoDB integration with Syncano. It allows you to structured node.js bind
 
   connectionUrl: 'mongodb://localhost:27017/machinepack-mongodb-default',
   collection: 'direwolves',
-  query: undefined
+  query: <dictionary>
 ```
 
 
@@ -56,10 +56,10 @@ It is MongoDB integration with Syncano. It allows you to structured node.js bind
 
   connectionUrl: 'mongodb://localhost:27017/machinepack-mongodb-default',
   collection: 'direwolves',
-  query: undefined,
+  query: <dictionary>,
   limit: 30,
   skip: 30,
-  sort: undefined,
-  schema: undefined
+  sort: <dictionary>,
+  schema: <dictionary>
 ```
 

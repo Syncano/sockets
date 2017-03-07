@@ -11,7 +11,7 @@ It is Heroku integration with Syncano. It allows you to work with the heroku api
 
   apiToken: 'abc12421-1234-abdc-5343-ae4adf123fea4',
   sourceUrl: 'https://example.com/source.tgz?token=xyz',
-  environment: undefined,
+  environment: <dictionary>,
   name: 'My awesome app'
 ```
 
@@ -33,7 +33,7 @@ It is Heroku integration with Syncano. It allows you to work with the heroku api
   apiToken: 'abc12421-1234-abdc-5343-ae4adf123fea4',
   app: 'app-123',
   command: 'bash',
-  environment: undefined,
+  environment: <dictionary>,
   size: '1X'
 ```
 

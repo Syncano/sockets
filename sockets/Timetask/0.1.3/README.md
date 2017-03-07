@@ -13,7 +13,7 @@ It is Timetask integration with Syncano. It allows you to communicate with the t
   token: 'gfg12DF',
   model: 'project',
   id: 125031,
-  params: undefined
+  params: <dictionary>
 ```
 
 

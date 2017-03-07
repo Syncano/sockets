@@ -86,6 +86,6 @@ It is Assets integration with Syncano. It allows you to experimental utilities f
 ```
 
   lessSrcDir: './foo/styles',
-  minify: false
+  minify: <boolean>
 ```
 

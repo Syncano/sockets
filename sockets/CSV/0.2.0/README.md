@@ -12,6 +12,6 @@ It is CSV integration with Syncano. It allows you to work with csv (comma-separa
   csvData: '"1","2","3","4"
 "a","b","c","d"',
   hasHeaderRow: true,
-  schema: undefined
+  schema: <*>
 ```
 

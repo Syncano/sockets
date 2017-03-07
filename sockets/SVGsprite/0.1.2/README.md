@@ -9,6 +9,6 @@ It is SVGsprite integration with Syncano. It allows you to create an svgs sprite
 #### Parameters:
 ```
 
-  svgs: undefined
+  svgs: <array>
 ```
 

@@ -11,7 +11,7 @@ It is Markdown integration with Syncano. It allows you to work with markdown-for
 
   src: '.tmp/compile-markdown-tree/some/markdown/file.md',
   dest: '.tmp/public/templates/documentation/reference',
-  escapeHtml: false,
+  escapeHtml: <boolean>,
   compileCodeBlock: '->'
 ```
 
@@ -40,7 +40,7 @@ It is Markdown integration with Syncano. It allows you to work with markdown-for
  ```js
 //but maybe i have code snippets too...
 ```',
-  escapeHtml: false,
+  escapeHtml: <boolean>,
   compileCodeBlock: '->'
 ```
 

@@ -16,7 +16,7 @@ It is PaidUpScheduleConnect integration with Syncano. It allows you to connector
   stripeFlat: 0.3,
   paidUpFee: 5,
   discount: 20,
-  payProcessing: false,
+  payProcessing: <boolean>,
   payCollecting: true
 ```
 

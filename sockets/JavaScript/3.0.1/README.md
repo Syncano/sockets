@@ -28,7 +28,7 @@ It is JavaScript integration with Syncano. It allows you to machines for working
 ```
 
   string: 'foo-bar-baz',
-  force: false
+  force: <boolean>
 ```
 
 
@@ -42,7 +42,7 @@ It is JavaScript integration with Syncano. It allows you to machines for working
 ' and i sure am messy")
 var x   =1+1;
 ',
-  useTabs: false,
+  useTabs: <boolean>,
   numSpaces: 2
 ```
 

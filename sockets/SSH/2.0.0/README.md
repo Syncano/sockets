@@ -12,7 +12,7 @@ It is SSH integration with Syncano. It allows you to use ssh to send any command
   hostName: '127.0.0.1',
   port: '22',
   userName: 'user1',
-  password: '',
+  password: '<string>',
   command: 'mkdir testfolder'
 ```
 
@@ -25,7 +25,7 @@ It is SSH integration with Syncano. It allows you to use ssh to send any command
   hostName: '127.0.0.1',
   port: '22',
   userName: 'user1',
-  privatekey: '',
+  privatekey: '<string>',
   command: 'mkdir testfolder'
 ```
 

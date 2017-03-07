@@ -11,7 +11,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
 
   clientId: 123456,
   clientSecret: '6446c521bd',
-  useProduction: false
+  useProduction: <boolean>
 ```
 
 
@@ -21,7 +21,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
 ```
 
   accessToken: '604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184',
-  useProduction: false
+  useProduction: <boolean>
 ```
 
 
@@ -32,7 +32,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
 
   accessToken: '604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184',
   callbackUri: 'https://www.wepay.com/ipn/12345',
-  useProduction: false
+  useProduction: <boolean>
 ```
 
 
@@ -44,7 +44,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
   accessToken: '604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184',
   name: 'My Payment Account',
   description: 'My payment account is for money.',
-  useProduction: false,
+  useProduction: <boolean>,
   referenceId: 'ABCD1234',
   type: 'business',
   imageUri: 'http://s3.amazonaws.com/myphoto.jpg',
@@ -66,7 +66,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
 
   accessToken: '604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184',
   accountId: 12345,
-  useProduction: false
+  useProduction: <boolean>
 ```
 
 
@@ -79,7 +79,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
   name: 'My Payment Account',
   referenceId: '1234abcd',
   sortOrder: 'DESC',
-  useProduction: false
+  useProduction: <boolean>
 ```
 
 
@@ -92,7 +92,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
   accountId: 12345,
   name: 'My new payment account name',
   description: 'My new payment account description',
-  useProduction: false,
+  useProduction: <boolean>,
   referenceId: 'ABCD1234',
   imageUri: 'http://s3.amazonaws.com/myphoto.jpg',
   gaqDomains: mydomain.com,myotherdomain.com,
@@ -111,7 +111,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
   accessToken: '604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184',
   accountId: 12345,
   reason: 'No longer being used.',
-  useProduction: false
+  useProduction: <boolean>
 ```
 
 
@@ -142,13 +142,13 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
   emailMessage: [object Object],
   fee: [object Object],
   callbackUri: 'https://www.baggins.com/callback',
-  autoCapture: false,
+  autoCapture: <boolean>,
   referenceId: '1234abcd',
   uniqueId: 'abcdef123456',
   hostedCheckout: [object Object],
   paymentMethod: [object Object],
   deliveryType: 'none',
-  useProduction: false
+  useProduction: <boolean>
 ```
 
 
@@ -159,7 +159,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
 
   accessToken: '604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184',
   checkoutId: 12345,
-  useProduction: false
+  useProduction: <boolean>
 ```
 
 
@@ -177,7 +177,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
   originalIp: '74.125.224.84',
   originalDevice: 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_6; en-US) AppleWebKit/534.13 (KHTML, like Gecko) Chrome/9.0.597.102 Safari/534.13',
   tosAcceptanceTime: 1209600,
-  useProduction: false,
+  useProduction: <boolean>,
   redirectUri: 'https://www.baggins.com/thanks',
   callbackUri: 'https://www.baggins.com/callback'
 ```
@@ -190,7 +190,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
 
   accessToken: '604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184',
   emailMessage: 'Welcome to my <strong>application</strong>',
-  useProduction: false
+  useProduction: <boolean>
 ```
 
 
@@ -235,7 +235,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
 
   accessToken: '604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184',
   checkoutId: 12345,
-  useProduction: false
+  useProduction: <boolean>
 ```
 
 
@@ -247,6 +247,6 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
   accessToken: '604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184',
   checkoutId: 12345,
   cancelReason: 'Product was defective. Do not want.',
-  useProduction: false
+  useProduction: <boolean>
 ```
 

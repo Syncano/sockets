@@ -42,9 +42,9 @@ It is NPM integration with Syncano. It allows you to work with the public npm re
   name: 'express',
   version: '~1.0.0',
   dir: '/Users/mikermcneil/dogfood-promo-site',
-  save: false,
-  saveDev: false,
-  saveExact: false,
+  save: <boolean>,
+  saveDev: <boolean>,
+  saveExact: <boolean>,
   prefix: './path-to-project',
   loglevel: 'warn'
 ```
@@ -148,7 +148,7 @@ It is NPM integration with Syncano. It allows you to work with the public npm re
 ```
 
   string: '1.0.0',
-  strict: false
+  strict: <boolean>
 ```
 
 

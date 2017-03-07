@@ -19,6 +19,6 @@ It is Urlbox integration with Syncano. It allows you to this machinepack is a sc
   wrap: true,
   delay: 1000,
   full_page: true,
-  force: false
+  force: <boolean>
 ```
 

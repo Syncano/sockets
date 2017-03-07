@@ -9,7 +9,7 @@ It is JsonSchema integration with Syncano. It allows you to node.js utility for 
 #### Parameters:
 ```
 
-  data: undefined,
-  schema: undefined
+  data: <*>,
+  schema: <dictionary>
 ```
 

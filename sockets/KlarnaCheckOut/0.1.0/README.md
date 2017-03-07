@@ -27,7 +27,7 @@ It is KlarnaCheckOut integration with Syncano. It allows you to klarna check out
 
   eid: '12345c',
   secret: 'somesecret',
-  live: false,
+  live: <boolean>,
   country: 'NO',
   currency: 'NOK',
   locale: 'nb-no',
@@ -42,7 +42,7 @@ It is KlarnaCheckOut integration with Syncano. It allows you to klarna check out
 
   eid: 1234,
   secret: 'dsfsdgfdnghgesr435t5',
-  live: false,
+  live: <boolean>,
   country: 'SE',
   currency: 'NOK',
   locale: 'nb-no',

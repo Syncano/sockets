@@ -22,7 +22,7 @@ It is GoogleAPIsURLShortener integration with Syncano. It allows you to api will
 ```
 
   longUrl: 'https://www.google.com',
-  analitics: undefined,
+  analitics: <dictionary>,
   id: 'someUniqId',
   kind: 'urlshortener#url',
   status: 'SomeStatus',

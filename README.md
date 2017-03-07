@@ -1,5 +1,5 @@
 # Node Machines to Syncano Sockets Installation & Testing Script
-## Go to:  `./sockets/CreateSocketsScript`
+## Go to:  `./sockets`
 ## Install dependencies
 
 ```sh

@@ -15,7 +15,7 @@ It is DigitalOcean integration with Syncano. It allows you to communicate with t
   size: '512mb',
   image: 434348,
   sshkeys: '10, 11, 12',
-  backups: false,
+  backups: <boolean>,
   ipv6: 'false',
   private_networking: 'false',
   user_data: 'MetadataInfoHere'

@@ -23,7 +23,7 @@ It is HTTP integration with Syncano. It allows you to send an http request.
   method: 'get',
   params: [object Object],
   body: '*',
-  formData: false,
+  formData: <boolean>,
   headers: [object Object]
 ```
 

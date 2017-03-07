@@ -24,7 +24,7 @@ It is Github integration with Syncano. It allows you to communicate with the git
   password: 'l0lcatzz',
   homepage: 'http://node-machine.org/machinepack-foo',
   description: 'A utility for working with direwolves.',
-  private: false
+  private: <boolean>
 ```
 
 
@@ -35,7 +35,7 @@ It is Github integration with Syncano. It allows you to communicate with the git
 
   owner: 'balderdashy',
   limit: 30,
-  skip: 0,
+  skip: <number>,
   username: 'jresig',
   password: 'jqftw'
 ```
@@ -89,7 +89,7 @@ It is Github integration with Syncano. It allows you to communicate with the git
 
   owner: 'balderdashy',
   limit: 30,
-  skip: 0
+  skip: <number>
 ```
 
 

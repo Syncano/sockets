@@ -11,7 +11,7 @@ It is JWTAuth integration with Syncano. It allows you to handle json web token a
 
   header: 'Authorization',
   secret: 'abc123jdhs3h4js',
-  schema: undefined,
+  schema: <*>,
   headerPrefix: 'Bearer ',
   algorithm: 'HS256'
 ```

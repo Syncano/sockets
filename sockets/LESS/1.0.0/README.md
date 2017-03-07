@@ -11,6 +11,6 @@ It is LESS integration with Syncano. It allows you to work with less stylesheets
 
   source: '/Users/mikermcneil/Desktop/my-cool-app/assets/styles/importer.less',
   importPaths: /Users/mikermcneil/Desktop,
-  minify: false
+  minify: <boolean>
 ```
 

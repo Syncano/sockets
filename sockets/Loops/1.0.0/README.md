@@ -9,10 +9,10 @@ It is Loops integration with Syncano. It allows you to machines that allow the u
 #### Parameters:
 ```
 
-  array: undefined,
-  worker: undefined,
+  array: <array>,
+  worker: <machine>,
   data: '*',
-  series: false
+  series: <boolean>
 ```
 
 
@@ -21,8 +21,8 @@ It is Loops integration with Syncano. It allows you to machines that allow the u
 #### Parameters:
 ```
 
-  array: undefined,
-  worker: undefined,
-  series: false
+  array: <array>,
+  worker: <machine>,
+  series: <boolean>
 ```
 

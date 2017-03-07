@@ -119,9 +119,9 @@ No parameters
   extendedDescription: '...lots of words...',
   moreInfoUrl: 'http://www.cis.upenn.edu/~treebank/tokenization.html',
   fn: '  return exits.success();',
-  cacheable: false,
-  sync: false,
-  idempotent: false,
+  cacheable: <boolean>,
+  sync: <boolean>,
+  idempotent: <boolean>,
   environment: req,
   inputs: [object Object],
   exits: [object Object]

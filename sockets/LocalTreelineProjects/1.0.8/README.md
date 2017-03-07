@@ -56,7 +56,7 @@ It is LocalTreelineProjects integration with Syncano. It allows you to work with
   dir: '/Users/mikermcneil/Desktop/foo',
   keychainPath: '/Users/mikermcneil/Desktop/foo',
   treelineApiUrl: 'http://api.treeline.io',
-  useCachedHashes: false
+  useCachedHashes: <boolean>
 ```
 
 

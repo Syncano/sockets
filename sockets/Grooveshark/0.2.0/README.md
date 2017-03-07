@@ -22,7 +22,7 @@ It is Grooveshark integration with Syncano. It allows you to download songs from
 
   id: '104314395',
   path: '/www/music/userId/coolFolder',
-  overwrite: false
+  overwrite: <boolean>
 ```
 
 
@@ -33,6 +33,6 @@ It is Grooveshark integration with Syncano. It allows you to download songs from
 
   id: '104314395',
   path: '/www/music/userId/coolFolder',
-  overwrite: false
+  overwrite: <boolean>
 ```
 

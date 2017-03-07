@@ -45,8 +45,8 @@ No parameters
   port: 26085,
   username: 'admin',
   password: '12345',
-  torrentUrl: '',
-  downloadDir: 0,
+  torrentUrl: '<string>',
+  downloadDir: <number>,
   path: '/dir/path/'
 ```
 
@@ -61,7 +61,7 @@ No parameters
   username: 'admin',
   password: '12345',
   torrentContents: 'Torrent Contents',
-  downloadDir: 0,
+  downloadDir: <number>,
   path: '/dir/path/'
 ```
 
@@ -75,7 +75,7 @@ No parameters
   port: 26085,
   username: 'admin',
   password: '12345',
-  hash: ''
+  hash: '<string>'
 ```
 
 
@@ -88,7 +88,7 @@ No parameters
   port: 26085,
   username: 'admin',
   password: '12345',
-  hash: ''
+  hash: '<string>'
 ```
 
 
@@ -101,6 +101,6 @@ No parameters
   port: 26085,
   username: 'admin',
   password: '12345',
-  hash: ''
+  hash: '<string>'
 ```
 

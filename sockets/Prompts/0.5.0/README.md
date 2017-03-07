@@ -11,7 +11,7 @@ It is Prompts integration with Syncano. It allows you to produce interactive pro
 
   choices: [object Object],
   message: 'Please choose one of the following.',
-  paginated: false
+  paginated: <boolean>
 ```
 
 
@@ -43,6 +43,6 @@ It is Prompts integration with Syncano. It allows you to produce interactive pro
 
   choices: [object Object],
   message: 'Please choose one of the following.',
-  paginated: false
+  paginated: <boolean>
 ```
 

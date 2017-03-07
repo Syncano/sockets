@@ -9,11 +9,11 @@ It is Idme integration with Syncano. It allows you to communicate with id.me to 
 #### Parameters:
 ```
 
-  code: '',
-  client_id: '',
-  client_secret: '',
-  redirect_uri: '',
-  grant_type: ''
+  code: '<string>',
+  client_id: '<string>',
+  client_secret: '<string>',
+  redirect_uri: '<string>',
+  grant_type: '<string>'
 ```
 
 

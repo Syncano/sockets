@@ -119,7 +119,7 @@ No parameters
 
   deploymentUser: 'johndoe',
   deploymentPassword: 'p@ssw0rd',
-  fileLocation: '',
+  fileLocation: '<string>',
   remotePath: '/site/wwwroot/myfile.zip',
   website: 'mysite'
 ```

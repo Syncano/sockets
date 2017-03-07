@@ -10,15 +10,15 @@ It is GoogleAPICustomSearch integration with Syncano. It allows you to communica
 ```
 
   q: 'test search',
-  cx: '',
-  cref: '',
+  cx: '<string>',
+  cref: '<string>',
   auth: 'AIzaSyAYVDlaoVs_GZw9JNvSclRWH_PEMKII6tc',
   alt: 'atom',
-  c2coff: '',
-  cr: '',
+  c2coff: '<string>',
+  cr: '<string>',
   fileType: 'jpg',
   searchType: 'image',
-  sort: '',
+  sort: '<string>',
   start: 15
 ```
 

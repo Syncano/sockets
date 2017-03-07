@@ -25,7 +25,7 @@ It is Elastic integration with Syncano. It allows you to use elastic api
   port: 9200,
   index: 'myindex',
   type: 'myindex',
-  actions: undefined
+  actions: <array>
 ```
 
 

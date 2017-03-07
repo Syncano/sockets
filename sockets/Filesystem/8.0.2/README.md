@@ -24,7 +24,7 @@ It is Filesystem integration with Syncano. It allows you to work with the local 
   includeFiles: true,
   includeDirs: true,
   includeSymlinks: true,
-  includeHidden: false
+  includeHidden: <boolean>
 ```
 
 
@@ -44,7 +44,7 @@ It is Filesystem integration with Syncano. It allows you to work with the local 
 
   string: 'lots of words, utf8 things you know',
   destination: '/Users/mikermcneil/.tmp/bar',
-  force: false
+  force: <boolean>
 ```
 
 
@@ -66,7 +66,7 @@ It is Filesystem integration with Syncano. It allows you to work with the local 
   source: '/Users/mikermcneil/.tmp/foo.tpl',
   destination: '/Users/mikermcneil/.tmp/bar.md',
   data: '===',
-  force: false
+  force: <boolean>
 ```
 
 
@@ -86,7 +86,7 @@ It is Filesystem integration with Syncano. It allows you to work with the local 
 
   json: '*',
   destination: '/Users/mikermcneil/.tmp/bar.json',
-  force: false
+  force: <boolean>
 ```
 
 
@@ -115,7 +115,7 @@ It is Filesystem integration with Syncano. It allows you to work with the local 
 ```
 
   destination: '/Users/mikermcneil/.tmp/bar',
-  force: false
+  force: <boolean>
 ```
 
 
@@ -145,7 +145,7 @@ It is Filesystem integration with Syncano. It allows you to work with the local 
 
   string: 'lots of words, utf8 things you know',
   destination: '/Users/mikermcneil/.tmp/bar',
-  force: false
+  force: <boolean>
 ```
 
 
@@ -174,6 +174,6 @@ It is Filesystem integration with Syncano. It allows you to work with the local 
 
   sourceStream: '===',
   destination: '/Users/mikermcneil/.tmp/bar.json',
-  force: false
+  force: <boolean>
 ```
 

@@ -9,10 +9,10 @@ It is Config integration with Syncano. It allows you to a simple load config (wi
 #### Parameters:
 ```
 
-  path: undefined,
-  merge: false,
-  nomethod: false,
-  freeze: false
+  path: <*>,
+  merge: <boolean>,
+  nomethod: <boolean>,
+  freeze: <boolean>
 ```
 
 
@@ -21,8 +21,8 @@ It is Config integration with Syncano. It allows you to a simple load config (wi
 #### Parameters:
 ```
 
-  schema: undefined,
-  freeze: false
+  schema: <*>,
+  freeze: <boolean>
 ```
 
 

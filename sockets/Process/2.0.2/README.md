@@ -19,7 +19,7 @@ It is Process integration with Syncano. It allows you to work with child procs a
 ```
 
   childProcess: '===',
-  forceIfNecessary: false,
+  forceIfNecessary: <boolean>,
   maxMsToWait: 500
 ```
 
