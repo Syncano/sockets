@@ -19,14 +19,14 @@ It is DigitalOcean integration with Syncano. It allows you to communicate with t
       private_networking: 'false',
       user_data: 'MetadataInfoHere'
 
-,
+
 ### droplet-list
 
 #### Parameters:
 
       token: 'FFDFdf8f8d'
 
-,
+
 ### droplet-get-backups
 
 #### Parameters:
@@ -34,7 +34,7 @@ It is DigitalOcean integration with Syncano. It allows you to communicate with t
       token: 'FFDFdf8f8d',
       dropletID: '7564837494'
 
-,
+
 ### droplet-delete
 
 #### Parameters:
@@ -42,7 +42,7 @@ It is DigitalOcean integration with Syncano. It allows you to communicate with t
       token: 'FFDFdf8f8d',
       dropletID: '7564837494'
 
-,
+
 ### droplet-get-snapshots
 
 #### Parameters:
@@ -50,7 +50,7 @@ It is DigitalOcean integration with Syncano. It allows you to communicate with t
       token: 'FFDFdf8f8d',
       dropletID: '7564837494'
 
-,
+
 ### droplet-get
 
 #### Parameters:
@@ -58,7 +58,7 @@ It is DigitalOcean integration with Syncano. It allows you to communicate with t
       token: 'FFDFdf8f8d',
       dropletID: '7564837494'
 
-,
+
 ### droplet-action
 
 #### Parameters:

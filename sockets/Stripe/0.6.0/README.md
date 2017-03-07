@@ -12,7 +12,7 @@ It is Stripe integration with Syncano. It allows you to communicate with the str
       token: 'tok_someCardIdjsd2isnsd',
       customer: 'cus_4kmLwU2PvQBeqq'
 
-,
+
 ### capture-charge
 
 #### Parameters:
@@ -20,7 +20,7 @@ It is Stripe integration with Syncano. It allows you to communicate with the str
       apiKey: 'somestring837483749blah',
       charge: 'ch_14ziQH2eZvKYlo2Ci0BoqQvT'
 
-,
+
 ### create-customer
 
 #### Parameters:
@@ -28,7 +28,7 @@ It is Stripe integration with Syncano. It allows you to communicate with the str
       apiKey: 'somestring837483749blah',
       description: 'sdjasnd928u8duasd'
 
-,
+
 ### list-cards
 
 #### Parameters:
@@ -36,7 +36,7 @@ It is Stripe integration with Syncano. It allows you to communicate with the str
       apiKey: 'somestring837483749blah',
       customer: 'cus_4kmLwU2PvQBeqq'
 
-,
+
 ### delete-card
 
 #### Parameters:
@@ -44,7 +44,7 @@ It is Stripe integration with Syncano. It allows you to communicate with the str
       apiKey: 'somestring837483749blah',
       card: 'card_14t5VD2eZvKYlo2CbhcljD3Y'
 
-,
+
 ### create-charge
 
 #### Parameters:
@@ -57,7 +57,7 @@ It is Stripe integration with Syncano. It allows you to communicate with the str
       description: 'This notable charge was for several gallons of mayonnaise!',
       customer: 'cus_4kmLwU2PvQBeqq'
 
-,
+
 ### subscribe-customer
 
 #### Parameters:
@@ -68,7 +68,7 @@ It is Stripe integration with Syncano. It allows you to communicate with the str
       card: 'tok_someCardIdjsd2isnsd',
       customer: 'cus_4kmLwU2PvQBeqq'
 
-,
+
 ### update-subscription
 
 #### Parameters:
@@ -80,7 +80,7 @@ It is Stripe integration with Syncano. It allows you to communicate with the str
       prorate: 'true',
       customer: 'cus_4kmLwU2PvQBeqq'
 
-,
+
 ### cancel-subscription
 
 #### Parameters:
@@ -90,7 +90,7 @@ It is Stripe integration with Syncano. It allows you to communicate with the str
       instant: 'true',
       customer: 'cus_4kmLwU2PvQBeqq'
 
-,
+
 ### retrieve-subscription-details
 
 #### Parameters:
@@ -99,7 +99,7 @@ It is Stripe integration with Syncano. It allows you to communicate with the str
       sub: 'sub_someSubIdjsd2isnsd',
       customer: 'cus_4kmLwU2PvQBeqq'
 
-,
+
 ### one-off-charge
 
 #### Parameters:

@@ -12,7 +12,7 @@ It is Twitter integration with Syncano. It allows you to communicate with the tw
       consumerSecret: 'xAmBxAmBxAmBkjbyKkjbyKkjbyK',
       callbackUrl: 'http://localhost:1337/auth/callback'
 
-,
+
 ### get-access-token
 
 #### Parameters:
@@ -22,7 +22,7 @@ It is Twitter integration with Syncano. It allows you to communicate with the tw
       oauthToken: 'UL1866Vlkl0aZyPw2Kd2u592D17Xl1uE',
       oauthVerifier: 'xEj5XxGFWe6vPiJFofYgVMZjw6eVc6Mw'
 
-,
+
 ### get-user-profile
 
 #### Parameters:

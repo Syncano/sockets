@@ -11,7 +11,7 @@ It is Rttc integration with Syncano. It allows you to utilities for strongly-typ
       value: '===',
       typeSchema: '*'
 
-,
+
 ### validate-strict
 
 #### Parameters:
@@ -19,21 +19,21 @@ It is Rttc integration with Syncano. It allows you to utilities for strongly-typ
       value: '===',
       typeSchema: '*'
 
-,
+
 ### infer
 
 #### Parameters:
 
       example: '*'
 
-,
+
 ### compile
 
 #### Parameters:
 
       value: '==='
 
-,
+
 ### coerce
 
 #### Parameters:
@@ -41,7 +41,7 @@ It is Rttc integration with Syncano. It allows you to utilities for strongly-typ
       value: '===',
       typeSchema: '*'
 
-,
+
 ### sample
 
 #### Parameters:
@@ -49,7 +49,7 @@ It is Rttc integration with Syncano. It allows you to utilities for strongly-typ
       typeSchema: '*',
       n: 2
 
-,
+
 ### get-display-type
 
 #### Parameters:

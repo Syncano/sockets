@@ -11,7 +11,7 @@ It is Stream integration with Syncano. It allows you to work with stream readabl
       path: 'tmp.log',
       text: 'lorem ipsum'
 
-,
+
 ### create-write
 
 #### Parameters:
@@ -19,35 +19,35 @@ It is Stream integration with Syncano. It allows you to work with stream readabl
       stream: undefined,
       path: 'tmp.log'
 
-,
+
 ### zip
 
 #### Parameters:
 
       stream: undefined
 
-,
+
 ### unzip
 
 #### Parameters:
 
       stream: undefined
 
-,
+
 ### md
 
 #### Parameters:
 
       stream: undefined
 
-,
+
 ### minify
 
 #### Parameters:
 
       stream: undefined
 
-,
+
 ### stringify
 
 #### Parameters:
@@ -55,7 +55,7 @@ It is Stream integration with Syncano. It allows you to work with stream readabl
       stream: undefined,
       write: '.tmp/test.log'
 
-,
+
 ### replace
 
 #### Parameters:
@@ -64,7 +64,7 @@ It is Stream integration with Syncano. It allows you to work with stream readabl
       search: undefined,
       replace: 'abc'
 
-,
+
 ### insert
 
 #### Parameters:

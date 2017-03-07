@@ -16,7 +16,7 @@ It is Aws integration with Syncano. It allows you to sdk for working with the aw
       containerDefinitions: 'JSON encoded containerDefinitions',
       volumes: [object Object]
 
-,
+
 ### ecs-list-task-definitions
 
 #### Parameters:
@@ -29,7 +29,7 @@ It is Aws integration with Syncano. It allows you to sdk for working with the aw
       nextToken: 'aTokenValue',
       maxResults: 100
 
-,
+
 ### ecs-run-task
 
 #### Parameters:
@@ -42,7 +42,7 @@ It is Aws integration with Syncano. It allows you to sdk for working with the aw
       cluster: 'myCluster',
       count: 1
 
-,
+
 ### ecs-list-tasks
 
 #### Parameters:
@@ -56,7 +56,7 @@ It is Aws integration with Syncano. It allows you to sdk for working with the aw
       nextToken: 'aTokenValue',
       maxResults: 100
 
-,
+
 ### ecs-stop-task
 
 #### Parameters:
@@ -68,7 +68,7 @@ It is Aws integration with Syncano. It allows you to sdk for working with the aw
       task: 'arn:aws:ecs:us-west-2:575231334330:task-definition/taskName:1',
       cluster: 'default'
 
-,
+
 ### ec2-describe-instances
 
 #### Parameters:
@@ -81,7 +81,7 @@ It is Aws integration with Syncano. It allows you to sdk for working with the aw
       nextToken: 'aTokenValue',
       maxResults: 100
 
-,
+
 ### ecs-describe-container-instances
 
 #### Parameters:
@@ -93,7 +93,7 @@ It is Aws integration with Syncano. It allows you to sdk for working with the aw
       cluster: 'default',
       containerInstances: 98950f3c-7347-4249-99cb-168832a1b8f2
 
-,
+
 ### ecs-describe-tasks
 
 #### Parameters:
@@ -105,7 +105,7 @@ It is Aws integration with Syncano. It allows you to sdk for working with the aw
       cluster: 'default',
       tasks: 98950f3c-7347-4249-99cb-168832a1b8f2
 
-,
+
 ### ecs-describe-task-definition
 
 #### Parameters:

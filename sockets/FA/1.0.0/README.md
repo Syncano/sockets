@@ -9,14 +9,14 @@ It is FA integration with Syncano. It allows you to two factor authentication
 #### Parameters:
 
 
-,
+
 ### generate-code
 
 #### Parameters:
 
       key: '44xtha1v228542u5q6ddxzdoukji1m74'
 
-,
+
 ### generate-qr
 
 #### Parameters:
@@ -25,7 +25,7 @@ It is FA integration with Syncano. It allows you to two factor authentication
       username: 'John',
       key: '44xtha1v228542u5q6ddxzdoukji1m74'
 
-,
+
 ### validate
 
 #### Parameters:

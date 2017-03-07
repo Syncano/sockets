@@ -13,7 +13,7 @@ It is GoogleAPIsURLShortener integration with Syncano. It allows you to api will
       fields: 'analytics,created,id,kind,longUrl,status',
       key: 'AIzaSyAYVDlaoVs_GZw9JNvSclRWH_PEMKII6tc'
 
-,
+
 ### url-insert
 
 #### Parameters:
@@ -27,7 +27,7 @@ It is GoogleAPIsURLShortener integration with Syncano. It allows you to api will
       fields: 'analytics,created,id,kind,longUrl,status',
       key: 'AIzaSyAYVDlaoVs_GZw9JNvSclRWH_PEMKII6tc'
 
-,
+
 ### url-list
 
 #### Parameters:

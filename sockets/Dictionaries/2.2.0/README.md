@@ -11,14 +11,14 @@ It is Dictionaries integration with Syncano. It allows you to work with dictiona
       primary: [object Object],
       secondary: [object Object]
 
-,
+
 ### construct
 
 #### Parameters:
 
       dictionary: [object Object]
 
-,
+
 ### dot
 
 #### Parameters:
@@ -26,7 +26,7 @@ It is Dictionaries integration with Syncano. It allows you to work with dictiona
       dictionary: [object Object],
       keypath: 'mom.email'
 
-,
+
 ### delete-key
 
 #### Parameters:
@@ -34,7 +34,7 @@ It is Dictionaries integration with Syncano. It allows you to work with dictiona
       dictionary: [object Object],
       key: 'password'
 
-,
+
 ### rename-key
 
 #### Parameters:
@@ -44,7 +44,7 @@ It is Dictionaries integration with Syncano. It allows you to work with dictiona
       newKey: 'studentFullName',
       force: true
 
-,
+
 ### copy-key
 
 #### Parameters:
@@ -54,7 +54,7 @@ It is Dictionaries integration with Syncano. It allows you to work with dictiona
       newKey: 'twitterUsername',
       force: true
 
-,
+
 ### add-key
 
 #### Parameters:
@@ -64,7 +64,7 @@ It is Dictionaries integration with Syncano. It allows you to work with dictiona
       value: '*',
       force: true
 
-,
+
 ### keys
 
 #### Parameters:

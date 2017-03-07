@@ -13,13 +13,13 @@ It is UTorrent integration with Syncano. It allows you to communicate with utorr
       username: 'admin',
       password: '12345'
 
-,
+
 ### get-torrent-details
 
 #### Parameters:
 
 
-,
+
 ### create-client
 
 #### Parameters:
@@ -29,7 +29,7 @@ It is UTorrent integration with Syncano. It allows you to communicate with utorr
       username: 'admin',
       password: '12345'
 
-,
+
 ### add-torrent-url
 
 #### Parameters:
@@ -42,7 +42,7 @@ It is UTorrent integration with Syncano. It allows you to communicate with utorr
       downloadDir: 0,
       path: '/dir/path/'
 
-,
+
 ### add-torrent
 
 #### Parameters:
@@ -55,7 +55,7 @@ It is UTorrent integration with Syncano. It allows you to communicate with utorr
       downloadDir: 0,
       path: '/dir/path/'
 
-,
+
 ### start-torrent
 
 #### Parameters:
@@ -66,7 +66,7 @@ It is UTorrent integration with Syncano. It allows you to communicate with utorr
       password: '12345',
       hash: ''
 
-,
+
 ### stop-torrent
 
 #### Parameters:
@@ -77,7 +77,7 @@ It is UTorrent integration with Syncano. It allows you to communicate with utorr
       password: '12345',
       hash: ''
 
-,
+
 ### remove-torrent
 
 #### Parameters:

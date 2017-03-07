@@ -12,7 +12,7 @@ It is Grooveshark integration with Syncano. It allows you to download songs from
       artist: 'Queen',
       path: '/www/music/userId/coolFolder'
 
-,
+
 ### download-playlist
 
 #### Parameters:
@@ -21,7 +21,7 @@ It is Grooveshark integration with Syncano. It allows you to download songs from
       path: '/www/music/userId/coolFolder',
       overwrite: false
 
-,
+
 ### download-playlist-save
 
 #### Parameters:

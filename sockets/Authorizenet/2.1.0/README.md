@@ -27,7 +27,7 @@ It is Authorizenet integration with Syncano. It allows you to a machinepack for 
       billingPostalCode: '10011',
       billingCountry: 'USA'
 
-,
+
 ### authorize-transaction-request
 
 #### Parameters:

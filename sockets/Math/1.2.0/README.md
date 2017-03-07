@@ -11,7 +11,7 @@ It is Math integration with Syncano. It allows you to harness the power of math.
       a: 2,
       b: 2.2
 
-,
+
 ### divide
 
 #### Parameters:
@@ -19,7 +19,7 @@ It is Math integration with Syncano. It allows you to harness the power of math.
       a: 5,
       b: -2
 
-,
+
 ### subtract
 
 #### Parameters:
@@ -27,7 +27,7 @@ It is Math integration with Syncano. It allows you to harness the power of math.
       a: -20,
       b: 2.2
 
-,
+
 ### multiply
 
 #### Parameters:
@@ -35,14 +35,14 @@ It is Math integration with Syncano. It allows you to harness the power of math.
       a: 2,
       b: -10
 
-,
+
 ### parse
 
 #### Parameters:
 
       string: '5'
 
-,
+
 ### random
 
 #### Parameters:
@@ -51,26 +51,26 @@ It is Math integration with Syncano. It allows you to harness the power of math.
       max: 1,
       floating: true
 
-,
+
 ### e
 
 #### Parameters:
 
 
-,
+
 ### sqrt
 
 #### Parameters:
 
       number: 64
 
-,
+
 ### pi
 
 #### Parameters:
 
 
-,
+
 ### pow
 
 #### Parameters:
@@ -78,14 +78,14 @@ It is Math integration with Syncano. It allows you to harness the power of math.
       number: 8,
       exponent: 2
 
-,
+
 ### ln
 
 #### Parameters:
 
       number: 2.718281828459045
 
-,
+
 ### log
 
 #### Parameters:

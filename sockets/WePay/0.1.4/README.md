@@ -12,7 +12,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
       clientSecret: '6446c521bd',
       useProduction: false
 
-,
+
 ### user-details
 
 #### Parameters:
@@ -20,7 +20,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
       accessToken: '604f39f41e364951ced74070c6e8bfa49d346cdfee6191b03c2c2d9c9cda9184',
       useProduction: false
 
-,
+
 ### user-callback
 
 #### Parameters:
@@ -29,7 +29,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
       callbackUri: 'https://www.wepay.com/ipn/12345',
       useProduction: false
 
-,
+
 ### account-create
 
 #### Parameters:
@@ -50,7 +50,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
       countryOptions: [object Object],
       feeScheduleSlot: 9
 
-,
+
 ### account-details
 
 #### Parameters:
@@ -59,7 +59,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
       accountId: 12345,
       useProduction: false
 
-,
+
 ### account-find
 
 #### Parameters:
@@ -70,7 +70,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
       sortOrder: 'DESC',
       useProduction: false
 
-,
+
 ### account-modify
 
 #### Parameters:
@@ -88,7 +88,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
       countryOptions: [object Object],
       feeScheduleSlot: 9
 
-,
+
 ### account-delete
 
 #### Parameters:
@@ -98,7 +98,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
       reason: 'No longer being used.',
       useProduction: false
 
-,
+
 ### account-get-uri
 
 #### Parameters:
@@ -108,7 +108,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
       mode: 'regular',
       redirectUri: 'https://www.baggins.com/updated'
 
-,
+
 ### checkout-create
 
 #### Parameters:
@@ -131,7 +131,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
       deliveryType: 'none',
       useProduction: false
 
-,
+
 ### checkout-capture
 
 #### Parameters:
@@ -140,7 +140,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
       checkoutId: 12345,
       useProduction: false
 
-,
+
 ### user-register
 
 #### Parameters:
@@ -158,7 +158,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
       redirectUri: 'https://www.baggins.com/thanks',
       callbackUri: 'https://www.baggins.com/callback'
 
-,
+
 ### user-confirm
 
 #### Parameters:
@@ -167,7 +167,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
       emailMessage: 'Welcome to my <strong>application</strong>',
       useProduction: false
 
-,
+
 ### checkout-find
 
 #### Parameters:
@@ -184,7 +184,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
       sortOrder: 'DESC',
       shippingFee: 2.99
 
-,
+
 ### checkout-refund
 
 #### Parameters:
@@ -197,7 +197,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
       payerEmailMessage: 'Here is your refund.',
       payeeEmailMessage: 'A refund was issued.'
 
-,
+
 ### checkout-details
 
 #### Parameters:
@@ -206,7 +206,7 @@ It is WePay integration with Syncano. It allows you to communicate with wepay ap
       checkoutId: 12345,
       useProduction: false
 
-,
+
 ### checkout-cancel
 
 #### Parameters:

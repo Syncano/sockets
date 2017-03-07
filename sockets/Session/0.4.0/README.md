@@ -10,7 +10,7 @@ It is Session integration with Syncano. It allows you to read or write data to t
 
       key: 'loggedInAs'
 
-,
+
 ### save
 
 #### Parameters:
@@ -18,7 +18,7 @@ It is Session integration with Syncano. It allows you to read or write data to t
       key: 'loggedInAs',
       value: 'some string'
 
-,
+
 ### del
 
 #### Parameters:

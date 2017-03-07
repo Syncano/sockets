@@ -20,7 +20,7 @@ The Management',
       fromEmail: 'harold@example.enterprise',
       fromName: 'Harold Greaseworthy'
 
-,
+
 ### add-template
 
 #### Parameters:
@@ -36,14 +36,14 @@ The Management',
       publish: true,
       labels: password
 
-,
+
 ### delete-all-templates
 
 #### Parameters:
 
       apiKey: 'tzTDP_JZlGoqFw3Rvy1bpw'
 
-,
+
 ### migrate-templates
 
 #### Parameters:
@@ -51,14 +51,14 @@ The Management',
       srcApiKey: '1dTGOXT_JZlGoqRw3Qvy1bpz',
       destApiKey: 'tzTDP_JZlGoqFw3Rvy1bpw'
 
-,
+
 ### list-templates
 
 #### Parameters:
 
       apiKey: '1dTOFDXzJdU5cXiMNd6jRq'
 
-,
+
 ### delete-template
 
 #### Parameters:
@@ -66,7 +66,7 @@ The Management',
       apiKey: '1dTOFDXzJdU5cXiMNd6jRq',
       name: 'example-template'
 
-,
+
 ### send-template-email
 
 #### Parameters:

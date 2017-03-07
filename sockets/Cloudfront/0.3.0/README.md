@@ -15,7 +15,7 @@ MIIEow......
       src: 'http://cloudfront.net/path/to/thing.jpg',
       ttl: 3600
 
-,
+
 ### invalidate-paths
 
 #### Parameters:

@@ -13,7 +13,7 @@ It is ElasticSearch integration with Syncano. It allows you to use elasticsearch
       index: 'myindex',
       query: 'cute dogs'
 
-,
+
 ### searchcustom
 
 #### Parameters:

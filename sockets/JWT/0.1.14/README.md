@@ -13,7 +13,7 @@ It is JWT integration with Syncano. It allows you to work with json web tokens.
       algorithm: 'HS256',
       expires: 43200
 
-,
+
 ### decode
 
 #### Parameters:

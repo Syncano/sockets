@@ -13,7 +13,7 @@ It is FacebookOauth integration with Syncano. It allows you to communicate with 
       code: 'AQDvCav5zRSafS795TckAerUV53xzgqRyrcfYX2i_PJFObCvACVRP-V7sfemiMPBh3TWypvagfZ6aoqfwKCNcBxg8XR_skdYUe5tsY9UzX9Z_8q4mRrqaLhwSh5OHj9ORmE4ocyd-neZtdceTZjlmEVeO38UH9QOe_md7h5hy2gMhOS6TL9IBk5Guxg3O6I0WmjpFNPoj6JzWIvG9cgj7RQqxMA2q_8EJxGPTqEbmTqOBqqCIOlvPEPCeIiy21VD9__tuzB0JvgqbVh-U_WW8mjwGBqsfxlNvjYwIxk4zBNAxuRJijkkn0TwyogFpZqIlkY',
       callbackUrl: 'http://localhost:1337/user/facebook/login'
 
-,
+
 ### get-login-url
 
 #### Parameters:
@@ -22,7 +22,7 @@ It is FacebookOauth integration with Syncano. It allows you to communicate with 
       callbackUrl: 'http://localhost:1337/user/facebook/login',
       permissions: email
 
-,
+
 ### get-user-by-access-token
 
 #### Parameters:

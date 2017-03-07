@@ -10,7 +10,7 @@ It is Thumb integration with Syncano. It allows you to easy generate thumb file 
 
       source: 'samples/test.png'
 
-,
+
 ### write
 
 #### Parameters:
@@ -18,7 +18,7 @@ It is Thumb integration with Syncano. It allows you to easy generate thumb file 
       destination: 'samples/test-blur.png',
       done: undefined
 
-,
+
 ### to
 
 #### Parameters:
@@ -32,7 +32,7 @@ It is Thumb integration with Syncano. It allows you to easy generate thumb file 
       done: undefined,
       quality: 2
 
-,
+
 ### multiple
 
 #### Parameters:

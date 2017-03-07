@@ -11,14 +11,14 @@ It is JSON integration with Syncano. It allows you to encode and decode data to 
       json: '...{"some json": "like this"}...',
       schema: '*'
 
-,
+
 ### stringify
 
 #### Parameters:
 
       value: '*'
 
-,
+
 ### stringify-safe
 
 #### Parameters:

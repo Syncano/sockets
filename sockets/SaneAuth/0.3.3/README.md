@@ -11,7 +11,7 @@ It is SaneAuth integration with Syncano. It allows you to a sane stack addon giv
       name: 'user',
       attributes: 'name:string age:number'
 
-,
+
 ### server
 
 #### Parameters:

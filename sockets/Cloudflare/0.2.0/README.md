@@ -13,7 +13,7 @@ It is Cloudflare integration with Syncano. It allows you to works with the cloud
       domain: 'example.com',
       recordId: '9001'
 
-,
+
 ### add-dns-record
 
 #### Parameters:
@@ -26,7 +26,7 @@ It is Cloudflare integration with Syncano. It allows you to works with the cloud
       content: '96.126.126.36',
       ttl: '1'
 
-,
+
 ### edit-dns-record
 
 #### Parameters:
@@ -41,7 +41,7 @@ It is Cloudflare integration with Syncano. It allows you to works with the cloud
       ttl: '1',
       onCloudflare: 1
 
-,
+
 ### stats
 
 #### Parameters:

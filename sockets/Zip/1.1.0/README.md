@@ -11,7 +11,7 @@ It is Zip integration with Syncano. It allows you to zip and unzip files or dire
       source: '/Users/mikermcneil/stuff.zip',
       destination: '/Users/mikermcneil/my-stuff'
 
-,
+
 ### zip
 
 #### Parameters:

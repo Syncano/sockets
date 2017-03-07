@@ -13,7 +13,7 @@ It is ElasticSearch integration with Syncano. It allows you to access the elasti
       index: 'myindex',
       query: 'cute dogs'
 
-,
+
 ### update
 
 #### Parameters:
@@ -25,7 +25,7 @@ It is ElasticSearch integration with Syncano. It allows you to access the elasti
       id: 'lzmkDgMjTbGoacxLMsB_zA',
       document: undefined
 
-,
+
 ### create
 
 #### Parameters:
@@ -36,7 +36,7 @@ It is ElasticSearch integration with Syncano. It allows you to access the elasti
       type: 'user',
       document: undefined
 
-,
+
 ### destroy
 
 #### Parameters:

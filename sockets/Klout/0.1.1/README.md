@@ -11,7 +11,7 @@ It is Klout integration with Syncano. It allows you to communicate with the klou
       twitterScreenName: 'tuneyards',
       apiKey: 'ODUfdisauPUdufsoUSF'
 
-,
+
 ### get-klout-score
 
 #### Parameters:

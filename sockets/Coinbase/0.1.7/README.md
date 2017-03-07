@@ -10,7 +10,7 @@ It is Coinbase integration with Syncano. It allows you to communicate with the c
 
       quantity: '10'
 
-,
+
 ### get-sell-price
 
 #### Parameters:

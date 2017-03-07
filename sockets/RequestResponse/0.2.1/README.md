@@ -10,7 +10,7 @@ It is RequestResponse integration with Syncano. It allows you to methods for wor
 
       header: 'accept'
 
-,
+
 ### upload-files
 
 #### Parameters:
@@ -19,7 +19,7 @@ It is RequestResponse integration with Syncano. It allows you to methods for wor
       adapter: 'skipper-s3',
       uploadOpts: [object Object]
 
-,
+
 ### get-credentials
 
 #### Parameters:

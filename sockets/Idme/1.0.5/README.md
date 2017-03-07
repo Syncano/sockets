@@ -14,7 +14,7 @@ It is Idme integration with Syncano. It allows you to communicate with id.me to 
       redirect_uri: '',
       grant_type: ''
 
-,
+
 ### get-profile
 
 #### Parameters:

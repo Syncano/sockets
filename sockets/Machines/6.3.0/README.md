@@ -11,7 +11,7 @@ It is Machines integration with Syncano. It allows you to work with machines and
       machineInstance: '===',
       inputValues: [object Object]
 
-,
+
 ### validate
 
 #### Parameters:

@@ -14,7 +14,7 @@ It is Timetask integration with Syncano. It allows you to communicate with the t
       id: 125031,
       params: undefined
 
-,
+
 ### add
 
 #### Parameters:
@@ -24,7 +24,7 @@ It is Timetask integration with Syncano. It allows you to communicate with the t
       model: 'project',
       params: [object Object]
 
-,
+
 ### remove
 
 #### Parameters:
@@ -35,7 +35,7 @@ It is Timetask integration with Syncano. It allows you to communicate with the t
       params: [object Object],
       id: 125031
 
-,
+
 ### update
 
 #### Parameters:

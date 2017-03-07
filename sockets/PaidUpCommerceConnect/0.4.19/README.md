@@ -12,7 +12,7 @@ It is PaidUpCommerceConnect integration with Syncano. It allows you to connector
       token: 'TDCommerceToken-CHANGE-ME!',
       filter: '*'
 
-,
+
 ### coupon-create
 
 #### Parameters:
@@ -26,7 +26,7 @@ It is PaidUpCommerceConnect integration with Syncano. It allows you to connector
       quantity: 2,
       productsId: someProductId
 
-,
+
 ### coupon-redeem
 
 #### Parameters:
@@ -36,7 +36,7 @@ It is PaidUpCommerceConnect integration with Syncano. It allows you to connector
       coupon: 'NEWDISCOUNTCOUPON',
       productId: 'Id1'
 
-,
+
 ### coupon-update
 
 #### Parameters:
@@ -46,7 +46,7 @@ It is PaidUpCommerceConnect integration with Syncano. It allows you to connector
       filter: '*',
       data: '*'
 
-,
+
 ### order-create
 
 #### Parameters:
@@ -56,7 +56,7 @@ It is PaidUpCommerceConnect integration with Syncano. It allows you to connector
       userId: 'userId',
       paymentsPlan: [object Object]
 
-,
+
 ### order-add-payments
 
 #### Parameters:
@@ -66,7 +66,7 @@ It is PaidUpCommerceConnect integration with Syncano. It allows you to connector
       orderId: 'orderId',
       paymentsPlan: [object Object]
 
-,
+
 ### order-update-payments
 
 #### Parameters:
@@ -77,7 +77,7 @@ It is PaidUpCommerceConnect integration with Syncano. It allows you to connector
       paymentPlanId: 'paymentPlanId',
       paymentPlan: [object Object]
 
-,
+
 ### order-get
 
 #### Parameters:
@@ -86,7 +86,7 @@ It is PaidUpCommerceConnect integration with Syncano. It allows you to connector
       token: 'secret-word',
       filter: '*'
 
-,
+
 ### order-get-to-charge
 
 #### Parameters:
@@ -94,7 +94,7 @@ It is PaidUpCommerceConnect integration with Syncano. It allows you to connector
       baseUrl: 'http://localhost:9002',
       token: 'secret-word'
 
-,
+
 ### order-to-complete
 
 #### Parameters:

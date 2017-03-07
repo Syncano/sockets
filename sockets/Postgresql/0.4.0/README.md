@@ -10,7 +10,7 @@ It is Postgresql integration with Syncano. It allows you to structured node.js b
 
       connectionUrl: 'postgres://foo:bar@localhost:5432/machinepack_postgresql'
 
-,
+
 ### describe-table
 
 #### Parameters:
@@ -18,7 +18,7 @@ It is Postgresql integration with Syncano. It allows you to structured node.js b
       connectionUrl: 'postgres://foo:bar@localhost:5432/machinepack_postgresql',
       table: 'direwolves'
 
-,
+
 ### list-records
 
 #### Parameters:
@@ -31,7 +31,7 @@ It is Postgresql integration with Syncano. It allows you to structured node.js b
       sort: undefined,
       schema: undefined
 
-,
+
 ### count-records
 
 #### Parameters:

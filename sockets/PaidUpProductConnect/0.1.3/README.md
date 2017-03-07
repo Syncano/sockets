@@ -11,7 +11,7 @@ It is PaidUpProductConnect integration with Syncano. It allows you to connector 
       baseUrl: 'http://localhost:9002',
       token: 'secret-word'
 
-,
+
 ### product-retrieve
 
 #### Parameters:

@@ -10,7 +10,7 @@ It is Process integration with Syncano. It allows you to work with child procs a
 
       value: '*'
 
-,
+
 ### kill-child-process
 
 #### Parameters:
@@ -19,7 +19,7 @@ It is Process integration with Syncano. It allows you to work with child procs a
       forceIfNecessary: false,
       maxMsToWait: 500
 
-,
+
 ### spawn-child-process
 
 #### Parameters:
@@ -29,7 +29,7 @@ It is Process integration with Syncano. It allows you to work with child procs a
       dir: '/Users/mikermcneil/foo',
       environmentVars: [object Object]
 
-,
+
 ### execute-command
 
 #### Parameters:

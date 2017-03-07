@@ -10,7 +10,7 @@ It is HTTP integration with Syncano. It allows you to send an http request.
 
       url: 'http://www.example.com'
 
-,
+
 ### send-http-request
 
 #### Parameters:
@@ -23,7 +23,7 @@ It is HTTP integration with Syncano. It allows you to send an http request.
       formData: false,
       headers: [object Object]
 
-,
+
 ### negotiate-http-status
 
 #### Parameters:

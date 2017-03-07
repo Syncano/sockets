@@ -11,7 +11,7 @@ It is FacebookAds integration with Syncano. It allows you to interact with the f
       fbUserId: '509501',
       accessToken: 'CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb'
 
-,
+
 ### get-first-campaign-id-for-given-campaign-name
 
 #### Parameters:
@@ -20,7 +20,7 @@ It is FacebookAds integration with Syncano. It allows you to interact with the f
       accessToken: 'CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb',
       adCampaignName: 'WOO:(null)'
 
-,
+
 ### get-ad-campaigns
 
 #### Parameters:
@@ -28,7 +28,7 @@ It is FacebookAds integration with Syncano. It allows you to interact with the f
       adAccountId: 'act_230989',
       accessToken: 'CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb'
 
-,
+
 ### get-ads-in-ad-set
 
 #### Parameters:
@@ -36,7 +36,7 @@ It is FacebookAds integration with Syncano. It allows you to interact with the f
       adCampaignId: '31231321312',
       accessToken: 'CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb'
 
-,
+
 ### get-ad-sets-in-campaign
 
 #### Parameters:
@@ -44,7 +44,7 @@ It is FacebookAds integration with Syncano. It allows you to interact with the f
       adCampaignGroupId: '31231321312',
       accessToken: 'CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb'
 
-,
+
 ### get-top-ad-in-ad-set
 
 #### Parameters:
@@ -52,7 +52,7 @@ It is FacebookAds integration with Syncano. It allows you to interact with the f
       adCampaignId: '31231321312',
       accessToken: 'CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb'
 
-,
+
 ### get-ad-creative-by-adgroup-id
 
 #### Parameters:
@@ -60,7 +60,7 @@ It is FacebookAds integration with Syncano. It allows you to interact with the f
       adGroupId: '31231321312',
       accessToken: 'CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb'
 
-,
+
 ### get-campaign-overview
 
 #### Parameters:
@@ -68,7 +68,7 @@ It is FacebookAds integration with Syncano. It allows you to interact with the f
       adCampaignGroupId: '31231321312',
       accessToken: 'CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb'
 
-,
+
 ### get-campaign-details
 
 #### Parameters:
@@ -76,7 +76,7 @@ It is FacebookAds integration with Syncano. It allows you to interact with the f
       adCampaignId: '31231321312',
       accessToken: 'CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb'
 
-,
+
 ### create-campaign
 
 #### Parameters:
@@ -85,7 +85,7 @@ It is FacebookAds integration with Syncano. It allows you to interact with the f
       fbPageId: '3213213124',
       accessToken: 'CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb'
 
-,
+
 ### create-ad-set
 
 #### Parameters:
@@ -95,7 +95,7 @@ It is FacebookAds integration with Syncano. It allows you to interact with the f
       adImages: '['fadlk3421jkl;rehui234', '1235tgds43q41234']',
       accessToken: 'CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb'
 
-,
+
 ### update-ad-set
 
 #### Parameters:

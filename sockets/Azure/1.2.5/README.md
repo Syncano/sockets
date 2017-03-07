@@ -17,26 +17,26 @@ xxxxxxxxxxxx
 xxxxxxxxxxxx
 -----END CERTIFICATE-----'
 
-,
+
 ### register-azure-account
 
 #### Parameters:
 
 
-,
+
 ### set-azure-account
 
 #### Parameters:
 
       subNameOrId: 'johndoe'
 
-,
+
 ### check-active-subscription
 
 #### Parameters:
 
 
-,
+
 ### create-website
 
 #### Parameters:
@@ -44,14 +44,14 @@ xxxxxxxxxxxx
       name: 'mywebsite',
       location: 'West US'
 
-,
+
 ### exists-website
 
 #### Parameters:
 
       name: 'mywebsitename'
 
-,
+
 ### upload-webjob
 
 #### Parameters:
@@ -61,7 +61,7 @@ xxxxxxxxxxxx
       fileLocation: '/mypath/myscript.sh',
       website: 'mysite'
 
-,
+
 ### trigger-webjob
 
 #### Parameters:
@@ -71,7 +71,7 @@ xxxxxxxxxxxx
       name: 'myscript.ps1',
       website: 'mysite'
 
-,
+
 ### info-webjob
 
 #### Parameters:
@@ -81,7 +81,7 @@ xxxxxxxxxxxx
       name: 'myscript.ps1',
       website: 'mysite'
 
-,
+
 ### log-webjob
 
 #### Parameters:
@@ -91,7 +91,7 @@ xxxxxxxxxxxx
       name: 'myscript.ps1',
       website: 'mysite'
 
-,
+
 ### upload-file
 
 #### Parameters:
@@ -102,7 +102,7 @@ xxxxxxxxxxxx
       remotePath: '/site/wwwroot/myfile.zip',
       website: 'mysite'
 
-,
+
 ### set-deploy-credentials
 
 #### Parameters:
@@ -110,7 +110,7 @@ xxxxxxxxxxxx
       deploymentUser: 'johndoe',
       deploymentPassword: 'p@ssword'
 
-,
+
 ### list-azure-accounts
 
 #### Parameters:

@@ -10,7 +10,7 @@ It is ReturnTool integration with Syncano. It allows you to simple tool to retur
 
       variable: '*'
 
-,
+
 ### return-string
 
 #### Parameters:

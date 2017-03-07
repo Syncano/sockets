@@ -10,7 +10,7 @@ It is URLs integration with Syncano. It allows you to machines for working with 
 
       url: 'http://user:pass@host.com:8080/p/a/t/h?query=string#hash'
 
-,
+
 ### format
 
 #### Parameters:
@@ -18,7 +18,7 @@ It is URLs integration with Syncano. It allows you to machines for working with 
       urlTemplate: '/api/v1/user/:id/friends/:friendId',
       data: [object Object]
 
-,
+
 ### resolve
 
 #### Parameters:
@@ -26,7 +26,7 @@ It is URLs integration with Syncano. It allows you to machines for working with 
       url: 'www.example.com/search',
       baseUrl: 'api.example.com/pets'
 
-,
+
 ### is-url
 
 #### Parameters:

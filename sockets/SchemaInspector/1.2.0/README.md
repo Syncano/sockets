@@ -11,7 +11,7 @@ It is SchemaInspector integration with Syncano. It allows you to schema-inspecto
       schema: [object Object],
       data: '*'
 
-,
+
 ### validate
 
 #### Parameters:

@@ -10,14 +10,14 @@ It is Openbadges integration with Syncano. It allows you to communicate with the
 
       emailAddress: 'tailot@gmail.com'
 
-,
+
 ### get-collections
 
 #### Parameters:
 
       uid: 125363
 
-,
+
 ### get-badges
 
 #### Parameters:
@@ -25,7 +25,7 @@ It is Openbadges integration with Syncano. It allows you to communicate with the
       uid: 125363,
       gid: 67890
 
-,
+
 ### bake-assertion
 
 #### Parameters:

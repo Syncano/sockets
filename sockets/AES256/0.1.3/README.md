@@ -12,7 +12,7 @@ It is AES256 integration with Syncano. It allows you to aes-256 encrypt and decr
       secret: 'a secure phrase or password',
       buffer: false
 
-,
+
 ### decrypt
 
 #### Parameters:
@@ -21,7 +21,7 @@ It is AES256 integration with Syncano. It allows you to aes-256 encrypt and decr
       secret: 'a secure phrase',
       buffer: false
 
-,
+
 ### encrypt-stream
 
 #### Parameters:
@@ -29,7 +29,7 @@ It is AES256 integration with Syncano. It allows you to aes-256 encrypt and decr
       stream: 'a stream',
       secret: 'a secure phrase or password'
 
-,
+
 ### decrypt-stream
 
 #### Parameters:
@@ -37,7 +37,7 @@ It is AES256 integration with Syncano. It allows you to aes-256 encrypt and decr
       stream: 'a stream',
       secret: 'a secure phrase or password'
 
-,
+
 ### encrypt-stream-file
 
 #### Parameters:
@@ -46,7 +46,7 @@ It is AES256 integration with Syncano. It allows you to aes-256 encrypt and decr
       secret: 'a secure phrase or password',
       save: true
 
-,
+
 ### decrypt-stream-file
 
 #### Parameters:
