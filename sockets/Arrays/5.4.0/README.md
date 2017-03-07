@@ -7,192 +7,240 @@ It is Arrays integration with Syncano. It allows you to work with arrays.
 ### reverse
 
 #### Parameters:
+```
 
-      array: *
+  array: *
+```
 
 
 ### index-of
 
 #### Parameters:
+```
 
-      array: *,
-      item: '*'
+  array: *,
+  item: '*'
+```
 
 
 ### slice
 
 #### Parameters:
+```
 
-      array: *,
-      start: 2,
-      end: 5
+  array: *,
+  start: 2,
+  end: 5
+```
 
 
 ### length
 
 #### Parameters:
+```
 
-      array: *
+  array: *
+```
 
 
 ### concat
 
 #### Parameters:
+```
 
-      firstArray: *,
-      secondArray: *
+  firstArray: *,
+  secondArray: *
+```
 
 
 ### last
 
 #### Parameters:
+```
 
-      array: *
+  array: *
+```
 
 
 ### nth
 
 #### Parameters:
+```
 
-      array: *,
-      index: 2
+  array: *,
+  index: 2
+```
 
 
 ### construct
 
 #### Parameters:
+```
 
-      array: *
+  array: *
+```
 
 
 ### pluck
 
 #### Parameters:
+```
 
-      array: [object Object],
-      key: 'id'
+  array: [object Object],
+  key: 'id'
+```
 
 
 ### sort-strings
 
 #### Parameters:
+```
 
-      array: Roger Wilco
+  array: Roger Wilco
+```
 
 
 ### sort-numbers
 
 #### Parameters:
+```
 
-      array: 2
+  array: 2
+```
 
 
 ### each
 
 #### Parameters:
+```
 
-      array: *,
-      iteratee: '->',
-      series: false
+  array: *,
+  iteratee: '->',
+  series: false
+```
 
 
 ### map
 
 #### Parameters:
+```
 
-      array: *,
-      resultExemplar: *,
-      iteratee: '->',
-      series: false
+  array: *,
+  resultExemplar: *,
+  iteratee: '->',
+  series: false
+```
 
 
 ### reduce
 
 #### Parameters:
+```
 
-      array: *,
-      iteratee: '->',
-      resultExemplar: undefined,
-      initialValue: '*',
-      series: true
+  array: *,
+  iteratee: '->',
+  resultExemplar: undefined,
+  initialValue: '*',
+  series: true
+```
 
 
 ### find-one
 
 #### Parameters:
+```
 
-      array: [object Object],
-      criteria: [object Object]
+  array: [object Object],
+  criteria: [object Object]
+```
 
 
 ### find-where
 
 #### Parameters:
+```
 
-      array: [object Object],
-      criteria: [object Object]
+  array: [object Object],
+  criteria: [object Object]
+```
 
 
 ### insert
 
 #### Parameters:
+```
 
-      array: *,
-      index: 1,
-      value: '*'
+  array: *,
+  index: 1,
+  value: '*'
+```
 
 
 ### sample
 
 #### Parameters:
+```
 
-      array: *
+  array: *
+```
 
 
 ### sort-by
 
 #### Parameters:
+```
 
-      array: [object Object],
-      key: 'createdAt'
+  array: [object Object],
+  key: 'createdAt'
+```
 
 
 ### uniq-by
 
 #### Parameters:
+```
 
-      array: [object Object],
-      key: 'id'
+  array: [object Object],
+  key: 'id'
+```
 
 
 ### uniq
 
 #### Parameters:
+```
 
-      array: *
+  array: *
+```
 
 
 ### find-index-of
 
 #### Parameters:
+```
 
-      array: *,
-      criteria: [object Object]
+  array: *,
+  criteria: [object Object]
+```
 
 
 ### replace
 
 #### Parameters:
+```
 
-      array: *,
-      index: 1,
-      value: '*'
+  array: *,
+  index: 1,
+  value: '*'
+```
 
 
 ### sample-subset
 
 #### Parameters:
+```
 
-      array: *,
-      size: 2
+  array: *,
+  size: 2
+```
 

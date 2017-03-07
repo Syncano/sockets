@@ -7,13 +7,17 @@ It is Sails integration with Syncano. It allows you to general purpose machines 
 ### get-configuration
 
 #### Parameters:
+```
 
-      key: 'log.level',
-      expectedOutput: '==='
+  key: 'log.level',
+  expectedOutput: '==='
+```
 
 
 ### is-production
 
 #### Parameters:
-
+```
+No parameters
+```
 

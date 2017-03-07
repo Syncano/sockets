@@ -7,9 +7,11 @@ It is CSV integration with Syncano. It allows you to work with csv (comma-separa
 ### parse-csv
 
 #### Parameters:
+```
 
-      csvData: '"1","2","3","4"
+  csvData: '"1","2","3","4"
 "a","b","c","d"',
-      hasHeaderRow: true,
-      schema: undefined
+  hasHeaderRow: true,
+  schema: undefined
+```
 

@@ -7,9 +7,11 @@ It is CFT integration with Syncano. It allows you to communicates with clientfee
 ### get-cft-surveyssent
 
 #### Parameters:
+```
 
-      userName: 'username@firm.com',
-      password: 'password',
-      fromDate: '20151231',
-      toDate: '20161231'
+  userName: 'username@firm.com',
+  password: 'password',
+  fromDate: '20151231',
+  toDate: '20161231'
+```
 

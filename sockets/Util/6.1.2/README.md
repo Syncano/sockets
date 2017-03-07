@@ -7,35 +7,45 @@ It is Util integration with Syncano. It allows you to miscellaneous utilities fo
 ### log
 
 #### Parameters:
+```
 
-      value: '==='
+  value: '==='
+```
 
 
 ### hash
 
 #### Parameters:
+```
 
-      value: '*'
+  value: '*'
+```
 
 
 ### inspect
 
 #### Parameters:
+```
 
-      value: '==='
+  value: '==='
+```
 
 
 ### coalesce
 
 #### Parameters:
+```
 
-      a: '===',
-      b: '==='
+  a: '===',
+  b: '==='
+```
 
 
 ### require
 
 #### Parameters:
+```
 
-      path: '/code/machinepack-twitter'
+  path: '/code/machinepack-twitter'
+```
 

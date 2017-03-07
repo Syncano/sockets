@@ -7,24 +7,30 @@ It is Config integration with Syncano. It allows you to a simple load config (wi
 ### get
 
 #### Parameters:
+```
 
-      path: undefined,
-      merge: false,
-      nomethod: false,
-      freeze: false
+  path: undefined,
+  merge: false,
+  nomethod: false,
+  freeze: false
+```
 
 
 ### multiple
 
 #### Parameters:
+```
 
-      schema: undefined,
-      freeze: false
+  schema: undefined,
+  freeze: false
+```
 
 
 ### load
 
 #### Parameters:
+```
 
-      path: 'test.json'
+  path: 'test.json'
+```
 

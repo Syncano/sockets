@@ -7,28 +7,36 @@ It is NaturalLanguage integration with Syncano. It allows you to natural languag
 ### levenshtein
 
 #### Parameters:
+```
 
-      a: 'kitten',
-      b: 'sittin'
+  a: 'kitten',
+  b: 'sittin'
+```
 
 
 ### tokenize
 
 #### Parameters:
+```
 
-      string: 'Hello world!'
+  string: 'Hello world!'
+```
 
 
 ### pluralize
 
 #### Parameters:
+```
 
-      noun: 'camera'
+  noun: 'camera'
+```
 
 
 ### singularize
 
 #### Parameters:
+```
 
-      noun: 'cameras'
+  noun: 'cameras'
+```
 

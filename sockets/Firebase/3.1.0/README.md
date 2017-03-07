@@ -7,54 +7,68 @@ It is Firebase integration with Syncano. It allows you to this machinepack lets 
 ### set-data
 
 #### Parameters:
+```
 
-      firebaseURL: 'your-firebase-database.firebaseio.com',
-      child: 'users',
-      write: undefined
+  firebaseURL: 'your-firebase-database.firebaseio.com',
+  child: 'users',
+  write: undefined
+```
 
 
 ### push-data
 
 #### Parameters:
+```
 
-      firebaseURL: 'your-firebase-database.firebaseio.com',
-      child: 'users',
-      write: undefined
+  firebaseURL: 'your-firebase-database.firebaseio.com',
+  child: 'users',
+  write: undefined
+```
 
 
 ### update-data
 
 #### Parameters:
+```
 
-      firebaseURL: 'your-firebase-database.firebaseio.com/users',
-      child: 'users',
-      write: undefined
+  firebaseURL: 'your-firebase-database.firebaseio.com/users',
+  child: 'users',
+  write: undefined
+```
 
 
 ### read-value
 
 #### Parameters:
+```
 
-      firebaseURL: 'your-firebase-database.firebaseio.com/users/'
+  firebaseURL: 'your-firebase-database.firebaseio.com/users/'
+```
 
 
 ### json-to-string
 
 #### Parameters:
+```
 
-      object: '{ "User 1": {"email": "user@gmail.com", "password": "password123"}}'
+  object: '{ "User 1": {"email": "user@gmail.com", "password": "password123"}}'
+```
 
 
 ### string-to-json
 
 #### Parameters:
+```
 
-      string: '{ "User 1": {"email": "user@gmail.com", "password": "password123"}}'
+  string: '{ "User 1": {"email": "user@gmail.com", "password": "password123"}}'
+```
 
 
 ### remove-value
 
 #### Parameters:
+```
 
-      firebaseURL: 'your-firebase-database.firebaseio.com/users/'
+  firebaseURL: 'your-firebase-database.firebaseio.com/users/'
+```
 

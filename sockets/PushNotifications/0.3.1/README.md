@@ -7,9 +7,11 @@ It is PushNotifications integration with Syncano. It allows you to send push mes
 ### send-push-notification
 
 #### Parameters:
+```
 
-      message: [object Object],
-      deviceToken: '5gxadhy6 6zmtxfl6 5zpbcxmw ez3w7ksf qscpr55t trknkzap 7yyt45sc g6jrw7qz',
-      connectionOptions: [object Object],
-      type: 0
+  message: [object Object],
+  deviceToken: '5gxadhy6 6zmtxfl6 5zpbcxmw ez3w7ksf qscpr55t trknkzap 7yyt45sc g6jrw7qz',
+  connectionOptions: [object Object],
+  type: 0
+```
 

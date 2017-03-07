@@ -7,13 +7,17 @@ It is Coinbase integration with Syncano. It allows you to communicate with the c
 ### get-buy-price
 
 #### Parameters:
+```
 
-      quantity: '10'
+  quantity: '10'
+```
 
 
 ### get-sell-price
 
 #### Parameters:
+```
 
-      quantity: '10'
+  quantity: '10'
+```
 

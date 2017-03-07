@@ -7,31 +7,37 @@ It is Cloudinary integration with Syncano. It allows you to sdk for working with
 ### upload-image
 
 #### Parameters:
+```
 
-      cloudName: 'abc',
-      apiKey: 'abcd',
-      apiSecret: 'abcd',
-      fieldName: '/users/app/.upload/image.png',
-      imageOptions: [object Object]
+  cloudName: 'abc',
+  apiKey: 'abcd',
+  apiSecret: 'abcd',
+  fieldName: '/users/app/.upload/image.png',
+  imageOptions: [object Object]
+```
 
 
 ### get-image-urls
 
 #### Parameters:
+```
 
-      cloudName: 'abc',
-      apiKey: 'abcd',
-      apiSecret: 'abcd',
-      imageId: 'abc',
-      options: [object Object]
+  cloudName: 'abc',
+  apiKey: 'abcd',
+  apiSecret: 'abcd',
+  imageId: 'abc',
+  options: [object Object]
+```
 
 
 ### delete-image
 
 #### Parameters:
+```
 
-      cloudName: 'abc',
-      apiKey: 'abcd',
-      apiSecret: 'abcd',
-      imageId: 'abc'
+  cloudName: 'abc',
+  apiKey: 'abcd',
+  apiSecret: 'abcd',
+  imageId: 'abc'
+```
 

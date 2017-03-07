@@ -7,15 +7,19 @@ It is SchemaInspector integration with Syncano. It allows you to schema-inspecto
 ### sanitize
 
 #### Parameters:
+```
 
-      schema: [object Object],
-      data: '*'
+  schema: [object Object],
+  data: '*'
+```
 
 
 ### validate
 
 #### Parameters:
+```
 
-      schema: [object Object],
-      data: '*'
+  schema: [object Object],
+  data: '*'
+```
 

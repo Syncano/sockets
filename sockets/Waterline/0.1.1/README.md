@@ -7,23 +7,29 @@ It is Waterline integration with Syncano. It allows you to a database-agnostic c
 ### connect
 
 #### Parameters:
+```
 
-      datastore: 'larrysMySQLCluster',
-      during: '->'
+  datastore: 'larrysMySQLCluster',
+  during: '->'
+```
 
 
 ### query
 
 #### Parameters:
+```
 
-      datastore: 'larrysMySQLCluster',
-      statement: [object Object]
+  datastore: 'larrysMySQLCluster',
+  statement: [object Object]
+```
 
 
 ### transaction
 
 #### Parameters:
+```
 
-      datastore: 'larrysMySQLCluster',
-      during: '->'
+  datastore: 'larrysMySQLCluster',
+  during: '->'
+```
 

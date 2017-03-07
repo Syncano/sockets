@@ -7,6 +7,8 @@ It is Emailaddresses integration with Syncano. It allows you to work with email 
 ### validate
 
 #### Parameters:
+```
 
-      string: 'foo@foobar.com'
+  string: 'foo@foobar.com'
+```
 

@@ -7,5 +7,7 @@ It is TreelineErrors integration with Syncano. It allows you to tools for handli
 ### broken-route-page
 
 #### Parameters:
-
+```
+No parameters
+```
 

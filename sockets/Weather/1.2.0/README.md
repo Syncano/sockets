@@ -7,5 +7,7 @@ It is Weather integration with Syncano. It allows you to communicate with the fo
 ### get-current-weather
 
 #### Parameters:
-
+```
+No parameters
+```
 

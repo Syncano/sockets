@@ -7,6 +7,8 @@ It is NodejsAustin integration with Syncano. It allows you to cool stuff for nod
 ### hello
 
 #### Parameters:
+```
 
-      msg: 'hello world'
+  msg: 'hello world'
+```
 

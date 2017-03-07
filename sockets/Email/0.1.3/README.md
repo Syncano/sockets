@@ -7,9 +7,11 @@ It is Email integration with Syncano. It allows you to simply send an email with
 ### send
 
 #### Parameters:
+```
 
-      customTransport: 'nodemailer-stub-transport',
-      auth: [object Object],
-      service: 'gmail',
-      mail: [object Object]
+  customTransport: 'nodemailer-stub-transport',
+  auth: [object Object],
+  service: 'gmail',
+  mail: [object Object]
+```
 

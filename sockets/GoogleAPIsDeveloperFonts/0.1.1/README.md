@@ -7,8 +7,10 @@ It is GoogleAPIsDeveloperFonts integration with Syncano. It allows you to work w
 ### list
 
 #### Parameters:
+```
 
-      key: 'YOUR_API_KEY',
-      sort: 'alpha',
-      fields: 'items,kind'
+  key: 'YOUR_API_KEY',
+  sort: 'alpha',
+  fields: 'items,kind'
+```
 

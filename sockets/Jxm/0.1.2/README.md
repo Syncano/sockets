@@ -7,16 +7,20 @@ It is Jxm integration with Syncano. It allows you to work with jxm
 ### start-server
 
 #### Parameters:
+```
 
-      serviceName: 'Hello World',
-      baseUrlPath: '/helloworld'
+  serviceName: 'Hello World',
+  baseUrlPath: '/helloworld'
+```
 
 
 ### start-client
 
 #### Parameters:
+```
 
-      ipServer: '0.0.0.0',
-      serviceName: 'Hello World',
-      message: 'Clap your hands'
+  ipServer: '0.0.0.0',
+  serviceName: 'Hello World',
+  message: 'Clap your hands'
+```
 

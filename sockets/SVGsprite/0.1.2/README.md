@@ -7,6 +7,8 @@ It is SVGsprite integration with Syncano. It allows you to create an svgs sprite
 ### create-sprite
 
 #### Parameters:
+```
 
-      svgs: undefined
+  svgs: undefined
+```
 

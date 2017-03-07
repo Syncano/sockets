@@ -7,34 +7,44 @@ It is LocalSailsApps integration with Syncano. It allows you to work with a loca
 ### deduce-controllers
 
 #### Parameters:
+```
 
-      routes: [object Object]
+  routes: [object Object]
+```
 
 
 ### get-signature
 
 #### Parameters:
+```
 
-      dir: '/Users/mikermcneil/foo/'
+  dir: '/Users/mikermcneil/foo/'
+```
 
 
 ### build-routes-config
 
 #### Parameters:
+```
 
-      targets: [object Object]
+  targets: [object Object]
+```
 
 
 ### build-controller
 
 #### Parameters:
+```
 
-      actionTargets: [object Object]
+  actionTargets: [object Object]
+```
 
 
 ### build-model
 
 #### Parameters:
+```
 
-      modelDef: [object Object]
+  modelDef: [object Object]
+```
 

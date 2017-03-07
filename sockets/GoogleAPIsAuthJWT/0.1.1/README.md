@@ -7,10 +7,12 @@ It is GoogleAPIsAuthJWT integration with Syncano. It allows you to the jwt autho
 ### authorize
 
 #### Parameters:
+```
 
-      email: 'service-account-email@developer.gserviceaccount.com',
-      keyFile: 'path/to/key.pem',
-      key: 'keyContent',
-      scopes: https://www.googleapis.com/auth/drive.readonly,
-      impersonateEmail: 'subject-account-email@example.com'
+  email: 'service-account-email@developer.gserviceaccount.com',
+  keyFile: 'path/to/key.pem',
+  key: 'keyContent',
+  scopes: https://www.googleapis.com/auth/drive.readonly,
+  impersonateEmail: 'subject-account-email@example.com'
+```
 

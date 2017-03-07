@@ -7,43 +7,51 @@ It is ElasticSearch integration with Syncano. It allows you to access the elasti
 ### search
 
 #### Parameters:
+```
 
-      hostname: 'localhost',
-      port: 9200,
-      index: 'myindex',
-      query: 'cute dogs'
+  hostname: 'localhost',
+  port: 9200,
+  index: 'myindex',
+  query: 'cute dogs'
+```
 
 
 ### update
 
 #### Parameters:
+```
 
-      hostname: 'localhost',
-      port: 9200,
-      index: 'myindex',
-      type: 'user',
-      id: 'lzmkDgMjTbGoacxLMsB_zA',
-      document: undefined
+  hostname: 'localhost',
+  port: 9200,
+  index: 'myindex',
+  type: 'user',
+  id: 'lzmkDgMjTbGoacxLMsB_zA',
+  document: undefined
+```
 
 
 ### create
 
 #### Parameters:
+```
 
-      hostname: 'localhost',
-      port: 9200,
-      index: 'myindex',
-      type: 'user',
-      document: undefined
+  hostname: 'localhost',
+  port: 9200,
+  index: 'myindex',
+  type: 'user',
+  document: undefined
+```
 
 
 ### destroy
 
 #### Parameters:
+```
 
-      hostname: 'localhost',
-      port: 9200,
-      index: 'myindex',
-      type: 'user',
-      id: 'lzmkDgMjTbGoacxLMsB_zA'
+  hostname: 'localhost',
+  port: 9200,
+  index: 'myindex',
+  type: 'user',
+  id: 'lzmkDgMjTbGoacxLMsB_zA'
+```
 

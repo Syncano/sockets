@@ -7,15 +7,19 @@ It is SaneAuth integration with Syncano. It allows you to a sane stack addon giv
 ### client
 
 #### Parameters:
+```
 
-      name: 'user',
-      attributes: 'name:string age:number'
+  name: 'user',
+  attributes: 'name:string age:number'
+```
 
 
 ### server
 
 #### Parameters:
+```
 
-      name: 'user',
-      attributes: 'name:string age:number'
+  name: 'user',
+  attributes: 'name:string age:number'
+```
 

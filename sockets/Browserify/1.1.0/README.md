@@ -7,7 +7,9 @@ It is Browserify integration with Syncano. It allows you to use require() in the
 ### bundle
 
 #### Parameters:
+```
 
-      path: '/Users/mikermcneil/.tmp/foo',
-      exportAs: 'Whatever'
+  path: '/Users/mikermcneil/.tmp/foo',
+  exportAs: 'Whatever'
+```
 

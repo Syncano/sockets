@@ -7,6 +7,8 @@ It is Coindesk integration with Syncano. It allows you to communicate with the c
 ### get-coindesk-bitcoin-price-index
 
 #### Parameters:
+```
 
-      currency: 'USD'
+  currency: 'USD'
+```
 

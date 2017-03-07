@@ -7,15 +7,19 @@ It is Klout integration with Syncano. It allows you to communicate with the klou
 ### get-klout-id
 
 #### Parameters:
+```
 
-      twitterScreenName: 'tuneyards',
-      apiKey: 'ODUfdisauPUdufsoUSF'
+  twitterScreenName: 'tuneyards',
+  apiKey: 'ODUfdisauPUdufsoUSF'
+```
 
 
 ### get-klout-score
 
 #### Parameters:
+```
 
-      kloutId: '32423423432342',
-      apiKey: 'ODUfdisauPUdufsoUSF'
+  kloutId: '32423423432342',
+  apiKey: 'ODUfdisauPUdufsoUSF'
+```
 

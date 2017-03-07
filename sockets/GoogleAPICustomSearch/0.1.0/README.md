@@ -7,16 +7,18 @@ It is GoogleAPICustomSearch integration with Syncano. It allows you to communica
 ### search
 
 #### Parameters:
+```
 
-      q: 'test search',
-      cx: '',
-      cref: '',
-      auth: 'AIzaSyAYVDlaoVs_GZw9JNvSclRWH_PEMKII6tc',
-      alt: 'atom',
-      c2coff: '',
-      cr: '',
-      fileType: 'jpg',
-      searchType: 'image',
-      sort: '',
-      start: 15
+  q: 'test search',
+  cx: '',
+  cref: '',
+  auth: 'AIzaSyAYVDlaoVs_GZw9JNvSclRWH_PEMKII6tc',
+  alt: 'atom',
+  c2coff: '',
+  cr: '',
+  fileType: 'jpg',
+  searchType: 'image',
+  sort: '',
+  start: 15
+```
 

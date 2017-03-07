@@ -7,30 +7,38 @@ It is NodeStore integration with Syncano. It allows you to this machinepack prov
 ### save-to-storage
 
 #### Parameters:
+```
 
-      key: 'user',
-      value: 'NileFrater'
+  key: 'user',
+  value: 'NileFrater'
+```
 
 
 ### read-from-storage
 
 #### Parameters:
+```
 
-      key: 'users',
-      asJSON: 'true'
+  key: 'users',
+  asJSON: 'true'
+```
 
 
 ### delete-from-storage
 
 #### Parameters:
+```
 
-      key: 'users'
+  key: 'users'
+```
 
 
 ### save-json-to-storage
 
 #### Parameters:
+```
 
-      key: 'user',
-      value: undefined
+  key: 'user',
+  value: undefined
+```
 

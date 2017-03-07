@@ -7,52 +7,66 @@ It is Rttc integration with Syncano. It allows you to utilities for strongly-typ
 ### validate
 
 #### Parameters:
+```
 
-      value: '===',
-      typeSchema: '*'
+  value: '===',
+  typeSchema: '*'
+```
 
 
 ### validate-strict
 
 #### Parameters:
+```
 
-      value: '===',
-      typeSchema: '*'
+  value: '===',
+  typeSchema: '*'
+```
 
 
 ### infer
 
 #### Parameters:
+```
 
-      example: '*'
+  example: '*'
+```
 
 
 ### compile
 
 #### Parameters:
+```
 
-      value: '==='
+  value: '==='
+```
 
 
 ### coerce
 
 #### Parameters:
+```
 
-      value: '===',
-      typeSchema: '*'
+  value: '===',
+  typeSchema: '*'
+```
 
 
 ### sample
 
 #### Parameters:
+```
 
-      typeSchema: '*',
-      n: 2
+  typeSchema: '*',
+  n: 2
+```
 
 
 ### get-display-type
 
 #### Parameters:
+```
 
-      value: '==='
+  value: '==='
+```
 

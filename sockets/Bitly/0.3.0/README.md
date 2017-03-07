@@ -7,9 +7,11 @@ It is Bitly integration with Syncano. It allows you to work with the bitly api
 ### shorten-link
 
 #### Parameters:
+```
 
-      clientId: 'xyz123abcxxx',
-      clientSecret: 'xyz123abcxxx',
-      accessToken: 'xyz123abcxxx',
-      url: 'http://www.somereallylongurl.com/man/that/is/long.html'
+  clientId: 'xyz123abcxxx',
+  clientSecret: 'xyz123abcxxx',
+  accessToken: 'xyz123abcxxx',
+  url: 'http://www.somereallylongurl.com/man/that/is/long.html'
+```
 

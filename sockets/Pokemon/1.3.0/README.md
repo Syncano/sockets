@@ -7,12 +7,16 @@ It is Pokemon integration with Syncano. It allows you to fetch data about pokém
 ### list-all-pokemon
 
 #### Parameters:
-
+```
+No parameters
+```
 
 
 ### get-pokemon
 
 #### Parameters:
+```
 
-      id: 1
+  id: 1
+```
 
