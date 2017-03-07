@@ -7,6 +7,8 @@ It is Cli integration with Syncano. It allows you to simple maker command line i
 ### prompt
 
 #### Parameters:
+```
 
-      debug: true
+  debug: true
+```
 

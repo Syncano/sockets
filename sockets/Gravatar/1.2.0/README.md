@@ -7,10 +7,12 @@ It is Gravatar integration with Syncano. It allows you to communicate with the g
 ### get-image-url
 
 #### Parameters:
+```
 
-      emailAddress: 'john@doe-enterprises.com',
-      gravatarSize: 400,
-      defaultImage: 'http://example.com/images/avatar.jpg',
-      rating: 'g',
-      useHttps: true
+  emailAddress: 'john@doe-enterprises.com',
+  gravatarSize: 400,
+  defaultImage: 'http://example.com/images/avatar.jpg',
+  rating: 'g',
+  useHttps: true
+```
 

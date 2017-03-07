@@ -7,7 +7,9 @@ It is JsonSchema integration with Syncano. It allows you to node.js utility for 
 ### validate
 
 #### Parameters:
+```
 
-      data: undefined,
-      schema: undefined
+  data: undefined,
+  schema: undefined
+```
 

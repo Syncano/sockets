@@ -7,100 +7,126 @@ It is Booleans integration with Syncano. It allows you to work with true/false v
 ### to-boolean
 
 #### Parameters:
+```
 
-      string: 'foo'
+  string: 'foo'
+```
 
 
 ### is-between
 
 #### Parameters:
+```
 
-      value: 3,
-      min: 1,
-      max: 4
+  value: 3,
+  min: 1,
+  max: 4
+```
 
 
 ### is-defined
 
 #### Parameters:
+```
 
-      value: '==='
+  value: '==='
+```
 
 
 ### is-undefined
 
 #### Parameters:
+```
 
-      value: '==='
+  value: '==='
+```
 
 
 ### is-equal
 
 #### Parameters:
+```
 
-      a: '===',
-      b: '==='
+  a: '===',
+  b: '==='
+```
 
 
 ### is-not-equal
 
 #### Parameters:
+```
 
-      a: '===',
-      b: '==='
+  a: '===',
+  b: '==='
+```
 
 
 ### is-greater-than
 
 #### Parameters:
+```
 
-      a: '===',
-      b: '===',
-      isInclusive: true
+  a: '===',
+  b: '===',
+  isInclusive: true
+```
 
 
 ### is-less-than
 
 #### Parameters:
+```
 
-      a: '===',
-      b: '===',
-      isInclusive: true
+  a: '===',
+  b: '===',
+  isInclusive: true
+```
 
 
 ### is-truthy
 
 #### Parameters:
+```
 
-      value: '==='
+  value: '==='
+```
 
 
 ### is-falsy
 
 #### Parameters:
+```
 
-      value: '==='
+  value: '==='
+```
 
 
 ### and
 
 #### Parameters:
+```
 
-      a: '===',
-      b: '==='
+  a: '===',
+  b: '==='
+```
 
 
 ### or
 
 #### Parameters:
+```
 
-      a: '===',
-      b: '==='
+  a: '===',
+  b: '==='
+```
 
 
 ### not
 
 #### Parameters:
+```
 
-      value: '==='
+  value: '==='
+```
 

@@ -7,34 +7,44 @@ It is Paths integration with Syncano. It allows you to utilities for handling an
 ### if-absolute
 
 #### Parameters:
+```
 
-      path: '/usr/bin'
+  path: '/usr/bin'
+```
 
 
 ### resolve
 
 #### Parameters:
+```
 
-      path: 'node_modules/sails/bin/sails.js',
-      from: '/usr/local/lib'
+  path: 'node_modules/sails/bin/sails.js',
+  from: '/usr/local/lib'
+```
 
 
 ### parse
 
 #### Parameters:
+```
 
-      path: 'C:\\a\b\index.html'
+  path: 'C:\\a\b\index.html'
+```
 
 
 ### home
 
 #### Parameters:
-
+```
+No parameters
+```
 
 
 ### join
 
 #### Parameters:
+```
 
-      paths: lib/node_modules
+  paths: lib/node_modules
+```
 

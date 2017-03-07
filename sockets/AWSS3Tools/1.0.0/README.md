@@ -7,11 +7,13 @@ It is AWSS3Tools integration with Syncano. It allows you to upload files to s3 b
 ### upload-to-s3
 
 #### Parameters:
+```
 
-      bucket: 'my_s3_bucket',
-      path: 'myfile.jpg',
-      acl: 'public-read',
-      upload: '/path/to/file',
-      secret_key: 'abc1234cged',
-      access_key: 'abc1234cge2424ded'
+  bucket: 'my_s3_bucket',
+  path: 'myfile.jpg',
+  acl: 'public-read',
+  upload: '/path/to/file',
+  secret_key: 'abc1234cged',
+  access_key: 'abc1234cge2424ded'
+```
 

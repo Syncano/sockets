@@ -7,11 +7,13 @@ It is Clickatell integration with Syncano. It allows you to send text messages u
 ### send-text-message
 
 #### Parameters:
+```
 
-      user: 'companyname',
-      password: '******',
-      api_id: 'GJD79867',
-      from: '2772000000',
-      to: '2772000000',
-      text: 'Hello world'
+  user: 'companyname',
+  password: '******',
+  api_id: 'GJD79867',
+  from: '2772000000',
+  to: '2772000000',
+  text: 'Hello world'
+```
 

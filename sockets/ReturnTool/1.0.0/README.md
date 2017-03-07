@@ -7,13 +7,17 @@ It is ReturnTool integration with Syncano. It allows you to simple tool to retur
 ### return-object
 
 #### Parameters:
+```
 
-      variable: '*'
+  variable: '*'
+```
 
 
 ### return-string
 
 #### Parameters:
+```
 
-      variable: 'This is a string'
+  variable: 'This is a string'
+```
 

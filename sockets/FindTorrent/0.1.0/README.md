@@ -7,67 +7,83 @@ It is FindTorrent integration with Syncano. It allows you to find torrents from 
 ### query-kickass
 
 #### Parameters:
+```
 
-      apiUrl: 'https://kickass.to',
-      sortByKey: 'seeders',
-      sortOrder: 'desc',
-      query: '',
-      page: 1,
-      category: 'all'
+  apiUrl: 'https://kickass.to',
+  sortByKey: 'seeders',
+  sortOrder: 'desc',
+  query: '',
+  page: 1,
+  category: 'all'
+```
 
 
 ### query-eztv
 
 #### Parameters:
+```
 
-      baseUrl: 'https://eztv.ag',
-      query: '',
-      category: 'all'
+  baseUrl: 'https://eztv.ag',
+  query: '',
+  category: 'all'
+```
 
 
 ### find-movie
 
 #### Parameters:
+```
 
-      query: ''
+  query: ''
+```
 
 
 ### find-episode
 
 #### Parameters:
+```
 
-      query: ''
+  query: ''
+```
 
 
 ### query-all
 
 #### Parameters:
+```
 
-      query: ''
+  query: ''
+```
 
 
 ### get-eztv-showlist
 
 #### Parameters:
+```
 
-      baseUrl: 'https://eztv.ag'
+  baseUrl: 'https://eztv.ag'
+```
 
 
 ### get-eztv-show-episodes
 
 #### Parameters:
+```
 
-      baseUrl: 'https://eztv.ag',
-      showId: 1
+  baseUrl: 'https://eztv.ag',
+  showId: 1
+```
 
 
 ### query-yts
 
 #### Parameters:
+```
 
-      apiUrl: 'https://yts.ag',
-      sortByKey: 'seeds',
-      sortOrder: 'desc',
-      query: '',
-      page: 1
+  apiUrl: 'https://yts.ag',
+  sortByKey: 'seeds',
+  sortOrder: 'desc',
+  query: '',
+  page: 1
+```
 

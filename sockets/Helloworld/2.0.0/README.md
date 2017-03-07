@@ -7,6 +7,8 @@ It is Helloworld integration with Syncano. It allows you to sample machine pack 
 ### say-hello
 
 #### Parameters:
+```
 
-      name: 'John'
+  name: 'John'
+```
 

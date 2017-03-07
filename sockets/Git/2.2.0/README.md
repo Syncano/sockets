@@ -7,33 +7,41 @@ It is Git integration with Syncano. It allows you to machines for working with t
 ### clone
 
 #### Parameters:
+```
 
-      destination: './put/the/new/local/repo/here',
-      remote: 'git://github.com/balderdashy/sails-docs.git',
-      branch: 'master'
+  destination: './put/the/new/local/repo/here',
+  remote: 'git://github.com/balderdashy/sails-docs.git',
+  branch: 'master'
+```
 
 
 ### status
 
 #### Parameters:
+```
 
-      dir: './'
+  dir: './'
+```
 
 
 ### pull-or-clone
 
 #### Parameters:
+```
 
-      destination: './',
-      remote: 'origin',
-      branch: 'master'
+  destination: './',
+  remote: 'origin',
+  branch: 'master'
+```
 
 
 ### pull
 
 #### Parameters:
+```
 
-      destination: './',
-      remote: 'origin',
-      branch: 'master'
+  destination: './',
+  remote: 'origin',
+  branch: 'master'
+```
 

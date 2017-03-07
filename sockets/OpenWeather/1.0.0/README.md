@@ -7,8 +7,10 @@ It is OpenWeather integration with Syncano. It allows you to communicate with th
 ### get-current-conditions
 
 #### Parameters:
+```
 
-      apiKey: 'xAmBxAmBxAmBkjbyKkjbyKkjbyK',
-      city: 'austin',
-      stateOrCountry: 'texas'
+  apiKey: 'xAmBxAmBxAmBkjbyKkjbyKkjbyK',
+  city: 'austin',
+  stateOrCountry: 'texas'
+```
 

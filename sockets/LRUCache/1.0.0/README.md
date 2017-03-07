@@ -7,27 +7,35 @@ It is LRUCache integration with Syncano. It allows you to work with lrucache.
 ### set
 
 #### Parameters:
+```
 
-      key: 'id',
-      value: 'some object'
+  key: 'id',
+  value: 'some object'
+```
 
 
 ### get
 
 #### Parameters:
+```
 
-      key: 'id'
+  key: 'id'
+```
 
 
 ### clear
 
 #### Parameters:
-
+```
+No parameters
+```
 
 
 ### remove
 
 #### Parameters:
+```
 
-      key: 'id'
+  key: 'id'
+```
 

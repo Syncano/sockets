@@ -7,42 +7,50 @@ It is Timetask integration with Syncano. It allows you to communicate with the t
 ### get
 
 #### Parameters:
+```
 
-      account: 'myaccount',
-      token: 'gfg12DF',
-      model: 'project',
-      id: 125031,
-      params: undefined
+  account: 'myaccount',
+  token: 'gfg12DF',
+  model: 'project',
+  id: 125031,
+  params: undefined
+```
 
 
 ### add
 
 #### Parameters:
+```
 
-      account: 'myaccount',
-      token: 'gfg12DF',
-      model: 'project',
-      params: [object Object]
+  account: 'myaccount',
+  token: 'gfg12DF',
+  model: 'project',
+  params: [object Object]
+```
 
 
 ### remove
 
 #### Parameters:
+```
 
-      account: 'myaccount',
-      token: 'gfg12DF',
-      model: 'project',
-      params: [object Object],
-      id: 125031
+  account: 'myaccount',
+  token: 'gfg12DF',
+  model: 'project',
+  params: [object Object],
+  id: 125031
+```
 
 
 ### update
 
 #### Parameters:
+```
 
-      account: 'myaccount',
-      token: 'gfg12DF',
-      model: 'project',
-      params: [object Object],
-      id: 125031
+  account: 'myaccount',
+  token: 'gfg12DF',
+  model: 'project',
+  params: [object Object],
+  id: 125031
+```
 

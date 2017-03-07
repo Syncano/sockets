@@ -7,21 +7,27 @@ It is Session integration with Syncano. It allows you to read or write data to t
 ### load
 
 #### Parameters:
+```
 
-      key: 'loggedInAs'
+  key: 'loggedInAs'
+```
 
 
 ### save
 
 #### Parameters:
+```
 
-      key: 'loggedInAs',
-      value: 'some string'
+  key: 'loggedInAs',
+  value: 'some string'
+```
 
 
 ### del
 
 #### Parameters:
+```
 
-      key: 'loggedInAs'
+  key: 'loggedInAs'
+```
 

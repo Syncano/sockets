@@ -7,21 +7,27 @@ It is RequestResponse integration with Syncano. It allows you to methods for wor
 ### get-request-header
 
 #### Parameters:
+```
 
-      header: 'accept'
+  header: 'accept'
+```
 
 
 ### upload-files
 
 #### Parameters:
+```
 
-      field: 'avatar',
-      adapter: 'skipper-s3',
-      uploadOpts: [object Object]
+  field: 'avatar',
+  adapter: 'skipper-s3',
+  uploadOpts: [object Object]
+```
 
 
 ### get-credentials
 
 #### Parameters:
-
+```
+No parameters
+```
 

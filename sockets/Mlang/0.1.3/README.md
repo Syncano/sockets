@@ -7,35 +7,45 @@ It is Mlang integration with Syncano. It allows you to declarative programming l
 ### execute
 
 #### Parameters:
+```
 
-      program: [object Object],
-      inputs: [object Object]
+  program: [object Object],
+  inputs: [object Object]
+```
 
 
 ### meta
 
 #### Parameters:
+```
 
-      program: [object Object]
+  program: [object Object]
+```
 
 
 ### dependencies
 
 #### Parameters:
+```
 
-      program: [object Object]
+  program: [object Object]
+```
 
 
 ### variables
 
 #### Parameters:
+```
 
-      program: [object Object]
+  program: [object Object]
+```
 
 
 ### methods
 
 #### Parameters:
+```
 
-      program: [object Object]
+  program: [object Object]
+```
 

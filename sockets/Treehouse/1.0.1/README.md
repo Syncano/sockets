@@ -7,6 +7,8 @@ It is Treehouse integration with Syncano. It allows you to communicate with the 
 ### get-user-profile
 
 #### Parameters:
+```
 
-      username: 'chalkers'
+  username: 'chalkers'
+```
 

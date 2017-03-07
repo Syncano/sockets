@@ -7,21 +7,27 @@ It is JSON integration with Syncano. It allows you to encode and decode data to 
 ### parse
 
 #### Parameters:
+```
 
-      json: '...{"some json": "like this"}...',
-      schema: '*'
+  json: '...{"some json": "like this"}...',
+  schema: '*'
+```
 
 
 ### stringify
 
 #### Parameters:
+```
 
-      value: '*'
+  value: '*'
+```
 
 
 ### stringify-safe
 
 #### Parameters:
+```
 
-      value: '*'
+  value: '*'
+```
 

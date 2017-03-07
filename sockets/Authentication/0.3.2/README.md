@@ -7,18 +7,24 @@ It is Authentication integration with Syncano. It allows you to support for logi
 ### login
 
 #### Parameters:
+```
 
-      id: 'ad913nfa0139ame2iekda13'
+  id: 'ad913nfa0139ame2iekda13'
+```
 
 
 ### logout
 
 #### Parameters:
-
+```
+No parameters
+```
 
 
 ### check-login
 
 #### Parameters:
-
+```
+No parameters
+```
 

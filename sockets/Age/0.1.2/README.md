@@ -7,6 +7,8 @@ It is Age integration with Syncano. It allows you to a machinepack that allows y
 ### calculate
 
 #### Parameters:
+```
 
-      dateOfBirth: '1991-04-24'
+  dateOfBirth: '1991-04-24'
+```
 

@@ -7,10 +7,12 @@ It is Uber integration with Syncano. It allows you to communicate with the uber 
 ### get-price-estimate
 
 #### Parameters:
+```
 
-      apiKey: 'xAmBxAmBxAmBkjbyKkjbyKkjbyK',
-      startLatitude: 37.623908,
-      startLongitude: -122.381592,
-      endLatitude: 37.623908,
-      endLongitude: -122.401213
+  apiKey: 'xAmBxAmBxAmBkjbyKkjbyKkjbyK',
+  startLatitude: 37.623908,
+  startLongitude: -122.381592,
+  endLatitude: 37.623908,
+  endLongitude: -122.401213
+```
 

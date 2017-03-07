@@ -7,16 +7,20 @@ It is PaidUpProductConnect integration with Syncano. It allows you to connector 
 ### category-retrieve
 
 #### Parameters:
+```
 
-      baseUrl: 'http://localhost:9002',
-      token: 'secret-word'
+  baseUrl: 'http://localhost:9002',
+  token: 'secret-word'
+```
 
 
 ### product-retrieve
 
 #### Parameters:
+```
 
-      baseUrl: 'http://localhost:9002',
-      token: 'secret-word',
-      productId: '12'
+  baseUrl: 'http://localhost:9002',
+  token: 'secret-word',
+  productId: '12'
+```
 

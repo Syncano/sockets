@@ -7,23 +7,29 @@ It is MachineRegistry integration with Syncano. It allows you to node.js api wra
 ### list-machinepacks
 
 #### Parameters:
+```
 
-      registry: 'http://node-machine.org'
+  registry: 'http://node-machine.org'
+```
 
 
 ### get-machinepack-info
 
 #### Parameters:
+```
 
-      machinepack: 'machinepack-whatever',
-      registry: 'http://node-machine.org'
+  machinepack: 'machinepack-whatever',
+  registry: 'http://node-machine.org'
+```
 
 
 ### get-machine-info
 
 #### Parameters:
+```
 
-      machinepack: 'machinepack-whatever',
-      machine: 'do-stuff',
-      registry: 'http://node-machine.org'
+  machinepack: 'machinepack-whatever',
+  machine: 'do-stuff',
+  registry: 'http://node-machine.org'
+```
 

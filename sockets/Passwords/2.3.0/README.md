@@ -7,14 +7,18 @@ It is Passwords integration with Syncano. It allows you to encrypt or compare pa
 ### check-password
 
 #### Parameters:
+```
 
-      passwordAttempt: 'l0lcatzz',
-      encryptedPassword: 'as34hafsu#w34ndcarok'
+  passwordAttempt: 'l0lcatzz',
+  encryptedPassword: 'as34hafsu#w34ndcarok'
+```
 
 
 ### encrypt-password
 
 #### Parameters:
+```
 
-      password: 'l0lcatzz'
+  password: 'l0lcatzz'
+```
 

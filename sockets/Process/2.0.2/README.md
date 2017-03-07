@@ -7,35 +7,43 @@ It is Process integration with Syncano. It allows you to work with child procs a
 ### escape-cli-opt
 
 #### Parameters:
+```
 
-      value: '*'
+  value: '*'
+```
 
 
 ### kill-child-process
 
 #### Parameters:
+```
 
-      childProcess: '===',
-      forceIfNecessary: false,
-      maxMsToWait: 500
+  childProcess: '===',
+  forceIfNecessary: false,
+  maxMsToWait: 500
+```
 
 
 ### spawn-child-process
 
 #### Parameters:
+```
 
-      command: 'ls',
-      cliArgs: -la,
-      dir: '/Users/mikermcneil/foo',
-      environmentVars: [object Object]
+  command: 'ls',
+  cliArgs: -la,
+  dir: '/Users/mikermcneil/foo',
+  environmentVars: [object Object]
+```
 
 
 ### execute-command
 
 #### Parameters:
+```
 
-      command: 'ls -la',
-      dir: '/Users/mikermcneil/foo',
-      environmentVars: [object Object],
-      timeout: 60000
+  command: 'ls -la',
+  dir: '/Users/mikermcneil/foo',
+  environmentVars: [object Object],
+  timeout: 60000
+```
 

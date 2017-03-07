@@ -7,7 +7,9 @@ It is Phantomjscloud integration with Syncano. It allows you to work with the ph
 ### render-pages
 
 #### Parameters:
+```
 
-      apiKey: '138501da08e0130810f0a0b00c01331851',
-      urls: http://sailsjs.org/#/documentation/reference/sails.config/sails.config.models.html
+  apiKey: '138501da08e0130810f0a0b00c01331851',
+  urls: http://sailsjs.org/#/documentation/reference/sails.config/sails.config.models.html
+```
 

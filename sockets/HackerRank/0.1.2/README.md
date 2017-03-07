@@ -7,25 +7,29 @@ It is HackerRank integration with Syncano. It allows you to communicate with hac
 ### submit
 
 #### Parameters:
+```
 
-      apiKey: 'AAAAAAAAAAAAAA',
-      source: 'using System;class MyClass{static void Main(string[] args) {System.Console.WriteLine("Hello World!\n");}}',
-      language: 9,
-      testcases: ,
-      wait: true,
-      callbackUrl: 'http://example.com/callback',
-      format: 'json'
+  apiKey: 'AAAAAAAAAAAAAA',
+  source: 'using System;class MyClass{static void Main(string[] args) {System.Console.WriteLine("Hello World!\n");}}',
+  language: 9,
+  testcases: ,
+  wait: true,
+  callbackUrl: 'http://example.com/callback',
+  format: 'json'
+```
 
 
 ### submit-file
 
 #### Parameters:
+```
 
-      apiKey: 'AAAAAAAAAAAAAA',
-      filePath: 'E:\Source.cs',
-      language: 9,
-      testcases: ,
-      wait: true,
-      callbackUrl: 'http://example.com/callback',
-      format: 'json'
+  apiKey: 'AAAAAAAAAAAAAA',
+  filePath: 'E:\Source.cs',
+  language: 9,
+  testcases: ,
+  wait: true,
+  callbackUrl: 'http://example.com/callback',
+  format: 'json'
+```
 

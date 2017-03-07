@@ -7,112 +7,138 @@ It is Azure integration with Syncano. It allows you to work with the microsoft a
 ### list-images
 
 #### Parameters:
+```
 
-      subscriptionId: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx',
-      certificate: '-----BEGIN CERTIFICATE-----
+  subscriptionId: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx',
+  certificate: '-----BEGIN CERTIFICATE-----
 xxxxxxxxxxxx
 xxxxxxxxxxxx
 xxxxxxxxxxxx
 ........
 xxxxxxxxxxxx
 -----END CERTIFICATE-----'
+```
 
 
 ### register-azure-account
 
 #### Parameters:
-
+```
+No parameters
+```
 
 
 ### set-azure-account
 
 #### Parameters:
+```
 
-      subNameOrId: 'johndoe'
+  subNameOrId: 'johndoe'
+```
 
 
 ### check-active-subscription
 
 #### Parameters:
-
+```
+No parameters
+```
 
 
 ### create-website
 
 #### Parameters:
+```
 
-      name: 'mywebsite',
-      location: 'West US'
+  name: 'mywebsite',
+  location: 'West US'
+```
 
 
 ### exists-website
 
 #### Parameters:
+```
 
-      name: 'mywebsitename'
+  name: 'mywebsitename'
+```
 
 
 ### upload-webjob
 
 #### Parameters:
+```
 
-      deploymentUser: 'johndoe',
-      deploymentPassword: 'p@ssw0rd',
-      fileLocation: '/mypath/myscript.sh',
-      website: 'mysite'
+  deploymentUser: 'johndoe',
+  deploymentPassword: 'p@ssw0rd',
+  fileLocation: '/mypath/myscript.sh',
+  website: 'mysite'
+```
 
 
 ### trigger-webjob
 
 #### Parameters:
+```
 
-      deploymentUser: 'johndoe',
-      deploymentPassword: 'p@ssw0rd',
-      name: 'myscript.ps1',
-      website: 'mysite'
+  deploymentUser: 'johndoe',
+  deploymentPassword: 'p@ssw0rd',
+  name: 'myscript.ps1',
+  website: 'mysite'
+```
 
 
 ### info-webjob
 
 #### Parameters:
+```
 
-      deploymentUser: 'johndoe',
-      deploymentPassword: 'p@ssw0rd',
-      name: 'myscript.ps1',
-      website: 'mysite'
+  deploymentUser: 'johndoe',
+  deploymentPassword: 'p@ssw0rd',
+  name: 'myscript.ps1',
+  website: 'mysite'
+```
 
 
 ### log-webjob
 
 #### Parameters:
+```
 
-      deploymentUser: 'johndoe',
-      deploymentPassword: 'p@ssw0rd',
-      name: 'myscript.ps1',
-      website: 'mysite'
+  deploymentUser: 'johndoe',
+  deploymentPassword: 'p@ssw0rd',
+  name: 'myscript.ps1',
+  website: 'mysite'
+```
 
 
 ### upload-file
 
 #### Parameters:
+```
 
-      deploymentUser: 'johndoe',
-      deploymentPassword: 'p@ssw0rd',
-      fileLocation: '',
-      remotePath: '/site/wwwroot/myfile.zip',
-      website: 'mysite'
+  deploymentUser: 'johndoe',
+  deploymentPassword: 'p@ssw0rd',
+  fileLocation: '',
+  remotePath: '/site/wwwroot/myfile.zip',
+  website: 'mysite'
+```
 
 
 ### set-deploy-credentials
 
 #### Parameters:
+```
 
-      deploymentUser: 'johndoe',
-      deploymentPassword: 'p@ssword'
+  deploymentUser: 'johndoe',
+  deploymentPassword: 'p@ssword'
+```
 
 
 ### list-azure-accounts
 
 #### Parameters:
-
+```
+No parameters
+```
 

@@ -7,29 +7,37 @@ It is Youtube integration with Syncano. It allows you to communicate with the yo
 ### get-play-count
 
 #### Parameters:
+```
 
-      url: 'https://www.youtube.com/watch?v=TruIq5IxuiU',
-      apiKey: 'xAmBxAmBxAmBkjbyKkjbyKkjbyK'
+  url: 'https://www.youtube.com/watch?v=TruIq5IxuiU',
+  apiKey: 'xAmBxAmBxAmBkjbyKkjbyKkjbyK'
+```
 
 
 ### parse-video-id
 
 #### Parameters:
+```
 
-      url: 'https://www.youtube.com/watch?v=TruIq5IxuiU'
+  url: 'https://www.youtube.com/watch?v=TruIq5IxuiU'
+```
 
 
 ### get-base-url
 
 #### Parameters:
-
+```
+No parameters
+```
 
 
 ### search-videos
 
 #### Parameters:
+```
 
-      query: 'grumpy cat',
-      limit: 15,
-      apiKey: 'xAmBxAmBxAmBkjbyKkjbyKkjbyK'
+  query: 'grumpy cat',
+  limit: 15,
+  apiKey: 'xAmBxAmBxAmBkjbyKkjbyKkjbyK'
+```
 

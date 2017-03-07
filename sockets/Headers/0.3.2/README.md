@@ -7,14 +7,18 @@ It is Headers integration with Syncano. It allows you to work with http /vhttp r
 ### get-request-header
 
 #### Parameters:
+```
 
-      header: 'accept'
+  header: 'accept'
+```
 
 
 ### set-response-header
 
 #### Parameters:
+```
 
-      header: 'content-type',
-      value: 'application/json'
+  header: 'content-type',
+  value: 'application/json'
+```
 

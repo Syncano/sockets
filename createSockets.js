@@ -78,13 +78,15 @@ function createReadmeInput(rootDir, machine) {
   }
 
   const parameters = (parameters) => _.map(parameters, (parameter, key) => `
-      ${key}: ${parameter.type === 'string' ? `'${parameter.example}'` : parameter.example}`);
+  ${key}: ${parameter.type === 'string' ? `'${parameter.example}'` : parameter.example}`);
 
   const endpoints = machine.machines.map((endpoint) => `
 ### ${endpoint.identity}
 
 #### Parameters:
-${parameters(endpoint.inputs)}
+\`\`\`
+${Object.keys(endpoint.inputs).length ? parameters(endpoint.inputs) : 'No parameters'}
+\`\`\`
 
 `);
 
