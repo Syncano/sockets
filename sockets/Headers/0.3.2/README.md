@@ -10,7 +10,7 @@ It is Headers integration with Syncano. It allows you to work with http /vhttp r
 
       header: 'accept'
 
-,
+
 ### set-response-header
 
 #### Parameters:

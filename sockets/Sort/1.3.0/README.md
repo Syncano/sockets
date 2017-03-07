@@ -10,21 +10,21 @@ It is Sort integration with Syncano. It allows you to implementation of sorting 
 
       array: 5,3,1,4,2
 
-,
+
 ### selection-sort
 
 #### Parameters:
 
       array: 5,3,1,4,2
 
-,
+
 ### bubble-sort
 
 #### Parameters:
 
       array: 5,3,1,4,2
 
-,
+
 ### merge-sort
 
 #### Parameters:

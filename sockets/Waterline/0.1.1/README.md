@@ -11,7 +11,7 @@ It is Waterline integration with Syncano. It allows you to a database-agnostic c
       datastore: 'larrysMySQLCluster',
       during: '->'
 
-,
+
 ### query
 
 #### Parameters:
@@ -19,7 +19,7 @@ It is Waterline integration with Syncano. It allows you to a database-agnostic c
       datastore: 'larrysMySQLCluster',
       statement: [object Object]
 
-,
+
 ### transaction
 
 #### Parameters:

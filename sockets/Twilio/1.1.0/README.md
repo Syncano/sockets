@@ -15,7 +15,7 @@ It is Twilio integration with Syncano. It allows you to interact with the twilio
       from: '+16155551234',
       to: '+16155556789'
 
-,
+
 ### list-phone-numbers
 
 #### Parameters:
@@ -23,7 +23,7 @@ It is Twilio integration with Syncano. It allows you to interact with the twilio
       accountSid: 'DZe5eafd3c69b1e74example5852c04a9102',
       authToken: 'Dafd4example5852c3c69bZe5e1e704a9102'
 
-,
+
 ### list-potential-numbers
 
 #### Parameters:

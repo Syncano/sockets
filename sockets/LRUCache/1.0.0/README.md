@@ -11,20 +11,20 @@ It is LRUCache integration with Syncano. It allows you to work with lrucache.
       key: 'id',
       value: 'some object'
 
-,
+
 ### get
 
 #### Parameters:
 
       key: 'id'
 
-,
+
 ### clear
 
 #### Parameters:
 
 
-,
+
 ### remove
 
 #### Parameters:

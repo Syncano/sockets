@@ -14,7 +14,7 @@ It is SSH integration with Syncano. It allows you to use ssh to send any command
       password: '',
       command: 'mkdir testfolder'
 
-,
+
 ### run-ssh-command-keys
 
 #### Parameters:

@@ -26,7 +26,7 @@ The Management',
       fromName: 'Harold Greaseworthy',
       options: 'OpenTrack=True,ClickTrack=True,ReplyTo=john@hotmail.com'
 
-,
+
 ### send-plaintext-email
 
 #### Parameters:

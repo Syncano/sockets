@@ -11,7 +11,7 @@ It is Jxm integration with Syncano. It allows you to work with jxm
       serviceName: 'Hello World',
       baseUrlPath: '/helloworld'
 
-,
+
 ### start-client
 
 #### Parameters:

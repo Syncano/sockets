@@ -10,7 +10,7 @@ It is Arrays integration with Syncano. It allows you to work with arrays.
 
       array: *
 
-,
+
 ### index-of
 
 #### Parameters:
@@ -18,7 +18,7 @@ It is Arrays integration with Syncano. It allows you to work with arrays.
       array: *,
       item: '*'
 
-,
+
 ### slice
 
 #### Parameters:
@@ -27,14 +27,14 @@ It is Arrays integration with Syncano. It allows you to work with arrays.
       start: 2,
       end: 5
 
-,
+
 ### length
 
 #### Parameters:
 
       array: *
 
-,
+
 ### concat
 
 #### Parameters:
@@ -42,14 +42,14 @@ It is Arrays integration with Syncano. It allows you to work with arrays.
       firstArray: *,
       secondArray: *
 
-,
+
 ### last
 
 #### Parameters:
 
       array: *
 
-,
+
 ### nth
 
 #### Parameters:
@@ -57,14 +57,14 @@ It is Arrays integration with Syncano. It allows you to work with arrays.
       array: *,
       index: 2
 
-,
+
 ### construct
 
 #### Parameters:
 
       array: *
 
-,
+
 ### pluck
 
 #### Parameters:
@@ -72,21 +72,21 @@ It is Arrays integration with Syncano. It allows you to work with arrays.
       array: [object Object],
       key: 'id'
 
-,
+
 ### sort-strings
 
 #### Parameters:
 
       array: Roger Wilco
 
-,
+
 ### sort-numbers
 
 #### Parameters:
 
       array: 2
 
-,
+
 ### each
 
 #### Parameters:
@@ -95,7 +95,7 @@ It is Arrays integration with Syncano. It allows you to work with arrays.
       iteratee: '->',
       series: false
 
-,
+
 ### map
 
 #### Parameters:
@@ -105,7 +105,7 @@ It is Arrays integration with Syncano. It allows you to work with arrays.
       iteratee: '->',
       series: false
 
-,
+
 ### reduce
 
 #### Parameters:
@@ -116,7 +116,7 @@ It is Arrays integration with Syncano. It allows you to work with arrays.
       initialValue: '*',
       series: true
 
-,
+
 ### find-one
 
 #### Parameters:
@@ -124,7 +124,7 @@ It is Arrays integration with Syncano. It allows you to work with arrays.
       array: [object Object],
       criteria: [object Object]
 
-,
+
 ### find-where
 
 #### Parameters:
@@ -132,7 +132,7 @@ It is Arrays integration with Syncano. It allows you to work with arrays.
       array: [object Object],
       criteria: [object Object]
 
-,
+
 ### insert
 
 #### Parameters:
@@ -141,14 +141,14 @@ It is Arrays integration with Syncano. It allows you to work with arrays.
       index: 1,
       value: '*'
 
-,
+
 ### sample
 
 #### Parameters:
 
       array: *
 
-,
+
 ### sort-by
 
 #### Parameters:
@@ -156,7 +156,7 @@ It is Arrays integration with Syncano. It allows you to work with arrays.
       array: [object Object],
       key: 'createdAt'
 
-,
+
 ### uniq-by
 
 #### Parameters:
@@ -164,14 +164,14 @@ It is Arrays integration with Syncano. It allows you to work with arrays.
       array: [object Object],
       key: 'id'
 
-,
+
 ### uniq
 
 #### Parameters:
 
       array: *
 
-,
+
 ### find-index-of
 
 #### Parameters:
@@ -179,7 +179,7 @@ It is Arrays integration with Syncano. It allows you to work with arrays.
       array: *,
       criteria: [object Object]
 
-,
+
 ### replace
 
 #### Parameters:
@@ -188,7 +188,7 @@ It is Arrays integration with Syncano. It allows you to work with arrays.
       index: 1,
       value: '*'
 
-,
+
 ### sample-subset
 
 #### Parameters:

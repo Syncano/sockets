@@ -12,7 +12,7 @@ It is Linkedin integration with Syncano. It allows you to machinepack that commu
       redirecturl: 'https://localhost/url',
       scope: 'r_fullprofile%20r_emailaddress%20w_share'
 
-,
+
 ### get-authentication-token
 
 #### Parameters:
@@ -22,7 +22,7 @@ It is Linkedin integration with Syncano. It allows you to machinepack that commu
       client_id: '12345678',
       client_secret: '234643dadfe'
 
-,
+
 ### get-profile
 
 #### Parameters:

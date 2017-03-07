@@ -16,7 +16,7 @@ It is HackerRank integration with Syncano. It allows you to communicate with hac
       callbackUrl: 'http://example.com/callback',
       format: 'json'
 
-,
+
 ### submit-file
 
 #### Parameters:

@@ -9,21 +9,21 @@ It is LocalMachinepacks integration with Syncano. It allows you to work with loc
 #### Parameters:
 
 
-,
+
 ### prompt-about-new-machine
 
 #### Parameters:
 
       identity: 'do-something'
 
-,
+
 ### get-machines-dir
 
 #### Parameters:
 
       dir: '/Users/mikermcneil/machinepack-foobar'
 
-,
+
 ### remove-machine
 
 #### Parameters:
@@ -31,7 +31,7 @@ It is LocalMachinepacks integration with Syncano. It allows you to work with loc
       dir: '/Users/mikermcneil/machinepack-foo/',
       identity: 'some-machine'
 
-,
+
 ### rename-machine
 
 #### Parameters:
@@ -40,7 +40,7 @@ It is LocalMachinepacks integration with Syncano. It allows you to work with loc
       originalIdentity: 'do-stuff',
       newIdentity: 'do-stuff-with-a-better-name'
 
-,
+
 ### copy-machine
 
 #### Parameters:
@@ -49,14 +49,14 @@ It is LocalMachinepacks integration with Syncano. It allows you to work with loc
       originalIdentity: 'do-stuff',
       newIdentity: 'copy-of-do-stuff'
 
-,
+
 ### list-machines
 
 #### Parameters:
 
       dir: '/Users/mikermcneil/machinepack-foo/'
 
-,
+
 ### run-machine
 
 #### Parameters:
@@ -65,14 +65,14 @@ It is LocalMachinepacks integration with Syncano. It allows you to work with loc
       identity: 'foo-bar',
       inputValues: [object Object]
 
-,
+
 ### read-machine-file
 
 #### Parameters:
 
       source: '/Users/mikermcneil/machinepack-foo/machines/bar.js'
 
-,
+
 ### write-machine-file
 
 #### Parameters:
@@ -88,7 +88,7 @@ It is LocalMachinepacks integration with Syncano. It allows you to work with loc
       inputs: [object Object],
       exits: [object Object]
 
-,
+
 ### build-machine-code
 
 #### Parameters:
@@ -105,14 +105,14 @@ It is LocalMachinepacks integration with Syncano. It allows you to work with loc
       inputs: [object Object],
       exits: [object Object]
 
-,
+
 ### prompt-for-input-vals
 
 #### Parameters:
 
       prompts: [object Object]
 
-,
+
 ### add-machine
 
 #### Parameters:
@@ -129,7 +129,7 @@ It is LocalMachinepacks integration with Syncano. It allows you to work with loc
       inputs: [object Object],
       exits: [object Object]
 
-,
+
 ### run-machine-interactive
 
 #### Parameters:
@@ -138,42 +138,42 @@ It is LocalMachinepacks integration with Syncano. It allows you to work with loc
       identity: 'foo-bar',
       inputValues: [object Object]
 
-,
+
 ### parse-machinepack-metadata
 
 #### Parameters:
 
       json: '{...package.json string...}'
 
-,
+
 ### initialize-machinepack
 
 #### Parameters:
 
       dir: '/Users/mikermcneil/machinepack-foo/'
 
-,
+
 ### read-package-json
 
 #### Parameters:
 
       dir: '/Users/mikermcneil/machinepack-foo/'
 
-,
+
 ### interpret-machine-module
 
 #### Parameters:
 
       module: 'module.exports = {inputs: {atest: {example: "whatever"    }  },  exits: {    error: {}, success: {example: {stuff: [{andMore: "stuff"        }]      }    }  },  fn: function(inputs, exits) {    return exits.success();  }};'
 
-,
+
 ### scaffold-tests
 
 #### Parameters:
 
       dir: '/Users/mikermcneil/machinepack-foo/'
 
-,
+
 ### add-test
 
 #### Parameters:
@@ -190,7 +190,7 @@ It is LocalMachinepacks integration with Syncano. It allows you to work with loc
  done(); 
 }'
 
-,
+
 ### browse-to-pack-url
 
 #### Parameters:
@@ -198,14 +198,14 @@ It is LocalMachinepacks integration with Syncano. It allows you to work with loc
       dir: '/Users/mikermcneil/machinepack-foo/',
       toWhat: 'npm'
 
-,
+
 ### get-signature
 
 #### Parameters:
 
       dir: '/Users/mikermcneil/machinepack-foo/'
 
-,
+
 ### write-pack
 
 #### Parameters:

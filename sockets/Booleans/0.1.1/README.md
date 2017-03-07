@@ -10,7 +10,7 @@ It is Booleans integration with Syncano. It allows you to work with true/false v
 
       string: 'foo'
 
-,
+
 ### is-between
 
 #### Parameters:
@@ -19,21 +19,21 @@ It is Booleans integration with Syncano. It allows you to work with true/false v
       min: 1,
       max: 4
 
-,
+
 ### is-defined
 
 #### Parameters:
 
       value: '==='
 
-,
+
 ### is-undefined
 
 #### Parameters:
 
       value: '==='
 
-,
+
 ### is-equal
 
 #### Parameters:
@@ -41,7 +41,7 @@ It is Booleans integration with Syncano. It allows you to work with true/false v
       a: '===',
       b: '==='
 
-,
+
 ### is-not-equal
 
 #### Parameters:
@@ -49,7 +49,7 @@ It is Booleans integration with Syncano. It allows you to work with true/false v
       a: '===',
       b: '==='
 
-,
+
 ### is-greater-than
 
 #### Parameters:
@@ -58,7 +58,7 @@ It is Booleans integration with Syncano. It allows you to work with true/false v
       b: '===',
       isInclusive: true
 
-,
+
 ### is-less-than
 
 #### Parameters:
@@ -67,21 +67,21 @@ It is Booleans integration with Syncano. It allows you to work with true/false v
       b: '===',
       isInclusive: true
 
-,
+
 ### is-truthy
 
 #### Parameters:
 
       value: '==='
 
-,
+
 ### is-falsy
 
 #### Parameters:
 
       value: '==='
 
-,
+
 ### and
 
 #### Parameters:
@@ -89,7 +89,7 @@ It is Booleans integration with Syncano. It allows you to work with true/false v
       a: '===',
       b: '==='
 
-,
+
 ### or
 
 #### Parameters:
@@ -97,7 +97,7 @@ It is Booleans integration with Syncano. It allows you to work with true/false v
       a: '===',
       b: '==='
 
-,
+
 ### not
 
 #### Parameters:

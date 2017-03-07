@@ -10,7 +10,7 @@ It is MachineRegistry integration with Syncano. It allows you to node.js api wra
 
       registry: 'http://node-machine.org'
 
-,
+
 ### get-machinepack-info
 
 #### Parameters:
@@ -18,7 +18,7 @@ It is MachineRegistry integration with Syncano. It allows you to node.js api wra
       machinepack: 'machinepack-whatever',
       registry: 'http://node-machine.org'
 
-,
+
 ### get-machine-info
 
 #### Parameters:

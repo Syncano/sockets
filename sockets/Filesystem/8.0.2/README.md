@@ -11,7 +11,7 @@ It is Filesystem integration with Syncano. It allows you to work with the local 
       source: '/Users/mikermcneil/.tmp/foo',
       destination: '/Users/mikermcneil/.tmp/bar'
 
-,
+
 ### ls
 
 #### Parameters:
@@ -23,14 +23,14 @@ It is Filesystem integration with Syncano. It allows you to work with the local 
       includeSymlinks: true,
       includeHidden: false
 
-,
+
 ### rmrf
 
 #### Parameters:
 
       path: '/Users/mikermcneil/.tmp/foo'
 
-,
+
 ### write
 
 #### Parameters:
@@ -39,7 +39,7 @@ It is Filesystem integration with Syncano. It allows you to work with the local 
       destination: '/Users/mikermcneil/.tmp/bar',
       force: false
 
-,
+
 ### read-json
 
 #### Parameters:
@@ -47,7 +47,7 @@ It is Filesystem integration with Syncano. It allows you to work with the local 
       source: '/Users/mikermcneil/.tmp/foo.json',
       schema: '*'
 
-,
+
 ### template
 
 #### Parameters:
@@ -57,14 +57,14 @@ It is Filesystem integration with Syncano. It allows you to work with the local 
       data: '===',
       force: false
 
-,
+
 ### read
 
 #### Parameters:
 
       source: '/Users/mikermcneil/.tmp/foo'
 
-,
+
 ### write-json
 
 #### Parameters:
@@ -73,7 +73,7 @@ It is Filesystem integration with Syncano. It allows you to work with the local 
       destination: '/Users/mikermcneil/.tmp/bar.json',
       force: false
 
-,
+
 ### mv
 
 #### Parameters:
@@ -81,14 +81,14 @@ It is Filesystem integration with Syncano. It allows you to work with the local 
       source: '/Users/mikermcneil/.tmp/foo',
       destination: '/Users/mikermcneil/.tmp/bar'
 
-,
+
 ### exists
 
 #### Parameters:
 
       path: '/Users/mikermcneil/.tmp/foo'
 
-,
+
 ### mkdir
 
 #### Parameters:
@@ -96,14 +96,14 @@ It is Filesystem integration with Syncano. It allows you to work with the local 
       destination: '/Users/mikermcneil/.tmp/bar',
       force: false
 
-,
+
 ### ensure-dir
 
 #### Parameters:
 
       path: '/foo/bar/baz'
 
-,
+
 ### ensure-json
 
 #### Parameters:
@@ -111,7 +111,7 @@ It is Filesystem integration with Syncano. It allows you to work with the local 
       path: '/Users/mikermcneil/.tmp/foo.json',
       schema: '*'
 
-,
+
 ### write-sync
 
 #### Parameters:
@@ -120,21 +120,21 @@ It is Filesystem integration with Syncano. It allows you to work with the local 
       destination: '/Users/mikermcneil/.tmp/bar',
       force: false
 
-,
+
 ### read-sync
 
 #### Parameters:
 
       source: '/Users/mikermcneil/.tmp/foo'
 
-,
+
 ### read-stream
 
 #### Parameters:
 
       source: '/Users/mikermcneil/.tmp/foo'
 
-,
+
 ### write-stream
 
 #### Parameters:

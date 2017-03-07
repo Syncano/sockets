@@ -11,20 +11,20 @@ It is Youtube integration with Syncano. It allows you to communicate with the yo
       url: 'https://www.youtube.com/watch?v=TruIq5IxuiU',
       apiKey: 'xAmBxAmBxAmBkjbyKkjbyKkjbyK'
 
-,
+
 ### parse-video-id
 
 #### Parameters:
 
       url: 'https://www.youtube.com/watch?v=TruIq5IxuiU'
 
-,
+
 ### get-base-url
 
 #### Parameters:
 
 
-,
+
 ### search-videos
 
 #### Parameters:

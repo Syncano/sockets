@@ -11,7 +11,7 @@ It is PaidUpProductConnect integration with Syncano. It allows you to connector 
       baseUrl: 'http://localhost:9002',
       token: 'secret-word'
 
-,
+
 ### product-retrieve
 
 #### Parameters:
@@ -20,7 +20,7 @@ It is PaidUpProductConnect integration with Syncano. It allows you to connector 
       token: 'secret-word',
       productId: '12'
 
-,
+
 ### organization-request
 
 #### Parameters:
@@ -30,7 +30,7 @@ It is PaidUpProductConnect integration with Syncano. It allows you to connector 
       organizationInfo: [object Object],
       userId: 'userId'
 
-,
+
 ### organization-response
 
 #### Parameters:
@@ -39,7 +39,7 @@ It is PaidUpProductConnect integration with Syncano. It allows you to connector 
       token: 'secret-word',
       organizationId: 'xxxyyyxxxx'
 
-,
+
 ### organization-response-update
 
 #### Parameters:
@@ -49,7 +49,7 @@ It is PaidUpProductConnect integration with Syncano. It allows you to connector 
       organizationId: 'xxxyyyxxxx',
       paymentId: 'xxxyyyxxxx'
 
-,
+
 ### organization-get
 
 #### Parameters:

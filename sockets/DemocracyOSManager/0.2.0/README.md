@@ -15,7 +15,7 @@ It is DemocracyOSManager integration with Syncano. It allows you to communicate 
       owner: '54eb6ab10eabd7d1254b1d88',
       summary: 'Mars Democracy'
 
-,
+
 ### delete-deployment
 
 #### Parameters:

@@ -11,7 +11,7 @@ It is SailsGulpify integration with Syncano. It allows you to add toggle ability
       gulpFileSrcPath: '../templates/gulpfile.js',
       outputDir: '../../../gulpfile.js'
 
-,
+
 ### create-gulp-tasks
 
 #### Parameters:
@@ -19,13 +19,13 @@ It is SailsGulpify integration with Syncano. It allows you to add toggle ability
       gulpFolderSrcPath: './templates/gulpfile.js',
       outputFolderDir: './foo'
 
-,
+
 ### sails-gulpify
 
 #### Parameters:
 
 
-,
+
 ### toggle-sailsrc
 
 #### Parameters:
@@ -33,7 +33,7 @@ It is SailsGulpify integration with Syncano. It allows you to add toggle ability
       sailsrcSrc: '../templates/gulpfile.js',
       outputDir: '../../../gulpfile.js'
 
-,
+
 ### copy-files
 
 #### Parameters:
@@ -41,13 +41,13 @@ It is SailsGulpify integration with Syncano. It allows you to add toggle ability
       gulpFileSrcPath: '../templates/gulpfile.js',
       outputDir: '../../../gulpfile.js'
 
-,
+
 ### install-gulp-dependencies
 
 #### Parameters:
 
 
-,
+
 ### install-package-npm
 
 #### Parameters:
@@ -60,7 +60,7 @@ It is SailsGulpify integration with Syncano. It allows you to add toggle ability
       prefix: './path-to-project',
       loglevel: 'warn'
 
-,
+
 ### create-gulp-engine
 
 #### Parameters:

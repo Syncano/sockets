@@ -13,7 +13,7 @@ It is Loops integration with Syncano. It allows you to machines that allow the u
       data: '*',
       series: false
 
-,
+
 ### each
 
 #### Parameters:

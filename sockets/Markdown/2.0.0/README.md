@@ -13,7 +13,7 @@ It is Markdown integration with Syncano. It allows you to work with markdown-for
       escapeHtml: false,
       compileCodeBlock: '->'
 
-,
+
 ### parse-docmeta-tags
 
 #### Parameters:
@@ -24,7 +24,7 @@ It is Markdown integration with Syncano. It allows you to work with markdown-for
 
 '
 
-,
+
 ### compile-to-html
 
 #### Parameters:

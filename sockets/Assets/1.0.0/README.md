@@ -10,7 +10,7 @@ It is Assets integration with Syncano. It allows you to experimental utilities f
 
       dir: './my-stuff/my-proj/js'
 
-,
+
 ### copy-fonts
 
 #### Parameters:
@@ -18,7 +18,7 @@ It is Assets integration with Syncano. It allows you to experimental utilities f
       fontsSrcPath: './foo/fonts',
       outputDir: './foo/.tmp/processing'
 
-,
+
 ### copy-images
 
 #### Parameters:
@@ -26,7 +26,7 @@ It is Assets integration with Syncano. It allows you to experimental utilities f
       imgSrcPath: './foo/images',
       outputDir: './my-projects/some-assets/.tmp/processing'
 
-,
+
 ### productionify
 
 #### Parameters:
@@ -34,7 +34,7 @@ It is Assets integration with Syncano. It allows you to experimental utilities f
       srcDir: '/code/treeline-assets',
       prodPkgName: '@treelinehq/whatever'
 
-,
+
 ### write-readme-and-package-json
 
 #### Parameters:
@@ -49,7 +49,7 @@ It is Assets integration with Syncano. It allows you to experimental utilities f
       license: 'MIT',
       homepageUrl: 'http://socket.io'
 
-,
+
 ### write-minified-javascript
 
 #### Parameters:
@@ -57,7 +57,7 @@ It is Assets integration with Syncano. It allows you to experimental utilities f
       outputDir: './my-projects/some-assets/.tmp/processing',
       jsSrcDir: './my-projects/some-assets/js'
 
-,
+
 ### write-compiled-stylesheet-if-relevant
 
 #### Parameters:
@@ -65,7 +65,7 @@ It is Assets integration with Syncano. It allows you to experimental utilities f
       outputDir: './my-projects/some-assets/.tmp/processing',
       lessSrcDir: './foo/styles/'
 
-,
+
 ### compile-less-stylesheets
 
 #### Parameters:

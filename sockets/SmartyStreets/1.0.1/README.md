@@ -22,7 +22,7 @@ It is SmartyStreets integration with Syncano. It allows you to interact with the
       urbanization: 'San Juan',
       candidates: '1, 5, or 10 (max value)'
 
-,
+
 ### verify-city-state-zip
 
 #### Parameters:

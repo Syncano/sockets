@@ -10,14 +10,14 @@ It is JavaScript integration with Syncano. It allows you to machines for working
 
       string: 'foo$barz'
 
-,
+
 ### minify
 
 #### Parameters:
 
       javascript: 'var z = 123;\nfunction abcz(a, b, c){\nalert(a, b, c, z);}\n'
 
-,
+
 ### coerce-varname
 
 #### Parameters:
@@ -25,7 +25,7 @@ It is JavaScript integration with Syncano. It allows you to machines for working
       string: 'foo-bar-baz',
       force: false
 
-,
+
 ### beautify
 
 #### Parameters:

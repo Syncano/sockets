@@ -14,7 +14,7 @@ It is SoundCloud integration with Syncano. It allows you to communicate with sou
       code: '51edf90c46322a805ada32a33f1cc30f',
       callbackUrl: 'http://localhost:1337/auth/soundcloud/callback'
 
-,
+
 ### get-login-url
 
 #### Parameters:
@@ -25,7 +25,7 @@ It is SoundCloud integration with Syncano. It allows you to communicate with sou
       scope: 'non-expiring',
       display: 'popup'
 
-,
+
 ### get-current-user
 
 #### Parameters:

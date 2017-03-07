@@ -9,7 +9,7 @@ It is Pokemon integration with Syncano. It allows you to fetch data about pokém
 #### Parameters:
 
 
-,
+
 ### get-pokemon
 
 #### Parameters:

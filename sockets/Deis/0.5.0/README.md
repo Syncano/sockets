@@ -11,7 +11,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
       token: '',
       controller: 'http://deis.mydeisapp.com'
 
-,
+
 ### login
 
 #### Parameters:
@@ -21,7 +21,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
       password: 'deisrocks',
       sslVerify: true
 
-,
+
 ### create-app
 
 #### Parameters:
@@ -30,7 +30,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
       controller: 'http://deis.mydeisapp.com',
       id: 'myawesomeapp'
 
-,
+
 ### destroy-app
 
 #### Parameters:
@@ -39,7 +39,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
       controller: 'http://deis.mydeisapp.com',
       app: 'myawesomeapp'
 
-,
+
 ### set-config
 
 #### Parameters:
@@ -49,7 +49,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
       app: 'myawesomeapp',
       values: [object Object]
 
-,
+
 ### unset-config
 
 #### Parameters:
@@ -59,7 +59,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
       app: 'myawesomeapp',
       key: 'DATABASE_URL'
 
-,
+
 ### create-build
 
 #### Parameters:
@@ -69,7 +69,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
       app: 'myawesomeapp',
       image: 'deis/example-go'
 
-,
+
 ### list-processes
 
 #### Parameters:
@@ -78,7 +78,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
       controller: 'http://deis.mydeisapp.com',
       app: 'myawesomeapp'
 
-,
+
 ### scale-process
 
 #### Parameters:
@@ -89,7 +89,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
       process: 'web',
       number: 1
 
-,
+
 ### set-limit
 
 #### Parameters:
@@ -100,7 +100,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
       limit: 'memory',
       value: '512M'
 
-,
+
 ### unset-limit
 
 #### Parameters:
@@ -110,7 +110,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
       app: 'myawesomeapp',
       limit: 'memory'
 
-,
+
 ### list-limits
 
 #### Parameters:
@@ -119,7 +119,7 @@ It is Deis integration with Syncano. It allows you to sdk for working with a dei
       controller: 'http://deis.mydeisapp.com',
       app: 'myawesomeapp'
 
-,
+
 ### list-config
 
 #### Parameters:

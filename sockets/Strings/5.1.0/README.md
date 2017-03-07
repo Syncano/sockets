@@ -12,14 +12,14 @@ It is Strings integration with Syncano. It allows you to work with strings.
       regexp: 'world',
       caseInsensitive: true
 
-,
+
 ### construct
 
 #### Parameters:
 
       value: '==='
 
-,
+
 ### capitalize
 
 #### Parameters:
@@ -27,14 +27,14 @@ It is Strings integration with Syncano. It allows you to work with strings.
       string: 'villeriño',
       at: 0
 
-,
+
 ### length
 
 #### Parameters:
 
       string: 'guido villeriño'
 
-,
+
 ### trunc
 
 #### Parameters:
@@ -44,14 +44,14 @@ It is Strings integration with Syncano. It allows you to work with strings.
       omission: '...',
       pretty: true
 
-,
+
 ### trim
 
 #### Parameters:
 
       string: '   I went to the store to get some more milk.     '
 
-,
+
 ### replace
 
 #### Parameters:
@@ -63,7 +63,7 @@ It is Strings integration with Syncano. It allows you to work with strings.
       global: true,
       multiline: true
 
-,
+
 ### split
 
 #### Parameters:
@@ -72,14 +72,14 @@ It is Strings integration with Syncano. It allows you to work with strings.
       regexp: '\s',
       caseInsensitive: true
 
-,
+
 ### deburr
 
 #### Parameters:
 
       string: 'déjà vu, Günther. Just more of your saß.'
 
-,
+
 ### slice
 
 #### Parameters:
@@ -88,7 +88,7 @@ It is Strings integration with Syncano. It allows you to work with strings.
       start: 2,
       end: 5
 
-,
+
 ### at
 
 #### Parameters:
@@ -96,7 +96,7 @@ It is Strings integration with Syncano. It allows you to work with strings.
       string: 'villeriño',
       at: 7
 
-,
+
 ### join
 
 #### Parameters:
@@ -104,7 +104,7 @@ It is Strings integration with Syncano. It allows you to work with strings.
       strings: foo,
       separator: ','
 
-,
+
 ### template
 
 #### Parameters:
@@ -112,7 +112,7 @@ It is Strings integration with Syncano. It allows you to work with strings.
       templateStr: 'Hi there, Miss <%= me.lastName %>!',
       data: [object Object]
 
-,
+
 ### ensure-uniq
 
 #### Parameters:
@@ -121,41 +121,41 @@ It is Strings integration with Syncano. It allows you to work with strings.
       existingStrings: Siri,
       caseSensitive: false
 
-,
+
 ### to-stream
 
 #### Parameters:
 
       string: 'foo bar baz'
 
-,
+
 ### random
 
 #### Parameters:
 
 
-,
+
 ### to-lower-case
 
 #### Parameters:
 
       string: 'Some stuff and THINGS 235823523'
 
-,
+
 ### to-upper-case
 
 #### Parameters:
 
       string: 'Some stuff and THINGS 235823523'
 
-,
+
 ### to-kebab-case
 
 #### Parameters:
 
       string: 'fooBar_baz bong___'
 
-,
+
 ### to-camel-case
 
 #### Parameters:

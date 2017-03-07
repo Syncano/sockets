@@ -15,7 +15,7 @@ It is Prismicio integration with Syncano. It allows you to work with prismicio.
       ref: 'VUYf7y0AAJkBHcVj',
       html: true
 
-,
+
 ### get-document-by-slug
 
 #### Parameters:
@@ -26,7 +26,7 @@ It is Prismicio integration with Syncano. It allows you to work with prismicio.
       ref: 'VUYf7y0AAJkBHcVj',
       html: true
 
-,
+
 ### get-many-documents
 
 #### Parameters:
@@ -36,7 +36,7 @@ It is Prismicio integration with Syncano. It allows you to work with prismicio.
       ids: 123,456,
       ref: 'VUYf7y0AAJkBHcVj'
 
-,
+
 ### get-bookmark
 
 #### Parameters:

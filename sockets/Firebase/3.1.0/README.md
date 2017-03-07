@@ -12,7 +12,7 @@ It is Firebase integration with Syncano. It allows you to this machinepack lets 
       child: 'users',
       write: undefined
 
-,
+
 ### push-data
 
 #### Parameters:
@@ -21,7 +21,7 @@ It is Firebase integration with Syncano. It allows you to this machinepack lets 
       child: 'users',
       write: undefined
 
-,
+
 ### update-data
 
 #### Parameters:
@@ -30,28 +30,28 @@ It is Firebase integration with Syncano. It allows you to this machinepack lets 
       child: 'users',
       write: undefined
 
-,
+
 ### read-value
 
 #### Parameters:
 
       firebaseURL: 'your-firebase-database.firebaseio.com/users/'
 
-,
+
 ### json-to-string
 
 #### Parameters:
 
       object: '{ "User 1": {"email": "user@gmail.com", "password": "password123"}}'
 
-,
+
 ### string-to-json
 
 #### Parameters:
 
       string: '{ "User 1": {"email": "user@gmail.com", "password": "password123"}}'
 
-,
+
 ### remove-value
 
 #### Parameters:

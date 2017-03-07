@@ -12,14 +12,14 @@ It is Steam integration with Syncano. It allows you to communicate with steam we
       count: 3,
       maxlength: 300
 
-,
+
 ### get-global-achievement-percentage-for-app
 
 #### Parameters:
 
       gameid: 400
 
-,
+
 ### get-global-stats-for-game
 
 #### Parameters:
@@ -27,7 +27,7 @@ It is Steam integration with Syncano. It allows you to communicate with steam we
       appid: 400,
       name: global.map.emp_isle
 
-,
+
 ### get-player-summaries
 
 #### Parameters:
@@ -35,7 +35,7 @@ It is Steam integration with Syncano. It allows you to communicate with steam we
       steamids: 76561197960435530,
       key: 'XXXXXXXXXXXXXXXXXXXXXXX'
 
-,
+
 ### get-friend-list
 
 #### Parameters:
@@ -44,7 +44,7 @@ It is Steam integration with Syncano. It allows you to communicate with steam we
       key: 'XXXXXXXXXXXXXXXXXXXXXXX',
       relationship: 'friend'
 
-,
+
 ### get-player-achievements
 
 #### Parameters:
@@ -54,7 +54,7 @@ It is Steam integration with Syncano. It allows you to communicate with steam we
       appid: 400,
       l: 'en_US'
 
-,
+
 ### get-owned-games
 
 #### Parameters:
@@ -65,7 +65,7 @@ It is Steam integration with Syncano. It allows you to communicate with steam we
       include_played_free_games: 1,
       appids_filter: 440,500,550
 
-,
+
 ### get-recently-played-games
 
 #### Parameters:
@@ -74,7 +74,7 @@ It is Steam integration with Syncano. It allows you to communicate with steam we
       key: 'XXXXXXXXXXXXXXXXXXXXXXX',
       count: 2
 
-,
+
 ### is-playing-shared-game
 
 #### Parameters:
@@ -83,7 +83,7 @@ It is Steam integration with Syncano. It allows you to communicate with steam we
       key: 'XXXXXXXXXXXXXXXXXXXXXXX',
       appid_playing: '240'
 
-,
+
 ### get-schema-for-game
 
 #### Parameters:
@@ -91,7 +91,7 @@ It is Steam integration with Syncano. It allows you to communicate with steam we
       appid: '620',
       key: 'XXXXXXXXXXXXXXXXXXXXXXX'
 
-,
+
 ### get-player-bans
 
 #### Parameters:

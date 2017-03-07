@@ -14,7 +14,7 @@ It is Cloudinary integration with Syncano. It allows you to sdk for working with
       fieldName: '/users/app/.upload/image.png',
       imageOptions: [object Object]
 
-,
+
 ### get-image-urls
 
 #### Parameters:
@@ -25,7 +25,7 @@ It is Cloudinary integration with Syncano. It allows you to sdk for working with
       imageId: 'abc',
       options: [object Object]
 
-,
+
 ### delete-image
 
 #### Parameters:

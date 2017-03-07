@@ -15,7 +15,7 @@ It is FullContact integration with Syncano. It allows you to interact with the f
       webhookId: 'myId',
       webhookBody: 'json'
 
-,
+
 ### get-person-from-twitter
 
 #### Parameters:
@@ -26,7 +26,7 @@ It is FullContact integration with Syncano. It allows you to interact with the f
       webhookUrl: 'https://mydomain.com/callback/listener',
       webhookId: 'myId'
 
-,
+
 ### get-person-from-phone
 
 #### Parameters:
@@ -34,7 +34,7 @@ It is FullContact integration with Syncano. It allows you to interact with the f
       apiKey: '00011122233344455',
       phone: '123-555-4444'
 
-,
+
 ### get-person-from-email-md5
 
 #### Parameters:
@@ -45,7 +45,7 @@ It is FullContact integration with Syncano. It allows you to interact with the f
       webhookUrl: 'https://mydomain.com/callback/listener',
       webhookId: 'myId'
 
-,
+
 ### get-person-from-facebook
 
 #### Parameters:

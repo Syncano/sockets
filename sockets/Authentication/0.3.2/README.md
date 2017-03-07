@@ -10,13 +10,13 @@ It is Authentication integration with Syncano. It allows you to support for logi
 
       id: 'ad913nfa0139ame2iekda13'
 
-,
+
 ### logout
 
 #### Parameters:
 
 
-,
+
 ### check-login
 
 #### Parameters:

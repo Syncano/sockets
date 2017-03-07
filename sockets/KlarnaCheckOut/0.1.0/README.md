@@ -17,7 +17,7 @@ It is KlarnaCheckOut integration with Syncano. It allows you to klarna check out
       locale: 'nb-no',
       confirmationURL: 'http://localhost:1337/confirmation?klarna_order_id={checkout.order.id}'
 
-,
+
 ### fetchorder
 
 #### Parameters:
@@ -30,7 +30,7 @@ It is KlarnaCheckOut integration with Syncano. It allows you to klarna check out
       locale: 'nb-no',
       id: 'somerorderid23'
 
-,
+
 ### confirm-order
 
 #### Parameters:
@@ -44,7 +44,7 @@ It is KlarnaCheckOut integration with Syncano. It allows you to klarna check out
       id: 'sjdasd76a8d68asiu',
       order_ref: 'order2016-45'
 
-,
+
 ### update-order
 
 #### Parameters:

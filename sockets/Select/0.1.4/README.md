@@ -12,7 +12,7 @@ It is Select integration with Syncano. It allows you to select first, last or a 
       shift: true,
       both: true
 
-,
+
 ### last
 
 #### Parameters:
@@ -21,7 +21,7 @@ It is Select integration with Syncano. It allows you to select first, last or a 
       pop: true,
       both: true
 
-,
+
 ### slice
 
 #### Parameters:
@@ -31,7 +31,7 @@ It is Select integration with Syncano. It allows you to select first, last or a 
       end: 5,
       include: true
 
-,
+
 ### take
 
 #### Parameters:
@@ -39,7 +39,7 @@ It is Select integration with Syncano. It allows you to select first, last or a 
       collection: undefined,
       num: 2
 
-,
+
 ### takeRight
 
 #### Parameters:
@@ -47,7 +47,7 @@ It is Select integration with Syncano. It allows you to select first, last or a 
       collection: undefined,
       num: 2
 
-,
+
 ### sample
 
 #### Parameters:

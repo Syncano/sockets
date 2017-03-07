@@ -10,7 +10,7 @@ It is IfThen integration with Syncano. It allows you to machines for branching b
 
       value: '==='
 
-,
+
 ### if-less-than
 
 #### Parameters:
@@ -19,7 +19,7 @@ It is IfThen integration with Syncano. It allows you to machines for branching b
       b: '===',
       isInclusive: true
 
-,
+
 ### if-greater-than
 
 #### Parameters:
@@ -28,7 +28,7 @@ It is IfThen integration with Syncano. It allows you to machines for branching b
       b: '===',
       isInclusive: true
 
-,
+
 ### if-equal
 
 #### Parameters:
@@ -36,7 +36,7 @@ It is IfThen integration with Syncano. It allows you to machines for branching b
       a: '===',
       b: '==='
 
-,
+
 ### if-between
 
 #### Parameters:
@@ -45,7 +45,7 @@ It is IfThen integration with Syncano. It allows you to machines for branching b
       min: 1,
       max: 4
 
-,
+
 ### if-then-finally
 
 #### Parameters:
@@ -55,7 +55,7 @@ It is IfThen integration with Syncano. It allows you to machines for branching b
       orElse: '->',
       expectedOutput: '*'
 
-,
+
 ### if-then-finally-sync
 
 #### Parameters:

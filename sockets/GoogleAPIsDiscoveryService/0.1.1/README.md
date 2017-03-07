@@ -12,7 +12,7 @@ It is GoogleAPIsDiscoveryService integration with Syncano. It allows you to work
       preferred: true,
       fields: 'discoveryVersion,items(description,discoveryLink,discoveryRestUrl,documentationLink,icons,kind,labels,name,preferred,title,version,id),kind'
 
-,
+
 ### get-rest
 
 #### Parameters:

@@ -10,7 +10,7 @@ It is Github integration with Syncano. It allows you to communicate with the git
 
       user: 'mikermcneil'
 
-,
+
 ### create-repo
 
 #### Parameters:
@@ -23,7 +23,7 @@ It is Github integration with Syncano. It allows you to communicate with the git
       description: 'A utility for working with direwolves.',
       private: false
 
-,
+
 ### list-organization-repos
 
 #### Parameters:
@@ -34,7 +34,7 @@ It is Github integration with Syncano. It allows you to communicate with the git
       username: 'jresig',
       password: 'jqftw'
 
-,
+
 ### get-repo
 
 #### Parameters:
@@ -42,7 +42,7 @@ It is Github integration with Syncano. It allows you to communicate with the git
       repo: 'sails',
       owner: 'balderdashy'
 
-,
+
 ### list-repo-commits-at-path
 
 #### Parameters:
@@ -51,7 +51,7 @@ It is Github integration with Syncano. It allows you to communicate with the git
       owner: 'balderdashy',
       path: 'foo/bar'
 
-,
+
 ### list-repo-commits
 
 #### Parameters:
@@ -59,7 +59,7 @@ It is Github integration with Syncano. It allows you to communicate with the git
       repo: 'sails',
       owner: 'balderdashy'
 
-,
+
 ### list-repo-activity
 
 #### Parameters:
@@ -67,7 +67,7 @@ It is Github integration with Syncano. It allows you to communicate with the git
       repo: 'sails',
       owner: 'balderdashy'
 
-,
+
 ### list-repos
 
 #### Parameters:
@@ -76,7 +76,7 @@ It is Github integration with Syncano. It allows you to communicate with the git
       limit: 30,
       skip: 0
 
-,
+
 ### build-installable-url
 
 #### Parameters:
@@ -85,7 +85,7 @@ It is Github integration with Syncano. It allows you to communicate with the git
       owner: 'balderdashy',
       repo: 'private-customer-app'
 
-,
+
 ### get-login-url
 
 #### Parameters:
@@ -94,7 +94,7 @@ It is Github integration with Syncano. It allows you to communicate with the git
       callbackUrl: 'http://my-cool-app.com/auth/callback',
       scope: public_repo
 
-,
+
 ### get-access-token
 
 #### Parameters:
@@ -104,21 +104,21 @@ It is Github integration with Syncano. It allows you to communicate with the git
       code: 'AQDvCav5zRSafS795TckAerUV53xzgqRyrcfYX2i_PJFObCvACVRP-V7sfemiMPBh3TWypvagfZ6aoqfwKCNcBxg8XR_skdYUe5tsY9UzX9Z_8q4mRrqaLhwSh5OHj9ORmE4ocyd-neZtdceTZjlmEVeO38UH9QOe_md7h5hy2gMhOS6TL9IBk5Guxg3O6I0WmjpFNPoj6JzWIvG9cgj7RQqxMA2q_8EJxGPTqEbmTqOBqqCIOlvPEPCeIiy21VD9__tuzB0JvgqbVh-U_WW8mjwGBqsfxlNvjYwIxk4zBNAxuRJijkkn0TwyogFpZqIlkY',
       callbackUrl: 'http://localhost:1337/user/github/login'
 
-,
+
 ### get-current-user
 
 #### Parameters:
 
       accessToken: 'abdg27snhd72'
 
-,
+
 ### parse-repo-str
 
 #### Parameters:
 
       string: '/node-machine/machine#master'
 
-,
+
 ### build-github-search-string
 
 #### Parameters:
@@ -131,7 +131,7 @@ It is Github integration with Syncano. It allows you to communicate with the git
       withNoneOfTheseLabels: bug,
       type: 'pr'
 
-,
+
 ### get-download-url
 
 #### Parameters:
@@ -140,7 +140,7 @@ It is Github integration with Syncano. It allows you to communicate with the git
       owner: 'balderdashy',
       branch: 'master'
 
-,
+
 ### list-issue-comments
 
 #### Parameters:

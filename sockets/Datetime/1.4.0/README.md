@@ -17,35 +17,35 @@ It is Datetime integration with Syncano. It allows you to work the dates and tim
       millisecond: 1,
       timezone: 'America/Chicago'
 
-,
+
 ### parse-date
 
 #### Parameters:
 
       monthDayYear: 'December 25, 2015'
 
-,
+
 ### parse-time
 
 #### Parameters:
 
       timeString: '2:30 PM'
 
-,
+
 ### stringify
 
 #### Parameters:
 
       timestamp: 1318781876000
 
-,
+
 ### parse
 
 #### Parameters:
 
       datetime: '2015-05-06T00:49:45.767Z'
 
-,
+
 ### format
 
 #### Parameters:
@@ -54,7 +54,7 @@ It is Datetime integration with Syncano. It allows you to work the dates and tim
       timezone: 'America/Chicago',
       formatString: 'YYYY-MM-DD HH:mm:ss Z'
 
-,
+
 ### time-from
 
 #### Parameters:
@@ -62,13 +62,13 @@ It is Datetime integration with Syncano. It allows you to work the dates and tim
       toWhen: 1318781876000,
       fromWhen: 1318781870000
 
-,
+
 ### now
 
 #### Parameters:
 
 
-,
+
 ### parse-timestamp
 
 #### Parameters:

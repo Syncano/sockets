@@ -15,7 +15,7 @@ It is Infoblox integration with Syncano. It allows you to make rest calls for th
       call: 'foo',
       strictSearch: true
 
-,
+
 ### get-subnet
 
 #### Parameters:
@@ -29,7 +29,7 @@ It is Infoblox integration with Syncano. It allows you to make rest calls for th
       strictSearch: true,
       optional: 'VLAN:=60'
 
-,
+
 ### get-next-available-ip
 
 #### Parameters:
@@ -41,7 +41,7 @@ It is Infoblox integration with Syncano. It allows you to make rest calls for th
       ref: 'ZG5zLm5ldHdRcmskMTAuMjEwLjAuMC8yNC8w',
       num: 3
 
-,
+
 ### get-network-ref
 
 #### Parameters:
@@ -52,7 +52,7 @@ It is Infoblox integration with Syncano. It allows you to make rest calls for th
       api: '1.6',
       subnet: '10.10.10.0/24'
 
-,
+
 ### get-record
 
 #### Parameters:

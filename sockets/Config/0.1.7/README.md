@@ -13,7 +13,7 @@ It is Config integration with Syncano. It allows you to a simple load config (wi
       nomethod: false,
       freeze: false
 
-,
+
 ### multiple
 
 #### Parameters:
@@ -21,7 +21,7 @@ It is Config integration with Syncano. It allows you to a simple load config (wi
       schema: undefined,
       freeze: false
 
-,
+
 ### load
 
 #### Parameters:

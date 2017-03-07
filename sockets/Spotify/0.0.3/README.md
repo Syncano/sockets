@@ -15,7 +15,7 @@ It is Spotify integration with Syncano. It allows you to communicate with the sp
       scope: '*',
       dialog: 'false'
 
-,
+
 ### get-access-token
 
 #### Parameters:

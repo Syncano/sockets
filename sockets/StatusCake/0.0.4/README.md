@@ -11,7 +11,7 @@ It is StatusCake integration with Syncano. It allows you to work with statuscake
       statusCakeUser: 'mcavoy',
       apiKey: 'phae6aesa5ohgh1vov7aeM7Kaec2eeca'
 
-,
+
 ### get-tests-details
 
 #### Parameters:

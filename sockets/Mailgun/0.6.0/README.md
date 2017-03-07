@@ -21,7 +21,7 @@ The Management',
       fromEmail: 'harold@example.enterprise',
       fromName: 'Harold Greaseworthy'
 
-,
+
 ### send-html-email
 
 #### Parameters:

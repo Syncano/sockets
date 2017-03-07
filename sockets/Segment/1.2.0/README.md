@@ -14,7 +14,7 @@ It is Segment integration with Syncano. It allows you to manage users, actions, 
       properties: undefined,
       integrations: undefined
 
-,
+
 ### identify
 
 #### Parameters:
@@ -24,7 +24,7 @@ It is Segment integration with Syncano. It allows you to manage users, actions, 
       traits: undefined,
       integrations: undefined
 
-,
+
 ### group
 
 #### Parameters:
@@ -35,7 +35,7 @@ It is Segment integration with Syncano. It allows you to manage users, actions, 
       traits: undefined,
       integrations: undefined
 
-,
+
 ### alias
 
 #### Parameters:
@@ -45,7 +45,7 @@ It is Segment integration with Syncano. It allows you to manage users, actions, 
       destinationUserId: '439z31jrq1',
       integrations: undefined
 
-,
+
 ### page
 
 #### Parameters:

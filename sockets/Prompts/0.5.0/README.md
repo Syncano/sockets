@@ -12,14 +12,14 @@ It is Prompts integration with Syncano. It allows you to produce interactive pro
       message: 'Please choose one of the following.',
       paginated: false
 
-,
+
 ### confirm
 
 #### Parameters:
 
       message: 'Are you sure?'
 
-,
+
 ### text
 
 #### Parameters:
@@ -29,7 +29,7 @@ It is Prompts integration with Syncano. It allows you to produce interactive pro
       expectJson: true,
       exampleValue: 'why doesn't my moose lay as well as thy goose?'
 
-,
+
 ### multiselect
 
 #### Parameters:

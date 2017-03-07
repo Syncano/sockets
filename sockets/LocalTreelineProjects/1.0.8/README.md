@@ -10,7 +10,7 @@ It is LocalTreelineProjects integration with Syncano. It allows you to work with
 
       keychainPath: '/Users/mikermcneil/Desktop/foo'
 
-,
+
 ### write-keychain
 
 #### Parameters:
@@ -19,14 +19,14 @@ It is LocalTreelineProjects integration with Syncano. It allows you to work with
       secret: '29f559ae-3bec-4d0a-8458-1f4e32a72407',
       keychainPath: '/Users/mikermcneil/Desktop/foo'
 
-,
+
 ### read-linkfile
 
 #### Parameters:
 
       dir: '/Users/mikermcneil/Desktop/foo'
 
-,
+
 ### write-linkfile
 
 #### Parameters:
@@ -39,7 +39,7 @@ It is LocalTreelineProjects integration with Syncano. It allows you to work with
       owner: 'mikermcneil',
       hashes: [object Object]
 
-,
+
 ### install-treeline-deps
 
 #### Parameters:
@@ -49,7 +49,7 @@ It is LocalTreelineProjects integration with Syncano. It allows you to work with
       treelineApiUrl: 'http://api.treeline.io',
       useCachedHashes: false
 
-,
+
 ### normalize-type
 
 #### Parameters:
@@ -57,7 +57,7 @@ It is LocalTreelineProjects integration with Syncano. It allows you to work with
       type: 'machinepack',
       dir: '/Users/mikermcneil/Desktop/foo'
 
-,
+
 ### sync-remote-changes
 
 #### Parameters:
@@ -75,7 +75,7 @@ It is LocalTreelineProjects integration with Syncano. It allows you to work with
       npmInstall: true,
       previewServerLifted: true
 
-,
+
 ### apply-pack-changelog
 
 #### Parameters:

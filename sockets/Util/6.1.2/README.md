@@ -10,21 +10,21 @@ It is Util integration with Syncano. It allows you to miscellaneous utilities fo
 
       value: '==='
 
-,
+
 ### hash
 
 #### Parameters:
 
       value: '*'
 
-,
+
 ### inspect
 
 #### Parameters:
 
       value: '==='
 
-,
+
 ### coalesce
 
 #### Parameters:
@@ -32,7 +32,7 @@ It is Util integration with Syncano. It allows you to miscellaneous utilities fo
       a: '===',
       b: '==='
 
-,
+
 ### require
 
 #### Parameters:

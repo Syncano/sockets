@@ -18,7 +18,7 @@ It is PaidUpScheduleConnect integration with Syncano. It allows you to connector
       payProcessing: false,
       payCollecting: true
 
-,
+
 ### calculate-prices
 
 #### Parameters:

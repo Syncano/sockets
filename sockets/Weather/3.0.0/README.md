@@ -13,7 +13,7 @@ It is Weather integration with Syncano. It allows you to communicate with the fo
       options: [object Object],
       apiKey: 'ab1d526c3c074c2a48c25476c19a9d0a'
 
-,
+
 ### get-forecast
 
 #### Parameters:

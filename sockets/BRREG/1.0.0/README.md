@@ -10,7 +10,7 @@ It is BRREG integration with Syncano. It allows you to return info about norwegi
 
       organisasjonsnummer: 981362772
 
-,
+
 ### get-name
 
 #### Parameters:

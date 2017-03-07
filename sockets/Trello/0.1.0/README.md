@@ -10,7 +10,7 @@ It is Trello integration with Syncano. It allows you to machinepack for interact
 
       boardId: '"xeRDSK8Z" (Hint: You can get this from the boards URL: https://trello.com/b/this_value_here'
 
-,
+
 ### move-list-to-board
 
 #### Parameters:

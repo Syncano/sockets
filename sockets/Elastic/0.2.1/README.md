@@ -13,7 +13,7 @@ It is Elastic integration with Syncano. It allows you to use elastic api
       index: 'myindex',
       query: 'cute dogs'
 
-,
+
 ### bulk
 
 #### Parameters:
@@ -24,7 +24,7 @@ It is Elastic integration with Syncano. It allows you to use elastic api
       type: 'myindex',
       actions: undefined
 
-,
+
 ### searchCustom
 
 #### Parameters:
@@ -35,7 +35,7 @@ It is Elastic integration with Syncano. It allows you to use elastic api
       type: 'mytype',
       query: 'cute dogs'
 
-,
+
 ### getAlias
 
 #### Parameters:
@@ -44,7 +44,7 @@ It is Elastic integration with Syncano. It allows you to use elastic api
       port: 9200,
       name: 'alias'
 
-,
+
 ### deleteByQuery
 
 #### Parameters:
@@ -55,7 +55,7 @@ It is Elastic integration with Syncano. It allows you to use elastic api
       type: 'mytype',
       query: '{ query: { "match_all" : {} } }'
 
-,
+
 ### updateAliases
 
 #### Parameters:

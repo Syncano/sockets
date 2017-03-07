@@ -13,7 +13,7 @@ It is Gateway integration with Syncano. It allows you to credit card processing 
       gateway: 'Authorize.Net',
       testMode: 'false'
 
-,
+
 ### refund
 
 #### Parameters:
@@ -23,7 +23,7 @@ It is Gateway integration with Syncano. It allows you to credit card processing 
       gateway: 'Authorize.Net',
       testMode: 'false'
 
-,
+
 ### authorize
 
 #### Parameters:
@@ -33,13 +33,13 @@ It is Gateway integration with Syncano. It allows you to credit card processing 
       gateway: 'Authorize.Net',
       testMode: 'false'
 
-,
+
 ### capture
 
 #### Parameters:
 
 
-,
+
 ### void-transaction
 
 #### Parameters:
@@ -49,13 +49,13 @@ It is Gateway integration with Syncano. It allows you to credit card processing 
       gateway: 'Authorize.Net',
       testMode: 'false'
 
-,
+
 ### get-settled-batch-list
 
 #### Parameters:
 
 
-,
+
 ### get-unsettled-transaction-list
 
 #### Parameters:

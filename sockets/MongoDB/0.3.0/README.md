@@ -16,14 +16,14 @@ It is MongoDB integration with Syncano. It allows you to structured node.js bind
       multi: true,
       writeConcern: undefined
 
-,
+
 ### list-collections
 
 #### Parameters:
 
       connectionUrl: 'mongodb://localhost:27017/machinepack-mongodb-default'
 
-,
+
 ### count-documents
 
 #### Parameters:
@@ -32,7 +32,7 @@ It is MongoDB integration with Syncano. It allows you to structured node.js bind
       collection: 'direwolves',
       query: undefined
 
-,
+
 ### describe-collection
 
 #### Parameters:
@@ -40,7 +40,7 @@ It is MongoDB integration with Syncano. It allows you to structured node.js bind
       connectionUrl: 'mongodb://localhost:27017/machinepack-mongodb-default',
       collection: 'direwolves'
 
-,
+
 ### list-documents
 
 #### Parameters:

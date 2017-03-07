@@ -11,7 +11,7 @@ It is Socketio integration with Syncano. It allows you to publish messages to ro
       roomName: 'myChatRoom',
       socketIds: a82ghda99319gadgaa3249103
 
-,
+
 ### broadcast
 
 #### Parameters:
@@ -20,7 +20,7 @@ It is Socketio integration with Syncano. It allows you to publish messages to ro
       data: '*',
       roomName: 'myChatRoom'
 
-,
+
 ### leave
 
 #### Parameters:
@@ -28,7 +28,7 @@ It is Socketio integration with Syncano. It allows you to publish messages to ro
       roomName: 'myChatRoom',
       socketIds: a82ghda99319gadgaa3249103
 
-,
+
 ### blast
 
 #### Parameters:
@@ -36,7 +36,7 @@ It is Socketio integration with Syncano. It allows you to publish messages to ro
       eventName: 'news',
       data: '*'
 
-,
+
 ### emit
 
 #### Parameters:
@@ -45,13 +45,13 @@ It is Socketio integration with Syncano. It allows you to publish messages to ro
       eventName: 'news',
       data: '*'
 
-,
+
 ### get-socket-id
 
 #### Parameters:
 
 
-,
+
 ### connect-client-socket
 
 #### Parameters:

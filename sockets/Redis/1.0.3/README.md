@@ -11,7 +11,7 @@ It is Redis integration with Syncano. It allows you to structured node.js bindin
       manager: '===',
       meta: '==='
 
-,
+
 ### release-connection
 
 #### Parameters:
@@ -19,7 +19,7 @@ It is Redis integration with Syncano. It allows you to structured node.js bindin
       connection: '===',
       meta: '==='
 
-,
+
 ### create-manager
 
 #### Parameters:
@@ -28,7 +28,7 @@ It is Redis integration with Syncano. It allows you to structured node.js bindin
       onUnexpectedFailure: '->',
       meta: '==='
 
-,
+
 ### destroy-manager
 
 #### Parameters:

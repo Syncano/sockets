@@ -11,7 +11,7 @@ It is Passwords integration with Syncano. It allows you to encrypt or compare pa
       passwordAttempt: 'l0lcatzz',
       encryptedPassword: 'as34hafsu#w34ndcarok'
 
-,
+
 ### encrypt-password
 
 #### Parameters:

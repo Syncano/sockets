@@ -11,7 +11,7 @@ It is Sails integration with Syncano. It allows you to general purpose machines 
       key: 'log.level',
       expectedOutput: '==='
 
-,
+
 ### is-production
 
 #### Parameters:

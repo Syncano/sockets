@@ -11,7 +11,7 @@ It is NodeStore integration with Syncano. It allows you to this machinepack prov
       key: 'user',
       value: 'NileFrater'
 
-,
+
 ### read-from-storage
 
 #### Parameters:
@@ -19,14 +19,14 @@ It is NodeStore integration with Syncano. It allows you to this machinepack prov
       key: 'users',
       asJSON: 'true'
 
-,
+
 ### delete-from-storage
 
 #### Parameters:
 
       key: 'users'
 
-,
+
 ### save-json-to-storage
 
 #### Parameters:

@@ -15,7 +15,7 @@ It is FindTorrent integration with Syncano. It allows you to find torrents from 
       page: 1,
       category: 'all'
 
-,
+
 ### query-eztv
 
 #### Parameters:
@@ -24,35 +24,35 @@ It is FindTorrent integration with Syncano. It allows you to find torrents from 
       query: '',
       category: 'all'
 
-,
+
 ### find-movie
 
 #### Parameters:
 
       query: ''
 
-,
+
 ### find-episode
 
 #### Parameters:
 
       query: ''
 
-,
+
 ### query-all
 
 #### Parameters:
 
       query: ''
 
-,
+
 ### get-eztv-showlist
 
 #### Parameters:
 
       baseUrl: 'https://eztv.ag'
 
-,
+
 ### get-eztv-show-episodes
 
 #### Parameters:
@@ -60,7 +60,7 @@ It is FindTorrent integration with Syncano. It allows you to find torrents from 
       baseUrl: 'https://eztv.ag',
       showId: 1
 
-,
+
 ### query-yts
 
 #### Parameters:

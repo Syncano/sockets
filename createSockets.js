@@ -77,8 +77,8 @@ function createReadmeInput(rootDir, machine) {
     return false;
   }
 
-  const parameters = (parameters) => Object.keys(parameters).map((parameter) => `
-      ${parameter}: ${parameters[parameter].type === 'string' ? `'${parameters[parameter].example}'` : parameters[parameter].example}`);
+  const parameters = (parameters) => _.map(parameters, (parameter, key) => `
+      ${key}: ${parameter.type === 'string' ? `'${parameter.example}'` : parameter.example}`);
 
   const endpoints = machine.machines.map((endpoint) => `
 ### ${endpoint.identity}
@@ -93,7 +93,7 @@ ${parameters(endpoint.inputs)}
 It is ${machine.variableName} integration with Syncano. It allows you to ${machine.description.toLowerCase()}
 
 ## Endpoints
-${endpoints}`;
+${endpoints.join('')}`;
 
   fs.writeFileSync(`${rootDir}/README.md`, content);
 }
@@ -157,6 +157,7 @@ function createSockets() {
       createYamlInput(content, rootDir);
       createReadmeInput(rootDir, machine);
       createPackageJsonInput(rootDir, machine);
+
 
       machines.forEach((script) => {
         createScript(script, { identity, variableName } , rootDir);
