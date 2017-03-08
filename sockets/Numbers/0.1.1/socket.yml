@@ -1,5 +1,6 @@
 name: Numbers
 description: Work with numbers.
+version: 0.1.1
 author:
   name: Syncano
   email: support@syncano.io

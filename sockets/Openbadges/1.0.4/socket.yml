@@ -1,5 +1,6 @@
 name: Openbadges
 description: 'Communicate with the Mozilla Backpack API to get badges, collections.'
+version: 1.0.4
 author:
   name: Syncano
   email: support@syncano.io

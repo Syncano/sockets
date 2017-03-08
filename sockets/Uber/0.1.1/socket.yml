@@ -1,5 +1,6 @@
 name: Uber
 description: 'Communicate with the Uber API to get price estimates, time estimates, etc.'
+version: 0.1.1
 author:
   name: Syncano
   email: support@syncano.io

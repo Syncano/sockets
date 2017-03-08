@@ -1,5 +1,6 @@
 name: PaidUpScheduleConnect
 description: Connector from TDSchedule
+version: 2.2.7
 author:
   name: Syncano
   email: support@syncano.io

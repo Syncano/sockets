@@ -2,6 +2,7 @@ name: Facebook
 description: >-
   Communicate with Facebook to authenticate, get profile data, friends, likes,
   and more.
+version: 1.1.0
 author:
   name: Syncano
   email: support@syncano.io

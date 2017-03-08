@@ -2,6 +2,7 @@ name: Pokemon
 description: >-
   Fetch data about Pokémon, their moves, abilities, types, egg groups and much
   much more.
+version: 1.3.0
 author:
   name: Syncano
   email: support@syncano.io

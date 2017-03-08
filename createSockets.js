@@ -148,6 +148,7 @@ function createSockets() {
       const content = {
         name: variableName,
         description: machine.description,
+        version: machine.version,
         author: {
           name: 'Syncano',
           email: 'support@syncano.io'

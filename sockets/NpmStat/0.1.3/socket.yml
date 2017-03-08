@@ -1,5 +1,6 @@
 name: NpmStat
 description: Talk to npm-stat.com to get NPM statistics.
+version: 0.1.3
 author:
   name: Syncano
   email: support@syncano.io

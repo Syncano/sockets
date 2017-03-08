@@ -1,5 +1,6 @@
 name: Selectone
 description: Select one item in a list
+version: 1.0.3
 author:
   name: Syncano
   email: support@syncano.io

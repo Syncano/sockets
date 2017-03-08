@@ -1,5 +1,6 @@
 name: Mailgun
 description: Machines for the Mailgun API.
+version: 0.6.0
 author:
   name: Syncano
   email: support@syncano.io

@@ -1,5 +1,6 @@
 name: Linkedin
 description: Machinepack that communicates and interacts with the Linkedin api.
+version: 0.1.1
 author:
   name: Syncano
   email: support@syncano.io

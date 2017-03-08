@@ -1,5 +1,6 @@
 name: Trello
 description: Machinepack for interacting with the trello api
+version: 0.1.0
 author:
   name: Syncano
   email: support@syncano.io

@@ -1,5 +1,6 @@
 name: Steam
 description: Communicate with Steam Web API to query Steam information.
+version: 0.1.10
 author:
   name: Syncano
   email: support@syncano.io

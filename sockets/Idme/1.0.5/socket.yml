@@ -1,5 +1,6 @@
 name: Idme
 description: Communicate with ID.me to authorize and receive tokens and user information
+version: 1.0.5
 author:
   name: Syncano
   email: support@syncano.io

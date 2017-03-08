@@ -1,5 +1,6 @@
 name: Filesystem
 description: 'Work with the local filesystem; list files, write files, etc.'
+version: 8.0.2
 author:
   name: Syncano
   email: support@syncano.io

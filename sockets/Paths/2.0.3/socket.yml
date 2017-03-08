@@ -1,5 +1,6 @@
 name: Paths
 description: Utilities for handling and transforming file paths.
+version: 2.0.3
 author:
   name: Syncano
   email: support@syncano.io

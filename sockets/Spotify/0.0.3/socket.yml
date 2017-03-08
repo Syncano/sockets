@@ -1,5 +1,6 @@
 name: Spotify
 description: Communicate with the Spotify API.
+version: 0.0.3
 author:
   name: Syncano
   email: support@syncano.io

@@ -1,5 +1,6 @@
 name: Strings
 description: Work with strings.
+version: 5.1.0
 author:
   name: Syncano
   email: support@syncano.io

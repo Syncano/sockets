@@ -1,5 +1,6 @@
 name: Pipl
 description: Interface with the Pipl people search API
+version: 1.0.2
 author:
   name: Syncano
   email: support@syncano.io

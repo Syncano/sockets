@@ -1,5 +1,6 @@
 name: Headers
 description: Work with HTTP /vHTTP request and response headers.
+version: 0.3.2
 author:
   name: Syncano
   email: support@syncano.io

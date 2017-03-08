@@ -1,5 +1,6 @@
 name: Stripe
 description: Communicate with the Stripe API to start and stop stripe subscriptions.
+version: 0.3.3
 author:
   name: Syncano
   email: support@syncano.io

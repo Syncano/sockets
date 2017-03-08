@@ -1,5 +1,6 @@
 name: Emailaddresses
 description: Work with email addresses.
+version: 0.4.0
 author:
   name: Syncano
   email: support@syncano.io

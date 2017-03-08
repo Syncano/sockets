@@ -1,5 +1,6 @@
 name: GoogleAPIsURLShortener
 description: API will have several methods to work with Google URL Shortener
+version: 0.1.4
 author:
   name: Syncano
   email: support@syncano.io

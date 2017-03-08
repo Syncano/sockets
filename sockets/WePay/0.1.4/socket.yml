@@ -2,6 +2,7 @@ name: WePay
 description: >-
   Communicate with WePay API to register users, create accounts and accept
   payments.
+version: 0.1.4
 author:
   name: Syncano
   email: support@syncano.io

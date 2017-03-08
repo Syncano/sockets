@@ -1,5 +1,6 @@
 name: Nexmo
 description: Interact with the Nexmo SMS-related API
+version: 0.1.0
 author:
   name: Syncano
   email: support@syncano.io

@@ -1,5 +1,6 @@
 name: Aws
 description: SDK for working with the AWS api's
+version: 0.3.0
 author:
   name: Syncano
   email: support@syncano.io

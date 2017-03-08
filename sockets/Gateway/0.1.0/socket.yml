@@ -1,5 +1,6 @@
 name: Gateway
 description: Credit Card processing gateway wrapper
+version: 0.1.0
 author:
   name: Syncano
   email: support@syncano.io

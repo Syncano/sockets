@@ -1,5 +1,6 @@
 name: PaidUpCommerceConnect
 description: Connector for PaidUp Microservice Commerce
+version: 0.14.13
 author:
   name: Syncano
   email: support@syncano.io

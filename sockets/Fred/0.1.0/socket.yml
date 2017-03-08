@@ -1,5 +1,6 @@
 name: Fred
 description: 'Communicate with the Fred API to get series, releases, observations, etc.'
+version: 0.1.0
 author:
   name: Syncano
   email: support@syncano.io

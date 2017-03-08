@@ -1,5 +1,6 @@
 name: CFT
 description: Communicates with ClientFeedbackTool to get feedback data
+version: 1.0.0
 author:
   name: Syncano
   email: support@syncano.io

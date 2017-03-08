@@ -1,5 +1,6 @@
 name: NPM
 description: Work with the public NPM repository.
+version: 6.4.0
 author:
   name: Syncano
   email: support@syncano.io

@@ -1,5 +1,6 @@
 name: GoogleAPIsOAuth2v2
 description: Work with Google OAuth2 API
+version: 0.1.0
 author:
   name: Syncano
   email: support@syncano.io

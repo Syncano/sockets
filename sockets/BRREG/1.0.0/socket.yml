@@ -1,5 +1,6 @@
 name: BRREG
 description: Return info about Norwegian company based on company-ID
+version: 1.0.0
 author:
   name: Syncano
   email: support@syncano.io

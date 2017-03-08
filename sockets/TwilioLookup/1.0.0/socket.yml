@@ -1,5 +1,6 @@
 name: TwilioLookup
 description: Validate number format
+version: 1.0.0
 author:
   name: Syncano
   email: support@syncano.io

@@ -1,5 +1,6 @@
 name: Process
 description: Work with child procs and the running process.
+version: 2.0.2
 author:
   name: Syncano
   email: support@syncano.io

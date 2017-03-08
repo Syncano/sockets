@@ -1,5 +1,6 @@
 name: GoogleAPIsDeveloperFonts
 description: Work with google aPIs developer fonts.
+version: 0.1.1
 author:
   name: Syncano
   email: support@syncano.io

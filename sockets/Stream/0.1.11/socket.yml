@@ -1,5 +1,6 @@
 name: Stream
 description: 'work with stream readable, writable'
+version: 0.1.11
 author:
   name: Syncano
   email: support@syncano.io

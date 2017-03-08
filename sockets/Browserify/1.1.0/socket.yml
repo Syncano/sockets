@@ -1,5 +1,6 @@
 name: Browserify
 description: Use require() in the browser.
+version: 1.1.0
 author:
   name: Syncano
   email: support@syncano.io

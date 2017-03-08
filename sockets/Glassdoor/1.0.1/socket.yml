@@ -1,5 +1,6 @@
 name: Glassdoor
 description: Communicate with the Glassdoor API
+version: 1.0.1
 author:
   name: Syncano
   email: support@syncano.io

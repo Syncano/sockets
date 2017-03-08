@@ -1,5 +1,6 @@
 name: Stripe
 description: 'Communicate with the Stripe API to charge credit cards, etc.'
+version: 0.6.0
 author:
   name: Syncano
   email: support@syncano.io

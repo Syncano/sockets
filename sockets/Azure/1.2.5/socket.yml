@@ -1,5 +1,6 @@
 name: Azure
 description: Work with the Microsoft Azure API.
+version: 1.2.5
 author:
   name: Syncano
   email: support@syncano.io

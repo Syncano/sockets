@@ -1,5 +1,6 @@
 name: Socketio
 description: Publish messages to rooms and/or sockets and more using Sails & Socket.io.
+version: 1.2.1
 author:
   name: Syncano
   email: support@syncano.io

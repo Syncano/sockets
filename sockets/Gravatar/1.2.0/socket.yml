@@ -1,5 +1,6 @@
 name: Gravatar
 description: Communicate with the Gravatar api to get a gravatar image.
+version: 1.2.0
 author:
   name: Syncano
   email: support@syncano.io

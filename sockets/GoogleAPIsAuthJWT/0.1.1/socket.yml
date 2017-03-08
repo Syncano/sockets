@@ -2,6 +2,7 @@ name: GoogleAPIsAuthJWT
 description: >-
   The JWT authorization is ideal for performing server-to-server communication
   without asking for user consent.
+version: 0.1.1
 author:
   name: Syncano
   email: support@syncano.io

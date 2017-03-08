@@ -1,5 +1,6 @@
 name: Elastic
 description: Use elastic API
+version: 0.2.1
 author:
   name: Syncano
   email: support@syncano.io

@@ -1,5 +1,6 @@
 name: OpenWeather
 description: Communicate with the OpenWeather API to get current weather for a city.
+version: 1.0.0
 author:
   name: Syncano
   email: support@syncano.io

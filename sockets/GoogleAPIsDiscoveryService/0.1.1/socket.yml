@@ -1,5 +1,6 @@
 name: GoogleAPIsDiscoveryService
 description: Work with google aPIs discovery service.
+version: 0.1.1
 author:
   name: Syncano
   email: support@syncano.io

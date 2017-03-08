@@ -1,5 +1,6 @@
 name: LESS
 description: Work with LESS stylesheets.
+version: 1.0.0
 author:
   name: Syncano
   email: support@syncano.io

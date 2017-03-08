@@ -1,5 +1,6 @@
 name: Passwords
 description: Encrypt or compare passwords.
+version: 2.3.0
 author:
   name: Syncano
   email: support@syncano.io

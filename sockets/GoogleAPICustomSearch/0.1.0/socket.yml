@@ -1,5 +1,6 @@
 name: GoogleAPICustomSearch
 description: Communicate with Google Customsearch API.
+version: 0.1.0
 author:
   name: Syncano
   email: support@syncano.io

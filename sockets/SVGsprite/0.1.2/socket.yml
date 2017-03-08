@@ -1,5 +1,6 @@
 name: SVGsprite
 description: Create an SVGs sprite from multiple SVG source files.
+version: 0.1.2
 author:
   name: Syncano
   email: support@syncano.io

@@ -1,5 +1,6 @@
 name: PushNotifications
 description: Send push message using Apple's APN and Google's GCM services
+version: 0.3.1
 author:
   name: Syncano
   email: support@syncano.io

@@ -1,5 +1,6 @@
 name: Datetime
 description: Work the dates and times.
+version: 1.4.0
 author:
   name: Syncano
   email: support@syncano.io

@@ -2,6 +2,7 @@ name: Waterline
 description: >-
   A database-agnostic connectivity library for sending queries, managing dynamic
   db connections, committing/rolling back transactions, and more.
+version: 0.1.1
 author:
   name: Syncano
   email: support@syncano.io

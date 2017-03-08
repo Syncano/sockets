@@ -1,5 +1,6 @@
 name: Machines
 description: Work with machines and machinepacks.
+version: 6.3.0
 author:
   name: Syncano
   email: support@syncano.io

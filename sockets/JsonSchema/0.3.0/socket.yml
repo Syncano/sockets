@@ -1,5 +1,6 @@
 name: JsonSchema
 description: Node.js utility for working with the JSON-schema spec.
+version: 0.3.0
 author:
   name: Syncano
   email: support@syncano.io

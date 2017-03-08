@@ -1,5 +1,6 @@
 name: Age
 description: A machinepack that allows you to work with ages.
+version: 0.1.2
 author:
   name: Syncano
   email: support@syncano.io

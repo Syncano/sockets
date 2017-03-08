@@ -1,5 +1,6 @@
 name: Foursquareimageproxy
 description: proxy images of a foursquare venue based on its foursqaure id
+version: 1.0.2
 author:
   name: Syncano
   email: support@syncano.io

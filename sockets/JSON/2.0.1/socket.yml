@@ -1,5 +1,6 @@
 name: JSON
 description: Encode and decode data to and from JSON.
+version: 2.0.1
 author:
   name: Syncano
   email: support@syncano.io

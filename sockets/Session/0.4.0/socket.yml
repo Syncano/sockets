@@ -2,6 +2,7 @@ name: Session
 description: >-
   Read or write data to the session store indicated by the cookie in the current
   request.
+version: 0.4.0
 author:
   name: Syncano
   email: support@syncano.io

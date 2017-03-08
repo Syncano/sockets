@@ -1,5 +1,6 @@
 name: LocalMachinepacks
 description: Work with local machinepacks.
+version: 1.8.9
 author:
   name: Syncano
   email: support@syncano.io

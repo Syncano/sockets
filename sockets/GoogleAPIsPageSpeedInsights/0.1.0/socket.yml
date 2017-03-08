@@ -1,5 +1,6 @@
 name: GoogleAPIsPageSpeedInsights
 description: Work with google aPIs pageSpeed insights.
+version: 0.1.0
 author:
   name: Syncano
   email: support@syncano.io

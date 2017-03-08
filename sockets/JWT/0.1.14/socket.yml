@@ -1,5 +1,6 @@
 name: JWT
 description: Work with JSON Web Tokens.
+version: 0.1.14
 author:
   name: Syncano
   email: support@syncano.io

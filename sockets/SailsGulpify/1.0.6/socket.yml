@@ -1,5 +1,6 @@
 name: SailsGulpify
 description: 'Add toggle ability to choose gulp or grunt as task runner on create new '
+version: 1.0.6
 author:
   name: Syncano
   email: support@syncano.io

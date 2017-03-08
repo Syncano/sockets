@@ -1,5 +1,6 @@
 name: SmartyStreets
 description: Interact with the SmartyStreets.com address API
+version: 1.0.1
 author:
   name: Syncano
   email: support@syncano.io

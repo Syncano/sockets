@@ -1,5 +1,6 @@
 name: Salesforce
 description: 'Communicate with the Salesforce API to get profiles, accounts, contacts, etc.'
+version: 0.2.2
 author:
   name: Syncano
   email: support@syncano.io

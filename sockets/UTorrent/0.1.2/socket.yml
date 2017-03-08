@@ -1,5 +1,6 @@
 name: UTorrent
 description: Communicate with uTorrent client API to list and add torrents.
+version: 0.1.2
 author:
   name: Syncano
   email: support@syncano.io

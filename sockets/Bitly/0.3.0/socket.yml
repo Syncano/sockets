@@ -1,5 +1,6 @@
 name: Bitly
 description: 'Work with the bitly API '
+version: 0.3.0
 author:
   name: Syncano
   email: support@syncano.io

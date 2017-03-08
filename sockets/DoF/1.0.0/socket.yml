@@ -1,5 +1,6 @@
 name: DoF
 description: Computes Depth of Field property of specific photoshoot attributes.
+version: 1.0.0
 author:
   name: Syncano
   email: support@syncano.io

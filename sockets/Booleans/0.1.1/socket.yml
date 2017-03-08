@@ -2,6 +2,7 @@ name: Booleans
 description: >-
   Work with true/false values and boolean operators like AND (&&), OR (||), NOT
   (!), and the ternary qualifier (?/:).
+version: 0.1.1
 author:
   name: Syncano
   email: support@syncano.io

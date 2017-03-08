@@ -1,5 +1,6 @@
 name: Github
 description: 'Communicate with the Github API to get repos, commits, etc.'
+version: 4.5.0
 author:
   name: Syncano
   email: support@syncano.io

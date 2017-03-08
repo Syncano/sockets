@@ -1,5 +1,6 @@
 name: SchemaInspector
 description: Schema-Inspector is an JSON API sanitisation and validation module.
+version: 1.2.0
 author:
   name: Syncano
   email: support@syncano.io

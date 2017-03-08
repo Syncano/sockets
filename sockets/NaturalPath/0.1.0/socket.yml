@@ -1,5 +1,6 @@
 name: NaturalPath
 description: Convert Natural Language into a file/directory path
+version: 0.1.0
 author:
   name: Syncano
   email: support@syncano.io

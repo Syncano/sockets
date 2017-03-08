@@ -1,5 +1,6 @@
 name: Coinbase
 description: Communicate with the Coinbase API to get bitcoin index prices.
+version: 0.1.7
 author:
   name: Syncano
   email: support@syncano.io

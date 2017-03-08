@@ -1,5 +1,6 @@
 name: Coindesk
 description: Communicate with the CoinDesk API to get bitcoin index prices.
+version: 0.1.1
 author:
   name: Syncano
   email: support@syncano.io

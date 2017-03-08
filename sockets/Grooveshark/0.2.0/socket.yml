@@ -1,5 +1,6 @@
 name: Grooveshark
 description: Download songs from playlists or by name from Grooveshark. NOT OFFICIAL API
+version: 0.2.0
 author:
   name: Syncano
   email: support@syncano.io

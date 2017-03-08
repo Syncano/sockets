@@ -1,5 +1,6 @@
 name: MySQL
 description: Structured Node.js bindings for MySQL.
+version: 1.0.0
 author:
   name: Syncano
   email: support@syncano.io

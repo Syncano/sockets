@@ -1,5 +1,6 @@
 name: JangoSMTP
 description: Send transactional emails through JangoSMTP.com service
+version: 1.0.3
 author:
   name: Syncano
   email: support@syncano.io

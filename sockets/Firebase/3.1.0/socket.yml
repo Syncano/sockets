@@ -2,6 +2,7 @@ name: Firebase
 description: >-
   This machinepack lets you commuicate with the Firebase API to store and sync
   your data in realtime.
+version: 3.1.0
 author:
   name: Syncano
   email: support@syncano.io

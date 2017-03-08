@@ -1,5 +1,6 @@
 name: PaidUpScheduleConnect
 description: Connector for PaidUp Microservice Schedule
+version: 2.7.0
 author:
   name: Syncano
   email: support@syncano.io

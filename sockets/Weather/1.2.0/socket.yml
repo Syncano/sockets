@@ -1,5 +1,6 @@
 name: Weather
 description: Communicate with the forecast.io API to get weather forecasts.
+version: 1.2.0
 author:
   name: Syncano
   email: support@syncano.io

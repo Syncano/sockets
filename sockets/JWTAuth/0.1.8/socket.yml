@@ -1,5 +1,6 @@
 name: JWTAuth
 description: Handle JSON Web Token authentication requests.
+version: 0.1.8
 author:
   name: Syncano
   email: support@syncano.io

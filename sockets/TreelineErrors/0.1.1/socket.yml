@@ -1,5 +1,6 @@
 name: TreelineErrors
 description: Tools for handling Treeline errors in userland applications and packages.
+version: 0.1.1
 author:
   name: Syncano
   email: support@syncano.io

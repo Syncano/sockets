@@ -1,5 +1,6 @@
 name: Treehouse
 description: Communicate with the Treehouse API to get profile data.
+version: 1.0.1
 author:
   name: Syncano
   email: support@syncano.io

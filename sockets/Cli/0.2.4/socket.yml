@@ -1,5 +1,6 @@
 name: Cli
 description: Simple Maker command line interface
+version: 0.2.4
 author:
   name: Syncano
   email: support@syncano.io

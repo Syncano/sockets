@@ -1,5 +1,6 @@
 name: AWSS3Tools
 description: Upload files to S3 buckets and more with Treeline.
+version: 1.0.0
 author:
   name: Syncano
   email: support@syncano.io

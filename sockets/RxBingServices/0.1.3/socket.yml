@@ -1,5 +1,6 @@
 name: RxBingServices
 description: Reactive extensions for Bing location and mapping services
+version: 0.1.3
 author:
   name: Syncano
   email: support@syncano.io

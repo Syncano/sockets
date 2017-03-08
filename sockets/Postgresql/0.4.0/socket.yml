@@ -1,5 +1,6 @@
 name: Postgresql
 description: Structured Node.js bindings for Postgresql.
+version: 0.4.0
 author:
   name: Syncano
   email: support@syncano.io

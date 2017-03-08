@@ -4,6 +4,7 @@ description: >-
   Includes everything from accessing an incoming file upload stream, to
   reading/parsing incoming request headers, to customizing the content type for
   a file download or other outg
+version: 0.2.1
 author:
   name: Syncano
   email: support@syncano.io

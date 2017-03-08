@@ -1,5 +1,6 @@
 name: Slack
 description: Use the Slack API via Node machines.
+version: 1.0.1
 author:
   name: Syncano
   email: support@syncano.io

@@ -1,5 +1,6 @@
 name: PaidUpCommerceConnect
 description: Connector for TDCommerce
+version: 0.4.19
 author:
   name: Syncano
   email: support@syncano.io

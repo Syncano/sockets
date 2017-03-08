@@ -1,5 +1,6 @@
 name: LocalSailsApps
 description: Work with a local Sails.js app.
+version: 1.0.1
 author:
   name: Syncano
   email: support@syncano.io

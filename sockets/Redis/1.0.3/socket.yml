@@ -1,5 +1,6 @@
 name: Redis
 description: Structured Node.js bindings for Redis.
+version: 1.0.3
 author:
   name: Syncano
   email: support@syncano.io

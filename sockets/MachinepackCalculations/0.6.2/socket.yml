@@ -1,5 +1,6 @@
 name: MachinepackCalculations
 description: Calculations for PaidUp
+version: 0.6.2
 author:
   name: Syncano
   email: support@syncano.io

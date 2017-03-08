@@ -1,5 +1,6 @@
 name: JavaScript
 description: Machines for working with javascript code strings.
+version: 3.0.1
 author:
   name: Syncano
   email: support@syncano.io

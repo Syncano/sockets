@@ -1,5 +1,6 @@
 name: URLs
 description: Machines for working with URL strings.
+version: 6.0.1
 author:
   name: Syncano
   email: support@syncano.io

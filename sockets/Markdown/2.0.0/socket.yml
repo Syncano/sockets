@@ -1,5 +1,6 @@
 name: Markdown
 description: 'Work with Markdown-formatted text (convert to HTML, etc.)'
+version: 2.0.0
 author:
   name: Syncano
   email: support@syncano.io

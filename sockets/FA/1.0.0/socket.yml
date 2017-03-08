@@ -1,5 +1,6 @@
 name: FA
 description: Two Factor Authentication
+version: 1.0.0
 author:
   name: Syncano
   email: support@syncano.io

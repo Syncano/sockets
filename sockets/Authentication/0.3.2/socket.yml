@@ -2,6 +2,7 @@ name: Authentication
 description: >-
   Support for login, logout, and authentication via encrypted cookies and a
   session store.
+version: 0.3.2
 author:
   name: Syncano
   email: support@syncano.io

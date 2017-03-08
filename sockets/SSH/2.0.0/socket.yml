@@ -1,5 +1,6 @@
 name: SSH
 description: Use SSH to send any command to a remote server with or without private keys.
+version: 2.0.0
 author:
   name: Syncano
   email: support@syncano.io

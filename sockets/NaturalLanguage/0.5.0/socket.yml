@@ -1,5 +1,6 @@
 name: NaturalLanguage
 description: Natural language processing (NLP) in Node.js.
+version: 0.5.0
 author:
   name: Syncano
   email: support@syncano.io

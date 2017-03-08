@@ -1,5 +1,6 @@
 name: LocalTreelineProjects
 description: Work with local treeline projects.
+version: 1.0.8
 author:
   name: Syncano
   email: support@syncano.io

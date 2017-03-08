@@ -1,5 +1,6 @@
 name: OpenMovieDatabaseClient
 description: Use the Open Movie Database API via Node Machines
+version: 2.0.0
 author:
   name: Syncano
   email: support@syncano.io

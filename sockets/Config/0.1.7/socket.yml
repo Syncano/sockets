@@ -1,5 +1,6 @@
 name: Config
 description: 'A simple load config (with multiple json, xml or csv file)'
+version: 0.1.7
 author:
   name: Syncano
   email: support@syncano.io

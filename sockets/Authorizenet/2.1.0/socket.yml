@@ -1,5 +1,6 @@
 name: Authorizenet
 description: a machinepack for authorize-net version 1.0.6 (nov 2 2015)
+version: 2.1.0
 author:
   name: Syncano
   email: support@syncano.io

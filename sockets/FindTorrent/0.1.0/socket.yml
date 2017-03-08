@@ -1,5 +1,6 @@
 name: FindTorrent
 description: 'Find torrents from Kickass, EZTV, and more'
+version: 0.1.0
 author:
   name: Syncano
   email: support@syncano.io

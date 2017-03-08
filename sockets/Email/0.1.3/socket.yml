@@ -2,6 +2,7 @@ name: Email
 description: >-
   Simply send an email with nodemailer/email-templates (includes support for
   HTML email templates).
+version: 0.1.3
 author:
   name: Syncano
   email: support@syncano.io

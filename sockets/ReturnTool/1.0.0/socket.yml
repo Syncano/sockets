@@ -2,6 +2,7 @@ name: ReturnTool
 description: >-
   Simple tool to return variables created earlier in a Treeline circuit, at the
   end of the circuit.
+version: 1.0.0
 author:
   name: Syncano
   email: support@syncano.io

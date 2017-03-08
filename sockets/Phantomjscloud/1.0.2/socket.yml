@@ -1,5 +1,6 @@
 name: Phantomjscloud
 description: 'Work with the PhantomJSCloud.com API to render HTML web pages, etc.'
+version: 1.0.2
 author:
   name: Syncano
   email: support@syncano.io

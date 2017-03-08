@@ -2,6 +2,7 @@ name: Assets
 description: >-
   Experimental utilities for preparing fonts, images, JavaScript files, and LESS
   stylesheets, then publishing them to NPM as production-ready asset packages.
+version: 1.0.0
 author:
   name: Syncano
   email: support@syncano.io

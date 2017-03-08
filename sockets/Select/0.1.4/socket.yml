@@ -1,5 +1,6 @@
 name: Select
 description: 'Select first, last or a slice of an array'
+version: 0.1.4
 author:
   name: Syncano
   email: support@syncano.io
