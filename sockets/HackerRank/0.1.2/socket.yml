@@ -5,94 +5,92 @@ author:
   email: support@syncano.io
 endpoints:
   submit:
-    POST:
-      file: scripts/submit.js
-      description: Submit the source code for compilation
-      parameters:
-        apiKey:
-          example: AAAAAAAAAAAAAA
-          description: Your HackerRank API Key
-          required: true
-          type: string
-        source:
-          example: >-
-            using System;class MyClass{static void Main(string[] args)
-            {System.Console.WriteLine("Hello World!\n");}}
-          description: >-
-            source code, which needs to be compiled and run against the provided
-            test cases.
-          required: true
-          type: string
-        language:
-          example: 9
-          description: >-
-            The language key for the language, the submission is made in.Get
-            lang key from http://api.hackerrank.com/checker/languages.json
-          required: true
-          type: number
-        testcases:
-          example: []
-          description: 'A valid JSON, which on parse should result in a list of strings.'
-          required: true
-          type: array
-        wait:
-          example: true
-          description: 'if true , response will be sent after compilation and run.'
-          required: false
-          type: boolean
-        callbackUrl:
-          example: 'http://example.com/callback'
-          description: >-
-            A callback url, on which the submission response will be posted as a
-            JSON string under `data` parameter.
-          required: false
-          type: string
-        format:
-          example: json
-          description: must be either json or xml.
-          required: false
-          type: string
+    file: scripts/submit.js
+    description: Submit the source code for compilation
+    parameters:
+      apiKey:
+        example: AAAAAAAAAAAAAA
+        description: Your HackerRank API Key
+        required: true
+        type: string
+      source:
+        example: >-
+          using System;class MyClass{static void Main(string[] args)
+          {System.Console.WriteLine("Hello World!\n");}}
+        description: >-
+          source code, which needs to be compiled and run against the provided
+          test cases.
+        required: true
+        type: string
+      language:
+        example: 9
+        description: >-
+          The language key for the language, the submission is made in.Get lang
+          key from http://api.hackerrank.com/checker/languages.json
+        required: true
+        type: number
+      testcases:
+        example: []
+        description: 'A valid JSON, which on parse should result in a list of strings.'
+        required: true
+        type: array
+      wait:
+        example: true
+        description: 'if true , response will be sent after compilation and run.'
+        required: false
+        type: boolean
+      callbackUrl:
+        example: 'http://example.com/callback'
+        description: >-
+          A callback url, on which the submission response will be posted as a
+          JSON string under `data` parameter.
+        required: false
+        type: string
+      format:
+        example: json
+        description: must be either json or xml.
+        required: false
+        type: string
   submit-file:
-    POST:
-      file: scripts/submit-file.js
-      description: Submit a source code file for compilation
-      parameters:
-        apiKey:
-          example: AAAAAAAAAAAAAA
-          description: Your HackerRank API Key
-          required: true
-          type: string
-        filePath:
-          example: 'E:\Source.cs'
-          description: File path for the source code file
-          required: true
-          type: string
-        language:
-          example: 9
-          description: >-
-            The language key for the language, the submission is made in.Get
-            lang key from http://api.hackerrank.com/checker/languages.json
-          required: true
-          type: number
-        testcases:
-          example: []
-          description: 'A valid JSON, which on parse should result in a list of strings.'
-          required: true
-          type: array
-        wait:
-          example: true
-          description: 'if true , response will be sent after compilation and run.'
-          required: false
-          type: boolean
-        callbackUrl:
-          example: 'http://example.com/callback'
-          description: >-
-            A callback url, on which the submission response will be posted as a
-            JSON string under `data` parameter.
-          required: false
-          type: string
-        format:
-          example: json
-          description: must be either json or xml.
-          required: false
-          type: string
+    file: scripts/submit-file.js
+    description: Submit a source code file for compilation
+    parameters:
+      apiKey:
+        example: AAAAAAAAAAAAAA
+        description: Your HackerRank API Key
+        required: true
+        type: string
+      filePath:
+        example: 'E:\Source.cs'
+        description: File path for the source code file
+        required: true
+        type: string
+      language:
+        example: 9
+        description: >-
+          The language key for the language, the submission is made in.Get lang
+          key from http://api.hackerrank.com/checker/languages.json
+        required: true
+        type: number
+      testcases:
+        example: []
+        description: 'A valid JSON, which on parse should result in a list of strings.'
+        required: true
+        type: array
+      wait:
+        example: true
+        description: 'if true , response will be sent after compilation and run.'
+        required: false
+        type: boolean
+      callbackUrl:
+        example: 'http://example.com/callback'
+        description: >-
+          A callback url, on which the submission response will be posted as a
+          JSON string under `data` parameter.
+        required: false
+        type: string
+      format:
+        example: json
+        description: must be either json or xml.
+        required: false
+        type: string

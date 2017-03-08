@@ -5,57 +5,55 @@ author:
   email: support@syncano.io
 endpoints:
   map:
-    POST:
-      file: scripts/map.js
-      description: Iterate over each item of an array to build a new transformed array.
-      parameters:
-        array:
-          description: The array to loop over
-          typeclass: array
-          required: true
-          type: array
-        worker:
-          description: The machine to run on each item in the array.
-          extendedDescription: >-
-            Expects machine to have a single (typeclass: "*") input called
-            "value", and two exits: "success" and "error".
-          typeclass: machine
-          required: true
-          type: machine
-        data:
-          description: Optional data param for the worker
-          extendedDescription: >-
-            Use this to pass other data and options to the worker besides the
-            array item
-          example: '*'
-          type: string
-        series:
-          description: Whether to run worker on one item at a time (in series)
-          extendedDescription: 'By default, all items are run at the same time (in parallel)'
-          example: false
-          defaultsTo: false
-          type: boolean
+    file: scripts/map.js
+    description: Iterate over each item of an array to build a new transformed array.
+    parameters:
+      array:
+        description: The array to loop over
+        typeclass: array
+        required: true
+        type: array
+      worker:
+        description: The machine to run on each item in the array.
+        extendedDescription: >-
+          Expects machine to have a single (typeclass: "*") input called
+          "value", and two exits: "success" and "error".
+        typeclass: machine
+        required: true
+        type: machine
+      data:
+        description: Optional data param for the worker
+        extendedDescription: >-
+          Use this to pass other data and options to the worker besides the
+          array item
+        example: '*'
+        type: string
+      series:
+        description: Whether to run worker on one item at a time (in series)
+        extendedDescription: 'By default, all items are run at the same time (in parallel)'
+        example: false
+        defaultsTo: false
+        type: boolean
   each:
-    POST:
-      file: scripts/each.js
-      description: Run a given machine on each item of an array.
-      parameters:
-        array:
-          description: The array to loop over
-          typeclass: array
-          required: true
-          type: array
-        worker:
-          description: The machine to run on each item in the array.
-          extendedDescription: >-
-            Expects machine to have a single (typeclass: "*") input called
-            "value", and two exits: "success" and "error".
-          typeclass: machine
-          required: true
-          type: machine
-        series:
-          description: Whether to run worker on one item at a time (in series)
-          extendedDescription: 'By default, all items are run at the same time (in parallel)'
-          example: false
-          defaultsTo: false
-          type: boolean
+    file: scripts/each.js
+    description: Run a given machine on each item of an array.
+    parameters:
+      array:
+        description: The array to loop over
+        typeclass: array
+        required: true
+        type: array
+      worker:
+        description: The machine to run on each item in the array.
+        extendedDescription: >-
+          Expects machine to have a single (typeclass: "*") input called
+          "value", and two exits: "success" and "error".
+        typeclass: machine
+        required: true
+        type: machine
+      series:
+        description: Whether to run worker on one item at a time (in series)
+        extendedDescription: 'By default, all items are run at the same time (in parallel)'
+        example: false
+        defaultsTo: false
+        type: boolean

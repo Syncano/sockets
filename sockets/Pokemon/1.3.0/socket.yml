@@ -7,17 +7,15 @@ author:
   email: support@syncano.io
 endpoints:
   list-all-pokemon:
-    POST:
-      file: scripts/list-all-pokemon.js
-      description: List the name and resource_uri for each known Pokemon.
-      parameters: {}
+    file: scripts/list-all-pokemon.js
+    description: List the name and resource_uri for each known Pokemon.
+    parameters: {}
   get-pokemon:
-    POST:
-      file: scripts/get-pokemon.js
-      description: Get information about a Pokemon based on its unique ID number
-      parameters:
-        id:
-          description: The unique id for a Pokemon
-          example: 1
-          required: true
-          type: number
+    file: scripts/get-pokemon.js
+    description: Get information about a Pokemon based on its unique ID number
+    parameters:
+      id:
+        description: The unique id for a Pokemon
+        example: 1
+        required: true
+        type: number

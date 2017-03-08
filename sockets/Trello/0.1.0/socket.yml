@@ -5,34 +5,32 @@ author:
   email: support@syncano.io
 endpoints:
   get-board-lists:
-    POST:
-      file: scripts/get-board-lists.js
-      description: Retrieve all lists for a given board
-      parameters:
-        boardId:
-          example: >-
-            "xeRDSK8Z" (Hint: You can get this from the boards URL:
-            https://trello.com/b/this_value_here
-          description: The id of the board
-          required: true
-          type: string
+    file: scripts/get-board-lists.js
+    description: Retrieve all lists for a given board
+    parameters:
+      boardId:
+        example: >-
+          "xeRDSK8Z" (Hint: You can get this from the boards URL:
+          https://trello.com/b/this_value_here
+        description: The id of the board
+        required: true
+        type: string
   move-list-to-board:
-    POST:
-      file: scripts/move-list-to-board.js
-      description: 'Move the cards from one list, to another list on a specified board'
-      parameters:
-        listIdToMove:
-          example: 56cacebe81d9018832646c98 (24 character id)
-          description: The id of the list to move the cards from
-          required: true
-          type: string
-        boardIdToMoveTo:
-          example: 56cace9be1e1f1cb119a7cb8 (24 character id)
-          description: The id of the board to move the list to
-          required: true
-          type: string
-        listIdToMoveTo:
-          example: 56cb3aa6327c4611996cec8c (24 character id)
-          description: The id of the list to populate with the old lists cards
-          required: true
-          type: string
+    file: scripts/move-list-to-board.js
+    description: 'Move the cards from one list, to another list on a specified board'
+    parameters:
+      listIdToMove:
+        example: 56cacebe81d9018832646c98 (24 character id)
+        description: The id of the list to move the cards from
+        required: true
+        type: string
+      boardIdToMoveTo:
+        example: 56cace9be1e1f1cb119a7cb8 (24 character id)
+        description: The id of the board to move the list to
+        required: true
+        type: string
+      listIdToMoveTo:
+        example: 56cb3aa6327c4611996cec8c (24 character id)
+        description: The id of the list to populate with the old lists cards
+        required: true
+        type: string

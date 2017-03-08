@@ -5,99 +5,95 @@ author:
   email: support@syncano.io
 endpoints:
   read:
-    POST:
-      file: scripts/read.js
-      description: Create a read stream with a source path
-      parameters:
-        source:
-          example: samples/test.png
-          description: a source path
-          required: true
-          type: string
+    file: scripts/read.js
+    description: Create a read stream with a source path
+    parameters:
+      source:
+        example: samples/test.png
+        description: a source path
+        required: true
+        type: string
   write:
-    POST:
-      file: scripts/write.js
-      description: Write your file in destination path
-      parameters:
-        destination:
-          example: samples/test-blur.png
-          description: a destination path
-          required: true
-          type: string
-        done:
-          typeclass: '*'
-          description: a callback after writing
-          required: false
-          type: '*'
+    file: scripts/write.js
+    description: Write your file in destination path
+    parameters:
+      destination:
+        example: samples/test-blur.png
+        description: a destination path
+        required: true
+        type: string
+      done:
+        typeclass: '*'
+        description: a callback after writing
+        required: false
+        type: '*'
   to:
-    POST:
-      file: scripts/to.js
-      description: >-
-        Transform an convert image (PNG, JPG) with crop, resize, blur, rotate,
-        flip, ...
-      parameters:
-        blur:
-          example: 2
-          description: a number
-          required: false
-          type: number
-        width:
-          example: 120
-          description: a with of thumb
-          required: false
-          type: number
-        height:
-          example: 120
-          description: a height of thumb
-          required: false
-          type: number
-        size:
-          example: 120x250
-          description: 'a string  [width]x[height]'
-          required: false
-          type: string
-        source:
-          example: samples/test.png
-          description: a source path
-          required: false
-          type: string
-        destination:
-          example: samples/test-blur.png
-          description: a destination path
-          required: false
-          type: string
-        done:
-          typeclass: '*'
-          description: a callback after writing
-          required: false
-          type: '*'
-        quality:
-          example: 2
-          description: a number (1-100)
-          required: false
-          type: number
+    file: scripts/to.js
+    description: >-
+      Transform an convert image (PNG, JPG) with crop, resize, blur, rotate,
+      flip, ...
+    parameters:
+      blur:
+        example: 2
+        description: a number
+        required: false
+        type: number
+      width:
+        example: 120
+        description: a with of thumb
+        required: false
+        type: number
+      height:
+        example: 120
+        description: a height of thumb
+        required: false
+        type: number
+      size:
+        example: 120x250
+        description: 'a string  [width]x[height]'
+        required: false
+        type: string
+      source:
+        example: samples/test.png
+        description: a source path
+        required: false
+        type: string
+      destination:
+        example: samples/test-blur.png
+        description: a destination path
+        required: false
+        type: string
+      done:
+        typeclass: '*'
+        description: a callback after writing
+        required: false
+        type: '*'
+      quality:
+        example: 2
+        description: a number (1-100)
+        required: false
+        type: number
   multiple:
-    POST:
-      file: scripts/multiple.js
-      description: generate multiple thumbs for an image
-      parameters:
-        source:
-          example: samples/test.png
-          description: a source path
-          required: false
-          type: string
-        schema:
-          typeclass: array
-          description: a schema of thumb source
-          required: true
-          type: array
-        done:
-          typeclass: '*'
-          description: a callback after writing
-          required: false
-          type: '*'
-        quality:
-          example: 2
-          description: a number (1-100)
-          required: false
-          type: number
+    file: scripts/multiple.js
+    description: generate multiple thumbs for an image
+    parameters:
+      source:
+        example: samples/test.png
+        description: a source path
+        required: false
+        type: string
+      schema:
+        typeclass: array
+        description: a schema of thumb source
+        required: true
+        type: array
+      done:
+        typeclass: '*'
+        description: a callback after writing
+        required: false
+        type: '*'
+      quality:
+        example: 2
+        description: a number (1-100)
+        required: false
+        type: number

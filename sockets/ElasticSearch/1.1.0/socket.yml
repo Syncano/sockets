@@ -5,176 +5,168 @@ author:
   email: support@syncano.io
 endpoints:
   search:
-    POST:
-      file: scripts/search.js
-      description: >-
-        Search across all indexed fields, returning the ids of the documents
-        which match the query.
-      parameters:
-        hostname:
-          description: The hostname of your ElasticSearch server
-          example: localhost
-          required: true
-          whereToGet:
-            description: Copy the hostname of your ElasticSearch server
-            extendedDescription: >-
-              i.e. if you are using a hosted ElasticSearch instance at
-              "bae23592g23523.some-hosted-service.com", that is your hostname. 
-              If you are running ElasticSearch locally, this will be
-              "localhost".
-          type: string
-        port:
-          description: The port your ElasticSearch server is running on
-          defaultsTo: 9200
-          example: 9200
-          whereToGet:
-            description: Copy the port of your ElasticSearch server
-            extendedDescription: The conventional port number for ElasticSearch servers is 9200.
-          type: number
-        index:
-          description: The name of the index to search
+    file: scripts/search.js
+    description: >-
+      Search across all indexed fields, returning the ids of the documents which
+      match the query.
+    parameters:
+      hostname:
+        description: The hostname of your ElasticSearch server
+        example: localhost
+        required: true
+        whereToGet:
+          description: Copy the hostname of your ElasticSearch server
           extendedDescription: >-
-            An "index" in ElasticSearch is a lot like a "database" in MySQL or
-            MongoDB.
-          example: myindex
-          required: true
-          type: string
-        query:
-          description: The search query
-          example: cute dogs
-          required: true
-          type: string
+            i.e. if you are using a hosted ElasticSearch instance at
+            "bae23592g23523.some-hosted-service.com", that is your hostname.  If
+            you are running ElasticSearch locally, this will be "localhost".
+        type: string
+      port:
+        description: The port your ElasticSearch server is running on
+        defaultsTo: 9200
+        example: 9200
+        whereToGet:
+          description: Copy the port of your ElasticSearch server
+          extendedDescription: The conventional port number for ElasticSearch servers is 9200.
+        type: number
+      index:
+        description: The name of the index to search
+        extendedDescription: >-
+          An "index" in ElasticSearch is a lot like a "database" in MySQL or
+          MongoDB.
+        example: myindex
+        required: true
+        type: string
+      query:
+        description: The search query
+        example: cute dogs
+        required: true
+        type: string
   update:
-    POST:
-      file: scripts/update.js
-      description: Update (reindex) the document with the specified unique id.
-      parameters:
-        hostname:
-          description: The hostname of your ElasticSearch server
-          example: localhost
-          required: true
-          whereToGet:
-            description: Copy the hostname of your ElasticSearch server
-            extendedDescription: >-
-              i.e. if you are using a hosted ElasticSearch instance at
-              "bae23592g23523.some-hosted-service.com", that is your hostname. 
-              If you are running ElasticSearch locally, this will be
-              "localhost".
-          type: string
-        port:
-          description: The port your ElasticSearch server is running on
-          defaultsTo: 9200
-          example: 9200
-          whereToGet:
-            description: Copy the port of your ElasticSearch server
-            extendedDescription: The conventional port number for ElasticSearch servers is 9200.
-          type: number
-        index:
-          description: The name of the index where the document is stored
+    file: scripts/update.js
+    description: Update (reindex) the document with the specified unique id.
+    parameters:
+      hostname:
+        description: The hostname of your ElasticSearch server
+        example: localhost
+        required: true
+        whereToGet:
+          description: Copy the hostname of your ElasticSearch server
           extendedDescription: >-
-            An "index" in ElasticSearch is a lot like a "database" in MySQL or
-            MongoDB.
-          example: myindex
-          required: true
-          type: string
-        type:
-          description: The "type" of the document to update
-          defaultsTo: default
-          example: user
-          type: string
-        id:
-          description: The unique id of the document to replace
-          example: lzmkDgMjTbGoacxLMsB_zA
-          required: true
-          type: string
-        document:
-          description: The new document (a dictionary) to replace the old one
-          typeclass: dictionary
-          required: true
-          type: dictionary
+            i.e. if you are using a hosted ElasticSearch instance at
+            "bae23592g23523.some-hosted-service.com", that is your hostname.  If
+            you are running ElasticSearch locally, this will be "localhost".
+        type: string
+      port:
+        description: The port your ElasticSearch server is running on
+        defaultsTo: 9200
+        example: 9200
+        whereToGet:
+          description: Copy the port of your ElasticSearch server
+          extendedDescription: The conventional port number for ElasticSearch servers is 9200.
+        type: number
+      index:
+        description: The name of the index where the document is stored
+        extendedDescription: >-
+          An "index" in ElasticSearch is a lot like a "database" in MySQL or
+          MongoDB.
+        example: myindex
+        required: true
+        type: string
+      type:
+        description: The "type" of the document to update
+        defaultsTo: default
+        example: user
+        type: string
+      id:
+        description: The unique id of the document to replace
+        example: lzmkDgMjTbGoacxLMsB_zA
+        required: true
+        type: string
+      document:
+        description: The new document (a dictionary) to replace the old one
+        typeclass: dictionary
+        required: true
+        type: dictionary
   create:
-    POST:
-      file: scripts/create.js
-      description: 'Store the provided document (a dictionary), making it searchable.'
-      parameters:
-        hostname:
-          description: The hostname of your ElasticSearch server
-          example: localhost
-          required: true
-          whereToGet:
-            description: Copy the hostname of your ElasticSearch server
-            extendedDescription: >-
-              i.e. if you are using a hosted ElasticSearch instance at
-              "bae23592g23523.some-hosted-service.com", that is your hostname. 
-              If you are running ElasticSearch locally, this will be
-              "localhost".
-          type: string
-        port:
-          description: The port your ElasticSearch server is running on
-          defaultsTo: 9200
-          example: 9200
-          whereToGet:
-            description: Copy the port of your ElasticSearch server
-            extendedDescription: The conventional port number for ElasticSearch servers is 9200.
-          type: number
-        index:
-          description: The name of the index where the document should be stored
+    file: scripts/create.js
+    description: 'Store the provided document (a dictionary), making it searchable.'
+    parameters:
+      hostname:
+        description: The hostname of your ElasticSearch server
+        example: localhost
+        required: true
+        whereToGet:
+          description: Copy the hostname of your ElasticSearch server
           extendedDescription: >-
-            An "index" in ElasticSearch is a lot like a "database" in MySQL or
-            MongoDB.
-          example: myindex
-          required: true
-          type: string
-        type:
-          description: The "type" of this document
-          defaultsTo: default
-          example: user
-          type: string
-        document:
-          description: The document to store
-          typeclass: dictionary
-          required: true
-          type: dictionary
+            i.e. if you are using a hosted ElasticSearch instance at
+            "bae23592g23523.some-hosted-service.com", that is your hostname.  If
+            you are running ElasticSearch locally, this will be "localhost".
+        type: string
+      port:
+        description: The port your ElasticSearch server is running on
+        defaultsTo: 9200
+        example: 9200
+        whereToGet:
+          description: Copy the port of your ElasticSearch server
+          extendedDescription: The conventional port number for ElasticSearch servers is 9200.
+        type: number
+      index:
+        description: The name of the index where the document should be stored
+        extendedDescription: >-
+          An "index" in ElasticSearch is a lot like a "database" in MySQL or
+          MongoDB.
+        example: myindex
+        required: true
+        type: string
+      type:
+        description: The "type" of this document
+        defaultsTo: default
+        example: user
+        type: string
+      document:
+        description: The document to store
+        typeclass: dictionary
+        required: true
+        type: dictionary
   destroy:
-    POST:
-      file: scripts/destroy.js
-      description: Delete the document with the specified unique id.
-      parameters:
-        hostname:
-          description: The hostname of your ElasticSearch server
-          example: localhost
-          required: true
-          whereToGet:
-            description: Copy the hostname of your ElasticSearch server
-            extendedDescription: >-
-              i.e. if you are using a hosted ElasticSearch instance at
-              "bae23592g23523.some-hosted-service.com", that is your hostname. 
-              If you are running ElasticSearch locally, this will be
-              "localhost".
-          type: string
-        port:
-          description: The port your ElasticSearch server is running on
-          defaultsTo: 9200
-          example: 9200
-          whereToGet:
-            description: Copy the port of your ElasticSearch server
-            extendedDescription: The conventional port number for ElasticSearch servers is 9200.
-          type: number
-        index:
-          description: The name of the index where the document is stored
+    file: scripts/destroy.js
+    description: Delete the document with the specified unique id.
+    parameters:
+      hostname:
+        description: The hostname of your ElasticSearch server
+        example: localhost
+        required: true
+        whereToGet:
+          description: Copy the hostname of your ElasticSearch server
           extendedDescription: >-
-            An "index" in ElasticSearch is a lot like a "database" in MySQL or
-            MongoDB.
-          example: myindex
-          required: true
-          type: string
-        type:
-          description: The "type" of the document to delete
-          defaultsTo: default
-          example: user
-          type: string
-        id:
-          description: The unique id of the document to delete
-          example: lzmkDgMjTbGoacxLMsB_zA
-          required: true
-          type: string
+            i.e. if you are using a hosted ElasticSearch instance at
+            "bae23592g23523.some-hosted-service.com", that is your hostname.  If
+            you are running ElasticSearch locally, this will be "localhost".
+        type: string
+      port:
+        description: The port your ElasticSearch server is running on
+        defaultsTo: 9200
+        example: 9200
+        whereToGet:
+          description: Copy the port of your ElasticSearch server
+          extendedDescription: The conventional port number for ElasticSearch servers is 9200.
+        type: number
+      index:
+        description: The name of the index where the document is stored
+        extendedDescription: >-
+          An "index" in ElasticSearch is a lot like a "database" in MySQL or
+          MongoDB.
+        example: myindex
+        required: true
+        type: string
+      type:
+        description: The "type" of the document to delete
+        defaultsTo: default
+        example: user
+        type: string
+      id:
+        description: The unique id of the document to delete
+        example: lzmkDgMjTbGoacxLMsB_zA
+        required: true
+        type: string

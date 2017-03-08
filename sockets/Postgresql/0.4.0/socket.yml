@@ -5,97 +5,91 @@ author:
   email: support@syncano.io
 endpoints:
   list-tables:
-    POST:
-      file: scripts/list-tables.js
-      description: List the names of the tables in the specified Postgresql database.
-      parameters:
-        connectionUrl:
-          description: The postgresql connection URL
-          defaultsTo: 'postgres://foo:bar@localhost:5432/machinepack_postgresql'
-          example: 'postgres://foo:bar@localhost:5432/machinepack_postgresql'
-          required: true
-          type: string
+    file: scripts/list-tables.js
+    description: List the names of the tables in the specified Postgresql database.
+    parameters:
+      connectionUrl:
+        description: The postgresql connection URL
+        defaultsTo: 'postgres://foo:bar@localhost:5432/machinepack_postgresql'
+        example: 'postgres://foo:bar@localhost:5432/machinepack_postgresql'
+        required: true
+        type: string
   describe-table:
-    POST:
-      file: scripts/describe-table.js
-      description: List all the columns that are found in a postgresql table.
-      parameters:
-        connectionUrl:
-          description: The postgresql connection URL
-          defaultsTo: 'postgres://foo:bar@localhost:5432/machinepack_postgresql'
-          example: 'postgres://foo:bar@localhost:5432/machinepack_postgresql'
-          required: true
-          type: string
-        table:
-          description: The name of the table.
-          example: direwolves
-          required: true
-          type: string
+    file: scripts/describe-table.js
+    description: List all the columns that are found in a postgresql table.
+    parameters:
+      connectionUrl:
+        description: The postgresql connection URL
+        defaultsTo: 'postgres://foo:bar@localhost:5432/machinepack_postgresql'
+        example: 'postgres://foo:bar@localhost:5432/machinepack_postgresql'
+        required: true
+        type: string
+      table:
+        description: The name of the table.
+        example: direwolves
+        required: true
+        type: string
   list-records:
-    POST:
-      file: scripts/list-records.js
-      description: List records in the Postgresql table that match the specified criteria.
-      parameters:
-        connectionUrl:
-          description: The postgresql connection URL
-          defaultsTo: 'postgres://foo:bar@localhost:5432/machinepack_postgresql'
-          example: 'postgres://foo:bar@localhost:5432/machinepack_postgresql'
-          required: true
-          type: string
-        table:
-          description: The name of the table.
-          example: direwolves
-          required: true
-          type: string
-        query:
-          description: The selection criteria (like the WHERE clause)
-          extendedDescription: Standard query selectors from the Postgresql method.
-          typeclass: dictionary
-          type: dictionary
-        limit:
-          description: >-
-            If specified, limits number of rows returned in the query (useful
-            for pagination)
-          example: 30
-          type: number
-        skip:
-          description: >-
-            If specified, skips N rows ahead in the query (useful for
-            pagination)
-          example: 30
-          type: number
-        sort:
-          description: >-
-            If specified, the rows coming back from the query will be sorted
-            according to this dictionary.
-          typeclass: array
-          type: array
-        schema:
-          description: An example indicating what each returned row should look like.
-          extendedDescription: >-
-            This is used to determine the `columns` (i.e. projection) passed in
-            w/ the query.
-          typeclass: array
-          required: true
-          type: array
+    file: scripts/list-records.js
+    description: List records in the Postgresql table that match the specified criteria.
+    parameters:
+      connectionUrl:
+        description: The postgresql connection URL
+        defaultsTo: 'postgres://foo:bar@localhost:5432/machinepack_postgresql'
+        example: 'postgres://foo:bar@localhost:5432/machinepack_postgresql'
+        required: true
+        type: string
+      table:
+        description: The name of the table.
+        example: direwolves
+        required: true
+        type: string
+      query:
+        description: The selection criteria (like the WHERE clause)
+        extendedDescription: Standard query selectors from the Postgresql method.
+        typeclass: dictionary
+        type: dictionary
+      limit:
+        description: >-
+          If specified, limits number of rows returned in the query (useful for
+          pagination)
+        example: 30
+        type: number
+      skip:
+        description: 'If specified, skips N rows ahead in the query (useful for pagination)'
+        example: 30
+        type: number
+      sort:
+        description: >-
+          If specified, the rows coming back from the query will be sorted
+          according to this dictionary.
+        typeclass: array
+        type: array
+      schema:
+        description: An example indicating what each returned row should look like.
+        extendedDescription: >-
+          This is used to determine the `columns` (i.e. projection) passed in w/
+          the query.
+        typeclass: array
+        required: true
+        type: array
   count-records:
-    POST:
-      file: scripts/count-records.js
-      description: Count records in the Postgresql table that match the specified criteria.
-      parameters:
-        connectionUrl:
-          description: The postgresql connection URL
-          defaultsTo: 'postgres://foo:bar@localhost:5432/machinepack_postgresql'
-          example: 'postgres://foo:bar@localhost:5432/machinepack_postgresql'
-          required: true
-          type: string
-        table:
-          description: The name of the table.
-          example: direwolves
-          required: true
-          type: string
-        query:
-          description: The selection criteria (like the WHERE clause)
-          extendedDescription: Standard query selectors from the Postgresql method.
-          typeclass: dictionary
-          type: dictionary
+    file: scripts/count-records.js
+    description: Count records in the Postgresql table that match the specified criteria.
+    parameters:
+      connectionUrl:
+        description: The postgresql connection URL
+        defaultsTo: 'postgres://foo:bar@localhost:5432/machinepack_postgresql'
+        example: 'postgres://foo:bar@localhost:5432/machinepack_postgresql'
+        required: true
+        type: string
+      table:
+        description: The name of the table.
+        example: direwolves
+        required: true
+        type: string
+      query:
+        description: The selection criteria (like the WHERE clause)
+        extendedDescription: Standard query selectors from the Postgresql method.
+        typeclass: dictionary
+        type: dictionary

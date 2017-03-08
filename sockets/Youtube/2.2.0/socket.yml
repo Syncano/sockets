@@ -5,76 +5,72 @@ author:
   email: support@syncano.io
 endpoints:
   get-play-count:
-    POST:
-      file: scripts/get-play-count.js
-      description: Display the number of views of a Youtube Video.
-      parameters:
-        url:
-          example: 'https://www.youtube.com/watch?v=TruIq5IxuiU'
-          description: The URL of a Youtube Video.
-          required: true
-          type: string
-        apiKey:
-          example: xAmBxAmBxAmBkjbyKkjbyKkjbyK
-          description: The private Google API key for this application.
-          required: true
-          protect: true
-          whereToGet:
-            url: >-
-              https://console.developers.google.com/project/hip-cycling-830/apiui/credential
-            description: 'Copy and paste an API key, or create one if you haven''t already.'
-            extendedDescription: >-
-              If the key type you need does not already exist, create an API key
-              by selecting Create New Key and then selecting "Server API Key".
-              Then enter the additional data required for that key type.  Also
-              make sure the YouTube API is enabled here:
-              https://console.developers.google.com/project/hip-cycling-830/apiui/apiview/youtube
-          type: string
+    file: scripts/get-play-count.js
+    description: Display the number of views of a Youtube Video.
+    parameters:
+      url:
+        example: 'https://www.youtube.com/watch?v=TruIq5IxuiU'
+        description: The URL of a Youtube Video.
+        required: true
+        type: string
+      apiKey:
+        example: xAmBxAmBxAmBkjbyKkjbyKkjbyK
+        description: The private Google API key for this application.
+        required: true
+        protect: true
+        whereToGet:
+          url: >-
+            https://console.developers.google.com/project/hip-cycling-830/apiui/credential
+          description: 'Copy and paste an API key, or create one if you haven''t already.'
+          extendedDescription: >-
+            If the key type you need does not already exist, create an API key
+            by selecting Create New Key and then selecting "Server API Key".
+            Then enter the additional data required for that key type.  Also
+            make sure the YouTube API is enabled here:
+            https://console.developers.google.com/project/hip-cycling-830/apiui/apiview/youtube
+        type: string
   parse-video-id:
-    POST:
-      file: scripts/parse-video-id.js
-      description: Parse the video ID from the provided YouTube.com URL.
-      parameters:
-        url:
-          example: 'https://www.youtube.com/watch?v=TruIq5IxuiU'
-          description: The URL of a Youtube Video.
-          required: true
-          type: string
+    file: scripts/parse-video-id.js
+    description: Parse the video ID from the provided YouTube.com URL.
+    parameters:
+      url:
+        example: 'https://www.youtube.com/watch?v=TruIq5IxuiU'
+        description: The URL of a Youtube Video.
+        required: true
+        type: string
   get-base-url:
-    POST:
-      file: scripts/get-base-url.js
-      description: Return the base URL for the YouTube API.
-      parameters: {}
+    file: scripts/get-base-url.js
+    description: Return the base URL for the YouTube API.
+    parameters: {}
   search-videos:
-    POST:
-      file: scripts/search-videos.js
-      description: List Youtube videos which match the specified search query.
-      parameters:
-        query:
-          description: The search query
-          example: grumpy cat
-          required: true
-          type: string
-        limit:
-          example: 15
-          description: The maximum number of results to return.
-          defaultsTo: 5
-          max: 50
-          min: 1
-          type: number
-        apiKey:
-          example: xAmBxAmBxAmBkjbyKkjbyKkjbyK
-          description: The private Google API key for this application.
-          required: true
-          protect: true
-          whereToGet:
-            url: >-
-              https://console.developers.google.com/project/hip-cycling-830/apiui/credential
-            description: 'Copy and paste an API key, or create one if you haven''t already.'
-            extendedDescription: >-
-              If the key type you need does not already exist, create an API key
-              by selecting Create New Key and then selecting "Server API Key".
-              Then enter the additional data required for that key type.  Also
-              make sure the YouTube API is enabled here:
-              https://console.developers.google.com/project/hip-cycling-830/apiui/apiview/youtube
-          type: string
+    file: scripts/search-videos.js
+    description: List Youtube videos which match the specified search query.
+    parameters:
+      query:
+        description: The search query
+        example: grumpy cat
+        required: true
+        type: string
+      limit:
+        example: 15
+        description: The maximum number of results to return.
+        defaultsTo: 5
+        max: 50
+        min: 1
+        type: number
+      apiKey:
+        example: xAmBxAmBxAmBkjbyKkjbyKkjbyK
+        description: The private Google API key for this application.
+        required: true
+        protect: true
+        whereToGet:
+          url: >-
+            https://console.developers.google.com/project/hip-cycling-830/apiui/credential
+          description: 'Copy and paste an API key, or create one if you haven''t already.'
+          extendedDescription: >-
+            If the key type you need does not already exist, create an API key
+            by selecting Create New Key and then selecting "Server API Key".
+            Then enter the additional data required for that key type.  Also
+            make sure the YouTube API is enabled here:
+            https://console.developers.google.com/project/hip-cycling-830/apiui/apiview/youtube
+        type: string

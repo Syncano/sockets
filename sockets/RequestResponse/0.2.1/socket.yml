@@ -9,81 +9,77 @@ author:
   email: support@syncano.io
 endpoints:
   get-request-header:
-    POST:
-      file: scripts/get-request-header.js
-      description: >-
-        Get the value of the specified request header from the current
-        HTTP/vHTTP request.
-      parameters:
-        header:
-          description: The name of the request header to look up.
-          extendedDescription: >-
-            Note that header names are case-insensitive.  Also be aware that
-            both "referrer" and "referer" are treated as synonyms because they
-            are interchangeable in some HTTP implementations.
-          example: accept
-          required: true
-          type: string
+    file: scripts/get-request-header.js
+    description: >-
+      Get the value of the specified request header from the current HTTP/vHTTP
+      request.
+    parameters:
+      header:
+        description: The name of the request header to look up.
+        extendedDescription: >-
+          Note that header names are case-insensitive.  Also be aware that both
+          "referrer" and "referer" are treated as synonyms because they are
+          interchangeable in some HTTP implementations.
+        example: accept
+        required: true
+        type: string
   upload-files:
-    POST:
-      file: scripts/upload-files.js
-      description: >-
-        Upload any incoming files from the current request and write them to
-        your desired destination.
-      parameters:
-        field:
-          description: The name of the file parameter to check for incoming uploads.
-          extendedDescription: >-
-            Note that one or more files can be uploaded from the same file
-            parameter (aka "field").  To restrict the content type, file size,
-            or number of incoming files, write a custom analog machine that
-            depends on the request habitat, then use `env.req.file()` to obtain
-            access to the file upload.
-          moreInfoUrl: >-
-            http://preview.sailsjs.org/documentation/reference/request-req/req-file
-          example: avatar
-          required: true
-          type: string
-        adapter:
-          description: >-
-            The package name of the Skipper adapter to use when processing this
-            file upload.
-          extendedDescription: >-
-            If this option is left unspecified, then there is no need to install
-            anything special.  By default, any uploaded files will be written to
-            the server's hard drive using `skipper-disk`.
+    file: scripts/upload-files.js
+    description: >-
+      Upload any incoming files from the current request and write them to your
+      desired destination.
+    parameters:
+      field:
+        description: The name of the file parameter to check for incoming uploads.
+        extendedDescription: >-
+          Note that one or more files can be uploaded from the same file
+          parameter (aka "field").  To restrict the content type, file size, or
+          number of incoming files, write a custom analog machine that depends
+          on the request habitat, then use `env.req.file()` to obtain access to
+          the file upload.
+        moreInfoUrl: >-
+          http://preview.sailsjs.org/documentation/reference/request-req/req-file
+        example: avatar
+        required: true
+        type: string
+      adapter:
+        description: >-
+          The package name of the Skipper adapter to use when processing this
+          file upload.
+        extendedDescription: >-
+          If this option is left unspecified, then there is no need to install
+          anything special.  By default, any uploaded files will be written to
+          the server's hard drive using `skipper-disk`.
 
-            But if a different adapter is specified, then it must be installed
-            (e.g. from NPM) as a local dependency of this Sails app.
+          But if a different adapter is specified, then it must be installed
+          (e.g. from NPM) as a local dependency of this Sails app.
 
-            In other words, if you specify `skipper-s3` here, then before
-            attempting to test this out, you should run:
+          In other words, if you specify `skipper-s3` here, then before
+          attempting to test this out, you should run:
 
 
-            ```
+          ```
 
-            `npm install skipper-s3 --save --save-exact`
+          `npm install skipper-s3 --save --save-exact`
 
-            ```
-          moreInfoUrl: 'https://github.com/balderdashy/skipper#uploading-files-to-s3'
-          example: skipper-s3
-          type: string
-        uploadOpts:
-          friendlyName: Upload options
-          description: >-
-            A dictionary of options to pass in to Skipper and the underlying
-            adapter.
-          extendedDescription: >-
-            This dictionary may include any of the Sails/Skipper core options,
-            as well as adapter-specific options (e.g. the bucket name for
-            `skipper-s3`, or the name of the Mongo database for
-            `skipper-gridfs`).
-          moreInfoUrl: 'https://github.com/balderdashy/skipper#options'
-          example: {}
-          defaultsTo: {}
-          type: object
+          ```
+        moreInfoUrl: 'https://github.com/balderdashy/skipper#uploading-files-to-s3'
+        example: skipper-s3
+        type: string
+      uploadOpts:
+        friendlyName: Upload options
+        description: >-
+          A dictionary of options to pass in to Skipper and the underlying
+          adapter.
+        extendedDescription: >-
+          This dictionary may include any of the Sails/Skipper core options, as
+          well as adapter-specific options (e.g. the bucket name for
+          `skipper-s3`, or the name of the Mongo database for `skipper-gridfs`).
+        moreInfoUrl: 'https://github.com/balderdashy/skipper#options'
+        example: {}
+        defaultsTo: {}
+        type: object
   get-credentials:
-    POST:
-      file: scripts/get-credentials.js
-      description: "Parse the username\_and password from HTTP Basic Auth credentials encoded in the current request."
-      parameters: {}
+    file: scripts/get-credentials.js
+    description: "Parse the username\_and password from HTTP Basic Auth credentials encoded in the current request."
+    parameters: {}

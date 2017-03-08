@@ -5,12 +5,11 @@ author:
   email: support@syncano.io
 endpoints:
   get-user-profile:
-    POST:
-      file: scripts/get-user-profile.js
-      description: Get a user's Treehouse profile information.
-      parameters:
-        username:
-          example: chalkers
-          description: The Treehouse username.
-          required: true
-          type: string
+    file: scripts/get-user-profile.js
+    description: Get a user's Treehouse profile information.
+    parameters:
+      username:
+        example: chalkers
+        description: The Treehouse username.
+        required: true
+        type: string

@@ -5,29 +5,26 @@ author:
   email: support@syncano.io
 endpoints:
   calculate:
-    POST:
-      file: scripts/calculate.js
-      description: Calculate depth of field properties
-      parameters:
-        coc:
-          example: 0.032
-          description: Camera censor circle of confusion parameter in millimetres.
-          required: true
-          type: number
-        focalLength:
-          example: 50
-          description: Lens focal length parameter in millimetres.
-          required: true
-          type: number
-        aperture:
-          example: 2.8
-          description: Lens aperture parameter in f-stops.
-          required: true
-          type: number
-        focusDistance:
-          example: 5000
-          description: >-
-            Distance between focus subject and the camera sensor, in
-            millimetres.
-          required: true
-          type: number
+    file: scripts/calculate.js
+    description: Calculate depth of field properties
+    parameters:
+      coc:
+        example: 0.032
+        description: Camera censor circle of confusion parameter in millimetres.
+        required: true
+        type: number
+      focalLength:
+        example: 50
+        description: Lens focal length parameter in millimetres.
+        required: true
+        type: number
+      aperture:
+        example: 2.8
+        description: Lens aperture parameter in f-stops.
+        required: true
+        type: number
+      focusDistance:
+        example: 5000
+        description: 'Distance between focus subject and the camera sensor, in millimetres.'
+        required: true
+        type: number

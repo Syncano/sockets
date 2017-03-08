@@ -5,40 +5,38 @@ author:
   email: support@syncano.io
 endpoints:
   list:
-    POST:
-      file: scripts/list.js
-      description: Retrieve the list of APIs supported at this endpoint.
-      parameters:
-        name:
-          example: plusDomains
-          description: Only include APIs with the given name.
-          type: string
-        preferred:
-          example: true
-          description: Return only the preferred version of an API. (boolean)
-          type: boolean
-        fields:
-          example: >-
-            discoveryVersion,items(description,discoveryLink,discoveryRestUrl,documentationLink,icons,kind,labels,name,preferred,title,version,id),kind
-          description: Selector specifying which fields to include in a partial response.
-          type: string
+    file: scripts/list.js
+    description: Retrieve the list of APIs supported at this endpoint.
+    parameters:
+      name:
+        example: plusDomains
+        description: Only include APIs with the given name.
+        type: string
+      preferred:
+        example: true
+        description: Return only the preferred version of an API. (boolean)
+        type: boolean
+      fields:
+        example: >-
+          discoveryVersion,items(description,discoveryLink,discoveryRestUrl,documentationLink,icons,kind,labels,name,preferred,title,version,id),kind
+        description: Selector specifying which fields to include in a partial response.
+        type: string
   get-rest:
-    POST:
-      file: scripts/get-rest.js
-      description: Retrieve the description of a particular version of an api.
-      parameters:
-        api:
-          example: plusDomains
-          description: The name of the API
-          required: true
-          type: string
-        version:
-          example: v1
-          description: The version of the API
-          required: true
-          type: string
-        fields:
-          example: >-
-            servicePath,labels,name,methods,description,basePath,ownerName,etag,icons,id,discoveryVersion,kind,resources,baseUrl,packagePath,documentationLink,auth,version,title,parameters,protocol,batchPath,rootUrl,ownerDomain,canonicalName,revision,schemas,features
-          description: Selector specifying which fields to include in a partial response.
-          type: string
+    file: scripts/get-rest.js
+    description: Retrieve the description of a particular version of an api.
+    parameters:
+      api:
+        example: plusDomains
+        description: The name of the API
+        required: true
+        type: string
+      version:
+        example: v1
+        description: The version of the API
+        required: true
+        type: string
+      fields:
+        example: >-
+          servicePath,labels,name,methods,description,basePath,ownerName,etag,icons,id,discoveryVersion,kind,resources,baseUrl,packagePath,documentationLink,auth,version,title,parameters,protocol,batchPath,rootUrl,ownerDomain,canonicalName,revision,schemas,features
+        description: Selector specifying which fields to include in a partial response.
+        type: string

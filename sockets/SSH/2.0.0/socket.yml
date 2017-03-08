@@ -5,84 +5,82 @@ author:
   email: support@syncano.io
 endpoints:
   run-ssh-command:
-    POST:
-      file: scripts/run-ssh-command.js
-      description: >-
-        Run a command on a remote server via SSH. Requires Host, Username,
-        Password and ommand.
-      parameters:
-        hostName:
-          example: 127.0.0.1
-          description: >-
-            The hostname or IP of the server you would like to SSH into. Do not
-            include the port.
-          required: true
-          type: string
-        port:
-          example: '22'
-          description: >-
-            The port you wish to connect through on the remote server. This is
-            usually 22 by default.
-          required: true
-          type: string
-        userName:
-          example: user1
-          description: >-
-            The username of the account you would like to SSH into the remote
-            server with.
-          required: true
-          type: string
-        password:
-          example: ''
-          description: The password for your user account on the remote server.
-          required: true
-          type: string
-        command:
-          example: mkdir testfolder
-          description: >-
-            The command you wish to execute on the remote machine. For SFTP
-            transfers, use the SFTP function.
-          required: true
-          type: string
+    file: scripts/run-ssh-command.js
+    description: >-
+      Run a command on a remote server via SSH. Requires Host, Username,
+      Password and ommand.
+    parameters:
+      hostName:
+        example: 127.0.0.1
+        description: >-
+          The hostname or IP of the server you would like to SSH into. Do not
+          include the port.
+        required: true
+        type: string
+      port:
+        example: '22'
+        description: >-
+          The port you wish to connect through on the remote server. This is
+          usually 22 by default.
+        required: true
+        type: string
+      userName:
+        example: user1
+        description: >-
+          The username of the account you would like to SSH into the remote
+          server with.
+        required: true
+        type: string
+      password:
+        example: ''
+        description: The password for your user account on the remote server.
+        required: true
+        type: string
+      command:
+        example: mkdir testfolder
+        description: >-
+          The command you wish to execute on the remote machine. For SFTP
+          transfers, use the SFTP function.
+        required: true
+        type: string
   run-ssh-command-keys:
-    POST:
-      file: scripts/run-ssh-command-keys.js
-      description: >-
-        Run a command on a remote server via SSH. Requires Host, Username,
-        Password and ommand.
-      parameters:
-        hostName:
-          example: 127.0.0.1
-          description: >-
-            The hostname or IP of the server you would like to SSH into. Do not
-            include the port.
-          required: true
-          type: string
-        port:
-          example: '22'
-          description: >-
-            The port you wish to connect through on the remote server. This is
-            usually 22 by default.
-          required: true
-          type: string
-        userName:
-          example: user1
-          description: >-
-            The username of the account you would like to SSH into the remote
-            server with.
-          required: true
-          type: string
-        privatekey:
-          example: ''
-          description: >-
-            The location of your private key on the local server. DO NOT enter
-            the key its self as text!
-          required: true
-          type: string
-        command:
-          example: mkdir testfolder
-          description: >-
-            The command you wish to execute on the remote machine. For SFTP
-            transfers, use the SFTP function.
-          required: true
-          type: string
+    file: scripts/run-ssh-command-keys.js
+    description: >-
+      Run a command on a remote server via SSH. Requires Host, Username,
+      Password and ommand.
+    parameters:
+      hostName:
+        example: 127.0.0.1
+        description: >-
+          The hostname or IP of the server you would like to SSH into. Do not
+          include the port.
+        required: true
+        type: string
+      port:
+        example: '22'
+        description: >-
+          The port you wish to connect through on the remote server. This is
+          usually 22 by default.
+        required: true
+        type: string
+      userName:
+        example: user1
+        description: >-
+          The username of the account you would like to SSH into the remote
+          server with.
+        required: true
+        type: string
+      privatekey:
+        example: ''
+        description: >-
+          The location of your private key on the local server. DO NOT enter the
+          key its self as text!
+        required: true
+        type: string
+      command:
+        example: mkdir testfolder
+        description: >-
+          The command you wish to execute on the remote machine. For SFTP
+          transfers, use the SFTP function.
+        required: true
+        type: string

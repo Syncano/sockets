@@ -5,12 +5,11 @@ author:
   email: support@syncano.io
 endpoints:
   calculate:
-    POST:
-      file: scripts/calculate.js
-      description: Calculate an age based on date of birth.
-      parameters:
-        dateOfBirth:
-          example: '1991-04-24'
-          description: A date of birth `Date` instance or string in yyyy-mm-dd format.
-          required: true
-          type: string
+    file: scripts/calculate.js
+    description: Calculate an age based on date of birth.
+    parameters:
+      dateOfBirth:
+        example: '1991-04-24'
+        description: A date of birth `Date` instance or string in yyyy-mm-dd format.
+        required: true
+        type: string

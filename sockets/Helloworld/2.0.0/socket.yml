@@ -5,12 +5,11 @@ author:
   email: support@syncano.io
 endpoints:
   say-hello:
-    POST:
-      file: scripts/say-hello.js
-      description: Log a hello message with a generated secret code and other information
-      parameters:
-        name:
-          example: John
-          description: The name of the person that will be sent the hello message.
-          required: true
-          type: string
+    file: scripts/say-hello.js
+    description: Log a hello message with a generated secret code and other information
+    parameters:
+      name:
+        example: John
+        description: The name of the person that will be sent the hello message.
+        required: true
+        type: string

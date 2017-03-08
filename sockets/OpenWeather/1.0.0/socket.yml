@@ -5,25 +5,24 @@ author:
   email: support@syncano.io
 endpoints:
   get-current-conditions:
-    POST:
-      file: scripts/get-current-conditions.js
-      description: List the current weather conditions for a particular city.
-      parameters:
-        apiKey:
-          example: xAmBxAmBxAmBkjbyKkjbyKkjbyK
-          description: The private API key for this application.
-          protect: true
-          whereToGet:
-            url: 'http://openweathermap.org/appid#get'
-            description: 'Copy and paste an API key, or create one if you haven''t already.'
-            extendedDescription: ''
-          type: string
-        city:
-          example: austin
-          description: The city for the current weather conditions.
-          required: true
-          type: string
-        stateOrCountry:
-          example: texas
-          description: The state or country for the current weather conditions.
-          type: string
+    file: scripts/get-current-conditions.js
+    description: List the current weather conditions for a particular city.
+    parameters:
+      apiKey:
+        example: xAmBxAmBxAmBkjbyKkjbyKkjbyK
+        description: The private API key for this application.
+        protect: true
+        whereToGet:
+          url: 'http://openweathermap.org/appid#get'
+          description: 'Copy and paste an API key, or create one if you haven''t already.'
+          extendedDescription: ''
+        type: string
+      city:
+        example: austin
+        description: The city for the current weather conditions.
+        required: true
+        type: string
+      stateOrCountry:
+        example: texas
+        description: The state or country for the current weather conditions.
+        type: string

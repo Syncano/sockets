@@ -5,40 +5,38 @@ author:
   email: support@syncano.io
 endpoints:
   get-tests:
-    POST:
-      file: scripts/get-tests.js
-      description: Get all Tests connected to your StatusCake account.
-      parameters:
-        statusCakeUser:
-          example: mcavoy
-          description: 'The user ID of your StatusCake account,'
-          required: true
-          type: string
-        apiKey:
-          example: phae6aesa5ohgh1vov7aeM7Kaec2eeca
-          description: Your StatusCake API key.
-          required: true
-          whereToGet:
-            url: 'https://www.statuscake.com/App/APIKey.php'
-            description: Copy "Below is your API Key" from your dashboard.
-          type: string
+    file: scripts/get-tests.js
+    description: Get all Tests connected to your StatusCake account.
+    parameters:
+      statusCakeUser:
+        example: mcavoy
+        description: 'The user ID of your StatusCake account,'
+        required: true
+        type: string
+      apiKey:
+        example: phae6aesa5ohgh1vov7aeM7Kaec2eeca
+        description: Your StatusCake API key.
+        required: true
+        whereToGet:
+          url: 'https://www.statuscake.com/App/APIKey.php'
+          description: Copy "Below is your API Key" from your dashboard.
+        type: string
   get-tests-details:
-    POST:
-      file: scripts/get-tests-details.js
-      description: Get detail information about a Test.
-      parameters:
-        statusCakeUser:
-          example: mcavoy
-          description: 'The user ID of your StatusCake account,'
-          required: true
-          type: string
-        apiKey:
-          example: phae6aesa5ohgh1vov7aeM7Kaec2eeca
-          description: Your StatusCake API key.
-          required: true
-          type: string
-        id:
-          example: 34567
-          description: ID of the StatusCake Test.
-          required: true
-          type: number
+    file: scripts/get-tests-details.js
+    description: Get detail information about a Test.
+    parameters:
+      statusCakeUser:
+        example: mcavoy
+        description: 'The user ID of your StatusCake account,'
+        required: true
+        type: string
+      apiKey:
+        example: phae6aesa5ohgh1vov7aeM7Kaec2eeca
+        description: Your StatusCake API key.
+        required: true
+        type: string
+      id:
+        example: 34567
+        description: ID of the StatusCake Test.
+        required: true
+        type: number

@@ -5,113 +5,110 @@ author:
   email: support@syncano.io
 endpoints:
   upload-image:
-    POST:
-      file: scripts/upload-image.js
-      description: Upload image on Cloudinary (using streams).
-      parameters:
-        cloudName:
-          id: f146b91d-fa3a-4a34-8dbf-62a344758c77
-          friendlyName: Cloud Name
-          description: Your Cloudinary cloud name key.
-          example: abc
-          required: true
-          type: string
-        apiKey:
-          id: f8f2de9c-3f1e-4976-a83a-02654eeb549a
-          friendlyName: API Key
-          description: Your Cloudinary API key.
-          example: abcd
-          required: true
-          type: string
-        apiSecret:
-          id: bf270f37-f916-4400-a1d6-0d5fb9debd83
-          friendlyName: API Secret
-          description: Your Cloudinary secret API key.
-          example: abcd
-          required: true
-          type: string
-        fieldName:
-          friendlyName: Field Name
-          description: 'Name of the field for uploading the file. Default: file'
-          example: /users/app/.upload/image.png
-          required: false
-          defaultsTo: file
-          type: string
-        imageOptions:
-          friendlyName: Cloudinart Image Options
-          description: >-
-            Cloudinary options for converting the image before saving it to
-            Cloudinary (ex: crop, width, height, etc.)
-          example: {}
-          required: false
-          defaultsTo: {}
-          type: object
+    file: scripts/upload-image.js
+    description: Upload image on Cloudinary (using streams).
+    parameters:
+      cloudName:
+        id: f146b91d-fa3a-4a34-8dbf-62a344758c77
+        friendlyName: Cloud Name
+        description: Your Cloudinary cloud name key.
+        example: abc
+        required: true
+        type: string
+      apiKey:
+        id: f8f2de9c-3f1e-4976-a83a-02654eeb549a
+        friendlyName: API Key
+        description: Your Cloudinary API key.
+        example: abcd
+        required: true
+        type: string
+      apiSecret:
+        id: bf270f37-f916-4400-a1d6-0d5fb9debd83
+        friendlyName: API Secret
+        description: Your Cloudinary secret API key.
+        example: abcd
+        required: true
+        type: string
+      fieldName:
+        friendlyName: Field Name
+        description: 'Name of the field for uploading the file. Default: file'
+        example: /users/app/.upload/image.png
+        required: false
+        defaultsTo: file
+        type: string
+      imageOptions:
+        friendlyName: Cloudinart Image Options
+        description: >-
+          Cloudinary options for converting the image before saving it to
+          Cloudinary (ex: crop, width, height, etc.)
+        example: {}
+        required: false
+        defaultsTo: {}
+        type: object
   get-image-urls:
-    POST:
-      file: scripts/get-image-urls.js
-      description: Get Image URLS from Cloudinary based on Image ID.
-      parameters:
-        cloudName:
-          friendlyName: Cloud name
-          description: Your Cloudinary cloud name key.
-          example: abc
-          required: true
-          type: string
-        apiKey:
-          friendlyName: API Key
-          description: Your Cloudinary API key.
-          example: abcd
-          required: true
-          type: string
-        apiSecret:
-          friendlyName: API Secret
-          description: Your Cloudinary secret API key.
-          example: abcd
-          required: true
-          type: string
-        imageId:
-          friendlyName: Image ID
-          description: Image ID on Cloudinary.
-          example: abc
-          required: true
-          type: string
-        options:
-          id: fb853ccc-7c4f-4492-9961-a5a3f890c8e4
-          friendlyName: Image options
-          description: >-
-            Image options :
-            http://cloudinary.com/documentation/node_image_manipulation
-          example: {}
-          required: false
-          defaultsTo: {}
-          type: object
+    file: scripts/get-image-urls.js
+    description: Get Image URLS from Cloudinary based on Image ID.
+    parameters:
+      cloudName:
+        friendlyName: Cloud name
+        description: Your Cloudinary cloud name key.
+        example: abc
+        required: true
+        type: string
+      apiKey:
+        friendlyName: API Key
+        description: Your Cloudinary API key.
+        example: abcd
+        required: true
+        type: string
+      apiSecret:
+        friendlyName: API Secret
+        description: Your Cloudinary secret API key.
+        example: abcd
+        required: true
+        type: string
+      imageId:
+        friendlyName: Image ID
+        description: Image ID on Cloudinary.
+        example: abc
+        required: true
+        type: string
+      options:
+        id: fb853ccc-7c4f-4492-9961-a5a3f890c8e4
+        friendlyName: Image options
+        description: >-
+          Image options :
+          http://cloudinary.com/documentation/node_image_manipulation
+        example: {}
+        required: false
+        defaultsTo: {}
+        type: object
   delete-image:
-    POST:
-      file: scripts/delete-image.js
-      description: Delete an image on Cloudinary.
-      parameters:
-        cloudName:
-          id: 1984556d-362b-40f7-9cdc-487e22496515
-          friendlyName: Cloud Name
-          description: Your Cloudinary cloud name key.
-          example: abc
-          required: true
-          type: string
-        apiKey:
-          friendlyName: API Key
-          description: Your Cloudinary API key.
-          example: abcd
-          required: true
-          type: string
-        apiSecret:
-          friendlyName: API Secret
-          description: Your Cloudinary secret API key.
-          example: abcd
-          required: true
-          type: string
-        imageId:
-          friendlyName: Image ID
-          description: Image ID on Cloudinary.
-          example: abc
-          required: true
-          type: string
+    file: scripts/delete-image.js
+    description: Delete an image on Cloudinary.
+    parameters:
+      cloudName:
+        id: 1984556d-362b-40f7-9cdc-487e22496515
+        friendlyName: Cloud Name
+        description: Your Cloudinary cloud name key.
+        example: abc
+        required: true
+        type: string
+      apiKey:
+        friendlyName: API Key
+        description: Your Cloudinary API key.
+        example: abcd
+        required: true
+        type: string
+      apiSecret:
+        friendlyName: API Secret
+        description: Your Cloudinary secret API key.
+        example: abcd
+        required: true
+        type: string
+      imageId:
+        friendlyName: Image ID
+        description: Image ID on Cloudinary.
+        example: abc
+        required: true
+        type: string

@@ -5,135 +5,132 @@ author:
   email: support@syncano.io
 endpoints:
   compile-to-html-file-from-md-file:
-    POST:
-      file: scripts/compile-to-html-file-from-md-file.js
-      description: >-
-        Load a markdown file from disk, compile to HTML, then save it back to
-        disk.
-      parameters:
-        src:
-          description: Path (relative or absolute) to the Markdown file to convert.
-          example: .tmp/compile-markdown-tree/some/markdown/file.md
-          required: true
-          type: string
-        dest:
-          description: Path (relative or absolute) to the HTML file to create.
-          example: .tmp/public/templates/documentation/reference
-          required: true
-          type: string
-        escapeHtml:
-          description: >-
-            If enabled, any inline HTML in the source Markdown will be escaped
-            instead of injected literally in the HTML output.
-          example: false
-          defaultsTo: false
-          type: boolean
-        compileCodeBlock:
-          description: >-
-            An optional lifecycle callback useful for adding syntax highlighting
-            to code blocks, or to perform custom HTML-escaping on them.
-          extendedDescription: >-
-            This callback is called once for each code block in the source
-            Markdown, and expected to return compiled HTML.
-          example: '->'
-          contract:
-            sideEffects: cacheable
-            inputs:
-              codeBlockContents:
-                description: The raw (unescaped) contents of the code block.
-                example: |
+    file: scripts/compile-to-html-file-from-md-file.js
+    description: >-
+      Load a markdown file from disk, compile to HTML, then save it back to
+      disk.
+    parameters:
+      src:
+        description: Path (relative or absolute) to the Markdown file to convert.
+        example: .tmp/compile-markdown-tree/some/markdown/file.md
+        required: true
+        type: string
+      dest:
+        description: Path (relative or absolute) to the HTML file to create.
+        example: .tmp/public/templates/documentation/reference
+        required: true
+        type: string
+      escapeHtml:
+        description: >-
+          If enabled, any inline HTML in the source Markdown will be escaped
+          instead of injected literally in the HTML output.
+        example: false
+        defaultsTo: false
+        type: boolean
+      compileCodeBlock:
+        description: >-
+          An optional lifecycle callback useful for adding syntax highlighting
+          to code blocks, or to perform custom HTML-escaping on them.
+        extendedDescription: >-
+          This callback is called once for each code block in the source
+          Markdown, and expected to return compiled HTML.
+        example: '->'
+        contract:
+          sideEffects: cacheable
+          inputs:
+            codeBlockContents:
+              description: The raw (unescaped) contents of the code block.
+              example: |
 
-                  console.log("hello");
-              programmingLanguage:
-                description: The programming language of the code block.
-                extendedDescription: >-
-                  Be warned that this is not normalized. In other words, if one
-                  code block in the source Markdown indicates `js`, and another
-                  indicates `javascript`, then this function will be called with
-                  `js` for the first one, and with `javascript` for the second.
-                example: javascript
-            exits:
-              success:
-                outputDescription: >-
-                  The compiled, _escaped_ HTML representing the contents of the
-                  code block.
-                extendedDescription: >-
-                  The compiled HTML output returned here will be wrapped in
-                  `<pre>` and `<code>` tags automatically.
-                example: >-
-                  console.<span class="function call">log</span>(<span
-                  class="string">'hello'</span>);
-          type: string
+                console.log("hello");
+            programmingLanguage:
+              description: The programming language of the code block.
+              extendedDescription: >-
+                Be warned that this is not normalized. In other words, if one
+                code block in the source Markdown indicates `js`, and another
+                indicates `javascript`, then this function will be called with
+                `js` for the first one, and with `javascript` for the second.
+              example: javascript
+          exits:
+            success:
+              outputDescription: >-
+                The compiled, _escaped_ HTML representing the contents of the
+                code block.
+              extendedDescription: >-
+                The compiled HTML output returned here will be wrapped in
+                `<pre>` and `<code>` tags automatically.
+              example: >-
+                console.<span class="function call">log</span>(<span
+                class="string">'hello'</span>);
+        type: string
   parse-docmeta-tags:
-    POST:
-      file: scripts/parse-docmeta-tags.js
-      description: Parse data encoded via <docmeta> tags in a Markdown string.
-      parameters:
-        mdString:
-          description: Markdown string to parse
-          example: |+
-            # hello world
-             it's me, <docmeta name="foo" value="bar"/> 
-             some string 
+    file: scripts/parse-docmeta-tags.js
+    description: Parse data encoded via <docmeta> tags in a Markdown string.
+    parameters:
+      mdString:
+        description: Markdown string to parse
+        example: |+
+          # hello world
+           it's me, <docmeta name="foo" value="bar"/> 
+           some string 
 
-          required: true
-          type: string
+        required: true
+        type: string
   compile-to-html:
-    POST:
-      file: scripts/compile-to-html.js
-      description: Compile a Markdown string into an HTML string.
-      parameters:
-        mdString:
-          description: Markdown string to convert
-          example: |-
-            # hello world
-             it's me, some markdown string 
+    file: scripts/compile-to-html.js
+    description: Compile a Markdown string into an HTML string.
+    parameters:
+      mdString:
+        description: Markdown string to convert
+        example: |-
+          # hello world
+           it's me, some markdown string 
 
-             ```js
-            //but maybe i have code snippets too...
-            ```
-          required: true
-          type: string
-        escapeHtml:
-          description: >-
-            If enabled, any inline HTML in the source Markdown will be escaped
-            instead of injected literally in the HTML output.
-          example: false
-          defaultsTo: false
-          type: boolean
-        compileCodeBlock:
-          description: >-
-            An optional lifecycle callback useful for adding syntax highlighting
-            to code blocks, or to perform custom HTML-escaping on them.
-          extendedDescription: >-
-            This callback is called once for each code block in the source
-            Markdown, and expected to return compiled HTML.
-          example: '->'
-          contract:
-            sideEffects: cacheable
-            inputs:
-              codeBlockContents:
-                description: The raw (unescaped) contents of the code block.
-                example: |
+           ```js
+          //but maybe i have code snippets too...
+          ```
+        required: true
+        type: string
+      escapeHtml:
+        description: >-
+          If enabled, any inline HTML in the source Markdown will be escaped
+          instead of injected literally in the HTML output.
+        example: false
+        defaultsTo: false
+        type: boolean
+      compileCodeBlock:
+        description: >-
+          An optional lifecycle callback useful for adding syntax highlighting
+          to code blocks, or to perform custom HTML-escaping on them.
+        extendedDescription: >-
+          This callback is called once for each code block in the source
+          Markdown, and expected to return compiled HTML.
+        example: '->'
+        contract:
+          sideEffects: cacheable
+          inputs:
+            codeBlockContents:
+              description: The raw (unescaped) contents of the code block.
+              example: |
 
-                  console.log("hello");
-              programmingLanguage:
-                description: The programming language of the code block.
-                extendedDescription: >-
-                  Be warned that this is not normalized. In other words, if one
-                  code block in the source Markdown indicates `js`, and another
-                  indicates `javascript`, then this function will be called with
-                  `js` for the first one, and with `javascript` for the second.
-                example: javascript
-            exits:
-              success:
-                outputDescription: >-
-                  The compiled, _escaped_ HTML representing the contents of the
-                  code block.
-                extendedDescription: >-
-                  The compiled HTML output returned here will be wrapped in
-                  `<pre>` and `<code>` tags automatically.
-                example: >-
-                  console.<span class="function call">log</span>(<span
-                  class="string">'hello'</span>);
-          type: string
+                console.log("hello");
+            programmingLanguage:
+              description: The programming language of the code block.
+              extendedDescription: >-
+                Be warned that this is not normalized. In other words, if one
+                code block in the source Markdown indicates `js`, and another
+                indicates `javascript`, then this function will be called with
+                `js` for the first one, and with `javascript` for the second.
+              example: javascript
+          exits:
+            success:
+              outputDescription: >-
+                The compiled, _escaped_ HTML representing the contents of the
+                code block.
+              extendedDescription: >-
+                The compiled HTML output returned here will be wrapped in
+                `<pre>` and `<code>` tags automatically.
+              example: >-
+                console.<span class="function call">log</span>(<span
+                class="string">'hello'</span>);
+        type: string

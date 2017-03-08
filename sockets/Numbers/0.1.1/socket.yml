@@ -5,11 +5,10 @@ author:
   email: support@syncano.io
 endpoints:
   to-number:
-    POST:
-      file: scripts/to-number.js
-      description: Convert the given input string to a number.
-      parameters:
-        string:
-          description: The string to convert to a number.
-          example: '123'
-          type: string
+    file: scripts/to-number.js
+    description: Convert the given input string to a number.
+    parameters:
+      string:
+        description: The string to convert to a number.
+        example: '123'
+        type: string

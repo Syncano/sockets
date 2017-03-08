@@ -7,52 +7,50 @@ author:
   email: support@syncano.io
 endpoints:
   get-venue:
-    POST:
-      file: scripts/get-venue.js
-      description: Get a single venue based on ID
-      parameters:
-        id:
-          description: The unique id for a Venue
-          example: 40b28c80f964a5204df81ee3
-          required: true
-          type: string
-        client_id:
-          example: XYRA11GEUJ0GQSS4APL0VXCI1GZIHVRBQQIR0XB32GIEDUYT
-          description: Your Foursquare app CLIENT_ID
-          required: true
-          type: string
-        client_secret:
-          example: H4JII1UI2AQK5VH4G1CASEN3XWFXM2KTY0OUWVKYZSZERR30
-          description: Your Foursquare app CLIENT_SECRET
-          required: true
-          type: string
+    file: scripts/get-venue.js
+    description: Get a single venue based on ID
+    parameters:
+      id:
+        description: The unique id for a Venue
+        example: 40b28c80f964a5204df81ee3
+        required: true
+        type: string
+      client_id:
+        example: XYRA11GEUJ0GQSS4APL0VXCI1GZIHVRBQQIR0XB32GIEDUYT
+        description: Your Foursquare app CLIENT_ID
+        required: true
+        type: string
+      client_secret:
+        example: H4JII1UI2AQK5VH4G1CASEN3XWFXM2KTY0OUWVKYZSZERR30
+        description: Your Foursquare app CLIENT_SECRET
+        required: true
+        type: string
   list-venues:
-    POST:
-      file: scripts/list-venues.js
-      description: List Venues in an specific area
-      parameters:
-        client_id:
-          example: XYRA11GEUJ0GQSS4APL0VXCI1GZIHVRBQQIR0XB32GIEDUYT
-          description: Your Foursquare app CLIENT_ID
-          required: true
-          type: string
-        client_secret:
-          example: H4JII1UI2AQK5VH4G1CASEN3XWFXM2KTY0OUWVKYZSZERR30
-          description: Your Foursquare app CLIENT_SECRET
-          required: true
-          type: string
-        near:
-          example: 'Cambridge, MA'
-          description: The location you want to query
-          required: true
-          type: string
-        query:
-          example: Sushi
-          description: A search term to be applied against venue names.
-          required: false
-          type: string
-        limit:
-          example: '5'
-          description: Limit venues results.
-          required: false
-          type: string
+    file: scripts/list-venues.js
+    description: List Venues in an specific area
+    parameters:
+      client_id:
+        example: XYRA11GEUJ0GQSS4APL0VXCI1GZIHVRBQQIR0XB32GIEDUYT
+        description: Your Foursquare app CLIENT_ID
+        required: true
+        type: string
+      client_secret:
+        example: H4JII1UI2AQK5VH4G1CASEN3XWFXM2KTY0OUWVKYZSZERR30
+        description: Your Foursquare app CLIENT_SECRET
+        required: true
+        type: string
+      near:
+        example: 'Cambridge, MA'
+        description: The location you want to query
+        required: true
+        type: string
+      query:
+        example: Sushi
+        description: A search term to be applied against venue names.
+        required: false
+        type: string
+      limit:
+        example: '5'
+        description: Limit venues results.
+        required: false
+        type: string

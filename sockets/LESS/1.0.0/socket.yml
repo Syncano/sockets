@@ -5,31 +5,30 @@ author:
   email: support@syncano.io
 endpoints:
   compile-stylesheet:
-    POST:
-      file: scripts/compile-stylesheet.js
-      description: Compile a LESS stylesheet to CSS.
-      parameters:
-        source:
-          description: The path to the LESS stylesheet (i.e. the entry-point) on disk.
-          extendedDescription: >-
-            If a relative path is used, it will be resolved relative to the
-            current working directory.
-          example: /Users/mikermcneil/Desktop/my-cool-app/assets/styles/importer.less
-          required: true
-          type: string
-        importPaths:
-          description: >-
-            An array of paths to folders or specific files to make accessible to
-            @import directives in the LESS stylesheet.
-          extendedDescription: >-
-            If any relative paths are used, they will be resolved relative to
-            the current working directory.
-          example:
-            - /Users/mikermcneil/Desktop
-          defaultsTo: []
-          type: array
-        minify:
-          description: Whether or not to minify the compiled CSS output.
-          example: false
-          defaultsTo: false
-          type: boolean
+    file: scripts/compile-stylesheet.js
+    description: Compile a LESS stylesheet to CSS.
+    parameters:
+      source:
+        description: The path to the LESS stylesheet (i.e. the entry-point) on disk.
+        extendedDescription: >-
+          If a relative path is used, it will be resolved relative to the
+          current working directory.
+        example: /Users/mikermcneil/Desktop/my-cool-app/assets/styles/importer.less
+        required: true
+        type: string
+      importPaths:
+        description: >-
+          An array of paths to folders or specific files to make accessible to
+          @import directives in the LESS stylesheet.
+        extendedDescription: >-
+          If any relative paths are used, they will be resolved relative to the
+          current working directory.
+        example:
+          - /Users/mikermcneil/Desktop
+        defaultsTo: []
+        type: array
+      minify:
+        description: Whether or not to minify the compiled CSS output.
+        example: false
+        defaultsTo: false
+        type: boolean

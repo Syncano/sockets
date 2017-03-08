@@ -5,107 +5,101 @@ author:
   email: support@syncano.io
 endpoints:
   select:
-    POST:
-      file: scripts/select.js
-      description: Prompt the command-line user to make a choice from a list of options.
-      parameters:
-        choices:
-          description: >-
-            The list of choices- where each choice is a name/value pair
-            (dictionary).
-          extendedDescription: >-
-            The `name` property indicates how the choice will appear in the
-            list.  The `value` property is used to report which choice was
-            selected, so each `value` should be unique within the list of
-            choices.
-          example:
-            - name: Choice A
-              value: some-unique-identifier
-          required: true
-          type: array
-        message:
-          description: The message to display as a prompt for the command-line user
-          example: Please choose one of the following.
-          defaultsTo: Please choose one of the following.
-          type: string
-        paginated:
-          description: Whether or not the interactive list will be paginated
-          defaultsTo: false
-          example: false
-          type: boolean
+    file: scripts/select.js
+    description: Prompt the command-line user to make a choice from a list of options.
+    parameters:
+      choices:
+        description: >-
+          The list of choices- where each choice is a name/value pair
+          (dictionary).
+        extendedDescription: >-
+          The `name` property indicates how the choice will appear in the list. 
+          The `value` property is used to report which choice was selected, so
+          each `value` should be unique within the list of choices.
+        example:
+          - name: Choice A
+            value: some-unique-identifier
+        required: true
+        type: array
+      message:
+        description: The message to display as a prompt for the command-line user
+        example: Please choose one of the following.
+        defaultsTo: Please choose one of the following.
+        type: string
+      paginated:
+        description: Whether or not the interactive list will be paginated
+        defaultsTo: false
+        example: false
+        type: boolean
   confirm:
-    POST:
-      file: scripts/confirm.js
-      description: Prompt command-line user to confirm with "y" or "n" before proceeding.
-      parameters:
-        message:
-          description: The message to display as a prompt for the command-line user
-          example: Are you sure?
-          defaultsTo: Are you sure?
-          type: string
+    file: scripts/confirm.js
+    description: Prompt command-line user to confirm with "y" or "n" before proceeding.
+    parameters:
+      message:
+        description: The message to display as a prompt for the command-line user
+        example: Are you sure?
+        defaultsTo: Are you sure?
+        type: string
   text:
-    POST:
-      file: scripts/text.js
-      description: >-
-        Prompt the command-line user for a value entered interactively as a
-        string.
-      parameters:
-        message:
-          description: The message to display as a prompt for the command-line user
-          example: Please enter a value.
-          defaultsTo: Please enter a value.
-          type: string
-        protect:
-          description: >-
-            Whether or not to hide keystrokes using "*" characters (i.e. like a
-            password field)
-          example: true
-          defaultsTo: false
-          type: boolean
-        expectJson:
-          description: Whether or not to expect/validate JSON
-          example: true
-          defaultsTo: false
-          type: boolean
-        exampleValue:
-          description: >-
-            An example value that will be displayed if the command-line user
-            starts slamming <ENTER>
-          example: why doesn't my moose lay as well as thy goose?
-          type: string
+    file: scripts/text.js
+    description: >-
+      Prompt the command-line user for a value entered interactively as a
+      string.
+    parameters:
+      message:
+        description: The message to display as a prompt for the command-line user
+        example: Please enter a value.
+        defaultsTo: Please enter a value.
+        type: string
+      protect:
+        description: >-
+          Whether or not to hide keystrokes using "*" characters (i.e. like a
+          password field)
+        example: true
+        defaultsTo: false
+        type: boolean
+      expectJson:
+        description: Whether or not to expect/validate JSON
+        example: true
+        defaultsTo: false
+        type: boolean
+      exampleValue:
+        description: >-
+          An example value that will be displayed if the command-line user
+          starts slamming <ENTER>
+        example: why doesn't my moose lay as well as thy goose?
+        type: string
   multiselect:
-    POST:
-      file: scripts/multiselect.js
-      description: >-
-        Prompt the command-line user to check/uncheck items from a list of
-        options.
-      parameters:
-        choices:
-          description: >-
-            The list of checkboxes- where each choice is a name/value pair
-            (dictionary).
-          extendedDescription: >-
-            The `name` property indicates how the choice will appear in the
-            list.  The `value` property is used to report which choice was
-            selected, so each `value` should be unique within the list of
-            choices. If `checked` is set true, the choice will be pre-selected. 
-            If `disabled` is set to a string other than `""`, the user will not
-            be able to select this choice, and the string will be displayed to
-            the right of the checkbox.
-          example:
-            - name: Choice A
-              value: some-unique-identifier
-              checked: false
-              disabled: ''
-          required: true
-          type: array
-        message:
-          description: The message to display as a prompt for the command-line user
-          example: Please choose one of the following.
-          defaultsTo: Please choose one of the following.
-          type: string
-        paginated:
-          description: Whether or not the interactive list will be paginated
-          defaultsTo: false
-          example: false
-          type: boolean
+    file: scripts/multiselect.js
+    description: >-
+      Prompt the command-line user to check/uncheck items from a list of
+      options.
+    parameters:
+      choices:
+        description: >-
+          The list of checkboxes- where each choice is a name/value pair
+          (dictionary).
+        extendedDescription: >-
+          The `name` property indicates how the choice will appear in the list. 
+          The `value` property is used to report which choice was selected, so
+          each `value` should be unique within the list of choices. If `checked`
+          is set true, the choice will be pre-selected.  If `disabled` is set to
+          a string other than `""`, the user will not be able to select this
+          choice, and the string will be displayed to the right of the checkbox.
+        example:
+          - name: Choice A
+            value: some-unique-identifier
+            checked: false
+            disabled: ''
+        required: true
+        type: array
+      message:
+        description: The message to display as a prompt for the command-line user
+        example: Please choose one of the following.
+        defaultsTo: Please choose one of the following.
+        type: string
+      paginated:
+        description: Whether or not the interactive list will be paginated
+        defaultsTo: false
+        example: false
+        type: boolean

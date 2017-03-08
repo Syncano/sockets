@@ -14,11 +14,9 @@ function renderEndpoints(endpoints) {
 
     return ({
       [`${endpoint.identity}`]: {
-        POST: {
-          file: `scripts/${endpoint.identity}.js`,
-          description: endpoint.description,
-          parameters: endpoint.inputs
-        }
+        file: `scripts/${endpoint.identity}.js`,
+        description: endpoint.description,
+        parameters: endpoint.inputs
       }
     });
   }));

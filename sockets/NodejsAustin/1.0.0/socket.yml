@@ -5,13 +5,12 @@ author:
   email: support@syncano.io
 endpoints:
   hello:
-    POST:
-      file: scripts/hello.js
-      description: Say hello on the console.
-      parameters:
-        msg:
-          friendlyName: Message
-          description: The message to be logged.
-          example: hello world
-          required: true
-          type: string
+    file: scripts/hello.js
+    description: Say hello on the console.
+    parameters:
+      msg:
+        friendlyName: Message
+        description: The message to be logged.
+        example: hello world
+        required: true
+        type: string

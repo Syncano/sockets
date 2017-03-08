@@ -5,250 +5,248 @@ author:
   email: support@syncano.io
 endpoints:
   create-transaction-request:
-    POST:
-      file: scripts/create-transaction-request.js
-      description: pass credentials to authorize.net to setup a payment transaction
-      parameters:
-        apiLoginId:
-          example: xxxx4Tk9K
-          description: The AN API LOGIN ID
-          required: true
-          type: string
-        transactionKey:
-          example: xxxxN24Hqm7C5V98
-          description: Your TRANSACTION KEY .
-          required: true
-          type: string
-        testMode:
-          example: true
-          description: >-
-            true or false this.endpoint = options.testMode === true ?
-            'https://apitest.authorize.net/xml/v1/request.api' :
-            'https://api.authorize.net/xml/v1/request.api';
-          required: true
-          type: boolean
-        secretKey:
-          example: Simon
-          description: Your secret .
-          required: false
-          type: string
-        amount:
-          description: >-
-            The amount to charge, in the smallest currency unit (e.g. 500 to
-            charge $5.00)
-          extendedDescription: >-
-            A positive integer in the smallest currency unit (e.g 100 cents to
-            charge $1.00, or 1 to charge ¥1, a 0-decimal currency) representing
-            how much to charge the card. The minimum amount is $0.50 (or
-            equivalent in charge currency).
-          example: 500
-          required: true
-          type: number
-        currency:
-          description: 3-letter ISO code for currency.
-          example: usd
-          required: true
-          type: string
-        cardnumber:
-          description: 'The cc # to charge.'
-          extendedDescription: >-
-            If you also pass a customer ID, the card must be the ID of a card
-            belonging to the customer. Otherwise, if you do not pass a customer
-            ID, the card you provide must either be a Stripe token, like the
-            ones returned by Stripe.js.
-          example: '4242424242424242'
-          required: true
-          type: string
-        cardexpmonth:
-          description: The cc expiration month.
-          extendedDescription: ' AuthorizeNet.js.'
-          example: 12
-          required: true
-          type: number
-        cardexpyear:
-          description: The cc expiration year.
-          extendedDescription: ' AuthorizeNet.js.'
-          example: 2016
-          required: true
-          type: number
-        cvv2:
-          description: needed for ccv.
-          extendedDescription: ' AuthorizeNet.js'
-          example: '123'
-          required: true
-          type: string
-        description:
-          description: An arbitrary string to attach to the charge object in Stripe.
-          extendedDescription: >-
-            It is displayed when in the web interface alongside the charge. Note
-            that if you use Stripe to send automatic email receipts to your
-            customers, your receipt emails will include the description of the
-            charge(s) that they are describing.
-          example: This notable charge was for several gallons of mayonnaise!
-          type: string
-        billingFirstName:
-          description: billingFirstName.
-          extendedDescription: ' AuthorizeNet.js'
-          example: John
-          required: true
-          type: string
-        billingLastName:
-          description: billingLastName.
-          extendedDescription: ' AuthorizeNet.js'
-          example: Smith
-          required: true
-          type: string
-        billingAddress1:
-          description: billingAddress1.
-          extendedDescription: ' AuthorizeNet.js'
-          example: 500 %th Ave
-          required: true
-          type: string
-        billingCity:
-          description: billingCity.
-          extendedDescription: ' AuthorizeNet.js'
-          example: New York
-          required: true
-          type: string
-        billingState:
-          description: billingState.
-          extendedDescription: ' AuthorizeNet.js'
-          example: NY
-          required: true
-          type: string
-        billingPostalCode:
-          description: billingPostalCode.
-          extendedDescription: ' AuthorizeNet.js'
-          example: '10011'
-          required: true
-          type: string
-        billingCountry:
-          description: billingCountry.
-          extendedDescription: ' AuthorizeNet.js'
-          example: USA
-          required: true
-          type: string
+    file: scripts/create-transaction-request.js
+    description: pass credentials to authorize.net to setup a payment transaction
+    parameters:
+      apiLoginId:
+        example: xxxx4Tk9K
+        description: The AN API LOGIN ID
+        required: true
+        type: string
+      transactionKey:
+        example: xxxxN24Hqm7C5V98
+        description: Your TRANSACTION KEY .
+        required: true
+        type: string
+      testMode:
+        example: true
+        description: >-
+          true or false this.endpoint = options.testMode === true ?
+          'https://apitest.authorize.net/xml/v1/request.api' :
+          'https://api.authorize.net/xml/v1/request.api';
+        required: true
+        type: boolean
+      secretKey:
+        example: Simon
+        description: Your secret .
+        required: false
+        type: string
+      amount:
+        description: >-
+          The amount to charge, in the smallest currency unit (e.g. 500 to
+          charge $5.00)
+        extendedDescription: >-
+          A positive integer in the smallest currency unit (e.g 100 cents to
+          charge $1.00, or 1 to charge ¥1, a 0-decimal currency) representing
+          how much to charge the card. The minimum amount is $0.50 (or
+          equivalent in charge currency).
+        example: 500
+        required: true
+        type: number
+      currency:
+        description: 3-letter ISO code for currency.
+        example: usd
+        required: true
+        type: string
+      cardnumber:
+        description: 'The cc # to charge.'
+        extendedDescription: >-
+          If you also pass a customer ID, the card must be the ID of a card
+          belonging to the customer. Otherwise, if you do not pass a customer
+          ID, the card you provide must either be a Stripe token, like the ones
+          returned by Stripe.js.
+        example: '4242424242424242'
+        required: true
+        type: string
+      cardexpmonth:
+        description: The cc expiration month.
+        extendedDescription: ' AuthorizeNet.js.'
+        example: 12
+        required: true
+        type: number
+      cardexpyear:
+        description: The cc expiration year.
+        extendedDescription: ' AuthorizeNet.js.'
+        example: 2016
+        required: true
+        type: number
+      cvv2:
+        description: needed for ccv.
+        extendedDescription: ' AuthorizeNet.js'
+        example: '123'
+        required: true
+        type: string
+      description:
+        description: An arbitrary string to attach to the charge object in Stripe.
+        extendedDescription: >-
+          It is displayed when in the web interface alongside the charge. Note
+          that if you use Stripe to send automatic email receipts to your
+          customers, your receipt emails will include the description of the
+          charge(s) that they are describing.
+        example: This notable charge was for several gallons of mayonnaise!
+        type: string
+      billingFirstName:
+        description: billingFirstName.
+        extendedDescription: ' AuthorizeNet.js'
+        example: John
+        required: true
+        type: string
+      billingLastName:
+        description: billingLastName.
+        extendedDescription: ' AuthorizeNet.js'
+        example: Smith
+        required: true
+        type: string
+      billingAddress1:
+        description: billingAddress1.
+        extendedDescription: ' AuthorizeNet.js'
+        example: 500 %th Ave
+        required: true
+        type: string
+      billingCity:
+        description: billingCity.
+        extendedDescription: ' AuthorizeNet.js'
+        example: New York
+        required: true
+        type: string
+      billingState:
+        description: billingState.
+        extendedDescription: ' AuthorizeNet.js'
+        example: NY
+        required: true
+        type: string
+      billingPostalCode:
+        description: billingPostalCode.
+        extendedDescription: ' AuthorizeNet.js'
+        example: '10011'
+        required: true
+        type: string
+      billingCountry:
+        description: billingCountry.
+        extendedDescription: ' AuthorizeNet.js'
+        example: USA
+        required: true
+        type: string
   authorize-transaction-request:
-    POST:
-      file: scripts/authorize-transaction-request.js
-      description: pass credentials to authorize.net to setup a payment transaction
-      parameters:
-        apiLoginId:
-          example: xxxx4Tk9K
-          description: The AN API LOGIN ID
-          required: true
-          type: string
-        transactionKey:
-          example: xxxxN24Hqm7C5V98
-          description: Your TRANSACTION KEY .
-          required: true
-          type: string
-        testMode:
-          example: true
-          description: >-
-            true or false this.endpoint = options.testMode === true ?
-            'https://apitest.authorize.net/xml/v1/request.api' :
-            'https://api.authorize.net/xml/v1/request.api';
-          required: true
-          type: boolean
-        secretKey:
-          example: Simon
-          description: Your secret .
-          required: false
-          type: string
-        amount:
-          description: >-
-            The amount to charge, in the smallest currency unit (e.g. 500 to
-            charge $5.00)
-          extendedDescription: >-
-            A positive integer in the smallest currency unit (e.g 100 cents to
-            charge $1.00, or 1 to charge ¥1, a 0-decimal currency) representing
-            how much to charge the card. The minimum amount is $0.50 (or
-            equivalent in charge currency).
-          example: 500
-          required: true
-          type: number
-        currency:
-          description: 3-letter ISO code for currency.
-          example: usd
-          required: true
-          type: string
-        cardnumber:
-          description: 'The cc # to charge.'
-          extendedDescription: >-
-            If you also pass a customer ID, the card must be the ID of a card
-            belonging to the customer. Otherwise, if you do not pass a customer
-            ID, the card you provide must either be a Stripe token, like the
-            ones returned by Stripe.js.
-          example: '4242424242424242'
-          required: true
-          type: string
-        cardexpmonth:
-          description: The cc expiration month.
-          extendedDescription: ' AuthorizeNet.js.'
-          example: 12
-          required: true
-          type: number
-        cardexpyear:
-          description: The cc expiration year.
-          extendedDescription: ' AuthorizeNet.js.'
-          example: 2016
-          required: true
-          type: number
-        cvv2:
-          description: needed for ccv.
-          extendedDescription: ' AuthorizeNet.js'
-          example: '123'
-          required: true
-          type: string
-        description:
-          description: An arbitrary string to attach to the charge object in Stripe.
-          extendedDescription: >-
-            It is displayed when in the web interface alongside the charge. Note
-            that if you use Stripe to send automatic email receipts to your
-            customers, your receipt emails will include the description of the
-            charge(s) that they are describing.
-          example: This notable charge was for several gallons of mayonnaise!
-          type: string
-        billingFirstName:
-          description: billingFirstName.
-          extendedDescription: ' AuthorizeNet.js'
-          example: John
-          required: true
-          type: string
-        billingLastName:
-          description: billingLastName.
-          extendedDescription: ' AuthorizeNet.js'
-          example: Smith
-          required: true
-          type: string
-        billingAddress1:
-          description: billingAddress1.
-          extendedDescription: ' AuthorizeNet.js'
-          example: 500 %th Ave
-          required: true
-          type: string
-        billingCity:
-          description: billingCity.
-          extendedDescription: ' AuthorizeNet.js'
-          example: New York
-          required: true
-          type: string
-        billingState:
-          description: billingState.
-          extendedDescription: ' AuthorizeNet.js'
-          example: NY
-          required: true
-          type: string
-        billingPostalCode:
-          description: billingPostalCode.
-          extendedDescription: ' AuthorizeNet.js'
-          example: '10011'
-          required: true
-          type: string
-        billingCountry:
-          description: billingCountry.
-          extendedDescription: ' AuthorizeNet.js'
-          example: USA
-          required: true
-          type: string
+    file: scripts/authorize-transaction-request.js
+    description: pass credentials to authorize.net to setup a payment transaction
+    parameters:
+      apiLoginId:
+        example: xxxx4Tk9K
+        description: The AN API LOGIN ID
+        required: true
+        type: string
+      transactionKey:
+        example: xxxxN24Hqm7C5V98
+        description: Your TRANSACTION KEY .
+        required: true
+        type: string
+      testMode:
+        example: true
+        description: >-
+          true or false this.endpoint = options.testMode === true ?
+          'https://apitest.authorize.net/xml/v1/request.api' :
+          'https://api.authorize.net/xml/v1/request.api';
+        required: true
+        type: boolean
+      secretKey:
+        example: Simon
+        description: Your secret .
+        required: false
+        type: string
+      amount:
+        description: >-
+          The amount to charge, in the smallest currency unit (e.g. 500 to
+          charge $5.00)
+        extendedDescription: >-
+          A positive integer in the smallest currency unit (e.g 100 cents to
+          charge $1.00, or 1 to charge ¥1, a 0-decimal currency) representing
+          how much to charge the card. The minimum amount is $0.50 (or
+          equivalent in charge currency).
+        example: 500
+        required: true
+        type: number
+      currency:
+        description: 3-letter ISO code for currency.
+        example: usd
+        required: true
+        type: string
+      cardnumber:
+        description: 'The cc # to charge.'
+        extendedDescription: >-
+          If you also pass a customer ID, the card must be the ID of a card
+          belonging to the customer. Otherwise, if you do not pass a customer
+          ID, the card you provide must either be a Stripe token, like the ones
+          returned by Stripe.js.
+        example: '4242424242424242'
+        required: true
+        type: string
+      cardexpmonth:
+        description: The cc expiration month.
+        extendedDescription: ' AuthorizeNet.js.'
+        example: 12
+        required: true
+        type: number
+      cardexpyear:
+        description: The cc expiration year.
+        extendedDescription: ' AuthorizeNet.js.'
+        example: 2016
+        required: true
+        type: number
+      cvv2:
+        description: needed for ccv.
+        extendedDescription: ' AuthorizeNet.js'
+        example: '123'
+        required: true
+        type: string
+      description:
+        description: An arbitrary string to attach to the charge object in Stripe.
+        extendedDescription: >-
+          It is displayed when in the web interface alongside the charge. Note
+          that if you use Stripe to send automatic email receipts to your
+          customers, your receipt emails will include the description of the
+          charge(s) that they are describing.
+        example: This notable charge was for several gallons of mayonnaise!
+        type: string
+      billingFirstName:
+        description: billingFirstName.
+        extendedDescription: ' AuthorizeNet.js'
+        example: John
+        required: true
+        type: string
+      billingLastName:
+        description: billingLastName.
+        extendedDescription: ' AuthorizeNet.js'
+        example: Smith
+        required: true
+        type: string
+      billingAddress1:
+        description: billingAddress1.
+        extendedDescription: ' AuthorizeNet.js'
+        example: 500 %th Ave
+        required: true
+        type: string
+      billingCity:
+        description: billingCity.
+        extendedDescription: ' AuthorizeNet.js'
+        example: New York
+        required: true
+        type: string
+      billingState:
+        description: billingState.
+        extendedDescription: ' AuthorizeNet.js'
+        example: NY
+        required: true
+        type: string
+      billingPostalCode:
+        description: billingPostalCode.
+        extendedDescription: ' AuthorizeNet.js'
+        example: '10011'
+        required: true
+        type: string
+      billingCountry:
+        description: billingCountry.
+        extendedDescription: ' AuthorizeNet.js'
+        example: USA
+        required: true
+        type: string

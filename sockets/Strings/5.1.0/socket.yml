@@ -5,399 +5,377 @@ author:
   email: support@syncano.io
 endpoints:
   match:
-    POST:
-      file: scripts/match.js
-      description: Search a string using a regular expression and return the first match.
-      parameters:
-        string:
-          friendlyName: String to search
-          example: hello world
-          description: The string to search (i.e. "haystack")
-          required: true
-          type: string
-        regexp:
-          friendlyName: Regular expression
-          example: world
-          description: The regular expression to match against (i.e. "metal detector")
-          extendedDescription: >-
-            The regular expression should be specified as a string WIHOUUT
-            including leading or trailing slashes or modifiers like /gi.
-          required: true
-          type: string
-        caseInsensitive:
-          friendlyName: Case insensitive?
-          description: Whether or not you care about uppercase/lowercase letters.
-          extendedDescription: This will build the regular expression using the `/i` modifier.
-          example: true
-          advanced: true
-          defaultsTo: true
-          type: boolean
+    file: scripts/match.js
+    description: Search a string using a regular expression and return the first match.
+    parameters:
+      string:
+        friendlyName: String to search
+        example: hello world
+        description: The string to search (i.e. "haystack")
+        required: true
+        type: string
+      regexp:
+        friendlyName: Regular expression
+        example: world
+        description: The regular expression to match against (i.e. "metal detector")
+        extendedDescription: >-
+          The regular expression should be specified as a string WIHOUUT
+          including leading or trailing slashes or modifiers like /gi.
+        required: true
+        type: string
+      caseInsensitive:
+        friendlyName: Case insensitive?
+        description: Whether or not you care about uppercase/lowercase letters.
+        extendedDescription: This will build the regular expression using the `/i` modifier.
+        example: true
+        advanced: true
+        defaultsTo: true
+        type: boolean
   construct:
-    POST:
-      file: scripts/construct.js
-      description: 'Cast the specified value to a string, if it isn''t one already.'
-      parameters:
-        value:
-          description: The value to convert
-          example: ===
-          readOnly: true
-          required: true
-          type: string
+    file: scripts/construct.js
+    description: 'Cast the specified value to a string, if it isn''t one already.'
+    parameters:
+      value:
+        description: The value to convert
+        example: ===
+        readOnly: true
+        required: true
+        type: string
   capitalize:
-    POST:
-      file: scripts/capitalize.js
-      description: Capitalize the first (or any) letter in a string.
-      parameters:
-        string:
-          friendlyName: String
-          example: villeriño
-          description: The string to capitalize.
-          required: true
-          type: string
-        at:
-          friendlyName: Which letter?
-          description: The index of the letter to capitalize within the string
-          extendedDescription: Strings are indexed starting from the left at 0.
-          example: 0
-          defaultsTo: 0
-          type: number
+    file: scripts/capitalize.js
+    description: Capitalize the first (or any) letter in a string.
+    parameters:
+      string:
+        friendlyName: String
+        example: villeriño
+        description: The string to capitalize.
+        required: true
+        type: string
+      at:
+        friendlyName: Which letter?
+        description: The index of the letter to capitalize within the string
+        extendedDescription: Strings are indexed starting from the left at 0.
+        example: 0
+        defaultsTo: 0
+        type: number
   length:
-    POST:
-      file: scripts/length.js
-      description: Determine the length of a string (i.e. count the number of characters)
-      parameters:
-        string:
-          example: guido villeriño
-          description: The string whose characters will be counted.
-          required: true
-          type: string
+    file: scripts/length.js
+    description: Determine the length of a string (i.e. count the number of characters)
+    parameters:
+      string:
+        example: guido villeriño
+        description: The string whose characters will be counted.
+        required: true
+        type: string
   trunc:
-    POST:
-      file: scripts/trunc.js
-      description: >-
-        If the string is longer than the given maximum length, chop off
-        characters from the end.
-      parameters:
-        string:
-          friendlyName: String
-          example: Christian van der Henst
-          description: The string to truncate.
-          required: true
-          type: string
-        maxLength:
-          friendlyName: Max length
-          description: The maximum number of characters (including the "...")
-          example: 15
-          defaultsTo: 30
-          type: number
-        omission:
-          friendlyName: Omission substring
-          description: >-
-            The substring to append to our string indicating characters were
-            omitted.
-          example: ...
-          defaultsTo: ...
-          type: string
-        pretty:
-          friendlyName: Make pretty?
-          description: >-
-            Whether or not to attempt to make the truncated string look more
-            natural.
-          extendedDescription: >-
-            This truncates trailing spaces and punctuation, and also avoids
-            chopping words in half.
-          example: true
-          defaultsTo: true
-          type: boolean
+    file: scripts/trunc.js
+    description: >-
+      If the string is longer than the given maximum length, chop off characters
+      from the end.
+    parameters:
+      string:
+        friendlyName: String
+        example: Christian van der Henst
+        description: The string to truncate.
+        required: true
+        type: string
+      maxLength:
+        friendlyName: Max length
+        description: The maximum number of characters (including the "...")
+        example: 15
+        defaultsTo: 30
+        type: number
+      omission:
+        friendlyName: Omission substring
+        description: >-
+          The substring to append to our string indicating characters were
+          omitted.
+        example: ...
+        defaultsTo: ...
+        type: string
+      pretty:
+        friendlyName: Make pretty?
+        description: >-
+          Whether or not to attempt to make the truncated string look more
+          natural.
+        extendedDescription: >-
+          This truncates trailing spaces and punctuation, and also avoids
+          chopping words in half.
+        example: true
+        defaultsTo: true
+        type: boolean
   trim:
-    POST:
-      file: scripts/trim.js
-      description: Trim trailing and leading whitespace from a string.
-      parameters:
-        string:
-          friendlyName: String
-          example: '   I went to the store to get some more milk.     '
-          description: The string to trim.
-          required: true
-          type: string
+    file: scripts/trim.js
+    description: Trim trailing and leading whitespace from a string.
+    parameters:
+      string:
+        friendlyName: String
+        example: '   I went to the store to get some more milk.     '
+        description: The string to trim.
+        required: true
+        type: string
   replace:
-    POST:
-      file: scripts/replace.js
-      description: >-
-        Replace parts of a string that match a given regular expression with the
-        specified replacement.
-      parameters:
-        string:
-          friendlyName: String
-          example: Hello world!
-          description: The string to modify.
-          required: true
-          type: string
-        regexp:
-          friendlyName: Regular expression
-          example: World
-          description: The regular expression to match against (i.e. "metal detector")
-          extendedDescription: >-
-            The regular expression should be specified as a string WIHOUUT
-            including leading or trailing slashes or modifiers like /gi.
-          required: true
-          type: string
-        replacement:
-          friendlyName: Replacement
-          description: The string to use when replacing matches.
-          extendedDescription: >-
-            Note that you can use match expressions (e.g. "$1", "$2", etc.) to
-            express the values of capture groups.
-          example: Mumbai
-          required: true
-          type: string
-        caseInsensitive:
-          friendlyName: Case insensitive?
-          description: Whether or not you care about uppercase/lowercase letters.
-          extendedDescription: This will build the regular expression using the `/i` modifier.
-          example: true
-          advanced: true
-          defaultsTo: true
-          type: boolean
-        global:
-          friendlyName: Replace all?
-          description: >-
-            Whether or not to replace all substrings that match the regular
-            expression, or just the first.
-          extendedDescription: This will build the regular expression using the `/g` modifier.
-          example: true
-          advanced: true
-          defaultsTo: false
-          type: boolean
-        multiline:
-          friendlyName: Multiline?
-          description: >-
-            Whether to treat beginning and end characters (^ and $) as matching
-            each line delimited by \n or \r.
-          extendedDescription: This will build the regular expression using the `/m` modifier.
-          example: true
-          advanced: true
-          defaultsTo: false
-          type: boolean
+    file: scripts/replace.js
+    description: >-
+      Replace parts of a string that match a given regular expression with the
+      specified replacement.
+    parameters:
+      string:
+        friendlyName: String
+        example: Hello world!
+        description: The string to modify.
+        required: true
+        type: string
+      regexp:
+        friendlyName: Regular expression
+        example: World
+        description: The regular expression to match against (i.e. "metal detector")
+        extendedDescription: >-
+          The regular expression should be specified as a string WIHOUUT
+          including leading or trailing slashes or modifiers like /gi.
+        required: true
+        type: string
+      replacement:
+        friendlyName: Replacement
+        description: The string to use when replacing matches.
+        extendedDescription: >-
+          Note that you can use match expressions (e.g. "$1", "$2", etc.) to
+          express the values of capture groups.
+        example: Mumbai
+        required: true
+        type: string
+      caseInsensitive:
+        friendlyName: Case insensitive?
+        description: Whether or not you care about uppercase/lowercase letters.
+        extendedDescription: This will build the regular expression using the `/i` modifier.
+        example: true
+        advanced: true
+        defaultsTo: true
+        type: boolean
+      global:
+        friendlyName: Replace all?
+        description: >-
+          Whether or not to replace all substrings that match the regular
+          expression, or just the first.
+        extendedDescription: This will build the regular expression using the `/g` modifier.
+        example: true
+        advanced: true
+        defaultsTo: false
+        type: boolean
+      multiline:
+        friendlyName: Multiline?
+        description: >-
+          Whether to treat beginning and end characters (^ and $) as matching
+          each line delimited by \n or \r.
+        extendedDescription: This will build the regular expression using the `/m` modifier.
+        example: true
+        advanced: true
+        defaultsTo: false
+        type: boolean
   split:
-    POST:
-      file: scripts/split.js
-      description: Split a string into an array of strings using a regular expression.
-      parameters:
-        string:
-          friendlyName: String
-          example: Hello world!
-          description: The string to split.
-          required: true
-          type: string
-        regexp:
-          friendlyName: Regular expression
-          example: \s
-          description: >-
-            The regular expression for detecting delimiters which mark the end
-            of each string segment.
-          extendedDescription: >-
-            The regular expression should be specified as a string WIHOUUT
-            including leading or trailing slashes or modifiers like /gi.
-          required: true
-          type: string
-        caseInsensitive:
-          friendlyName: Case insensitive?
-          description: Whether or not you care about uppercase/lowercase letters.
-          extendedDescription: This will build the regular expression using the `/i` modifier.
-          example: true
-          advanced: true
-          defaultsTo: true
-          type: boolean
+    file: scripts/split.js
+    description: Split a string into an array of strings using a regular expression.
+    parameters:
+      string:
+        friendlyName: String
+        example: Hello world!
+        description: The string to split.
+        required: true
+        type: string
+      regexp:
+        friendlyName: Regular expression
+        example: \s
+        description: >-
+          The regular expression for detecting delimiters which mark the end of
+          each string segment.
+        extendedDescription: >-
+          The regular expression should be specified as a string WIHOUUT
+          including leading or trailing slashes or modifiers like /gi.
+        required: true
+        type: string
+      caseInsensitive:
+        friendlyName: Case insensitive?
+        description: Whether or not you care about uppercase/lowercase letters.
+        extendedDescription: This will build the regular expression using the `/i` modifier.
+        example: true
+        advanced: true
+        defaultsTo: true
+        type: boolean
   deburr:
-    POST:
-      file: scripts/deburr.js
-      description: >-
-        Replace special alphabetical characters such as umlauts and accents with
-        their basic, boring equivalents.
-      parameters:
-        string:
-          friendlyName: String
-          description: The string to clean up.
-          example: 'déjà vu, Günther. Just more of your saß.'
-          required: true
-          type: string
+    file: scripts/deburr.js
+    description: >-
+      Replace special alphabetical characters such as umlauts and accents with
+      their basic, boring equivalents.
+    parameters:
+      string:
+        friendlyName: String
+        description: The string to clean up.
+        example: 'déjà vu, Günther. Just more of your saß.'
+        required: true
+        type: string
   slice:
-    POST:
-      file: scripts/slice.js
-      description: Get a substring of consecutive characters from the string.
-      parameters:
-        string:
-          friendlyName: String
-          description: The string to slice.
-          example: McGee
-          required: true
-          type: string
-        start:
-          friendlyName: Start from (index)
-          description: The index of the first item to include in the new substring.
-          extendedDescription: This index should be zero or a positive number.
-          example: 2
-          required: true
-          type: number
-        end:
-          friendlyName: End with (index)
-          description: The index of the last item to include in the new substring.
-          extendedDescription: >-
-            This index should be zero or a positive number. Omitting this input
-            value will include the rest of the string.
-          example: 5
-          min: 0
-          type: number
+    file: scripts/slice.js
+    description: Get a substring of consecutive characters from the string.
+    parameters:
+      string:
+        friendlyName: String
+        description: The string to slice.
+        example: McGee
+        required: true
+        type: string
+      start:
+        friendlyName: Start from (index)
+        description: The index of the first item to include in the new substring.
+        extendedDescription: This index should be zero or a positive number.
+        example: 2
+        required: true
+        type: number
+      end:
+        friendlyName: End with (index)
+        description: The index of the last item to include in the new substring.
+        extendedDescription: >-
+          This index should be zero or a positive number. Omitting this input
+          value will include the rest of the string.
+        example: 5
+        min: 0
+        type: number
   at:
-    POST:
-      file: scripts/at.js
-      description: Get a character from a string at a particular position.
-      parameters:
-        string:
-          friendlyName: String
-          example: villeriño
-          description: The source string.
-          required: true
-          type: string
-        at:
-          friendlyName: At...
-          description: The index to look up within the string
-          extendedDescription: Strings are indexed starting from the left at 0.
-          example: 7
-          required: true
-          type: number
+    file: scripts/at.js
+    description: Get a character from a string at a particular position.
+    parameters:
+      string:
+        friendlyName: String
+        example: villeriño
+        description: The source string.
+        required: true
+        type: string
+      at:
+        friendlyName: At...
+        description: The index to look up within the string
+        extendedDescription: Strings are indexed starting from the left at 0.
+        example: 7
+        required: true
+        type: number
   join:
-    POST:
-      file: scripts/join.js
-      description: Combine an array of strings into one new string.
-      parameters:
-        strings:
-          description: The array of strings to join.
-          example:
-            - foo
-          required: true
-          type: array
-        separator:
-          description: The optional separator to insert between each string.
-          defaultsTo: ''
-          example: ','
-          type: string
+    file: scripts/join.js
+    description: Combine an array of strings into one new string.
+    parameters:
+      strings:
+        description: The array of strings to join.
+        example:
+          - foo
+        required: true
+        type: array
+      separator:
+        description: The optional separator to insert between each string.
+        defaultsTo: ''
+        example: ','
+        type: string
   template:
-    POST:
-      file: scripts/template.js
-      description: Render some data into a template string.
-      parameters:
-        templateStr:
-          friendlyName: Template
-          description: The string to use as a template.
-          example: 'Hi there, Miss <%= me.lastName %>!'
-          required: true
-          type: string
-        data:
-          friendlyName: Template data
-          description: A dictionary of data which will be accessible from the template.
-          extendedDescription: >-
-            Each key will be a variable accessible in the template.  For
-            instance, if you supply an array `[{name:"Chandra"}, {name:"Mary"}]`
-            as the key "friends", then you will be able to access `friends` from
-            the template; i.e. `<ul><% _.each(friends, function (friend){
-            %><li><%= friend.name %></li> <%}); %></ul>`  Use `<%= %>` to inject
-            the contents of a variable as-is, `<%- %>` to HTML-escape them
-            first, or `<% %>` to execute some JavaScript code.
-          example: {}
-          defaultsTo: {}
-          readOnly: true
-          type: object
+    file: scripts/template.js
+    description: Render some data into a template string.
+    parameters:
+      templateStr:
+        friendlyName: Template
+        description: The string to use as a template.
+        example: 'Hi there, Miss <%= me.lastName %>!'
+        required: true
+        type: string
+      data:
+        friendlyName: Template data
+        description: A dictionary of data which will be accessible from the template.
+        extendedDescription: >-
+          Each key will be a variable accessible in the template.  For instance,
+          if you supply an array `[{name:"Chandra"}, {name:"Mary"}]` as the key
+          "friends", then you will be able to access `friends` from the
+          template; i.e. `<ul><% _.each(friends, function (friend){ %><li><%=
+          friend.name %></li> <%}); %></ul>`  Use `<%= %>` to inject the
+          contents of a variable as-is, `<%- %>` to HTML-escape them first, or
+          `<% %>` to execute some JavaScript code.
+        example: {}
+        defaultsTo: {}
+        readOnly: true
+        type: object
   ensure-uniq:
-    POST:
-      file: scripts/ensure-uniq.js
-      description: >-
-        Make a unique, but still human-readable, version of a string vs. a set
-        of existing strings by adding a number to the end.
-      parameters:
-        string:
-          friendlyName: Unique string
-          example: Siri
-          description: The string to ensure the uniqueness of.
-          required: true
-          type: string
-        existingStrings:
-          friendlyName: Existing strings
-          description: The set of existing strings to check uniqueness against.
-          example:
-            - Siri
-          required: true
-          type: array
-        caseSensitive:
-          friendlyName: Case sensitive?
-          description: >-
-            Whether or not the uniqueness check should be case-sensitive (care
-            about uppercase vs. lowercase letters)
-          example: false
-          defaultsTo: false
-          type: boolean
+    file: scripts/ensure-uniq.js
+    description: >-
+      Make a unique, but still human-readable, version of a string vs. a set of
+      existing strings by adding a number to the end.
+    parameters:
+      string:
+        friendlyName: Unique string
+        example: Siri
+        description: The string to ensure the uniqueness of.
+        required: true
+        type: string
+      existingStrings:
+        friendlyName: Existing strings
+        description: The set of existing strings to check uniqueness against.
+        example:
+          - Siri
+        required: true
+        type: array
+      caseSensitive:
+        friendlyName: Case sensitive?
+        description: >-
+          Whether or not the uniqueness check should be case-sensitive (care
+          about uppercase vs. lowercase letters)
+        example: false
+        defaultsTo: false
+        type: boolean
   to-stream:
-    POST:
-      file: scripts/to-stream.js
-      description: Convert a string into a readable stream of data.
-      parameters:
-        string:
-          friendlyName: String
-          example: foo bar baz
-          description: The string to convert.
-          required: true
-          type: string
+    file: scripts/to-stream.js
+    description: Convert a string into a readable stream of data.
+    parameters:
+      string:
+        friendlyName: String
+        example: foo bar baz
+        description: The string to convert.
+        required: true
+        type: string
   random:
-    POST:
-      file: scripts/random.js
-      description: >-
-        Generate a random, alphanumeric string which is
-        probabalistically-unique.
-      parameters: {}
+    file: scripts/random.js
+    description: 'Generate a random, alphanumeric string which is probabalistically-unique.'
+    parameters: {}
   to-lower-case:
-    POST:
-      file: scripts/to-lower-case.js
-      description: Convert all uppercase letters to lowercase in the specified string.
-      parameters:
-        string:
-          example: Some stuff and THINGS 235823523
-          description: The string to lowercase.
-          required: true
-          type: string
+    file: scripts/to-lower-case.js
+    description: Convert all uppercase letters to lowercase in the specified string.
+    parameters:
+      string:
+        example: Some stuff and THINGS 235823523
+        description: The string to lowercase.
+        required: true
+        type: string
   to-upper-case:
-    POST:
-      file: scripts/to-upper-case.js
-      description: Convert all lowercase letters to uppercase in the specified string.
-      parameters:
-        string:
-          example: Some stuff and THINGS 235823523
-          description: The string to uppercase.
-          required: true
-          type: string
+    file: scripts/to-upper-case.js
+    description: Convert all lowercase letters to uppercase in the specified string.
+    parameters:
+      string:
+        example: Some stuff and THINGS 235823523
+        description: The string to uppercase.
+        required: true
+        type: string
   to-kebab-case:
-    POST:
-      file: scripts/to-kebab-case.js
-      description: >-
-        Convert a string to kebab-case (dashes instead of
-        spaces/underscores/varying capitalization).
-      parameters:
-        string:
-          friendlyName: String
-          example: fooBar_baz bong___
-          description: The string to convert.
-          required: true
-          type: string
+    file: scripts/to-kebab-case.js
+    description: >-
+      Convert a string to kebab-case (dashes instead of
+      spaces/underscores/varying capitalization).
+    parameters:
+      string:
+        friendlyName: String
+        example: fooBar_baz bong___
+        description: The string to convert.
+        required: true
+        type: string
   to-camel-case:
-    POST:
-      file: scripts/to-camel-case.js
-      description: >-
-        Convert a string to camel-case (varying capitalization instead of
-        spaces/underscores/dashes).
-      parameters:
-        string:
-          friendlyName: String
-          example: foo-bar-baz
-          description: The string to convert (dash-delimited or otherwise)
-          required: true
-          type: string
+    file: scripts/to-camel-case.js
+    description: >-
+      Convert a string to camel-case (varying capitalization instead of
+      spaces/underscores/dashes).
+    parameters:
+      string:
+        friendlyName: String
+        example: foo-bar-baz
+        description: The string to convert (dash-delimited or otherwise)
+        required: true
+        type: string

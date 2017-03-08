@@ -5,64 +5,62 @@ author:
   email: support@syncano.io
 endpoints:
   encode:
-    POST:
-      file: scripts/encode.js
-      description: Encode a JWT.
-      parameters:
-        secret:
-          friendlyName: Secret
-          example: abc123jdhs3h4js
-          description: The secret used to encode the JWT.
-          required: true
-          type: string
-        payload:
-          friendlyName: JWT Payload
-          typeclass: '*'
-          description: The contents of the JWT.
-          required: true
-          type: '*'
-        algorithm:
-          friendlyName: Algorithm
-          example: HS256
-          description: >-
-            The type of algorithm that is used to encode the JWT. Options:
-            HS256, HS384, HS512 and RS256.
-          type: string
-        expires:
-          friendlyName: Expires
-          example: 43200
-          description: Number of minutes until the token expires.
-          type: number
+    file: scripts/encode.js
+    description: Encode a JWT.
+    parameters:
+      secret:
+        friendlyName: Secret
+        example: abc123jdhs3h4js
+        description: The secret used to encode the JWT.
+        required: true
+        type: string
+      payload:
+        friendlyName: JWT Payload
+        typeclass: '*'
+        description: The contents of the JWT.
+        required: true
+        type: '*'
+      algorithm:
+        friendlyName: Algorithm
+        example: HS256
+        description: >-
+          The type of algorithm that is used to encode the JWT. Options: HS256,
+          HS384, HS512 and RS256.
+        type: string
+      expires:
+        friendlyName: Expires
+        example: 43200
+        description: Number of minutes until the token expires.
+        type: number
   decode:
-    POST:
-      file: scripts/decode.js
-      description: Decode a JWT.
-      parameters:
-        secret:
-          friendlyName: Secret
-          example: abc123jdhs3h4js
-          description: Secret used to decode the JSON web token.
-          required: true
-          type: string
-        token:
-          friendlyName: Token
-          example: >-
-            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
-          description: JSON web token to decode.
-          required: true
-          type: string
-        schema:
-          friendlyName: Schema
-          typeclass: '*'
-          description: >-
-            Example of expected token object to make available in output. Can be
-            example object or a list/array of parameter names.
-          type: '*'
-        algorithm:
-          friendlyName: Algorithm
-          example: HS256
-          description: >-
-            The type of algorithm that is used to decode the JWT. Options:
-            HS256, HS384, HS512 and RS256. Make sure to use the same algorithm
-            that you used to encode the JWT.
-          type: string
+    file: scripts/decode.js
+    description: Decode a JWT.
+    parameters:
+      secret:
+        friendlyName: Secret
+        example: abc123jdhs3h4js
+        description: Secret used to decode the JSON web token.
+        required: true
+        type: string
+      token:
+        friendlyName: Token
+        example: >-
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
+        description: JSON web token to decode.
+        required: true
+        type: string
+      schema:
+        friendlyName: Schema
+        typeclass: '*'
+        description: >-
+          Example of expected token object to make available in output. Can be
+          example object or a list/array of parameter names.
+        type: '*'
+      algorithm:
+        friendlyName: Algorithm
+        example: HS256
+        description: >-
+          The type of algorithm that is used to decode the JWT. Options: HS256,
+          HS384, HS512 and RS256. Make sure to use the same algorithm that you
+          used to encode the JWT.
+        type: string

@@ -5,47 +5,46 @@ author:
   email: support@syncano.io
 endpoints:
   post-to-channel:
-    POST:
-      file: scripts/post-to-channel.js
-      description: Post a message to the specified channel in Slack.
-      parameters:
-        webhookUrl:
-          description: A Slack webhook URL
-          example: 'https://hooks.slack.com/services/xxxxyyyy/ZZZZZZZZ/XXXXXXXXXXXXXXX'
-          required: true
-          whereToGet:
-            url: 'https://slack.com/services/new/incoming-webhook'
-            description: 'Setup a new webhook, then copy the "Webhook URL".'
-            extendedDescription: >-
-              You will need to be logged in to Slack, or sign up for an account
-              if you haven't already.
-          friendlyName: Webook URL
-          type: string
-        username:
-          description: The username to use when posting
-          example: someboty
-          friendlyName: Username
-          type: string
-        channel:
-          description: The Slack channel where the post should be sent
-          example: '#general'
-          friendlyName: Channel
-          required: true
-          type: string
-        message:
-          description: The message to post
-          example: 'Good morning, boys and girls!'
-          friendlyName: Message
-          required: true
-          type: string
-        iconEmoji:
-          example: ':ghost:'
-          friendlyName: Icon Emoji
-          description: The bot icon to display next to the post.
-          whereToGet: 'http://www.emoji-cheat-sheet.com/'
-          type: string
-        linkNames:
-          example: true
-          friendlyName: Link names?
-          description: Whether or not create links out of channel names and usernames
-          type: boolean
+    file: scripts/post-to-channel.js
+    description: Post a message to the specified channel in Slack.
+    parameters:
+      webhookUrl:
+        description: A Slack webhook URL
+        example: 'https://hooks.slack.com/services/xxxxyyyy/ZZZZZZZZ/XXXXXXXXXXXXXXX'
+        required: true
+        whereToGet:
+          url: 'https://slack.com/services/new/incoming-webhook'
+          description: 'Setup a new webhook, then copy the "Webhook URL".'
+          extendedDescription: >-
+            You will need to be logged in to Slack, or sign up for an account if
+            you haven't already.
+        friendlyName: Webook URL
+        type: string
+      username:
+        description: The username to use when posting
+        example: someboty
+        friendlyName: Username
+        type: string
+      channel:
+        description: The Slack channel where the post should be sent
+        example: '#general'
+        friendlyName: Channel
+        required: true
+        type: string
+      message:
+        description: The message to post
+        example: 'Good morning, boys and girls!'
+        friendlyName: Message
+        required: true
+        type: string
+      iconEmoji:
+        example: ':ghost:'
+        friendlyName: Icon Emoji
+        description: The bot icon to display next to the post.
+        whereToGet: 'http://www.emoji-cheat-sheet.com/'
+        type: string
+      linkNames:
+        example: true
+        friendlyName: Link names?
+        description: Whether or not create links out of channel names and usernames
+        type: boolean

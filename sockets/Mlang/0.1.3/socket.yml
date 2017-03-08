@@ -5,57 +5,52 @@ author:
   email: support@syncano.io
 endpoints:
   execute:
-    POST:
-      file: scripts/execute.js
-      description: Execute MLang program
-      parameters:
-        program:
-          example: {}
-          description: The MLang program
-          required: true
-          type: object
-        inputs:
-          example: {}
-          description: Inputs to the MLang program
-          required: false
-          type: object
+    file: scripts/execute.js
+    description: Execute MLang program
+    parameters:
+      program:
+        example: {}
+        description: The MLang program
+        required: true
+        type: object
+      inputs:
+        example: {}
+        description: Inputs to the MLang program
+        required: false
+        type: object
   meta:
-    POST:
-      file: scripts/meta.js
-      description: Extract Meta Data from program
-      parameters:
-        program:
-          example: {}
-          description: The name of the person that will be sent the hello message.
-          required: true
-          type: object
+    file: scripts/meta.js
+    description: Extract Meta Data from program
+    parameters:
+      program:
+        example: {}
+        description: The name of the person that will be sent the hello message.
+        required: true
+        type: object
   dependencies:
-    POST:
-      file: scripts/dependencies.js
-      description: Extract dependencies from MLang program
-      parameters:
-        program:
-          example: {}
-          description: The MLang program
-          required: true
-          type: object
+    file: scripts/dependencies.js
+    description: Extract dependencies from MLang program
+    parameters:
+      program:
+        example: {}
+        description: The MLang program
+        required: true
+        type: object
   variables:
-    POST:
-      file: scripts/variables.js
-      description: Extract variables from machlang
-      parameters:
-        program:
-          example: {}
-          description: The name of the person that will be sent the hello message.
-          required: true
-          type: object
+    file: scripts/variables.js
+    description: Extract variables from machlang
+    parameters:
+      program:
+        example: {}
+        description: The name of the person that will be sent the hello message.
+        required: true
+        type: object
   methods:
-    POST:
-      file: scripts/methods.js
-      description: Extract methods from machlang
-      parameters:
-        program:
-          example: {}
-          description: The name of the person that will be sent the hello message.
-          required: true
-          type: object
+    file: scripts/methods.js
+    description: Extract methods from machlang
+    parameters:
+      program:
+        example: {}
+        description: The name of the person that will be sent the hello message.
+        required: true
+        type: object

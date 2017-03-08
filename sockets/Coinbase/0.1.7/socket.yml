@@ -5,20 +5,18 @@ author:
   email: support@syncano.io
 endpoints:
   get-buy-price:
-    POST:
-      file: scripts/get-buy-price.js
-      description: Total price to buy some amount of bitcoin.
-      parameters:
-        quantity:
-          example: '10'
-          description: The quantity of bitcoin you would like to buy (default is 1).
-          type: string
+    file: scripts/get-buy-price.js
+    description: Total price to buy some amount of bitcoin.
+    parameters:
+      quantity:
+        example: '10'
+        description: The quantity of bitcoin you would like to buy (default is 1).
+        type: string
   get-sell-price:
-    POST:
-      file: scripts/get-sell-price.js
-      description: Total price to sell some amount of bitcoin.
-      parameters:
-        quantity:
-          example: '10'
-          description: The quantity of bitcoin you would like to sell (default is 1).
-          type: string
+    file: scripts/get-sell-price.js
+    description: Total price to sell some amount of bitcoin.
+    parameters:
+      quantity:
+        example: '10'
+        description: The quantity of bitcoin you would like to sell (default is 1).
+        type: string

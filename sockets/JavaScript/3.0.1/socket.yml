@@ -5,72 +5,68 @@ author:
   email: support@syncano.io
 endpoints:
   validate-varname:
-    POST:
-      file: scripts/validate-varname.js
-      description: >-
-        Determine whether the provided would be valid as the name of a
-        ECMAScript 5.1 variable.
-      parameters:
-        string:
-          description: The string to inspect.
-          example: foo$barz
-          required: true
-          type: string
+    file: scripts/validate-varname.js
+    description: >-
+      Determine whether the provided would be valid as the name of a ECMAScript
+      5.1 variable.
+    parameters:
+      string:
+        description: The string to inspect.
+        example: foo$barz
+        required: true
+        type: string
   minify:
-    POST:
-      file: scripts/minify.js
-      description: Minify a string of JavaScript code.
-      parameters:
-        javascript:
-          description: The Javascript code string to minify.
-          example: 'var z = 123;\nfunction abcz(a, b, c){\nalert(a, b, c, z);}\n'
-          required: true
-          type: string
+    file: scripts/minify.js
+    description: Minify a string of JavaScript code.
+    parameters:
+      javascript:
+        description: The Javascript code string to minify.
+        example: 'var z = 123;\nfunction abcz(a, b, c){\nalert(a, b, c, z);}\n'
+        required: true
+        type: string
   coerce-varname:
-    POST:
-      file: scripts/coerce-varname.js
-      description: >-
-        Given a string, return a similar version of the string, but which is
-        camel-cased and otherwise stripped of special characters, whitespace,
-        etc. so that it is usable as an ECMAScript variable.
-      parameters:
-        string:
-          description: The string to convert.
-          example: foo-bar-baz
-          required: true
-          type: string
-        force:
-          description: Return a best guess varname even if the conversion fails?
-          extendedDescription: >-
-            If `force` is enabled, a variable name is guaranteed, even if it is
-            just "x".
-          example: false
-          defaultsTo: false
-          type: boolean
+    file: scripts/coerce-varname.js
+    description: >-
+      Given a string, return a similar version of the string, but which is
+      camel-cased and otherwise stripped of special characters, whitespace, etc.
+      so that it is usable as an ECMAScript variable.
+    parameters:
+      string:
+        description: The string to convert.
+        example: foo-bar-baz
+        required: true
+        type: string
+      force:
+        description: Return a best guess varname even if the conversion fails?
+        extendedDescription: >-
+          If `force` is enabled, a variable name is guaranteed, even if it is
+          just "x".
+        example: false
+        defaultsTo: false
+        type: boolean
   beautify:
-    POST:
-      file: scripts/beautify.js
-      description: Beautify a JavaScript code string.
-      parameters:
-        code:
-          description: The JavaScript code to beautify.
-          example: |
-            alert(
-            "hi it's me" + 
-            ' and i sure am messy")
-            var x   =1+1;
-          required: true
-          type: string
-        useTabs:
-          friendlyName: Use tabs?
-          description: Whether to use tabs instead of spaces (defaults to 2 spaces)
-          example: false
-          defaultsTo: false
-          type: boolean
-        numSpaces:
-          friendlyName: '# of spaces'
-          description: The number of spaces that should represent an indentation.
-          extendedDescription: This input is ignored if the `useTabs` input is enabled.
-          example: 2
-          defaultsTo: 2
-          type: number
+    file: scripts/beautify.js
+    description: Beautify a JavaScript code string.
+    parameters:
+      code:
+        description: The JavaScript code to beautify.
+        example: |
+          alert(
+          "hi it's me" + 
+          ' and i sure am messy")
+          var x   =1+1;
+        required: true
+        type: string
+      useTabs:
+        friendlyName: Use tabs?
+        description: Whether to use tabs instead of spaces (defaults to 2 spaces)
+        example: false
+        defaultsTo: false
+        type: boolean
+      numSpaces:
+        friendlyName: '# of spaces'
+        description: The number of spaces that should represent an indentation.
+        extendedDescription: This input is ignored if the `useTabs` input is enabled.
+        example: 2
+        defaultsTo: 2
+        type: number

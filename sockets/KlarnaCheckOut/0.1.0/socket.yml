@@ -5,206 +5,201 @@ author:
   email: support@syncano.io
 endpoints:
   place-order:
-    POST:
-      file: scripts/place-order.js
-      description: null
-      parameters:
-        eid:
-          id: 3eed72c0-9309-4b9d-b324-cc8251e04923
-          friendlyName: EID
-          description: ''
-          example: 123a
-          requiredManually: true
-          addedManually: true
-          required: true
-          type: string
-        secret:
-          friendlyName: secret
-          description: ''
-          example: ART238ureXkz561
-          addedManually: true
-          requiredManually: true
-          required: true
-          type: string
-        live:
-          id: 7653be11-255b-4432-ba11-bc858853b38d
-          friendlyName: Live
-          description: Live transactions
-          example: true
-          requiredManually: true
-          addedManually: true
-          required: true
-          type: boolean
-        cart:
-          friendlyName: Cart
-          description: ''
-          example:
-            items:
-              - name: Tin of spam
-                reference: '1234'
-                quantity: 2
-                unit_price: 3400
-                tax_rate: 2500
-          addedManually: true
-          requiredManually: true
-          required: true
-          type: object
-        country:
-          id: 8c9499fc-703f-4fec-a615-808a3f6a2384
-          friendlyName: Country
-          description: >-
-            Klarna Country
+    file: scripts/place-order.js
+    description: null
+    parameters:
+      eid:
+        id: 3eed72c0-9309-4b9d-b324-cc8251e04923
+        friendlyName: EID
+        description: ''
+        example: 123a
+        requiredManually: true
+        addedManually: true
+        required: true
+        type: string
+      secret:
+        friendlyName: secret
+        description: ''
+        example: ART238ureXkz561
+        addedManually: true
+        requiredManually: true
+        required: true
+        type: string
+      live:
+        id: 7653be11-255b-4432-ba11-bc858853b38d
+        friendlyName: Live
+        description: Live transactions
+        example: true
+        requiredManually: true
+        addedManually: true
+        required: true
+        type: boolean
+      cart:
+        friendlyName: Cart
+        description: ''
+        example:
+          items:
+            - name: Tin of spam
+              reference: '1234'
+              quantity: 2
+              unit_price: 3400
+              tax_rate: 2500
+        addedManually: true
+        requiredManually: true
+        required: true
+        type: object
+      country:
+        id: 8c9499fc-703f-4fec-a615-808a3f6a2384
+        friendlyName: Country
+        description: >-
+          Klarna Country
 
-            Supported languages:
-            https://developers.klarna.com/en/se+php/kco-v2/checkout-api#supported-locales
-          example: 'NO'
-          addedManually: true
-          type: string
-        currency:
-          id: 76e18aa4-7486-46a0-b7c5-d2d4c728d2da
-          friendlyName: Currency
-          description: >-
-            Klarna currency
+          Supported languages:
+          https://developers.klarna.com/en/se+php/kco-v2/checkout-api#supported-locales
+        example: 'NO'
+        addedManually: true
+        type: string
+      currency:
+        id: 76e18aa4-7486-46a0-b7c5-d2d4c728d2da
+        friendlyName: Currency
+        description: >-
+          Klarna currency
 
-            Supported languages:
-            https://developers.klarna.com/en/se+php/kco-v2/checkout-api#supported-locales
-          example: NOK
-          addedManually: true
-          type: string
-        locale:
-          id: 48ad9307-35f6-474c-9c49-1acf8681fdb1
-          friendlyName: locale
-          description: >-
-            Klarna locale
+          Supported languages:
+          https://developers.klarna.com/en/se+php/kco-v2/checkout-api#supported-locales
+        example: NOK
+        addedManually: true
+        type: string
+      locale:
+        id: 48ad9307-35f6-474c-9c49-1acf8681fdb1
+        friendlyName: locale
+        description: >-
+          Klarna locale
 
-            Supported languages:
-            https://developers.klarna.com/en/se+php/kco-v2/checkout-api#supported-locales
-          example: nb-no
-          addedManually: true
-          type: string
-        confirmationURL:
-          friendlyName: Confirmation URL
-          description: ''
-          example: >-
-            http://localhost:1337/confirmation?klarna_order_id={checkout.order.id}
-          addedManually: true
-          requiredManually: true
-          required: true
-          type: string
+          Supported languages:
+          https://developers.klarna.com/en/se+php/kco-v2/checkout-api#supported-locales
+        example: nb-no
+        addedManually: true
+        type: string
+      confirmationURL:
+        friendlyName: Confirmation URL
+        description: ''
+        example: 'http://localhost:1337/confirmation?klarna_order_id={checkout.order.id}'
+        addedManually: true
+        requiredManually: true
+        required: true
+        type: string
   fetchorder:
-    POST:
-      file: scripts/fetchorder.js
-      description: null
-      parameters:
-        eid:
-          friendlyName: EID
-          description: ''
-          example: 12345c
-          addedManually: true
-          requiredManually: true
-          required: true
-          type: string
-        secret:
-          friendlyName: Secret
-          description: ''
-          example: somesecret
-          addedManually: true
-          requiredManually: true
-          required: true
-          type: string
-        live:
-          friendlyName: Live
-          description: ''
-          example: false
-          addedManually: true
-          type: boolean
-        country:
-          friendlyName: Country
-          description: ''
-          example: 'NO'
-          addedManually: true
-          type: string
-        currency:
-          friendlyName: Currency
-          description: ''
-          example: NOK
-          addedManually: true
-          type: string
-        locale:
-          friendlyName: Locale
-          description: ''
-          example: nb-no
-          addedManually: true
-          type: string
-        id:
-          friendlyName: id
-          description: Order id
-          example: somerorderid23
-          addedManually: true
-          requiredManually: true
-          required: true
-          type: string
+    file: scripts/fetchorder.js
+    description: null
+    parameters:
+      eid:
+        friendlyName: EID
+        description: ''
+        example: 12345c
+        addedManually: true
+        requiredManually: true
+        required: true
+        type: string
+      secret:
+        friendlyName: Secret
+        description: ''
+        example: somesecret
+        addedManually: true
+        requiredManually: true
+        required: true
+        type: string
+      live:
+        friendlyName: Live
+        description: ''
+        example: false
+        addedManually: true
+        type: boolean
+      country:
+        friendlyName: Country
+        description: ''
+        example: 'NO'
+        addedManually: true
+        type: string
+      currency:
+        friendlyName: Currency
+        description: ''
+        example: NOK
+        addedManually: true
+        type: string
+      locale:
+        friendlyName: Locale
+        description: ''
+        example: nb-no
+        addedManually: true
+        type: string
+      id:
+        friendlyName: id
+        description: Order id
+        example: somerorderid23
+        addedManually: true
+        requiredManually: true
+        required: true
+        type: string
   confirm-order:
-    POST:
-      file: scripts/confirm-order.js
-      description: null
-      parameters:
-        eid:
-          friendlyName: EID
-          description: ''
-          example: 1234
-          addedManually: true
-          requiredManually: true
-          required: true
-          type: number
-        secret:
-          friendlyName: Secret
-          description: ''
-          example: dsfsdgfdnghgesr435t5
-          addedManually: true
-          requiredManually: true
-          required: true
-          type: string
-        live:
-          friendlyName: Live
-          description: ''
-          example: false
-          addedManually: true
-          type: boolean
-        country:
-          friendlyName: Country
-          description: ''
-          example: SE
-          addedManually: true
-          type: string
-        currency:
-          friendlyName: Currency
-          description: ''
-          example: NOK
-          addedManually: true
-          type: string
-        locale:
-          friendlyName: Locale
-          description: ''
-          example: nb-no
-          addedManually: true
-          type: string
-        id:
-          friendlyName: id
-          description: Order ID
-          example: sjdasd76a8d68asiu
-          addedManually: true
-          requiredManually: true
-          required: true
-          type: string
-        order_ref:
-          friendlyName: Order reference
-          description: Order id
-          example: order2016-45
-          addedManually: true
-          type: string
+    file: scripts/confirm-order.js
+    description: null
+    parameters:
+      eid:
+        friendlyName: EID
+        description: ''
+        example: 1234
+        addedManually: true
+        requiredManually: true
+        required: true
+        type: number
+      secret:
+        friendlyName: Secret
+        description: ''
+        example: dsfsdgfdnghgesr435t5
+        addedManually: true
+        requiredManually: true
+        required: true
+        type: string
+      live:
+        friendlyName: Live
+        description: ''
+        example: false
+        addedManually: true
+        type: boolean
+      country:
+        friendlyName: Country
+        description: ''
+        example: SE
+        addedManually: true
+        type: string
+      currency:
+        friendlyName: Currency
+        description: ''
+        example: NOK
+        addedManually: true
+        type: string
+      locale:
+        friendlyName: Locale
+        description: ''
+        example: nb-no
+        addedManually: true
+        type: string
+      id:
+        friendlyName: id
+        description: Order ID
+        example: sjdasd76a8d68asiu
+        addedManually: true
+        requiredManually: true
+        required: true
+        type: string
+      order_ref:
+        friendlyName: Order reference
+        description: Order id
+        example: order2016-45
+        addedManually: true
+        type: string
   update-order:
-    POST:
-      file: scripts/update-order.js
-      description: Update an order
-      parameters: {}
+    file: scripts/update-order.js
+    description: Update an order
+    parameters: {}

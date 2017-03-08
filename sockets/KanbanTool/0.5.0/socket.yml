@@ -5,34 +5,33 @@ author:
   email: support@syncano.io
 endpoints:
   get-new-cards:
-    POST:
-      file: scripts/get-new-cards.js
-      description: Gets the newly created cards
-      parameters:
-        domain:
-          example: yourcompany
-          description: The name of the domain of your company on KanbanTool.
-          required: true
-          type: string
-        apiToken:
-          example: 11A1AA1AAA1A
-          description: >-
-            The KanbanTool API key
-            (https://DOMAIN.kanbantool.com/profile/api_token).
-          required: true
-          type: string
-        boardId:
-          example: 12345
-          description: The board ID for which to check for new cards.
-          required: true
-          type: number
-        fromDate:
-          example: 12345
-          description: The timestamp from which to start checking.
-          required: true
-          type: number
-        toDate:
-          example: 12345
-          description: The timestamp of where to end checking.
-          required: true
-          type: number
+    file: scripts/get-new-cards.js
+    description: Gets the newly created cards
+    parameters:
+      domain:
+        example: yourcompany
+        description: The name of the domain of your company on KanbanTool.
+        required: true
+        type: string
+      apiToken:
+        example: 11A1AA1AAA1A
+        description: >-
+          The KanbanTool API key
+          (https://DOMAIN.kanbantool.com/profile/api_token).
+        required: true
+        type: string
+      boardId:
+        example: 12345
+        description: The board ID for which to check for new cards.
+        required: true
+        type: number
+      fromDate:
+        example: 12345
+        description: The timestamp from which to start checking.
+        required: true
+        type: number
+      toDate:
+        example: 12345
+        description: The timestamp of where to end checking.
+        required: true
+        type: number

@@ -7,111 +7,102 @@ author:
   email: support@syncano.io
 endpoints:
   set-data:
-    POST:
-      file: scripts/set-data.js
-      description: Write data to your Firebase instance with the Set method.
-      parameters:
-        firebaseURL:
-          example: your-firebase-database.firebaseio.com
-          description: The reference URL for your Firebase dataset.
-          required: true
-          type: string
-        child:
-          example: users
-          description: The child of your reference URL which you wish to write to.
-          type: string
-        write:
-          description: >-
-            The dataset you wish to write to your Firebase instance, in JSON
-            form.
-          typeclass: '*'
-          required: true
-          type: '*'
+    file: scripts/set-data.js
+    description: Write data to your Firebase instance with the Set method.
+    parameters:
+      firebaseURL:
+        example: your-firebase-database.firebaseio.com
+        description: The reference URL for your Firebase dataset.
+        required: true
+        type: string
+      child:
+        example: users
+        description: The child of your reference URL which you wish to write to.
+        type: string
+      write:
+        description: 'The dataset you wish to write to your Firebase instance, in JSON form.'
+        typeclass: '*'
+        required: true
+        type: '*'
   push-data:
-    POST:
-      file: scripts/push-data.js
-      description: Write data to your Firebase instance with the Push method.
-      parameters:
-        firebaseURL:
-          example: your-firebase-database.firebaseio.com
-          description: The reference URL for your Firebase dataset.
-          required: true
-          type: string
-        child:
-          example: users
-          description: The child of your reference URL which you wish to write to.
-          type: string
-        write:
-          description: The dataset you wish to write to your Firebase instance.
-          typeclass: '*'
-          required: true
-          type: '*'
+    file: scripts/push-data.js
+    description: Write data to your Firebase instance with the Push method.
+    parameters:
+      firebaseURL:
+        example: your-firebase-database.firebaseio.com
+        description: The reference URL for your Firebase dataset.
+        required: true
+        type: string
+      child:
+        example: users
+        description: The child of your reference URL which you wish to write to.
+        type: string
+      write:
+        description: The dataset you wish to write to your Firebase instance.
+        typeclass: '*'
+        required: true
+        type: '*'
   update-data:
-    POST:
-      file: scripts/update-data.js
-      description: Update data in a Firebase child node per field.
-      parameters:
-        firebaseURL:
-          example: your-firebase-database.firebaseio.com/users
-          description: >-
-            The reference URL for your Firebase dataset. NOTE: Refer to the
-            specific location you need to update as this machine can only work
-            on one child level. For example, add /users/ to the URL, and the
-            specific user as the child.
-          required: true
-          type: string
-        child:
-          example: users
-          description: The child of your reference URL which you wish to write to.
-          type: string
-        write:
-          description: The children to overwrite in the data path.
-          typeclass: dictionary
-          required: true
-          type: dictionary
+    file: scripts/update-data.js
+    description: Update data in a Firebase child node per field.
+    parameters:
+      firebaseURL:
+        example: your-firebase-database.firebaseio.com/users
+        description: >-
+          The reference URL for your Firebase dataset. NOTE: Refer to the
+          specific location you need to update as this machine can only work on
+          one child level. For example, add /users/ to the URL, and the specific
+          user as the child.
+        required: true
+        type: string
+      child:
+        example: users
+        description: The child of your reference URL which you wish to write to.
+        type: string
+      write:
+        description: The children to overwrite in the data path.
+        typeclass: dictionary
+        required: true
+        type: dictionary
   read-value:
-    POST:
-      file: scripts/read-value.js
-      description: 'Read data from a specific firebase location, such as "/users/".'
-      parameters:
-        firebaseURL:
-          example: your-firebase-database.firebaseio.com/users/
-          description: The reference URL for your Firebase dataset.
-          required: true
-          type: string
+    file: scripts/read-value.js
+    description: 'Read data from a specific firebase location, such as "/users/".'
+    parameters:
+      firebaseURL:
+        example: your-firebase-database.firebaseio.com/users/
+        description: The reference URL for your Firebase dataset.
+        required: true
+        type: string
   json-to-string:
-    POST:
-      file: scripts/json-to-string.js
-      description: >-
-        Firebase reads data as a JSON object. You can convert this to a string
-        with this machine.
-      parameters:
-        object:
-          example: '{ "User 1": {"email": "user@gmail.com", "password": "password123"}}'
-          description: The object you wish to convert into a string.
-          typeclass: '*'
-          required: true
-          type: string
+    file: scripts/json-to-string.js
+    description: >-
+      Firebase reads data as a JSON object. You can convert this to a string
+      with this machine.
+    parameters:
+      object:
+        example: '{ "User 1": {"email": "user@gmail.com", "password": "password123"}}'
+        description: The object you wish to convert into a string.
+        typeclass: '*'
+        required: true
+        type: string
   string-to-json:
-    POST:
-      file: scripts/string-to-json.js
-      description: >-
-        Firebase writes data as a JSON object. You can convert your JSON-format
-        string to a JSON object with this machine.
-      parameters:
-        string:
-          example: '{ "User 1": {"email": "user@gmail.com", "password": "password123"}}'
-          description: The string you wish to convert.
-          typeclass: '*'
-          required: true
-          type: string
+    file: scripts/string-to-json.js
+    description: >-
+      Firebase writes data as a JSON object. You can convert your JSON-format
+      string to a JSON object with this machine.
+    parameters:
+      string:
+        example: '{ "User 1": {"email": "user@gmail.com", "password": "password123"}}'
+        description: The string you wish to convert.
+        typeclass: '*'
+        required: true
+        type: string
   remove-value:
-    POST:
-      file: scripts/remove-value.js
-      description: 'Remove data from a specific firebase location, such as "/users/".'
-      parameters:
-        firebaseURL:
-          example: your-firebase-database.firebaseio.com/users/
-          description: The reference URL for your Firebase dataset.
-          required: true
-          type: string
+    file: scripts/remove-value.js
+    description: 'Remove data from a specific firebase location, such as "/users/".'
+    parameters:
+      firebaseURL:
+        example: your-firebase-database.firebaseio.com/users/
+        description: The reference URL for your Firebase dataset.
+        required: true
+        type: string

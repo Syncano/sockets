@@ -5,576 +5,551 @@ author:
   email: support@syncano.io
 endpoints:
   reverse:
-    POST:
-      file: scripts/reverse.js
-      description: >-
-        Build a new array which is an exact clone of an existing array, but in
-        reverse order.
-      parameters:
-        array:
-          friendlyName: Array
-          description: The array to reverse.
-          example:
-            - '*'
-          required: true
-          type: array
+    file: scripts/reverse.js
+    description: >-
+      Build a new array which is an exact clone of an existing array, but in
+      reverse order.
+    parameters:
+      array:
+        friendlyName: Array
+        description: The array to reverse.
+        example:
+          - '*'
+        required: true
+        type: array
   index-of:
-    POST:
-      file: scripts/index-of.js
-      description: >-
-        Look up the first occurrence of the specified item and return its array
-        index.
-      parameters:
-        array:
-          friendlyName: In array
-          description: The array to search in (i.e. "haystack")
-          example:
-            - '*'
-          required: true
-          type: array
-        item:
-          example: '*'
-          friendlyName: Search for
-          description: The value to search for (i.e. "needle")
-          required: true
-          type: string
+    file: scripts/index-of.js
+    description: >-
+      Look up the first occurrence of the specified item and return its array
+      index.
+    parameters:
+      array:
+        friendlyName: In array
+        description: The array to search in (i.e. "haystack")
+        example:
+          - '*'
+        required: true
+        type: array
+      item:
+        example: '*'
+        friendlyName: Search for
+        description: The value to search for (i.e. "needle")
+        required: true
+        type: string
   slice:
-    POST:
-      file: scripts/slice.js
-      description: Copy a sub-array of consecutive items from the specified array.
-      parameters:
-        array:
-          friendlyName: Array
-          description: The array to slice.
-          example:
-            - '*'
-          required: true
-          type: array
-        start:
-          friendlyName: Start from (index)
-          description: The index of the first item to include in the new array.
-          extendedDescription: This index should be zero or a positive number.
-          example: 2
-          required: true
-          type: number
-        end:
-          friendlyName: End with (index)
-          description: The index of the last item to include in the new array.
-          extendedDescription: >-
-            This index should be zero or a positive number. Omitting this input
-            value will include the rest of the array.
-          example: 5
-          min: 0
-          type: number
+    file: scripts/slice.js
+    description: Copy a sub-array of consecutive items from the specified array.
+    parameters:
+      array:
+        friendlyName: Array
+        description: The array to slice.
+        example:
+          - '*'
+        required: true
+        type: array
+      start:
+        friendlyName: Start from (index)
+        description: The index of the first item to include in the new array.
+        extendedDescription: This index should be zero or a positive number.
+        example: 2
+        required: true
+        type: number
+      end:
+        friendlyName: End with (index)
+        description: The index of the last item to include in the new array.
+        extendedDescription: >-
+          This index should be zero or a positive number. Omitting this input
+          value will include the rest of the array.
+        example: 5
+        min: 0
+        type: number
   length:
-    POST:
-      file: scripts/length.js
-      description: Get the length of the provided array.
-      parameters:
-        array:
-          friendlyName: Array to count
-          example:
-            - '*'
-          description: The array of items to count
-          required: true
-          type: array
+    file: scripts/length.js
+    description: Get the length of the provided array.
+    parameters:
+      array:
+        friendlyName: Array to count
+        example:
+          - '*'
+        description: The array of items to count
+        required: true
+        type: array
   concat:
-    POST:
-      file: scripts/concat.js
-      description: >-
-        Combine (aka concatenate) two arrays into a single array- one in front
-        of the other.
-      parameters:
-        firstArray:
-          friendlyName: First array
-          description: The first array
-          example:
-            - '*'
-          required: true
-          type: array
-        secondArray:
-          friendlyName: Second array
-          description: The second array
-          example:
-            - '*'
-          required: true
-          type: array
+    file: scripts/concat.js
+    description: >-
+      Combine (aka concatenate) two arrays into a single array- one in front of
+      the other.
+    parameters:
+      firstArray:
+        friendlyName: First array
+        description: The first array
+        example:
+          - '*'
+        required: true
+        type: array
+      secondArray:
+        friendlyName: Second array
+        description: The second array
+        example:
+          - '*'
+        required: true
+        type: array
   last:
-    POST:
-      file: scripts/last.js
-      description: Look up the last item in an array.
-      parameters:
-        array:
-          friendlyName: Array
-          description: The array containing the desired item.
-          example:
-            - '*'
-          required: true
-          type: array
+    file: scripts/last.js
+    description: Look up the last item in an array.
+    parameters:
+      array:
+        friendlyName: Array
+        description: The array containing the desired item.
+        example:
+          - '*'
+        required: true
+        type: array
   nth:
-    POST:
-      file: scripts/nth.js
-      description: Look up an item from the array at the specified index.
-      parameters:
-        array:
-          friendlyName: Array
-          description: The array containing the desired item.
-          example:
-            - '*'
-          required: true
-          type: array
-        index:
-          friendlyName: Look up index
-          description: The index of the item to be gotten.
-          example: 2
-          required: true
-          type: number
+    file: scripts/nth.js
+    description: Look up an item from the array at the specified index.
+    parameters:
+      array:
+        friendlyName: Array
+        description: The array containing the desired item.
+        example:
+          - '*'
+        required: true
+        type: array
+      index:
+        friendlyName: Look up index
+        description: The index of the item to be gotten.
+        example: 2
+        required: true
+        type: number
   construct:
-    POST:
-      file: scripts/construct.js
-      description: Construct an array.
-      parameters:
-        array:
-          friendlyName: Array
-          description: The homogeneous array to build.
-          example:
-            - '*'
-          required: true
-          type: array
+    file: scripts/construct.js
+    description: Construct an array.
+    parameters:
+      array:
+        friendlyName: Array
+        description: The homogeneous array to build.
+        example:
+          - '*'
+        required: true
+        type: array
   pluck:
-    POST:
-      file: scripts/pluck.js
-      description: List the values of a particular key from an array of dictionaries.
-      parameters:
-        array:
-          friendlyName: Array of dictionaries
-          description: The array of dictionaries to iterate over.
-          example:
-            - {}
-          required: true
-          type: array
-        key:
-          friendlyName: Key to pluck
-          description: The property to pluck from each dictionary.
-          example: id
-          required: true
-          type: string
+    file: scripts/pluck.js
+    description: List the values of a particular key from an array of dictionaries.
+    parameters:
+      array:
+        friendlyName: Array of dictionaries
+        description: The array of dictionaries to iterate over.
+        example:
+          - {}
+        required: true
+        type: array
+      key:
+        friendlyName: Key to pluck
+        description: The property to pluck from each dictionary.
+        example: id
+        required: true
+        type: string
   sort-strings:
-    POST:
-      file: scripts/sort-strings.js
-      description: Sort an array of strings alphabetically (A to Z)
-      parameters:
-        array:
-          friendlyName: Array
-          description: The array of strings to sort.
-          example:
-            - Roger Wilco
-          required: true
-          type: array
+    file: scripts/sort-strings.js
+    description: Sort an array of strings alphabetically (A to Z)
+    parameters:
+      array:
+        friendlyName: Array
+        description: The array of strings to sort.
+        example:
+          - Roger Wilco
+        required: true
+        type: array
   sort-numbers:
-    POST:
-      file: scripts/sort-numbers.js
-      description: Sort an array of numbers (ascending)
-      parameters:
-        array:
-          friendlyName: Array
-          description: The array of numbers to sort.
-          example:
-            - 2
-          required: true
-          type: array
+    file: scripts/sort-numbers.js
+    description: Sort an array of numbers (ascending)
+    parameters:
+      array:
+        friendlyName: Array
+        description: The array of numbers to sort.
+        example:
+          - 2
+        required: true
+        type: array
   each:
-    POST:
-      file: scripts/each.js
-      description: Run some logic (the "iteratee") once for each item of an array.
-      parameters:
-        array:
-          friendlyName: Array
-          description: The array to loop over
-          example:
-            - '*'
-          required: true
-          type: array
-        iteratee:
-          friendlyName: Iteratee
-          description: The function to run for each item in the array.
-          example: '->'
-          contract:
-            provides:
-              item:
-                friendlyName: Current item
-                description: The current item in the array.
-                itemOf: array
-              index:
-                friendlyName: Current index
-                description: The index of the current item in the array.
-                example: 3
-              lastIndex:
-                friendlyName: Last index
-                description: The index of the last item in the array.
-                example: 3
-            expects:
-              error:
-                friendlyName: Break with error
-                description: >-
-                  Something went wrong- stop iterating and skip over all
-                  remaining items.
-              halt:
-                friendlyName: Break
-                description: >-
-                  Everything is ok, but stop iterating and skip over all
-                  remaining items.
-              success:
-                friendlyName: Next item
-                description: 'Continue to next item, or if there are no more items, stop.'
-          required: true
-          type: string
-        series:
-          friendlyName: One item at a time?
-          description: Whether to run iteratee on one item at a time (in series)
-          extendedDescription: 'By default, all items are run at the same time (in parallel)'
-          example: false
-          defaultsTo: false
-          type: boolean
+    file: scripts/each.js
+    description: Run some logic (the "iteratee") once for each item of an array.
+    parameters:
+      array:
+        friendlyName: Array
+        description: The array to loop over
+        example:
+          - '*'
+        required: true
+        type: array
+      iteratee:
+        friendlyName: Iteratee
+        description: The function to run for each item in the array.
+        example: '->'
+        contract:
+          provides:
+            item:
+              friendlyName: Current item
+              description: The current item in the array.
+              itemOf: array
+            index:
+              friendlyName: Current index
+              description: The index of the current item in the array.
+              example: 3
+            lastIndex:
+              friendlyName: Last index
+              description: The index of the last item in the array.
+              example: 3
+          expects:
+            error:
+              friendlyName: Break with error
+              description: >-
+                Something went wrong- stop iterating and skip over all remaining
+                items.
+            halt:
+              friendlyName: Break
+              description: >-
+                Everything is ok, but stop iterating and skip over all remaining
+                items.
+            success:
+              friendlyName: Next item
+              description: 'Continue to next item, or if there are no more items, stop.'
+        required: true
+        type: string
+      series:
+        friendlyName: One item at a time?
+        description: Whether to run iteratee on one item at a time (in series)
+        extendedDescription: 'By default, all items are run at the same time (in parallel)'
+        example: false
+        defaultsTo: false
+        type: boolean
   map:
-    POST:
-      file: scripts/map.js
-      description: Iterate over each item of an array to build a new transformed array.
-      parameters:
-        array:
-          friendlyName: Array
-          description: The array to loop over
-          example:
-            - '*'
-          required: true
-          type: array
-        resultExemplar:
-          friendlyName: Example result
-          description: An example of what the final result array will look like.
-          example:
-            - '*'
-          constant: true
-          isExemplar: true
-          type: array
-        iteratee:
-          friendlyName: Iteratee
-          description: The transformation to run for each item in the array.
-          example: '->'
-          contract:
-            inputs:
-              item:
-                friendlyName: Current item
-                description: The current item in the array.
-                itemOf: array
-              index:
-                friendlyName: Current index
-                description: The index of the current item in the array.
-                example: 3
-              lastIndex:
-                friendlyName: Last index
-                description: The index of the last item in the array.
-                example: 3
-            exits:
-              error:
-                friendlyName: Break with error
-                description: >-
-                  Something went wrong- stop iterating and skip over all
-                  remaining items.
-              skip:
-                friendlyName: Skip item
-                description: 'Skip to next item, or if there are no more items, stop.'
-                extendedDescription: >-
-                  If the `skip` exit is used, then the length of the Map
-                  machine's output array will be shorter than the length of the
-                  input array.
-              success:
-                friendlyName: Next item
-                description: 'Continue to next item, or if there are no more items, stop.'
-                itemOf: resultExemplar
-                outputFriendlyName: Transformed item
-                outputDescription: >-
-                  The result of running the current item through the iteratee
-                  machine
-          required: true
-          type: string
-        series:
-          friendlyName: One item at a time?
-          description: Whether to run iteratee on one item at a time (in series)
-          extendedDescription: 'By default, all items are run at the same time (in parallel)'
-          example: false
-          defaultsTo: false
-          type: boolean
+    file: scripts/map.js
+    description: Iterate over each item of an array to build a new transformed array.
+    parameters:
+      array:
+        friendlyName: Array
+        description: The array to loop over
+        example:
+          - '*'
+        required: true
+        type: array
+      resultExemplar:
+        friendlyName: Example result
+        description: An example of what the final result array will look like.
+        example:
+          - '*'
+        constant: true
+        isExemplar: true
+        type: array
+      iteratee:
+        friendlyName: Iteratee
+        description: The transformation to run for each item in the array.
+        example: '->'
+        contract:
+          inputs:
+            item:
+              friendlyName: Current item
+              description: The current item in the array.
+              itemOf: array
+            index:
+              friendlyName: Current index
+              description: The index of the current item in the array.
+              example: 3
+            lastIndex:
+              friendlyName: Last index
+              description: The index of the last item in the array.
+              example: 3
+          exits:
+            error:
+              friendlyName: Break with error
+              description: >-
+                Something went wrong- stop iterating and skip over all remaining
+                items.
+            skip:
+              friendlyName: Skip item
+              description: 'Skip to next item, or if there are no more items, stop.'
+              extendedDescription: >-
+                If the `skip` exit is used, then the length of the Map machine's
+                output array will be shorter than the length of the input array.
+            success:
+              friendlyName: Next item
+              description: 'Continue to next item, or if there are no more items, stop.'
+              itemOf: resultExemplar
+              outputFriendlyName: Transformed item
+              outputDescription: >-
+                The result of running the current item through the iteratee
+                machine
+        required: true
+        type: string
+      series:
+        friendlyName: One item at a time?
+        description: Whether to run iteratee on one item at a time (in series)
+        extendedDescription: 'By default, all items are run at the same time (in parallel)'
+        example: false
+        defaultsTo: false
+        type: boolean
   reduce:
-    POST:
-      file: scripts/reduce.js
-      description: >-
-        Run some logic (the "iteratee") once for each item of an array,
-        accumulating a single result.
-      parameters:
-        array:
-          friendlyName: Array
-          description: The array to loop over
-          example:
-            - '*'
-          required: true
-          type: array
-        iteratee:
-          friendlyName: Iteratee
-          description: The function to run for each item in the array.
-          example: '->'
-          contract:
-            inputs:
-              item:
-                friendlyName: Current item
-                description: The current item in the array.
-                itemOf: array
-              index:
-                friendlyName: Current index
-                description: The index of the current item in the array.
-                example: 3
-              lastIndex:
-                friendlyName: Last index
-                description: The index of the last item in the array.
-                example: 3
-              resultSoFar:
-                friendlyName: Result so far
-                description: The result which has been accumulated so far
-                like: initialValue
-            exits:
-              error:
-                friendlyName: Break with error
-                description: >-
-                  Something went wrong- stop iterating and skip over all
-                  remaining items.
-              halt:
-                friendlyName: Break
-                description: >-
-                  Everything is ok, but stop iterating and skip over all
-                  remaining items.
-              success:
-                friendlyName: Next item
-                description: 'Continue to next item, or if there are no more items, stop.'
-                like: initialValue
-                outputFriendlyName: Transformed result
-                outputDescription: >-
-                  The accumulated result after running the current item through
-                  the iteratee machine.
-          required: true
-          type: string
-        resultExemplar:
-          friendlyName: Example result
-          description: An example of what the final accumulated result will look like.
-          extendedDescription: >-
-            The type of the final result must be compatible with the initial
-            value, as well as the partial result provided to the iteratee during
-            each iteration.
-          isExemplar: true
-        initialValue:
-          friendlyName: Initial value
-          description: The initial value for the accumulated result
-          extendedDescription: Note that the final accumulated result must have a compatible type!
-          example: '*'
-          type: string
-        series:
-          friendlyName: One item at a time?
-          description: >-
-            Whether to run iteratee on all items in series (one at a time) vs.
-            in parallel (all at the same time)
-          extendedDescription: >-
-            Be careful if you disable this input-- make sure you are actually OK
-            with your iteratee being run on each item of the array in a
-            completely arbitrary order. Also release that consequently, the
-            order that your result will accumulate in is impossible to predict.
-          example: true
-          defaultsTo: true
-          type: boolean
+    file: scripts/reduce.js
+    description: >-
+      Run some logic (the "iteratee") once for each item of an array,
+      accumulating a single result.
+    parameters:
+      array:
+        friendlyName: Array
+        description: The array to loop over
+        example:
+          - '*'
+        required: true
+        type: array
+      iteratee:
+        friendlyName: Iteratee
+        description: The function to run for each item in the array.
+        example: '->'
+        contract:
+          inputs:
+            item:
+              friendlyName: Current item
+              description: The current item in the array.
+              itemOf: array
+            index:
+              friendlyName: Current index
+              description: The index of the current item in the array.
+              example: 3
+            lastIndex:
+              friendlyName: Last index
+              description: The index of the last item in the array.
+              example: 3
+            resultSoFar:
+              friendlyName: Result so far
+              description: The result which has been accumulated so far
+              like: initialValue
+          exits:
+            error:
+              friendlyName: Break with error
+              description: >-
+                Something went wrong- stop iterating and skip over all remaining
+                items.
+            halt:
+              friendlyName: Break
+              description: >-
+                Everything is ok, but stop iterating and skip over all remaining
+                items.
+            success:
+              friendlyName: Next item
+              description: 'Continue to next item, or if there are no more items, stop.'
+              like: initialValue
+              outputFriendlyName: Transformed result
+              outputDescription: >-
+                The accumulated result after running the current item through
+                the iteratee machine.
+        required: true
+        type: string
+      resultExemplar:
+        friendlyName: Example result
+        description: An example of what the final accumulated result will look like.
+        extendedDescription: >-
+          The type of the final result must be compatible with the initial
+          value, as well as the partial result provided to the iteratee during
+          each iteration.
+        isExemplar: true
+      initialValue:
+        friendlyName: Initial value
+        description: The initial value for the accumulated result
+        extendedDescription: Note that the final accumulated result must have a compatible type!
+        example: '*'
+        type: string
+      series:
+        friendlyName: One item at a time?
+        description: >-
+          Whether to run iteratee on all items in series (one at a time) vs. in
+          parallel (all at the same time)
+        extendedDescription: >-
+          Be careful if you disable this input-- make sure you are actually OK
+          with your iteratee being run on each item of the array in a completely
+          arbitrary order. Also release that consequently, the order that your
+          result will accumulate in is impossible to predict.
+        example: true
+        defaultsTo: true
+        type: boolean
   find-one:
-    POST:
-      file: scripts/find-one.js
-      description: >-
-        Search the array for the first dictionary that matches the specified
-        criteria.
-      parameters:
-        array:
-          friendlyName: Array of dictionaries
-          description: The array to search in (i.e. "haystack")
-          example:
-            - {}
-          required: true
-          type: array
-        criteria:
-          friendlyName: Criteria
-          example: {}
-          description: The Lodash-style criteria to use (i.e. "metal detector")
-          required: true
-          type: object
+    file: scripts/find-one.js
+    description: >-
+      Search the array for the first dictionary that matches the specified
+      criteria.
+    parameters:
+      array:
+        friendlyName: Array of dictionaries
+        description: The array to search in (i.e. "haystack")
+        example:
+          - {}
+        required: true
+        type: array
+      criteria:
+        friendlyName: Criteria
+        example: {}
+        description: The Lodash-style criteria to use (i.e. "metal detector")
+        required: true
+        type: object
   find-where:
-    POST:
-      file: scripts/find-where.js
-      description: >-
-        Search the array and return all dictionaries that match the specified
-        criteria.
-      parameters:
-        array:
-          friendlyName: Array of dictionaries
-          description: The array to search in (i.e. "haystack")
-          example:
-            - {}
-          required: true
-          type: array
-        criteria:
-          friendlyName: Criteria
-          example: {}
-          description: The Lodash-style criteria to use (i.e. "metal detector")
-          required: true
-          type: object
+    file: scripts/find-where.js
+    description: >-
+      Search the array and return all dictionaries that match the specified
+      criteria.
+    parameters:
+      array:
+        friendlyName: Array of dictionaries
+        description: The array to search in (i.e. "haystack")
+        example:
+          - {}
+        required: true
+        type: array
+      criteria:
+        friendlyName: Criteria
+        example: {}
+        description: The Lodash-style criteria to use (i.e. "metal detector")
+        required: true
+        type: object
   insert:
-    POST:
-      file: scripts/insert.js
-      description: Insert or append an item and return the result (a new array).
-      parameters:
-        array:
-          friendlyName: Array
-          description: The array where the new item should be inserted.
-          example:
-            - '*'
-          required: true
-          type: array
-        index:
-          friendlyName: Insert at (index)
-          description: The index to insert the new item at.
-          example: 1
-          required: true
-          type: number
-        value:
-          friendlyName: New item
-          description: The new item to insert into the array.
-          example: '*'
-          required: true
-          type: string
+    file: scripts/insert.js
+    description: Insert or append an item and return the result (a new array).
+    parameters:
+      array:
+        friendlyName: Array
+        description: The array where the new item should be inserted.
+        example:
+          - '*'
+        required: true
+        type: array
+      index:
+        friendlyName: Insert at (index)
+        description: The index to insert the new item at.
+        example: 1
+        required: true
+        type: number
+      value:
+        friendlyName: New item
+        description: The new item to insert into the array.
+        example: '*'
+        required: true
+        type: string
   sample:
-    POST:
-      file: scripts/sample.js
-      description: Randomly select one item from an array.
-      parameters:
-        array:
-          friendlyName: Array
-          example:
-            - '*'
-          description: The array of items to pick from.
-          required: true
-          type: array
+    file: scripts/sample.js
+    description: Randomly select one item from an array.
+    parameters:
+      array:
+        friendlyName: Array
+        example:
+          - '*'
+        description: The array of items to pick from.
+        required: true
+        type: array
   sort-by:
-    POST:
-      file: scripts/sort-by.js
-      description: Sort an array of dictionaries by a particular key.
-      parameters:
-        array:
-          friendlyName: Array of dictionaries
-          description: The array to sort.
-          example:
-            - {}
-          required: true
-          type: array
-        key:
-          friendlyName: Sort by...
-          description: The shared key to sort by.
-          example: createdAt
-          required: true
-          type: string
+    file: scripts/sort-by.js
+    description: Sort an array of dictionaries by a particular key.
+    parameters:
+      array:
+        friendlyName: Array of dictionaries
+        description: The array to sort.
+        example:
+          - {}
+        required: true
+        type: array
+      key:
+        friendlyName: Sort by...
+        description: The shared key to sort by.
+        example: createdAt
+        required: true
+        type: string
   uniq-by:
-    POST:
-      file: scripts/uniq-by.js
-      description: >-
-        Build a duplicate-free version of an array of dictionaries, judging
-        uniqueness based on a particular key.
-      parameters:
-        array:
-          friendlyName: Array of dictionaries
-          description: The array of dictionaries to remove duplicates from.
-          example:
-            - {}
-          required: true
-          type: array
-        key:
-          friendlyName: Unique key
-          description: The key to use when determining uniqueness.
-          example: id
-          required: true
-          type: string
+    file: scripts/uniq-by.js
+    description: >-
+      Build a duplicate-free version of an array of dictionaries, judging
+      uniqueness based on a particular key.
+    parameters:
+      array:
+        friendlyName: Array of dictionaries
+        description: The array of dictionaries to remove duplicates from.
+        example:
+          - {}
+        required: true
+        type: array
+      key:
+        friendlyName: Unique key
+        description: The key to use when determining uniqueness.
+        example: id
+        required: true
+        type: string
   uniq:
-    POST:
-      file: scripts/uniq.js
-      description: Build a duplicate-free version of an array.
-      parameters:
-        array:
-          friendlyName: Array
-          description: The array to remove duplicates from.
-          example:
-            - '*'
-          required: true
-          type: array
+    file: scripts/uniq.js
+    description: Build a duplicate-free version of an array.
+    parameters:
+      array:
+        friendlyName: Array
+        description: The array to remove duplicates from.
+        example:
+          - '*'
+        required: true
+        type: array
   find-index-of:
-    POST:
-      file: scripts/find-index-of.js
-      description: >-
-        Look up the first occurrence of the dictionary matching the specified
-        criteria and return its array index.
-      parameters:
-        array:
-          friendlyName: In array
-          description: The array to search in (i.e. "haystack")
-          example:
-            - '*'
-          required: true
-          type: array
-        criteria:
-          friendlyName: Criteria
-          example: {}
-          description: The Lodash-style criteria to use (i.e. "metal detector")
-          required: true
-          type: object
+    file: scripts/find-index-of.js
+    description: >-
+      Look up the first occurrence of the dictionary matching the specified
+      criteria and return its array index.
+    parameters:
+      array:
+        friendlyName: In array
+        description: The array to search in (i.e. "haystack")
+        example:
+          - '*'
+        required: true
+        type: array
+      criteria:
+        friendlyName: Criteria
+        example: {}
+        description: The Lodash-style criteria to use (i.e. "metal detector")
+        required: true
+        type: object
   replace:
-    POST:
-      file: scripts/replace.js
-      description: >-
-        Replace the item located at the specified index and return the result (a
-        new array).
-      parameters:
-        array:
-          friendlyName: Array
-          description: The array where the new item should be inserted.
-          example:
-            - '*'
-          required: true
-          type: array
-        index:
-          friendlyName: Replace at (index)
-          description: The index of the item to replace.
-          example: 1
-          required: true
-          type: number
-        value:
-          friendlyName: New value
-          description: The new value to replace the old one with.
-          example: '*'
-          required: true
-          type: string
+    file: scripts/replace.js
+    description: >-
+      Replace the item located at the specified index and return the result (a
+      new array).
+    parameters:
+      array:
+        friendlyName: Array
+        description: The array where the new item should be inserted.
+        example:
+          - '*'
+        required: true
+        type: array
+      index:
+        friendlyName: Replace at (index)
+        description: The index of the item to replace.
+        example: 1
+        required: true
+        type: number
+      value:
+        friendlyName: New value
+        description: The new value to replace the old one with.
+        example: '*'
+        required: true
+        type: string
   sample-subset:
-    POST:
-      file: scripts/sample-subset.js
-      description: Randomly select an unordered subset of the array
-      parameters:
-        array:
-          friendlyName: Array
-          example:
-            - '*'
-          description: The array of items to pick from.
-          required: true
-          type: array
-        size:
-          friendlyName: Subset size
-          example: 2
-          description: The number of items to pick out of the array
-          required: true
-          type: number
+    file: scripts/sample-subset.js
+    description: Randomly select an unordered subset of the array
+    parameters:
+      array:
+        friendlyName: Array
+        example:
+          - '*'
+        description: The array of items to pick from.
+        required: true
+        type: array
+      size:
+        friendlyName: Subset size
+        example: 2
+        description: The number of items to pick out of the array
+        required: true
+        type: number

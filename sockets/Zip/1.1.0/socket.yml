@@ -5,51 +5,47 @@ author:
   email: support@syncano.io
 endpoints:
   unzip:
-    POST:
-      file: scripts/unzip.js
-      description: >-
-        Unzip the specified .zip file and write the decompressed
-        files/directories as contents of the specified destination directory.
-      parameters:
-        source:
-          example: /Users/mikermcneil/stuff.zip
-          description: The path (relative or absolute) to the .zip archive.
-          extendedDescription: >-
-            If a relative path is provided, it will be resolved to an absolute
-            path using the current working directory.
-          required: true
-          type: string
-        destination:
-          example: /Users/mikermcneil/my-stuff
-          description: >-
-            The path (relative or absolute) to a directory where contents should
-            be extracted.
-          extendedDescription: >-
-            If a relative path is provided, it will be resolved to an absolute
-            path using the current working directory.
-          required: true
-          type: string
+    file: scripts/unzip.js
+    description: >-
+      Unzip the specified .zip file and write the decompressed files/directories
+      as contents of the specified destination directory.
+    parameters:
+      source:
+        example: /Users/mikermcneil/stuff.zip
+        description: The path (relative or absolute) to the .zip archive.
+        extendedDescription: >-
+          If a relative path is provided, it will be resolved to an absolute
+          path using the current working directory.
+        required: true
+        type: string
+      destination:
+        example: /Users/mikermcneil/my-stuff
+        description: >-
+          The path (relative or absolute) to a directory where contents should
+          be extracted.
+        extendedDescription: >-
+          If a relative path is provided, it will be resolved to an absolute
+          path using the current working directory.
+        required: true
+        type: string
   zip:
-    POST:
-      file: scripts/zip.js
-      description: Compress the specified source files or directories into a .zip file.
-      parameters:
-        sources:
-          example:
-            - /Users/mikermcneil/foo/api/
-          description: The paths (relative or absolute) to the files or directories to zip.
-          extendedDescription: >-
-            If a relative paths are provided, they will be resolved to an
-            absolute path using the current working directory.
-          required: true
-          type: array
-        destination:
-          example: /Users/mikermcneil/my-app.zip
-          description: >-
-            The path (relative or absolute) where the .zip file should be
-            written.
-          extendedDescription: >-
-            If a relative path is provided, it will be resolved to an absolute
-            path using the current working directory.
-          required: true
-          type: string
+    file: scripts/zip.js
+    description: Compress the specified source files or directories into a .zip file.
+    parameters:
+      sources:
+        example:
+          - /Users/mikermcneil/foo/api/
+        description: The paths (relative or absolute) to the files or directories to zip.
+        extendedDescription: >-
+          If a relative paths are provided, they will be resolved to an absolute
+          path using the current working directory.
+        required: true
+        type: array
+      destination:
+        example: /Users/mikermcneil/my-app.zip
+        description: The path (relative or absolute) where the .zip file should be written.
+        extendedDescription: >-
+          If a relative path is provided, it will be resolved to an absolute
+          path using the current working directory.
+        required: true
+        type: string

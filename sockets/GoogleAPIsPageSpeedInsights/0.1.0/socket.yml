@@ -5,39 +5,38 @@ author:
   email: support@syncano.io
 endpoints:
   run:
-    POST:
-      file: scripts/run.js
-      description: Run PageSpeed analizer
-      parameters:
-        key:
-          example: YOUR_API_KEY
-          description: Your API key
-          type: string
-        url:
-          example: 'http://google.com'
-          description: URL of the resource you need to analize
-          required: true
-          type: string
-        filterThirdPartyResources:
-          example: true
-          description: >-
-            Indicates if third party resources should be filtered out before
-            PageSpeed analysis
-          type: boolean
-        locale:
-          example: en
-          description: The locale used to localize formatted results
-          type: string
-        screenshot:
-          example: true
-          description: Indicates if binary data containing a screenshot should be included
-          type: boolean
-        rule:
-          example: test
-          description: 'A PageSpeed rule to run; if none are given, all rules are run'
-          type: string
-        fields:
-          example: >-
-            formattedResults,id,invalidRules,kind,pageStats,responseCode,ruleGroups,screenshot,title,version/major,version/minor
-          description: Selector specifying which fields to include in a partial response
-          type: string
+    file: scripts/run.js
+    description: Run PageSpeed analizer
+    parameters:
+      key:
+        example: YOUR_API_KEY
+        description: Your API key
+        type: string
+      url:
+        example: 'http://google.com'
+        description: URL of the resource you need to analize
+        required: true
+        type: string
+      filterThirdPartyResources:
+        example: true
+        description: >-
+          Indicates if third party resources should be filtered out before
+          PageSpeed analysis
+        type: boolean
+      locale:
+        example: en
+        description: The locale used to localize formatted results
+        type: string
+      screenshot:
+        example: true
+        description: Indicates if binary data containing a screenshot should be included
+        type: boolean
+      rule:
+        example: test
+        description: 'A PageSpeed rule to run; if none are given, all rules are run'
+        type: string
+      fields:
+        example: >-
+          formattedResults,id,invalidRules,kind,pageStats,responseCode,ruleGroups,screenshot,title,version/major,version/minor
+        description: Selector specifying which fields to include in a partial response
+        type: string

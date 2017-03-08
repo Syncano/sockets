@@ -7,23 +7,20 @@ author:
   email: support@syncano.io
 endpoints:
   login:
-    POST:
-      file: scripts/login.js
-      description: Log in as the specified user.
-      parameters:
-        id:
-          friendlyName: User ID
-          description: The unique ID to store in the session to represent this user.
-          example: ad913nfa0139ame2iekda13
-          required: true
-          type: string
+    file: scripts/login.js
+    description: Log in as the specified user.
+    parameters:
+      id:
+        friendlyName: User ID
+        description: The unique ID to store in the session to represent this user.
+        example: ad913nfa0139ame2iekda13
+        required: true
+        type: string
   logout:
-    POST:
-      file: scripts/logout.js
-      description: Log the current user session out.
-      parameters: {}
+    file: scripts/logout.js
+    description: Log the current user session out.
+    parameters: {}
   check-login:
-    POST:
-      file: scripts/check-login.js
-      description: Check whether the current user is logged in.
-      parameters: {}
+    file: scripts/check-login.js
+    description: Check whether the current user is logged in.
+    parameters: {}

@@ -5,56 +5,53 @@ author:
   email: support@syncano.io
 endpoints:
   get:
-    POST:
-      file: scripts/get.js
-      description: Get simply a config with few json file
-      parameters:
-        path:
-          typeclass: '*'
-          description: 'An array of path of json file, ex : see tests/test.js'
-          required: true
-          type: '*'
-        merge:
-          example: false
-          description: >-
-            if false, the name of the files are the keys else it'll merge at the
-            top
-          required: false
-          type: boolean
-        nomethod:
-          example: false
-          description: >-
-            if true, don't attach method 'get', 'all' and some other lodash
-            method (keys, findKeys, ...)
-          required: false
-          type: boolean
-        freeze:
-          example: false
-          description: 'if true, freeze config'
-          required: false
-          type: boolean
+    file: scripts/get.js
+    description: Get simply a config with few json file
+    parameters:
+      path:
+        typeclass: '*'
+        description: 'An array of path of json file, ex : see tests/test.js'
+        required: true
+        type: '*'
+      merge:
+        example: false
+        description: >-
+          if false, the name of the files are the keys else it'll merge at the
+          top
+        required: false
+        type: boolean
+      nomethod:
+        example: false
+        description: >-
+          if true, don't attach method 'get', 'all' and some other lodash method
+          (keys, findKeys, ...)
+        required: false
+        type: boolean
+      freeze:
+        example: false
+        description: 'if true, freeze config'
+        required: false
+        type: boolean
   multiple:
-    POST:
-      file: scripts/multiple.js
-      description: Get a multiple config with define some key
-      parameters:
-        schema:
-          typeclass: '*'
-          description: An array of of path json config (see tests/test.js)
-          required: true
-          type: '*'
-        freeze:
-          example: false
-          description: 'if true, freeze config'
-          required: false
-          type: boolean
+    file: scripts/multiple.js
+    description: Get a multiple config with define some key
+    parameters:
+      schema:
+        typeclass: '*'
+        description: An array of of path json config (see tests/test.js)
+        required: true
+        type: '*'
+      freeze:
+        example: false
+        description: 'if true, freeze config'
+        required: false
+        type: boolean
   load:
-    POST:
-      file: scripts/load.js
-      description: Load a config of config's file...
-      parameters:
-        path:
-          example: test.json
-          description: A path of json config file
-          required: true
-          type: string
+    file: scripts/load.js
+    description: Load a config of config's file...
+    parameters:
+      path:
+        example: test.json
+        description: A path of json config file
+        required: true
+        type: string

@@ -5,7 +5,6 @@ author:
   email: support@syncano.io
 endpoints:
   broken-route-page:
-    POST:
-      file: scripts/broken-route-page.js
-      description: Get the HTML for a page explaining that there was a compile error.
-      parameters: {}
+    file: scripts/broken-route-page.js
+    description: Get the HTML for a page explaining that there was a compile error.
+    parameters: {}

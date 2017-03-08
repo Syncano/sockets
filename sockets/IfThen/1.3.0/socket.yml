@@ -5,176 +5,169 @@ author:
   email: support@syncano.io
 endpoints:
   if-defined:
-    POST:
-      file: scripts/if-defined.js
-      description: Determine whether the value is defined.
-      parameters:
-        value:
-          friendlyName: Value
-          description: The value to check.
-          extendedDescription: >-
-            A value of any type may be provided.  If it evaluates to
-            'undefined', the 'otherwise' exit will be triggered.  Otherwise the
-            'then' exit will be triggered.
-          example: ===
-          type: string
+    file: scripts/if-defined.js
+    description: Determine whether the value is defined.
+    parameters:
+      value:
+        friendlyName: Value
+        description: The value to check.
+        extendedDescription: >-
+          A value of any type may be provided.  If it evaluates to 'undefined',
+          the 'otherwise' exit will be triggered.  Otherwise the 'then' exit
+          will be triggered.
+        example: ===
+        type: string
   if-less-than:
-    POST:
-      file: scripts/if-less-than.js
-      description: Determine whether the first value is less than the second.
-      parameters:
-        a:
-          friendlyName: Lesser value
-          description: The first value to check (expected to be less than the second).
-          extendedDescription: A value of any type may be provided.
-          example: ===
-          required: true
-          type: string
-        b:
-          friendlyName: Other value
-          description: The second value to check (expected to be greater than the first).
-          extendedDescription: A value of any type may be provided.
-          example: ===
-          required: true
-          type: string
-        isInclusive:
-          friendlyName: Inclusive? (<=)
-          description: Whether to trigger the "then" exit if both values are equal.
-          defaultsTo: false
-          example: true
-          extendedDescription: 'If set, this machine will use the <= operator for comparison.'
-          type: boolean
+    file: scripts/if-less-than.js
+    description: Determine whether the first value is less than the second.
+    parameters:
+      a:
+        friendlyName: Lesser value
+        description: The first value to check (expected to be less than the second).
+        extendedDescription: A value of any type may be provided.
+        example: ===
+        required: true
+        type: string
+      b:
+        friendlyName: Other value
+        description: The second value to check (expected to be greater than the first).
+        extendedDescription: A value of any type may be provided.
+        example: ===
+        required: true
+        type: string
+      isInclusive:
+        friendlyName: Inclusive? (<=)
+        description: Whether to trigger the "then" exit if both values are equal.
+        defaultsTo: false
+        example: true
+        extendedDescription: 'If set, this machine will use the <= operator for comparison.'
+        type: boolean
   if-greater-than:
-    POST:
-      file: scripts/if-greater-than.js
-      description: Determine whether the first value is greater than the second.
-      parameters:
-        a:
-          friendlyName: Greater value
-          description: The first value to check (expected to be greater than the second).
-          extendedDescription: A value of any type may be provided.
-          example: ===
-          required: true
-          type: string
-        b:
-          friendlyName: Other value
-          description: The second value to check (expected to be less than the first).
-          extendedDescription: A value of any type may be provided.
-          example: ===
-          required: true
-          type: string
-        isInclusive:
-          friendlyName: Inclusive? (>=)
-          description: Whether to trigger the "then" exit if both values are equal.
-          defaultsTo: false
-          example: true
-          extendedDescription: 'If set, this machine will use the >= operator for comparison.'
-          type: boolean
+    file: scripts/if-greater-than.js
+    description: Determine whether the first value is greater than the second.
+    parameters:
+      a:
+        friendlyName: Greater value
+        description: The first value to check (expected to be greater than the second).
+        extendedDescription: A value of any type may be provided.
+        example: ===
+        required: true
+        type: string
+      b:
+        friendlyName: Other value
+        description: The second value to check (expected to be less than the first).
+        extendedDescription: A value of any type may be provided.
+        example: ===
+        required: true
+        type: string
+      isInclusive:
+        friendlyName: Inclusive? (>=)
+        description: Whether to trigger the "then" exit if both values are equal.
+        defaultsTo: false
+        example: true
+        extendedDescription: 'If set, this machine will use the >= operator for comparison.'
+        type: boolean
   if-equal:
-    POST:
-      file: scripts/if-equal.js
-      description: Determine whether the first value is equivalent to the second.
-      parameters:
-        a:
-          friendlyName: First value
-          description: The first value to check (expected to be equal to the second).
-          extendedDescription: A value of any type may be provided.
-          example: ===
-          required: true
-          type: string
-        b:
-          friendlyName: Second value
-          description: The second value to check (expected to be equal to the first).
-          extendedDescription: A value of any type may be provided.
-          example: ===
-          required: true
-          type: string
+    file: scripts/if-equal.js
+    description: Determine whether the first value is equivalent to the second.
+    parameters:
+      a:
+        friendlyName: First value
+        description: The first value to check (expected to be equal to the second).
+        extendedDescription: A value of any type may be provided.
+        example: ===
+        required: true
+        type: string
+      b:
+        friendlyName: Second value
+        description: The second value to check (expected to be equal to the first).
+        extendedDescription: A value of any type may be provided.
+        example: ===
+        required: true
+        type: string
   if-between:
-    POST:
-      file: scripts/if-between.js
-      description: Check that a value is within the specified range (inclusive).
-      parameters:
-        value:
-          friendlyName: Value
-          description: The number to check.
-          example: 3
-          required: true
-          type: number
-        min:
-          friendlyName: At least (>=)
-          example: 1
-          description: The minimum acceptable number
-          required: true
-          type: number
-        max:
-          friendlyName: No greater than (<=)
-          example: 4
-          description: The maximum acceptable number
-          required: true
-          type: number
+    file: scripts/if-between.js
+    description: Check that a value is within the specified range (inclusive).
+    parameters:
+      value:
+        friendlyName: Value
+        description: The number to check.
+        example: 3
+        required: true
+        type: number
+      min:
+        friendlyName: At least (>=)
+        example: 1
+        description: The minimum acceptable number
+        required: true
+        type: number
+      max:
+        friendlyName: No greater than (<=)
+        example: 4
+        description: The maximum acceptable number
+        required: true
+        type: number
   if-then-finally:
-    POST:
-      file: scripts/if-then-finally.js
-      description: >-
-        If the provided value is true, then run the "then" circuit.  Otherwise
-        run the "else" circuit.  Either way, exit "success".
-      parameters:
-        bool:
-          description: The true/false value to check.
-          example: true
-          type: boolean
-        then:
-          example: '->'
-          contract:
-            inputs: {}
-            exits:
-              success:
-                like: expectedOutput
-          required: true
-          type: string
-        orElse:
-          example: '->'
-          contract:
-            inputs: {}
-            exits:
-              success:
-                like: expectedOutput
-          type: string
-        expectedOutput:
-          description: An example of the expected output value.
-          example: '*'
-          type: string
+    file: scripts/if-then-finally.js
+    description: >-
+      If the provided value is true, then run the "then" circuit.  Otherwise run
+      the "else" circuit.  Either way, exit "success".
+    parameters:
+      bool:
+        description: The true/false value to check.
+        example: true
+        type: boolean
+      then:
+        example: '->'
+        contract:
+          inputs: {}
+          exits:
+            success:
+              like: expectedOutput
+        required: true
+        type: string
+      orElse:
+        example: '->'
+        contract:
+          inputs: {}
+          exits:
+            success:
+              like: expectedOutput
+        type: string
+      expectedOutput:
+        description: An example of the expected output value.
+        example: '*'
+        type: string
   if-then-finally-sync:
-    POST:
-      file: scripts/if-then-finally-sync.js
-      description: >-
-        If the provided value is true, then run the "then" circuit.  Otherwise
-        run the "else" circuit.  Either way, exit "success".
-      parameters:
-        bool:
-          description: The true/false value to check.
-          example: true
-          type: boolean
-        then:
-          example: '->'
-          contract:
-            sync: true
-            inputs: {}
-            exits:
-              success:
-                like: expectedOutput
-          required: true
-          type: string
-        orElse:
-          example: '->'
-          contract:
-            sync: true
-            inputs: {}
-            exits:
-              success:
-                like: expectedOutput
-          type: string
-        expectedOutput:
-          description: An example of the expected output value.
-          example: '*'
-          type: string
+    file: scripts/if-then-finally-sync.js
+    description: >-
+      If the provided value is true, then run the "then" circuit.  Otherwise run
+      the "else" circuit.  Either way, exit "success".
+    parameters:
+      bool:
+        description: The true/false value to check.
+        example: true
+        type: boolean
+      then:
+        example: '->'
+        contract:
+          sync: true
+          inputs: {}
+          exits:
+            success:
+              like: expectedOutput
+        required: true
+        type: string
+      orElse:
+        example: '->'
+        contract:
+          sync: true
+          inputs: {}
+          exits:
+            success:
+              like: expectedOutput
+        type: string
+      expectedOutput:
+        description: An example of the expected output value.
+        example: '*'
+        type: string

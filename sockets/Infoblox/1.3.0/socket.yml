@@ -5,184 +5,179 @@ author:
   email: support@syncano.io
 endpoints:
   get-host:
-    POST:
-      file: scripts/get-host.js
-      description: Make calls to Infoblox API
-      parameters:
-        host:
-          example: infoblox-host.customer.com
-          description: The host address of the Infoblox appliance
-          required: true
-          type: string
-        username:
-          example: api-user
-          description: The username
-          required: true
-          type: string
-        password:
-          example: SomePassword
-          description: The password
-          required: true
-          type: string
-        api:
-          example: '1.6'
-          description: The API version
-          required: true
-          type: string
-        call:
-          example: foo
-          description: The search string
-          required: true
-          type: string
-        strictSearch:
-          example: true
-          description: Perform exact search. Defaults to false.
-          required: false
-          type: boolean
+    file: scripts/get-host.js
+    description: Make calls to Infoblox API
+    parameters:
+      host:
+        example: infoblox-host.customer.com
+        description: The host address of the Infoblox appliance
+        required: true
+        type: string
+      username:
+        example: api-user
+        description: The username
+        required: true
+        type: string
+      password:
+        example: SomePassword
+        description: The password
+        required: true
+        type: string
+      api:
+        example: '1.6'
+        description: The API version
+        required: true
+        type: string
+      call:
+        example: foo
+        description: The search string
+        required: true
+        type: string
+      strictSearch:
+        example: true
+        description: Perform exact search. Defaults to false.
+        required: false
+        type: boolean
   get-subnet:
-    POST:
-      file: scripts/get-subnet.js
-      description: Get subnet by extensible attribute.
-      parameters:
-        host:
-          example: infoblox-host.customer.com
-          description: The host address of the Infoblox appliance
-          required: true
-          type: string
-        username:
-          example: api-user
-          description: The username
-          required: true
-          type: string
-        password:
-          example: SomePassword
-          description: The password
-          required: true
-          type: string
-        api:
-          example: '1.6'
-          description: The API version. eg. "1.6"
-          required: true
-          type: string
-        exattr:
-          example: Building
-          description: The extensible attribute to search by. (Case sensitive)
-          required: true
-          type: string
-        call:
-          example: foo
-          description: The search string
-          required: true
-          type: string
-        strictSearch:
-          example: true
-          description: Perform exact call. Defaults to false.
-          required: false
-          type: boolean
-        optional:
-          example: 'VLAN:=60'
-          description: Optional params.
-          required: false
-          type: string
+    file: scripts/get-subnet.js
+    description: Get subnet by extensible attribute.
+    parameters:
+      host:
+        example: infoblox-host.customer.com
+        description: The host address of the Infoblox appliance
+        required: true
+        type: string
+      username:
+        example: api-user
+        description: The username
+        required: true
+        type: string
+      password:
+        example: SomePassword
+        description: The password
+        required: true
+        type: string
+      api:
+        example: '1.6'
+        description: The API version. eg. "1.6"
+        required: true
+        type: string
+      exattr:
+        example: Building
+        description: The extensible attribute to search by. (Case sensitive)
+        required: true
+        type: string
+      call:
+        example: foo
+        description: The search string
+        required: true
+        type: string
+      strictSearch:
+        example: true
+        description: Perform exact call. Defaults to false.
+        required: false
+        type: boolean
+      optional:
+        example: 'VLAN:=60'
+        description: Optional params.
+        required: false
+        type: string
   get-next-available-ip:
-    POST:
-      file: scripts/get-next-available-ip.js
-      description: Get the next available IP-address(es) from a subnet
-      parameters:
-        host:
-          example: infoblox-host.customer.com
-          description: The host address of the Infoblox appliance
-          required: true
-          type: string
-        username:
-          example: api-user
-          description: The username
-          required: true
-          type: string
-        password:
-          example: SomePassword
-          description: The password
-          required: true
-          type: string
-        api:
-          example: '1.6'
-          description: The API version. eg. "1.6"
-          required: true
-          type: string
-        ref:
-          example: ZG5zLm5ldHdRcmskMTAuMjEwLjAuMC8yNC8w
-          description: The ref of the subnet wich the next available IP will be picked from
-          required: true
-          type: string
-        num:
-          example: 3
-          description: How many IPs do you need?
-          required: true
-          type: number
+    file: scripts/get-next-available-ip.js
+    description: Get the next available IP-address(es) from a subnet
+    parameters:
+      host:
+        example: infoblox-host.customer.com
+        description: The host address of the Infoblox appliance
+        required: true
+        type: string
+      username:
+        example: api-user
+        description: The username
+        required: true
+        type: string
+      password:
+        example: SomePassword
+        description: The password
+        required: true
+        type: string
+      api:
+        example: '1.6'
+        description: The API version. eg. "1.6"
+        required: true
+        type: string
+      ref:
+        example: ZG5zLm5ldHdRcmskMTAuMjEwLjAuMC8yNC8w
+        description: The ref of the subnet wich the next available IP will be picked from
+        required: true
+        type: string
+      num:
+        example: 3
+        description: How many IPs do you need?
+        required: true
+        type: number
   get-network-ref:
-    POST:
-      file: scripts/get-network-ref.js
-      description: Get the 'ref-ID' for a given subnet
-      parameters:
-        host:
-          example: infoblox-host.customer.com
-          description: The host address of the Infoblox appliance
-          required: true
-          type: string
-        username:
-          example: api-user
-          description: The username
-          required: true
-          type: string
-        password:
-          example: SomePassword
-          description: The password
-          required: true
-          type: string
-        api:
-          example: '1.6'
-          description: The API version. eg. "1.6"
-          required: true
-          type: string
-        subnet:
-          example: 10.10.10.0/24
-          description: >-
-            The subnet wich the next available IP will be picked from. (CIDR
-            notation)
-          required: true
-          type: string
+    file: scripts/get-network-ref.js
+    description: Get the 'ref-ID' for a given subnet
+    parameters:
+      host:
+        example: infoblox-host.customer.com
+        description: The host address of the Infoblox appliance
+        required: true
+        type: string
+      username:
+        example: api-user
+        description: The username
+        required: true
+        type: string
+      password:
+        example: SomePassword
+        description: The password
+        required: true
+        type: string
+      api:
+        example: '1.6'
+        description: The API version. eg. "1.6"
+        required: true
+        type: string
+      subnet:
+        example: 10.10.10.0/24
+        description: >-
+          The subnet wich the next available IP will be picked from. (CIDR
+          notation)
+        required: true
+        type: string
   get-record:
-    POST:
-      file: scripts/get-record.js
-      description: Make calls to Infoblox API
-      parameters:
-        host:
-          example: infoblox-host.customer.com
-          description: The host address of the Infoblox appliance
-          required: true
-          type: string
-        username:
-          example: api-user
-          description: The username
-          required: true
-          type: string
-        password:
-          example: SomePassword
-          description: The password
-          required: true
-          type: string
-        api:
-          example: '1.6'
-          description: The API version
-          required: true
-          type: string
-        call:
-          example: foo
-          description: The search string
-          required: true
-          type: string
-        strictSearch:
-          example: true
-          description: Perform exact search. Defaults to false.
-          required: false
-          type: boolean
+    file: scripts/get-record.js
+    description: Make calls to Infoblox API
+    parameters:
+      host:
+        example: infoblox-host.customer.com
+        description: The host address of the Infoblox appliance
+        required: true
+        type: string
+      username:
+        example: api-user
+        description: The username
+        required: true
+        type: string
+      password:
+        example: SomePassword
+        description: The password
+        required: true
+        type: string
+      api:
+        example: '1.6'
+        description: The API version
+        required: true
+        type: string
+      call:
+        example: foo
+        description: The search string
+        required: true
+        type: string
+      strictSearch:
+        example: true
+        description: Perform exact search. Defaults to false.
+        required: false
+        type: boolean

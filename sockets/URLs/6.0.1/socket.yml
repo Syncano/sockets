@@ -5,66 +5,62 @@ author:
   email: support@syncano.io
 endpoints:
   parse:
-    POST:
-      file: scripts/parse.js
-      description: Parse metadata from a URL.
-      parameters:
-        url:
-          description: The URL to parse.
-          example: 'http://user:pass@host.com:8080/p/a/t/h?query=string#hash'
-          required: true
-          type: string
+    file: scripts/parse.js
+    description: Parse metadata from a URL.
+    parameters:
+      url:
+        description: The URL to parse.
+        example: 'http://user:pass@host.com:8080/p/a/t/h?query=string#hash'
+        required: true
+        type: string
   format:
-    POST:
-      file: scripts/format.js
-      description: Build a URL from a template string and a set of route parameters.
-      parameters:
-        urlTemplate:
-          friendlyName: URL template
-          description: 'The URL template, consisting of zero or more colon-prefixed tokens.'
-          example: '/api/v1/user/:id/friends/:friendId'
-          required: true
-          type: string
-        data:
-          description: An object of key/value pairs to use as url path parameter values.
-          example: {}
-          required: true
-          type: object
+    file: scripts/format.js
+    description: Build a URL from a template string and a set of route parameters.
+    parameters:
+      urlTemplate:
+        friendlyName: URL template
+        description: 'The URL template, consisting of zero or more colon-prefixed tokens.'
+        example: '/api/v1/user/:id/friends/:friendId'
+        required: true
+        type: string
+      data:
+        description: An object of key/value pairs to use as url path parameter values.
+        example: {}
+        required: true
+        type: object
   resolve:
-    POST:
-      file: scripts/resolve.js
-      description: 'Build a sanitized, fully-qualified version of the provided URL.'
-      parameters:
-        url:
-          friendlyName: URL
-          description: >-
-            The URL to resolve, with or without the protocol prefix (e.g.
-            "http://").
-          extendedDescription: >-
-            If a `baseUrl` is specified, then this URL should be specified as a
-            URL path (e.g. "/foo").  Otherwise, this _must_ include the hostname
-            (e.g. `api.example.com`).
-          example: www.example.com/search
-          required: true
-          type: string
-        baseUrl:
-          friendlyName: Base URL
-          description: >-
-            Optional base URL to resolve against, with or without the protocol
-            prefix (e.g. "http://").
-          extendedDescription: >-
-            If specified, this _must_ include the hostname (e.g.
-            `api.example.com`).  It may also include a path (e.g.
-            `http://api.example.com/pets`).
-          example: api.example.com/pets
-          type: string
+    file: scripts/resolve.js
+    description: 'Build a sanitized, fully-qualified version of the provided URL.'
+    parameters:
+      url:
+        friendlyName: URL
+        description: >-
+          The URL to resolve, with or without the protocol prefix (e.g.
+          "http://").
+        extendedDescription: >-
+          If a `baseUrl` is specified, then this URL should be specified as a
+          URL path (e.g. "/foo").  Otherwise, this _must_ include the hostname
+          (e.g. `api.example.com`).
+        example: www.example.com/search
+        required: true
+        type: string
+      baseUrl:
+        friendlyName: Base URL
+        description: >-
+          Optional base URL to resolve against, with or without the protocol
+          prefix (e.g. "http://").
+        extendedDescription: >-
+          If specified, this _must_ include the hostname (e.g.
+          `api.example.com`).  It may also include a path (e.g.
+          `http://api.example.com/pets`).
+        example: api.example.com/pets
+        type: string
   is-url:
-    POST:
-      file: scripts/is-url.js
-      description: 'Determine whether the specified string is a valid, fully-qualified URL.'
-      parameters:
-        string:
-          example: 'http://www.example.com'
-          description: The candidate URL to validate.
-          required: true
-          type: string
+    file: scripts/is-url.js
+    description: 'Determine whether the specified string is a valid, fully-qualified URL.'
+    parameters:
+      string:
+        example: 'http://www.example.com'
+        description: The candidate URL to validate.
+        required: true
+        type: string

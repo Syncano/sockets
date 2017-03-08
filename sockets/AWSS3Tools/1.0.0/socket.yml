@@ -5,39 +5,38 @@ author:
   email: support@syncano.io
 endpoints:
   upload-to-s3:
-    POST:
-      file: scripts/upload-to-s3.js
-      description: Upload an object to S3.
-      parameters:
-        bucket:
-          example: my_s3_bucket
-          description: Name of the AWS S3 Bucket you wish to upload this file to..
-          required: true
-          type: string
-        path:
-          example: myfile.jpg
-          description: Bucket key to upload to (E.G /images/myfile.jpg)
-          required: true
-          type: string
-        acl:
-          example: public-read
-          description: >-
-            Access Control List: Who should be able to read/write your uploaded
-            file? - You can find a list of options on docs.aws.amazon.com.
-          required: true
-          type: string
-        upload:
-          example: /path/to/file
-          description: The path to the file you wish to upload.
-          required: true
-          type: string
-        secret_key:
-          example: abc1234cged
-          description: Your AWS secret access key
-          required: true
-          type: string
-        access_key:
-          example: abc1234cge2424ded
-          description: Your AWS access key ID.
-          required: true
-          type: string
+    file: scripts/upload-to-s3.js
+    description: Upload an object to S3.
+    parameters:
+      bucket:
+        example: my_s3_bucket
+        description: Name of the AWS S3 Bucket you wish to upload this file to..
+        required: true
+        type: string
+      path:
+        example: myfile.jpg
+        description: Bucket key to upload to (E.G /images/myfile.jpg)
+        required: true
+        type: string
+      acl:
+        example: public-read
+        description: >-
+          Access Control List: Who should be able to read/write your uploaded
+          file? - You can find a list of options on docs.aws.amazon.com.
+        required: true
+        type: string
+      upload:
+        example: /path/to/file
+        description: The path to the file you wish to upload.
+        required: true
+        type: string
+      secret_key:
+        example: abc1234cged
+        description: Your AWS secret access key
+        required: true
+        type: string
+      access_key:
+        example: abc1234cge2424ded
+        description: Your AWS access key ID.
+        required: true
+        type: string

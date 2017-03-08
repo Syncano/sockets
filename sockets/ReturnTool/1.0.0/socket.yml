@@ -7,22 +7,20 @@ author:
   email: support@syncano.io
 endpoints:
   return-object:
-    POST:
-      file: scripts/return-object.js
-      description: Return an Object varible generated earlier in the circuit.
-      parameters:
-        variable:
-          example: '*'
-          description: The variable you wish the machine to output.
-          required: true
-          type: string
+    file: scripts/return-object.js
+    description: Return an Object varible generated earlier in the circuit.
+    parameters:
+      variable:
+        example: '*'
+        description: The variable you wish the machine to output.
+        required: true
+        type: string
   return-string:
-    POST:
-      file: scripts/return-string.js
-      description: Return a string varible generated earlier in the circuit.
-      parameters:
-        variable:
-          example: This is a string
-          description: The string variable you wish the machine to output.
-          required: true
-          type: string
+    file: scripts/return-string.js
+    description: Return a string varible generated earlier in the circuit.
+    parameters:
+      variable:
+        example: This is a string
+        description: The string variable you wish the machine to output.
+        required: true
+        type: string

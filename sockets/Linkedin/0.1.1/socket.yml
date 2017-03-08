@@ -5,66 +5,63 @@ author:
   email: support@syncano.io
 endpoints:
   get-login-url:
-    POST:
-      file: scripts/get-login-url.js
-      description: Creates the login url used to gain acccess to their LinkedIn account.
-      parameters:
-        client_id:
-          example: '12345678'
-          description: API key that is given to you when you register your application.
-          required: true
-          type: string
-        redirecturl:
-          example: 'https://localhost/url'
-          description: Url used to redirect users once they finish using the link.
-          required: true
-          type: string
-        scope:
-          example: r_fullprofile%20r_emailaddress%20w_share
-          description: >-
-            A URL-encoded, space delimited list of member permissions your
-            application is requesting on behalf of the user.  If you do not
-            specify a scope in your call, we will fall back to using the default
-            member permissions you defined in your application configuration.
-          type: string
+    file: scripts/get-login-url.js
+    description: Creates the login url used to gain acccess to their LinkedIn account.
+    parameters:
+      client_id:
+        example: '12345678'
+        description: API key that is given to you when you register your application.
+        required: true
+        type: string
+      redirecturl:
+        example: 'https://localhost/url'
+        description: Url used to redirect users once they finish using the link.
+        required: true
+        type: string
+      scope:
+        example: r_fullprofile%20r_emailaddress%20w_share
+        description: >-
+          A URL-encoded, space delimited list of member permissions your
+          application is requesting on behalf of the user.  If you do not
+          specify a scope in your call, we will fall back to using the default
+          member permissions you defined in your application configuration.
+        type: string
   get-authentication-token:
-    POST:
-      file: scripts/get-authentication-token.js
-      description: >-
-        Obtains the authentication token after you complete the url login
-        phase.  Make sure to do this within 20 seconds or else the code expires.
-      parameters:
-        code:
-          example: '1234435'
-          description: Code received from the get-login-url
-          required: true
-          type: string
-        redirect_url:
-          example: 'https://localhost/url'
-          description: Url used to redirect users once they finish using the link.
-          required: true
-          type: string
-        client_id:
-          example: '12345678'
-          description: API key that is given to you when you register your application.
-          required: true
-          type: string
-        client_secret:
-          example: 234643dadfe
-          description: Secret code for your LinkedIN application.
-          required: true
-          type: string
+    file: scripts/get-authentication-token.js
+    description: >-
+      Obtains the authentication token after you complete the url login phase. 
+      Make sure to do this within 20 seconds or else the code expires.
+    parameters:
+      code:
+        example: '1234435'
+        description: Code received from the get-login-url
+        required: true
+        type: string
+      redirect_url:
+        example: 'https://localhost/url'
+        description: Url used to redirect users once they finish using the link.
+        required: true
+        type: string
+      client_id:
+        example: '12345678'
+        description: API key that is given to you when you register your application.
+        required: true
+        type: string
+      client_secret:
+        example: 234643dadfe
+        description: Secret code for your LinkedIN application.
+        required: true
+        type: string
   get-profile:
-    POST:
-      file: scripts/get-profile.js
-      description: Obtains the profile from the authorized user.
-      parameters:
-        token:
-          example: asdf23fd23t44f2f3
-          description: OAUTH2 token.
-          required: true
-          type: string
-        format:
-          example: json
-          description: Sets what format of data does this call return
-          type: string
+    file: scripts/get-profile.js
+    description: Obtains the profile from the authorized user.
+    parameters:
+      token:
+        example: asdf23fd23t44f2f3
+        description: OAUTH2 token.
+        required: true
+        type: string
+      format:
+        example: json
+        description: Sets what format of data does this call return
+        type: string

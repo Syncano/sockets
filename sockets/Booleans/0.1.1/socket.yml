@@ -7,219 +7,204 @@ author:
   email: support@syncano.io
 endpoints:
   to-boolean:
-    POST:
-      file: scripts/to-boolean.js
-      description: Convert the given string value to a boolean.
-      parameters:
-        string:
-          description: The string to convert to a boolean.
-          example: foo
-          required: true
-          type: string
+    file: scripts/to-boolean.js
+    description: Convert the given string value to a boolean.
+    parameters:
+      string:
+        description: The string to convert to a boolean.
+        example: foo
+        required: true
+        type: string
   is-between:
-    POST:
-      file: scripts/is-between.js
-      description: Check that a number is within the specified range (inclusive).
-      parameters:
-        value:
-          description: The number to check.
-          example: 3
-          required: true
-          type: number
-        min:
-          friendlyName: Minimum (>=)
-          example: 1
-          description: The lower bound to check the number against.
-          extendedDescription: Must be less than or equal to the value of `Maximum`.
-          required: true
-          type: number
-        max:
-          friendlyName: Maximum (<=)
-          example: 4
-          description: The upper bound to check the number against.
-          extendedDescription: Must be greater than or equal to the value of `Minimum`.
-          required: true
-          type: number
+    file: scripts/is-between.js
+    description: Check that a number is within the specified range (inclusive).
+    parameters:
+      value:
+        description: The number to check.
+        example: 3
+        required: true
+        type: number
+      min:
+        friendlyName: Minimum (>=)
+        example: 1
+        description: The lower bound to check the number against.
+        extendedDescription: Must be less than or equal to the value of `Maximum`.
+        required: true
+        type: number
+      max:
+        friendlyName: Maximum (<=)
+        example: 4
+        description: The upper bound to check the number against.
+        extendedDescription: Must be greater than or equal to the value of `Minimum`.
+        required: true
+        type: number
   is-defined:
-    POST:
-      file: scripts/is-defined.js
-      description: Determine whether the value is defined.
-      parameters:
-        value:
-          description: The value to check.
-          extendedDescription: >-
-            A value of any type may be provided.  If it evaluates to
-            `undefined`, the machine will return `false`.  Otherwise it will
-            return `true`.
-          example: ===
-          type: string
+    file: scripts/is-defined.js
+    description: Determine whether the value is defined.
+    parameters:
+      value:
+        description: The value to check.
+        extendedDescription: >-
+          A value of any type may be provided.  If it evaluates to `undefined`,
+          the machine will return `false`.  Otherwise it will return `true`.
+        example: ===
+        type: string
   is-undefined:
-    POST:
-      file: scripts/is-undefined.js
-      description: Determine whether the value is undefined.
-      parameters:
-        value:
-          description: The value to check.
-          extendedDescription: >-
-            A value of any type may be provided.  If it evaluates to
-            `undefined`, the machine will return `true`.  Otherwise it will
-            return `false`.
-          example: ===
-          type: string
+    file: scripts/is-undefined.js
+    description: Determine whether the value is undefined.
+    parameters:
+      value:
+        description: The value to check.
+        extendedDescription: >-
+          A value of any type may be provided.  If it evaluates to `undefined`,
+          the machine will return `true`.  Otherwise it will return `false`.
+        example: ===
+        type: string
   is-equal:
-    POST:
-      file: scripts/is-equal.js
-      description: Determine whether the first value is equivalent to the second.
-      parameters:
-        a:
-          friendlyName: First value
-          description: The first value to check (expected to be equal to the second).
-          extendedDescription: A value of any type may be provided.
-          example: ===
-          required: true
-          type: string
-        b:
-          friendlyName: Second value
-          description: The second value to check (expected to be equal to the first).
-          extendedDescription: A value of any type may be provided.
-          example: ===
-          required: true
-          type: string
+    file: scripts/is-equal.js
+    description: Determine whether the first value is equivalent to the second.
+    parameters:
+      a:
+        friendlyName: First value
+        description: The first value to check (expected to be equal to the second).
+        extendedDescription: A value of any type may be provided.
+        example: ===
+        required: true
+        type: string
+      b:
+        friendlyName: Second value
+        description: The second value to check (expected to be equal to the first).
+        extendedDescription: A value of any type may be provided.
+        example: ===
+        required: true
+        type: string
   is-not-equal:
-    POST:
-      file: scripts/is-not-equal.js
-      description: Determine whether the first value is not equivalent to the second.
-      parameters:
-        a:
-          friendlyName: First value
-          description: The first value to check (expected to not be equal to the second).
-          extendedDescription: A value of any type may be provided.
-          example: ===
-          required: true
-          type: string
-        b:
-          friendlyName: Second value
-          description: The second value to check (expected to not be equal to the first).
-          extendedDescription: A value of any type may be provided.
-          example: ===
-          required: true
-          type: string
+    file: scripts/is-not-equal.js
+    description: Determine whether the first value is not equivalent to the second.
+    parameters:
+      a:
+        friendlyName: First value
+        description: The first value to check (expected to not be equal to the second).
+        extendedDescription: A value of any type may be provided.
+        example: ===
+        required: true
+        type: string
+      b:
+        friendlyName: Second value
+        description: The second value to check (expected to not be equal to the first).
+        extendedDescription: A value of any type may be provided.
+        example: ===
+        required: true
+        type: string
   is-greater-than:
-    POST:
-      file: scripts/is-greater-than.js
-      description: Determine whether the first value is greater than the second.
-      parameters:
-        a:
-          friendlyName: Greater value
-          description: The first value to check (expected to be greater than the second).
-          extendedDescription: A value of any type may be provided.
-          example: ===
-          required: true
-          type: string
-        b:
-          friendlyName: Other value
-          description: The second value to check (expected to be less than the first).
-          extendedDescription: A value of any type may be provided.
-          example: ===
-          required: true
-          type: string
-        isInclusive:
-          friendlyName: Inclusive? (>=)
-          description: Whether to return 'true' if both values are equal.
-          defaultsTo: false
-          example: true
-          extendedDescription: 'If set, this machine will use the >= operator for comparison.'
-          type: boolean
+    file: scripts/is-greater-than.js
+    description: Determine whether the first value is greater than the second.
+    parameters:
+      a:
+        friendlyName: Greater value
+        description: The first value to check (expected to be greater than the second).
+        extendedDescription: A value of any type may be provided.
+        example: ===
+        required: true
+        type: string
+      b:
+        friendlyName: Other value
+        description: The second value to check (expected to be less than the first).
+        extendedDescription: A value of any type may be provided.
+        example: ===
+        required: true
+        type: string
+      isInclusive:
+        friendlyName: Inclusive? (>=)
+        description: Whether to return 'true' if both values are equal.
+        defaultsTo: false
+        example: true
+        extendedDescription: 'If set, this machine will use the >= operator for comparison.'
+        type: boolean
   is-less-than:
-    POST:
-      file: scripts/is-less-than.js
-      description: Determine whether the first value is less than the second.
-      parameters:
-        a:
-          friendlyName: Lesser value
-          description: The first value to check (expected to be less than the second).
-          extendedDescription: A value of any type may be provided.
-          example: ===
-          required: true
-          type: string
-        b:
-          friendlyName: Other value
-          description: The second value to check (expected to be less than the first).
-          extendedDescription: A value of any type may be provided.
-          example: ===
-          required: true
-          type: string
-        isInclusive:
-          friendlyName: Inclusive? (<=)
-          description: Whether to return 'true' if both values are equal.
-          defaultsTo: false
-          example: true
-          extendedDescription: 'If set, this machine will use the <= operator for comparison.'
-          type: boolean
+    file: scripts/is-less-than.js
+    description: Determine whether the first value is less than the second.
+    parameters:
+      a:
+        friendlyName: Lesser value
+        description: The first value to check (expected to be less than the second).
+        extendedDescription: A value of any type may be provided.
+        example: ===
+        required: true
+        type: string
+      b:
+        friendlyName: Other value
+        description: The second value to check (expected to be less than the first).
+        extendedDescription: A value of any type may be provided.
+        example: ===
+        required: true
+        type: string
+      isInclusive:
+        friendlyName: Inclusive? (<=)
+        description: Whether to return 'true' if both values are equal.
+        defaultsTo: false
+        example: true
+        extendedDescription: 'If set, this machine will use the <= operator for comparison.'
+        type: boolean
   is-truthy:
-    POST:
-      file: scripts/is-truthy.js
-      description: Determine whether the value is "truthy".
-      parameters:
-        value:
-          description: The value to check.
-          extendedDescription: >-
-            A value of any type may be provided.  If it is a truthy value, the
-            machine will return `true`.  Otherwise it will return `false`.
-          example: ===
-          type: string
+    file: scripts/is-truthy.js
+    description: Determine whether the value is "truthy".
+    parameters:
+      value:
+        description: The value to check.
+        extendedDescription: >-
+          A value of any type may be provided.  If it is a truthy value, the
+          machine will return `true`.  Otherwise it will return `false`.
+        example: ===
+        type: string
   is-falsy:
-    POST:
-      file: scripts/is-falsy.js
-      description: Determine whether the value is "falsy".
-      parameters:
-        value:
-          description: The value to check.
-          extendedDescription: >-
-            A value of any type may be provided.  If it is a falsy value, the
-            machine will return `true`.  Otherwise it will return `false`.
-          example: ===
-          type: string
+    file: scripts/is-falsy.js
+    description: Determine whether the value is "falsy".
+    parameters:
+      value:
+        description: The value to check.
+        extendedDescription: >-
+          A value of any type may be provided.  If it is a falsy value, the
+          machine will return `true`.  Otherwise it will return `false`.
+        example: ===
+        type: string
   and:
-    POST:
-      file: scripts/and.js
-      description: Get the result of performing a boolean AND operation on two values.
-      parameters:
-        a:
-          friendlyName: First value
-          description: 'The first value, which will be ANDed to the second.'
-          extendedDescription: A value of any type may be provided.
-          example: ===
-          type: string
-        b:
-          friendlyName: Second value
-          description: 'The second value, which will be ANDed to the first.'
-          extendedDescription: A value of any type may be provided.
-          example: ===
-          type: string
+    file: scripts/and.js
+    description: Get the result of performing a boolean AND operation on two values.
+    parameters:
+      a:
+        friendlyName: First value
+        description: 'The first value, which will be ANDed to the second.'
+        extendedDescription: A value of any type may be provided.
+        example: ===
+        type: string
+      b:
+        friendlyName: Second value
+        description: 'The second value, which will be ANDed to the first.'
+        extendedDescription: A value of any type may be provided.
+        example: ===
+        type: string
   or:
-    POST:
-      file: scripts/or.js
-      description: Get the result of performing a boolean OR operation on two values.
-      parameters:
-        a:
-          friendlyName: First value
-          description: 'The first value, which will be ORed to the second.'
-          extendedDescription: A value of any type may be provided.
-          example: ===
-          type: string
-        b:
-          friendlyName: Second value
-          description: 'The second value, which will be ORed to the first.'
-          extendedDescription: A value of any type may be provided.
-          example: ===
-          type: string
+    file: scripts/or.js
+    description: Get the result of performing a boolean OR operation on two values.
+    parameters:
+      a:
+        friendlyName: First value
+        description: 'The first value, which will be ORed to the second.'
+        extendedDescription: A value of any type may be provided.
+        example: ===
+        type: string
+      b:
+        friendlyName: Second value
+        description: 'The second value, which will be ORed to the first.'
+        extendedDescription: A value of any type may be provided.
+        example: ===
+        type: string
   not:
-    POST:
-      file: scripts/not.js
-      description: Get the result of performing a boolean NOT operation on a value.
-      parameters:
-        value:
-          description: The value to be negated.
-          example: ===
-          type: string
+    file: scripts/not.js
+    description: Get the result of performing a boolean NOT operation on a value.
+    parameters:
+      value:
+        description: The value to be negated.
+        example: ===
+        type: string

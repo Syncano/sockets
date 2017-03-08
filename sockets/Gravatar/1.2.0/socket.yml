@@ -5,36 +5,35 @@ author:
   email: support@syncano.io
 endpoints:
   get-image-url:
-    POST:
-      file: scripts/get-image-url.js
-      description: Build the URL of a gravatar image for a particular email address.
-      parameters:
-        emailAddress:
-          example: john@doe-enterprises.com
-          description: The email address of the gravatar.
-          required: true
-          type: string
-        gravatarSize:
-          example: 400
-          description: The height/width of the gravatar in pixels (between 1 and 2048)
-          type: number
-        defaultImage:
-          example: 'http://example.com/images/avatar.jpg'
-          description: The image to use if a Gravatar image cannot be found.
-          extendedDescription: >-
-            Useful since it won't be clear whether a Gravatar cannot be found
-            until after the image URL is requested.  Don't forget to include the
-            "http://" or "https://".
-          type: string
-        rating:
-          example: g
-          description: >-
-            The rating level that's acceptable for the gravatar image ("G",
-            "PG", "R", etc.)
-          type: string
-        useHttps:
-          example: true
-          description: >-
-            Whether to build a secure URL ("https://".) Otherwise, "http://"
-            will be used.
-          type: boolean
+    file: scripts/get-image-url.js
+    description: Build the URL of a gravatar image for a particular email address.
+    parameters:
+      emailAddress:
+        example: john@doe-enterprises.com
+        description: The email address of the gravatar.
+        required: true
+        type: string
+      gravatarSize:
+        example: 400
+        description: The height/width of the gravatar in pixels (between 1 and 2048)
+        type: number
+      defaultImage:
+        example: 'http://example.com/images/avatar.jpg'
+        description: The image to use if a Gravatar image cannot be found.
+        extendedDescription: >-
+          Useful since it won't be clear whether a Gravatar cannot be found
+          until after the image URL is requested.  Don't forget to include the
+          "http://" or "https://".
+        type: string
+      rating:
+        example: g
+        description: >-
+          The rating level that's acceptable for the gravatar image ("G", "PG",
+          "R", etc.)
+        type: string
+      useHttps:
+        example: true
+        description: >-
+          Whether to build a secure URL ("https://".) Otherwise, "http://" will
+          be used.
+        type: boolean

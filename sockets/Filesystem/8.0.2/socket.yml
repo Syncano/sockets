@@ -5,374 +5,353 @@ author:
   email: support@syncano.io
 endpoints:
   cp:
-    POST:
-      file: scripts/cp.js
-      description: >-
-        Copy file or directory located at source path to the destination path
-        (overwriting an existing file at the destination path, if there is one).
-      parameters:
-        source:
-          example: /Users/mikermcneil/.tmp/foo
-          description: The path (relative or absolute) to the file or directory to copy.
-          required: true
-          type: string
-        destination:
-          example: /Users/mikermcneil/.tmp/bar
-          description: >-
-            The path (relative or absolute) to the directory in which to place
-            the copied file(s).  When copying a single file, a target filename
-            may be specified.
-          required: true
-          type: string
+    file: scripts/cp.js
+    description: >-
+      Copy file or directory located at source path to the destination path
+      (overwriting an existing file at the destination path, if there is one).
+    parameters:
+      source:
+        example: /Users/mikermcneil/.tmp/foo
+        description: The path (relative or absolute) to the file or directory to copy.
+        required: true
+        type: string
+      destination:
+        example: /Users/mikermcneil/.tmp/bar
+        description: >-
+          The path (relative or absolute) to the directory in which to place the
+          copied file(s).  When copying a single file, a target filename may be
+          specified.
+        required: true
+        type: string
   ls:
-    POST:
-      file: scripts/ls.js
-      description: List contents of a directory on the local filesystem.
-      parameters:
-        dir:
-          friendlyName: Directory path
-          example: /Users/mikermcneil/.tmp/foo
-          description: Path to the directory whose contents should be listed.
-          extendedDescription: >-
-            If a relative path is provided, it will be resolved to an absolute
-            path from the context of the current working directory.
-          required: true
-          type: string
-        depth:
-          friendlyName: Depth
-          description: >-
-            The maximum number of "hops" (i.e. directories deep) to include
-            directory contents from.
-          extendedDescription: >-
-            For instance, if you are running `ls` on "foo/" which has a
-            subdirectory "foo/bar/baz/", if `depth` is set to 2, the results
-            will include "foo/bar/baz/", but none of the files/folders contained
-            within.
-          example: 1
-          defaultsTo: 1
-          type: number
-        includeFiles:
-          friendlyName: Files?
-          description: Whether or not to include files
-          example: true
-          defaultsTo: true
-          type: boolean
-        includeDirs:
-          friendlyName: Directories?
-          description: Whether or not to include directories
-          example: true
-          defaultsTo: true
-          type: boolean
-        includeSymlinks:
-          friendlyName: Symlinks?
-          description: Whether or not to include symbolic links
-          example: true
-          defaultsTo: true
-          type: boolean
-        includeHidden:
-          friendlyName: Hidden entries?
-          description: Whether or not to include hidden files/directories/symlinks
-          example: false
-          defaultsTo: false
-          type: boolean
+    file: scripts/ls.js
+    description: List contents of a directory on the local filesystem.
+    parameters:
+      dir:
+        friendlyName: Directory path
+        example: /Users/mikermcneil/.tmp/foo
+        description: Path to the directory whose contents should be listed.
+        extendedDescription: >-
+          If a relative path is provided, it will be resolved to an absolute
+          path from the context of the current working directory.
+        required: true
+        type: string
+      depth:
+        friendlyName: Depth
+        description: >-
+          The maximum number of "hops" (i.e. directories deep) to include
+          directory contents from.
+        extendedDescription: >-
+          For instance, if you are running `ls` on "foo/" which has a
+          subdirectory "foo/bar/baz/", if `depth` is set to 2, the results will
+          include "foo/bar/baz/", but none of the files/folders contained
+          within.
+        example: 1
+        defaultsTo: 1
+        type: number
+      includeFiles:
+        friendlyName: Files?
+        description: Whether or not to include files
+        example: true
+        defaultsTo: true
+        type: boolean
+      includeDirs:
+        friendlyName: Directories?
+        description: Whether or not to include directories
+        example: true
+        defaultsTo: true
+        type: boolean
+      includeSymlinks:
+        friendlyName: Symlinks?
+        description: Whether or not to include symbolic links
+        example: true
+        defaultsTo: true
+        type: boolean
+      includeHidden:
+        friendlyName: Hidden entries?
+        description: Whether or not to include hidden files/directories/symlinks
+        example: false
+        defaultsTo: false
+        type: boolean
   rmrf:
-    POST:
-      file: scripts/rmrf.js
-      description: Completely remove a file or directory (like rm -rf).
-      parameters:
-        path:
-          example: /Users/mikermcneil/.tmp/foo
-          description: The absolute path to the file or directory to remove.
-          required: true
-          type: string
+    file: scripts/rmrf.js
+    description: Completely remove a file or directory (like rm -rf).
+    parameters:
+      path:
+        example: /Users/mikermcneil/.tmp/foo
+        description: The absolute path to the file or directory to remove.
+        required: true
+        type: string
   write:
-    POST:
-      file: scripts/write.js
-      description: >-
-        Generate a file on the local filesystem using the specified utf8 string
-        as its contents.
-      parameters:
-        string:
-          description: 'Text to write to the file (if omitted, will create an empty file)'
-          example: 'lots of words, utf8 things you know'
-          defaultsTo: ''
-          type: string
-        destination:
-          description: Path (relative or absolute) to the file to write.
-          example: /Users/mikermcneil/.tmp/bar
-          required: true
-          type: string
-        force:
-          description: >-
-            Overwrite files or directories which might exist at or within the
-            specified destination path?
-          example: false
-          defaultsTo: false
-          type: boolean
+    file: scripts/write.js
+    description: >-
+      Generate a file on the local filesystem using the specified utf8 string as
+      its contents.
+    parameters:
+      string:
+        description: 'Text to write to the file (if omitted, will create an empty file)'
+        example: 'lots of words, utf8 things you know'
+        defaultsTo: ''
+        type: string
+      destination:
+        description: Path (relative or absolute) to the file to write.
+        example: /Users/mikermcneil/.tmp/bar
+        required: true
+        type: string
+      force:
+        description: >-
+          Overwrite files or directories which might exist at or within the
+          specified destination path?
+        example: false
+        defaultsTo: false
+        type: boolean
   read-json:
-    POST:
-      file: scripts/read-json.js
-      description: >-
-        Read and parse JSON file located at source path on disk into usable
-        data.
-      parameters:
-        source:
-          description: >-
-            Absolute path to the source file (if relative path is provided, will
-            resolve path from current working directory)
-          example: /Users/mikermcneil/.tmp/foo.json
-          required: true
-          type: string
-        schema:
-          description: >-
-            An example schema (in RTTC exemplar syntax) describing what the
-            parsed data should look like (used for type-coercion)
-          extendedDescription: >-
-            If file does not exist, a "base value" will be derived from this
-            example schema and used as the contents of the newly created JSON
-            file.
-          moreInfoUrl: 'https://github.com/node-machine/rttc#types--terminology'
-          example: '*'
-          defaultsTo: '*'
-          constant: true
-          isExemplar: true
-          type: string
+    file: scripts/read-json.js
+    description: Read and parse JSON file located at source path on disk into usable data.
+    parameters:
+      source:
+        description: >-
+          Absolute path to the source file (if relative path is provided, will
+          resolve path from current working directory)
+        example: /Users/mikermcneil/.tmp/foo.json
+        required: true
+        type: string
+      schema:
+        description: >-
+          An example schema (in RTTC exemplar syntax) describing what the parsed
+          data should look like (used for type-coercion)
+        extendedDescription: >-
+          If file does not exist, a "base value" will be derived from this
+          example schema and used as the contents of the newly created JSON
+          file.
+        moreInfoUrl: 'https://github.com/node-machine/rttc#types--terminology'
+        example: '*'
+        defaultsTo: '*'
+        constant: true
+        isExemplar: true
+        type: string
   template:
-    POST:
-      file: scripts/template.js
-      description: >-
-        Read file at source path as a template, render with provided data, then
-        write to destination path.
-      parameters:
-        source:
-          description: The path on disk to the template file.
-          example: /Users/mikermcneil/.tmp/foo.tpl
-          required: true
-          type: string
-        destination:
-          description: The path on disk where the resulting file should be written
-          example: /Users/mikermcneil/.tmp/bar.md
-          required: true
-          type: string
-        data:
-          friendlyName: Template data
-          description: The data which will be accessible from the template
-          extendedDescription: >-
-            Each key will be a variable accessible in the template.  For
-            instance, if you supply an array `[{name:"Chandra"}, {name:"Mary"}]`
-            as the key "friends", then you will be able to access `friends` from
-            the template; i.e. `<ul><% _.each(friends, function (friend){
-            %><li><%= friend.name %></li> <%}); %></ul>`  Use `<%= %>` to inject
-            the contents of a variable as-is, `<%- %>` to HTML-escape them
-            first, or `<% %>` to execute some JavaScript code.
-          example: ===
-          readOnly: true
-          type: string
-        force:
-          friendlyName: Force?
-          description: Whether or not to overwrite existing file(s).
-          example: false
-          defaultsTo: false
-          type: boolean
+    file: scripts/template.js
+    description: >-
+      Read file at source path as a template, render with provided data, then
+      write to destination path.
+    parameters:
+      source:
+        description: The path on disk to the template file.
+        example: /Users/mikermcneil/.tmp/foo.tpl
+        required: true
+        type: string
+      destination:
+        description: The path on disk where the resulting file should be written
+        example: /Users/mikermcneil/.tmp/bar.md
+        required: true
+        type: string
+      data:
+        friendlyName: Template data
+        description: The data which will be accessible from the template
+        extendedDescription: >-
+          Each key will be a variable accessible in the template.  For instance,
+          if you supply an array `[{name:"Chandra"}, {name:"Mary"}]` as the key
+          "friends", then you will be able to access `friends` from the
+          template; i.e. `<ul><% _.each(friends, function (friend){ %><li><%=
+          friend.name %></li> <%}); %></ul>`  Use `<%= %>` to inject the
+          contents of a variable as-is, `<%- %>` to HTML-escape them first, or
+          `<% %>` to execute some JavaScript code.
+        example: ===
+        readOnly: true
+        type: string
+      force:
+        friendlyName: Force?
+        description: Whether or not to overwrite existing file(s).
+        example: false
+        defaultsTo: false
+        type: boolean
   read:
-    POST:
-      file: scripts/read.js
-      description: Read a file on disk as a string.
-      parameters:
-        source:
-          description: >-
-            Absolute path to the source file (if relative path is provided, will
-            resolve path from current working directory)
-          example: /Users/mikermcneil/.tmp/foo
-          required: true
-          type: string
+    file: scripts/read.js
+    description: Read a file on disk as a string.
+    parameters:
+      source:
+        description: >-
+          Absolute path to the source file (if relative path is provided, will
+          resolve path from current working directory)
+        example: /Users/mikermcneil/.tmp/foo
+        required: true
+        type: string
   write-json:
-    POST:
-      file: scripts/write-json.js
-      description: Write some data to the specified destination path on disk.
-      parameters:
-        json:
-          example: '*'
-          description: The data to write to disk as JSON
-          required: true
-          type: string
-        destination:
-          example: /Users/mikermcneil/.tmp/bar.json
-          description: >-
-            Absolute path for the destination file (if relative path is
-            provided, will resolve path from current working directory)
-          required: true
-          type: string
-        force:
-          description: >-
-            Overwrite files or directories which might exist at or within the
-            specified destination path?
-          example: false
-          defaultsTo: false
-          type: boolean
+    file: scripts/write-json.js
+    description: Write some data to the specified destination path on disk.
+    parameters:
+      json:
+        example: '*'
+        description: The data to write to disk as JSON
+        required: true
+        type: string
+      destination:
+        example: /Users/mikermcneil/.tmp/bar.json
+        description: >-
+          Absolute path for the destination file (if relative path is provided,
+          will resolve path from current working directory)
+        required: true
+        type: string
+      force:
+        description: >-
+          Overwrite files or directories which might exist at or within the
+          specified destination path?
+        example: false
+        defaultsTo: false
+        type: boolean
   mv:
-    POST:
-      file: scripts/mv.js
-      description: Move file or directory located at source path to the destination path.
-      parameters:
-        source:
-          example: /Users/mikermcneil/.tmp/foo
-          required: true
-          type: string
-        destination:
-          example: /Users/mikermcneil/.tmp/bar
-          required: true
-          type: string
+    file: scripts/mv.js
+    description: Move file or directory located at source path to the destination path.
+    parameters:
+      source:
+        example: /Users/mikermcneil/.tmp/foo
+        required: true
+        type: string
+      destination:
+        example: /Users/mikermcneil/.tmp/bar
+        required: true
+        type: string
   exists:
-    POST:
-      file: scripts/exists.js
-      description: Check whether a file or directory exists at the given path.
-      parameters:
-        path:
-          example: /Users/mikermcneil/.tmp/foo
-          description: The absolute path to the file or directory
-          required: true
-          type: string
+    file: scripts/exists.js
+    description: Check whether a file or directory exists at the given path.
+    parameters:
+      path:
+        example: /Users/mikermcneil/.tmp/foo
+        description: The absolute path to the file or directory
+        required: true
+        type: string
   mkdir:
-    POST:
-      file: scripts/mkdir.js
-      description: Make a new directory.
-      parameters:
-        destination:
-          description: The destination path where the new directory should be created.
-          extendedDescription: >-
-            If a relative path is provided, it will be resolved to an absolute
-            path using the current working directory.
-          example: /Users/mikermcneil/.tmp/bar
-          required: true
-          type: string
-        force:
-          description: >-
-            Overwrite files or directories which might exist at or within the
-            specified destination path?
-          example: false
-          defaultsTo: false
-          type: boolean
+    file: scripts/mkdir.js
+    description: Make a new directory.
+    parameters:
+      destination:
+        description: The destination path where the new directory should be created.
+        extendedDescription: >-
+          If a relative path is provided, it will be resolved to an absolute
+          path using the current working directory.
+        example: /Users/mikermcneil/.tmp/bar
+        required: true
+        type: string
+      force:
+        description: >-
+          Overwrite files or directories which might exist at or within the
+          specified destination path?
+        example: false
+        defaultsTo: false
+        type: boolean
   ensure-dir:
-    POST:
-      file: scripts/ensure-dir.js
-      description: >-
-        Ensure that the directory exists. If the directory structure does not
-        exist, it is created.
-      parameters:
-        path:
-          example: /foo/bar/baz
-          description: >-
-            The path to ensure- if nothing exists, a directory will be created
-            here.
-          extendedDescription: >-
-            If a relative path is provided, it will be resolved to an absolute
-            path using the current working directory.
-          required: true
-          type: string
+    file: scripts/ensure-dir.js
+    description: >-
+      Ensure that the directory exists. If the directory structure does not
+      exist, it is created.
+    parameters:
+      path:
+        example: /foo/bar/baz
+        description: >-
+          The path to ensure- if nothing exists, a directory will be created
+          here.
+        extendedDescription: >-
+          If a relative path is provided, it will be resolved to an absolute
+          path using the current working directory.
+        required: true
+        type: string
   ensure-json:
-    POST:
-      file: scripts/ensure-json.js
-      description: 'Attempt to read from a JSON file, and if it does not exist, create it.'
-      parameters:
-        path:
-          description: >-
-            Absolute path for the JSON file (if relative path is provided, will
-            resolve path from current working directory)
-          example: /Users/mikermcneil/.tmp/foo.json
-          required: true
-          type: string
-        schema:
-          description: >-
-            An example schema (in RTTC exemplar syntax) describing what the
-            parsed data should look like (used for type-coercion)
-          extendedDescription: >-
-            If file does not exist, a "base value" will be derived from this
-            example schema and used as the contents of the newly created JSON
-            file.
-          moreInfoUrl: 'https://github.com/node-machine/rttc#types--terminology'
-          example: '*'
-          defaultsTo: '*'
-          constant: true
-          isExemplar: true
-          type: string
+    file: scripts/ensure-json.js
+    description: 'Attempt to read from a JSON file, and if it does not exist, create it.'
+    parameters:
+      path:
+        description: >-
+          Absolute path for the JSON file (if relative path is provided, will
+          resolve path from current working directory)
+        example: /Users/mikermcneil/.tmp/foo.json
+        required: true
+        type: string
+      schema:
+        description: >-
+          An example schema (in RTTC exemplar syntax) describing what the parsed
+          data should look like (used for type-coercion)
+        extendedDescription: >-
+          If file does not exist, a "base value" will be derived from this
+          example schema and used as the contents of the newly created JSON
+          file.
+        moreInfoUrl: 'https://github.com/node-machine/rttc#types--terminology'
+        example: '*'
+        defaultsTo: '*'
+        constant: true
+        isExemplar: true
+        type: string
   write-sync:
-    POST:
-      file: scripts/write-sync.js
-      description: >-
-        Generate a file on the local filesystem using the specified utf8 string
-        as its contents.
-      parameters:
-        string:
-          description: 'Text to write to the file (if omitted, will create an empty file)'
-          example: 'lots of words, utf8 things you know'
-          defaultsTo: ''
-          type: string
-        destination:
-          description: Path (relative or absolute) to the file to write.
-          example: /Users/mikermcneil/.tmp/bar
-          required: true
-          type: string
-        force:
-          description: >-
-            Whether to overwrite existing file(s) which might exist at the
-            destination path.
-          example: false
-          defaultsTo: false
-          type: boolean
+    file: scripts/write-sync.js
+    description: >-
+      Generate a file on the local filesystem using the specified utf8 string as
+      its contents.
+    parameters:
+      string:
+        description: 'Text to write to the file (if omitted, will create an empty file)'
+        example: 'lots of words, utf8 things you know'
+        defaultsTo: ''
+        type: string
+      destination:
+        description: Path (relative or absolute) to the file to write.
+        example: /Users/mikermcneil/.tmp/bar
+        required: true
+        type: string
+      force:
+        description: >-
+          Whether to overwrite existing file(s) which might exist at the
+          destination path.
+        example: false
+        defaultsTo: false
+        type: boolean
   read-sync:
-    POST:
-      file: scripts/read-sync.js
-      description: Read a file on disk as a string.
-      parameters:
-        source:
-          description: >-
-            Absolute path to the source file (if relative path is provided, will
-            resolve path from current working directory)
-          example: /Users/mikermcneil/.tmp/foo
-          required: true
-          type: string
+    file: scripts/read-sync.js
+    description: Read a file on disk as a string.
+    parameters:
+      source:
+        description: >-
+          Absolute path to the source file (if relative path is provided, will
+          resolve path from current working directory)
+        example: /Users/mikermcneil/.tmp/foo
+        required: true
+        type: string
   read-stream:
-    POST:
-      file: scripts/read-stream.js
-      description: >-
-        Open a readable stream that will pump out the contents from a file on
-        disk.
-      parameters:
-        source:
-          description: >-
-            Absolute path to the source file (if relative path is provided, will
-            resolve path from current working directory)
-          example: /Users/mikermcneil/.tmp/foo
-          required: true
-          type: string
+    file: scripts/read-stream.js
+    description: >-
+      Open a readable stream that will pump out the contents from a file on
+      disk.
+    parameters:
+      source:
+        description: >-
+          Absolute path to the source file (if relative path is provided, will
+          resolve path from current working directory)
+        example: /Users/mikermcneil/.tmp/foo
+        required: true
+        type: string
   write-stream:
-    POST:
-      file: scripts/write-stream.js
-      description: >-
-        Generate a file on the local filesystem using the specified Readable
-        stream for its contents.
-      parameters:
-        sourceStream:
-          friendlyName: Source stream
-          description: The source (Readable) stream whose contents will be pumped to disk.
-          extendedDescription: >-
-            Must be a utf8-encoded, modern (streams2 or streams3) Readable
-            stream.
-          example: ===
-          required: true
-          type: string
-        destination:
-          example: /Users/mikermcneil/.tmp/bar.json
-          description: >-
-            Absolute path for the destination file (if relative path is
-            provided, will resolve path from current working directory)
-          required: true
-          type: string
-        force:
-          description: >-
-            Overwrite files or directories which might exist at or within the
-            specified destination path?
-          example: false
-          defaultsTo: false
-          type: boolean
+    file: scripts/write-stream.js
+    description: >-
+      Generate a file on the local filesystem using the specified Readable
+      stream for its contents.
+    parameters:
+      sourceStream:
+        friendlyName: Source stream
+        description: The source (Readable) stream whose contents will be pumped to disk.
+        extendedDescription: 'Must be a utf8-encoded, modern (streams2 or streams3) Readable stream.'
+        example: ===
+        required: true
+        type: string
+      destination:
+        example: /Users/mikermcneil/.tmp/bar.json
+        description: >-
+          Absolute path for the destination file (if relative path is provided,
+          will resolve path from current working directory)
+        required: true
+        type: string
+      force:
+        description: >-
+          Overwrite files or directories which might exist at or within the
+          specified destination path?
+        example: false
+        defaultsTo: false
+        type: boolean

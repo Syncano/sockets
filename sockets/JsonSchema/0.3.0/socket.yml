@@ -5,17 +5,16 @@ author:
   email: support@syncano.io
 endpoints:
   validate:
-    POST:
-      file: scripts/validate.js
-      description: Validate some json data against a schema.
-      parameters:
-        data:
-          typeclass: '*'
-          description: The data to validate (i.e. the "JSON instance")
-          required: true
-          type: '*'
-        schema:
-          typeclass: dictionary
-          description: The JSON-schema to validate against
-          required: true
-          type: dictionary
+    file: scripts/validate.js
+    description: Validate some json data against a schema.
+    parameters:
+      data:
+        typeclass: '*'
+        description: The data to validate (i.e. the "JSON instance")
+        required: true
+        type: '*'
+      schema:
+        typeclass: dictionary
+        description: The JSON-schema to validate against
+        required: true
+        type: dictionary

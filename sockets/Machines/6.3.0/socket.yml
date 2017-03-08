@@ -5,60 +5,58 @@ author:
   email: support@syncano.io
 endpoints:
   run-instantiated-machine:
-    POST:
-      file: scripts/run-instantiated-machine.js
-      description: >-
-        Run a machine which is already instantiated using the provided input
-        values.
-      parameters:
-        machineInstance:
-          example: ===
-          description: The already-instantiated machine instance.
-          required: true
-          type: string
-        inputValues:
-          description: A set of input name/value pairs.
-          example:
-            - name: someInput
-              value: ===
-          protect: true
-          type: array
+    file: scripts/run-instantiated-machine.js
+    description: >-
+      Run a machine which is already instantiated using the provided input
+      values.
+    parameters:
+      machineInstance:
+        example: ===
+        description: The already-instantiated machine instance.
+        required: true
+        type: string
+      inputValues:
+        description: A set of input name/value pairs.
+        example:
+          - name: someInput
+            value: ===
+        protect: true
+        type: array
   validate:
-    POST:
-      file: scripts/validate.js
-      description: Validate the specified machine definition.
-      parameters:
-        machineDef:
-          friendlyName: Machine definition
-          description: The machine to validate.
-          example: ===
-          readOnly: true
-          required: true
-          type: string
-        ensureSuccessOutput:
-          friendlyName: Ensure success output?
-          description: >-
-            If set, the machine definition will be checked to make sure it has a
-            success exit with an inferable type schema.
-          example: false
-          defaultsTo: false
-          type: boolean
-        ensureCacheable:
-          friendlyName: Ensure cacheable?
-          description: >-
-            If set, the machine definition will be checked to make sure it has
-            `cacheable: true`.
-          example: false
-          defaultsTo: false
-          type: boolean
-        successExitId:
-          friendlyName: Exit id of the "success" exit.
-          description: >-
-            The exit id of the `success` exit (you should generally leave this
-            option blank)
-          extendedDescription: >-
-            This should always be "success" (this option is included for
-            historical reasons.)
-          example: success
-          defaultsTo: success
-          type: string
+    file: scripts/validate.js
+    description: Validate the specified machine definition.
+    parameters:
+      machineDef:
+        friendlyName: Machine definition
+        description: The machine to validate.
+        example: ===
+        readOnly: true
+        required: true
+        type: string
+      ensureSuccessOutput:
+        friendlyName: Ensure success output?
+        description: >-
+          If set, the machine definition will be checked to make sure it has a
+          success exit with an inferable type schema.
+        example: false
+        defaultsTo: false
+        type: boolean
+      ensureCacheable:
+        friendlyName: Ensure cacheable?
+        description: >-
+          If set, the machine definition will be checked to make sure it has
+          `cacheable: true`.
+        example: false
+        defaultsTo: false
+        type: boolean
+      successExitId:
+        friendlyName: Exit id of the "success" exit.
+        description: >-
+          The exit id of the `success` exit (you should generally leave this
+          option blank)
+        extendedDescription: >-
+          This should always be "success" (this option is included for
+          historical reasons.)
+        example: success
+        defaultsTo: success
+        type: string

@@ -7,72 +7,68 @@ author:
   email: support@syncano.io
 endpoints:
   save-to-storage:
-    POST:
-      file: scripts/save-to-storage.js
-      description: >-
-        Save a key-value pair in string format to the persistent data store.
-        This is compatible with PhoneGap/Cordova
-      parameters:
-        key:
-          example: user
-          description: The name of the key you wish to save to the unique session.
-          required: true
-          type: string
-        value:
-          example: NileFrater
-          description: >-
-            The value of the key you wish to save to the datastore. Only
-            supports strings.
-          required: true
-          type: string
+    file: scripts/save-to-storage.js
+    description: >-
+      Save a key-value pair in string format to the persistent data store. This
+      is compatible with PhoneGap/Cordova
+    parameters:
+      key:
+        example: user
+        description: The name of the key you wish to save to the unique session.
+        required: true
+        type: string
+      value:
+        example: NileFrater
+        description: >-
+          The value of the key you wish to save to the datastore. Only supports
+          strings.
+        required: true
+        type: string
   read-from-storage:
-    POST:
-      file: scripts/read-from-storage.js
-      description: >-
-        Retrieve a key-value pair from the persistent data store. This is
-        compatible with PhoneGap/Cordova
-      parameters:
-        key:
-          example: users
-          description: The name of the key you wish to retrieve.
-          required: true
-          type: string
-        asJSON:
-          example: 'true'
-          description: >-
-            If true, this machine will return your value as a JSON object.
-            Otherwise, the value will be returned as a JSON-formatted string as
-            default.
-          required: true
-          type: string
+    file: scripts/read-from-storage.js
+    description: >-
+      Retrieve a key-value pair from the persistent data store. This is
+      compatible with PhoneGap/Cordova
+    parameters:
+      key:
+        example: users
+        description: The name of the key you wish to retrieve.
+        required: true
+        type: string
+      asJSON:
+        example: 'true'
+        description: >-
+          If true, this machine will return your value as a JSON object.
+          Otherwise, the value will be returned as a JSON-formatted string as
+          default.
+        required: true
+        type: string
   delete-from-storage:
-    POST:
-      file: scripts/delete-from-storage.js
-      description: >-
-        Delete a key-value pair from the persistent data store. This is
-        compatible with PhoneGap/Cordova
-      parameters:
-        key:
-          example: users
-          description: The name of the key you wish to delete.
-          required: true
-          type: string
+    file: scripts/delete-from-storage.js
+    description: >-
+      Delete a key-value pair from the persistent data store. This is compatible
+      with PhoneGap/Cordova
+    parameters:
+      key:
+        example: users
+        description: The name of the key you wish to delete.
+        required: true
+        type: string
   save-json-to-storage:
-    POST:
-      file: scripts/save-json-to-storage.js
-      description: >-
-        Save a key-value pair in string format to the persistent data store.
-        This is compatible with PhoneGap/Cordova
-      parameters:
-        key:
-          example: user
-          description: The name of the key you wish to save to the unique session.
-          required: true
-          type: string
-        value:
-          typeclass: '*'
-          description: >-
-            The value of the key you wish to save to the datastore. Only
-            supports JSON-formatted strings or objects.
-          required: true
-          type: '*'
+    file: scripts/save-json-to-storage.js
+    description: >-
+      Save a key-value pair in string format to the persistent data store. This
+      is compatible with PhoneGap/Cordova
+    parameters:
+      key:
+        example: user
+        description: The name of the key you wish to save to the unique session.
+        required: true
+        type: string
+      value:
+        typeclass: '*'
+        description: >-
+          The value of the key you wish to save to the datastore. Only supports
+          JSON-formatted strings or objects.
+        required: true
+        type: '*'

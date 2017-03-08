@@ -5,47 +5,46 @@ author:
   email: support@syncano.io
 endpoints:
   create-ticket:
-    POST:
-      file: scripts/create-ticket.js
-      description: Log a hello message with a generated secret code and other information
-      parameters:
-        username:
-          example: matt@machines.edu
-          description: The email of a Zendesk user account
-          required: true
-          type: string
-        token:
-          example: fjPCIjPEjCBfgwlfjPCIjPEjCBfgwl
-          description: API token for access
-          required: true
-          type: string
-        remoteUri:
-          example: 'https://machines.zendesk.com/api/v2'
-          description: API for your zendesk instance
-          required: true
-          type: string
-        requestorName:
-          example: Customer
-          description: Name of ticket requestor
-          required: true
-          type: string
-        requestorEmail:
-          example: customer@gmail.com
-          description: Email of ticket requestor
-          required: true
-          type: string
-        subject:
-          example: I need help with assembly
-          description: Short title for ticket
-          required: true
-          type: string
-        tags:
-          example: []
-          description: Array of tags for ticket
-          required: false
-          type: array
-        comment:
-          example: When I opened the box the parts were missing. I need new parts.
-          description: Detailed comment for ticket
-          required: false
-          type: string
+    file: scripts/create-ticket.js
+    description: Log a hello message with a generated secret code and other information
+    parameters:
+      username:
+        example: matt@machines.edu
+        description: The email of a Zendesk user account
+        required: true
+        type: string
+      token:
+        example: fjPCIjPEjCBfgwlfjPCIjPEjCBfgwl
+        description: API token for access
+        required: true
+        type: string
+      remoteUri:
+        example: 'https://machines.zendesk.com/api/v2'
+        description: API for your zendesk instance
+        required: true
+        type: string
+      requestorName:
+        example: Customer
+        description: Name of ticket requestor
+        required: true
+        type: string
+      requestorEmail:
+        example: customer@gmail.com
+        description: Email of ticket requestor
+        required: true
+        type: string
+      subject:
+        example: I need help with assembly
+        description: Short title for ticket
+        required: true
+        type: string
+      tags:
+        example: []
+        description: Array of tags for ticket
+        required: false
+        type: array
+      comment:
+        example: When I opened the box the parts were missing. I need new parts.
+        description: Detailed comment for ticket
+        required: false
+        type: string

@@ -5,245 +5,209 @@ author:
   email: support@syncano.io
 endpoints:
   get-ad-account-id:
-    POST:
-      file: scripts/get-ad-account-id.js
-      description: get ad account ids for a given user with an access token
-      parameters:
-        fbUserId:
-          example: '509501'
-          description: facebook user id
-          required: true
-          type: string
-        accessToken:
-          example: >-
-            CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
-          description: >-
-            this is the facebook issued access token for a given user and app
-            pair
-          required: true
-          type: string
+    file: scripts/get-ad-account-id.js
+    description: get ad account ids for a given user with an access token
+    parameters:
+      fbUserId:
+        example: '509501'
+        description: facebook user id
+        required: true
+        type: string
+      accessToken:
+        example: >-
+          CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
+        description: this is the facebook issued access token for a given user and app pair
+        required: true
+        type: string
   get-first-campaign-id-for-given-campaign-name:
-    POST:
-      file: scripts/get-first-campaign-id-for-given-campaign-name.js
-      description: look up a campaign by name
-      parameters:
-        adAccountId:
-          example: act_230989
-          description: facebook ad account id
-          required: true
-          type: string
-        accessToken:
-          example: >-
-            CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
-          description: >-
-            this is the facebook issued access token for a given user and app
-            pair
-          required: true
-          type: string
-        adCampaignName:
-          example: 'WOO:(null)'
-          description: the name of an individual campaign on facebook
-          required: true
-          type: string
+    file: scripts/get-first-campaign-id-for-given-campaign-name.js
+    description: look up a campaign by name
+    parameters:
+      adAccountId:
+        example: act_230989
+        description: facebook ad account id
+        required: true
+        type: string
+      accessToken:
+        example: >-
+          CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
+        description: this is the facebook issued access token for a given user and app pair
+        required: true
+        type: string
+      adCampaignName:
+        example: 'WOO:(null)'
+        description: the name of an individual campaign on facebook
+        required: true
+        type: string
   get-ad-campaigns:
-    POST:
-      file: scripts/get-ad-campaigns.js
-      description: get ad campaigns for a given ad account
-      parameters:
-        adAccountId:
-          example: act_230989
-          description: facebook ad account id
-          required: true
-          type: string
-        accessToken:
-          example: >-
-            CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
-          description: >-
-            this is the facebook issued access token for a given user and app
-            pair
-          required: true
-          type: string
+    file: scripts/get-ad-campaigns.js
+    description: get ad campaigns for a given ad account
+    parameters:
+      adAccountId:
+        example: act_230989
+        description: facebook ad account id
+        required: true
+        type: string
+      accessToken:
+        example: >-
+          CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
+        description: this is the facebook issued access token for a given user and app pair
+        required: true
+        type: string
   get-ads-in-ad-set:
-    POST:
-      file: scripts/get-ads-in-ad-set.js
-      description: get ads in an ad set with standard metadata
-      parameters:
-        adCampaignId:
-          example: '31231321312'
-          description: an adcampaign is an adset
-          required: true
-          type: string
-        accessToken:
-          example: >-
-            CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
-          description: >-
-            this is the facebook issued access token for a given user and app
-            pair
-          required: true
-          type: string
+    file: scripts/get-ads-in-ad-set.js
+    description: get ads in an ad set with standard metadata
+    parameters:
+      adCampaignId:
+        example: '31231321312'
+        description: an adcampaign is an adset
+        required: true
+        type: string
+      accessToken:
+        example: >-
+          CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
+        description: this is the facebook issued access token for a given user and app pair
+        required: true
+        type: string
   get-ad-sets-in-campaign:
-    POST:
-      file: scripts/get-ad-sets-in-campaign.js
-      description: 'get all ad sets in a campaign, and fetch standard metadata'
-      parameters:
-        adCampaignGroupId:
-          example: '31231321312'
-          description: 'facebook adCampaignGroup is the endpoint for a campaign '
-          required: true
-          type: string
-        accessToken:
-          example: >-
-            CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
-          description: >-
-            this is the facebook issued access token for a given user and app
-            pair
-          required: true
-          type: string
+    file: scripts/get-ad-sets-in-campaign.js
+    description: 'get all ad sets in a campaign, and fetch standard metadata'
+    parameters:
+      adCampaignGroupId:
+        example: '31231321312'
+        description: 'facebook adCampaignGroup is the endpoint for a campaign '
+        required: true
+        type: string
+      accessToken:
+        example: >-
+          CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
+        description: this is the facebook issued access token for a given user and app pair
+        required: true
+        type: string
   get-top-ad-in-ad-set:
-    POST:
-      file: scripts/get-top-ad-in-ad-set.js
-      description: return the best performing ad in ad set
-      parameters:
-        adCampaignId:
-          example: '31231321312'
-          description: an adcampaign is an adset
-          required: true
-          type: string
-        accessToken:
-          example: >-
-            CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
-          description: >-
-            this is the facebook issued access token for a given user and app
-            pair
-          required: true
-          type: string
+    file: scripts/get-top-ad-in-ad-set.js
+    description: return the best performing ad in ad set
+    parameters:
+      adCampaignId:
+        example: '31231321312'
+        description: an adcampaign is an adset
+        required: true
+        type: string
+      accessToken:
+        example: >-
+          CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
+        description: this is the facebook issued access token for a given user and app pair
+        required: true
+        type: string
   get-ad-creative-by-adgroup-id:
-    POST:
-      file: scripts/get-ad-creative-by-adgroup-id.js
-      description: return the ad creative and some metadata
-      parameters:
-        adGroupId:
-          example: '31231321312'
-          description: an ad is called adgroup by facebook
-          required: true
-          type: string
-        accessToken:
-          example: >-
-            CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
-          description: >-
-            this is the facebook issued access token for a given user and app
-            pair
-          required: true
-          type: string
+    file: scripts/get-ad-creative-by-adgroup-id.js
+    description: return the ad creative and some metadata
+    parameters:
+      adGroupId:
+        example: '31231321312'
+        description: an ad is called adgroup by facebook
+        required: true
+        type: string
+      accessToken:
+        example: >-
+          CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
+        description: this is the facebook issued access token for a given user and app pair
+        required: true
+        type: string
   get-campaign-overview:
-    POST:
-      file: scripts/get-campaign-overview.js
-      description: >-
-        return the ad set data, ad data, and ad creative, for all ad sets in
-        campaign
-      parameters:
-        adCampaignGroupId:
-          example: '31231321312'
-          description: an adcampaigngroup is a campaign
-          required: true
-          type: string
-        accessToken:
-          example: >-
-            CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
-          description: >-
-            this is the facebook issued access token for a given user and app
-            pair
-          required: true
-          type: string
+    file: scripts/get-campaign-overview.js
+    description: >-
+      return the ad set data, ad data, and ad creative, for all ad sets in
+      campaign
+    parameters:
+      adCampaignGroupId:
+        example: '31231321312'
+        description: an adcampaigngroup is a campaign
+        required: true
+        type: string
+      accessToken:
+        example: >-
+          CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
+        description: this is the facebook issued access token for a given user and app pair
+        required: true
+        type: string
   get-campaign-details:
-    POST:
-      file: scripts/get-campaign-details.js
-      description: get data about a specific ad set.
-      parameters:
-        adCampaignId:
-          example: '31231321312'
-          description: an adcampaign is an ad set
-          required: true
-          type: string
-        accessToken:
-          example: >-
-            CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
-          description: >-
-            this is the facebook issued access token for a given user and app
-            pair
-          required: true
-          type: string
+    file: scripts/get-campaign-details.js
+    description: get data about a specific ad set.
+    parameters:
+      adCampaignId:
+        example: '31231321312'
+        description: an adcampaign is an ad set
+        required: true
+        type: string
+      accessToken:
+        example: >-
+          CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
+        description: this is the facebook issued access token for a given user and app pair
+        required: true
+        type: string
   create-campaign:
-    POST:
-      file: scripts/create-campaign.js
-      description: create a facebook campaign
-      parameters:
-        fbUserId:
-          example: '509503'
-          description: facebook user id
-          required: true
-          type: string
-        fbPageId:
-          example: '3213213124'
-          description: facebook page id
-          required: true
-          type: string
-        accessToken:
-          example: >-
-            CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
-          description: >-
-            this is the facebook issued access token for a given user and app
-            pair
-          required: true
-          type: string
+    file: scripts/create-campaign.js
+    description: create a facebook campaign
+    parameters:
+      fbUserId:
+        example: '509503'
+        description: facebook user id
+        required: true
+        type: string
+      fbPageId:
+        example: '3213213124'
+        description: facebook page id
+        required: true
+        type: string
+      accessToken:
+        example: >-
+          CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
+        description: this is the facebook issued access token for a given user and app pair
+        required: true
+        type: string
   create-ad-set:
-    POST:
-      file: scripts/create-ad-set.js
-      description: create an ad set and the creative
-      parameters:
-        fbUserId:
-          example: '509503'
-          description: facebook user id
-          required: true
-          type: string
-        adCampaignGroupId:
-          example: '3213213124'
-          description: woo campaign group id
-          required: true
-          type: string
-        adImages:
-          example: '[''fadlk3421jkl;rehui234'', ''1235tgds43q41234'']'
-          description: an array of image_hashes returned by facebook
-          required: true
-          type: string
-        accessToken:
-          example: >-
-            CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
-          description: >-
-            this is the facebook issued access token for a given user and app
-            pair
-          required: true
-          type: string
+    file: scripts/create-ad-set.js
+    description: create an ad set and the creative
+    parameters:
+      fbUserId:
+        example: '509503'
+        description: facebook user id
+        required: true
+        type: string
+      adCampaignGroupId:
+        example: '3213213124'
+        description: woo campaign group id
+        required: true
+        type: string
+      adImages:
+        example: '[''fadlk3421jkl;rehui234'', ''1235tgds43q41234'']'
+        description: an array of image_hashes returned by facebook
+        required: true
+        type: string
+      accessToken:
+        example: >-
+          CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
+        description: this is the facebook issued access token for a given user and app pair
+        required: true
+        type: string
   update-ad-set:
-    POST:
-      file: scripts/update-ad-set.js
-      description: update an ad set
-      parameters:
-        adCampaignId:
-          example: '3213213124'
-          description: this is the Ad Set Id
-          required: true
-          type: string
-        dailyBudget:
-          example: '100'
-          description: 'daily budget, string, in cents'
-          required: true
-          type: string
-        accessToken:
-          example: >-
-            CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
-          description: >-
-            this is the facebook issued access token for a given user and app
-            pair
-          required: true
-          type: string
+    file: scripts/update-ad-set.js
+    description: update an ad set
+    parameters:
+      adCampaignId:
+        example: '3213213124'
+        description: this is the Ad Set Id
+        required: true
+        type: string
+      dailyBudget:
+        example: '100'
+        description: 'daily budget, string, in cents'
+        required: true
+        type: string
+      accessToken:
+        example: >-
+          CAACEdEose0cBACBhZA7DJbYapwM7oZBt1EWhPiGqibBZAZAZCZCe6IOkfDRzrs1jyZCS93zSuj9GaNQQtxbny0jeSCqyBNaQUl3ocDiD3lO4GSboFm5B7NogSHFzTGYw0rdpndDKolQcfsS5nYeYwZAIKXF1WPzgGaGxNIDh36oZBHuazcN3WSNmL9jGyO9YmYlZBmZCcigBuMFvtXj4XlzNWyb
+        description: this is the facebook issued access token for a given user and app pair
+        required: true
+        type: string

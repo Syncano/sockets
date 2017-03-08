@@ -5,50 +5,46 @@ author:
   email: support@syncano.io
 endpoints:
   levenshtein:
-    POST:
-      file: scripts/levenshtein.js
-      description: Determine the Levenstein distance between two strings.
-      parameters:
-        a:
-          friendlyName: A string
-          example: kitten
-          required: true
-          type: string
-        b:
-          friendlyName: Another string
-          example: sittin
-          required: true
-          type: string
+    file: scripts/levenshtein.js
+    description: Determine the Levenstein distance between two strings.
+    parameters:
+      a:
+        friendlyName: A string
+        example: kitten
+        required: true
+        type: string
+      b:
+        friendlyName: Another string
+        example: sittin
+        required: true
+        type: string
   tokenize:
-    POST:
-      file: scripts/tokenize.js
-      description: Split a string into an array of strings using the Treebank algorithm.
-      parameters:
-        string:
-          friendlyName: String
-          example: Hello world!
-          description: The string to split.
-          required: true
-          type: string
+    file: scripts/tokenize.js
+    description: Split a string into an array of strings using the Treebank algorithm.
+    parameters:
+      string:
+        friendlyName: String
+        example: Hello world!
+        description: The string to split.
+        required: true
+        type: string
   pluralize:
-    POST:
-      file: scripts/pluralize.js
-      description: Determine the plural version of a singular noun.
-      parameters:
-        noun:
-          friendlyName: Noun
-          example: camera
-          description: A singular noun.
-          required: true
-          type: string
+    file: scripts/pluralize.js
+    description: Determine the plural version of a singular noun.
+    parameters:
+      noun:
+        friendlyName: Noun
+        example: camera
+        description: A singular noun.
+        required: true
+        type: string
   singularize:
-    POST:
-      file: scripts/singularize.js
-      description: Determine the singular version of a plural noun.
-      parameters:
-        noun:
-          friendlyName: Noun
-          example: cameras
-          description: A plural noun.
-          required: true
-          type: string
+    file: scripts/singularize.js
+    description: Determine the singular version of a plural noun.
+    parameters:
+      noun:
+        friendlyName: Noun
+        example: cameras
+        description: A plural noun.
+        required: true
+        type: string

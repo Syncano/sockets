@@ -5,24 +5,23 @@ author:
   email: support@syncano.io
 endpoints:
   select:
-    POST:
-      file: scripts/select.js
-      description: select item in a list
-      parameters:
-        array:
-          typeclass: array
-          friendlyName: In array
-          description: The array to select
-          example:
-            - 0
-            - 1
-            - 2
-            - 3
-          required: true
-          type: array
-        index:
-          description: The index of the item in array is selected
-          typeclass: '*'
-          example: 2
-          required: true
-          type: number
+    file: scripts/select.js
+    description: select item in a list
+    parameters:
+      array:
+        typeclass: array
+        friendlyName: In array
+        description: The array to select
+        example:
+          - 0
+          - 1
+          - 2
+          - 3
+        required: true
+        type: array
+      index:
+        description: The index of the item in array is selected
+        typeclass: '*'
+        example: 2
+        required: true
+        type: number

@@ -5,26 +5,25 @@ author:
   email: support@syncano.io
 endpoints:
   bundle:
-    POST:
-      file: scripts/bundle.js
-      description: >-
-        Bundle the specified script and its required dependencies into a single
-        JavaScript file.
-      parameters:
-        path:
-          description: >-
-            The absolute path to the entry point (if path is relative, will be
-            resolved from pwd)
-          example: /Users/mikermcneil/.tmp/foo
-          required: true
-          type: string
-        exportAs:
-          description: >-
-            The variable name under which to expose any `module.exports` from
-            this script; either on the `window` global, or using the semantics
-            of another detected module system (like AMD/RequireJS).
-          extendedDescription: >-
-            If left unspecified, nothing will be provided to `browserify` as the
-            "standalone" option.
-          example: Whatever
-          type: string
+    file: scripts/bundle.js
+    description: >-
+      Bundle the specified script and its required dependencies into a single
+      JavaScript file.
+    parameters:
+      path:
+        description: >-
+          The absolute path to the entry point (if path is relative, will be
+          resolved from pwd)
+        example: /Users/mikermcneil/.tmp/foo
+        required: true
+        type: string
+      exportAs:
+        description: >-
+          The variable name under which to expose any `module.exports` from this
+          script; either on the `window` global, or using the semantics of
+          another detected module system (like AMD/RequireJS).
+        extendedDescription: >-
+          If left unspecified, nothing will be provided to `browserify` as the
+          "standalone" option.
+        example: Whatever
+        type: string

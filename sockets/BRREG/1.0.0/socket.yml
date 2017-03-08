@@ -5,22 +5,20 @@ author:
   email: support@syncano.io
 endpoints:
   get-number:
-    POST:
-      file: scripts/get-number.js
-      description: Get company by ID
-      parameters:
-        organisasjonsnummer:
-          example: 981362772
-          description: The "organisasjonsnummer" as a integer.
-          required: true
-          type: number
+    file: scripts/get-number.js
+    description: Get company by ID
+    parameters:
+      organisasjonsnummer:
+        example: 981362772
+        description: The "organisasjonsnummer" as a integer.
+        required: true
+        type: number
   get-name:
-    POST:
-      file: scripts/get-name.js
-      description: Get company by name
-      parameters:
-        name:
-          example: Applestore
-          description: The company name.
-          required: true
-          type: string
+    file: scripts/get-name.js
+    description: Get company by name
+    parameters:
+      name:
+        example: Applestore
+        description: The company name.
+        required: true
+        type: string

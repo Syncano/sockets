@@ -5,73 +5,70 @@ author:
   email: support@syncano.io
 endpoints:
   fetch-webpage-html:
-    POST:
-      file: scripts/fetch-webpage-html.js
-      description: Fetch the HTML from a web page.
-      parameters:
-        url:
-          friendlyName: URL
-          example: 'http://www.example.com'
-          description: The URL of the web page to fetched
-          extendedDescription: 'This should include the hostname and a protocol like "http://"'
-          required: true
-          type: string
+    file: scripts/fetch-webpage-html.js
+    description: Fetch the HTML from a web page.
+    parameters:
+      url:
+        friendlyName: URL
+        example: 'http://www.example.com'
+        description: The URL of the web page to fetched
+        extendedDescription: 'This should include the hostname and a protocol like "http://"'
+        required: true
+        type: string
   send-http-request:
-    POST:
-      file: scripts/send-http-request.js
-      description: Send an HTTP request and receive the response.
-      parameters:
-        url:
-          description: The URL where the request should be sent.
-          extendedDescription: >-
-            If `baseUrl` is specified, then `url` should be the "path" part of
-            the URL-- e.g. everything after and including the leading slash
-            ("/users/7/friends/search")
-          example: /pets/18
-          required: true
-          type: string
-        baseUrl:
-          description: 'The base URL, including the hostname and a protocol like "http://"'
-          example: 'http://google.com'
-          type: string
-        method:
-          description: The HTTP method or "verb"
-          example: get
-          type: string
-        params:
-          description: >-
-            Parameters to include in the request (e.g. {"email":
-            "fooberbash.foo"})
-          extendedDescription: >-
-            These values will be either encoded in the querystring or included
-            as JSON in the body of the request based on the request method
-            (GET/POST/etc.)
-          example: {}
-          type: object
-        body:
-          description: Body of the request (for PUT and POST)
-          extendedDescription: 'This will override the value of the "params" input, if any'
-          example: '*'
-          type: string
-        formData:
-          description: >-
-            A boolean value indicating if the params should be sent as url
-            encoded form data. If false JSON will be used.
-          example: false
-          type: boolean
-        headers:
-          description: >-
-            Headers to include in the request (e.g. {"Content-Type":
-            "application/json"})
-          example: {}
-          type: object
+    file: scripts/send-http-request.js
+    description: Send an HTTP request and receive the response.
+    parameters:
+      url:
+        description: The URL where the request should be sent.
+        extendedDescription: >-
+          If `baseUrl` is specified, then `url` should be the "path" part of the
+          URL-- e.g. everything after and including the leading slash
+          ("/users/7/friends/search")
+        example: /pets/18
+        required: true
+        type: string
+      baseUrl:
+        description: 'The base URL, including the hostname and a protocol like "http://"'
+        example: 'http://google.com'
+        type: string
+      method:
+        description: The HTTP method or "verb"
+        example: get
+        type: string
+      params:
+        description: >-
+          Parameters to include in the request (e.g. {"email":
+          "fooberbash.foo"})
+        extendedDescription: >-
+          These values will be either encoded in the querystring or included as
+          JSON in the body of the request based on the request method
+          (GET/POST/etc.)
+        example: {}
+        type: object
+      body:
+        description: Body of the request (for PUT and POST)
+        extendedDescription: 'This will override the value of the "params" input, if any'
+        example: '*'
+        type: string
+      formData:
+        description: >-
+          A boolean value indicating if the params should be sent as url encoded
+          form data. If false JSON will be used.
+        example: false
+        type: boolean
+      headers:
+        description: >-
+          Headers to include in the request (e.g. {"Content-Type":
+          "application/json"})
+        example: {}
+        type: object
   negotiate-http-status:
-    POST:
-      file: scripts/negotiate-http-status.js
-      description: Trigger a specific exit based on the provided HTTP status code.
-      parameters:
-        statusCode:
-          description: The status code to negotiate.
-          example: 403
-          required: true
-          type: number
+    file: scripts/negotiate-http-status.js
+    description: Trigger a specific exit based on the provided HTTP status code.
+    parameters:
+      statusCode:
+        description: The status code to negotiate.
+        example: 403
+        required: true
+        type: number

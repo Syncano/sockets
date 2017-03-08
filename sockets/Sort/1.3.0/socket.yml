@@ -5,65 +5,61 @@ author:
   email: support@syncano.io
 endpoints:
   insertion-sort:
-    POST:
-      file: scripts/insertion-sort.js
-      description: 'Sort an array using Insertion sort algorithm. '
-      parameters:
-        array:
-          example:
-            - 5
-            - 3
-            - 1
-            - 4
-            - 2
-          description: Array to be sorted.
-          required: true
-          type: array
+    file: scripts/insertion-sort.js
+    description: 'Sort an array using Insertion sort algorithm. '
+    parameters:
+      array:
+        example:
+          - 5
+          - 3
+          - 1
+          - 4
+          - 2
+        description: Array to be sorted.
+        required: true
+        type: array
   selection-sort:
-    POST:
-      file: scripts/selection-sort.js
-      description: 'Sort an array with Selection sort algorithm '
-      parameters:
-        array:
-          example:
-            - 5
-            - 3
-            - 1
-            - 4
-            - 2
-          description: Array to be sorted.
-          required: true
-          type: array
+    file: scripts/selection-sort.js
+    description: 'Sort an array with Selection sort algorithm '
+    parameters:
+      array:
+        example:
+          - 5
+          - 3
+          - 1
+          - 4
+          - 2
+        description: Array to be sorted.
+        required: true
+        type: array
   bubble-sort:
-    POST:
-      file: scripts/bubble-sort.js
-      description: Sort an array using Bubble sort algorithm
-      parameters:
-        array:
-          example:
-            - 5
-            - 3
-            - 1
-            - 4
-            - 2
-          description: Array to be sorted.
-          required: true
-          type: array
+    file: scripts/bubble-sort.js
+    description: Sort an array using Bubble sort algorithm
+    parameters:
+      array:
+        example:
+          - 5
+          - 3
+          - 1
+          - 4
+          - 2
+        description: Array to be sorted.
+        required: true
+        type: array
   merge-sort:
-    POST:
-      file: scripts/merge-sort.js
-      description: Sort an array using Merge sort algorithm
-      parameters:
-        array:
-          example:
-            - 5
-            - 3
-            - 1
-            - 4
-            - 2
-            - 8
-            - 7
-            - 6
-          description: Array to be sorted.
-          required: true
-          type: array
+    file: scripts/merge-sort.js
+    description: Sort an array using Merge sort algorithm
+    parameters:
+      array:
+        example:
+          - 5
+          - 3
+          - 1
+          - 4
+          - 2
+          - 8
+          - 7
+          - 6
+        description: Array to be sorted.
+        required: true
+        type: array

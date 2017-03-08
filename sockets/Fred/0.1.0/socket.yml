@@ -5,35 +5,34 @@ author:
   email: support@syncano.io
 endpoints:
   get-series-observations:
-    POST:
-      file: scripts/get-series-observations.js
-      description: Get the observations or data values for an economic data series.
-      parameters:
-        apiKey:
-          example: xAmBxAmBxAmBkjbyKkjbyKkjbyK
-          description: The private API key for this application.
-          required: true
-          whereToGet:
-            url: 'https://research.stlouisfed.org/useraccount/register/step1'
-            description: 'Copy and paste an API key, or create one if you haven''t already.'
-            extendedDescription: ''
-          type: string
-        seriesId:
-          example: EXCSRESNS
-          description: The id for a series.
-          required: true
-          type: string
-        fileType:
-          example: json
-          description: >-
-            A key or file extension that indicates the type of file to send
-            (e.g. xml, json, txt, xls).
-          type: string
-        observationStart:
-          example: '2014-01-01'
-          description: The start of the observation period.
-          type: string
-        observationEnd:
-          example: '2014-01-01'
-          description: The end of the observation period.
-          type: string
+    file: scripts/get-series-observations.js
+    description: Get the observations or data values for an economic data series.
+    parameters:
+      apiKey:
+        example: xAmBxAmBxAmBkjbyKkjbyKkjbyK
+        description: The private API key for this application.
+        required: true
+        whereToGet:
+          url: 'https://research.stlouisfed.org/useraccount/register/step1'
+          description: 'Copy and paste an API key, or create one if you haven''t already.'
+          extendedDescription: ''
+        type: string
+      seriesId:
+        example: EXCSRESNS
+        description: The id for a series.
+        required: true
+        type: string
+      fileType:
+        example: json
+        description: >-
+          A key or file extension that indicates the type of file to send (e.g.
+          xml, json, txt, xls).
+        type: string
+      observationStart:
+        example: '2014-01-01'
+        description: The start of the observation period.
+        type: string
+      observationEnd:
+        example: '2014-01-01'
+        description: The end of the observation period.
+        type: string

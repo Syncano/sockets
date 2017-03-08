@@ -5,118 +5,115 @@ author:
   email: support@syncano.io
 endpoints:
   get-login-url:
-    POST:
-      file: scripts/get-login-url.js
-      description: Generating an authentication URL
-      parameters:
-        clientId:
-          example: >-
-            284875887706-4gku5u85022s3cbsde5rpvps88ekcfql.apps.googleusercontent.com
-          description: OAuth2 Client ID
-          required: true
-          whereToGet:
-            url: 'https://console.developers.google.com'
-            description: >-
-              You can gengerate new Client ID and secret in Google Developer
-              console
-          type: string
-        clientSecret:
-          example: SomeSuperSecretKey
-          description: OAuth2 Client Secret key
-          required: true
-          whereToGet:
-            url: 'https://console.developers.google.com'
-            description: >-
-              You can gengerate new Client ID and secret in Google Developer
-              console
-          type: string
-        redirectUrl:
-          example: 'http://localhost:1337/user/google/login'
+    file: scripts/get-login-url.js
+    description: Generating an authentication URL
+    parameters:
+      clientId:
+        example: >-
+          284875887706-4gku5u85022s3cbsde5rpvps88ekcfql.apps.googleusercontent.com
+        description: OAuth2 Client ID
+        required: true
+        whereToGet:
+          url: 'https://console.developers.google.com'
           description: >-
-            The callback URL where the end user will be redirected after
-            visiting the login URL returned by this machine
-          required: true
-          type: string
-        scope:
-          example:
-            - 'https://www.googleapis.com/auth/plus.me'
-          description: List of urls that you need to asks permissions for
-          typeclass: array
-          type: array
-        accessType:
-          example: offline
-          description: '''online'' (default) or ''offline'' (gets refresh_token)'
-          type: string
+            You can gengerate new Client ID and secret in Google Developer
+            console
+        type: string
+      clientSecret:
+        example: SomeSuperSecretKey
+        description: OAuth2 Client Secret key
+        required: true
+        whereToGet:
+          url: 'https://console.developers.google.com'
+          description: >-
+            You can gengerate new Client ID and secret in Google Developer
+            console
+        type: string
+      redirectUrl:
+        example: 'http://localhost:1337/user/google/login'
+        description: >-
+          The callback URL where the end user will be redirected after visiting
+          the login URL returned by this machine
+        required: true
+        type: string
+      scope:
+        example:
+          - 'https://www.googleapis.com/auth/plus.me'
+        description: List of urls that you need to asks permissions for
+        typeclass: array
+        type: array
+      accessType:
+        example: offline
+        description: '''online'' (default) or ''offline'' (gets refresh_token)'
+        type: string
   get-access-token:
-    POST:
-      file: scripts/get-access-token.js
-      description: >-
-        Getting access token using authorization token that Google provided you
-        with
-      parameters:
-        clientId:
-          example: >-
-            284875887706-4gku5u85022s3cbsde5rpvps88ekcfql.apps.googleusercontent.com
-          description: OAuth2 Client ID
-          required: true
-          whereToGet:
-            url: 'https://console.developers.google.com'
-            description: >-
-              You can gengerate new Client ID and secret in Google Developer
-              console
-          type: string
-        clientSecret:
-          example: SomeSuperSecretKey
-          description: OAuth2 Client Secret key
-          required: true
-          whereToGet:
-            url: 'https://console.developers.google.com'
-            description: >-
-              You can gengerate new Client ID and secret in Google Developer
-              console
-          type: string
-        redirectUrl:
-          example: 'http://localhost:1337/user/google/login'
+    file: scripts/get-access-token.js
+    description: >-
+      Getting access token using authorization token that Google provided you
+      with
+    parameters:
+      clientId:
+        example: >-
+          284875887706-4gku5u85022s3cbsde5rpvps88ekcfql.apps.googleusercontent.com
+        description: OAuth2 Client ID
+        required: true
+        whereToGet:
+          url: 'https://console.developers.google.com'
           description: >-
-            The callback URL where the end user will be redirected after
-            visiting the login URL returned by this machine
-          required: true
-          type: string
-        code:
-          example: someSuperCodeYouGotFromGoogle
-          description: 'With the code returned, you can ask for an access token'
-          required: true
-          type: string
+            You can gengerate new Client ID and secret in Google Developer
+            console
+        type: string
+      clientSecret:
+        example: SomeSuperSecretKey
+        description: OAuth2 Client Secret key
+        required: true
+        whereToGet:
+          url: 'https://console.developers.google.com'
+          description: >-
+            You can gengerate new Client ID and secret in Google Developer
+            console
+        type: string
+      redirectUrl:
+        example: 'http://localhost:1337/user/google/login'
+        description: >-
+          The callback URL where the end user will be redirected after visiting
+          the login URL returned by this machine
+        required: true
+        type: string
+      code:
+        example: someSuperCodeYouGotFromGoogle
+        description: 'With the code returned, you can ask for an access token'
+        required: true
+        type: string
   get-oauth2-client:
-    POST:
-      file: scripts/get-oauth2-client.js
-      description: Get OAuth2 client
-      parameters:
-        clientId:
-          example: >-
-            284875887706-4gku5u85022s3cbsde5rpvps88ekcfql.apps.googleusercontent.com
-          description: OAuth2 Client ID
-          required: true
-          whereToGet:
-            url: 'https://console.developers.google.com'
-            description: >-
-              You can gengerate new Client ID and secret in Google Developer
-              console
-          type: string
-        clientSecret:
-          example: SomeSuperSecretKey
-          description: OAuth2 Client Secret key
-          required: true
-          whereToGet:
-            url: 'https://console.developers.google.com'
-            description: >-
-              You can gengerate new Client ID and secret in Google Developer
-              console
-          type: string
-        redirectUrl:
-          example: 'http://localhost:1337/user/google/login'
+    file: scripts/get-oauth2-client.js
+    description: Get OAuth2 client
+    parameters:
+      clientId:
+        example: >-
+          284875887706-4gku5u85022s3cbsde5rpvps88ekcfql.apps.googleusercontent.com
+        description: OAuth2 Client ID
+        required: true
+        whereToGet:
+          url: 'https://console.developers.google.com'
           description: >-
-            The callback URL where the end user will be redirected after
-            visiting the login URL returned by this machine
-          required: true
-          type: string
+            You can gengerate new Client ID and secret in Google Developer
+            console
+        type: string
+      clientSecret:
+        example: SomeSuperSecretKey
+        description: OAuth2 Client Secret key
+        required: true
+        whereToGet:
+          url: 'https://console.developers.google.com'
+          description: >-
+            You can gengerate new Client ID and secret in Google Developer
+            console
+        type: string
+      redirectUrl:
+        example: 'http://localhost:1337/user/google/login'
+        description: >-
+          The callback URL where the end user will be redirected after visiting
+          the login URL returned by this machine
+        required: true
+        type: string

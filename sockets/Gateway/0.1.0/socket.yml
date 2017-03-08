@@ -5,140 +5,133 @@ author:
   email: support@syncano.io
 endpoints:
   charge:
-    POST:
-      file: scripts/charge.js
-      description: Charge Credit Card
-      parameters:
-        credential:
-          friendlyName: credential
-          description: >-
-            Username and / pasword / token etc required to access your gateway
-            account
-          example: '...{"apiLogin": "this info"}...'
-          required: true
-          type: string
-        transaction:
-          friendlyName: transaction
-          description: Credit Card Sale info
-          example: '...{"firstname": "John"}...'
-          required: true
-          type: string
-        gateway:
-          friendlyName: gateway
-          description: Code name of gateway to use
-          example: Authorize.Net
-          required: true
-          type: string
-        testMode:
-          friendlyName: test
-          description: is this a test?
-          example: 'false'
-          type: string
+    file: scripts/charge.js
+    description: Charge Credit Card
+    parameters:
+      credential:
+        friendlyName: credential
+        description: >-
+          Username and / pasword / token etc required to access your gateway
+          account
+        example: '...{"apiLogin": "this info"}...'
+        required: true
+        type: string
+      transaction:
+        friendlyName: transaction
+        description: Credit Card Sale info
+        example: '...{"firstname": "John"}...'
+        required: true
+        type: string
+      gateway:
+        friendlyName: gateway
+        description: Code name of gateway to use
+        example: Authorize.Net
+        required: true
+        type: string
+      testMode:
+        friendlyName: test
+        description: is this a test?
+        example: 'false'
+        type: string
   refund:
-    POST:
-      file: scripts/refund.js
-      description: Refund a processed transaction
-      parameters:
-        credential:
-          friendlyName: credential
-          description: >-
-            Username and / pasword / token etc required to access your gateway
-            account
-          example: '...{"apiLogin": "this info"}...'
-          required: true
-          type: string
-        transaction:
-          friendlyName: transaction
-          description: Credit Card Sale info
-          example: '...{"firstname": "John"}...'
-          required: true
-          type: string
-        gateway:
-          friendlyName: gateway
-          description: Code name of gateway to use
-          example: Authorize.Net
-          required: true
-          type: string
-        testMode:
-          friendlyName: test
-          description: is this a test?
-          example: 'false'
-          required: true
-          type: string
+    file: scripts/refund.js
+    description: Refund a processed transaction
+    parameters:
+      credential:
+        friendlyName: credential
+        description: >-
+          Username and / pasword / token etc required to access your gateway
+          account
+        example: '...{"apiLogin": "this info"}...'
+        required: true
+        type: string
+      transaction:
+        friendlyName: transaction
+        description: Credit Card Sale info
+        example: '...{"firstname": "John"}...'
+        required: true
+        type: string
+      gateway:
+        friendlyName: gateway
+        description: Code name of gateway to use
+        example: Authorize.Net
+        required: true
+        type: string
+      testMode:
+        friendlyName: test
+        description: is this a test?
+        example: 'false'
+        required: true
+        type: string
   authorize:
-    POST:
-      file: scripts/authorize.js
-      description: Auhtorize a transaction
-      parameters:
-        credential:
-          friendlyName: credential
-          description: >-
-            Username and / pasword / token etc required to access your gateway
-            account
-          example: '...{"apiLogin": "this info"}...'
-          required: true
-          type: string
-        transaction:
-          friendlyName: transaction
-          description: Credit Card Sale info
-          example: '...{"firstname": "John"}...'
-          required: true
-          type: string
-        gateway:
-          friendlyName: gateway
-          description: Code name of gateway to use
-          example: Authorize.Net
-          required: true
-          type: string
-        testMode:
-          friendlyName: test
-          description: is this a test?
-          example: 'false'
-          required: true
-          type: string
+    file: scripts/authorize.js
+    description: Auhtorize a transaction
+    parameters:
+      credential:
+        friendlyName: credential
+        description: >-
+          Username and / pasword / token etc required to access your gateway
+          account
+        example: '...{"apiLogin": "this info"}...'
+        required: true
+        type: string
+      transaction:
+        friendlyName: transaction
+        description: Credit Card Sale info
+        example: '...{"firstname": "John"}...'
+        required: true
+        type: string
+      gateway:
+        friendlyName: gateway
+        description: Code name of gateway to use
+        example: Authorize.Net
+        required: true
+        type: string
+      testMode:
+        friendlyName: test
+        description: is this a test?
+        example: 'false'
+        required: true
+        type: string
   capture:
-    POST:
-      file: scripts/capture.js
-      description: Capture a previously authorized transaction
-      parameters: {}
+    file: scripts/capture.js
+    description: Capture a previously authorized transaction
+    parameters: {}
   void-transaction:
-    POST:
-      file: scripts/void-transaction.js
-      description: Void a non-settled transaction
-      parameters:
-        credential:
-          friendlyName: credential
-          description: >-
-            Username and / pasword / token etc required to access your gateway
-            account
-          example: '...{"apiLogin": "this info"}...'
-          required: true
-          type: string
-        transaction:
-          friendlyName: transaction
-          description: Credit Card Sale info
-          example: '...{"firstname": "John"}...'
-          required: true
-          type: string
-        gateway:
-          friendlyName: gateway
-          description: Code name of gateway to use
-          example: Authorize.Net
-          required: true
-          type: string
-        testMode:
-          friendlyName: test
-          description: is this a test?
-          example: 'false'
-          required: true
-          type: string
+    file: scripts/void-transaction.js
+    description: Void a non-settled transaction
+    parameters:
+      credential:
+        friendlyName: credential
+        description: >-
+          Username and / pasword / token etc required to access your gateway
+          account
+        example: '...{"apiLogin": "this info"}...'
+        required: true
+        type: string
+      transaction:
+        friendlyName: transaction
+        description: Credit Card Sale info
+        example: '...{"firstname": "John"}...'
+        required: true
+        type: string
+      gateway:
+        friendlyName: gateway
+        description: Code name of gateway to use
+        example: Authorize.Net
+        required: true
+        type: string
+      testMode:
+        friendlyName: test
+        description: is this a test?
+        example: 'false'
+        required: true
+        type: string
   get-settled-batch-list:
-    POST:
-      file: scripts/get-settled-batch-list.js
-      description: get a batch list of settled transaction within the window of time
-      parameters: {}
+    file: scripts/get-settled-batch-list.js
+    description: get a batch list of settled transaction within the window of time
+    parameters: {}
   get-unsettled-transaction-list:
-    POST:
-      file: scripts/get-unsettled-transaction-list.js
-      description: get data for unsettled transactions
-      parameters: {}
+    file: scripts/get-unsettled-transaction-list.js
+    description: get data for unsettled transactions
+    parameters: {}

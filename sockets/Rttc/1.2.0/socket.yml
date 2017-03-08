@@ -7,110 +7,103 @@ author:
   email: support@syncano.io
 endpoints:
   validate:
-    POST:
-      file: scripts/validate.js
-      description: >-
-        Validate a value against a type schema. If it's close enough, coerce it
-        to fit.
-      parameters:
-        value:
-          friendlyName: Value
-          description: The actual value to validate.
-          example: ===
-          required: true
-          type: string
-        typeSchema:
-          friendlyName: Type schema
-          description: The expected type schema.
-          example: '*'
-          required: true
-          type: string
+    file: scripts/validate.js
+    description: >-
+      Validate a value against a type schema. If it's close enough, coerce it to
+      fit.
+    parameters:
+      value:
+        friendlyName: Value
+        description: The actual value to validate.
+        example: ===
+        required: true
+        type: string
+      typeSchema:
+        friendlyName: Type schema
+        description: The expected type schema.
+        example: '*'
+        required: true
+        type: string
   validate-strict:
-    POST:
-      file: scripts/validate-strict.js
-      description: Validate a value against a type schema.
-      parameters:
-        value:
-          friendlyName: Value
-          description: The actual value to validate.
-          example: ===
-          required: true
-          type: string
-        typeSchema:
-          friendlyName: Type schema
-          description: The expected type schema.
-          example: '*'
-          required: true
-          type: string
+    file: scripts/validate-strict.js
+    description: Validate a value against a type schema.
+    parameters:
+      value:
+        friendlyName: Value
+        description: The actual value to validate.
+        example: ===
+        required: true
+        type: string
+      typeSchema:
+        friendlyName: Type schema
+        description: The expected type schema.
+        example: '*'
+        required: true
+        type: string
   infer:
-    POST:
-      file: scripts/infer.js
-      description: Infer the type schema from the provided example value.
-      parameters:
-        example:
-          friendlyName: Example
-          description: The example value to infer a type schema for.
-          extendedDescription: >-
-            This example value must be JSON-compatible, and should contain no
-            heterogeneous or multi-item arrays.
-          example: '*'
-          required: true
-          type: string
+    file: scripts/infer.js
+    description: Infer the type schema from the provided example value.
+    parameters:
+      example:
+        friendlyName: Example
+        description: The example value to infer a type schema for.
+        extendedDescription: >-
+          This example value must be JSON-compatible, and should contain no
+          heterogeneous or multi-item arrays.
+        example: '*'
+        required: true
+        type: string
   compile:
-    POST:
-      file: scripts/compile.js
-      description: >-
-        Return a JavaScript code snippet which would accurately represent the
-        given value in code.
-      parameters:
-        value:
-          friendlyName: Value
-          description: The value to compile.
-          example: ===
-          required: true
-          type: string
+    file: scripts/compile.js
+    description: >-
+      Return a JavaScript code snippet which would accurately represent the
+      given value in code.
+    parameters:
+      value:
+        friendlyName: Value
+        description: The value to compile.
+        example: ===
+        required: true
+        type: string
   coerce:
-    POST:
-      file: scripts/coerce.js
-      description: Coerce a value against the given type schema.
-      parameters:
-        value:
-          friendlyName: Value
-          description: The value to coerce.
-          example: ===
-          required: true
-          type: string
-        typeSchema:
-          friendlyName: Type schema
-          description: The type schema to coerce against.
-          example: '*'
-          required: true
-          type: string
+    file: scripts/coerce.js
+    description: Coerce a value against the given type schema.
+    parameters:
+      value:
+        friendlyName: Value
+        description: The value to coerce.
+        example: ===
+        required: true
+        type: string
+      typeSchema:
+        friendlyName: Type schema
+        description: The type schema to coerce against.
+        example: '*'
+        required: true
+        type: string
   sample:
-    POST:
-      file: scripts/sample.js
-      description: >-
-        Generate some sample values that validate against the provided type
-        schema.
-      parameters:
-        typeSchema:
-          friendlyName: Type schema
-          description: The type schema to use as a CFG.
-          example: '*'
-          required: true
-          type: string
-        'n':
-          friendlyName: How many?
-          description: The maximum number of sample values to generate.
-          example: 2
-          defaultsTo: 2
-          type: number
+    file: scripts/sample.js
+    description: >-
+      Generate some sample values that validate against the provided type
+      schema.
+    parameters:
+      typeSchema:
+        friendlyName: Type schema
+        description: The type schema to use as a CFG.
+        example: '*'
+        required: true
+        type: string
+      'n':
+        friendlyName: How many?
+        description: The maximum number of sample values to generate.
+        example: 2
+        defaultsTo: 2
+        type: number
   get-display-type:
-    POST:
-      file: scripts/get-display-type.js
-      description: 'Given a value, return its type as a human-readable string.'
-      parameters:
-        value:
-          friendlyName: Value
-          example: ===
-          type: string
+    file: scripts/get-display-type.js
+    description: 'Given a value, return its type as a human-readable string.'
+    parameters:
+      value:
+        friendlyName: Value
+        example: ===
+        type: string

@@ -5,75 +5,73 @@ author:
   email: support@syncano.io
 endpoints:
   get-login-url:
-    POST:
-      file: scripts/get-login-url.js
-      description: >-
-        Get the URL on Spotify that a user should visit to authorize the
-        specified Spotify app (i.e. your app).
-      parameters:
-        clientId:
-          example: abc123jdhs3h4js
-          description: >-
-            The clientId for your Spotify app. The client ID provided to you by
-            Spotify when you register your application.
-          required: true
-          type: string
-        redirectUri:
-          example: >-
-            https://example.com/callback?code=NApCCg..BkWtQ&state=profile%2Factivity
-          description: >-
-            The URI to redirect to after the user grants/denies permission. This
-            URI needs to have been entered in the Redirect URI whitelist that
-            you specified when you registered your application.
-          required: true
-          type: string
-        responseType:
-          example:
-            - code
-          description: '(code, token_and_code)'
-          type: array
-        state:
-          example: 34fFs29kd09
-          description: >-
-            The state can be useful for correlating requests and responses.
-            Because your redirect_uri can be guessed, using a state value can
-            increase your assurance that an incoming connection is the result of
-            an authentication request. If you generate a random string or encode
-            the hash of some client state (e.g., a cookie) in this state
-            variable, you can validate the response to additionally ensure that
-            the request and response originated in the same browser.
-          type: string
-        scope:
-          example: '*'
-          description: >-
-            A space-separated list of scopes: see Using Scopes. If no scopes are
-            specified, authorization will be granted only to access publicly
-            available information: that is, only information normally visible in
-            the Spotify desktop, web and mobile players. 
-          type: string
-        dialog:
-          example: 'false'
-          description: >-
-            Whether or not to force the user to approve the app again if they’ve
-            already done so. If false (default), a user who has already approved
-            the application may be automatically redirected to the URI specified
-            by redirect_uri. If true, the user will not be automatically
-            redirected and will have to approve the app again.
-          type: string
+    file: scripts/get-login-url.js
+    description: >-
+      Get the URL on Spotify that a user should visit to authorize the specified
+      Spotify app (i.e. your app).
+    parameters:
+      clientId:
+        example: abc123jdhs3h4js
+        description: >-
+          The clientId for your Spotify app. The client ID provided to you by
+          Spotify when you register your application.
+        required: true
+        type: string
+      redirectUri:
+        example: >-
+          https://example.com/callback?code=NApCCg..BkWtQ&state=profile%2Factivity
+        description: >-
+          The URI to redirect to after the user grants/denies permission. This
+          URI needs to have been entered in the Redirect URI whitelist that you
+          specified when you registered your application.
+        required: true
+        type: string
+      responseType:
+        example:
+          - code
+        description: '(code, token_and_code)'
+        type: array
+      state:
+        example: 34fFs29kd09
+        description: >-
+          The state can be useful for correlating requests and responses.
+          Because your redirect_uri can be guessed, using a state value can
+          increase your assurance that an incoming connection is the result of
+          an authentication request. If you generate a random string or encode
+          the hash of some client state (e.g., a cookie) in this state variable,
+          you can validate the response to additionally ensure that the request
+          and response originated in the same browser.
+        type: string
+      scope:
+        example: '*'
+        description: >-
+          A space-separated list of scopes: see Using Scopes. If no scopes are
+          specified, authorization will be granted only to access publicly
+          available information: that is, only information normally visible in
+          the Spotify desktop, web and mobile players. 
+        type: string
+      dialog:
+        example: 'false'
+        description: >-
+          Whether or not to force the user to approve the app again if they’ve
+          already done so. If false (default), a user who has already approved
+          the application may be automatically redirected to the URI specified
+          by redirect_uri. If true, the user will not be automatically
+          redirected and will have to approve the app again.
+        type: string
   get-access-token:
-    POST:
-      file: scripts/get-access-token.js
-      description: Get access token to use with requests to Spotify Web API.
-      parameters:
-        clientId:
-          example: abc123jdhs3h4js
-          description: >-
-            The clientId for your Spotify app. The client ID provided to you by
-            Spotify when you register your application.
-          required: true
-          type: string
-        clientSecret:
-          example: 87kljf66jlf9jj98q89f7s8i
-          description: Secure key for your Spotify App.
-          required: true
-          type: string
+    file: scripts/get-access-token.js
+    description: Get access token to use with requests to Spotify Web API.
+    parameters:
+      clientId:
+        example: abc123jdhs3h4js
+        description: >-
+          The clientId for your Spotify app. The client ID provided to you by
+          Spotify when you register your application.
+        required: true
+        type: string
+      clientSecret:
+        example: 87kljf66jlf9jj98q89f7s8i
+        description: Secure key for your Spotify App.
+        required: true
+        type: string

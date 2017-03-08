@@ -5,24 +5,19 @@ author:
   email: support@syncano.io
 endpoints:
   get-login-url:
-    POST:
-      file: scripts/get-login-url.js
-      description: >-
-        Get the URL on angel.co that a user should visit to allow/deny the
-        specified AngelList developer app (i.e. your app).
-      parameters:
-        clientId:
-          description: >-
-            The client secret for your developer client application on
-            AngelList.
-          example: 93fded8e11662d1596e7ebff01e98d1a31ce074a389e95f0
-          required: true
-          type: string
-        clientSecret:
-          description: >-
-            The private token for your developer client application on
-            AngelList.
-          protect: true
-          required: true
-          example: 43df858806127ed307b2ee576d4772670f7f63d5a81c0024
-          type: string
+    file: scripts/get-login-url.js
+    description: >-
+      Get the URL on angel.co that a user should visit to allow/deny the
+      specified AngelList developer app (i.e. your app).
+    parameters:
+      clientId:
+        description: The client secret for your developer client application on AngelList.
+        example: 93fded8e11662d1596e7ebff01e98d1a31ce074a389e95f0
+        required: true
+        type: string
+      clientSecret:
+        description: The private token for your developer client application on AngelList.
+        protect: true
+        required: true
+        example: 43df858806127ed307b2ee576d4772670f7f63d5a81c0024
+        type: string

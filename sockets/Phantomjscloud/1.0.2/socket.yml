@@ -5,19 +5,18 @@ author:
   email: support@syncano.io
 endpoints:
   render-pages:
-    POST:
-      file: scripts/render-pages.js
-      description: Get the browser-rendered version of the web pages at the specified URLs.
-      parameters:
-        apiKey:
-          description: Valid PhantomJS Cloud API key.
-          example: 138501da08e0130810f0a0b00c01331851
-          required: true
-          type: string
-        urls:
-          description: URLs to render.
-          example:
-            - >-
-              http://sailsjs.org/#/documentation/reference/sails.config/sails.config.models.html
-          required: true
-          type: array
+    file: scripts/render-pages.js
+    description: Get the browser-rendered version of the web pages at the specified URLs.
+    parameters:
+      apiKey:
+        description: Valid PhantomJS Cloud API key.
+        example: 138501da08e0130810f0a0b00c01331851
+        required: true
+        type: string
+      urls:
+        description: URLs to render.
+        example:
+          - >-
+            http://sailsjs.org/#/documentation/reference/sails.config/sails.config.models.html
+        required: true
+        type: array

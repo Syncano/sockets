@@ -5,142 +5,134 @@ author:
   email: support@syncano.io
 endpoints:
   query-kickass:
-    POST:
-      file: scripts/query-kickass.js
-      description: Query Kickass Torrents.
-      parameters:
-        apiUrl:
-          description: The URL of the API
-          required: false
-          example: 'https://kickass.to'
-          type: string
-        sortByKey:
-          description: The key to sort the torrents by.
-          required: false
-          example: seeders
-          type: string
-        sortOrder:
-          description: The sort order for the given sort key.
-          required: false
-          example: desc
-          type: string
-        query:
-          description: The torrent query
-          required: true
-          example: ''
-          type: string
-        page:
-          description: The page number
-          required: false
-          example: 1
-          type: number
-        category:
-          description: The category
-          required: false
-          example: all
-          type: string
+    file: scripts/query-kickass.js
+    description: Query Kickass Torrents.
+    parameters:
+      apiUrl:
+        description: The URL of the API
+        required: false
+        example: 'https://kickass.to'
+        type: string
+      sortByKey:
+        description: The key to sort the torrents by.
+        required: false
+        example: seeders
+        type: string
+      sortOrder:
+        description: The sort order for the given sort key.
+        required: false
+        example: desc
+        type: string
+      query:
+        description: The torrent query
+        required: true
+        example: ''
+        type: string
+      page:
+        description: The page number
+        required: false
+        example: 1
+        type: number
+      category:
+        description: The category
+        required: false
+        example: all
+        type: string
   query-eztv:
-    POST:
-      file: scripts/query-eztv.js
-      description: Query EZTV Torrents.
-      parameters:
-        baseUrl:
-          description: The base URL
-          required: false
-          example: 'https://eztv.ag'
-          type: string
-        query:
-          description: The torrent query
-          required: true
-          example: ''
-          type: string
-        category:
-          description: The category
-          required: false
-          example: all
-          type: string
+    file: scripts/query-eztv.js
+    description: Query EZTV Torrents.
+    parameters:
+      baseUrl:
+        description: The base URL
+        required: false
+        example: 'https://eztv.ag'
+        type: string
+      query:
+        description: The torrent query
+        required: true
+        example: ''
+        type: string
+      category:
+        description: The category
+        required: false
+        example: all
+        type: string
   find-movie:
-    POST:
-      file: scripts/find-movie.js
-      description: Find a torrent for a given movie
-      parameters:
-        query:
-          description: The torrent query
-          required: true
-          example: ''
-          type: string
+    file: scripts/find-movie.js
+    description: Find a torrent for a given movie
+    parameters:
+      query:
+        description: The torrent query
+        required: true
+        example: ''
+        type: string
   find-episode:
-    POST:
-      file: scripts/find-episode.js
-      description: Find a torrent for a given show episode
-      parameters:
-        query:
-          description: The torrent query
-          required: true
-          example: ''
-          type: string
+    file: scripts/find-episode.js
+    description: Find a torrent for a given show episode
+    parameters:
+      query:
+        description: The torrent query
+        required: true
+        example: ''
+        type: string
   query-all:
-    POST:
-      file: scripts/query-all.js
-      description: Query for torrents from all torrent providers
-      parameters:
-        query:
-          description: The torrent query
-          required: true
-          example: ''
-          type: string
+    file: scripts/query-all.js
+    description: Query for torrents from all torrent providers
+    parameters:
+      query:
+        description: The torrent query
+        required: true
+        example: ''
+        type: string
   get-eztv-showlist:
-    POST:
-      file: scripts/get-eztv-showlist.js
-      description: List all shows found on EZTV
-      parameters:
-        baseUrl:
-          description: The base URL
-          required: false
-          example: 'https://eztv.ag'
-          type: string
+    file: scripts/get-eztv-showlist.js
+    description: List all shows found on EZTV
+    parameters:
+      baseUrl:
+        description: The base URL
+        required: false
+        example: 'https://eztv.ag'
+        type: string
   get-eztv-show-episodes:
-    POST:
-      file: scripts/get-eztv-show-episodes.js
-      description: Get Episodes for an EZTV Show
-      parameters:
-        baseUrl:
-          description: The base URL
-          required: false
-          example: 'https://eztv.ag'
-          type: string
-        showId:
-          description: The Show ID
-          required: true
-          example: 1
-          type: number
+    file: scripts/get-eztv-show-episodes.js
+    description: Get Episodes for an EZTV Show
+    parameters:
+      baseUrl:
+        description: The base URL
+        required: false
+        example: 'https://eztv.ag'
+        type: string
+      showId:
+        description: The Show ID
+        required: true
+        example: 1
+        type: number
   query-yts:
-    POST:
-      file: scripts/query-yts.js
-      description: Query YTS Torrents.
-      parameters:
-        apiUrl:
-          description: The URL of the API
-          required: false
-          example: 'https://yts.ag'
-          type: string
-        sortByKey:
-          description: The key to sort the torrents by.
-          required: false
-          example: seeds
-          type: string
-        sortOrder:
-          description: The sort order for the given sort key.
-          required: false
-          example: desc
-          type: string
-        query:
-          description: The torrent query
-          required: true
-          example: ''
-          type: string
-        page:
-          description: The page number
-          required: false
-          example: 1
-          type: number
+    file: scripts/query-yts.js
+    description: Query YTS Torrents.
+    parameters:
+      apiUrl:
+        description: The URL of the API
+        required: false
+        example: 'https://yts.ag'
+        type: string
+      sortByKey:
+        description: The key to sort the torrents by.
+        required: false
+        example: seeds
+        type: string
+      sortOrder:
+        description: The sort order for the given sort key.
+        required: false
+        example: desc
+        type: string
+      query:
+        description: The torrent query
+        required: true
+        example: ''
+        type: string
+      page:
+        description: The page number
+        required: false
+        example: 1
+        type: number

@@ -5,31 +5,30 @@ author:
   email: support@syncano.io
 endpoints:
   search-by-title:
-    POST:
-      file: scripts/search-by-title.js
-      description: 'Get information about movies and tv shows '
-      parameters:
-        t:
-          description: Movie title to search for.
-          required: true
-          example: Game of Thrones
-          friendlyName: Title
-          type: string
-        'y':
-          description: Year of release.
-          required: true
-          example: '2015'
-          friendlyName: Year
-          type: string
-        plot:
-          description: Return short or full plot. (full or short)
-          required: true
-          example: short
-          friendlyName: Plot
-          type: string
-        r:
-          description: The data type to return. (json or xml)
-          required: true
-          example: json
-          friendlyName: Type
-          type: string
+    file: scripts/search-by-title.js
+    description: 'Get information about movies and tv shows '
+    parameters:
+      t:
+        description: Movie title to search for.
+        required: true
+        example: Game of Thrones
+        friendlyName: Title
+        type: string
+      'y':
+        description: Year of release.
+        required: true
+        example: '2015'
+        friendlyName: Year
+        type: string
+      plot:
+        description: Return short or full plot. (full or short)
+        required: true
+        example: short
+        friendlyName: Plot
+        type: string
+      r:
+        description: The data type to return. (json or xml)
+        required: true
+        example: json
+        friendlyName: Type
+        type: string

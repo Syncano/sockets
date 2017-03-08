@@ -5,59 +5,58 @@ author:
   email: support@syncano.io
 endpoints:
   search:
-    POST:
-      file: scripts/search.js
-      description: Executes the search using Customsearch API call
-      parameters:
-        q:
-          example: test search
-          description: Search phrase
-          required: true
-          type: string
-        cx:
-          example: ''
-          description: The custom search engine ID to use for this request
-          type: string
-        cref:
-          example: ''
-          description: >-
-            The URL of a linked custom search engine specification to use for
-            this request. 
-          type: string
-        auth:
-          example: AIzaSyAYVDlaoVs_GZw9JNvSclRWH_PEMKII6tc
-          description: You generated API_KEY
-          type: string
-        alt:
-          example: atom
-          description: >-
-            JSON/Atom Custom Search API can return results in one of two
-            formats. JSON is the default data format; you can get results in
-            Atom format by specifying the alt=atom query parameter
-          type: string
-        c2coff:
-          example: ''
-          description: Turns off the translation between zh-CN and zh-TW.
-          type: string
-        cr:
-          example: ''
-          description: Country restrict(s)
-          type: string
-        fileType:
-          example: jpg
-          description: >-
-            Returns images of a specified type. Some of the allowed values are:
-            bmp, gif, png, jpg, svg, pdf, ...
-          type: string
-        searchType:
-          example: image
-          description: Specifies the search type
-          type: string
-        sort:
-          example: ''
-          description: The sort expression to apply to the results
-          type: string
-        start:
-          example: 15
-          description: The index of the first result to return
-          type: number
+    file: scripts/search.js
+    description: Executes the search using Customsearch API call
+    parameters:
+      q:
+        example: test search
+        description: Search phrase
+        required: true
+        type: string
+      cx:
+        example: ''
+        description: The custom search engine ID to use for this request
+        type: string
+      cref:
+        example: ''
+        description: >-
+          The URL of a linked custom search engine specification to use for this
+          request. 
+        type: string
+      auth:
+        example: AIzaSyAYVDlaoVs_GZw9JNvSclRWH_PEMKII6tc
+        description: You generated API_KEY
+        type: string
+      alt:
+        example: atom
+        description: >-
+          JSON/Atom Custom Search API can return results in one of two formats.
+          JSON is the default data format; you can get results in Atom format by
+          specifying the alt=atom query parameter
+        type: string
+      c2coff:
+        example: ''
+        description: Turns off the translation between zh-CN and zh-TW.
+        type: string
+      cr:
+        example: ''
+        description: Country restrict(s)
+        type: string
+      fileType:
+        example: jpg
+        description: >-
+          Returns images of a specified type. Some of the allowed values are:
+          bmp, gif, png, jpg, svg, pdf, ...
+        type: string
+      searchType:
+        example: image
+        description: Specifies the search type
+        type: string
+      sort:
+        example: ''
+        description: The sort expression to apply to the results
+        type: string
+      start:
+        example: 15
+        description: The index of the first result to return
+        type: number

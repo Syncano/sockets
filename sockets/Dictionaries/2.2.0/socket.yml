@@ -5,172 +5,164 @@ author:
   email: support@syncano.io
 endpoints:
   merge:
-    POST:
-      file: scripts/merge.js
-      description: Merge two dictionaries together and return the result (a new dictionary)
-      parameters:
-        primary:
-          description: The dictionary whose keys will take precedence.
-          example: {}
-          required: true
-          type: object
-        secondary:
-          description: The dictionary whose keys may be overridden by `primary`.
-          example: {}
-          required: true
-          type: object
+    file: scripts/merge.js
+    description: Merge two dictionaries together and return the result (a new dictionary)
+    parameters:
+      primary:
+        description: The dictionary whose keys will take precedence.
+        example: {}
+        required: true
+        type: object
+      secondary:
+        description: The dictionary whose keys may be overridden by `primary`.
+        example: {}
+        required: true
+        type: object
   construct:
-    POST:
-      file: scripts/construct.js
-      description: Construct a dictionary using the specified keys and values.
-      parameters:
-        dictionary:
-          description: The dictionary to construct.
-          example: {}
-          required: true
-          type: object
+    file: scripts/construct.js
+    description: Construct a dictionary using the specified keys and values.
+    parameters:
+      dictionary:
+        description: The dictionary to construct.
+        example: {}
+        required: true
+        type: object
   dot:
-    POST:
-      file: scripts/dot.js
-      description: Get the value associated with a particular key in a dictionary.
-      parameters:
-        dictionary:
-          friendlyName: Dictionary
-          description: The dictionary to dereference
-          example: {}
-          required: true
-          type: object
-        keypath:
-          friendlyName: Key
-          description: >-
-            The key to look up (can be nested, e.g. "avatar" or
-            "avatar.sizeInBytes")
-          extendedDescription: >-
-            Note that this means that you cannot use this machine to grab the
-            value of keys that **actually** have a dot (.) in them.
-          example: mom.email
-          required: true
-          type: string
+    file: scripts/dot.js
+    description: Get the value associated with a particular key in a dictionary.
+    parameters:
+      dictionary:
+        friendlyName: Dictionary
+        description: The dictionary to dereference
+        example: {}
+        required: true
+        type: object
+      keypath:
+        friendlyName: Key
+        description: >-
+          The key to look up (can be nested, e.g. "avatar" or
+          "avatar.sizeInBytes")
+        extendedDescription: >-
+          Note that this means that you cannot use this machine to grab the
+          value of keys that **actually** have a dot (.) in them.
+        example: mom.email
+        required: true
+        type: string
   delete-key:
-    POST:
-      file: scripts/delete-key.js
-      description: Delete a key from a dictionary and return the result (a new dictionary).
-      parameters:
-        dictionary:
-          friendlyName: Dictionary
-          description: The dictionary to delete the key from.
-          example: {}
-          required: true
-          type: object
-        key:
-          friendlyName: Key
-          description: The key to delete.
-          example: password
-          required: true
-          type: string
+    file: scripts/delete-key.js
+    description: Delete a key from a dictionary and return the result (a new dictionary).
+    parameters:
+      dictionary:
+        friendlyName: Dictionary
+        description: The dictionary to delete the key from.
+        example: {}
+        required: true
+        type: object
+      key:
+        friendlyName: Key
+        description: The key to delete.
+        example: password
+        required: true
+        type: string
   rename-key:
-    POST:
-      file: scripts/rename-key.js
-      description: Rename a key in a dictionary and return the result (a new dictionary).
-      parameters:
-        dictionary:
-          friendlyName: Dictionary
-          description: The dictionary to rename the key in.
-          example: {}
-          required: true
-          type: object
-        originalKey:
-          friendlyName: Original key
-          description: The key to rename.
-          example: studentName
-          required: true
-          type: string
-        newKey:
-          friendlyName: New key
-          description: A new name for the key.
-          example: studentFullName
-          required: true
-          type: string
-        force:
-          friendlyName: Overwrite?
-          description: >-
-            Whether to overwrite an existing key with the same name if there is
-            a conflict.
-          example: true
-          defaultsTo: true
-          advanced: true
-          type: boolean
+    file: scripts/rename-key.js
+    description: Rename a key in a dictionary and return the result (a new dictionary).
+    parameters:
+      dictionary:
+        friendlyName: Dictionary
+        description: The dictionary to rename the key in.
+        example: {}
+        required: true
+        type: object
+      originalKey:
+        friendlyName: Original key
+        description: The key to rename.
+        example: studentName
+        required: true
+        type: string
+      newKey:
+        friendlyName: New key
+        description: A new name for the key.
+        example: studentFullName
+        required: true
+        type: string
+      force:
+        friendlyName: Overwrite?
+        description: >-
+          Whether to overwrite an existing key with the same name if there is a
+          conflict.
+        example: true
+        defaultsTo: true
+        advanced: true
+        type: boolean
   copy-key:
-    POST:
-      file: scripts/copy-key.js
-      description: Copy a key in a dictionary and return the result (a new dictionary).
-      parameters:
-        dictionary:
-          friendlyName: Dictionary
-          description: The dictionary where the key will be copied.
-          example: {}
-          required: true
-          type: object
-        originalKey:
-          friendlyName: Existing key
-          description: The name of the existing key whose value will be copied.
-          example: githubUsername
-          required: true
-          type: string
-        newKey:
-          friendlyName: New key
-          description: A name for the new key.
-          example: twitterUsername
-          required: true
-          type: string
-        force:
-          friendlyName: Overwrite?
-          description: >-
-            Whether to overwrite an existing key with the same name if there is
-            a conflict.
-          example: true
-          defaultsTo: true
-          advanced: true
-          type: boolean
+    file: scripts/copy-key.js
+    description: Copy a key in a dictionary and return the result (a new dictionary).
+    parameters:
+      dictionary:
+        friendlyName: Dictionary
+        description: The dictionary where the key will be copied.
+        example: {}
+        required: true
+        type: object
+      originalKey:
+        friendlyName: Existing key
+        description: The name of the existing key whose value will be copied.
+        example: githubUsername
+        required: true
+        type: string
+      newKey:
+        friendlyName: New key
+        description: A name for the new key.
+        example: twitterUsername
+        required: true
+        type: string
+      force:
+        friendlyName: Overwrite?
+        description: >-
+          Whether to overwrite an existing key with the same name if there is a
+          conflict.
+        example: true
+        defaultsTo: true
+        advanced: true
+        type: boolean
   add-key:
-    POST:
-      file: scripts/add-key.js
-      description: Add a new key to a dictionary.
-      parameters:
-        dictionary:
-          friendlyName: Dictionary
-          description: The dictionary where the new key will be added.
-          example: {}
-          required: true
-          type: object
-        newKey:
-          friendlyName: New key
-          description: A name for the new key.
-          example: twitterUsername
-          required: true
-          type: string
-        value:
-          friendlyName: Value
-          description: The value to associate with the new key.
-          example: '*'
-          required: true
-          type: string
-        force:
-          friendlyName: Overwrite?
-          description: >-
-            Whether to overwrite an existing key with the same name if there is
-            a conflict.
-          example: true
-          defaultsTo: true
-          type: boolean
+    file: scripts/add-key.js
+    description: Add a new key to a dictionary.
+    parameters:
+      dictionary:
+        friendlyName: Dictionary
+        description: The dictionary where the new key will be added.
+        example: {}
+        required: true
+        type: object
+      newKey:
+        friendlyName: New key
+        description: A name for the new key.
+        example: twitterUsername
+        required: true
+        type: string
+      value:
+        friendlyName: Value
+        description: The value to associate with the new key.
+        example: '*'
+        required: true
+        type: string
+      force:
+        friendlyName: Overwrite?
+        description: >-
+          Whether to overwrite an existing key with the same name if there is a
+          conflict.
+        example: true
+        defaultsTo: true
+        type: boolean
   keys:
-    POST:
-      file: scripts/keys.js
-      description: List all the keys in the provided dictionary.
-      parameters:
-        dictionary:
-          friendlyName: Dictionary
-          description: The dictionary whose keys will be listed.
-          example: {}
-          required: true
-          type: object
+    file: scripts/keys.js
+    description: List all the keys in the provided dictionary.
+    parameters:
+      dictionary:
+        friendlyName: Dictionary
+        description: The dictionary whose keys will be listed.
+        example: {}
+        required: true
+        type: object

@@ -5,172 +5,160 @@ author:
   email: support@syncano.io
 endpoints:
   add:
-    POST:
-      file: scripts/add.js
-      description: Add two numbers together and return the sum.
-      parameters:
-        a:
-          friendlyName: Augend (first number)
-          description: The first number.
-          example: 2
-          required: true
-          type: number
-        b:
-          friendlyName: Addend (second number)
-          description: The second number.
-          example: 2.2
-          required: true
-          type: number
+    file: scripts/add.js
+    description: Add two numbers together and return the sum.
+    parameters:
+      a:
+        friendlyName: Augend (first number)
+        description: The first number.
+        example: 2
+        required: true
+        type: number
+      b:
+        friendlyName: Addend (second number)
+        description: The second number.
+        example: 2.2
+        required: true
+        type: number
   divide:
-    POST:
-      file: scripts/divide.js
-      description: Divide one number by another and return the quotient.
-      parameters:
-        a:
-          friendlyName: Numerator (first number)
-          description: The number to divide (aka "dividend")
-          example: 5
-          required: true
-          type: number
-        b:
-          friendlyName: Denominator (second number)
-          description: The number to divide by (aka "divisor")
-          example: -2
-          required: true
-          type: number
+    file: scripts/divide.js
+    description: Divide one number by another and return the quotient.
+    parameters:
+      a:
+        friendlyName: Numerator (first number)
+        description: The number to divide (aka "dividend")
+        example: 5
+        required: true
+        type: number
+      b:
+        friendlyName: Denominator (second number)
+        description: The number to divide by (aka "divisor")
+        example: -2
+        required: true
+        type: number
   subtract:
-    POST:
-      file: scripts/subtract.js
-      description: Subtract one number from another and return the difference.
-      parameters:
-        a:
-          friendlyName: Minuend (first number)
-          description: The number to subtract from.
-          example: -20
-          required: true
-          type: number
-        b:
-          friendlyName: Subtrahend (second number)
-          description: The number to subtract.
-          example: 2.2
-          required: true
-          type: number
+    file: scripts/subtract.js
+    description: Subtract one number from another and return the difference.
+    parameters:
+      a:
+        friendlyName: Minuend (first number)
+        description: The number to subtract from.
+        example: -20
+        required: true
+        type: number
+      b:
+        friendlyName: Subtrahend (second number)
+        description: The number to subtract.
+        example: 2.2
+        required: true
+        type: number
   multiply:
-    POST:
-      file: scripts/multiply.js
-      description: Multiply two numbers and return the product.
-      parameters:
-        a:
-          friendlyName: Multiplicand (first number)
-          description: The first number.
-          example: 2
-          required: true
-          type: number
-        b:
-          friendlyName: Multiplier (second number)
-          description: The second number.
-          example: -10
-          required: true
-          type: number
+    file: scripts/multiply.js
+    description: Multiply two numbers and return the product.
+    parameters:
+      a:
+        friendlyName: Multiplicand (first number)
+        description: The first number.
+        example: 2
+        required: true
+        type: number
+      b:
+        friendlyName: Multiplier (second number)
+        description: The second number.
+        example: -10
+        required: true
+        type: number
   parse:
-    POST:
-      file: scripts/parse.js
-      description: Convert the specified string to its numeric equivalent.
-      parameters:
-        string:
-          friendlyName: String
-          description: The string to parse.
-          example: '5'
-          required: true
-          type: string
+    file: scripts/parse.js
+    description: Convert the specified string to its numeric equivalent.
+    parameters:
+      string:
+        friendlyName: String
+        description: The string to parse.
+        example: '5'
+        required: true
+        type: string
   random:
-    POST:
-      file: scripts/random.js
-      description: Generate a random number within the specified range.
-      parameters:
-        min:
-          friendlyName: At least (>=)
-          example: 1
-          description: The minimum acceptable number to generate
-          defaultsTo: 0
-          type: number
-        max:
-          friendlyName: No greater than (<=)
-          example: 1
-          description: The maximum acceptable number to generate
-          defaultsTo: 1
-          type: number
-        floating:
-          friendlyName: Floating point?
-          description: >-
-            Whether or not the generated number should be a floating point
-            number (decimal).
-          defaultsTo: false
-          example: true
-          type: boolean
+    file: scripts/random.js
+    description: Generate a random number within the specified range.
+    parameters:
+      min:
+        friendlyName: At least (>=)
+        example: 1
+        description: The minimum acceptable number to generate
+        defaultsTo: 0
+        type: number
+      max:
+        friendlyName: No greater than (<=)
+        example: 1
+        description: The maximum acceptable number to generate
+        defaultsTo: 1
+        type: number
+      floating:
+        friendlyName: Floating point?
+        description: >-
+          Whether or not the generated number should be a floating point number
+          (decimal).
+        defaultsTo: false
+        example: true
+        type: boolean
   e:
-    POST:
-      file: scripts/e.js
-      description: Get the value of E (the mathematical constant)
-      parameters: {}
+    file: scripts/e.js
+    description: Get the value of E (the mathematical constant)
+    parameters: {}
   sqrt:
-    POST:
-      file: scripts/sqrt.js
-      description: Calculate the square root of a number.
-      parameters:
-        number:
-          friendlyName: Number
-          description: The number to take the square root of.
-          example: 64
-          required: true
-          type: number
+    file: scripts/sqrt.js
+    description: Calculate the square root of a number.
+    parameters:
+      number:
+        friendlyName: Number
+        description: The number to take the square root of.
+        example: 64
+        required: true
+        type: number
   pi:
-    POST:
-      file: scripts/pi.js
-      description: Get the value of π (the mathematical constant)
-      parameters: {}
+    file: scripts/pi.js
+    description: Get the value of π (the mathematical constant)
+    parameters: {}
   pow:
-    POST:
-      file: scripts/pow.js
-      description: Raise a number to a power.
-      parameters:
-        number:
-          friendlyName: Number
-          description: The number to raise to a power.
-          example: 8
-          required: true
-          type: number
-        exponent:
-          friendlyName: Exponent
-          description: The exponent to raise the other number to.
-          example: 2
-          required: true
-          type: number
+    file: scripts/pow.js
+    description: Raise a number to a power.
+    parameters:
+      number:
+        friendlyName: Number
+        description: The number to raise to a power.
+        example: 8
+        required: true
+        type: number
+      exponent:
+        friendlyName: Exponent
+        description: The exponent to raise the other number to.
+        example: 2
+        required: true
+        type: number
   ln:
-    POST:
-      file: scripts/ln.js
-      description: Calculate the natural logarithm of a number.
-      parameters:
-        number:
-          friendlyName: Number
-          description: The number to calculate the natural log of.
-          example: 2.718281828459045
-          required: true
-          type: number
+    file: scripts/ln.js
+    description: Calculate the natural logarithm of a number.
+    parameters:
+      number:
+        friendlyName: Number
+        description: The number to calculate the natural log of.
+        example: 2.718281828459045
+        required: true
+        type: number
   log:
-    POST:
-      file: scripts/log.js
-      description: Calculate the logarithm of a number at a particular base.
-      parameters:
-        number:
-          friendlyName: Number
-          description: The number to calculate the log of.
-          example: 100
-          required: true
-          type: number
-        base:
-          friendlyName: Base
-          description: The base of the logarithm
-          example: 10
-          defaultsTo: 10
-          type: number
+    file: scripts/log.js
+    description: Calculate the logarithm of a number at a particular base.
+    parameters:
+      number:
+        friendlyName: Number
+        description: The number to calculate the log of.
+        example: 100
+        required: true
+        type: number
+      base:
+        friendlyName: Base
+        description: The base of the logarithm
+        example: 10
+        defaultsTo: 10
+        type: number
