@@ -68,7 +68,7 @@ function createPackageJsonInput(rootDir, machine) {
     "licenses": ""
   }
 
-  fs.writeFileSync(`${rootDir}/package.json`, JSON.stringify(content, null, 4));
+  fs.writeFileSync(`${rootDir}/package.json`, `${JSON.stringify(content, null, 4)}\n`);
 
 }
 
@@ -144,6 +144,8 @@ function createSockets() {
     .forEach((machine) => {
       const { identity, machines, variableName, version } = machine;
       const rootDir = `./sockets/${variableName}/${version}`;
+
+      if (machines.length === 0) return false;
 
       const content = {
         name: variableName,

@@ -1,8 +1,0 @@
-name: Console
-description: >-
-  Work with the console/terminal.  Supports logging text output and reading user
-  input via interactive prompts.
-author:
-  name: Syncano
-  email: support@syncano.io
-endpoints: {}
